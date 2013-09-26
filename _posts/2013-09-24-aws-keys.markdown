@@ -15,15 +15,15 @@ categories: cloud-providers
     <li><a href="https://console.aws.amazon.com/ec2/" target="_blank">Open the Amazon EC2 console</a></li>
     <li>
         <p>In the left hand navigation, under Network and Security, click <b>Key Pairs</b>.</p>
-        <p><img src="/assets/help/aws-key-1.png" alt=""></p>
+        <p><img src="http://cloud66.com/assets/help/aws-key-1.png" alt=""></p>
     </li>
     <li>
         <p>Click <b>Create Key Pair</b>.</p>
-        <p><img src="/assets/help/aws-key-2.png" alt=""></p>
+        <p><img src="http://cloud66.com//assets/help/aws-key-2.png" alt=""></p>
     </li>
     <li>
         <p>In the Key Pair dialog, in the Key Pair Name field, type <i>mykeypair</i> for the new key pair and then click Create.</p>
-        <p><img src="/assets/help/aws-key-3.png" alt=""></p>
+        <p><img src="http://cloud66.com//assets/help/aws-key-3.png" alt=""></p>
     </li>
     <li>
         <p>Download the private key file, which is named <i>mykeypair.pem</i>, and keep it safe.<br>
@@ -39,7 +39,7 @@ categories: cloud-providers
     <li>
         <p>Scroll down to <strong>Access Credentials</strong> &mdash; click the <b>Access Keys</b> tab.</p>
         <p>To see your Secret Access Key, click on the <b>Show</b> link under Secret Access Key as shown below.</p>
-        <img src="/assets/help/aws-access-keysecret-key.png" alt="AWS Secret Access Key screen shot">
+        <img src="http://cloud66.com//assets/help/aws-access-keysecret-key.png" alt="AWS Secret Access Key screen shot">
 
     </li>
 </ol>
