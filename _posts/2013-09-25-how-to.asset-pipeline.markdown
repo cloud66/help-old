@@ -19,8 +19,8 @@ Libraries for Javascript compilation on your server that are currently supported
 1. **therubyracer** &mdash;  Google V8 embedded within Ruby. Installed by including "therubyracer" in your Gemfile.
 2. **Node.js** &mdash; Cloud 66 will *automatically* install this on your server if you don't include "therubyracer" in your Gemfile.
 
-<div class="notice notice-standalone">
-    <h3>Note</h3>
+<div class="notice">
+    <h3>Important</h3>
     <p>
         There are additional libraries for JavaScript compilation that are not currently supported by Cloud 66: therubyrhino; Apple JavaScriptCore; Microsoft Windows Script Host (JScript)
     </p>

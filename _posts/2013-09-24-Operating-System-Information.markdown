@@ -12,7 +12,7 @@ categories: stacks
 Cloud 66 officially supports <strong>Ubuntu Linux 12.04</strong> and this is the OS/version that is fired up in your cloud.
 Other versions of Ubuntu Linux should work, however are not all completely tested.
 
-<div class="notice notice-standalone">
+<div class="notice">
 
 		<h3>Important</h3>
 
