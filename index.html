@@ -1,0 +1,30 @@
+---
+layout: default
+title: Help and Support | Cloud 66
+bodyclass: home
+---
+
+<!-- ===== Home banner & primary search ===== -->
+{% include banner.html %}
+{% include search_primary.html %}
+<!-- ===== /Home banner & primary search ===== -->
+
+<!-- ===== START TOC - CATS & POSTS ===== -->
+<section class="container article-toc">
+    {% for category in site.sorted_categories %}
+        <h2 class="cat-title">
+          {{ category | first }}
+        </h2>
+
+        <nav class="toc">
+          <ul>
+            {% for post in category.last %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+    {% endfor %}
+</section>
+<!-- ===== /START TOC - CATS & POSTS ===== -->

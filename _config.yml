@@ -1,0 +1,9 @@
+name: Help and Support
+markdown: redcarpet
+pygments: true
+permalink: /:categories/:title.html
+
+# defaults
+sass:
+    syntax: scss        # scss|sass
+    style:  compressed  # nested|expanded|compact|compressed

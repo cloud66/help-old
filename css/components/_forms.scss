@@ -1,0 +1,89 @@
+/* ===========================================================================================
+ *  FORM ELEMENTS
+ * ============================================================================================ */
+/*
+ *  Fields
+ * --------------------------------------------------------- */
+[type="text"],
+[type="search"] {
+    border: 1px solid #ddd;
+    padding: 2px;
+}
+
+[type="search"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-style: italic;
+   font-weight: 200;
+}
+::-webkit-input-placeholder {
+   font-style: italic;
+   font-weight: 200;
+}
+
+
+/*
+ *  Big Inputs!!
+ * --------------------------------------------------------- */
+.search-pri-box {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #aaa;
+
+    .btn-img {
+        position: relative;
+        top: 2px;
+    }
+}
+.input-pri {
+    width: 90%;
+    border: none;
+    font-size: 2.6rem;
+    color: #333;
+    font-weight: bold;
+    padding: 6px;
+}
+
+/*
+ *  Buttons
+ * --------------------------------------------------------- */
+.btn-img {
+    border: none;
+    background: none;
+}
+
+/*
+ *  Navbar search
+ * --------------------------------------------------------- */
+ .header-nav-bar {
+    form {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+ .home .top-search { visibility: hidden }
+
+.top-search {
+    border: 1px solid #D1D1D1;
+    padding: 3px 2px;
+    font-size: 1.4rem;
+    width: 142px;
+
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.top-search:focus {
+    border-color: #aaa;
+    width: 342px;
+}
+
+
