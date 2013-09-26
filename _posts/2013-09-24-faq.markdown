@@ -58,49 +58,61 @@ Cloud 66 is hosted in the cloud and is available as a service. You don't need to
 
 <a id="f3"></a>
 ## How can I use Cloud 66?
+
 [Sign up](/users/sign_up) for an account and start by building your first stack [here is a guide](/help/first_stack). Point your stack to your Git repository and click on the Analyse button. A few seconds later you can configure your app deployment and point your stack to the servers you would like to run your app on. That's it!
 
 <a id="f4"></a>
+
 ## What is a stack?
 A Cloud 66 stack is a application environment. So your stack could consist of one or many individual servers, all working together to serve a particular environment (ie. production).
 Cloud 66 currently supports Ruby on Rails applications (with various database backends) - so your checked in source code should contain all the necessary files required to run a valid Ruby on Rails application.
 
 <a id="f5"></a>
+
 ## Can I use Cloud 66 with my own servers?
 Yes! Cloud 66 configures and deploys your code to your servers in the cloud or your own dedicated data center. All you need is a server (or a cloud account like AWS). Cloud 66 then analyses your code and builds your servers based on what your app needs. It then configures and deploys your Ruby on Rails app to your servers.
 
 <a id="f6"></a>
+
 ## Why do you need my server SSH key?
 Cloud 66 uses remote SSH keys to set up an SSH tunnel to your server and execute remote bash scripts. For additional security we only use remote SSH keys to connect to your server, never username/password access.
 
 <a id="f7"></a>
+
 ## Are their any requirements for the user on my servers?
 Yes. As Cloud 66 will be provisioning services on your servers from scratch, the user provided must have sudoer permissions. Additionally, for compatibility, the sudoer permissions should be passwordless.
 
 <a id="f8"></a>
+
 ## Can I deploy multiple apps on a single server?
 At this point, Cloud 66 only allows a single app per server. This is primarily due to configuration complexities that would be required to host multiple applications (all of which could be very different). That said, Cloud 66 may introduce support for this in the future.
 
 <a id="f9"></a>
+
 ## How can I change my Git repository ?
 You can change your Git repository by using the [Cloud 66 Toolbelt](/help/toolbelt),  <strong>Settings</strong> section.
 
 <a id="f10"></a>
+
 ## Which Clouds are supported?
 Currently we support Amazon Web Services, Rackspace, Digital Ocean, Linode, Joyent and Telefonica Clouds.
 
 <a id="f11"></a>
+
 ## Which distros/versions of Linux are supported?
 Currently we support Ubuntu only. Our officially supported version is 12.04 although there shouldn't be major problems running on other versions.
 
 <a id="f12"></a>
+
 ## How much does it cost?
 $9 per month per every server that is managed by Cloud 66 ($7 per server if you pay annually)
 
 <a id="f13"></a>
+
 ## Can I use it for free?
 Yes! You can deploy your development environment stacks for free!
 
 <a id="f14"></a>
+
 ## Who pays for the physical servers?
 You do. Cloud 66 helps you with configuring and deploying your app to the servers. It can take care of your load balancing, monitoring, backup

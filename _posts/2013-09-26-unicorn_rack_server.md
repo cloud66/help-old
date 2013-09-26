@@ -7,10 +7,6 @@ categories: stack-features
 
 <p class="lead">You can run your Rack apps with Unicorn</p>
 
-<div class="notice">
-		<h3>Important</h3>
-		<p>You need to choose your web server at the time of initial build of the stack. Changes to the web server will not be applied after your stack has initially been analyzed. Passenger is used by default.</p>
-</div>
 
 ## Choosing Unicorn as your Rack server
 To run a Unicorn Rack server, add a line to your Procfile labeled as custom_web. Here is an example:
@@ -19,6 +15,11 @@ To run a Unicorn Rack server, add a line to your Procfile labeled as custom_web.
 custom_web: bundle exec unicorn_rails -c config/unicorn.rb -E $RAILS_ENV -D
 </pre>
 Please take note that Unicorn is running in Daemon mode with the `-D` parameter.
+
+<div class="notice">
+	<h3>Important</h3>
+	<p>You need to choose your web server at the time of initial build of the stack. Changes to the web server will not be applied after your stack has initially been analyzed. Passenger is used by default.</p>
+</div>
 
 Here is an example of a unicorn.rb configuration file that is compatible with Cloud 66 requirements (following the Procfile line above, this should be located under the `config` folder of your Rails app):
 
