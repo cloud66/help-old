@@ -1,0 +1,146 @@
+/* ===========================================================================================
+ *  TYPE
+ * ============================================================================================ */
+
+/*
+ *  Headings
+ * --------------------------------------------------------- */
+.title {
+    margin: 0.25em 0 0 0;
+    font-size: 3rem;
+    font-weight: 200;
+    text-transform: capitalize;
+    word-spacing: 0.05em;
+    color: #3f4957;
+
+    em {
+        font-style: normal;
+        font-weight: 350;
+    }
+}
+
+.cat-title {
+    text-transform: capitalize;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 0.4em;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
+.article-title {
+    color: #3f4957;
+}
+
+h1  { font-size: 2.8rem; } /* =26px */
+h2  { font-size: 2.2rem; }
+h3  { font-size: 2.2rem; }
+
+/*
+ *  Lists
+ * --------------------------------------------------------- */
+ol, ul {
+ margin: 0;
+ padding: 0;
+}
+
+dl, dd {
+  margin:0;
+}
+
+/*
+ *  Articles
+ * --------------------------------------------------------- */
+
+/* inline toc links for articles */
+.page-toc {
+
+    list-style: none;
+    margin-left: 0 !important;
+    padding: 0 0 1em 0 !important;
+    border-bottom: 1px dotted #ddd;
+
+    li {
+        margin: 0.2em !important;
+        list-style: none;
+    }
+    a {
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+
+}
+
+/* base type for articles */
+.article {
+
+    .lead {
+        font-size: 2.6rem !important;
+        line-height: 33px;
+        color: #999;
+        font-weight: 200;
+        padding-bottom: 0.8em;
+        border-bottom: 1px solid #ddd;
+        padding-right: 0 !important;
+    }
+    p {
+        font-size: 1.7rem;
+        padding-right: 1.2em;
+    }
+    ul, ol {
+      margin-bottom: 1.6em;
+    }
+
+    ul {
+        padding: 0 1em;
+    }
+
+    ol {
+         padding: 0 1.2em;
+        li {
+            margin-bottom: 0.8em;
+        }
+    }
+
+    img {
+        display: block;
+        margin: 1.2em 0;
+    }
+
+    em, strong {
+        color: #3F4957;
+    }
+}
+
+.notice {
+    h3 {
+        color: #3F4957;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    p {
+        font-size: 1.4rem;
+        color: #3F4957;
+    }
+}
+
+/*
+ *  Elements
+ * --------------------------------------------------------- */
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+}
+
+/*
+ *  Helper Classes
+ * --------------------------------------------------------- */
+.muted {
+    color: #999;
+}
+.small-print {
+    font-size: 1.4rem !important;
+}

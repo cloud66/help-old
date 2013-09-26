@@ -1,0 +1,66 @@
+/* ===========================================================================================
+ *  NAV
+ * ============================================================================================ */
+nav {
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+.global-nav {
+    display: inline-block;
+    margin-top: 7px;
+    font-size: 1.3rem !important;
+    > a {
+        display: inline-block;
+        line-height: 1;
+        padding: 0 0.66em;
+        border-right: 1px solid #bbb;
+    }
+    :first-child {
+        padding-left: 0;
+    }
+    :only-child,
+    :last-child {
+        border-right: none;
+        padding-right: 0;
+    }
+}
+
+.toc {
+    a {
+        text-decoration: none;
+    }
+}
+
+.crumbs {
+    border-bottom: 1px solid #ddd;
+    padding: 0.2em 0 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    a {
+        position:relative;
+        left: -19px;
+        font-size: 1.5rem;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+.crumbs-bottom {
+    padding-top: 1em;
+    border-top: 1px dotted #ddd;
+    border-bottom: none;
+}
+
+.back-ico {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: url('/images/ico_back.svg');
+    background-size: contain;
+    position: relative;
+    top: 5px;
+}

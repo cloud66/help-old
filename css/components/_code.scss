@@ -1,0 +1,43 @@
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+.article p code,
+.article p kbd {
+  background-color: #F7F7F7 !important;
+  color: #222;
+  font-size: 1.6rem !important;
+  border: none;
+}
+/* standard */
+.article pre {
+  font-size: 1.4rem;
+  color: #fff;
+  border: 1px solid #ddd;
+  background-color: #555;
+  padding: 0 .4em;
+}
+
+.article code {
+  font-size: 1.4rem;
+  color: #fff;
+  border: 1px solid #ddd;
+  background-color: #444;
+  padding: 0 .2em;
+}
+
+.article pre code {
+  border: none;
+}
+
+/* terminal */
+.article pre.terminal {
+  border: 1px solid #000;
+  background-color: #333;
+  color: #FFF;
+}
+
+.article pre.terminal code {
+  background-color: #333;
+}

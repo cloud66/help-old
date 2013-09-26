@@ -1,0 +1,92 @@
+/* ===========================================================================================
+ *  LAYOUT
+ * ============================================================================================ */
+
+/*
+ *  Fixed Top Global Nav bar
+ * --------------------------------------------------------- */
+.header-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0.75em 0;
+  background: $topbarbg;
+  border-bottom: 1px solid #DBDBDB;
+
+  nav {
+    line-height: 1;
+  }
+}
+
+/*
+ *  Centered Container
+ * --------------------------------------------------------- */
+.container {
+  margin: 0 auto;
+  max-width: $maxwidth;
+}
+
+/*
+ *  Top margin to account for fixed position nav bar
+ * --------------------------------------------------------- */
+[role="banner"],
+.crumbs {
+  margin-top: 4.6em;
+}
+
+/*
+ *  Logo
+ * --------------------------------------------------------- */
+.logo {
+  width: 60px;
+}
+.logo-sml {
+  position: relative;
+  top: -14px;
+  right: 3px;
+}
+
+/*
+ *  Home Primary Search
+ * --------------------------------------------------------- */
+.search-pri {
+  margin-top: $gutter;
+  background: #FCFCFC;
+  padding: 2em 0;
+  border-top: 1px solid #E8E8E8;
+  border-bottom: 1px solid #E8E8E8;
+  text-align: center;
+}
+
+.article,
+.article-toc {
+    margin-bottom: 2.2em;
+}
+
+/*
+ *  Footer
+ * --------------------------------------------------------- */
+[role="contentinfo"] {
+  padding: 1em 0;
+  border-top: 1px solid #DBDBDB;
+}
+
+/*
+ *  Modules
+ * --------------------------------------------------------- */
+.notice {
+  border-top: 1px solid #e2eaee;
+  border-bottom: 1px solid #e2eaee;
+  background: rgba( 248, 251, 252, 1 );
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: -1em;
+  margin-right: -1em;
+
+  p:nth-child(2) {
+    margin-top: -0.4em;
+  }
+
+}
