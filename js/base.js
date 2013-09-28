@@ -69,6 +69,10 @@ CB.help = ( function( $, window, document ) {
     };
 
     var postSeach = function( form ) {
+        var searchTerm = $( form ).serialize();
+        var searchUrl = '/help/search.json?'+searchTerm;
+        history.pushState(null, null, searchUrl);
+
         $.ajax({
             url:  config.searchAction,
             type: form.method,
@@ -80,7 +84,7 @@ CB.help = ( function( $, window, document ) {
     };
 
     var renderSearchResults = function( response ) {
-        console.log( response.length );
+
         if ( !response.results.length ) {
             return;
         }
