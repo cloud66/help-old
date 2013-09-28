@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ut of memory errors during deployment"
+title:  "Out of memory errors during deployment"
 date:   2013-09-26 15:33:13
 categories: how-to
 ---

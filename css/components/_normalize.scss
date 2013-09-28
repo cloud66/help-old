@@ -422,3 +422,15 @@ table {
 .hidden { display: none; }
 .pull-right { float: right !important; }
 .pull-left  { float: left !important; }
+
+/* ==========================================================================
+   Misc
+   ========================================================================== */
+::-moz-placeholder {
+   font-style: italic;
+   font-weight: 200;
+}
+::-webkit-input-placeholder {
+   font-style: italic;
+   font-weight: 200;
+}

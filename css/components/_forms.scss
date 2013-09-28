@@ -16,15 +16,6 @@
     appearance: textfield;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-   font-style: italic;
-   font-weight: 200;
-}
-::-webkit-input-placeholder {
-   font-style: italic;
-   font-weight: 200;
-}
-
 
 /*
  *  Big Inputs!!
@@ -46,6 +37,9 @@
     color: #333;
     font-weight: bold;
     padding: 6px;
+}
+.input-pri:focus {
+    outline: none;
 }
 
 /*
