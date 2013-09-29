@@ -126,12 +126,18 @@ dl, dd {
 }
 
 .search-results {
+    padding-left: 0 !important;
     list-style: none;
+
     h2 {
-        margin-bottom: none;
+        line-height: 1;
     }
     li {
-        margin-bottom: 1em;
+        border-bottom: 1px dotted #ddd;
+        margin-bottom: 1.3em;
+    }
+    li:last-child, li:only-child {
+        border: none;
     }
 }
 
@@ -153,4 +159,8 @@ hr {
 }
 .small-print {
     font-size: 1.4rem !important;
+}
+.error {
+    background: #F9F2F4;
+    color: #B94A48 !important;
 }

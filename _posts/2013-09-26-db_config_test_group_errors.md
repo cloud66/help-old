@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "rrors due to different group configs in database.yml"
+title:  "Errors due to different group configs in database.yml"
 date:   2013-09-26 15:33:13
 categories: how-to
 ---
@@ -19,6 +19,6 @@ And it also contains a "test" group with:
 <pre class="terminal-commands">adapter: mysql2</pre>
 
 This will result in the following slightly obtuse error during your code deployment:
-<div class="msg-error rails-error-region">
+<div class="error">
 uninitialized constant Mysql2
 </div>
