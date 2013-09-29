@@ -13,7 +13,7 @@ You can use Procfiles to ensure your background jobs always run and are monitore
 
 ## Procfile example
 A typical Procfile may look something like this:
-<pre class="terminal-commands">
+<pre class="terminal">
 worker: rake resque:work QUEUE=*
 scheduler: rake resque:scheduler
 </pre>

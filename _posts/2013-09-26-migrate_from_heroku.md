@@ -32,7 +32,7 @@ Take note of these database settings from your [Heroku database dashboard](https
 - &lt;db_password&gt;
 
 Modify your <code>config/database.yml</code> by adding those settings for your environment:
-<pre class="terminal-commands">
+<pre class="terminal">
     development:
         adapter: postgresql
         database: &lt;db_name&gt;

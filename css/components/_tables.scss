@@ -3,12 +3,17 @@
    ========================================================================== */
 
 .table {
+    width: 100%;
     margin: 1.2em 0;
     border-top: 1px solid #ccc;
 
     thead {
         border-bottom: 1px solid #ccc;
         background: #FCFCFC;
+
+        th {
+            text-align: left;
+        }
     }
 
     th, td {

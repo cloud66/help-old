@@ -2,7 +2,7 @@
 layout: post
 title:  "Custom Web Servers"
 date:   2013-09-24 10:51:22
-categories: stack-features
+categories: web-server
 ---
 
 <p class="lead">You can run your Rack apps with Passenger, Puma, Unicorn or Thin</p>

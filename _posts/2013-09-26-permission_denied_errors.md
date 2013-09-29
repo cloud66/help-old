@@ -31,7 +31,7 @@ The best bet is to go through the gems available documentation to see if an alte
 You can use a deploy hook to execute a script after each deployment that will open up the permissions you require.
 
 Add a bash script to your stack that will perform the permission modification. For example create the file */.cloud66/files/open_folder_permissions.sh* as below:
-<pre class="terminal-commands">
+<pre class="terminal">
 &#35;!/bin/bash
 &#35;load environment variables
 source /var/.cloud66_env
@@ -40,7 +40,7 @@ sudo chmod 0775 -R $RAILS_STACK_PATH/*your_path_here*
 </pre>
 
 Then, add a deploy_hook to execute the above script on each deploy. For example create the file *.cloud66/deploy_hooks.yml* as below:
-<pre class="terminal-commands">
+<pre class="terminal">
 production:
   after_rails:
     - source: /.cloud66/files/open_folder_permissions.sh

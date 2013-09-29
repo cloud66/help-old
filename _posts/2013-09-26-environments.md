@@ -16,7 +16,7 @@ categories: stack-features
 Many developers use environment variables to store database username and passwords and use environment variables in database configuration files instead of hard coding credentials.
 This best practice is supported by Cloud 66 and there is no need to change anything to get it to work.
 
-<pre class="terminal-commands">
+<pre class="terminal">
 production:
   adapter: mysql2
   host: db.prod.myapp.com

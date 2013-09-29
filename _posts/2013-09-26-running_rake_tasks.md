@@ -21,7 +21,7 @@ Please read more about this [rake task add-on](/help/rake_task) in the documenta
 You can use [deployment hooks](/help/deploy_hooks) to execute your rake task at any point of your deployment.
 
 Simply add a bash script to your stack that contains the rake task: for example, create the file */.cloud66/scripts/rake_task.sh* as below:
-<pre class="terminal-commands">
+<pre class="terminal">
 &#35;!/bin/bash
 &#35; access your Rails stack path
 cd $RAILS_STACK_PATH
@@ -30,7 +30,7 @@ bundle exec rake your:task
 </pre>
 
 Then, add a deploy_hook to execute the above script on each deploy: create the file *.cloud66/deploy_hooks.yml* as below:
-<pre class="terminal-commands">
+<pre class="terminal">
 production:
   after_rails:
     - source: /.cloud66/scripts/rake_task.sh
@@ -45,7 +45,7 @@ production:
 ## Manually
 This is done by starting a [terminal connection to your server](/help/shell_to_your_servers) and executing your rake task.
 
-<pre class="terminal-commands">
+<pre class="terminal">
 &#35; Access your Rails stack path
 cd $RAILS_STACK_PATH
 &#35; Run your rake task

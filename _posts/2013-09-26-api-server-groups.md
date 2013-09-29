@@ -39,13 +39,13 @@ Each item in the array contains the following attributes:
 </table>
 
 #### Error
-<pre class="terminal-commands">
+<pre class="terminal">
 bad_request - no stack UID provided
 not_found - invalid stack UID provided
 </pre>
 
 #### Example
-<pre class="terminal-commands">
+<pre class="terminal">
 {[
 	"id" : 564,
 	"name" : "Rails Servers",
@@ -88,7 +88,7 @@ JSON object of the server group:
 </table>
 
 #### Example
-<pre class="terminal-commands">
+<pre class="terminal">
 {
 	"id" : 564,
 	"name" : "Rails Servers",
@@ -101,7 +101,7 @@ JSON object of the server group:
 </pre>
 
 #### Error
-<pre class="terminal-commands">
+<pre class="terminal">
 bad_request - no stack UID provided
 not_found - invalid stack UID provided
 </pre>

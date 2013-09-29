@@ -2,7 +2,7 @@
 layout: post
 title:  "Unicorn Rack Server"
 date:   2013-09-24 10:51:22
-categories: stack-features
+categories: web-server
 ---
 
 <p class="lead">You can run your Rack apps with Unicorn</p>
@@ -11,7 +11,7 @@ categories: stack-features
 ## Choosing Unicorn as your Rack server
 To run a Unicorn Rack server, add a line to your Procfile labeled as custom_web. Here is an example:
 
-<pre class='terminal-commands'>
+<pre class='terminal'>
 custom_web: bundle exec unicorn_rails -c config/unicorn.rb -E $RAILS_ENV -D
 </pre>
 Please take note that Unicorn is running in Daemon mode with the `-D` parameter.

@@ -58,8 +58,8 @@ However, by default the following packages are usually installed:
 
 For a more complete list of packages that are installed on your system you can do the following.
 <ol>
-<li>List of installed packages: <pre class="terminal-commands">dpkg --get-selections</pre></li>
-<li>File installation locations of a given pacakge: <pre class="terminal-commands">dpkg -L wget</pre></li>
+<li>List of installed packages: <pre class="terminal">dpkg --get-selections</pre></li>
+<li>File installation locations of a given pacakge: <pre class="terminal">dpkg -L wget</pre></li>
 </ol>
 
 

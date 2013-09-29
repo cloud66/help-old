@@ -112,7 +112,7 @@ By default, the response will take the following form:
 
 You can also receive the content in different formats depending on the Accept header:
 
-<pre class="terminal-commands">
+<pre class="terminal">
 Accept: application/json
 {"access_token":"e72e16c7e42f292c6912e7710c838347ae178b4a","token_type":"bearer"}
 
@@ -131,7 +131,7 @@ The access token allows you to make requests to the API on a behalf of a user.
 ### Redirect URLs
 The redirect_uri parameter is optional. If left out, Cloud 66 will redirect users to the callback URL configured in the OAuth Application settings. If provided, the redirect URL must match the callback URL’s host.
 
-<pre class="terminal-commands">
+<pre class="terminal">
 CALLBACK: http://example.com
 
 GOOD: https://example.com

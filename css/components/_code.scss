@@ -17,6 +17,10 @@
   border: 1px solid #ddd;
   background-color: #555;
   padding: 0 .4em;
+
+  em {
+    color: #fff;
+  }
 }
 
 .article code {
@@ -36,6 +40,7 @@
   border: 1px solid #000;
   background-color: #333;
   color: #FFF;
+  padding: 1em 0;
 }
 
 .article pre.terminal code {

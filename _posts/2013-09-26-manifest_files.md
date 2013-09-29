@@ -11,7 +11,7 @@ categories: stack-features
 ## File Location/Format
 
 In order for your manifest file to be picked up, you need a file called **manifest.yml** to be present within a folder named **.cloud66** that is in turn located in the root of your source code, and checked into your repository.
-<pre class="terminal-commands">
+<pre class="terminal">
 [source_repo]/.cloud66/manifest.yml
 </pre>
 
@@ -35,7 +35,7 @@ You can always check the validity of your YAML file with a command line this:
 </div>
 
 Sample **manifest.yml** contents could look like the following:
-<pre class="terminal-commands">
+<pre class="terminal">
 development:
     rails:
         server:
@@ -53,7 +53,7 @@ The sample above specifies that a single server called **frontend** will be crea
 That single server will also host your database locally.
 
 Using the manifest file also allows some features to be defined which are not currently available through the Cloud 66 UI. Some examples would be:
-<pre class="terminal-commands">
+<pre class="terminal">
 production:
     rails:
         server:
@@ -112,7 +112,7 @@ Configuration section contains an application type's specific configuration item
 Every application defined in the manifest file must be bound to a server. Servers can be deployed specifically to host that application, be shared between multiple applications (like running Rails and MySQL on the same server) or be an external server (like when you want to use an external PostgreSQL database)
 
 Here is an example of a server definition:
-<pre class="terminal-commands">
+<pre class="terminal">
 ... server:
         unique_name: frontend
 </pre>

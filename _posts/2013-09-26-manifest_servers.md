@@ -71,7 +71,7 @@ Name of the SSH key used to access the server. You can add this SSH key via Clou
 
 This example, installs `chrony` apt package on the server before deploying the application.
 
-<pre class="terminal-commands">
+<pre class="terminal">
 ... server:
         unique_name: frontend
         extra_packages:
@@ -81,7 +81,7 @@ This example, installs `chrony` apt package on the server before deploying the a
 ### Example: Bring Your Own Cloud
 
 For BYOC (*Bring-Your-Own-Cloud*) servers, vendor, size and region can be defined:
-<pre class="terminal-commands">
+<pre class="terminal">
 ... server:
         unique_name: frontend
         type: BYOC
@@ -100,7 +100,7 @@ For BYOC (*Bring-Your-Own-Cloud*) servers, vendor, size and region can be define
 ### Example: Bring Your Own Server
 
 For BYOS (*Bring-Your-Own-Server*) servers, address, username and ssh_key_name can be defined:
-<pre class="terminal-commands">
+<pre class="terminal">
 ... server:
         unique_name: frontend
         type: BYOS
@@ -121,7 +121,7 @@ You can share a server between two applications. This could be in cases like usi
 
 Each shared server definition specifies the name of another server definition in the manifest file for which the applications will then share the physical server:
 
-<pre class="terminal-commands">
+<pre class="terminal">
 ... shared_server: *another_existing_servers_unique_name*
 </pre>
 
@@ -131,6 +131,6 @@ If you would like to use an external server for an application (like using your 
 
 External server definitions specify that the application is hosted on a server external to Cloud 66. This is not a valid target for your main application (ie. Rails) but may be appropriate for another application type (ie. MongoDB):
 
-<pre class="terminal-commands">
+<pre class="terminal">
 ... server: external
 </pre>

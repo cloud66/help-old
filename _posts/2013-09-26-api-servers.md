@@ -129,7 +129,7 @@ public
 Returns the vital signs history of a server. This is an array of CPU utilization and free disk and memory gathered from the server.
 ### Results
 JSON object containing 3 arrays one for each vital sign.
-<pre class="terminal-commands">
+<pre class="terminal">
 {
 	'Disk' : disk,
 	'Memory' : memory,
@@ -139,7 +139,7 @@ JSON object containing 3 arrays one for each vital sign.
 
 Each array is as follows:
 
-<pre class="terminal-commands">
+<pre class="terminal">
 [{
 	"ts" : UTC_date_time,
 	"p" : data_point_value (utilized percentage)
@@ -158,7 +158,7 @@ public
 Returns the current vital signs of a server.
 ### Results
 JSON object containing 3 arrays one for each vital sign.
-<pre class="terminal-commands">
+<pre class="terminal">
 {
 	'Disk' : disk,
 	'Memory' : memory,
@@ -168,7 +168,7 @@ JSON object containing 3 arrays one for each vital sign.
 
 Each item is as follows:
 
-<pre class="terminal-commands">
+<pre class="terminal">
 {
 	"ts" : UTC_date_time,
 	"p" : data_point_value (utilized percentage)

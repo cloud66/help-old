@@ -54,7 +54,7 @@ This will be hidden if you have enabled/disabled asset pipeline compilation in y
 
 Asset Pipeline precompilation will be disabled if <code>config.assets.enabled</code> variable is assigned to *false* in your <code>application.rb</code> file:
 
-<pre class="terminal-commands">
+<pre class="terminal">
     config.assets.enabled = false
 </pre>
 
@@ -69,7 +69,7 @@ Asset Pipeline precompilation will be disabled if <code>config.assets.enabled</c
 
 Use our [Cloud 66 manifest file](/help/manifest_files) to enable/disable asset pipeline precompilation using the following parameter with a true or false, find <td>an example</td> below:
 
-<pre class="terminal-commands">
+<pre class="terminal">
     development:
     rails:
     configuration:

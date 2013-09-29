@@ -76,7 +76,7 @@ apt-get install stunnel
 
 -	Then, configure the <code>/etc/haproxy/haproxy.cfg</code>  file, find below an example:
 
-<pre class="terminal-commands">
+<pre class="terminal">
 global
     maxconn     4096
     user        haproxy
@@ -123,7 +123,7 @@ listen webcluster_ssl *:8081
 Make sure that you wrote your own load balanced servers IP instead of <code>XX.XX.XX.XX:80</code>.
 
 -	Now,  add your SSL certificate key (.pem file) on the load balancer,  you certificate should look like the following example:
-<pre class="terminal-commands">
+<pre class="terminal">
 -----BEGIN RSA PRIVATE KEY-----
 &lt;encoded string>
 -----END RSA PRIVATE KEY-----
@@ -134,7 +134,7 @@ Make sure that you wrote your own load balanced servers IP instead of <code>XX.X
 
 -	Then, create and configure a <code>stunnel.conf</code> file, find below an example:
 
-<pre class="terminal-commands">
+<pre class="terminal">
 sslVersion = all
 options = NO_SSLv2
 cert= &lt;path to SSL certificate key file&gt;
@@ -153,6 +153,6 @@ TIMEOUTclose = 0
 
 - After that, you can run stunnel with the <code>stunnel.conf</code> file:
 
-<pre class="terminal-commands">
+<pre class="terminal">
 stunnel4 &lt;path to stunnel.conf file&gt;
 </pre>

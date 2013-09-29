@@ -13,10 +13,10 @@ Errors can occur during deployments due to there being different adapters define
 Your error will differ depending on the adapters you've chosen.
 
 For example, if your database.yml file's "development" group contains:
-<pre class="terminal-commands">adapter: postgresql</pre>
+<pre class="terminal">adapter: postgresql</pre>
 
 And it also contains a "test" group with:
-<pre class="terminal-commands">adapter: mysql2</pre>
+<pre class="terminal">adapter: mysql2</pre>
 
 This will result in the following slightly obtuse error during your code deployment:
 <div class="error">

@@ -2,7 +2,7 @@
 layout: post
 title:  "Customizing Nginx Configurations"
 date:   2013-09-26 15:33:13
-categories: how-to
+categories: web-server
 ---
 
 
