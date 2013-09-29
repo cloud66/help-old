@@ -2,7 +2,7 @@
 -------------------------------------------------------------------------------- */
 body.loading {
     .is-loading {
-        opacity: 1 !important;
+        visibility: normal;
     }
     .article-toc, .article {
         opacity: 0.3;
@@ -10,7 +10,7 @@ body.loading {
 }
 
 .is-loading   {
-    opacity: 0;
+    visibility: hidden;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -18,8 +18,7 @@ body.loading {
     width: 30px;
     height: 30px;
     background-size: contain;
-    opacity: .8;
-    transition: opacity 0.4s linear;
+
     @include animation( rotate 1.5s infinite steps(12) );
 }
 

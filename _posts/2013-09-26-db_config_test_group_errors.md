@@ -2,7 +2,7 @@
 layout: post
 title:  "Errors due to different group configs in database.yml"
 date:   2013-09-26 15:33:13
-categories: how-to
+categories: Troubleshooting
 ---
 
 <p class="lead">Errors can occur if your specified adapter is different between your "development" and "test" groups</p>

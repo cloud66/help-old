@@ -2,7 +2,7 @@
 layout: post
 title:  "Whenever Cron Errors"
 date:   2013-09-26 15:33:13
-categories: how-to
+categories: Troubleshooting
 ---
 
 <p class="lead">'Whenever' schedules that define certain path-specific actions may have errors in your cron output similar to: '/bin/bash: bundle: command not found'</p>

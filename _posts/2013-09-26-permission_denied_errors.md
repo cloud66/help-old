@@ -2,7 +2,7 @@
 layout: post
 title:  "Permission errors during deployment"
 date:   2013-09-26 15:33:13
-categories: how-to
+categories: Troubleshooting
 ---
 
 <p class="lead">If your application needs to write back to your webserver (and it isn't to a <i>tmp</i> folder) then you will have permission errors. You can use deploy hooks to get around these.</p>

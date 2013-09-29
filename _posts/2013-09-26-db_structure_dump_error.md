@@ -2,7 +2,7 @@
 layout: post
 title:  "Errors during deployment around database dumping"
 date:   2013-09-26 15:33:13
-categories: how-to
+categories: Troubleshooting
 ---
 
 <p class="lead">"Unable to perform database dump" errors can occur during deployment if your database is on a standalone or external server AND your db schema is sql based (structure.sql) due to db dump tools missing on the webserver</p>
