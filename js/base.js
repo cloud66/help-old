@@ -1,7 +1,16 @@
+var CB = window.CB || {};
+
+Handlebars.c66 = window.Handlebars.c66 || {};
+
+Handlebars.c66.config = {
+    tmplPath:      '/js/tmpl/',
+    tmplExtention: '.handlebars'
+};
+
 Handlebars.getTemplate = function(name) {
-    if (Handlebars.templates === undefined || Handlebars.templates[name] === undefined) {
+    if ( Handlebars.templates === undefined || Handlebars.templates[name] === undefined ) {
         $.ajax({
-            url : '/js/tmpl/' + name + '.handlebars',
+            url : Handlebars.c66.config.tmplPath + name + Handlebars.c66.config.tmplExtention,
             datatype: 'text/javascript',
             success : function(response, status, jqXHR) {
                 if (Handlebars.templates === undefined) {
@@ -17,9 +26,6 @@ Handlebars.getTemplate = function(name) {
 };
 
 
-
-var CB = window.CB || {};
-
 CB.help = ( function( $, window, document ) {
 
     "use strict";
@@ -27,13 +33,58 @@ CB.help = ( function( $, window, document ) {
     /*global alert $ document window*/
 
     var $el = {
-        homeSearchInput :  $('#q'),
-        globalSearchInput : $('#q-top')
+        homeSearchInput :     $('#q'),
+        globalSearchInput :   $('#q-top'),
+        autoCompleteFields :  $('input.js-typeahead'),
+        searchForm :          $('form.js-search-form')
     };
 
     var config = {
         typeaheadAction: 'http://localhost:3000/help/autocomplete?query=',
         searchAction:    'http://localhost:3000/help/search.json',
+        home:            'http://localhost:4000/'
+    };
+
+    var init = function() {
+        bindEvents();
+
+        if ( $('body').hasClass('home') ) {
+            homeSearch();
+        }
+    };
+
+    var bindEvents = function() {
+
+        $el.autoCompleteFields.typeahead( typeAhead );
+
+        $el.searchForm.submit(function() {
+            var form = this;
+            postSeach( form );
+            return false;
+        });
+
+        $(document.body).on('click', 'nav.crumbs a', function(){
+            window.history.back();
+        });
+
+        /*
+        * Necessary hack because WebKit fires a popstate event on document load
+        * https://code.google.com/p/chromium/issues/detail?id=63040
+        * https://bugs.webkit.org/process_bug.cgi
+        */
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            window.addEventListener('popstate', function() {
+                console.log('popstate fired - do some navigation');
+                // goHome();
+            });
+          }, 0);
+        });
+
+    };
+
+    var goHome = function() {
+        window.location.href = config.home;
     };
 
     var typeAhead = {
@@ -52,22 +103,6 @@ CB.help = ( function( $, window, document ) {
         }
     };
 
-    var init = function() {
-        bindEvents();
-        if ( $el.homeSearchInput.length ) {
-            homeSearch();
-        }
-    };
-
-    var bindEvents = function() {
-        $el.homeSearchInput.typeahead( typeAhead );
-        $('#js-home-search').submit(function() {
-            var form = this;
-            postSeach( form );
-            return false;
-        });
-    };
-
     var postSeach = function( form ) {
         var searchTerm = $( form ).serialize();
         var searchUrl = '/help/search.json?'+searchTerm;
@@ -76,7 +111,13 @@ CB.help = ( function( $, window, document ) {
         $.ajax({
             url:  config.searchAction,
             type: form.method,
-            data: $( form ).serialize(),
+            data: searchTerm,
+            beforeSend: function () {
+                $('body').addClass('loading');
+            },
+            complete: function () {
+                $('body').removeClass('loading');
+            },
             success: function( data ) {
                renderSearchResults( data );
             }
@@ -84,7 +125,7 @@ CB.help = ( function( $, window, document ) {
     };
 
     var renderSearchResults = function( response ) {
-
+        console.log( response.results );
         if ( !response.results.length ) {
             return;
         }
@@ -92,12 +133,16 @@ CB.help = ( function( $, window, document ) {
         var compiledTemplate   = Handlebars.getTemplate('searchResults');
         var searchResultsHtml  = compiledTemplate( response );
 
-        console.log( searchResultsHtml );
-        $('#js-primary-content').html( searchResultsHtml );
+        if ( $('#js-primary-content').length ) {
+            $('#js-primary-content').html( searchResultsHtml );
+        } else {
+            $('article.article').html( searchResultsHtml );
+        }
+
     };
 
     var homeSearch = function() {
-        console.log('homeSearch');
+
         $el.homeSearchInput.appear();
 
         $(document.body).on('appear', '#q', function(e) {

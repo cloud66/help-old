@@ -11,7 +11,7 @@
   left: 0;
   right: 0;
   z-index: 2;
-  padding: 0.75em 0;
+  padding: 0.6em 0;
   background: $topbarbg;
   border-bottom: 1px solid #DBDBDB;
 
@@ -88,6 +88,12 @@
   p:nth-child(2) {
     margin-top: -0.4em;
   }
+}
 
+.notice.notice-danger {
+  color: #BC9DD1;
+  background: #FCF2F2 !important;
+  border-top: 1px solid #DFB5B4;
+  border-bottom: 1px solid #DFB5B4;
 }
 

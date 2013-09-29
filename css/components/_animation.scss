@@ -1,14 +1,26 @@
 /* SVG spinner
 -------------------------------------------------------------------------------- */
-.spinner-svg   {
-    background: transparent asset-url('/images/spinner.svg', image);
-    width: 16px;
-    height: 16px;
-    background-size: contain;
-    position: relative;
-    opacity: .8;
+body.loading {
+    .is-loading {
+        opacity: 1 !important;
+    }
+    .article-toc, .article {
+        opacity: 0.3;
+    }
+}
 
-    // @include animation( rotate 1.5s infinite steps(12) );
+.is-loading   {
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: transparent url('/images/spinner.svg') no-repeat;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    opacity: .8;
+    transition: opacity 0.4s linear;
+    @include animation( rotate 1.5s infinite steps(12) );
 }
 
 
