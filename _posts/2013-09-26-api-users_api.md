@@ -66,7 +66,7 @@ All parameters are required.
 </table>
 
 #### Error
-<pre class="terminal-commands">
+<pre class="terminal">
 bad_request - missing parameters
 invalid_resource - invalid device parameters
 conflict - device exists with the same token
@@ -96,7 +96,7 @@ Removes a device from the user account
 </table>
 
 #### Error
-<pre class="terminal-commands">
+<pre class="terminal">
 bad_request - missing parameters
 not_found - device not found
 </pre>

@@ -31,7 +31,7 @@ A solution to deploy a multi-db stack with Cloud 66 would be to pass the initial
 
 **Secondly:** add a [deploy hook](/help/deploy_hooks) script that will install your required auxillary database(s) if required. If you are looking to make use of a database that is hosted externally then you don't need to do this part.
 An example deploy hook could look something like:
-<pre class="terminal-commands">
+<pre class="terminal">
 production:
     first_thing:
       - source: /.cloud66/files/my_db_install_script.sh

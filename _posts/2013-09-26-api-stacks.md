@@ -46,7 +46,7 @@ Each item in the array contains the following attributes:
 	</tbody>
 </table>
 #### Example
-<pre class="terminal-commands">
+<pre class="terminal">
 {[
 	"uid" : "46ae3ee56f94ff4b2be8c887f8a6d343",
 	"name" : "My Awesome Stack",
@@ -104,7 +104,7 @@ JSON object of the stack:
 	</tbody>
 </table>
 #### Example
-<pre class="terminal-commands">
+<pre class="terminal">
 {
 	"uid" : "46ae3ee56f94ff4b2be8c887f8a6d343",
 	"name" : "My Awesome Stack",
@@ -125,7 +125,7 @@ JSON object of the stack:
 </pre>
 
 #### Error
-<pre class="terminal-commands">
+<pre class="terminal">
 bad_request - no stack UID provided
 not_found - invalid stack UID provided
 </pre>
@@ -141,12 +141,12 @@ redeploy
 Starts the redeployment of a stack on user's behalf
 ### Results
 #### Success
-<pre class="terminal-commands">
+<pre class="terminal">
 { "ok" : true,  "message" : "Stack queued for redeployment" }
 </pre>
 
 #### Error
-<pre class="terminal-commands">
+<pre class="terminal">
 bad_request - no stack UID provided
 not_found - invalid stack UID provided
 </pre>

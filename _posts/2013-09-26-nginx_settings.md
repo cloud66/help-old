@@ -2,7 +2,7 @@
 layout: post
 title:  "Nginx Configuration of Your Stack"
 date:   2013-09-24 10:51:22
-categories: stack-features
+categories: web-server
 ---
 
 <p class="lead">Nginx is configured automatically for your stack. Here is some details about it</p>

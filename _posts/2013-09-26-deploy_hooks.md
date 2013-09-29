@@ -16,7 +16,7 @@ categories: stack-features
 ## File Location/Format
 
 In order for your deployment hooks to be picked up, you need a file called **deploy_hooks.yml** to be present within a folder named **.cloud66** that is in turn located in the root of your source code, and checked into your repository.
-<pre class="terminal-commands">
+<pre class="terminal">
 repo::/.cloud66/deploy_hooks.yml
 </pre>
 
@@ -27,7 +27,7 @@ As the extension suggests, the deploy_hooks.yml file is **YAML** formatted. And 
 ### **Copy file to destination**
 
 A sample **deploy_hooks.yml** file could look like the following:
-<pre class="terminal-commands">
+<pre class="terminal">
 development:
     first_thing:
       - source: /.cloud66/files/abc.def
@@ -42,7 +42,7 @@ Because of the scoped **development**, the above deployment hook action will onl
 The above is useful if you want a content file on the target server, or if you want to replace a configuration file for instance. But what if you want to execute a custom script on the server?
 
 For that, see the following **deploy_hooks.yml** file:
-<pre class="terminal-commands">
+<pre class="terminal">
 production:
     last_thing:
       - source: /.cloud66/my_executable_script.sh
@@ -56,7 +56,7 @@ The above example will only apply to stacks in **production** environments. At t
 
 ### **Multiple deployment hooks**
 Lastly, multiple deployment hooks can be defined within the same file:
-<pre class="terminal-commands">
+<pre class="terminal">
 production:
     first_thing:
       - source: /.cloud66/files/my_config.conf

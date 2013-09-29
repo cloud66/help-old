@@ -2,7 +2,7 @@
 layout: post
 title:  "Puma Rack Server"
 date:   2013-09-24 10:51:22
-categories: stack-features
+categories: web-server
 ---
 
 
@@ -16,7 +16,7 @@ categories: stack-features
 ## Choosing Puma as your Rack server
 To run a Puma Rack server, add a line to your Procfile labeled as custom_web. Here is an example:
 
-<pre class='terminal-commands'>
+<pre class='terminal'>
 custom_web: bundle exec puma -e $RACK_ENV -b unix:///tmp/web_server.sock --pidfile /tmp/web_server.pid -d
 </pre>
 Please take note that Puma is running in Daemon mode with the `-d` parameter.

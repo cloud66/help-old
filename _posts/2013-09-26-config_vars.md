@@ -32,7 +32,7 @@ Environment Variables that are entered or uploaded are not escaped. However they
 You can enter environment variables as a batch using the Upload functionality.
 
 This is available from the Environment Variables option on the Stack dropdown menu. Your file should be in the following format:
-<pre class="terminal-commands">
+<pre class="terminal">
 	KEY_1=value_1
 	KEY_2=value_2
 </pre>

@@ -2,7 +2,7 @@
 layout: post
 title:  "Thin Rack Server"
 date:   2013-09-24 10:51:22
-categories: stack-features
+categories: web-server
 ---
 
 <p class="lead">You can run your Rack apps with Thin</p>
@@ -15,7 +15,7 @@ categories: stack-features
 ## Choosing Thin as your Rack server
 To run a Thin Rack server, add a line to your Procfile labeled as custom_web. Here is an example:
 
-<pre class='terminal-commands'>
+<pre class='terminal'>
 custom_web: bundle exec thin start --socket /tmp/web_server.sock --pid /tmp/web_server.pid -e $RACK_ENV -d
 </pre>
 Please take note that Thin is running in Daemon mode with the `-d` parameter.

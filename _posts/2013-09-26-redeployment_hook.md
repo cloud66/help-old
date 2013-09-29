@@ -51,6 +51,6 @@ categories: stack-features
 
 ## Using Redeployment Hook Manually
 To use the redeployment hook, you would need to POST an HTTP request to your redeployment hook URL. You can do this in curl like this:
-<pre class="terminal-commands">
+<pre class="terminal">
   curl -X POST -d "" [your redeployment hook URL]
 </pre>

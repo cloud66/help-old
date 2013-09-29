@@ -27,7 +27,7 @@ Remove 'therubyracer' from your Gemfile and [Cloud 66 will automatically install
 
 The following is the unfriendly libv8 installation error you may be presented with:
 
-<pre class="terminal-commands">
+<pre class="terminal">
 Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
 
 /usr/local/bin/ruby extconf.rb
