@@ -16,23 +16,23 @@ You have the option of having Cloud 66 manage servers under your cloud provider 
 
 See the following for appropriate details:
 
-- [Deploying to your cloud provider](/help/cloud_providers)
-- [Deploying to your standalone servers](/help/standalone_servers)
+- [Deploying to your cloud provider](/cloud-providers/supported-cloud-providers.html)
+- [Deploying to your standalone servers](/stacks/standalone-servers.html)
 
 ## Operating System
-- [Operating System Information](/help/operating_system)
-- [Server Monitoring Information](/help/server_monitoring)
+- [Operating System Information](/stacks/operating-system-information.html)
+- [Server Monitoring Information](/stacks/server-monitoring.html)
 
 ## Database Servers
-- [Database Server Information](/help/databases)
-- [Redis Server Information](/help/database_redis)
+- [Database Server Information](/stacks/databases.html)
+- [Redis Server Information](/stacks/database-redis.html)
 
 ## Background Workers
 Every server configured and deployed with Cloud 66 runs Bluepill, an open source and reliable daemon that ensures your background processes are always up and running.
 
 With Simple Scale you can scale your processes up and down with a simple click.
 
-Cloud 66 also [supports Procfiles](/help/proc_files) to make it easier to define background processes you would like to run.
+Cloud 66 also [supports Procfiles](/stack-features/proc-files.html) to make it easier to define background processes you would like to run.
 
 ## Web Servers
 Your Ruby on Rails apps are served with Nginx and Phusion Passenger.
