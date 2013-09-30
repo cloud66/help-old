@@ -1,0 +1,177 @@
+---
+layout: post
+title:  "Servers API"
+date:   2013-09-24 10:51:22
+categories: API
+---
+
+<p class="lead">List Servers, their status and vital signs through the API</p>
+
+## Listing Servers
+#### Endpoint
+<p><kbd>/stacks/[stack_uid]/server_groups/[svg_id]/servers.json</kbd></p>
+#### Method
+GET
+#### Required Scope
+public
+#### Description
+Lists all the servers in a server group.
+### Results
+JSON array of all server groups belonging to the given stack.
+Each item in the array contains the following attributes:
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Attribute</th>
+			<th>Value</th>
+			<th>Comments</th>
+		</tr>
+  </thead>
+	<tbody>
+		<tr><td>uid</td><td>Server uid</td><td></td></tr>
+		<tr><td>vendor_uid</td><td>Unique id used by the cloud vendor</td><td>BYOC only</td></tr>
+		<tr><td>name</td><td>Server name</td><td></td></tr>
+		<tr><td>address</td><td>Server address</td><td>This is the original server address given by the cloud vendor</td></tr>
+		<tr><td>distro</td><td>Linux distro</td><td>Only ubuntu for now</td></tr>
+		<tr><td>distro_version</td><td>Linux distro version</td><td>Only 12.04 for now</td></tr>
+		<tr><td>dns_record</td><td>Server DNS record</td><td>Full c66.me dns record address</td></tr>
+		<tr><td>user_name</td><td>User name</td><td></td></tr>
+		<tr><td>server_type</td><td>Server Type</td><td>BYOS or "Cloud (vendor name)"</td></tr>
+		<tr><td>params</td><td>Extra server parameters</td><td>See below</td></tr>
+		<tr><td>created_at</td><td>Record created at</td><td>Date Time in UTC</td></tr>
+		<tr><td>updated_at</td><td>Record updated at</td><td>Date Time in UTC</td></tr>
+	</tbody>
+</table>
+
+##### Server Parameters
+
+JSON object containing:
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Attribute</th>
+			<th>Value</th>
+			<th>Comments</th>
+		</tr>
+  </thead>
+	<tbody>
+		<tr><td>size_id</td><td>Server size id</td><td><a href="/help/instance_names">Server Sizes</a></td></tr>
+		<tr><td>ips</td><td>All server IP addresses</td><td>JSON array of all IP addresses of the server</td></tr>
+		<tr><td>aws_security_group</td><td>AWS Security group name</td><td>AWS Only</td></tr>
+		<tr><td>region</td><td>Cloud vendor region</td><td><a href="/help/instance_regions">Region names</a></td></tr>
+		<tr><td>availability_zone</td><td>Cloud vendor availablity zone</td><td>AWS Only</td><td></td></tr>
+	</tbody>
+</table>
+
+## Show Server Details
+#### Endpoint
+<p><kbd>/stacks/[stack_uid]/server_groups/[svg_id]/servers/[uid].json</kbd></p>
+#### Method
+GET
+#### Required Scope
+public
+#### Description
+Returns the details of a single server
+### Results
+JSON object of the server:
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Attribute</th>
+			<th>Value</th>
+			<th>Comments</th>
+		</tr>
+  </thead>
+	<tbody>
+		<tr><td>uid</td><td>Server uid</td><td></td></tr>
+		<tr><td>vendor_uid</td><td>Unique id used by the cloud vendor</td><td>BYOC only</td></tr>
+		<tr><td>name</td><td>Server name</td><td></td></tr>
+		<tr><td>address</td><td>Server address</td><td>This is the original server address given by the cloud vendor</td></tr>
+		<tr><td>distro</td><td>Linux distro</td><td>Only ubuntu for now</td></tr>
+		<tr><td>distro_version</td><td>Linux distro version</td><td>Only 12.04 for now</td></tr>
+		<tr><td>dns_record</td><td>Server DNS record</td><td>Full c66.me dns record address</td></tr>
+		<tr><td>user_name</td><td>User name</td><td></td></tr>
+		<tr><td>server_type</td><td>Server Type</td><td>BYOS or "Cloud (vendor name)"</td></tr>
+		<tr><td>params</td><td>Extra server parameters</td><td>See below</td></tr>
+		<tr><td>created_at</td><td>Record created at</td><td>Date Time in UTC</td></tr>
+		<tr><td>updated_at</td><td>Record updated at</td><td>Date Time in UTC</td></tr>
+	</tbody>
+</table>
+
+##### Server Parameters
+
+JSON object containing:
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Attribute</th>
+			<th>Value</th>
+			<th>Comments</th>
+		</tr>
+  </thead>
+	<tbody>
+		<tr><td>size_id</td><td>Server size id</td><td><a href="/help/instance_names">Server Sizes</a></td></tr>
+		<tr><td>ips</td><td>All server IP addresses</td><td>JSON array of all IP addresses of the server</td></tr>
+		<tr><td>aws_security_group</td><td>AWS Security group name</td><td>AWS Only</td></tr>
+		<tr><td>region</td><td>Cloud vendor region</td><td><a href="/help/instance_regions">Region names</a></td></tr>
+		<tr><td>availability_zone</td><td>Cloud vendor availablity zone</td><td>AWS Only</td><td></td></tr>
+	</tbody>
+</table>
+
+## Get Server Vital Signs History
+#### Endpoint
+<p><kbd>/stacks/[stack_uid]/server_groups/[svg_id]/servers/[uid]/vital_signs.json</kbd></p>
+#### Method
+GET
+#### Required Scope
+public
+#### Description
+Returns the vital signs history of a server. This is an array of CPU utilization and free disk and memory gathered from the server.
+### Results
+JSON object containing 3 arrays one for each vital sign.
+<pre class="terminal">
+{
+	'Disk' : disk,
+	'Memory' : memory,
+	'CPU' : cpu
+}
+</pre>
+
+Each array is as follows:
+
+<pre class="terminal">
+[{
+	"ts" : UTC_date_time,
+	"p" : data_point_value (utilized percentage)
+	"m" : data_point_text (in English)
+}]
+</pre>
+
+## Get Server Current Stats
+#### Endpoint
+<p><kbd>/stacks/[stack_uid]/server_groups/[svg_id]/servers/[uid]/stats.json</kbd></p>
+#### Method
+GET
+#### Required Scope
+public
+#### Description
+Returns the current vital signs of a server.
+### Results
+JSON object containing 3 arrays one for each vital sign.
+<pre class="terminal">
+{
+	'Disk' : disk,
+	'Memory' : memory,
+	'CPU' : cpu
+}
+</pre>
+
+Each item is as follows:
+
+<pre class="terminal">
+{
+	"ts" : UTC_date_time,
+	"p" : data_point_value (utilized percentage)
+	"m" : data_point_text (in English)
+}
+</pre>
