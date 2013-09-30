@@ -15,6 +15,9 @@
     -webkit-appearance: textfield;
     appearance: textfield;
 }
+[type="search"]:focus {
+    outline: none;
+}
 
 
 /*

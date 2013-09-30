@@ -75,7 +75,11 @@ CB.help = ( function( $, window, document ) {
         window.addEventListener('load', function() {
           setTimeout(function() {
             window.addEventListener('popstate', function() {
-                console.log('popstate fired - do some navigation');
+                console.log('**** popstate fired - do some navigation ****');
+
+                if ( window.location.pathname == '/getting-started/faq.html' ) {
+                    return;
+                }
                 goHome();
             });
           }, 0);
