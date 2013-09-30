@@ -1,15 +1,17 @@
 /*****************************************************************************/
 /*
-/* Posts
+/* Code
 /*
 /*****************************************************************************/
+
 .article p > code,
 .article p > kbd {
   background-color: #F7F7F7 !important;
   color: #222;
-  font-size: 1.6rem !important;
+  font-size: 1.5rem !important;
   border: none;
 }
+
 /* standard */
 .article pre {
   font-size: 1.4rem;
@@ -40,7 +42,7 @@
   border: 1px solid #000;
   background-color: #333;
   color: #FFF;
-  padding: 1em 0;
+  padding: 0.8em;
 }
 
 .article pre.terminal code {
