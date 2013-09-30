@@ -13,29 +13,21 @@ Go to [Cloud 66 Dashboard](/dashboard) and click on Build Stack button
 
 ![First Stack](http://cdn.cloud66.com.s3.amazonaws.com/images/help/first_stack.png)
 
-<br/>
-<br/>
 ## 2. Accessing Your Code
 Add your unique SSH key to your Git repository. This will allow Cloud 66 to analyze your code and suggest the stack configuration to deploy.
 
 ![Accessing Git](http://cdn.cloud66.com.s3.amazonaws.com/images/help/accessing_git.png)
 
-<br/>
-<br/>
 ## 3. Tell Us About Your App
 Simply point Cloud 66 to the Git repository and give your app a name.
 
 ![About Your App](http://cdn.cloud66.com.s3.amazonaws.com/images/help/app_info.png)
 
-<br/>
-<br/>
 ## 4. Cloud 66 Gets to Work
 Cloud 66 now analyzes your Ruby on Rails app. This takes around 10 - 15 seconds.
 
 ![Analyzing](http://cdn.cloud66.com.s3.amazonaws.com/images/help/analyzing_your_app.png)
 
-<br/>
-<br/>
 ## 5. Last Stop Before Cloud
 Now Cloud 66 shows you the results of the analysis and how it is going to build your Ruby on Rails full stack.
 
@@ -43,8 +35,6 @@ Now Cloud 66 shows you the results of the analysis and how it is going to build 
 
 ![Where to Deploy](http://cdn.cloud66.com.s3.amazonaws.com/images/help/where_to_deploy.png)
 
-<br/>
-<br/>
 ## 6. Let the Builders Work
 Cloud 66 now gets to work and fires up boxes in your cloud (or provisions your own servers). It the configures the boxes and your app and deploys it to the servers.
 

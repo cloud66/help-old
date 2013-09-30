@@ -21,7 +21,7 @@ You can now enter the environment variables you need to deploy or run your app. 
 
 ![enter environment vars](http://cdn.cloud66.com.s3.amazonaws.com/images/help/envrionment_var_form.png)
 
-See how you can [use environment variables](/help/environments) in your <kbd>database.yml</kbd> or code.
+See how you can [use environment variables](/stack-features/environments.html) in your <kbd>database.yml</kbd> or code.
 
 ## Escaping and Multiline Environment Variables
 

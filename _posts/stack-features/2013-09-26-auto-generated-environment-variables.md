@@ -5,7 +5,11 @@ date:   2013-09-24 10:51:22
 categories: stack-features
 ---
 
-<p class="lead">Each stack you deploy has access to a number of automatically populated environment variables (in addition to the environment variables you add yourself)</p>
+<p class="lead">Each stack you deploy has access to a number of automatically populated environment variables</p>
+
+<p>
+    This is in addition to any environment variables you add yourself.
+</p>
 
 ## Environment Variable List (Standard)
 

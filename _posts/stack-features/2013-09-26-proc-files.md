@@ -30,7 +30,7 @@ By clicking on the process server(s) in your stack you can scale processes up an
 ![Process Page](http://cdn.cloud66.com.s3.amazonaws.com/images/help/processes_page.png)
 Once you have your processes up and running, click on the + icon for each process and your process will be scaled up (or the - button to scale it down) immediately.
 
-As you can see above, the processes are being run on the web server. Should you wish, you can [scale to standalone process servers](/help/standalone_process_servers).
+As you can see above, the processes are being run on the web server. Should you wish, you can [scale to standalone process servers](/stack-features/standalone-process-servers.html).
 
 ## Environment Variables
 You can use any of your stack's environment variables with a `$` before the name. This will be replaced by the actual value in the command executed.

@@ -15,7 +15,7 @@ Stack Security page is available from Stack Security menu item on the Stack deta
 ## Default Firewall Rules
 Stack security allows you to configure and apply firewall rules per server for your stack. It acts as a UI in front of an IP table based firewall mechanism.
 
-By default [Cloud 66 gateway servers](/help/security) are the only servers allowed SSH (port 22) access to stack servers. The default firewall rules includes DB and Web ports appropriate for the stack deployment but also includes ports 8080 and 8443 as alternative HTTP ports for WebSocket based applications like [Faye](/help/implementing_faye).
+By default [Cloud 66 gateway servers](/stacks/security.html) are the only servers allowed SSH (port 22) access to stack servers. The default firewall rules includes DB and Web ports appropriate for the stack deployment but also includes ports 8080 and 8443 as alternative HTTP ports for WebSocket based applications like [Faye](/how-to/implementing-faye.html).
 
 Editing and removing the default rules is not allowed through the firewall to ensure secure accessiblity to the servers at all times.
 

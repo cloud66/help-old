@@ -8,7 +8,7 @@ categories: stack-features
 <p class="lead">Scale your processes to standalone process servers</p>
 
 ## Scaling Process Servers
-As you can see below, your processes are run on your web server by default. See [Running Background Processes](/help/proc_files) to learn more about processes.
+As you can see below, your processes are run on your web server by default. See [Running Background Processes](/stack-features/proc-files.html) to learn more about processes.
 ![Processes in Dashboard](http://cdn.cloud66.com.s3.amazonaws.com/images/help/processes_page.png)
 
 Use the ![Scale Up Button](http://cdn.cloud66.com.s3.amazonaws.com/images/help/scale_up_button.png) button on the process server page to add a standalone process server.

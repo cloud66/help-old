@@ -20,8 +20,9 @@ You can determine the working gem version by opening a terminal to your server a
 
 `gem install libv8` (for the latest or `gem install libv8 --version '3.11.8.13'` for a specific version for instance)
 
-Finally, if you can't get this to work and you're running Rails > 3.1.0 then you also have the option of letting Cloud 66 install Node.js for you!
-Remove 'therubyracer' from your Gemfile and [Cloud 66 will automatically install Node.js](/help/asset_pipeline_compilation) - simple!
+Finally, if you can't get this to work and you're running Rails > 3.1.0 then you also have the option of letting Cloud 66 install Node.js for you.
+
+Remove 'therubyracer' from your Gemfile and [Cloud 66 will automatically install Node.js](/how-to/asset_pipeline.html) - simple!
 
 ## The specifics
 

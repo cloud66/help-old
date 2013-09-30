@@ -16,13 +16,13 @@ categories: web-server
 ## Choosing your Rack server
 There are many servers that can serve a Rack application: Puma, Unicorn and Thin are the most famous ones.
 
-By default, stacks deployed by Cloud 66 run on <a href="https://www.phusionpassenger.com/" target="_blank">Phusion Passenger</a> behind <a href="http://wiki.nginx.org/Main" target="_blank">nginx</a>. You can use [Procfiles](/help/proc_files) should you wish to change this.
+By default, stacks deployed by Cloud 66 run on <a href="https://www.phusionpassenger.com/" target="_blank">Phusion Passenger</a> behind <a href="http://wiki.nginx.org/Main" target="_blank">nginx</a>. You can use [Procfiles](/stack-features/proc-files.html) should you wish to change this.
 
 ## Configurations for your Rack server
 You need to configure your Rack server based on the recommended configuration settings of each specific server. Please see the Cloud 66 documentation for configuring
-* [Puma](/help/puma_rack_server)
-* [Unicorn](unicorn_rack_server)
-* [Thin](thin_rack_server)
+* [Puma](/web-server/puma_rack_server.html)
+* [Unicorn](/web-server/unicorn_rack_server.html)
+* [Thin](/web-server/thin_rack_server.html)
 
 If you would like to use a different server, there are some points you'd need to consider for it to work with a Cloud 66 stack. These conventions will allow Cloud 66 to redirect traffic to your servers and manage them for availability, memory consumption and restart cycles.
 

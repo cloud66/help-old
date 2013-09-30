@@ -11,18 +11,16 @@ categories: how-to
 
 Go on your `RAILS_STACK_PATH` and run the following command:
 
-<p>
+<pre class="termainal">
 <kbd>bundle exec rails c &lt;environment&gt;</kbd>
-</p>
+</pre>
 
-<div class="notice">
-    <h3>Note</h3>
-	<p>Possible values for &lt;environment&gt; :</p>
-    <ul>
-		<li>development (default)</li>
-		<li>test</li>
-		<li>production</li>
-    </ul>
-</div>
+## Possible values for &lt;environment&gt; :
+<ul>
+    <li>development (default)</li>
+    <li>test</li>
+    <li>production</li>
+</ul>
 
-To have a terminal access to your servers, please refer to this [documentation](/help/shell_to_your_servers).
+
+ [Getting terminal access to your servers](/how-to/shell-to-your-servers.html).

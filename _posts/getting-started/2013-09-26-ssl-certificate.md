@@ -5,7 +5,7 @@ date:   2013-09-24 10:51:22
 categories: getting-started
 ---
 
-<p class="lead">Adds an SSL Certificate to your server</p>
+<p class="lead">Adding an SSL Certificate to your server</p>
 
 ## Adding SSL to your stacks
 To add SSL to your stack, you need to have a SSL certificate and key. Some certficate authorities also provide you with an intermediate certificate as well.

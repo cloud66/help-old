@@ -5,13 +5,12 @@ date:   2013-09-24 10:51:22
 categories: stack-features
 ---
 
-<p class="lead">Deployment hooks represent a way for you to take an action at various points during a build and/or deployment on Cloud 66. A simple example of this would be copying a file to a target location on your server and executing at some point during your deployment.</p>
+<p class="lead">Deployment hooks represent a way for you to take an action at various points during a build and/or deployment on Cloud 66.</p>
 
-<div class="notice">
-		<h3>Note</h3>
+<p>
+    A simple example of this would be copying a file to a target location on your server and executing at some point during your deployment.
+</p>
 
-		<p>This file format is potentially subject to change, though backwards compatibility will always be attempted.</p>
-</div>
 
 ## File Location/Format
 
@@ -22,9 +21,8 @@ repo::/.cloud66/deploy_hooks.yml
 
 As the extension suggests, the deploy_hooks.yml file is **YAML** formatted. And like database.yml or mongoid.yml, the file is split by environment initially. This allows definition of different deploy hooks for different environments (development, staging, production etc) within the single file.
 
-## Get Started with Examples
 
-### **Copy file to destination**
+### Copy file to destination
 
 A sample **deploy_hooks.yml** file could look like the following:
 <pre class="terminal">
@@ -94,6 +92,7 @@ As you can see from the **after_rails** deploy hook action above, there are addt
 </div>
 
 Currently the following hook points are available:
+
 - **first_thing**
 - **before_redis**
 - **after_redis**
