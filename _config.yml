@@ -7,3 +7,6 @@ permalink: /:categories/:title.html
 sass:
     syntax: scss        # scss|sass
     style:  compressed  # nested|expanded|compact|compressed
+    
+indextank_api_url: http://:penygamevusy@zuvuja.api.indexden.com
+indextank_index: dev_help_pages
