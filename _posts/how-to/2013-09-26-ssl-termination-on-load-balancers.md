@@ -59,13 +59,18 @@ elb-create-lb-listeners ELBConfigureSSL --listener "protocol=HTTPS,lb-port=443,i
 See also: [AWS documentation](http://docs.aws.amazon.com/IAM/latest/UserGuide/InstallCert.html)
 
 
-## Using load balancing with HAProxy:  (DigitalOcean, Linode,  Telefonica, Joyent)
+## Using load balancing with HAProxy
+
+* DigitalOcean
+* Linode
+* Telefonica
+* Joyent
 
 HAProxy 1.4 doesn’t natively support SSL. But it possible to use an SSL encryption wrapper like Stunnel, Stud, Pound or Nginx. They can terminate TLS/SSL connections and forward the unencrypted traffic to HAProxy.
 
-####How to use HAProxy with Stunnel to handle HTTPS requests:
+##How to use HAProxy with Stunnel to handle HTTPS requests:
 
--	Firstly, install Stunnel on the load balancer:
+- Firstly, install Stunnel on the load balancer:
 <p>
 <kbd>
 apt-get install stunnel

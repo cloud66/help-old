@@ -12,7 +12,7 @@ In best development teams, making coffee should be difficult, deployment should 
 Here is how to integrate [Semaphore](https://semaphoreapp.com) with Cloud 66.
 
 ## Integration
-1. Make sure your stack is deployed with Cloud 66. Learn more about [deploying Rails stacks with Cloud 66](/help/first_stack).
+1. Make sure your stack is deployed with Cloud 66.
 2. Setup your project on [Semaphore](https://semaphoreapp.com). Since you're reading this page, you probably have a Semaphore project setup already!
 3. In Semaphore, go to your project setting and click on Deployment.
 ![](http://cdn.cloud66.com.s3.amazonaws.com/images/help/semaphore_project_settings.png)

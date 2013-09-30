@@ -32,4 +32,4 @@ You can modify backup job settings from the backup job details page. Here you ca
 
 ![Offsite backups](http://cdn.cloud66.com.s3.amazonaws.com/images/help/off_site_backups.png)
 
-These settings are different depending on the database you use. Look for more information about [job scheduling](/help/settingup_schedules) and [database backups](/help/mysql_backup).
+These settings are different depending on the database you use. Look for more information about [job scheduling](/add-ins/settingup_schedules.html) and [database backups](/add-ins/mysql-backup.html).

@@ -12,7 +12,7 @@ categories: add-ins
 - Linux, Unix, FreeBSD or OS X
 
 ## Type
-This is a scheduled app that runs on regular intervals as defined by you. Learn more about [setting up schedules](settingup_schedules).
+This is a scheduled app that runs on regular intervals as defined by you. Learn more about [setting up schedules](/add-ins/settingup-schedules.html).
 
 ## Setup
 The following fields can be configured for this app

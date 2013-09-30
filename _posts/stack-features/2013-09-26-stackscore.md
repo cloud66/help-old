@@ -36,8 +36,8 @@ Performance looks at load balancing. Having load balancers is an <b>A</b> while 
 This metric tracks your firewall settings. Leaving shell ports to external IP addresses is an <b>F</b> while locking your servers down gets better scores.
 
 <div class="notice">
-		<h3>Important</h3>
-		<p>Always try to keep your stacks at an A StackScore&trade; level.</p>
+	<h3>Important</h3>
+	<p>Always try to keep your stacks at an A StackScore&trade; level.</p>
 </div>
 
 ## It is a dynamic score

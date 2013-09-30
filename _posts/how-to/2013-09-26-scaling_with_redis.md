@@ -14,8 +14,8 @@ When scaling up, the new servers will look Redis on localhost (which doesn't exi
 To initialize your Redis connection, change the server address to the **ENV&#91;'REDIS_ADDRESS'&#93;** value and all your servers will point to the correct Redis instance!
 
 <div class="notice">
-		<h3>Important</h3>
-		<p>
-			Unlike with MySQL, PostgreSQL and MongoDB, Cloud 66 will not automatically update your Redis paths depending on where you deploy Redis. You will need to update the code yourself, and check it in. Using ENV['REDIS_ADDRESS'] allows you to easily reference the location of your Redis server.
-		</p>
+	<h3>Important</h3>
+	<p>
+		Unlike with MySQL, PostgreSQL and MongoDB, Cloud 66 will not automatically update your Redis paths depending on where you deploy Redis. You will need to update the code yourself, and check it in. Using ENV['REDIS_ADDRESS'] allows you to easily reference the location of your Redis server.
+	</p>
 </div>

@@ -22,7 +22,7 @@ Once you click on the icon, you should get directly to the terminal screen.
 </div>
 
 ## Direct Shell Access
-You can always have terminal access to your servers from your own server. By default shell access (SSH) on port 22 is blocked to all traffic from outside. In order to access the terminal from your own computer, you'd need to open this port for your own IP address. This is possible using [Stack Security](/help/stack_security) page.
+You can always have terminal access to your servers from your own server. By default shell access (SSH) on port 22 is blocked to all traffic from outside. In order to access the terminal from your own computer, you'd need to open this port for your own IP address. This is possible using [Stack Security](/stack-features/stack-security.html) page.
 
 Once the port is open, you can use your usual terminal app to connect. You can find the username and SSH key from the server page.
 

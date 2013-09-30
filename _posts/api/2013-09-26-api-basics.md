@@ -148,10 +148,10 @@ Scopes let you specify exactly what type of access you need. Scopes limit access
 For the web flow, requested scopes be displayed to the user on the authorize form.
 
 #### (no scope)
-public read-only access (list of stacks and [some information](/help/stacks) about them).
+public read-only access (list of stacks and some information about them).
 
 #### public
-public read-only access (list of stacks and [some information](/help/stacks) about them).
+public read-only access (list of stacks and some information about them).
 
 #### redeploy
 Redeploy a stack.

@@ -5,12 +5,25 @@ date:   2013-09-24 10:51:22
 categories: stack-features
 ---
 
-<h1 class="doc-title">Manifest Files (beta)</h1>
-<p class="lead">A Cloud 66 manifest file represent a way for you to be more explicit about your stacks composition. It allow you to specify server sizes, additionaly packages to install etc. Note: this file format is draft and potentially subject to change (though backwards compatibility will always be attempted).</p>
+<p class="lead">
+    A manifest file provides a way for you to be more explicit about your stacks composition.
+<p>
+
+<p>It allows you to specify:</p>
+
+<ul>
+    <li>server sizes</li>
+    <li>additional packages to install etc.</li>
+</ul>
+
+<p>
+The file format is draft and potentially subject to change (though backwards compatibility will always be attempted.
+</p>
 
 ## File Location/Format
 
 In order for your manifest file to be picked up, you need a file called **manifest.yml** to be present within a folder named **.cloud66** that is in turn located in the root of your source code, and checked into your repository.
+
 <pre class="terminal">
 [source_repo]/.cloud66/manifest.yml
 </pre>
@@ -53,6 +66,7 @@ The sample above specifies that a single server called **frontend** will be crea
 That single server will also host your database locally.
 
 Using the manifest file also allows some features to be defined which are not currently available through the Cloud 66 UI. Some examples would be:
+
 <pre class="terminal">
 production:
     rails:
@@ -82,6 +96,7 @@ We've also specified that we want extra apt-get packages to be installed on each
 
 ## Application Types
 Cloud 66 will currently recognize the following application types in your manifest file (more will be added soon):
+
 - Rails
 - MySql
 - PostgreSQL
@@ -100,12 +115,12 @@ A Rails application type in the manifest file gives you fine control over things
 A Rails application type can containt the following sub-sections:
 
 #### Server
-[Server section](/help/manifest_servers) desribes the specifications of a server running the application.
+[Server section](/stack-features/manifest-servers.html) desribes the specifications of a server running the application.
 
 #### Configuration
 Configuration section contains an application type's specific configuration items.
 
-[Manifest application type information](/help/manifest_applications) contains more detailed application specific configuration information.
+[Manifest application type information](/stack-features/manifest-applications.html) contains more detailed application specific configuration information.
 
 ## Servers
 
@@ -117,4 +132,4 @@ Here is an example of a server definition:
         unique_name: frontend
 </pre>
 
-Find out more detailed information about [Manifest Server Definition](/help/manifest_servers)
+Find out more detailed information about [Manifest Server Definition](/stack-features/manifest-servers.html)

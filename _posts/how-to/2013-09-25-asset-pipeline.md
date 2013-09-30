@@ -44,7 +44,7 @@ This will be hidden if you have enabled/disabled asset pipeline compilation in y
         <pre>config.assets.compile = true</pre>
     </p>
     <p>
-        Note: Live Compilation (on-demand) does not perform as well as Precompilation. More information <a href="http://guides.rubyonrails.org/asset_pipeline.html#live-compilation">here</a>.
+        Note: Live Compilation (on-demand) <a href="http://guides.rubyonrails.org/asset_pipeline.html#live-compilation">does not perform as well as Precompilation</a>.
     </p>
 
 </div>
@@ -67,7 +67,7 @@ Asset Pipeline precompilation will be disabled if <code>config.assets.enabled</c
 
 ### manifest.yml
 
-Use our [Cloud 66 manifest file](/help/manifest_files) to enable/disable asset pipeline precompilation using the following parameter with a true or false, find <td>an example</td> below:
+Use our [Cloud 66 manifest file](/stack-features/manifest-files.html) to enable/disable asset pipeline precompilation using the following parameter with a true or false, find <td>an example</td> below:
 
 <pre class="terminal">
     development:

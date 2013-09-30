@@ -26,9 +26,7 @@ Your resulting ruby code could then be (from a redis.rb initializer in this exam
 </p>
 
 <div class="notice">
+	<h3>Important</h3>
 
-		<h3>Important</h3>
-
-
-		<p>Unlike with MySQL, PostgreSQL and MongoDB, Cloud 66 will not automatically update your Redis paths depending on where you deploy Redis. You will need to update you code yourself, and check it in. Using ENV['REDIS_ADDRESS'] allows you to easily reference the location of your Redis server.</p>
+	<p>Unlike with MySQL, PostgreSQL and MongoDB, Cloud 66 will not automatically update your Redis paths depending on where you deploy Redis. You will need to update you code yourself, and check it in. Using ENV['REDIS_ADDRESS'] allows you to easily reference the location of your Redis server.</p>
 </div>

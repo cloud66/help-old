@@ -8,7 +8,7 @@ categories: stack-features
 <p class="lead">We configure the number of running threads in Nginx based on instance size and the cloud provider.</p>
 
 ## Nginx Configuration
-Stacks deployed with Cloud 66 use nginx as their frontend. You can find the <a href="/help/nginx_settings">nginx configuration</a> that's pushed out. The number of workers running nginx are dependend on the number of CPU cores of the instance. Here is how they are configured by default.
+Stacks deployed with Cloud 66 use nginx as their frontend. You can find the <a href="/web-server/nginx-settings.html">nginx configuration</a> that's pushed out. The number of workers running nginx are dependend on the number of CPU cores of the instance. Here is how they are configured by default.
 
 ### Amazon EC2
 <table class='table table-bordered table-striped'>

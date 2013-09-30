@@ -9,8 +9,8 @@ categories: how-to
 
 ## Directly
 
-You can connect directly into your database server and invoke a databade console  from here. To do that, please refer to the [terminal connection to servers](/help/shell_to_your_servers) documentation.
+You can connect directly into your database server and invoke a databade console  from here. To do that, please refer to the [terminal connection to servers](/how-to/shell-to-your-servers.html) documentation.
 
 ## Indirectly
 
-Another way to connect to your database server is to open a firewall port in your database server to allow a remote machine to connect the server. This is possible using the [Stack Security](/help/stack_security) page. Then you can use from your remote machine your preferred database client.
+Another way to connect to your database server is to open a firewall port in your database server to allow a remote machine to connect the server. This is possible using the [Stack Security](/stack-features/stack-security.html) page. Then you can use from your remote machine your preferred database client.

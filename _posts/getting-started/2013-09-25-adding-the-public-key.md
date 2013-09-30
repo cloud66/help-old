@@ -9,6 +9,16 @@ categories: getting-started
     Add the Cloud 66 public key to your GIT provider so we can deploy your code.
 </p>
 
-<p>If for any reason you've removed this key, you can find it by navigating to <em>Dashboard</em> and clicking <em><a href="/stacks/new">New Stack</a></em>, where is says <em>Tell us about your app</em> click the <em>How</em> link.</p>
+<p>If for any reason you've removed this key, you can find it by:</p>
 
-<p>Copy the key and follow the instuctions for your GIT provider.</p>
+<ul>
+    <li>
+        Navigating to the <em>Dashboard</em> and clicking <strong>New Stack</strong>
+    </li>
+    <li>
+        Where is says <em>Tell us about your app</em> click the <strong>How</strong> link.
+    </li>
+    <li>
+        Copy the key and follow the instuctions for your GIT provider.
+    </li>
+</ul>

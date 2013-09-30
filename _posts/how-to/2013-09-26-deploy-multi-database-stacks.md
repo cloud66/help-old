@@ -18,19 +18,28 @@ An example of a multi-db type of application is an application that has MySQL as
 
 A solution to deploy a multi-db stack with Cloud 66 would be to pass the initial analysis phase, then create the non-activerecord database yourself (if necessary) using deploy hooks.
 
-**Firstly:** temporarily remove your non-activerecord (auxillary) database Gem specification from your Gemfile.
-
 <div class="notice">
     <div class="notice-header">
         <b>Note</b>
     </div>
     <div class="notice-body">
-		<p>When modifying your Gemfile don't forget to run 'bundle install' and commit your changed Gemfile.lock file</p>
+        <p>When modifying your Gemfile don't forget to run 'bundle install' and commit your changed Gemfile.lock file</p>
     </div>
 </div>
 
-**Secondly:** add a [deploy hook](/help/deploy_hooks) script that will install your required auxillary database(s) if required. If you are looking to make use of a database that is hosted externally then you don't need to do this part.
-An example deploy hook could look something like:
+<ol>
+    <li>
+        <p>
+            <strong>Temporarily remove</strong> your non-activerecord (auxillary) database Gem specification from your Gemfile.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong><a href="/stack-features/redeployment-hook.html">Add a redeployment hook</a></strong> script that will install your required auxillary database(s) if required. If you are looking to make use of a database that is hosted externally then you don't need to do this part. An example deploy hook could look something like:
+        </p>
+    </li>
+</ol>
+
 <pre class="terminal">
 production:
     first_thing:
@@ -46,13 +55,14 @@ production:
 
 
 <div class="notice">
-        <h3>Important</h3>
-    	<ol>
-			<li>The specifics of the script to install your database depend on the database - most database types have detailed installation instructions via their websites</li>
-			<li>You can only target an existing stack server, using this method you cannot have your auxillary database on a standalone server</li>
-		</ol>
+    <h3>Important</h3>
+
+	<p>The specifics of the script to install your database depend on the database - most database types have detailed installation instructions via their websites</p>
+	<p>You can only target an existing stack server, using this method you cannot have your auxillary database on a standalone server</p>
+
 </div>
 
-**Thirdly:** proceed through the analysis phase on Cloud 66. You will see that Cloud 66 will have detected a single database type. Proceeding to deploy your application would then create the database, and servers as required.
+<ol start="3">
+<li><strong>Proceed through the analysis phase</strong>. You will see that Cloud 66 will have detected a single database type. Proceeding to deploy your application would then create the database, and servers as required.</li>
 
-**Lastly:** once your application has been deployed (or if it failed deployment due to requirement of the auxillary database) you can add your auxillary database gem(s) back into your Gemfile, commit and redeploy.
+<li> <strong>Once deployed</strong> or if it failed deployment due to requirement of the auxillary database you can add your auxillary database gem(s) back into your Gemfile, commit and redeploy.</li>

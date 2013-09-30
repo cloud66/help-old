@@ -70,4 +70,4 @@ Switching to another SQL-based database is easy, and the following instructions 
     </li>
 </ol>
 
-Please visit the [databases](http://localhost:3000/help/databases) page to read more about databases supported by Cloud 66.
+More information about [databases](/stacks/databases.html) supported by Cloud 66.

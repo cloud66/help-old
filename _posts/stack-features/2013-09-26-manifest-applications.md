@@ -26,7 +26,7 @@ environment
 **server**
 _Required_
 
-Specifies the server that the application runs on. See [Servers Section](/help/manifest_servers) for more information.
+Specifies the server that the application runs on. See [Servers Section](/stack-features/manifest-servers.html) for more information.
 
 **configuration**
 _Optional._
@@ -40,7 +40,7 @@ It can containt the following sub-sections:
 - Configuration
 
 #### Server
-[Server section](/help/manifest_servers) desribes the specifications of a server running the application.
+[Server section](/stack-features/manifest-servers.html) desribes the specifications of a server running the application.
 
 ## Rails configuration
 

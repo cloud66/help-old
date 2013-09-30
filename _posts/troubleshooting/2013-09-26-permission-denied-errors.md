@@ -52,4 +52,4 @@ production:
       sudo: true
 </pre>
 
-**Note:** More detailed information on [deploy hooks is here.](/help/deploy_hooks)
+**Note:** More detailed information on [deploy hooks is here.](/stack-features/deploy-hooks.html)

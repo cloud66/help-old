@@ -10,4 +10,4 @@ categories: how-to
 
 
 ## Post Test Hooks
-To get your build hooked up to Circle CI you need to use the [redeployment hook](/help/redeployment_hook) added to the [Circle CI circle.yml](https://circleci.com/docs/configuration).
+To get your build hooked up to Circle CI you need to use the [redeployment hook](/stack-features/redeployment-hook.html) added to the [Circle CI circle.yml](https://circleci.com/docs/configuration).

@@ -7,11 +7,6 @@ categories: stack-features
 
 <p class="lead">You can use environment variables in your Ruby/Rails code normally. Cloud 66 is compatible with Linux environment variables</p>
 
-<div class="notice">
-	<h3>Important</h3>
-	<p>You would need to redeploy your stack for environment variable changes to take effect.</p>
-</div>
-
 ## Configuration Files
 Many developers use environment variables to store database username and passwords and use environment variables in database configuration files instead of hard coding credentials.
 This best practice is supported by Cloud 66 and there is no need to change anything to get it to work.
@@ -42,3 +37,8 @@ After deployment, you can always change, remove or add new environment variables
 Now you can add, remove and edit your environment variables:
 
 ![enter environment vars](http://cdn.cloud66.com.s3.amazonaws.com/images/help/envrionment_var_form.png)
+
+<div class="notice">
+    <h3>Important</h3>
+    <p>You would need to redeploy your stack for environment variable changes to take effect.</p>
+</div>

@@ -7,11 +7,17 @@ categories: stacks
 
 <p class="lead">Information regarding databases supported by Cloud 66</p>
 
-We currently support MySQL, PostgreSQL and MongoDB out of the box with no need for additional configuration.
-(However, one thing to always remember with Cloud 66 is that you will always have root access to your servers so you can install anything else yourself if you desire)
-PostgreSQL is compiled with contribs from source, and can therefore take a little while to deploy.
+We currently support:
 
-Redis is now also automatically supported - see [information regarding Redis Server deployments](/help/database_redis)
+* MySQL
+* PostgreSQL
+* MongoDB
+
+These are supported out of the box with no need for additional configuration. However, one thing to always remember with Cloud 66 is that you will always have root access to your servers so you can install anything else yourself if you desire.
+
+<strong>PostgreSQL</strong> &mdash; is compiled with contribs from source, and can therefore take a little while to deploy.
+
+<strong>Redis</strong> &mdash; is [automatically supported](/stacks/database-redis.html).
 
 During analysis, Cloud 66 automatically detects whether you application relies on a database or not. This is based on a combination of your Gemfile and your database.yml or mongoid.yml files.
 
@@ -25,9 +31,9 @@ We will therefore deploy your application without providing you with any databas
 
 <div class="notice">
 
-		<h3>Important</h3>
+	<h3>Important</h3>
 
-		<p>If your application does rely on a database and you do not see it detected please <a href="http://www.hipchat.com/gWHC3d8cu">come chat and let us know!</a></p>
+	<p>If your application does rely on a database and you do not see it detected please <a href="http://www.hipchat.com/gWHC3d8cu">come chat and let us know!</a></p>
 
 </div>
 
@@ -49,7 +55,7 @@ Choosing this option will allow you to create scheduled database backups on your
 With this option, Cloud 66 will deploy your chosen database to your target webserver. Your applications database configuration will be amended to retarget your local database server.
 If you scale up your webservers, we will automatically amend your applications database configuration appropriately.
 
-Choosing this option will also allow you to [perform single-click scheduled backups](/help/single_click_db_backup) on your database.
+Choosing this option will also allow you to [perform single-click scheduled backups](/stack-features/single-click-db-backup.html) on your database.
 
 <div class="notice">
 	<h3>Important</h3>
@@ -63,7 +69,7 @@ If deploying to your cloud provider, we will automatically create a new server f
 If deploying to your standalone server, we will connect to the target database server and deploy your database there, can configure your application accordingly.
 Note that we will use the same credentials (username and key) you've provided for your standalone webserver to connect to your standalone database server.
 
-Choosing this option will also allow you to [perform single-click scheduled backups](/help/single_click_db_backup) on your database.
+Choosing this option will also allow you to [perform single-click scheduled backups](/stack-features/single-click-db-backup.html) on your database.
 
 ## Generated Usernames and Passwords
 If you are deploying a MySQL or PostgreSQL database and haven't specified your username and password, then Cloud 66 will automatically generate one for you in the form of environment variables, and configure your application appropriately.
@@ -74,6 +80,8 @@ Once your application has been deployed, you cannot make any infrastructural mod
 You can always connect to your server directly and modify your application appropriately, but changes (like changing database type for example) will usually require you to create a new Cloud 66 stack. Once the new stack is created, you can migrate data from your old stack to your new stack, and delete your old stack when you're happy.
 
 ## Upgrading Your Database
-Cloud 66 will not do in-place database upgrades. This is because the database upgrade may cause your application to stop working, or may not be possible automatically. Therefore, to upgrade your database through Cloud 66, create a new Cloud 66 stack (at this point Cloud 66 will deploy the newer database version). Again, once the new stack is created, you can migrate data from your old stack to your new stack, and delete your old stack when you're happy.
+Cloud 66 will not do in-place database upgrades. This is because the database upgrade may cause your application to stop working, or may not be possible automatically. Therefore, to upgrade your database through Cloud 66, create a new Cloud 66 stack (at this point Cloud 66 will deploy the newer database version).
+
+Once the new stack is created, you can migrate data from your old stack to your new stack, and delete your old stack when you're happy.
 
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "What is a Cloud 66 Stack?"
 date:   2013-09-22 16:27:22
-categories: [getting-started, stacks]
+categories: [getting-started]
 ---
 
 <p class="lead">Cloud 66 makes it easy to configure and deploy a set of non&mdash;proprietary tools in order to run and manage your Ruby on Rails apps</p>
@@ -40,4 +40,4 @@ Your Ruby on Rails apps are served with Nginx and Phusion Passenger.
 You can add new instances to your web server farm using Simple Scale with a simple click in the web control panel.
 
 ## Load Balancers
-Load Balancing is supported only if you use a cloud vendor. On Amazon Cloud 66 deploys and configures an AWS Elastic Load Balancer. On Joyent we deploy and configure HAProxy for load balancing. [More information on scaling behind a load balancer](/help/horizontal_scaling).
+Load Balancing is supported only if you use a cloud vendor. On Amazon Cloud 66 deploys and configures an AWS Elastic Load Balancer. On Joyent we deploy and configure HAProxy for load balancing. [More information on scaling behind a load balancer](/stack-features/horizontal-scaling.html).
