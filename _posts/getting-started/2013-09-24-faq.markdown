@@ -61,7 +61,7 @@ Cloud 66 is hosted in the cloud and is available as a service. You don't need to
 <a id="f3"></a>
 ## How can I use Cloud 66?
 
-[Sign up](/users/sign_up) for an account and start by building your first stack [here is a guide](/help/first_stack). Point your stack to your Git repository and click on the Analyse button. A few seconds later you can configure your app deployment and point your stack to the servers you would like to run your app on. That's it!
+[Sign up](http://cloud66.com/users/sign_up) for an account and start by [building your first stack](/getting-started/your-first-stack.html). Point your stack to your Git repository and click on the Analyse button. A few seconds later you can configure your app deployment and point your stack to the servers you would like to run your app on. That's it!
 
 <a id="f4"></a>
 
@@ -92,7 +92,7 @@ At this point, Cloud 66 only allows a single app per server. This is primarily d
 <a id="f9"></a>
 
 ## How can I change my Git repository ?
-You can change your Git repository by using the [Cloud 66 Toolbelt](/help/toolbelt),  <strong>Settings</strong> section.
+You can change your Git repository by using the [Cloud 66 Toolbelt](/getting-started/toolbelt.html),  <strong>Settings</strong> section.
 
 <a id="f10"></a>
 

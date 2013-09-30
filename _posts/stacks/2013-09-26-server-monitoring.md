@@ -5,8 +5,9 @@ date:   2013-09-24 10:51:22
 categories: stacks
 ---
 
-<p class="lead">All servers provisioned and deployed with Cloud 66 are monitored for CPU, Memory and Disk Space</p>
-<hr/>
+<p class="lead">
+    All servers provisioned and deployed with Cloud 66 are monitored for CPU, Memory and Disk Space
+</p>
 
 Your servers running in your stacks on Cloud 66 have basic monitoring for their CPU, Memory and Disk space usage. These vital signs are reported back to Cloud 66 every 30 minutes, and you can see them as a chart on your server page. We collect and keep only 1 week worth of data for each individual server.
 
