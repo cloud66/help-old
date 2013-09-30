@@ -18,14 +18,12 @@ Through the AWS dashboard:
 
 - Sign in to the AWS management console and open the Amazon EC2 console
 - Select your load balancer and upload a new SSL Certificate or choose an existing one.
+- In case it is a new certificate, enter a name for the certificate and copy paste the contents of the private key file and the public key file into the related fields, then save.
 
 <div class="notice">
     <h3>Important</h3>
     <p>Ensure that the certificate is valid: current date must be between the certificate’s start and end date.Certificate keys also should not be password protected</p>
 </div>
-
-- In case it is a new certificate, enter a name for the certificate and copy paste the contents of the private key file and the public key file into the related fields, then save.
-
 
 Through the [AWS ELB command line interface](http://aws.amazon.com/developertools/2536):
 

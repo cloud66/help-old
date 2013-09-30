@@ -15,9 +15,9 @@ body.loading {
     top: 50%;
     left: 50%;
     background: transparent url('/images/spinner.svg') no-repeat;
+    background-size: contain;
     width: 30px;
     height: 30px;
-    background-size: contain;
     opacity: 0.8;
     @include animation( rotate 1.5s infinite steps(12) );
 }

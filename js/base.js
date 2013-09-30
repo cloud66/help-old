@@ -7,7 +7,7 @@ Handlebars.c66.config = {
     tmplExtention: '.handlebars'
 };
 
-Handlebars.getTemplate = function(name) {
+Handlebars.getTemplate = function( name ) {
     if ( Handlebars.templates === undefined || Handlebars.templates[name] === undefined ) {
         $.ajax({
             url : Handlebars.c66.config.tmplPath + name + Handlebars.c66.config.tmplExtention,
@@ -76,7 +76,7 @@ CB.help = ( function( $, window, document ) {
           setTimeout(function() {
             window.addEventListener('popstate', function() {
                 console.log('popstate fired - do some navigation');
-                // goHome();
+                goHome();
             });
           }, 0);
         });
