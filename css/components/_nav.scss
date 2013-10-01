@@ -45,6 +45,7 @@ nav {
         position:relative;
         left: -19px;
         font-size: 1.5rem;
+        line-height: 1;
     }
     a:hover {
         text-decoration: none;
@@ -58,10 +59,11 @@ nav {
 
 .back-ico {
     display: inline-block;
+    line-height: 1;
     width: 13px;
     height: 13px;
     background: url('/images/ico_back.svg');
     background-size: contain;
     position: relative;
-    top: 5px;
+    // top: 1px;
 }
