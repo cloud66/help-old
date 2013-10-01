@@ -6,11 +6,19 @@ categories: cloud-providers
 ---
 
 
-<p class="lead">You can connect your cloud provider of choice to Cloud 66. Doing this allows Cloud 66 to automatically fire up and setup the boxes you need to run your stack.</p>
+<p class="lead">
+    You can connect your cloud provider of choice to Cloud 66. Doing this allows Cloud 66 to automatically fire up and setup the boxes you need to run your stack.
+</p>
 
 
 ## Supported Clouds
-Currently, Cloud 66 supports Amazon Web Service, Rackspace, DigitalOcean, Linode, Telefonica and Joyent Cloud.
+
+* Amazon Web Services (AWS)
+* Rackspace
+* DigitalOcean
+* Linode
+* Telefonica
+* Joyent Cloud
 
 ## Example: How to get Amazon API Keys
 You can find your Amazon API keys under Security Credentials on the top right menu in AWS Management Console.

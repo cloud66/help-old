@@ -42,7 +42,7 @@ CB.help = ( function( $, window, document ) {
     var config = {
         typeaheadAction: 'http://localhost:3000/help/autocomplete?query=',
         searchAction:    'http://localhost:3000/help/search.json',
-        home:            'http://localhost:4000/'
+        home:            '/'
     };
 
     var init = function() {
@@ -66,10 +66,9 @@ CB.help = ( function( $, window, document ) {
             return false;
         });
 
-        $(document.body).on('click', 'nav.crumbs a', function(){
-            // window.history.back();
-            window.history.go(-1);
-        });
+        // $(document.body).on('click', 'nav.crumbs a', function(){
+        //     window.history.go(-1);
+        // });
 
         /*
         * Necessary hack because WebKit fires a popstate event on document load

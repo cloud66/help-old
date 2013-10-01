@@ -4,11 +4,8 @@ bodyclass: post
 ---
 
 <nav class="crumbs container">
-  <a class="extra" href="/">
-    <span class="back-ico">&nbsp;</span>
-    Back
-  </a>
-   <img src="{{ site.url }}/images/logo.svg" alt="Cloud 66" width="40" class="pull-right logo-sml">
+    {% include contents_link.html %}
+    <img src="{{ site.url }}/images/logo.svg" alt="Cloud 66" width="40" class="pull-right logo-sml">
 </nav>
 
 <article class="article container">
@@ -22,8 +19,5 @@ bodyclass: post
 </article>
 
 <nav class="crumbs crumbs-bottom container">
-  <a class="extra" href="/">
-    <span class="back-ico">&nbsp;</span>
-    Back
-  </a>
+    {% include contents_link.html %}
 </nav>
