@@ -6,11 +6,16 @@ module Jekyll
 
   class Indexer < Generator
 
-    def initialize(config = {})
-      super(config)
-      
-      raise ArgumentError.new 'Missing indextank_api_url.' unless config['indextank_api_url']
-      raise ArgumentError.new 'Missing indextank_index.' unless config['indextank_index']
+		priority :low
+		
+    # Index all pages except pages matching any value in config['indextank_excludes']
+    # The main content from each page is extracted and indexed at indextank.com
+    # The doc_id of each indextank document will be the absolute url to the resource without domain name 
+    def generate(site)
+      puts 'Indexing pages...'
+			
+      raise ArgumentError.new 'Missing indextank_api_url.' unless site.config['indextank_api_url']
+      raise ArgumentError.new 'Missing indextank_index.' unless site.config['indextank_index']
       
       @storage_dir = File.join(self.home_dir, '.jekyll_indextank')
       @last_indexed_file = File.join(@storage_dir, 'last_index')
@@ -18,17 +23,10 @@ module Jekyll
       create_storage_dir()
       load_last_timestamp()
       
-      @excludes = config['indextank_excludes'] || []
+      @excludes = site.config['indextank_excludes'] || []
 
-      api = IndexTank::Client.new(config['indextank_api_url'])
-      @index = api.indexes(config['indextank_index'])
-    end
-
-    # Index all pages except pages matching any value in config['indextank_excludes']
-    # The main content from each page is extracted and indexed at indextank.com
-    # The doc_id of each indextank document will be the absolute url to the resource without domain name 
-    def generate(site)
-      puts 'Indexing pages...'
+      api = IndexTank::Client.new(site.config['indextank_api_url'])
+      @index = api.indexes(site.config['indextank_index'])
     
       # gather pages and posts
       items = site.pages.dup.concat(site.posts)
