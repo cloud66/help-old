@@ -6,12 +6,11 @@ categories: web-server
 ---
 
 
-<p class="lead">You can run your Rack apps with Puma</p>
+<p class="lead">Run your Rack apps with Puma</p>
 
-<div class="notice">
-	<h3>Important</h3>
-	<p>You need to choose your web server at the time of initial build of the stack. Changes to the web server will not be applied after your stack has initially been analyzed. Passenger is used by default.</p>
-</div>
+<p class="weighted">
+    You need to choose your web server at the <strong>time of initial build</strong> of the stack. Changes to the web server will not be applied after your stack has initially been analyzed. <strong>Passenger is used by default</strong>.
+</p>
 
 ## Choosing Puma as your Rack server
 To run a Puma Rack server, add a line to your Procfile labeled as custom_web. Here is an example:

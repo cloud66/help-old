@@ -5,7 +5,7 @@ date:   2013-09-24 10:51:22
 categories: web-server
 ---
 
-<p class="lead">You can run your Rack apps with Unicorn</p>
+<p class="lead">Run your Rack apps with Unicorn</p>
 
 
 ## Choosing Unicorn as your Rack server

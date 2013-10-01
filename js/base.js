@@ -41,17 +41,18 @@ CB.help = ( function( $, window, document ) {
 
     var config = {
         typeaheadAction: 'http://localhost:3000/help/autocomplete?query=',
-        searchAction:    'http://localhost:3000/help/search.json',
-        home:            '/'
+        searchAction:    'http://localhost:3000/help/search.json'
     };
 
     var init = function() {
+        console.log( 'init help' );
         bindEvents();
 
         if ( $('body').hasClass('home') ) {
             homeSearch();
         }
         if ( $('body').hasClass('search') ) {
+            console.log('search results');
             searchResults();
         }
     };
@@ -91,7 +92,7 @@ CB.help = ( function( $, window, document ) {
     };
 
     var goHome = function() {
-        window.location.href = config.home;
+        window.location.href = '/';
     };
 
     var typeAhead = {
@@ -127,6 +128,9 @@ CB.help = ( function( $, window, document ) {
             },
             success: function( data ) {
                renderSearchResults( data );
+            },
+            error: function( jqXHR ) {
+                console.log( jqXHR );
             }
         });
     };
@@ -149,22 +153,22 @@ CB.help = ( function( $, window, document ) {
     };
 
     var homeSearch = function() {
-
+        var $topSearchInput = $('.top-search');
         $el.homeSearchInput.appear();
 
         $(document.body).on('appear', '#q', function(e) {
-            $('.top-search').css( 'visibility','hidden' );
+            $topSearchInput.css( 'visibility','hidden' );
         });
 
         $(document.body).on('disappear', '#q', function(e) {
-            $('.top-search').css( 'visibility','visible' );
+            $topSearchInput.css( 'visibility','visible' ).addClass('zoom-in');
             $('#q-top').focus();
         });
     };
 
     var searchResults = function() {
-        console.log('fake some search results');
-        $.getJSON( config.searchAction + window.location.search, function( data ) {
+        var searchAction = config.searchAction + window.location.search;
+        $.getJSON( searchAction, function( data ) {
             renderSearchResults( data );
         });
     };
