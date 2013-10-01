@@ -17,42 +17,33 @@ module Jekyll
       raise ArgumentError.new 'Missing indextank_api_url.' unless site.config['indextank_api_url']
       raise ArgumentError.new 'Missing indextank_index.' unless site.config['indextank_index']
       
-      @storage_dir = File.join(self.home_dir, '.jekyll_indextank')
-      @last_indexed_file = File.join(@storage_dir, 'last_index')
-      
-      create_storage_dir()
-      load_last_timestamp()
-      
-      @excludes = site.config['indextank_excludes'] || []
+      excludes = site.config['indextank_excludes'] || []
 
       api = IndexTank::Client.new(site.config['indextank_api_url'])
-      @index = api.indexes(site.config['indextank_index'])
-    
+      index = api.indexes(site.config['indextank_index'])
+			index.delete
+			index.add :public_search => true
+			while not index.running?
+				sleep 0.5
+			end
+			
       # gather pages and posts
       items = site.pages.dup.concat(site.posts)
 
       # only process files that will be converted to .html and only non excluded files 
-      items = items.find_all {|i| i.output_ext == '.html' && ! @excludes.any? {|s| (i.url =~ Regexp.new(s)) != nil } } 
+      items = items.find_all {|i| i.output_ext == '.html' && ! excludes.any? {|s| (i.url =~ Regexp.new(s)) != nil } } 
       items.reject! {|i| i.data['exclude_from_search'] } 
-      
-      # only process items that are changed since last regeneration
-      items = items.find_all {|i| @last_indexed.nil? || File.mtime(i.path) > @last_indexed }
 
       # dont process index pages
       items.reject! {|i| i.is_a?(Jekyll::Page) && i.index? }
 			      
-      while not @index.running?
-        # wait for the indextank index to get ready
-        sleep 0.5
-      end
-      
       items.each do |item|              
         page_text = extract_text(site, item)
 
 				if item.output =~ /<p\sclass=.lead.>(?<excerpt>.*?)<\/p>/
 					excerpt = $~[:excerpt]
 				end
-        @index.document(item.url).add({ 
+        index.document(item.url).add({ 
           :text => page_text,
           :title => item.data['title'] || item.name,
 					:excerpt => excerpt,
@@ -60,9 +51,6 @@ module Jekyll
         })
         puts 'Indexed ' << item.url
       end
-      
-      @last_indexed = Time.now
-      write_last_indexed()
       
       puts 'Indexing done'
     end
@@ -75,34 +63,5 @@ module Jekyll
       page_text = paragraphs.join(" ").gsub("\r"," ").gsub("\n"," ")
     end
 
-    def write_last_indexed
-      begin
-        File.open(@last_indexed_file, 'w') {|f| Marshal.dump(@last_indexed, f)}
-      rescue
-        puts 'WARNING: cannot write indexed timestamps file.'
-      end
-    end
-
-    def load_last_timestamp
-      begin
-        @last_indexed = File.open(@last_indexed_file, "rb") {|f| Marshal.load(f)}
-      rescue
-        @last_indexed = nil
-      end
-    end
-
-    def create_storage_dir
-      begin
-        Dir.mkdir(@storage_dir) unless File.exists?(@storage_dir)
-      rescue SystemCallError
-        puts 'WARINING: cannot create directory to store index timestamps.'
-      end
-    end
-
-    def home_dir
-      homes = ["HOME", "HOMEPATH"]
-      ENV[homes.detect {|h| ENV[h] != nil}]
-    end
-    
   end 
 end

@@ -2,6 +2,8 @@ module Jekyll
  
   class EnvironmentVariablesGenerator < Generator
  
+		priority :highest
+		
     def generate(site)
       site.config['env'] = ENV['JEKYLL_ENV'] || 'development'
 			
