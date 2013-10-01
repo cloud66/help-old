@@ -51,6 +51,9 @@ CB.help = ( function( $, window, document ) {
         if ( $('body').hasClass('home') ) {
             homeSearch();
         }
+        if ( $('body').hasClass('search') ) {
+            searchResults();
+        }
     };
 
     var bindEvents = function() {
@@ -64,7 +67,8 @@ CB.help = ( function( $, window, document ) {
         });
 
         $(document.body).on('click', 'nav.crumbs a', function(){
-            window.history.back();
+            // window.history.back();
+            window.history.go(-1);
         });
 
         /*
@@ -76,8 +80,8 @@ CB.help = ( function( $, window, document ) {
           setTimeout(function() {
             window.addEventListener('popstate', function() {
                 console.log('**** popstate fired - do some navigation ****');
-
-                if ( window.location.pathname == '/getting-started/faq.html' ) {
+                var path = window.location.pathname;
+                if (  path == '/getting-started/faq.html' ) {
                     return;
                 }
                 goHome();
@@ -109,7 +113,7 @@ CB.help = ( function( $, window, document ) {
 
     var postSeach = function( form ) {
         var searchTerm = $( form ).serialize();
-        var searchUrl = '/help/search.json?'+searchTerm;
+        var searchUrl = '/search.html?'+searchTerm;
         history.pushState(null, null, searchUrl);
 
         $.ajax({
@@ -159,7 +163,12 @@ CB.help = ( function( $, window, document ) {
         });
     };
 
-
+    var searchResults = function() {
+        console.log('fake some search results');
+        $.getJSON( config.searchAction + window.location.search, function( data ) {
+            renderSearchResults( data );
+        });
+    };
 
     // Return public
     return {
