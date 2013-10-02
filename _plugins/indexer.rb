@@ -12,6 +12,11 @@ module Jekyll
     # The main content from each page is extracted and indexed at indextank.com
     # The doc_id of each indextank document will be the absolute url to the resource without domain name 
     def generate(site)
+			unless site.config['reindex']
+				puts 'Skipping indexing. Use JEKYLL_REINDEX to reindex the site'
+				return
+			end
+			
       puts 'Indexing pages...'
 			
       raise ArgumentError.new 'Missing indextank_api_url.' unless site.config['indextank_api_url']
