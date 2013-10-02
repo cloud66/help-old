@@ -49,6 +49,7 @@ It can containt the following sub-sections:
 - do_initial_db_schema_load: Specify whether to perform "rake db:schema:load" on new builds
 - reserved_server_memory: a value in MB that Cloud 66 will assume should be left available. This will affect any automatically calculated values.
 - passenger_process_memory: a value in MB that Cloud 66 will use for each passenger process when calculating the passenger_max_pool_size (passenger-based stacks only)
+- perfect_forward_secrecy: Specify whether to enable perfect forward secrecy ([more here](http://en.wikipedia.org/wiki/Perfect_forward_secrecy))
 
 <pre class="terminal">
 ----- EXAMPLE BELOW -----
@@ -60,6 +61,7 @@ It can containt the following sub-sections:
             do_initial_db_schema_load: false
             reserved_server_memory: 0 (default value)
             passenger_process_memory: 200 (default value)
+            perfect_forward_secrecy: true
 </pre>
 
 ## PostgreSQL configuration
