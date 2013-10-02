@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CI DSS Compliance Guide"
+title:  "PCI DSS Compliance Guide"
 date:   2013-09-24 10:51:22
 categories: your-account
 ---
