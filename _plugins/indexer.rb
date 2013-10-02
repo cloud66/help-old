@@ -12,6 +12,16 @@ module Jekyll
     # The main content from each page is extracted and indexed at indextank.com
     # The doc_id of each indextank document will be the absolute url to the resource without domain name 
     def generate(site)
+			
+      items = site.pages.dup.concat(site.posts)
+
+			items.each do |p|
+				a = p.url.split('/')
+				puts a[a.length - 1].gsub('.html', '').gsub('-','_')
+			end
+
+			raise 'a'
+			
 			unless site.config['reindex']
 				puts 'Skipping indexing. Use JEKYLL_REINDEX to reindex the site'
 				return
@@ -34,7 +44,7 @@ module Jekyll
 			
       # gather pages and posts
       items = site.pages.dup.concat(site.posts)
-
+			
       # only process files that will be converted to .html and only non excluded files 
       items = items.find_all {|i| i.output_ext == '.html' && ! excludes.any? {|s| (i.url =~ Regexp.new(s)) != nil } } 
       items.reject! {|i| i.data['exclude_from_search'] } 
