@@ -45,7 +45,7 @@ module Jekyll
       items.each do |item|              
         page_text = extract_text(site, item)
 
-				if item.output =~ /<p\sclass=.lead.>(?<excerpt>.*?)<\/p>/
+				if item.output =~ /<p\sclass=.lead.>(?<excerpt>.*?)<\/p>/m
 					excerpt = $~[:excerpt]
 				end
         index.document(item.url).add({ 
