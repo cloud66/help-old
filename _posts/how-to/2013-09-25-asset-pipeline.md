@@ -19,12 +19,6 @@ Libraries for Javascript compilation on your server that are currently supported
 1. **therubyracer** &mdash;  Google V8 embedded within Ruby. Installed by including "therubyracer" in your Gemfile.
 2. **Node.js** &mdash; Cloud 66 will *automatically* install this on your server if you don't include "therubyracer" in your Gemfile.
 
-<div class="notice">
-    <h3>Important</h3>
-    <p>
-        There are additional libraries for JavaScript compilation that are not currently supported by Cloud 66: therubyrhino; Apple JavaScriptCore; Microsoft Windows Script Host (JScript)
-    </p>
-</div>
 
 ## Enabling/Disabling Asset Pipeline Precompilation
 
@@ -43,11 +37,10 @@ This will be hidden if you have enabled/disabled asset pipeline compilation in y
     <p>
         <pre>config.assets.compile = true</pre>
     </p>
-    <p>
-        Note: Live Compilation (on-demand) <a href="http://guides.rubyonrails.org/asset_pipeline.html#live-compilation">does not perform as well as Precompilation</a>.
-    </p>
-
 </div>
+
+<p>Live Compilation (on-demand) <a href="http://guides.rubyonrails.org/asset_pipeline.html#live-compilation">does not perform as well as Precompilation</a> and is generaly not recommended for production environments.
+</p>
 
 
 ### application.rb
@@ -55,25 +48,22 @@ This will be hidden if you have enabled/disabled asset pipeline compilation in y
 Asset Pipeline precompilation will be disabled if <code>config.assets.enabled</code> variable is assigned to *false* in your <code>application.rb</code> file:
 
 <pre class="terminal">
-    config.assets.enabled = false
+config.assets.enabled = false
 </pre>
 
-<div class="notice">
-    <h3>Important</h3>
-    <p>
-        Setting this value to false means that your application doesn't use the asset pipeline at all, so precompilation is not relevant.
-    </p>
-</div>
+<p>
+    <span class="highlighted">Setting this value to false means that your application doesn't use the asset pipeline at all, so precompilation is not relevant</span>.
+</p>
 
 ### manifest.yml
 
 Use our [Cloud 66 manifest file](/stack-features/manifest-files.html) to enable/disable asset pipeline precompilation using the following parameter with a true or false, find <td>an example</td> below:
 
 <pre class="terminal">
-    development:
-    rails:
-    configuration:
-    use_asset_pipeline: true
+development:
+rails:
+configuration:
+use_asset_pipeline: true
 </pre>
 
 There is an hierarchical order to set up asset pipeline precompilation. The top one will override the others.

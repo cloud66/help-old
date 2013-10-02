@@ -6,12 +6,10 @@ categories: stack-features
 ---
 
 
-<p class="lead">You can use Environment variables in your code and configuration. Cloud 66 ensures they are available during your deployment and run of the application.</p>
+<p>You can use Environment variables in your code and configuration. Cloud 66 ensures they are available during your deployment and run of the application.</p>
 
-<div class="notice">
-	<h3>Important</h3>
-	<p>You would need to redeploy your stack for environment variable changes to take effect.</p>
-</div>
+<p>
+    <span class="highlighted">You would need to redeploy your stack for environment variable changes to take effect</span>.</p>
 
 After code analysis you can enter the environment variables your code or configuration requires by clicking on Add Environment Vars link.
 
@@ -32,7 +30,8 @@ Environment Variables that are entered or uploaded are not escaped. However they
 You can enter environment variables as a batch using the Upload functionality.
 
 This is available from the Environment Variables option on the Stack dropdown menu. Your file should be in the following format:
+
 <pre class="terminal">
-	KEY_1=value_1
-	KEY_2=value_2
+KEY_1=value_1
+KEY_2=value_2
 </pre>

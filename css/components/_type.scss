@@ -116,6 +116,11 @@ dl, dd {
     em, strong {
         color: #3F4957;
     }
+    .highlighted {
+        background: #FFFFCC;
+        padding: 2px 3px;
+        color: #000;
+    }
 }
 
 .notice {

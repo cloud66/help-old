@@ -29,9 +29,26 @@ nav {
 }
 
 .toc {
-    a {
+    a:link {
         text-decoration: none;
         font-size: 1.5rem;
+        color: #0088cc;
+    }
+
+    a:visited {
+        color: #0088cc;
+    }
+
+    a:hover {
+        color: #005580;
+    }
+
+    a:focus {
+        background: #FFFFCC;
+    }
+
+    a:active {
+        color: #CC0000;
     }
 }
 

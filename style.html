@@ -23,7 +23,7 @@ bodyclass: search
         Weighted para can be used e.g. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore quos repudiandae dolor commodi ratione reiciendis quas quam cum ullam. Dolore, ducimus, ratione sapiente excepturi possimus iusto corporis labore temporibus exercitationem?
     </p>
 
-    <p>Default paragraph servers running in your stacks on Cloud 66 have basic monitoring for their CPU, Memory and Disk space usage. These vital signs are reported back to Cloud 66 every 30 minutes, and you can see them as a chart on your server page.</p>
+    <p><span class="highlighted">Text can be highlighted</span> of a block level notice can be used &mdash; see the examples below.</p>
 
     <p>Default notice</p>
 
@@ -124,7 +124,17 @@ bodyclass: search
 
 <p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/mojombo/jekyll">Jekyll&#39;s GitHub repo</a>.</p>
 
+{% highlight ruby linenos %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
 
+{% highlight ruby %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
 
 </article>
 

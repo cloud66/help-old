@@ -40,8 +40,8 @@ CB.help = ( function( $, window, document ) {
     };
 
     var config = {
-        typeaheadAction: 'http://localhost:3000/help/autocomplete?query=',
-        searchAction:    'http://localhost:3000/help/search.json'
+        typeaheadAction: 'https://www.cloud66.com/help/autocomplete?query=',
+        searchAction:    'https://www.cloud66.com/help/search.json'
     };
 
     var init = function() {
@@ -161,7 +161,7 @@ CB.help = ( function( $, window, document ) {
         });
 
         $(document.body).on('disappear', '#q', function(e) {
-            $topSearchInput.css( 'visibility','visible' ).addClass('zoom-in');
+            $topSearchInput.css( 'visibility','visible' ).addClass('animated pulse');
             $('#q-top').focus();
         });
     };

@@ -46,12 +46,13 @@ categories: stack-features
 </ol>
 
 <div class="notice">
-        <h3>Important</h3>
-		<p>Only pushing code to the same branch as the stacks git branch will redeploy your stack. If you push code to another branch, nothing happens. This allows you to push code on your development branch without an automatic redeploy on your production stack.</p>
+    <h3>Important</h3>
+	<p>Only pushing code to the same branch as the stacks git branch will redeploy your stack. If you push code to another branch, nothing happens. This allows you to push code on your development branch without an automatic redeploy on your production stack.</p>
 </div>
 
 ## Using Redeployment Hook Manually
 To use the redeployment hook, you would need to POST an HTTP request to your redeployment hook URL. You can do this in curl like this:
+
 <pre class="terminal">
-  curl -X POST -d "" [your redeployment hook URL]
+curl -X POST -d "" [your redeployment hook URL]
 </pre>

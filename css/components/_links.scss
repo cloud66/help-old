@@ -3,7 +3,7 @@
  * ============================================================================================ */
 
 a {
-    @include transition( color, 0.8s, ease );
+    @include transition( color, 0.65s, ease );
     color: #0088cc;
     text-decoration: none;
 }

@@ -14,6 +14,7 @@ StackScore&trade; is a score calculated automatically form <b>A</b> to <b>F</b> 
 ![Cloud 66 StackScore](http://cdn.cloud66.com.s3.amazonaws.com/images/help/stackscore_overal.png)
 
 StackScore&trade; consists of 4 key metrics, each scored from <b>A</b> to <b>F</b>:
+
 - Backup and Data Integrity
 - Connectivity
 - Performance

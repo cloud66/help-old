@@ -5,7 +5,7 @@ date:   2013-09-24 10:51:22
 categories: web-server
 ---
 
-<p class="weighted">
+<p class="lead">
 	Nginx is configured automatically for your stack. Here is some details about it
 </p>
 
