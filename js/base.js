@@ -103,7 +103,9 @@ CB.help = ( function( $, window, document ) {
                 url: searchAction
             }).done(function (data) {
                 console.log( data );
-                typeahead.process( data.suggestions );
+                if ( data ) {
+                    typeahead.process( data.suggestions );
+                }
             }).fail(function (jqXHR, textStatus) {
                 console.log( jqXHR );
                 console.log( textStatus );
