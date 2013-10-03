@@ -52,7 +52,7 @@ Sample **manifest.yml** contents could look like the following:
 development:
     rails:
         server:
-            unique_name: frontend
+            unique&#95;name: frontend
             type: BYOC
             vendor: aws
             region: us-east-1
@@ -71,14 +71,14 @@ Using the manifest file also allows some features to be defined which are not cu
 production:
     rails:
         server:
-            unique_name: frontend
+            unique&#95;name: frontend
             extra_packages:
                 - atop
                 - chrony
     postgresql:
         server:
-            unique_name: backend
-            extra_packages:
+            unique&#95;name: backend
+            extra&#95;packages:
                 - chrony
         configuration:
             version: 9.2.3
@@ -112,10 +112,10 @@ Some application types can defined additional configurations - see below for mor
 
 A Rails application type in the manifest file gives you fine control over things like the ruby version or the server the rails application is deployed on.
 
-A Rails application type can containt the following sub-sections:
+A Rails application type can contain the following sub-sections:
 
 #### Server
-[Server section](/stack-features/manifest-servers.html) desribes the specifications of a server running the application.
+[Server section](/stack-features/manifest-servers.html) describes the specifications of a server running the application.
 
 #### Configuration
 Configuration section contains an application type's specific configuration items.
