@@ -16,7 +16,7 @@ s3_bucket: help.cloud66.com
 
 # s3_endpoint: ap-northeast-1
 
-# ignore_on_server: that_folder_of_stuff_i_dont_keep_locally
+# ignore_on_server: folder_to_keep_remotely_and_not_locally
 
 # s3_reduced_redundancy: true
 

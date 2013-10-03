@@ -68,7 +68,8 @@
     }
 }
 
- .home .top-search { visibility: hidden }
+ .home .top-search,
+ .notfound .top-search { visibility: hidden }
 
 .top-search {
     border: 1px solid #D1D1D1;
