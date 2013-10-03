@@ -9,9 +9,9 @@ s3_bucket: help.cloud66.com
 #   "assets/*": 6000
 #   "*": 300
 
-# gzip:
-#   - .html
-#   - .css
+gzip:
+  - .html
+  - .css
 #   - .md
 
 # s3_endpoint: ap-northeast-1
