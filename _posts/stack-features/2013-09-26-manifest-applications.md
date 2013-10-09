@@ -49,8 +49,7 @@ It can contains the following sub-sections:
 - do&#95;initial&#95;db&#95;schema&#95;load: Specify whether to perform "rake db:schema:load" on new builds
 - reserved&#95;server&#95;memory: a value in MB that Cloud 66 will assume should be left available. This will affect any automatically calculated values.
 - passenger&#95;process&#95;memory: a value in MB that Cloud 66 will use for each passenger process when calculating the passenger&#95;max&#95;pool&#95;size (passenger-based stacks only)
-- perfect&#95;forward&#95;secrecy: Specify whether to enable perfect forward secrecy ([more here](http://en.wikipedia.org/wiki/Perfect_forward_secrecy))
-- nginx: Specify configurations for Nginx.
+- nginx: Specify configurations for Nginx, currently CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy).
 
 <pre class="terminal">
 ----- EXAMPLE BELOW -----
@@ -62,9 +61,9 @@ It can contains the following sub-sections:
             do_initial_db_schema_load: false
             reserved_server_memory: 0 (default value)
             passenger_process_memory: 200 (default value)
-            perfect_forward_secrecy: true
             nginx:
             	cors: true
+            	perfect_forward_secrecy: true
 </pre>
 
 #### CORS configuration
