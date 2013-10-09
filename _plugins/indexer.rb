@@ -34,7 +34,7 @@ module Jekyll
 			
       # gather pages and posts
       items = site.pages.dup.concat(site.posts)
-
+			
       # only process files that will be converted to .html and only non excluded files 
       items = items.find_all {|i| i.output_ext == '.html' && ! excludes.any? {|s| (i.url =~ Regexp.new(s)) != nil } } 
       items.reject! {|i| i.data['exclude_from_search'] } 
@@ -45,7 +45,7 @@ module Jekyll
       items.each do |item|              
         page_text = extract_text(site, item)
 
-				if item.output =~ /<p\sclass=.lead.>(?<excerpt>.*?)<\/p>/
+				if item.output =~ /<p\sclass=.lead.>(?<excerpt>.*?)<\/p>/m
 					excerpt = $~[:excerpt]
 				end
         index.document(item.url).add({ 

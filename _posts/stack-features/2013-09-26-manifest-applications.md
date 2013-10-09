@@ -35,7 +35,7 @@ _Optional._
 ### Rails
 A Rails application type in the manifest file gives you fine control over things like the ruby version or the server the rails application is deployed on.
 
-It can containt the following sub-sections:
+It can contains the following sub-sections:
 - Server
 - Configuration
 
@@ -44,12 +44,12 @@ It can containt the following sub-sections:
 
 ## Rails configuration
 
-- ruby_version: Specify the version of Ruby to use (overridden if present in Gemfile)
-- use_asset_pipeline: Specify whether to use asset pipeline compilation
-- do_initial_db_schema_load: Specify whether to perform "rake db:schema:load" on new builds
-- reserved_server_memory: a value in MB that Cloud 66 will assume should be left available. This will affect any automatically calculated values.
-- passenger_process_memory: a value in MB that Cloud 66 will use for each passenger process when calculating the passenger_max_pool_size (passenger-based stacks only)
-- perfect_forward_secrecy: Specify whether to enable perfect forward secrecy ([more here](http://en.wikipedia.org/wiki/Perfect_forward_secrecy))
+- ruby&#95;version: Specify the version of Ruby to use (overridden if present in Gemfile)
+- use&#95;asset&#95;pipeline: Specify whether to use asset pipeline compilation
+- do&#95;initial&#95;db&#95;schema&#95;load: Specify whether to perform "rake db:schema:load" on new builds
+- reserved&#95;server&#95;memory: a value in MB that Cloud 66 will assume should be left available. This will affect any automatically calculated values.
+- passenger&#95;process&#95;memory: a value in MB that Cloud 66 will use for each passenger process when calculating the passenger&#95;max&#95;pool&#95;size (passenger-based stacks only)
+- nginx: Specify configurations for Nginx, currently CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy).
 
 <pre class="terminal">
 ----- EXAMPLE BELOW -----
@@ -61,7 +61,23 @@ It can containt the following sub-sections:
             do_initial_db_schema_load: false
             reserved_server_memory: 0 (default value)
             passenger_process_memory: 200 (default value)
-            perfect_forward_secrecy: true
+            nginx:
+            	cors: true
+            	perfect_forward_secrecy: true
+</pre>
+
+#### CORS configuration
+
+If you want to, you can also specify the origin and methods for CORS.
+<pre class="terminal">
+----- EXAMPLE BELOW -----
+... rails:
+        server: ...
+        configuration:
+            nginx:
+            	cors:
+            		origin: '*'
+                	methods: 'GET, OPTION'
 </pre>
 
 ## PostgreSQL configuration
@@ -78,7 +94,7 @@ It can containt the following sub-sections:
             postgis: true
 </pre>
 
-### PostGIS version configuration
+#### PostGIS version configuration
 
 - version: Specify the version of PostGIS and GEOS you want to install
 
