@@ -17,11 +17,11 @@ module Jekyll
 				return
 			end
 			
-      puts 'Indexing pages...'
 			
       raise ArgumentError.new 'Missing indextank_api_url.' unless site.config['indextank_api_url']
       raise ArgumentError.new 'Missing indextank_index.' unless site.config['indextank_index']
-      
+      puts "Indexing pages into #{site.config['indextank_index']}..."
+
       excludes = site.config['indextank_excludes'] || []
 
       api = IndexTank::Client.new(site.config['indextank_api_url'])
@@ -48,13 +48,16 @@ module Jekyll
 				if item.output =~ /<p\sclass=.lead.>(?<excerpt>.*?)<\/p>/m
 					excerpt = $~[:excerpt]
 				end
+				
         index.document(item.url).add({ 
           :text => page_text,
           :title => item.data['title'] || item.name,
 					:excerpt => excerpt,
-					:link => item.url
-        })
-        puts 'Indexed ' << item.url
+					:link => item.url,
+					:category => item.data['categories']
+        },
+				{ :categories => { :category => item.data['categories'] } })
+        puts "Indexed #{item.url}..."
       end
       
       puts 'Indexing done'

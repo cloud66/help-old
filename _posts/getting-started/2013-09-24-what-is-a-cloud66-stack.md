@@ -2,7 +2,7 @@
 layout: post
 title:  "What is a Cloud 66 Stack?"
 date:   2013-09-22 16:27:22
-categories: [getting-started]
+categories: getting-started
 ---
 
 <p class="lead">Cloud 66 makes it easy to configure and deploy a set of non&mdash;proprietary tools in order to run and manage your Ruby on Rails apps</p>
