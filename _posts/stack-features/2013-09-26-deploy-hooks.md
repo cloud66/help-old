@@ -8,7 +8,7 @@ categories: stack-features
 <p class="lead">Deployment hooks represent a way for you to take an action at various points during a build and/or deployment on Cloud 66.</p>
 
 <p>
-    A simple example of this would be copying a file to a target location on your server and executing at some point during your deployment.
+    A simple example of this would be copying a file to a target location on your server and executing at some point during your deployment. Feel free to check out our <a href="https://github.com/cloud66/deploy_hooks" target="_blank">deploy hooks repository</a>, which contains examples for different use-cases.
 </p>
 
 
