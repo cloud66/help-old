@@ -45,7 +45,7 @@ The following fields can be configured for this app
             <td>Post rotate command</td>
             <td>Command to be executed after rotation each time this app runs</td>
             <td><span class='label'>Optional</span></td>
-            <td>ie. <kbd>/your_app/do_something.sh</kbd></td>
+            <td>ie. <kbd>/your&#95;app/do&#95;something.sh</kbd></td>
         </tr>
         <tr>
             <td>Versions to keep</td>

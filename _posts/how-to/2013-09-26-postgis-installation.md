@@ -14,7 +14,7 @@ Installing through Cloud 66 is as simple as a manifest file entry. For more info
 In order for your manifest file to be picked up, you need a file called **manifest.yml** to be present within a folder named **.cloud66** that is in turn located in the root of your source code, and checked into your repository.
 
 <pre class="terminal">
-[source_repo]/.cloud66/manifest.yml
+[source&#95;repo]/.cloud66/manifest.yml
 </pre>
 
 For Cloud 66 to install PostGIS, your manifest file should contain the following:
@@ -85,9 +85,9 @@ sudo make comments-install
 
 Finally, enable the command-line tools to work from your shell:
 <pre class="terminal">
-sudo ln -sf /usr/share/postgresql-common/pg_wrapper /usr/local/bin/shp2pgsql
-sudo ln -sf /usr/share/postgresql-common/pg_wrapper /usr/local/bin/pgsql2shp
-sudo ln -sf /usr/share/postgresql-common/pg_wrapper /usr/local/bin/raster2pgsql
+sudo ln -sf /usr/share/postgresql-common/pg&#95;wrapper /usr/local/bin/shp2pgsql
+sudo ln -sf /usr/share/postgresql-common/pg&#95;wrapper /usr/local/bin/pgsql2shp
+sudo ln -sf /usr/share/postgresql-common/pg&#95;wrapper /usr/local/bin/raster2pgsql
 </pre>
 
 ### Spatially enabling a database
@@ -103,7 +103,7 @@ CREATE EXTENSION postgis;
 
 To add topology support, a second extension can be created on the database:
 <pre class="terminal">
-CREATE EXTENSION postgis_topology;
+CREATE EXTENSION postgis&#95;topology;
 </pre>
 
 #### Enabler scripts/template
@@ -113,21 +113,21 @@ The following example creates a template which can be re-used for creating multi
 
 PostGIS:
 <pre class="terminal">
-sudo -u postgres createdb template_postgis
-sudo -u postgres psql -d template_postgis -c "UPDATE pg_database SET datistemplate=true WHERE datname='template_postgis'"
-sudo -u postgres psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/postgis.sql
-sudo -u postgres psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/spatial_ref_sys.sql
-sudo -u postgres psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/postgis_comments.sql
+sudo -u postgres createdb template&#95;postgis
+sudo -u postgres psql -d template&#95;postgis -c "UPDATE pg&#95;database SET datistemplate=true WHERE datname='template&#95;postgis'"
+sudo -u postgres psql -d template&#95;postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/postgis.sql
+sudo -u postgres psql -d template&#95;postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/spatial&#95;ref&#95;sys.sql
+sudo -u postgres psql -d template&#95;postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/postgis&#95;comments.sql
 </pre>
 
 With raster support:
 <pre class="terminal">
-sudo -u postgres psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/rtpostgis.sql
-sudo -u postgres psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/raster_comments.sql
+sudo -u postgres psql -d template&#95;postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/rtpostgis.sql
+sudo -u postgres psql -d template&#95;postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/raster&#95;comments.sql
 </pre>
 
 With topology support:
 <pre class="terminal">
-sudo -u postgres psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/topology.sql
-sudo -u postgres psql -d template_postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/topology_comments.sql
+sudo -u postgres psql -d template&#95;postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/topology.sql
+sudo -u postgres psql -d template&#95;postgis -f /usr/share/postgresql/9.1/contrib/postgis-2.0/topology&#95;comments.sql
 </pre>

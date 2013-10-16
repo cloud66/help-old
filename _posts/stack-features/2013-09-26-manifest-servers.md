@@ -14,12 +14,12 @@ server
 #### Parent Section
 application
 #### Parameters
-**unique_name**
+**unique&#95;name**
 _Required_
 
 A unique name for this server
 
-**extra_packages**
+**extra&#95;packages**
 _Optional_
 
 A list of extra apt packages to be installed on the server, before deploying the application.
@@ -62,7 +62,7 @@ _Optional. BYOS Only_
 
 Username for the server. This is only applicable to Bring Your Own Server setup and should have be a sudoer root user on the box.
 
-**ssh_key_name**
+**ssh&#95;key&#95;name**
 _Optional. BYOS Only_
 
 Name of the SSH key used to access the server. You can add this SSH key via Cloud 66 web UI.
@@ -73,8 +73,8 @@ This example, installs `chrony` apt package on the server before deploying the a
 
 <pre class="terminal">
 ... server:
-        unique_name: frontend
-        extra_packages:
+        unique&#95;name: frontend
+        extra&#95;packages:
                 - chrony
 </pre>
 
@@ -83,7 +83,7 @@ This example, installs `chrony` apt package on the server before deploying the a
 For BYOC (*Bring-Your-Own-Cloud*) servers, vendor, size and region can be defined:
 <pre class="terminal">
 ... server:
-        unique_name: frontend
+        unique&#95;name: frontend
         type: BYOC
         vendor: aws
         region: us-east-1
@@ -99,19 +99,19 @@ For BYOC (*Bring-Your-Own-Cloud*) servers, vendor, size and region can be define
 
 ### Example: Bring Your Own Server
 
-For BYOS (*Bring-Your-Own-Server*) servers, address, username and ssh_key_name can be defined:
+For BYOS (*Bring-Your-Own-Server*) servers, address, username and ssh&#95;key&#95;name can be defined:
 <pre class="terminal">
 ... server:
-        unique_name: frontend
+        unique&#95;name: frontend
         type: BYOS
         address: 123.123.123.123
         username: ubuntu
-        ssh_key_name: my_server_key
+        ssh&#95;key&#95;name: my&#95;server&#95;key
 </pre>
 
 <div class="notice">
         <h3>Important</h3>
-        <p>In order to use your chosen ssh_key_name for BYOS mode, your associated SSH key must already be associated with your Cloud 66 account Only a single username/ssh_key is currently supported amongst all servers within a single stack.</p>
+        <p>In order to use your chosen ssh&#95;key&#95;name for BYOS mode, your associated SSH key must already be associated with your Cloud 66 account Only a single username/ssh&#95;key is currently supported amongst all servers within a single stack.</p>
     </div>
 </div>
 
@@ -122,7 +122,7 @@ You can share a server between two applications. This could be in cases like usi
 Each shared server definition specifies the name of another server definition in the manifest file for which the applications will then share the physical server:
 
 <pre class="terminal">
-... shared_server: *another_existing_servers_unique_name*
+... shared&#95;server: *another&#95;existing&#95;servers&#95;unique&#95;name*
 </pre>
 
 ### External Servers

@@ -26,7 +26,7 @@ Connecting would be now possible via:
 
 <p>
 	<kbd>
-		ssh user@server_address -i /path/to/downloaded/ssh/key/key.pem
+		ssh user@server&#95;address -i /path/to/downloaded/ssh/key/key.pem
 	</kbd>
 </p>
 

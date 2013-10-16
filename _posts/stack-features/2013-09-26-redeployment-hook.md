@@ -11,7 +11,7 @@ categories: stack-features
 
 <ol class="instruction-list">
 	<li>
-		<p>From the stack dropdown menu - click <b>Information</b>:</p>
+		<p>From the stack drop-down menu - click <b>Information</b>:</p>
 		<p>
 			<img src="http://cdn.cloud66.com.s3.amazonaws.com/images/help/stack-info.png" alt="">
 		</p>

@@ -35,4 +35,4 @@ As you can see above, the processes are being run on the web server. Should you 
 ## Environment Variables
 You can use any of your stack's environment variables with a `$` before the name. This will be replaced by the actual value in the command executed.
 
-For example, <kbd>worker: bundle exec sidekiq -e $RAILS_ENV</kbd> will be executed as <kbd>worker: bundle exec sidekiq -e production</kbd> if your stack has a production environment.
+For example, <kbd>worker: bundle exec sidekiq -e $RAILS&#95;ENV</kbd> will be executed as <kbd>worker: bundle exec sidekiq -e production</kbd> if your stack has a production environment.

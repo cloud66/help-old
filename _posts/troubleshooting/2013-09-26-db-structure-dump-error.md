@@ -23,10 +23,10 @@ This occurs mainly when your database server is located externally (or on anothe
 ## The Resolution
 
 Adding the following line to your application's *Rakefile* will stop the structure dump from occuring when performing the Cloud 66 deployment:
-<pre class="terminal">Rake::Task["db:structure:dump"].clear if ENV['RAILS_STACK_PATH']</pre>
+<pre class="terminal">Rake::Task["db:structure:dump"].clear if ENV['RAILS&#95;STACK&#95;PATH']</pre>
 
 <div class="notice">
 	<h3>Important</h3>
 
-		<p>By relying on the $RAILS_STACK_PATH condition means this is safe to apply in your own environments as long as you don't have the same environment variable set. If that isn't the case, you can always use the opposite of the condition to apply the change only if your own environment variable is NOT present.</p>
+		<p>By relying on the $RAILS&#95;STACK&#95;PATH condition means this is safe to apply in your own environments as long as you don't have the same environment variable set. If that isn't the case, you can always use the opposite of the condition to apply the change only if your own environment variable is NOT present.</p>
 </div>

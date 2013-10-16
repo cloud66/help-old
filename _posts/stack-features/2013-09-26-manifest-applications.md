@@ -56,14 +56,14 @@ It can contains the following sub-sections:
 ... rails:
         server: ...
         configuration:
-            ruby_version: 1.9.3
-            use_asset_pipeline: true
-            do_initial_db_schema_load: false
-            reserved_server_memory: 0 (default value)
-            passenger_process_memory: 200 (default value)
+            ruby&#95;version: 1.9.3
+            use&#95;asset&#95;pipeline: true
+            do&#95;initialdb&#95;schema&#95;load: false
+            reserved&#95;server&#95;memory: 0 (default value)
+            passenger&#95;process&#95;memory: 200 (default value)
             nginx:
             	cors: true
-            	perfect_forward_secrecy: true
+            	perfect&#95;forward&#95;secrecy: true
 </pre>
 
 #### CORS configuration
@@ -123,10 +123,10 @@ If you want to, you can also specify the origin and methods for CORS.
 
 ## Memcached
 
-### shared_group:
+### shared&#95;group:
 
-You can use shared_group to configure where your memcached server should be deployed (if it is used in your code).
-By default memcached will be deployed on your web servers. However, you can set these values under "shared_group" to change this behavior: --
+You can use shared&#95;group to configure where your memcached server should be deployed (if it is used in your code).
+By default memcached will be deployed on your web servers. However, you can set these values under "shared&#95;group" to change this behavior: --
 - web
 - db
 - redis
@@ -137,16 +137,16 @@ You can use the manifest file to make small configuration changes to the Memcach
 
 - memory: Specify maximum memory(in MB) memchached can use. Default value is 64
 - port: Specify connection port. Default value is 11211
-- listen_ip: Specify which IP address to listen on. Default value is 0.0.0.0
+- listen&#95;ip: Specify which IP address to listen on. Default value is 0.0.0.0
 
 <pre class="terminal">
 ----- EXAMPLE BELOW -----
 ... memcached:
-        shared_group: db
+        shared&#95;group: db
         configuration:
             memory: 1024
             port: 11215
-            listen_ip: 127.0.0.1
+            listen&#95;ip: 127.0.0.1
 </pre>
 
 ## HAProxy configuration
@@ -154,7 +154,7 @@ You can use the manifest file to make small configuration changes to the HAProxy
 
 - httpchk: the health-check configuration
 - balance: the load balancing strategy
-- errorfile_\*: location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer.
+- errorfile&#95;\*: location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer.
 
 Note: To find out about the available options for each one of the values, please refer to [HAProxy manual](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt).
 
@@ -164,11 +164,11 @@ haproxy:
     configuration:
         httpchk: HEAD / HTTP/1.0 (default value)
         balance: roundrobin (default value)
-        errorfile_400: /etc/haproxy/errors/400.http
-        errorfile_403: /etc/haproxy/errors/403.http
-        errorfile_408: /etc/haproxy/errors/408.http
-        errorfile_500: /etc/haproxy/errors/500.http
-        errorfile_502: /etc/haproxy/errors/502.http
-        errorfile_503: /etc/haproxy/errors/503.http
-        errorfile_504: /etc/haproxy/errors/504.http
+        errorfile&#95;400: /etc/haproxy/errors/400.http
+        errorfile&#95;403: /etc/haproxy/errors/403.http
+        errorfile&#95;408: /etc/haproxy/errors/408.http
+        errorfile&#95;500: /etc/haproxy/errors/500.http
+        errorfile&#95;502: /etc/haproxy/errors/502.http
+        errorfile&#95;503: /etc/haproxy/errors/503.http
+        errorfile&#95;504: /etc/haproxy/errors/504.http
 </pre>

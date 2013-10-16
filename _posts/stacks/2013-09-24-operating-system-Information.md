@@ -14,7 +14,7 @@ Other versions of Ubuntu Linux should work, however are not all completely teste
 
 <div class="notice">
 	<h3>Important</h3>
-    <p>At this point no other Linux distros are supported. Future releases will enable support for additional Linux distros.</p>
+    <p>At this point no other Linux distributions are supported. Future releases will enable support for additional Linux distributions.</p>
 </div>
 
 ## OS Requirements/Configuration

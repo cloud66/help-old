@@ -16,17 +16,17 @@ After analysis, Cloud 66 will then present you with additional options for deplo
 ## Redis Server Addresses
 
 If you want Cloud 66 to deploy Redis, then you will need to ensure that the redis url in your source code is updated appropriately and checked in.
-The easiest thing to do is to simply use the environment variable **REDIS_ADDRESS** in your source that Cloud 66 will then ensure is populated appropriately.
+The easiest thing to do is to simply use the environment variable **REDIS&#95;ADDRESS** in your source that Cloud 66 will then ensure is populated appropriately.
 
 Your resulting ruby code could then be (from a redis.rb initializer in this example)
 <p>
 <kbd>
-	$redis = Redis.new(:host => ENV['REDIS_ADDRESS'], :port => 6379)
+	$redis = Redis.new(:host => ENV['REDIS&#95;ADDRESS'], :port => 6379)
 </kbd>
 </p>
 
 <div class="notice">
 	<h3>Important</h3>
 
-	<p>Unlike with MySQL, PostgreSQL and MongoDB, Cloud 66 will not automatically update your Redis paths depending on where you deploy Redis. You will need to update you code yourself, and check it in. Using ENV['REDIS_ADDRESS'] allows you to easily reference the location of your Redis server.</p>
+	<p>Unlike with MySQL, PostgreSQL and MongoDB, Cloud 66 will not automatically update your Redis paths depending on where you deploy Redis. You will need to update you code yourself, and check it in. Using ENV['REDIS&#95;ADDRESS'] allows you to easily reference the location of your Redis server.</p>
 </div>

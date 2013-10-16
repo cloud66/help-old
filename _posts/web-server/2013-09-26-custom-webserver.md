@@ -27,10 +27,10 @@ You need to configure your Rack server based on the recommended configuration se
 If you would like to use a different server, there are some points you'd need to consider for it to work with a Cloud 66 stack. These conventions will allow Cloud 66 to redirect traffic to your servers and manage them for availability, memory consumption and restart cycles.
 
 ### Traffic Socket
-For the traffic to be redirected to your web server, it should use a Unix socket at `/tmp/web_server.sock`
+For the traffic to be redirected to your web server, it should use a Unix socket at `/tmp/web&#95;server.sock`
 
 ### PID file
-For the web server to be managed and restarted properly by Cloud 66, it needs to have it's PID file at `/tmp/web_server.pid`
+For the web server to be managed and restarted properly by Cloud 66, it needs to have it's PID file at `/tmp/web&#95;server.pid`
 
 ## Manual control of the web servers
 To control your web servers manually you can use the following commands:
@@ -38,17 +38,17 @@ To control your web servers manually you can use the following commands:
 ### Stop the web server
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server stop
+	sudo bluepill cloud66&#95;web&#95;server stop
 </kbd>
 </p>
 
 ### Start the web server
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server quit
+	sudo bluepill cloud66&#95;web&#95;server quit
 </kbd><br/>
 <kbd>
-	sudo bluepill load /etc/bluepill/autoload/cloud66_web_server.pill
+	sudo bluepill load /etc/bluepill/autoload/cloud66&#95;web&#95;server.pill
 </kbd>
 </p>
 
@@ -56,6 +56,6 @@ To control your web servers manually you can use the following commands:
 If supported by your web server, you can use the following command to restart the web server with no down time (this will send a USR2 signal to your webserver)
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server restart
+	sudo bluepill cloud66&#95;web&#95;server restart
 </kbd>
 </p>

@@ -13,10 +13,10 @@ categories: web-server
 </p>
 
 ## Choosing Puma as your Rack server
-To run a Puma Rack server, add a line to your Procfile labeled as custom_web. Here is an example:
+To run a Puma Rack server, add a line to your Procfile labeled as custom&#95;web. Here is an example:
 
 <pre class='terminal'>
-custom_web: bundle exec puma -e $RACK_ENV -b unix:///tmp/web_server.sock --pidfile /tmp/web_server.pid -d
+custom&#95;web: bundle exec puma -e $RACK&#95;ENV -b unix:///tmp/web&#95;server.sock --pidfile /tmp/web&#95;server.pid -d
 </pre>
 Please take note that Puma is running in Daemon mode with the `-d` parameter.
 
@@ -32,23 +32,23 @@ To control your web servers manually you can use the following commands:
 ### Stop the web server
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server stop
+	sudo bluepill cloud66&#95;web&#95;server stop
 </kbd>
 </p>
 
 ### Start the web server
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server quit
+	sudo bluepill cloud66&#95;web&#95;server quit
 </kbd><br/>
 <kbd>
-	sudo bluepill load /etc/bluepill/autoload/cloud66_web_server.pill
+	sudo bluepill load /etc/bluepill/autoload/cloud66&#95;web&#95;server.pill
 </kbd>
 </p>
 
 ### Restart the web server (hot-restart)
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server restart
+	sudo bluepill cloud66&#95;web&#95;server restart
 </kbd>
 </p>

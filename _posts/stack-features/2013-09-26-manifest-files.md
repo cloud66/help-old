@@ -25,7 +25,7 @@ The file format is draft and potentially subject to change (though backwards com
 In order for your manifest file to be picked up, you need a file called **manifest.yml** to be present within a folder named **.cloud66** that is in turn located in the root of your source code, and checked into your repository.
 
 <pre class="terminal">
-[source_repo]/.cloud66/manifest.yml
+[source&#95;repo]/.cloud66/manifest.yml
 </pre>
 
 ## Getting Started
@@ -35,7 +35,7 @@ As the extension suggests, the manifest.yml file is **YAML** formatted. And like
 You can always check the validity of your YAML file with a command line this:
 <p>
 <kbd>
-  ruby -e 'require "yaml"; YAML.load_file("/path_to/manifest.yml")'
+  ruby -e 'require "yaml"; YAML.load&#95;file("/path&#95;to/manifest.yml")'
 </kbd>
 </p>
 
@@ -58,7 +58,7 @@ development:
             region: us-east-1
             size: t1.micro
     mysql:
-        shared_server: frontend
+        shared&#95;server: frontend
 </pre>
 
 Because of the scoped **development**, the above example will apply to **development** environment stacks only.
@@ -72,7 +72,7 @@ production:
     rails:
         server:
             unique&#95;name: frontend
-            extra_packages:
+            extra&#95;packages:
                 - atop
                 - chrony
     postgresql:
@@ -129,7 +129,7 @@ Every application defined in the manifest file must be bound to a server. Server
 Here is an example of a server definition:
 <pre class="terminal">
 ... server:
-        unique_name: frontend
+        unique&#95;name: frontend
 </pre>
 
 Find out more detailed information about [Manifest Server Definition](/stack-features/manifest-servers.html)

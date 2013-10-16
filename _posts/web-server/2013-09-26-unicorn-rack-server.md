@@ -9,10 +9,10 @@ categories: web-server
 
 
 ## Choosing Unicorn as your Rack server
-To run a Unicorn Rack server, add a line to your Procfile labeled as custom_web. Here is an example:
+To run a Unicorn Rack server, add a line to your Procfile labeled as custom&#95;web. Here is an example:
 
 <pre class='terminal'>
-custom_web: bundle exec unicorn_rails -c config/unicorn.rb -E $RAILS_ENV -D
+custom&#95;web: bundle exec unicorn&#95;rails -c config/unicorn.rb -E $RAILS&#95;ENV -D
 </pre>
 Please take note that Unicorn is running in Daemon mode with the `-D` parameter.
 
@@ -24,30 +24,30 @@ Please take note that Unicorn is running in Daemon mode with the `-D` parameter.
 Here is an example of a unicorn.rb configuration file that is compatible with Cloud 66 requirements (following the Procfile line above, this should be located under the `config` folder of your Rails app):
 
 <pre class='prettyprint lang-ruby'>
-	worker_processes 2
+	worker&#95;processes 2
 
-	working_directory "#{ENV['RAILS_STACK_PATH']}"
+	working&#95;directory "#{ENV['RAILS&#95;STACK&#95;PATH']}"
 
-	listen "/tmp/web_server.sock", :backlog => 64
+	listen "/tmp/web&#95;server.sock", :backlog => 64
 
 	timeout 30
 
-	pid '/tmp/web_server.pid'
+	pid '/tmp/web&#95;server.pid'
 
-	stderr_path "#{ENV['RAILS_STACK_PATH']}/log/unicorn.stderr.log"
-	stdout_path "#{ENV['RAILS_STACK_PATH']}/log/unicorn.stdout.log"
+	stderr&#95;path "#{ENV['RAILS&#95;STACK&#95;PATH']}/log/unicorn.stderr.log"
+	stdout&#95;path "#{ENV['RAILS&#95;STACK&#95;PATH']}/log/unicorn.stdout.log"
 
-	preload_app true
-	GC.respond_to?(:copy_on_write_friendly=) and
-		GC.copy_on_write_friendly = true
+	preload&#95;app true
+	GC.respond&#95;to?(:copy&#95;on&#95;write&#95;friendly=) and
+		GC.copy&#95;on&#95;write&#95;friendly = true
 
-	check_client_connection false
+	check&#95;client&#95;connection false
 
-	before_fork do |server, worker|
-		old_pid = '/tmp/web_server.pid.oldbin'
-		if File.exists?(old_pid) && server.pid != old_pid
+	before&#95;fork do |server, worker|
+		old&#95;pid = '/tmp/web&#95;server.pid.oldbin'
+		if File.exists?(old&#95;pid) && server.pid != old&#95;pid
 			begin
-				Process.kill("QUIT", File.read(old_pid).to_i)
+				Process.kill("QUIT", File.read(old&#95;pid).to&#95;i)
 			rescue Errno::ENOENT, Errno::ESRCH
 				# someone else did our job for us
 			end
@@ -57,9 +57,9 @@ Here is an example of a unicorn.rb configuration file that is compatible with Cl
 			ActiveRecord::Base.connection.disconnect!
 	end
 
-	after_fork do |server, worker|
+	after&#95;fork do |server, worker|
 		defined?(ActiveRecord::Base) and
-			ActiveRecord::Base.establish_connection
+			ActiveRecord::Base.establish&#95;connection
 	end
 </pre>
 
@@ -81,23 +81,23 @@ To control your web servers manually you can use the following commands:
 ### Stop the web server
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server stop
+	sudo bluepill cloud66&#95;web&#95;server stop
 </kbd>
 </p>
 
 ### Start the web server
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server quit
+	sudo bluepill cloud66&#95;web&#95;server quit
 </kbd><br/>
 <kbd>
-	sudo bluepill load /etc/bluepill/autoload/cloud66_web_server.pill
+	sudo bluepill load /etc/bluepill/autoload/cloud66&#95;web&#95;server.pill
 </kbd>
 </p>
 
 ### Restart the web server (zero-downtime)
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server restart
+	sudo bluepill cloud66&#95;web&#95;server restart
 </kbd>
 </p>

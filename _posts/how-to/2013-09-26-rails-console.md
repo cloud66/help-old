@@ -9,7 +9,7 @@ categories: how-to
 
 ## On your servers
 
-Go on your `RAILS_STACK_PATH` and run the following command:
+Go on your `RAILS&#95;STACK&#95;PATH` and run the following command:
 
 <pre class="termainal">
 <kbd>bundle exec rails c &lt;environment&gt;</kbd>

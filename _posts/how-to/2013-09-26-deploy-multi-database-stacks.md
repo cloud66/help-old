@@ -30,7 +30,7 @@ A solution to deploy a multi-db stack with Cloud 66 would be to pass the initial
 <ol>
     <li>
         <p>
-            <strong>Temporarily remove</strong> your non-activerecord (auxillary) database Gem specification from your Gemfile.
+            <strong>Temporarily remove</strong> your non-activerecord (auxiliary) database Gem specification from your Gemfile.
         </p>
     </li>
     <li>
@@ -42,14 +42,14 @@ A solution to deploy a multi-db stack with Cloud 66 would be to pass the initial
 
 <pre class="terminal">
 production:
-    first_thing:
-      - source: /.cloud66/files/my_db_install_script.sh
-        destination: ~/my_db_install_script.sh
+    first&#95;thing:
+      - source: /.cloud66/files/my&#95;db&#95;install&#95;script.sh
+        destination: ~/my&#95;db&#95;install&#95;script.sh
         target: rails
         execute: true
         sudo: true
-        apply_during: build_only
-        halt_on_error: true
+        apply&#95;during: build&#95;only
+        halt&#95;on&#95;error: true
 </pre>
 
 
@@ -58,11 +58,11 @@ production:
     <h3>Important</h3>
 
 	<p>The specifics of the script to install your database depend on the database - most database types have detailed installation instructions via their websites</p>
-	<p>You can only target an existing stack server, using this method you cannot have your auxillary database on a standalone server</p>
+	<p>You can only target an existing stack server, using this method you cannot have your auxiliary database on a standalone server</p>
 
 </div>
 
 <ol start="3">
 <li><strong>Proceed through the analysis phase</strong>. You will see that Cloud 66 will have detected a single database type. Proceeding to deploy your application would then create the database, and servers as required.</li>
 
-<li> <strong>Once deployed</strong> or if it failed deployment due to requirement of the auxillary database you can add your auxillary database gem(s) back into your Gemfile, commit and redeploy.</li>
+<li> <strong>Once deployed</strong> or if it failed deployment due to requirement of the auxiliary database you can add your auxiliary database gem(s) back into your Gemfile, commit and redeploy.</li>

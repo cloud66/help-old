@@ -105,21 +105,21 @@ listen webcluster *:80
     balance     roundrobin
     option      httpchk HEAD / HTTP/1.0
     option      forwardfor
-    cookie      LSW_WEB insert
+    cookie      LSW&#95;WEB insert
     option      httpclose
-    server      web1 XX.XX.XX.XX:80 cookie "LSW_WEB1" check
-    server      web2 XX.XX.XX.XX:80 cookie "LSW_WEB2" check
+    server      web1 XX.XX.XX.XX:80 cookie "LSW&#95;WEB1" check
+    server      web2 XX.XX.XX.XX:80 cookie "LSW&#95;WEB2" check
 
 
-listen webcluster_ssl *:8081
+listen webcluster&#95;ssl *:8081
     mode        http
     cookie      HTTP insert nocache
     balance     roundrobin
     option      httpclose
     option      forwardfor
     reqadd      X-Forwarded-Proto:\ http
-    server      web1 XX.XX.XX.XX:80 cookie "LSW_WEB1" check
-    server      web2 XX.XX.XX.XX:80 cookie "LSW_WEB2" check
+    server      web1 XX.XX.XX.XX:80 cookie "LSW&#95;WEB1" check
+    server      web2 XX.XX.XX.XX:80 cookie "LSW&#95;WEB2" check
 
 </pre>
 
@@ -139,13 +139,13 @@ Make sure that you wrote your own load balanced servers IP instead of <code>XX.X
 
 <pre class="terminal">
 sslVersion = all
-options = NO_SSLv2
+options = NO&#95;SSLv2
 cert= &lt;path to SSL certificate key file&gt;
 setuid = root
 setgid = root
 pid = /var/run/stunnel.pid
-socket = l:TCP_NODELAY=1
-socket = r:TCP_NODELAY=1
+socket = l:TCP&#95;NODELAY=1
+socket = r:TCP&#95;NODELAY=1
 output = /var/log/stunnel.log
 
 [https]

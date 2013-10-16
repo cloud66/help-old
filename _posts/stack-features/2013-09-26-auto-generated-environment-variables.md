@@ -13,34 +13,34 @@ categories: stack-features
 
 ## Environment Variable List (Standard)
 
-- **RAILS_ENV** &mdash; Your stack's environment
-- **RACK_ENV** &mdash; Your stack's environment
-- **RAILS_STACK_PATH** &mdash; The path to the directory into which your rails code is deployed
+- **RAILS&#95;ENV** &mdash; Your stack's environment
+- **RACK&#95;ENV** &mdash; Your stack's environment
+- **RAILS&#95;STACK&#95;PATH** &mdash; The path to the directory into which your rails code is deployed
 
 ## Environment Variable List (Special Cases)
 
 <h3>Stacks with a MySQL database</h3>
 
-- **MYSQL_ADDRESS** &mdash; The physical address of your MySQL server (kept up-to-date)
+- **MYSQL&#95;ADDRESS** &mdash; The physical address of your MySQL server (kept up-to-date)
 
 Note: If you have not already specified your own corresponding database username/password then one/both of the following will be created:
-- **MYSQL_USERNAME** &mdash; Randomly assigned and inserted into your database.yml file
-- **MYSQL_PASSWORD** &mdash; Randomly assigned and inserted into your database.yml file
+- **MYSQL&#95;USERNAME** &mdash; Randomly assigned and inserted into your database.yml file
+- **MYSQL&#95;PASSWORD** &mdash; Randomly assigned and inserted into your database.yml file
 
 <h3>Stacks with a PostgreSQL database</h3>
 
-- **POSTGRESQL_ADDRESS** &mdash; The physical address of your PostgreSQL server (kept up-to-date)
+- **POSTGRESQL&#95;ADDRESS** &mdash; The physical address of your PostgreSQL server (kept up-to-date)
 
 Note: If you have not already specified your own corresponding database username/password then one/both of the following will be created:
-- **POSTGRESQL_USERNAME** &mdash; Randomly assigned and inserted into your database.yml file
-- **POSTGRESQL_PASSWORD** &mdash; Randomly assigned and inserted into your database.yml file
+- **POSTGRESQL&#95;USERNAME** &mdash; Randomly assigned and inserted into your database.yml file
+- **POSTGRESQL&#95;PASSWORD** &mdash; Randomly assigned and inserted into your database.yml file
 
 <h3>Stacks with a MongoDB database</h3>
 
-- **MONGODB_ADDRESS** &mdash; The physical address of your MongoDB server (kept up-to-date)
+- **MONGODB&#95;ADDRESS** &mdash; The physical address of your MongoDB server (kept up-to-date)
 
 <h3>Stacks with a Redis database</h3>
 
-- **REDIS_ADDRESS** &mdash; The physical address of your Redis server (kept up-to-date)
+- **REDIS&#95;ADDRESS** &mdash; The physical address of your Redis server (kept up-to-date)
 
 

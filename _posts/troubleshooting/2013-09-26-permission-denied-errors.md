@@ -9,7 +9,7 @@ categories: troubleshooting
 
 ## The basics
 When you deploy a stack through Cloud 66, your webserver will run under a different user to the user that you've used to do the deployments.
-This user (*nginx*) does not have elevated permissions, and does not have write access to your filesystem (except explicitly to the */tmp* and the *$RAILS_STACK_PATH/tmp* folders)
+This user (*nginx*) does not have elevated permissions, and does not have write access to your filesystem (except explicitly to the */tmp* and the *$RAILS&#95;STACK&#95;PATH/tmp* folders)
 
 This drastically improves security on your application. However, some gems/applications required the ability to write to local files that are not in the above folders by default.
 To resolve these issues you can do one of the following:
@@ -30,25 +30,25 @@ The best bet is to go through the gems available documentation to see if an alte
 
 You can use a deploy hook to execute a script after each deployment that will open up the permissions you require.
 
-Add a bash script to your stack that will perform the permission modification. For example create the file */.cloud66/files/open_folder_permissions.sh* as below:
+Add a bash script to your stack that will perform the permission modification. For example create the file */.cloud66/files/open&#95;folder&#95;permissions.sh* as below:
 <pre class="terminal">
 &#35;!/bin/bash
 &#35;load environment variables
-source /var/.cloud66_env
+source /var/.cloud66&#95;env
 &#35;assign desired permissions
-sudo chmod 0775 -R $RAILS_STACK_PATH/*your_path_here*
+sudo chmod 0775 -R $RAILS&#95;STACK&#95;PATH/*your&#95;path&#95;here*
 </pre>
 
-Then, add a deploy_hook to execute the above script on each deploy. For example create the file *.cloud66/deploy_hooks.yml* as below:
+Then, add a deploy&#95;hook to execute the above script on each deploy. For example create the file *.cloud66/deploy&#95;hooks.yml* as below:
 <pre class="terminal">
 production:
-  after_rails:
-    - source: /.cloud66/files/open_folder_permissions.sh
-      destination: /tmp/open_folder_permissions.sh
+  after&#95;rails:
+    - source: /.cloud66/files/open&#95;folder&#95;permissions.sh
+      destination: /tmp/open&#95;folder&#95;permissions.sh
       target: rails
       execute: true
-      run_on: all_servers
-      apply_during: all
+      run&#95;on: all&#95;servers
+      apply&#95;during: all
       sudo: true
 </pre>
 

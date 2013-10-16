@@ -23,12 +23,12 @@ categories: web-server
 			<td>nginx</td>
 		</tr>
 		<tr>
-			<td>worker_processes</td>
-			<td>Dynamicly set <a href="/help/vendor_instances">based on instance size</a></td>
+			<td>worker&#95;processes</td>
+			<td>Dynamically set <a href="/help/vendor_instances">based on instance size</a></td>
 		</tr>
 		<tr>
-			<td>error_log</td>
-			<td><code>/var/deploy/[stack_name]/web_head/shared/log/nginx_error.log</code></td>
+			<td>error&#95;log</td>
+			<td><code>/var/deploy/[stack&#95;name]/web&#95;head/shared/log/nginx&#95;error.log</code></td>
 		</tr>
 	</tbody>
 </table>
@@ -43,7 +43,7 @@ categories: web-server
 	</thead>
 	<tbody>
 		<tr>
-			<td>worker_connections</td>
+			<td>worker&#95;connections</td>
 			<td>1024</td>
 		</tr>
 	</tbody>
@@ -63,59 +63,59 @@ categories: web-server
 			<td>on</td>
 		</tr>
 		<tr>
-			<td>gzip_min_length</td>
+			<td>gzip&#95;min&#95;length</td>
 			<td>100</td>
 		</tr>
 		<tr>
-			<td>gzip_proxied</td>
+			<td>gzip&#95;proxied</td>
 			<td>expired no-cache no-store private auth</td>
 		</tr>
 		<tr>
-			<td>gzip_types</td>
+			<td>gzip&#95;types</td>
 			<td>text/plain application/xml text/css application/x-javascript text/javascript</td>
 		</tr>
 		<tr>
-			<td>gzip_disable</td>
+			<td>gzip&#95;disable</td>
 			<td>"MSIE [1-6]\."</td>
 		</tr>
 		<tr>
-			<td>passenger_root</td>
+			<td>passenger&#95;root</td>
 			<td><code>[passenger location]</code></td>
 		</tr>
 		<tr>
-			<td>passenger_ruby</td>
+			<td>passenger&#95;ruby</td>
 			<td><code>[stack ruby shell]</code></td>
 		</tr>
 		<tr>
-			<td>passenger_ruby</td>
+			<td>passenger&#95;ruby</td>
 			<td>nginx</td>
 		</tr>
 		<tr>
-			<td>passenger_pool_idle_time</td>
+			<td>passenger&#95;pool&#95;idle&#95;time</td>
 			<td>0</td>
 		</tr>
 		<tr>
-			<td>passenger_max_pool_size</td>
+			<td>passenger&#95;max&#95;pool&#95;size</td>
 			<td>15</td>
 		</tr>
 		<tr>
-			<td>ssl_session_cache</td>
+			<td>ssl&#95;session&#95;cache</td>
 			<td>shared:SSL:10m</td>
 		</tr>
 		<tr>
-			<td>ssl_session_timeout</td>
+			<td>ssl&#95;session&#95;timeout</td>
 			<td>10m</td>
 		</tr>
 		<tr>
-			<td>underscores_in_headers</td>
+			<td>underscores&#95;in&#95;headers</td>
 			<td>on</td>
 		</tr>
 		<tr>
-			<td>default_type</td>
+			<td>default&#95;type</td>
 			<td>application/octet-stream</td>
 		</tr>
 		<tr>
-			<td>client_max_body_size</td>
+			<td>client&#95;max&#95;body&#95;size</td>
 			<td>50m</td>
 		</tr>
 		<tr>
@@ -123,11 +123,11 @@ categories: web-server
 			<td>on</td>
 		</tr>
 		<tr>
-			<td>server_tokens</td>
+			<td>server&#95;tokens</td>
 			<td>off</td>
 		</tr>
 		<tr>
-			<td>keepalive_timeout</td>
+			<td>keepalive&#95;timeout</td>
 			<td>65</td>
 		</tr>
 	</tbody>
@@ -144,34 +144,34 @@ categories: web-server
 	<tbody>
 		<tr>
 			<td>listen</td>
-			<td>80 default_server</td>
+			<td>80 default&#95;server</td>
 		</tr>
 		<tr>
-			<td>server_name</td>
-			<td><code>_</code> or <code>SSL server name</code></td>
+			<td>server&#95;name</td>
+			<td><code>&#95;</code> or <code>SSL server name</code></td>
 		</tr>
 		<tr>
-			<td>rails_env</td>
+			<td>rails&#95;env</td>
 			<td><code>[stack environment]</code></td>
 		</tr>
 		<tr>
-			<td>client_max_body_size</td>
+			<td>client&#95;max&#95;body&#95;size</td>
 			<td>50m</td>
 		</tr>
 		<tr>
 			<td>root</td>
-			<td><code>/var/deploy/[stack name]/web_head/current/public</code></td>
+			<td><code>/var/deploy/[stack name]/web&#95;head/current/public</code></td>
 		</tr>
 		<tr>
-			<td>passenger_enabled</td>
+			<td>passenger&#95;enabled</td>
 			<td>on</td>
 		</tr>
 		<tr>
-			<td>ssl_certificate_key</td>
+			<td>ssl&#95;certificate&#95;key</td>
 			<td><code>/etc/ssl/localcerts/[ssl cerificate file name].key</code></td>
 		</tr>
 		<tr>
-			<td>ssl_certificate</td>
+			<td>ssl&#95;certificate</td>
 			<td><code>/etc/ssl/localcerts/[ssl cerificate file name].crt</code></td>
 		</tr>
 	</tbody>

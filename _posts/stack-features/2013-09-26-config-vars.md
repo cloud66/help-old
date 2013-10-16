@@ -32,6 +32,6 @@ You can enter environment variables as a batch using the Upload functionality.
 This is available from the Environment Variables option on the Stack dropdown menu. Your file should be in the following format:
 
 <pre class="terminal">
-KEY_1=value_1
-KEY_2=value_2
+KEY&#95;1=value&#95;1
+KEY&#95;2=value&#95;2
 </pre>
