@@ -8,27 +8,19 @@ categories: how-to
 <p class="lead">You can connect to your servers from your terminal app or via the embedded terminal screen.</p>
 
 ## Direct Shell Access
-You can always have terminal access to your servers from your own server. By default shell access (SSH) on port 22 is blocked to all traffic from outside. In order to access the terminal from your own computer, you'd need to open this port for your own IP address. This is possible using [Stack Security](/stack-features/stack-security.html) page.
+You can always have terminal access to your servers from your own server - just follow these simple steps:
 
-Once the port is open, you can use your usual terminal app to connect. You can find the username and SSH key from the server page.
+1. Port 22 (SSH) is closed to outside traffic by default - so you need to allow your own IP address to access it. See the [stack security](/stack-features/stack-security.html) page to accomplish this.
+2. Once the port is open, you can find your username and SSH key on your server page: ![Direct Shell Access Username](http://cdn.cloud66.com.s3.amazonaws.com/images/help/ssh_download.png)
+3. Change the access rights to the downloaded key to 0600:
+<pre class="terminal">
+$ chmod 0600 /Users/xxx/Downloads/key.pem
+</pre>
 
-![Direct Shell Access Username](http://cdn.cloud66.com.s3.amazonaws.com/images/help/ssh_download.png)
-
-Remember to change the access rights to the downloaded key to 0600:
-
-<p>
-<kbd>
-	chmod 0600 /path/to/downloaded/ssh/key/key.pem
-</kbd>
-</p>
-
-Connecting would be now possible via:
-
-<p>
-	<kbd>
-		ssh user@server&#95;address -i /path/to/downloaded/ssh/key/key.pem
-	</kbd>
-</p>
+4. You can now connect to your server with the following command:
+<pre class="terminal">
+$ ssh user&#95;name@ip&#95;address -i /Users/xxx/Downloads/key.pem
+</pre>
 
 ## Embedded Terminal
 The simplest way to terminal (shell) into your servers is via the embedded terminal screen. This is available through the terminal icon on the top right of the each server.
