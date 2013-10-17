@@ -20,17 +20,18 @@ By default, stacks deployed by Cloud 66 run on <a href="https://www.phusionpasse
 
 ## Configurations for your Rack server
 You need to configure your Rack server based on the recommended configuration settings of each specific server. Please see the Cloud 66 documentation for configuring
-* [Puma](/web-server/puma_rack_server.html)
-* [Unicorn](/web-server/unicorn_rack_server.html)
-* [Thin](/web-server/thin_rack_server.html)
+
+- [Puma](/web-server/puma-rack-server.html)
+- [Unicorn](/web-server/unicorn-rack-server.html)
+- [Thin](/web-server/thin-rack-server.html)
 
 If you would like to use a different server, there are some points you'd need to consider for it to work with a Cloud 66 stack. These conventions will allow Cloud 66 to redirect traffic to your servers and manage them for availability, memory consumption and restart cycles.
 
 ### Traffic Socket
-For the traffic to be redirected to your web server, it should use a Unix socket at `/tmp/web&#95;server.sock`
+For the traffic to be redirected to your web server, it should use a Unix socket at `/tmp/web_server.sock`
 
 ### PID file
-For the web server to be managed and restarted properly by Cloud 66, it needs to have it's PID file at `/tmp/web&#95;server.pid`
+For the web server to be managed and restarted properly by Cloud 66, it needs to have it's PID file at `/tmp/web_server.pid`
 
 ## Manual control of the web servers
 To control your web servers manually you can use the following commands:

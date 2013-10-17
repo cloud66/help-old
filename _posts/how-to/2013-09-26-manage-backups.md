@@ -21,13 +21,13 @@ Access the backup page of your stack, and click the download button:
 
 ### Command line
 Use the `wget` command to download your backup:
-`wget "<generated&#95;public&#95;link>"`
+`wget <generated_public_link>`
 
 You can find the link to the file by clicking the download button (shown above) and copying the link. Remember to put quotes around it.
 
 ## Unzip your backup
 Now that you have downloaded your backup, you can go ahead and unzip it with the following command:
-`tar -xvf <tar&#95;file>  -C <folder&#95;name>`
+`tar -xvf <tar_file>  -C <folder_name>`
 
 The `-C` option allows you to choose which folder to extract the files to.
 
@@ -42,7 +42,7 @@ This will result in a file called file.tar, which we can now unzip.
 ## Move your backup to another server
 To do this we will copy the file to a remote server using SCP:
 
-`scp  -i <identity&#95;file> <local&#95;file> <remote&#95;server&#95;user>@<remote&#95;server&#95;address>:<remote&#95;server&#95;folder>`
+`scp  -i <identity_file> <local_file> <remote_server_user>@<remote_server_address>:<remote_server_folder>`
 
 ## Restore your backup on another server
 
@@ -50,21 +50,21 @@ To do this we will copy the file to a remote server using SCP:
 
 From the [MySQL command-line](http://dev.mysql.com/doc/refman/5.5/en/mysql.html), use the following command to restore your database from a dumped backup file `(.sql)`:
 
-`mysql -u <db&#95;username> -p <db&#95;password> <db&#95;name> <path&#95;to&#95;your&#95;backup&#95;file(.sql)>`
+`mysql -u <db_username> -p <db_password> <db_name> <path_to_your_backup_file(.sql)>`
 
 
 ### PostgreSQL database
 
 From the PostgreSQL command-line prompt, use the following command to restore your database from a dumped backup file `(.sql)`:
 
-`psql -U <db&#95;username> --no-password <db&#95;name> <path&#95;to&#95;your&#95;backup&#95;file(.sql)>`
+`psql -U <db_username> --no-password <db_name> <path_to_your_backup_file(.sql)>`
 
 
 ### MongoDB database
 
 From the MongoShell, use the following command to restore your database from a dumped backup folder:
 
-`mongorestore  --drop --username <db&#95;username> --password <db&#95;password> --db <db&#95;name> <path&#95;to&#95;your&#95;backup&#95;folder(dump)>`
+`mongorestore  --drop --username <db_username> --password <db_password> --db <db_name> <path_to_your_backup_folder(dump)>`
 
 ### Redis database
 
@@ -75,4 +75,4 @@ From the MongoShell, use the following command to restore your database from a d
 
 Redis data are simply represented by a single `dump.rdb` file. You just have to copy this file into the right folder using your command-line interface:
 
-`sudo rm -rf /data/redis/dump.rdb && sudo cp <path&#95;to&#95;your&#95;backup&#95;file(.rdb)> /data/redis/dump.rdb`
+`sudo rm -rf /data/redis/dump.rdb && sudo cp <path_to_your_backup_file(.rdb)> /data/redis/dump.rdb`
