@@ -15,6 +15,6 @@ When an IP address changes on a server managed by Cloud 66, it will be automatic
 
 This will try to reach the new IP address and if it can't, the server owner will get notified by email. If the IP address is reachable, the firewall rules will be  reconstructed, fail2ban will be reconfigured and DNS records will be updated on Cloud 66 side.
 
-Futhermore, if required, the load balancer will be updated to serve the server  with the new IP address and the environment variables will be updated aswell.
+Furthermore, if required, the load balancer will be updated to serve the server  with the new IP address and the environment variables will be updated as well.
 
 Finally, the server owner will receive a notification of success by email and will be encouraged to redeploy the stack.

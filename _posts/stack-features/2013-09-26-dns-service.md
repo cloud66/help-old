@@ -12,7 +12,7 @@ Every server fired up with Cloud 66 has a unique animal themed name. This should
 
 All servers are accessible by their Cloud 66 DNS name:
 
-<p><kbd>[server_name].[stack_name].[environment].c66.me</kbd></p>
+<p><kbd>[server&#95;name].[stack&#95;name].[environment].c66.me</kbd></p>
 
 so that would be something like:
 
@@ -21,7 +21,7 @@ so that would be something like:
 ## Load Balancer Names
 Load Balancers also get a name from Cloud 66 DNS. The load balancer names look like this:
 
-<p><kbd>[stack_name].[environment].c66.me</kbd></p>
+<p><kbd>[stack&#95;name].[environment].c66.me</kbd></p>
 
 so that would be something like
 

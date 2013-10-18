@@ -11,7 +11,7 @@ categories: how-to
 
 Go on your `RAILS_STACK_PATH` and run the following command:
 
-<pre class="termainal">
+<pre class="terminal">
 <kbd>bundle exec rails c &lt;environment&gt;</kbd>
 </pre>
 

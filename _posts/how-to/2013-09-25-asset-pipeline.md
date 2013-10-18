@@ -63,7 +63,7 @@ Use our [Cloud 66 manifest file](/stack-features/manifest-files.html) to enable/
 development:
 rails:
 configuration:
-use_asset_pipeline: true
+use&#95;asset&#95;pipeline: true
 </pre>
 
 There is an hierarchical order to set up asset pipeline precompilation. The top one will override the others.

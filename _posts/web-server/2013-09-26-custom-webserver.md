@@ -20,9 +20,10 @@ By default, stacks deployed by Cloud 66 run on <a href="https://www.phusionpasse
 
 ## Configurations for your Rack server
 You need to configure your Rack server based on the recommended configuration settings of each specific server. Please see the Cloud 66 documentation for configuring
-* [Puma](/web-server/puma_rack_server.html)
-* [Unicorn](/web-server/unicorn_rack_server.html)
-* [Thin](/web-server/thin_rack_server.html)
+
+- [Puma](/web-server/puma-rack-server.html)
+- [Unicorn](/web-server/unicorn-rack-server.html)
+- [Thin](/web-server/thin-rack-server.html)
 
 If you would like to use a different server, there are some points you'd need to consider for it to work with a Cloud 66 stack. These conventions will allow Cloud 66 to redirect traffic to your servers and manage them for availability, memory consumption and restart cycles.
 
@@ -38,17 +39,17 @@ To control your web servers manually you can use the following commands:
 ### Stop the web server
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server stop
+	sudo bluepill cloud66&#95;web&#95;server stop
 </kbd>
 </p>
 
 ### Start the web server
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server quit
+	sudo bluepill cloud66&#95;web&#95;server quit
 </kbd><br/>
 <kbd>
-	sudo bluepill load /etc/bluepill/autoload/cloud66_web_server.pill
+	sudo bluepill load /etc/bluepill/autoload/cloud66&#95;web&#95;server.pill
 </kbd>
 </p>
 
@@ -56,6 +57,6 @@ To control your web servers manually you can use the following commands:
 If supported by your web server, you can use the following command to restart the web server with no down time (this will send a USR2 signal to your webserver)
 <p>
 <kbd>
-	sudo bluepill cloud66_web_server restart
+	sudo bluepill cloud66&#95;web&#95;server restart
 </kbd>
 </p>

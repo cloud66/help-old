@@ -6,7 +6,7 @@ categories: how-to
 ---
 
 
-<p class="lead">You can connect your Circle CI account to Cloud 66 for a continious deployment of all green tests.</p>
+<p class="lead">You can connect your Circle CI account to Cloud 66 for a continuous deployment of all green tests.</p>
 
 
 ## Post Test Hooks

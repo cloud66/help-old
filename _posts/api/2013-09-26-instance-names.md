@@ -192,11 +192,11 @@ categories: API
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>1 CPU, 512MB</td><td>g1_standard_1cpu_512mb</td></tr>
-		<tr><td>1 CPU, 1GB</td><td>g1_standard_1cpu_1024mb</td></tr>
-		<tr><td>1 CPU, 2GB</td><td>g1_standard_1cpu_2048mb</td></tr>
-		<tr><td>1 CPU, 4GB</td><td>g1_standard_1cpu_4096mb</td></tr>
-		<tr><td>3 CPU, 16GB</td><td>g1_standard_3cpu_16384mb</td></tr>
-		<tr><td>2 CPU, 8GB</td><td>g1_standard_2cpu_8192mb</td></tr>
+		<tr><td>1 CPU, 512MB</td><td>g1&#95;standard&#95;1cpu&#95;512mb</td></tr>
+		<tr><td>1 CPU, 1GB</td><td>g1&#95;standard&#95;1cpu&#95;1024mb</td></tr>
+		<tr><td>1 CPU, 2GB</td><td>g1&#95;standard&#95;1cpu&#95;2048mb</td></tr>
+		<tr><td>1 CPU, 4GB</td><td>g1&#95;standard&#95;1cpu&#95;4096mb</td></tr>
+		<tr><td>3 CPU, 16GB</td><td>g1&#95;standard&#95;3cpu&#95;16384mb</td></tr>
+		<tr><td>2 CPU, 8GB</td><td>g1&#95;standard&#95;2cpu&#95;8192mb</td></tr>
 	</tbody>
 </table>

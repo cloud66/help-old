@@ -15,9 +15,9 @@ This best practice is supported by Cloud 66 and there is no need to change anyth
 production:
   adapter: mysql2
   host: db.prod.myapp.com
-  database: myapp_prod
-  username: &lt;%= ENV['DB_USER'] %&gt;
-  password: &lt;%= ENV['DB_PASSWORD'] %&gt;
+  database: myapp&#95;prod
+  username: &lt;%= ENV['DB&#95;USER'] %&gt;
+  password: &lt;%= ENV['DB&#95;PASSWORD'] %&gt;
 </pre>
 
 ## Environment Variables in the Code

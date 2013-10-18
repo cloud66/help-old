@@ -21,7 +21,7 @@ If your SSL key is protected with a passphrase, you can remove it using the foll
 
 <p>
 <kbd>
-	openssl rsa -in wild_mydomain_com.key -out wild_mydomain_com.nopass.key
+	openssl rsa -in wild&#95;mydomain&#95;com.key -out wild&#95;mydomain&#95;com.nopass.key
 </kbd>
 </p>
 
