@@ -17,7 +17,7 @@ Stack security allows you to configure and apply firewall rules per server for y
 
 By default [Cloud 66 gateway servers](/stacks/security.html) are the only servers allowed SSH (port 22) access to stack servers. The default firewall rules includes DB and Web ports appropriate for the stack deployment but also includes ports 8080 and 8443 as alternative HTTP ports for WebSocket based applications like [Faye](/how-to/implementing-faye.html).
 
-Editing and removing the default rules is not allowed through the firewall to ensure secure accessiblity to the servers at all times.
+Editing and removing the default rules is not allowed through the firewall to ensure secure accessibility to the servers at all times.
 
 ![Cloud 66 Firewall Rules](http://cdn.cloud66.com.s3.amazonaws.com/images/help/firewall_rules.png)
 
@@ -33,12 +33,12 @@ This is either the IP address to the name of the source of the traffic. For exam
 
 Alternatively you can allow traffic from a range of IP addresses. For example to allow traffic from sources with IP address from `23.45.67.0` to `23.45.67.255` you can use `23.45.67.89/24`.
 
-You can also specify the source of the traffic by name, if that name is known in your stack. This can be chosen from the dropdown. The valid values can be `Anywhere`, the name of the any of the server groups in your stack (like `Rails Servers`, `MySQL Servers`) or the name of the individual server (like `Coyote`).
+You can also specify the source of the traffic by name, if that name is known in your stack. This can be chosen from the drop-down. The valid values can be `Anywhere`, the name of the any of the server groups in your stack (like `Rails Servers`, `MySQL Servers`) or the name of the individual server (like `Coyote`).
 
 ![Cloud 66 Firewall Sources](http://cdn.cloud66.com.s3.amazonaws.com/images/help/firewall_from_dropdown.png)
 
 ### Destination (To)
-This is the destination of the traffic. Only the servers or server groups within the stack are the valid values you can choose from the dropdown.
+This is the destination of the traffic. Only the servers or server groups within the stack are the valid values you can choose from the drop-down.
 
 ### Protocol
 Can be either `TCP` or `UDP`

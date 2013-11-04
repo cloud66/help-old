@@ -26,17 +26,17 @@ Cloud 66 allows you to [specify whether or not to run this](/how-to/asset-pipeli
 
 Take note of these database settings from your [Heroku database dashboard](https://postgres.heroku.com/databases):
 
-- &lt;db_name&gt;
-- &lt;db_username&gt;
-- &lt;db_password&gt;
+- &lt;db&#95;name&gt;
+- &lt;db&#95;username&gt;
+- &lt;db&#95;password&gt;
 
 Modify your <code>config/database.yml</code> by adding those settings for your environment:
 <pre class="terminal">
 development:
     adapter: postgresql
-    database: &lt;db_name&gt;
-    username: &lt;db_username&gt;
-    password: &lt;db_password&gt;
+    database: &lt;db&#95;name&gt;
+    username: &lt;db&#95;username&gt;
+    password: &lt;db&#95;password&gt;
     host: localhost
     port: 5432
 </pre>
@@ -49,23 +49,23 @@ From the Heroku Toolbelt, you can create a publicly accessible backup URL:
 
 Please refer to [Heroku documentation](https://devcenter.heroku.com/articles/pgbackups#creating-a-backup) for more information.
 
-Once you have your <code>&lt;backup_url&gt;</code>, you need to download it to your Cloud 66 server.
+Once you have your <code>&lt;backup&#95;url&gt;</code>, you need to download it to your Cloud 66 server.
 You can do that by [connecting to your database server](/how-to/connect-db-servers.html) and using the following command:
 
 <p>
-<kbd>curl -o myBackup.dump "&lt;backup_url&gt;"</kbd>
+<kbd>curl -o myBackup.dump "&lt;backup&#95;url&gt;"</kbd>
 </p>
 
 Once complete, you can [restore your database backup](https://devcenter.heroku.com/articles/heroku-postgres-import-export#restore-to-local-database):
 
 <p>
-    <kbd>pg_restore --verbose --clean --no-acl --no-owner -U &lt;db_username&gt; -d &lt;db_name&gt; myBackup.dump</kbd>
+    <kbd>pg&#95;restore --verbose --clean --no-acl --no-owner -U &lt;db&#95;username&gt; -d &lt;db&#95;name&gt; myBackup.dump</kbd>
 </p>
 
 Finally, redeploy your application or restart PostgreSQL:
 
 <p>
-    <kbd>sudo -u postgres pg_ctl -D /usr/local/pgsql/data -m immediate restart</kbd>
+    <kbd>sudo -u postgres pg&#95;ctl -D /usr/local/pgsql/data -m immediate restart</kbd>
 </p>
 
 ## Dynos &amp; Scaling up

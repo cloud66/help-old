@@ -21,7 +21,7 @@ Access the backup page of your stack, and click the download button:
 
 ### Command line
 Use the `wget` command to download your backup:
-`wget "<generated_public_link>"`
+`wget <generated_public_link>`
 
 You can find the link to the file by clicking the download button (shown above) and copying the link. Remember to put quotes around it.
 

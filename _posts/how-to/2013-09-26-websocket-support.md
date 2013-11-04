@@ -39,7 +39,7 @@ Learn more about [Cloud 66 HAProxy and WebSocket](/how-to/haproxy-for-websocket.
 
 ## Test your WebSocket server
 
-To test your WebSocket server, create a <code>.html</code> file with the code below, make sure to replace *&lt;your_address&gt;* with your WebSocket server IP address and finally, open it in a web browser.
+To test your WebSocket server, create a <code>.html</code> file with the code below, make sure to replace *&lt;your&#95;address&gt;* with your WebSocket server IP address and finally, open it in a web browser.
 
 <pre class='prettyprint lang-html'>
 &lt;html&gt;
@@ -49,7 +49,7 @@ To test your WebSocket server, create a <code>.html</code> file with the code be
       $(document).ready(function(){
         function debug(str){ $(&quot;#debug&quot;).append(&quot;&lt;p&gt;&quot;+str+&quot;&lt;/p&gt;&quot;); };
 
-        ws = new WebSocket(&quot;ws://your_address&quot;);
+        ws = new WebSocket(&quot;ws://your&#95;address&quot;);
         ws.onmessage = function(evt) { $(&quot;#msg&quot;).append(&quot;&lt;p&gt;&quot;+evt.data+&quot;&lt;/p&gt;&quot;); };
         ws.onclose = function() { debug(&quot;socket closed&quot;); };
         ws.onopen = function() {

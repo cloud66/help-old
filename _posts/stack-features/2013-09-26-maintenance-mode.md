@@ -25,5 +25,5 @@ Note: that this drop-down cog is only available while your stack is not currentl
 Cloud 66 will use your own maintenance page if you supply it - the page should exist in the following path to be used while maintenance mode is active.
 
 <pre class="terminal">
-[source_repo]/.cloud66/maintenance.html
+[source&#95;repo]/.cloud66/maintenance.html
 </pre>

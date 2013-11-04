@@ -9,7 +9,7 @@ categories: how-to
 
 ## Directly
 
-You can connect directly into your database server and invoke a databade console  from here. To do that, please refer to the [terminal connection to servers](/how-to/shell-to-your-servers.html) documentation.
+You can connect directly into your database server and invoke a database console  from here. To do that, please refer to the [terminal connection to servers](/how-to/shell-to-your-servers.html) documentation.
 
 ## Indirectly
 

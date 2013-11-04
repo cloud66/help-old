@@ -14,7 +14,7 @@ Other versions of Ubuntu Linux should work, however are not all completely teste
 
 <div class="notice">
 	<h3>Important</h3>
-    <p>At this point no other Linux distros are supported. Future releases will enable support for additional Linux distros.</p>
+    <p>At this point no other Linux distributions are supported. Future releases will enable support for additional Linux distributions.</p>
 </div>
 
 ## OS Requirements/Configuration
@@ -58,5 +58,12 @@ For a more complete list of packages that are installed on your system you can d
 <li>File installation locations of a given pacakge: <pre class="terminal">dpkg -L wget</pre></li>
 </ol>
 
+## Permission Errors
+If you experience permission errors after deploying to your own server, you may want to follow these guidelines, provided by one of our users.
+
+1. [SSH to your server](/how-to/shell-to-your-servers.html).
+2. `chown admin /tmp`
+3. `chmod 777 -R /tmp`
+4. `chmod o+t -R /tmp`
 
 

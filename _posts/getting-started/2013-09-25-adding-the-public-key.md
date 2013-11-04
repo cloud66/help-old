@@ -19,6 +19,6 @@ categories: getting-started
         Where is says <em>Tell us about your app</em> click the <strong>How</strong> link.
     </li>
     <li>
-        Copy the key and follow the instuctions for your GIT provider.
+        Copy the key and follow the instructions for your GIT provider.
     </li>
 </ul>

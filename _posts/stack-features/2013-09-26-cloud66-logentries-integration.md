@@ -9,7 +9,7 @@ categories: stack-features
 
 
 ## Deploy a Stack
-[Deploy your stack](first_stack) to your cloud or servers normally.
+[Deploy your stack](first&#95;stack) to your cloud or servers normally.
 
 ## Get your Logentries Account ID
 After your stack is deployed, you will see a Protip for Centralized log files.

@@ -37,13 +37,13 @@ The following fields can be configured for this app
 			<td>Destination</td>
 			<td>The destination directory in which to keep your archived log files</td>
 			<td><span class='label label-important'>Required</span></td>
-			<td>ie. <kbd>/logs/apache/log_archive</kbd></td>
+			<td>ie. <kbd>/logs/apache/log&#95;archive</kbd></td>
 		</tr>
 		<tr>
 			<td>Post rotate command</td>
 			<td>Command to be executed after rotation each time this app runs</td>
 			<td><span class='label'>Optional</span></td>
-			<td>ie. <kbd>/your_app/do_something.sh</kbd></td>
+			<td>ie. <kbd>/your&#95;app/do&#95;something.sh</kbd></td>
 		</tr>
 		<tr>
 			<td>Versions to keep</td>
