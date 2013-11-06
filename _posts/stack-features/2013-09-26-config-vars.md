@@ -17,7 +17,7 @@ After code analysis you can enter the environment variables your code or configu
 
 You can now enter the environment variables you need to deploy or run your app. These will be available to all users on all web server boxes including all web server processes (<em>nginx</em>) and your rake tasks.
 
-![enter environment vars](http://cdn.cloud66.com.s3.amazonaws.com/images/help/envrionment_var_form.png)
+![enter environment vars](http://cdn.cloud66.com/images/help/environment_var_form.png)
 
 See how you can [use environment variables](/stack-features/environments.html) in your <kbd>database.yml</kbd> or code.
 

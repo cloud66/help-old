@@ -28,15 +28,15 @@ You can assign environment variables both before and after deploying your stacks
 
 To do it before deployment (useful when you use them in your configurations), click on the Add Environemnt Vars link in the analysis results page:
 
-![environment variables](http://cdn.cloud66.com.s3.amazonaws.com/images/help/environment_vars.png)
+![environment variables](http://cdn.cloud66.com/images/help/environment_vars.png)
 
 After deployment, you can always change, remove or add new environment variables to your stack by clicking the Environment Variables link of the stack.
 
-![environment variables](http://cdn.cloud66.com.s3.amazonaws.com/images/help/environment_vars_menu.png)
+![environment variables](http://cdn.cloud66.com/images/help/environment_vars_menu.png)
 
 Now you can add, remove and edit your environment variables:
 
-![enter environment vars](http://cdn.cloud66.com.s3.amazonaws.com/images/help/envrionment_var_form.png)
+![enter environment vars](http://cdn.cloud66.com/images/help/environment_var_form.png)
 
 <div class="notice">
     <h3>Important</h3>
