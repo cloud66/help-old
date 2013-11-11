@@ -7,35 +7,40 @@ categories: stack-features
 
 <p class="lead">Each stack you deploy has access to a number of automatically populated environment variables</p>
 
-<p>
-    This is in addition to any environment variables you add yourself.
-</p>
+These auto-generated environment variables are in addition to any [that you assign yourself](/stack-features/assign-env-vars.html). They comprise of standard variables for all stacks, as well as those specific for different environments.
 
-## Environment Variable List (Standard)
+<div class="notice">
+    <h3>Important</h3>
+    <p>Given that we frequently add new features and frameworks, this is by no means an exhaustive list of auto-generated environment variables. To see a list of environment variables available to your environment, please see your specific <a href="/stack-features/assign-env-vars.html">environment variable page</a>, either before or after initial deployment.</p>
+</div>
 
-- **RAILS&#95;ENV** &mdash; Your stack's environment
-- **RACK&#95;ENV** &mdash; Your stack's environment
-- **RAILS&#95;STACK&#95;PATH** &mdash; The path to the directory into which your rails code is deployed
+## Standard Environment Variables
 
-## Environment Variable List (Special Cases)
+- **RAILS&#95;ENV** &mdash; Your stacks environment
+- **RACK&#95;ENV** &mdash; Your stacks environment
+- **STACK&#95;PATH** &mdash; The directory path to which your code is deployed
 
-<h3>Stacks with a MySQL database</h3>
+## Case-specific Environment Variable
+
+#### Stacks with a MySQL database
 
 - **MYSQL&#95;ADDRESS** &mdash; The physical address of your MySQL server (kept up-to-date)
 
 Note: If you have not already specified your own corresponding database username/password then one/both of the following will be created:
+
 - **MYSQL&#95;USERNAME** &mdash; Randomly assigned and inserted into your database.yml file
 - **MYSQL&#95;PASSWORD** &mdash; Randomly assigned and inserted into your database.yml file
 
-<h3>Stacks with a PostgreSQL database</h3>
+#### Stacks with a PostgreSQL database
 
 - **POSTGRESQL&#95;ADDRESS** &mdash; The physical address of your PostgreSQL server (kept up-to-date)
 
 Note: If you have not already specified your own corresponding database username/password then one/both of the following will be created:
+
 - **POSTGRESQL&#95;USERNAME** &mdash; Randomly assigned and inserted into your database.yml file
 - **POSTGRESQL&#95;PASSWORD** &mdash; Randomly assigned and inserted into your database.yml file
 
-<h3>Stacks with a MongoDB database</h3>
+#### Stacks with a MongoDB database
 
 - **MONGODB&#95;ADDRESS** &mdash; The physical address of your MongoDB server (kept up-to-date)
 
