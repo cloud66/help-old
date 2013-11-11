@@ -73,3 +73,7 @@ There is an hierarchical order to set up asset pipeline precompilation. The top 
     <li>In the Cloud 66 manifest file</li>
     <li>On Cloud 66 interface</li>
 </ol>
+
+## Compiling Only the Modified Assets
+
+Cloud 66 supports this through [Turbo Sprockets](https://github.com/ndbroadbent/turbo-sprockets-rails3). All you need to do is to add Turbo Sprocket gem to your Gemfile. This is only supported for Rails 3.2 and above.
