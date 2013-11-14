@@ -36,6 +36,8 @@ production:
                 version: 3.3.8
 </pre>
 
+Once your stack has been deployed, you can find your PostGIS file in `/etc/postgresql/share/contrib/postgis-2.0/postgis.sql` on your database server.
+
 ## Manual installation
 Applies specifically to Ubuntu 12.04 (the officially supported Cloud66 OS).
 
