@@ -6,7 +6,7 @@ categories: how-to
 ---
 
 <p class="lead">
-    <abbr title="Ruby on Rails">ROR</abbr> applications using Rails 3.1.0 and above can use the asset pipeline to improve performance
+    <abbr title="Ruby on Rails">RoR</abbr> applications using Rails 3.1.0 and above can use the asset pipeline to improve performance
 </p>
 
 ## Requirements
