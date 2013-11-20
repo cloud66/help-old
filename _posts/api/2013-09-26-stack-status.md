@@ -2,7 +2,7 @@
 layout: post
 title:  "Stack Status"
 date:   2013-09-24 10:51:22
-categories: API
+categories: oldAPI
 ---
 
 <p class="lead">Stack Status values and their meanings</p>

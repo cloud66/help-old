@@ -2,7 +2,7 @@
 layout: post
 title:  "Server Group Attributes"
 date:   2013-09-24 10:51:22
-categories: API
+categories: oldAPI
 ---
 
 <p class="lead">Server Group attribute values</p>
