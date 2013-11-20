@@ -40,10 +40,10 @@ Should you wish to change the database username/password after build, you will h
 <pre class="terminal">
 production:
   adapter: mysql2
-  username: <%= ENV['MYSQL_USERNAME'] %>
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  host: <%= ENV['MYSQL_ADDRESS'] %>
-  database: <%= ENV['MYSQL_DATABASE'] %>
+  username: <%= ENV['MYSQL&#95;USERNAME'] %>
+  password: <%= ENV['MYSQL&#95;PASSWORD'] %>
+  host: <%= ENV['MYSQL&#95;ADDRESS'] %>
+  database: <%= ENV['MYSQL&#95;DATABASE'] %>
 </pre>
 
 **Declarative**
@@ -52,17 +52,17 @@ ActiveRecord::Base.configurations[:development] = {
   :adapter   => 'mysql2',
   :encoding  => 'utf8',
   :reconnect => true,
-  :database  => ENV['MYSQL_DATABASE'],
+  :database  => ENV['MYSQL&#95;DATABASE'],
   :pool      => 5,
-  :username  => ENV['MYSQL_USERNAME'],
-  :password  => ENV['MYSQL_PASSWORD'],
-  :host      => ENV['MYSQL_ADDRESS'],
+  :username  => ENV['MYSQL&#95;USERNAME'],
+  :password  => ENV['MYSQL&#95;PASSWORD'],
+  :host      => ENV['MYSQL&#95;ADDRESS'],
 }
 </pre>
 
 #### DataMapper
 <pre class="terminal">
-DataMapper::setup(:default, "ENV['POSTGRESQL_URL']")
+DataMapper::setup(:default, "ENV['POSTGRESQL&#95;URL']")
 </pre>
 
 #### MongoMapper
