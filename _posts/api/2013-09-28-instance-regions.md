@@ -1,8 +1,10 @@
 ---
-layout: post
+layout: nil
 title:  "Instance Regions"
-date:   2013-09-24 10:51:22
-categories: oldAPI
+categories: 
+  - api
+  - basics
+date: 2013-09-26
 ---
 
 <p class="lead">Cloud vendor instance regions</p>

@@ -16,7 +16,7 @@ title: index
 			<article class='{{ post.type }}'>
 				<a name="{{ post.url }}" href="#{{ post.url }}"><h2>{% if post.type %}<code><b>{{ post.type }}</b> {{ post.path }}</code> {% endif %}{{ post.title }}</h2></a>
 				<section class='body'>
-					<p><h3>Scope</h3> {% if post.scope %}<i>{{post.scope}}</i> {% endif %}</p>
+					{% if post.scope %}<p><h3>Scope</h3> <i>{{post.scope}}</i></p>{% endif %}
 					{{ post.content | markdownify }}
 				</section>
 			</article>
