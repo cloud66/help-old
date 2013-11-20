@@ -12,7 +12,12 @@ bodyclass: home
 <!-- ===== START TOC - CATS & POSTS ===== -->
 <section class="container article-toc" id="js-primary-content">
 
+    <h2 class="cat-title">
+		<a href="/api">API</a>
+    </h2>
+
     {% for category in site.sorted_categories %}
+	{% unless category contains 'api' %}
         <h2 class="cat-title">
           {{ category | first }}
         </h2>
@@ -26,6 +31,7 @@ bodyclass: home
             {% endfor %}
           </ul>
         </nav>
+	{% endunless %}
     {% endfor %}
 </section>
 <!-- ===== /START TOC - CATS & POSTS ===== -->
