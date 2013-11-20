@@ -11,7 +11,7 @@ Please be aware of the following while assigning environment variables:
 
 - Environment variables are not escaped - however, they are always wrapped in double quotes (ie. `"ENV_VAR"`) so you can use them with multiline variables like SSH keys.
 - A number of environment variables are locked and cannot be modified. For example, environment variables for your server IP addresses cannot be changed because they are automatically set and updated based on your servers reported IP addresses.
-- You can reference other environment variables using the {% raw %} `{{ENV_VAR}}` {% endraw %} syntax. This is useful when referencing an environment variable which you don't control, like a server IP address.
+- You can reference other environment variables using the <code>\{\{ ENV\_VAR \}\}</code> syntax. This is useful when referencing an environment variable which you don't control, like a server IP address.
 
 ## Before initial deploy
 
