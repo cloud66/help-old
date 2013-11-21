@@ -67,6 +67,10 @@ CB.help = ( function( $, window, document ) {
             return false;
         });
 
+        $el.homeSearchInput.change(function() {
+          $el.searchForm.submit();
+        });
+
         // $(document.body).on('click', 'nav.crumbs a', function(){
         //     window.history.go(-1);
         // });
