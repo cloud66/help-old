@@ -8,6 +8,13 @@ title: index
 	{% include api_side_nav.html %}
 </nav>
 
+<header role="banner" class="t-center api-header">
+	<a href="/" title="Back to Help home">
+		<img class="logo" src="{{ site.url }}/images/logo.svg" alt="" width="44">
+	</a>
+	<h1>Cloud 66 API Docs</h1>
+</header>
+
 <section id='content'>
 {% for api_cat in site.apis %}
 <p>{{ api_cat | capitalize }}</p>
