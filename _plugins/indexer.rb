@@ -49,15 +49,19 @@ module Jekyll
 					excerpt = $~[:excerpt]
 				end
 				
-        index.document(item.url).add({ 
-          :text => page_text,
-          :title => item.data['title'] || item.name,
-					:excerpt => excerpt,
-					:link => item.url,
-					:category => item.data['categories']
-        },
-				{ :categories => { :category => item.data['categories'] } })
-        puts "Indexed #{item.url}..."
+				begin
+	        index.document(item.url).add({ 
+	          :text => page_text,
+	          :title => item.data['title'] || item.name,
+						:excerpt => excerpt,
+						:link => item.url,
+						:category => item.data['categories']
+	        },
+					{ :categories => { :category => item.data['categories'] } })
+	        puts "Indexed #{item.url}..."
+				rescue => exc
+					puts "IndexTank issue due to #{exc}"
+				end
       end
       
       puts 'Indexing done'
