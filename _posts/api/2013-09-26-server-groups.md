@@ -2,7 +2,7 @@
 layout: post
 title:  "Server Groups API"
 date:   2013-09-24 10:51:22
-categories: API
+categories: oldAPI
 ---
 
 <p class="lead">List Server Groups through the API</p>

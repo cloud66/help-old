@@ -14,7 +14,7 @@ You can also scale your backend worker processes [on the same server](/stack-fea
 
 Now, you can also scale your databases just as easily.
 
-Database replication is supported for **MySQL**, **PostgreSQL** and **Redis**.
+Database replication is supported for **MySQL**, **PostgreSQL**, **Redis** and **MongoDB**.
 
 <div class="notice">
 	<h3>Note</h3>
@@ -70,7 +70,9 @@ There is only 1 master server setup with MySQL. All other servers will be setup 
 There is only 1 master server setup with PostgreSQL. All other servers will be setup as read-only replicas. PostgreSQL replication is setup as [Streaming Replication](http://wiki.postgresql.org/wiki/Streaming_Replication).
 
 #### MongoDB
-MongoDB replica sets will be available soon.
+Scaling up a MongoDB will result in building a [MongoDB Replica Set](http://docs.mongodb.org/manual/replication/). This scale up builds an odd number of servers, so if you have 1 MongoDB server, it will fire up another 2 to run your Replica Set on 3 servers. The next scale up will create another 2 servers and run your cluster on 5 servers.
+
+The same rule applies to scaling down. Deleting 1 server from a 5-server cluster, will result in 2 servers being removed from it to get the total down to 3 servers.
 
 #### Redis
 There is only 1 master Redis server setup. All other servers will be setup as replias and any change in them will be overwritten by the master.
@@ -103,6 +105,14 @@ These include environment variables to hold the address for your database server
 		<tr>
 			<td>POSTGRESQL_SLAVE_ADDRESSES_EXT</td>
 			<td>PostgreSQL Slave External IP address</td>
+		</tr>
+		<tr>
+			<td>MONGODB_ADDRESSES_INT</td>
+			<td>MongoDB servers internal addresses</td>
+		</tr>
+		<tr>
+			<td>MONGODB_ADDRESSES_EXT</td>
+			<td>MongoDB servers external addresses</td>
 		</tr>
 		<tr>
 			<td>REDIS_SLAVE_ADDRESSES_INT</td>

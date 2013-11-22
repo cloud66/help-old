@@ -2,7 +2,7 @@
 layout: post
 title:  "Instance Regions"
 date:   2013-09-24 10:51:22
-categories: API
+categories: oldAPI
 ---
 
 <p class="lead">Cloud vendor instance regions</p>
