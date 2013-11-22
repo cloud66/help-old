@@ -429,7 +429,7 @@ h4,
 p,
 ul,
 code {
-  margin: 0 0 20px;
+  margin: 0 0 18px;
 }
 
 code {
@@ -440,7 +440,7 @@ code {
 #sidebar {
   background: #191919;
   color: #fff;
-  float: left;  
+  float: left;
   height: 100%;
   overflow: auto;
   position: fixed;
@@ -459,12 +459,13 @@ code {
 #sidebar h2 {
   color: #888;
   font-size: 14px;
-  margin: 0;
+  margin: 0 0 12px;
+  text-transform: uppercase;
 }
 
 #sidebar ul {
   list-style: none;
-  margin: 0;
+  margin: 4px 0 12px;
   padding: 0;
 }
 
@@ -473,13 +474,13 @@ code {
 }
 
 #sidebar ul ul {
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 #sidebar ul li a {
   color: #fff;
   display: block;
-  padding: 0 0 15px;
+  padding: 0 0 6px;
 }
 #sidebar ul li a:active,
 #sidebar ul li a.active {
@@ -487,7 +488,7 @@ code {
 }
 
 #sidebar input {
-  background: #111;
+  background: #444;
   border: 0;
   border-radius: 2px;
   -moz-border-radius: 2px;
@@ -508,17 +509,27 @@ code {
   outline: none;
 }
 
+.lead {
+  font-weight: bold;
+}
+
 /* References */
 #content {
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   padding-left: 260px;
-  max-width: 700px;
+  padding-right: 30px;
+  width: auto;
 }
 
 #content .control {
   cursor: pointer;
   font-size: 12px;
   margin-left: 15px;
+  line-height: 3;
+}
+
+#content .control:first-child {
+  margin-left: 0;
 }
 
 #content article {
@@ -527,10 +538,8 @@ code {
 }
 
 #content article > a {
-  background: #333;
+  background: #444;
   border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
   cursor: pointer;
   display: block;
   padding: 15px;
@@ -633,7 +642,12 @@ code {
 #content .body {
   border-top: 1px solid #eef1f2;
   display: block;
-  padding: 15px 15px 0;
+  padding: 14px 2px;
+
+  p, table {
+    margin-right: 2em;
+  }
+
 }
 
 #content .body code {
@@ -650,4 +664,78 @@ code {
   display: block;
   padding: 15px;
   white-space: pre;
+}
+
+
+/* ==========================================================================
+   API BANNER
+   ========================================================================== */
+.api-header {
+  position: relative;
+  text-align: center;
+  margin-left: 240px;
+  padding-top: 1.2em;
+
+  h1 {
+    margin: 0.5em 0 0;
+    font-size: 19px;
+    color: #333;
+  }
+}
+
+/* ==========================================================================
+   TABLES
+   ========================================================================== */
+
+.table {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    margin-bottom: 1em;
+
+    thead {
+        border-bottom: 1px solid #ccc;
+        background: #FCFCFC;
+
+        th {
+            text-align: left;
+            color: #000;
+            background: #F4F4F4;
+        }
+    }
+
+    th, td {
+        vertical-align: top;
+        padding: 8px 2px;
+        color: #555;
+    }
+
+    tbody th,
+    tbody td {
+        font-size: inherit;
+        border-bottom: 1px dotted #ddd;
+    }
+
+    tr:nth-child(even) {
+        background: #EEF1F2;
+    }
+
+    tbody tr:last-child td {
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+
+/* ==========================================================================
+   HACK
+   ========================================================================== */
+
+/* surpress empty paras */
+p:empty {
+  display: none;
+}
+
+.control + p,
+article + p {
+  font-weight: bolder;
+  text-transform: uppercase;
 }

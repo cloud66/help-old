@@ -24,12 +24,12 @@ Simply point Cloud 66 to your Git repository and give your stack a name.
 ![About Your App](http://cdn.cloud66.com.s3.amazonaws.com/images/help/app_info.png)
 
 ## 4. Cloud 66 Gets to Work
-Cloud 66 now analyzes your Ruby on Rails app. This takes around 10 - 15 seconds.
+Cloud 66 now analyzes your app. This takes around 10 - 15 seconds.
 
 ![Analyzing](http://cdn.cloud66.com.s3.amazonaws.com/images/help/analyzing_your_app.png)
 
 ## 5. Last Stop Before Cloud
-Now Cloud 66 shows you the results of the analysis and how it is going to build your Ruby on Rails full stack.
+Now Cloud 66 shows you the results of the analysis and how it is going to build your full stack.
 
 ![Analysis Results](http://cdn.cloud66.com.s3.amazonaws.com/images/help/analysis_results.png)
 
