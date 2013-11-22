@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Faye on Cloud 66"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: Cloud 66 supports Faye, the flexible publish-subscribe messaging system.
 ---
 
-<p class="lead">Cloud 66 supports Faye, the flexible publish-subscribe messaging system.</p>
 
 ## Introduction
 <a href="http://faye.jcoglan.com/">Faye</a> is a publish-subscribe messaging system that provides messaging services. At Cloud 66, we recommend running Faye as a [background process](/stack-features/proc-files.html) on your stack behind a [Thin rack server](/web-server/thin-rack-server.html).

@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Standalone Process Servers"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Scale your processes to standalone process servers
 ---
 
-<p class="lead">Scale your processes to standalone process servers</p>
 
 ## Scaling Process Servers
 As you can see below, your processes are run on your web server by default. See [Running Background Processes](/stack-features/proc-files.html) to learn more about processes.

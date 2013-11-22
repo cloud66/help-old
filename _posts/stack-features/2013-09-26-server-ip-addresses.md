@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Server IP Addresses"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Cloud 66 automatically generates and updates environment variables for your server IP addresses
 ---
 
-<p class="lead">Cloud 66 automatically generates and updates environment variables for your server IP addresses</p>
 
 ## Cloud 66 Agent
 <div class="notice">

@@ -1,11 +1,11 @@
 ---
 layout: post
+template: two-col
 title:  "Manifest Application Types (beta)"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Application Types in your manifest file define different types of applications Cloud 66 supports.
 ---
-
-<p class="lead">Application Types in your manifest file define different types of applications Cloud 66 supports.</p>
 
 Manifest files give you fine grained control over the way your application is deployed to your infrastructure. Currently Cloud 66 supports the following application types:
 

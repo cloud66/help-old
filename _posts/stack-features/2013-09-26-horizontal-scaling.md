@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Scaling Horizontally"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Scaling up your web servers is super easy with Cloud 66
 ---
 
-<p class="lead">Scaling up your web servers is super easy with Cloud 66</p>
 
 You can fire up additional web servers by clicking on the "+" button of the Web Servers page.
 

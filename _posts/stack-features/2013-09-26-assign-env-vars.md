@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Assigning Environment Variables"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: You can use environment variables in your code and configuration. Cloud 66 ensures that they are available during your deployment and running of the application.
 ---
 
-<p class="lead">You can use environment variables in your code and configuration. Cloud 66 ensures that they are available during your deployment and running of the application.</p>
 
 Please be aware of the following while assigning environment variables:
 

@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Backup verifiers"
 date:   2013-10-03 14:17:13
 categories: how-to
+lead: Use Cloud 66 to ensure the highest quality of backup assurance.
 ---
 
-<p class="lead">Use Cloud 66 to ensure the highest quality of backup assurance.</p>
 
 ## Setup
 

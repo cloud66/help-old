@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Single-Click Database Backup"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Ensure your databases are backed up regularly with a single-click and store them locally or in a cloud storage
 ---
 
-<p class="lead">Ensure your databases are backed up regularly with a single-click and store them locally or in a cloud storage</p>
 
 ## Simple Regular DB Backups
 If you have a stack with a database, you can back it up with a single click in the Protips area.

@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Upgrade Ruby/Rails on your stack"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: We make ruby versions available to new stacks as soon as possible after their official release.
 ---
 
-<p class="lead">We make ruby versions available to new stacks as soon as possible after their official release.</p>
 
 If you want to upgrade your Ruby or Rails version on existing Cloud 66 stack, you will need to deploy a new stack.
 

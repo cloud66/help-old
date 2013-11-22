@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Permission errors during deployment"
 date:   2013-09-26 15:33:13
 categories: troubleshooting
+lead: If your application needs to write back to your webserver (and it isn't to a <i>tmp</i> folder) then you will have permission errors. You can use deploy hooks to get around these.
 ---
 
-<p class="lead">If your application needs to write back to your webserver (and it isn't to a <i>tmp</i> folder) then you will have permission errors. You can use deploy hooks to get around these.</p>
 
 ## The basics
 When you deploy a stack through Cloud 66, your webserver will run under a different user to the user that you've used to do the deployments.

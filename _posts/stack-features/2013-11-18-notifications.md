@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Notifications"
 date:   2013-11-18 13:35:00
 categories: stack-features
+lead: Email, iOS, Hipchat and Webhook notifications.
 ---
 
-<p class="lead">Email, iOS, Hipchat and Webhook notifications.</p>
 
 ## Account Notifications
 You can control the when and how you would like to receive notifications from Cloud 66. These is a range of events that trigger notifications. These notficiations can be sent as emails or via iOS push, Hipchat or Webhooks.
@@ -23,12 +24,12 @@ You can control the when and how you would like to receive notifications from Cl
 Email notifications are enabled by default on all accounts. You will get an email in almost all cases (Deployment Start email notification is disabled by default). You can trun email notifications on or off for each type of event by clicking on the email icon.
 
 ## iOS
-If you have the [Cloud 66 App](https://itunes.apple.com/us/app/cloud-66/id642299804?mt=8&uo=4) on your iOS device then you will be able to get iOS push notifications on your phone. 
+If you have the [Cloud 66 App](https://itunes.apple.com/us/app/cloud-66/id642299804?mt=8&uo=4) on your iOS device then you will be able to get iOS push notifications on your phone.
 
 ## Hipchat
 [Hipchat](http://hipchat.com/) is a hosted realtime chat service by [Atlassian](https://www.atlassian.com/). You can get Cloud 66 notifications on Hipchat by linking to your Hipchat account.
 
-First, generate a new Notification API token from your Hipchat admin panel: 
+First, generate a new Notification API token from your Hipchat admin panel:
 
 ![cloud66_hipchat_api](http://cdn.cloud66.com/images/help/cloud66_hipchat_link.png)
 

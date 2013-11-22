@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Connect to your database servers"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: There is many options to connect to your database servers. Choose the one that fit well for you.
 ---
 
-<p class="lead">There is many options to connect to your database servers. Choose the one that fit well for you.</p>
 
 ## Directly
 

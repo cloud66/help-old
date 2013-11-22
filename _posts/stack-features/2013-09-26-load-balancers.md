@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Load Balancers"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Adding a load balancer to your stack is as easy as clicking a button
 ---
 
-<p class="lead">Adding a load balancer to your stack is as easy as clicking a button</p>
 
 ## Add a Load Balancer
 To add a load balancer, click on the 'Add Load Balancer' link in the Protips of the stack.

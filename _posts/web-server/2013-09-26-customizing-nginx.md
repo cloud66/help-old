@@ -1,12 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Customizing Nginx Configurations"
 date:   2013-09-26 15:33:13
 categories: web-server
+lead: Cloud 66 automatically generates and maintains nginx configurations for your stack
 ---
 
-
-<p class="lead">Cloud 66 automatically generates and maintains nginx configurations for your stack.</p>
 
 ## Locating your Nginx configuration file
 If you're using Passenger (the default webserver) then your Nginx configuration file can be found under `/opt/nginx/conf`

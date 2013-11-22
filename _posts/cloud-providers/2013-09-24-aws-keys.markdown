@@ -1,13 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Amazon Web Services (AWS) Keys"
 date:   2013-09-24 10:51:22
 categories: cloud-providers
+lead: AWS use a public/private key pair to log in rather than a password. Generate your keys in the AWS console.
 ---
 
-<p class="lead">
-    AWS use a public/private key pair to log in rather than a password. Generate your keys in the AWS console.
-</p>
 
 <h2>To generate a key pair</h2>
 

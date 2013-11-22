@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Redeployment Hook"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Use redeployment hooks to setup continuous deployment
 ---
 
-<p class="lead">Use redeployment hooks to setup continuous deployment</p>
 
 <h2>GitHub Redeployment Hook</h2>
 

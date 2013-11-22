@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Auto-Generated Environment Variables"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Each stack you deploy has access to a number of automatically populated environment variables
 ---
 
-<p class="lead">Each stack you deploy has access to a number of automatically populated environment variables</p>
 
 These auto-generated environment variables are in addition to any [that you assign yourself](/stack-features/assign-env-vars.html). They comprise of standard variables for all stacks, as well as those specific for different environments.
 

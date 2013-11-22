@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Database Servers"
 date:   2013-09-24 10:51:22
 categories: stacks
+lead: Information regarding databases supported by Cloud 66
 ---
 
-<p class="lead">Information regarding databases supported by Cloud 66</p>
 
 We currently support:
 

@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Cloud 66 WebSocket Support"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: WebSocket is supported by Cloud 66. This page helps you to implement Websocket on your server.
 ---
 
-<p class="lead">WebSocket is supported by Cloud 66. This page helps you to implement Websocket on your server.</p>
 
 ## About WebSocket
 

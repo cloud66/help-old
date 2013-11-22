@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Terminal Connection to your Servers"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: You can connect to your servers from your terminal app or via the embedded terminal screen.
 ---
 
-<p class="lead">You can connect to your servers from your terminal app or via the embedded terminal screen.</p>
 
 ## Direct Shell Access
 You can always have terminal access to your servers from your own server - just follow these simple steps:

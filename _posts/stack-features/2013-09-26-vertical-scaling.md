@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Scaling Vertically"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Scaling your servers vertically (depending on your cloud provider)
 ---
 
-<p class="lead">Scaling your servers vertically (depending on your cloud provider)</p>
 
 Some cloud vendors allow you to scale up/down your server via their own control panel.
 Using this mechanism, you can increase/decrease memory/CPU for an individual box.

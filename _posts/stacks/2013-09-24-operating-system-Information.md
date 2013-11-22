@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Operating System Information"
 date:   2013-09-24 10:51:22
 categories: stacks
+lead: Information about operating system requirements/configuration
 ---
 
-<p class="lead">Information about operating system requirements/configuration</p>
 
 ## Supported OS
 

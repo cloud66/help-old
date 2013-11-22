@@ -1,11 +1,11 @@
 ---
 layout: post
+template: two-col
 title:  "Out of memory errors during deployment"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: It is possible for deployment errors to occur during deployment if your server does not have sufficient memory available.
 ---
-
-<p class="lead">It is possible for deployment errors to occur during deployment if your server does not have sufficient memory available.</p>
 
 ## The Problem
 When you are deploying your stack (particularly in a non-development environment) asset pipeline compilation takes place during the deployment process.

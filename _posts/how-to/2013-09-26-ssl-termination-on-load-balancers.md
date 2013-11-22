@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Add a SSL certificate on a load balancer"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: It is really easy to add SSL termination to your load balancers.
 ---
 
-<p class="lead">It is really easy to add SSL termination to your load balancers.</p>
 
 ## Using AWS
 

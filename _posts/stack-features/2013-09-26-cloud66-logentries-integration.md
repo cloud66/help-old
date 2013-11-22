@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Adding Logentries to Cloud 66 Stacks"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Logentries provides a simple web-bases log analysis service for your apps and servers.
 ---
 
-<p class="lead">Logentries provides a simple web-bases log analysis service for your apps and servers.</p>
 
 
 ## Deploy a Stack

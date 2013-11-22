@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Manifest Servers (beta)"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Defining your servers in the Manifest file gives you fine control over their specifications.
 ---
 
-<p class="lead">Defining your servers in the Manifest file gives you fine control over their specifications.</p>
 
 ## Server Section
 

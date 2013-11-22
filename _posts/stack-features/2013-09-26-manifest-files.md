@@ -1,13 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Manifest Files (beta)"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead:  A manifest file provides a way for you to be more explicit about your stacks composition.
 ---
 
-<p class="lead">
-    A manifest file provides a way for you to be more explicit about your stacks composition.
-<p>
 
 <p>It allows you to specify:</p>
 

@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Running Rake Tasks"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: You can use Cloud 66 to easily run rake tasks either automatically or manually on your stack
 ---
 
-<p class="lead">You can use Cloud 66 to easily run rake tasks either automatically or manually on your stack</p>
 
 ## Introduction
 You can choose to run your rake tasks automatically or manually. Running them automatically involves either scheduling them by using the rake task add-on or by using deployment hooks.

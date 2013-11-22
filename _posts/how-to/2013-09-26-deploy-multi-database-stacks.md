@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Deploying stacks with multiple database types"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: How to deploy with Cloud 66 when your application relies on multiple database types.
 ---
 
-<p class="lead">How to deploy with Cloud 66 when your application relies on multiple database types.</p>
 
 ## The Basics
 

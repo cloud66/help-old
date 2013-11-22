@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Database Replication"
 date:   2013-11-06 10:51:22
 categories: stack-features
+lead: Scale your databases by setting up replication with a single click.
 ---
 
-<p class="lead">Scale your databases by setting up replication with a single click.</p>
 
 ## Database Scaling (beta)
 With Cloud 66 you can [add a HTTP or WebSocket load balancer](/stack-features/load-balancers.html) with a single click.
@@ -24,7 +25,7 @@ Database replication is supported for **MySQL**, **PostgreSQL**, **Redis** and *
 
 ### Scaling Up
 
-To enable replication, click on the DB Server group of your stack and click on the Scale Up button. 
+To enable replication, click on the DB Server group of your stack and click on the Scale Up button.
 
 ![](http://cdn.cloud66.com/images/help/db_scaleup.png)
 
@@ -39,7 +40,7 @@ That's it!
 
 #### Here is what just happened!
 
-- We will fire up another server in your cloud for you. 
+- We will fire up another server in your cloud for you.
 - The same version of database server will be deployed onto the new server.
 - A full backup of your database is taken and restored on the slave database to seed the new database.
 - The database server will be configured to be a slave of the main database.
@@ -130,12 +131,12 @@ An example is
 50.23.65.12
 </pre>
 
-For multiple IP addresses, the environment variable will contain a comma separated list of all IP addresses: 
+For multiple IP addresses, the environment variable will contain a comma separated list of all IP addresses:
 
 <pre class="terminal">
 192.168.10.1,192.168.10.2
 </pre>
 
-As with any environment variable change, you will need to redeploy the stack to propgate the variable changes to all servers. 
+As with any environment variable change, you will need to redeploy the stack to propgate the variable changes to all servers.
 
 The environment variables will be available on all servers including web and database servers. This excludes HAProxy servers.

@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Errors during deployment around database dumping"
 date:   2013-09-26 15:33:13
 categories: troubleshooting
+lead: Unable to perform database dump - errors can occur during deployment if your database is on a standalone or external server AND your db schema is sql based (structure.sql) due to db dump tools missing on the webserver
 ---
 
-<p class="lead">"Unable to perform database dump" errors can occur during deployment if your database is on a standalone or external server AND your db schema is sql based (structure.sql) due to db dump tools missing on the webserver</p>
 
 ## The basics
 When *rake db:migrate*, or *rake db:structure:load* is executed as part of your deployment, your structure.sql/migrations are executed against your database.

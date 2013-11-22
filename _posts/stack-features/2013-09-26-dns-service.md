@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Cloud 66 DNS Service"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Cloud 66 provides a free DNS service for all servers and load balancers running under your stacks
 ---
 
-<p class="lead">Cloud 66 provides a free DNS service for all servers and load balancers running under your stacks</p>
 
 ## Server Names
 Every server fired up with Cloud 66 has a unique animal themed name. This should help you find and identify your server quicker in your stack.

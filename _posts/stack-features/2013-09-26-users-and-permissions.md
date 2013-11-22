@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Cloud 66 Team Accounts"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Share your Cloud 66 account with your development team. Fine-tune their access rights per Stack.
 ---
 
-<p class="lead">Share your Cloud 66 account with your development team. Fine-tune their access rights per Stack.</p>
 
 You can add new users to your Cloud 66 account and share it with your other team members.
 The access rights can be fine-tuned per Stack. They can range from no visibility over a Stack to full admin rights.

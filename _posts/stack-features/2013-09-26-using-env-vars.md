@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Using Environment Variables"
 date:   2013-09-26 15:26:22
 categories: stack-features
+lead: You can use environment variables in your Ruby/Rails code normally. Cloud 66 is compatible with Linux environment variables
 ---
 
-<p class="lead">You can use environment variables in your Ruby/Rails code normally. Cloud 66 is compatible with Linux environment variables</p>
 
 ## Configuration Files
 Many developers use environment variables to store database username and passwords and use environment variables in database configuration files instead of hard coding credentials.

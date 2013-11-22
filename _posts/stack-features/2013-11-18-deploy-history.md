@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Deploy History"
 date:   2013-11-18 11:35:00
 categories: stack-features
+lead: See your stack deployment history and rollback deployments.
 ---
 
-<p class="lead">See your stack deployment history and rollback deployments.</p>
 
 ## Who, When, What and How
 Every time you deploy your stack, a new record is created to keep track of it. It shows who triggered the deploy (developer), what is in the deployment (git commits, git hash), when was it deployed and how the deployment was triggered (Web, [API](/api/basics.html) or [redeployment hooks](/stack-features/redeployment-hook.html))

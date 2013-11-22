@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "SMTP Timeouts on Amazon AWS EC2"
 date:   2013-11-06 15:33:13
 categories: Troubleshooting
+lead: Amazon AWS EC2 enforces traffic throttling on SMTP causing intermittent timeouts when sending email.
 ---
 
-<p class="lead">Amazon AWS EC2 enforces traffic throttling on SMTP causing intermittent timeouts when sending email.</p>
 
 ## Problem
 Sending emails with a service like [Mandrill](https://mandrillapp.com) or through a normal SMTP server from your Amazon AWS EC2 instances can result in intermittent timeouts.
