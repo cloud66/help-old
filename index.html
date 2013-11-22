@@ -12,26 +12,26 @@ bodyclass: home
 <!-- ===== START TOC - CATS & POSTS ===== -->
 <section class="container article-toc" id="js-primary-content">
 
+    {% for category in site.sorted_categories %}
+	{% if category.first == 'api' %}
     <h2 class="cat-title">
 		<a href="/api">API</a>
     </h2>
+	{% else %}
+    <h2 class="cat-title">
+      {{ category | first }}
+    </h2>
 
-    {% for category in site.sorted_categories %}
-	{% unless category contains 'api' %}
-        <h2 class="cat-title">
-          {{ category | first }}
-        </h2>
-
-        <nav class="toc">
-          <ul>
-            {% for post in category.last %}
-            <li>
-              <a href="{{ post.url }}">{{ post.title }}</a>
-            </li>
-            {% endfor %}
-          </ul>
-        </nav>
-	{% endunless %}
+    <nav class="toc">
+      <ul>
+        {% for post in category.last %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+	{% endif %}
     {% endfor %}
 </section>
 <!-- ===== /START TOC - CATS & POSTS ===== -->

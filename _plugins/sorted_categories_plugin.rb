@@ -28,9 +28,30 @@ module Jekyll
 			
 			site.config['apis'] = apis.uniq
 			# sort all existing cats
-			site.config['sorted_categories'] = site.categories.map do |cat, posts| 
-				[cat, posts.size, posts].sort { |a,b| ORDER.index(a[0]) <=> ORDER.index(b[0]) }
+			unordered = site.categories # this is a hash
+			# order the keys
+			ordered_keys = unordered.keys.sort do |x, y| 
+				# if any of them is in the sort list, it will win (comes on top)
+				next -1 if ORDER.include?(x) && !ORDER.include?(y)
+				next 1 if ORDER.include?(y) && !ORDER.include?(x)
+				
+				# none are in the list
+				next (x <=> y) if !ORDER.include?(x) && !ORDER.include?(y)
+				
+				# both in the list
+				ORDER.index(x) <=> ORDER.index(y)
 			end
+			
+			# takeout all the API crap
+			ordered_keys.delete_if { |x| ['basics', 'server', 'stack', 'users', 'server group'].include? x }
+			
+			# now order the list based on the ordered keys
+			ordered = {}
+			ordered_keys.each do |k|
+				ordered[k] = unordered[k]
+			end
+			
+			site.config['sorted_categories'] = ordered
 		end
   end
 end
