@@ -16,29 +16,30 @@ If you have an account with:
 * Linode
 * Rackspace
 * Telefonica
+* Digital Ocean
 
-You can associate your cloud provider API keys with Cloud 66.This means that Cloud 66 will be able to fire up servers from scratch under your account and provision, deploy and configure them.
+You can associate your cloud provider API keys with Cloud 66. This means that Cloud 66 will be able to fire up servers from scratch under your account and provision, deploy and configure them.
 
 Best of all, you still have full root access and control over your own servers at any time! These servers are, and always will be, yours &mdash; so you can do what you want with them!
 
-Don't worry if you don't want to use a cloud provider with Cloud 66 - you can still [deploy directly to your servers](/getting-started/standalone-servers.html) (although some features will not be available)
+Don't worry if you don't want to use a cloud provider with Cloud 66 - you can still [deploy directly to your servers](/getting-started/standalone-servers.html) (although some features will not be available).
 
 <div class="notice">
 	<h3>Important</h3>
 
-	<p>When you delete your stack, Cloud 66 tries to delete the servers associated with that stack in your cloud account. However, it is possible that we are not able to remove all the servers related to the deleted stack for different reasons (like API credential changes or temporary provider connectivity issues). Please remember to check your cloud provider account to ensure all the servers are terminated properly and to avoid surprise charges from your cloud vendor!</p>
+	<p>When you delete your stack on Cloud 66, we won't delete it on your cloud provider (because we can't determine if you're using it for other purposes or not). Please remember to check your cloud provider account to ensure all the servers are terminated properly and to avoid surprise charges from your cloud vendor!</p>
 </div>
 
 ## Supported Cloud Providers
 
 Currently Cloud 66 supports the following Cloud Providers:
 
-- [Amazon Web Services](/cloud-providers/cloud_aws.html)
-- Digital Ocean
-- [Joyent](/cloud-providers/cloud_joyent.html)
-- [Linode](/cloud-providers/cloud_linode.html)
-- [Rackspace Cloud](/cloud-providers/cloud_rackspace.html)
-- [Telefonica Cloud](/cloud-providers/cloud_telefonica.html)
+- [Amazon Web Services](/cloud-providers/cloud-aws.html)
+- [Digital Ocean](/cloud-providers/cloud-do.html)
+- [Joyent](/cloud-providers/cloud-joyent.html)
+- [Linode](/cloud-providers/cloud-linode.html)
+- [Rackspace Cloud](/cloud-providers/cloud-rackspace.html)
+- [Telefonica Cloud](/cloud-providers/cloud-telefonica.html)
 
 <!--Region breakdown to come.-->
 

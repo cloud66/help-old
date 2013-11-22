@@ -6,7 +6,7 @@ categories: getting-started
 ---
 
 <p class="lead">
-	Cloud 66 let's you deploy your Ruby on Rails apps to your own servers in minutes.
+	Cloud 66 let's you deploy your Ruby apps to your own servers in minutes.
 </p>
 
 Deploy to <strong>your own</strong> dedicated servers or any of our supported cloud providers. With Cloud 66 you can scale your app up or down, monitor your server and processes and backup and maintain your data and databases.

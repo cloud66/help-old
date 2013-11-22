@@ -5,7 +5,7 @@ date:   2013-09-22 16:27:22
 categories: getting-started
 ---
 
-<p class="lead">Cloud 66 makes it easy to configure and deploy a set of non&mdash;proprietary tools in order to run and manage your Ruby on Rails apps</p>
+<p class="lead">Cloud 66 makes it easy to configure and deploy a set of non&mdash;proprietary tools in order to run and manage your apps</p>
 
 ![Cloud 66 Stack](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud66_stack.png)
 
@@ -35,7 +35,7 @@ With Simple Scale you can scale your processes up and down with a simple click.
 Cloud 66 also [supports Procfiles](/stack-features/proc-files.html) to make it easier to define background processes you would like to run.
 
 ## Web Servers
-Your Ruby on Rails apps are served with Nginx and Phusion Passenger.
+Your apps are served with Nginx and Phusion Passenger.
 
 You can add new instances to your web server farm using Simple Scale with a simple click in the web control panel.
 

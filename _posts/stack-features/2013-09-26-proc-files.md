@@ -9,7 +9,7 @@ categories: stack-features
 
 ## Procfiles
 
-You can use Procfiles to ensure your background jobs always run and are monitored. Doing so is as easy as defining them in the root of your Ruby on Rails app. The file should be called <kbd>Procfile</kbd>.
+You can use Procfiles to ensure your background jobs always run and are monitored. Doing so is as easy as defining them in the root of your app. The file should be called <kbd>Procfile</kbd>.
 
 ## Procfile example
 A typical Procfile may look something like this:
