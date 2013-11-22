@@ -1,13 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Adding the Cloud 66 Public Key"
 date:   2013-09-24 10:51:22
 categories: getting-started
+lead: Add the Cloud 66 public key to your GIT provider so we can deploy your code.
 ---
 
-<p class="lead">
-    Add the Cloud 66 public key to your GIT provider so we can deploy your code.
-</p>
 
 <p>If for any reason you've removed this key, you can find it by:</p>
 

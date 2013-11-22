@@ -1,12 +1,13 @@
 ---
 layout: post
+template: two-col
 title:  "PostgreSQL Backup"
 date:   2013-09-24 10:51:22
 categories: add-ins
+lead: Backs up PostgreSQL databases on the fly and stores the backup files locally
 ---
 
 
-<p class="lead">Backs up PostgreSQL databases on the fly and stores the backup files locally</p>
 
 ## Requirements
 - Cloud 66  Agent

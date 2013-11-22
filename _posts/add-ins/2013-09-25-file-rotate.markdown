@@ -1,5 +1,6 @@
 ---
 layout: post
+template: two-col
 title:  "File Rotater"
 date:   2013-09-24 10:51:22
 categories: add-ins

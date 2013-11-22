@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Sinatra Stacks"
 date:   2013-11-18 16:27:22
 categories: getting-started
+lead: Cloud 66 makes it easy to deploy and maintain Sinatra apps
 ---
 
-<p class="lead">Cloud 66 makes it easy to deploy and maintain Sinatra apps</p>
 
 ## Introduction
 

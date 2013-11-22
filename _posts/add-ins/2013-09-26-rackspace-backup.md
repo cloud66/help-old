@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Rackspace Backup"
 date:   2013-09-24 10:51:22
 categories: add-ins
+lead: Copies files from local storage to Rackspace Cloud Files storage directly. It can keep multiple versions of the file in Cloud Files
 ---
 
-<p class="lead">Copies files from local storage to Rackspace Cloud Files storage directly. It can keep multiple versions of the file in Cloud Files</p>
 
 ## Requirements
 - Cloud 66  Agent

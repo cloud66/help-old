@@ -1,12 +1,13 @@
 ---
 layout: post
+template: two-col
 title:  "Cloud 66 Status"
 date:   2013-09-24 10:51:22
 categories: getting-started
+lead: We publish our system health status live
 ---
 
 
-<p class="lead">We publish our system health status live</p>
 
 ## Cloud 66 Status Page
 You can always find the latest Cloud 66 systems status on the [Cloud 66 Status Page](http://status.cloud66.com).

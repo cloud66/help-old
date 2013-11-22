@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Log Rotate"
 date:   2013-09-24 10:51:22
 categories: add-ins
+lead: Automatically archives your log files and stores them in a location of your specification. Optionally only keeps a specified number of your most recent archives, and optionally executes a command of your choice after each log rotate occurs
 ---
 
-<p class="lead">Automatically archives your log files and stores them in a location of your specification. Optionally only keeps a specified number of your most recent archives, and optionally executes a command of your choice after each log rotate occurs</p>
 
 ## Requirements
 - Cloud 66  Agent

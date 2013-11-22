@@ -1,12 +1,13 @@
 ---
 layout: post
+template: two-col
 title:  "How to schedule a Job"
 date:   2013-09-24 10:51:22
 categories: add-ins
+lead: Gives detail on how a recurring job can be created and configured through Cloud 66
 ---
 
 
-<p class="lead">Gives detail on how a recurring job can be created and configured through Cloud 66</p>
 
 ##Basics
 

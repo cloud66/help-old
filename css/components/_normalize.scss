@@ -422,7 +422,10 @@ table {
 .hidden { display: none; }
 .pull-right { float: right !important; }
 .pull-left  { float: left !important; }
-
+/* surpress empty paras */
+p:empty {
+  display: none !important;
+}
 /* ==========================================================================
    Misc
    ========================================================================== */

@@ -1,5 +1,6 @@
 ---
 layout: post
+template: two-col
 title:  "Backup your data in the Cloud"
 date:   2013-09-24 10:51:22
 categories: add-ins

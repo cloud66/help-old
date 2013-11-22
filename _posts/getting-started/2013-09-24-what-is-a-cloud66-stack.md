@@ -1,5 +1,6 @@
 ---
 layout: post
+template: two-col
 title:  "What is a Cloud 66 Stack?"
 date:   2013-09-22 16:27:22
 categories: getting-started

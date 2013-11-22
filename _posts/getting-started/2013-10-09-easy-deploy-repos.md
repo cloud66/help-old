@@ -1,11 +1,11 @@
 ---
 layout: post
+template: two-col
 title:  "EasyDeploy Repositories"
 date:   2013-10-09 15:30:22
 categories: getting-started
+lead: Deploying and maintaining open source projects through Cloud 66 is extremely easy
 ---
-
-<p class="lead">Deploying and maintaining open source projects through Cloud 66 is extremely easy</p>
 
 
 ## Introduction

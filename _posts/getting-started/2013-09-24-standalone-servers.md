@@ -1,5 +1,6 @@
 ---
 layout: post
+template: two-col
 title:  "Stand alone Servers"
 date:   2013-09-24 10:51:22
 categories: getting-started

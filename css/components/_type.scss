@@ -82,6 +82,9 @@ dl, dd {
         border-bottom: 1px solid #ddd;
         padding-right: 0 !important;
     }
+    .lead:empty {
+        display: none;
+    }
     .weighted {
         color: #3F4957;
         font-size: 1.8rem;

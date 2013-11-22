@@ -1,11 +1,11 @@
 ---
 layout: post
+template: two-col
 title:  "First Steps with Cloud 66"
 date:   2013-09-24 10:51:22
 categories: getting-started
+lead: Code to Cloud in 5 Minutes - Deploying your first Cloud 66 stack
 ---
-
-<p class="lead">Code to Cloud in 5 Minutes - Deploying your first Cloud 66 stack</p>
 
 
 ## 1. Start a Stack

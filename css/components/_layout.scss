@@ -36,18 +36,28 @@
  * --------------------------------------------------------- */
 @media only screen and (min-width : 1024px) {
 
-    .content-pri {
-        float: left;
-        width: $maxwidth - $sidebarwidth;
-        outline: 1px solid red;
+    .two-col {
+
+        .content-pri {
+            float: left;
+            width: $maxwidth - $sidebarwidth;
+            outline: 1px solid red;
+        }
+
+        .content-sec {
+            float: right;
+            width: $sidebarwidth;
+        }
+
     }
 
-    .content-sec {
-        float: right;
-        width: $sidebarwidth;
-    }
 }
 
+.one-col {
+    .content-sec {
+        display: none !important;
+    }
+}
 
 
 
