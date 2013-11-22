@@ -3,10 +3,9 @@ layout: post
 title:  "File Rotater"
 date:   2013-09-24 10:51:22
 categories: add-ins
+lead: Automatically archives your files and stores them in a location of your choice.
 ---
 
-
-<p class="lead">Automatically archives your files and stores them in a location of your choice.</p>
 
 ## Requirements
 - Cloud 66  Agent

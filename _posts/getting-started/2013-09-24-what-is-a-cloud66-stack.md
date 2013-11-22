@@ -3,9 +3,9 @@ layout: post
 title:  "What is a Cloud 66 Stack?"
 date:   2013-09-22 16:27:22
 categories: getting-started
+lead: Cloud 66 makes it easy to configure and deploy a set of non&mdash;proprietary tools in order to run and manage your apps
 ---
 
-<p class="lead">Cloud 66 makes it easy to configure and deploy a set of non&mdash;proprietary tools in order to run and manage your apps</p>
 
 ![Cloud 66 Stack](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud66_stack.png)
 
