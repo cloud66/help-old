@@ -1,10 +1,11 @@
 ---
-layout: post
+layout: nil
 title:  "Instance Names"
-date:   2013-09-24 10:51:22
-categories: API
+categories: 
+  - api
+  - basics
+date: 2013-09-26
 ---
-
 
 <p class="lead">Cloud vendor instance names</p>
 

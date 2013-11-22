@@ -1,0 +1,33 @@
+---
+layout: api
+categories: api
+title: index
+---
+
+<nav id='sidebar'>
+	{% include api_side_nav.html %}
+</nav>
+
+<header role="banner" class="t-center api-header">
+	<a href="/" title="Back to Help home">
+		<img class="logo" src="{{ site.url }}/images/logo.svg" alt="" width="44">
+	</a>
+	<h1>Cloud 66 API Docs</h1>
+</header>
+
+<section id='content'>
+{% for api_cat in site.apis %}
+<p>{{ api_cat | capitalize }}</p>
+	{% for post in site.posts %}
+		{% if post.categories contains api_cat %}
+			<article class='{{ post.type }}'>
+				<a name="{{ post.url }}" href="#{{ post.url }}"><h2>{% if post.type %}<code><b>{{ post.type }}</b> {{ post.path }}</code> {% endif %}{{ post.title }}</h2></a>
+				<section class='body'>
+					{% if post.scope %}<p><h3>Scope</h3> <i>{{post.scope}}</i></p>{% endif %}
+					{{ post.content | markdownify }}
+				</section>
+			</article>
+		{% endif %}
+	{% endfor %}
+{% endfor %}
+</section>
