@@ -24,9 +24,32 @@
  *  Centered Container
  * --------------------------------------------------------- */
 .container {
-  margin: 0 auto;
-  max-width: $maxwidth;
+    @include clearfix;
+    margin: 0 auto;
+    max-width: $maxwidth + $gutter;
 }
+
+
+/*
+ *  2 column layout
+ *  1024 and above 2 col layout
+ * --------------------------------------------------------- */
+@media only screen and (min-width : 1024px) {
+
+    .content-pri {
+        float: left;
+        width: $maxwidth - $sidebarwidth;
+        outline: 1px solid red;
+    }
+
+    .content-sec {
+        float: right;
+        width: $sidebarwidth;
+    }
+}
+
+
+
 
 /*
  *  Top margin to account for fixed position nav bar

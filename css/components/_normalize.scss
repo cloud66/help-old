@@ -428,9 +428,9 @@ table {
    ========================================================================== */
 ::-moz-placeholder {
    font-style: italic;
-   font-weight: 200;
+   font-weight: 300 !important;
 }
 ::-webkit-input-placeholder {
    font-style: italic;
-   font-weight: 200;
+   font-weight: 300 !important;
 }

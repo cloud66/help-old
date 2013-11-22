@@ -1,6 +1,10 @@
 /* ===========================================================================================
  *  NAV
  * ============================================================================================ */
+
+/*
+ *  homepage nav
+ * --------------------------------------------------------- */
 nav {
   ul {
     list-style: none;
@@ -28,6 +32,27 @@ nav {
     }
 }
 
+/*
+ *  side nav (nav-sec)
+ * --------------------------------------------------------- */
+.nav-sec {
+    padding: 0 !important;
+    outline: 1px solid red;
+
+    li {
+        list-style: none !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+/*
+ *  toc nav
+ * --------------------------------------------------------- */
 .toc {
     a:link {
         text-decoration: none;
@@ -52,6 +77,9 @@ nav {
     }
 }
 
+/*
+ *  breadcrumb nav
+ * --------------------------------------------------------- */
 .crumbs {
     border-bottom: 1px solid #ddd;
     padding: 0.2em 0 1em;

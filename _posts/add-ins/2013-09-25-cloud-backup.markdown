@@ -3,9 +3,9 @@ layout: post
 title:  "Backup your data in the Cloud"
 date:   2013-09-24 10:51:22
 categories: add-ins
+lead: Scheduled copy of local file(s) to your cloud storage provider
 ---
 
-<p class="lead">Scheduled copy of local file(s) to your cloud storage provider</p>
 
 ## Copying backups to Amazon S3
 

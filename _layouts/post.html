@@ -14,7 +14,26 @@ bodyclass: post
         {{ page.title }}
     </h1>
 
-    {{ content }}
+    <p class="lead">
+        {{ page.lead }}
+    </p>
+
+    <div class="content-pri">
+        {{ content }}
+    </div>
+
+    <aside class="content-sec">
+        <nav class="aside-mod">
+            <ul class="nav-sec">
+                <li>
+                    <a href="#">Cloud Backup</a>
+                </li>
+                <li>
+                    <a href="">File Rotater</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
 </article>
 
