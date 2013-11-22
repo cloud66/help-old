@@ -76,8 +76,7 @@ development:
   sessions:
     default:
       database: mongoid
-      hosts:
-        - localhost:27017
+      hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
 </pre>
 
 ## Example app
