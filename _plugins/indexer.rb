@@ -39,7 +39,8 @@ module Jekyll
           :text => page_text,
 					:excerpt => excerpt,
 					:link => item.url,
-					:tags => item.data['categories'].is_a?(String)? [item.data['categories']] : item.data['categories']
+					:tags => item.data['categories'].is_a?(String)? [item.data['categories']] : item.data['categories'],
+					:suggest => item.data['title'] || item.name
 				}
 			
         puts "Added #{item.url}..."
@@ -56,6 +57,12 @@ module Jekyll
 						:properties => {
 							:id => { :type => 'string', :index => 'not_analyzed', :include_in_all => false },
 							:title => { :type => 'string', :boost => 10.0, :analyzer => 'snowball' },
+							:suggest => { 
+								:type => :completion,
+								:index_analyzer => 'simple',
+								:search_analyzer => 'simple',
+								:payloads => true
+							},
 							:text => { :type => 'string', :analyzer => 'snowball'},
 							:excerpt => { :type => 'string', :boost => 5.0, :analyzer => 'snowball' },
 							:link => { :type => 'string', :index => 'not_analyzed', :include_in_all => false },
