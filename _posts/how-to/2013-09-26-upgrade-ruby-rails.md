@@ -47,4 +47,4 @@ If you need to upgrade any part of your stack the best course of action is alway
 
 We detect the version of all the components we have configured or deployed on your servers on a regular basis and after each deployment. If you upgrade any part of your stack manually, the upgrade will be detected by Cloud 66. This helps with the future automated upgrades.
 
-In case of Ruby or Rails, make sure that you upgrade your Ruby and Rails applications with [best practises](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html), and don't forget to choose the right Ruby version when creating the new stack.
+In case of Ruby or Rails, make sure that you upgrade your Ruby and Rails applications with [best practices](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html), and don't forget to choose the right Ruby version when creating the new stack.
