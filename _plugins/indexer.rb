@@ -1,6 +1,6 @@
 require 'rubygems'
-require 'indextank'
 require 'nokogiri'
+require 'elasticsearch'
 
 module Jekyll
 
@@ -8,29 +8,16 @@ module Jekyll
 
 		priority :low
 		
-    # Index all pages except pages matching any value in config['indextank_excludes']
-    # The main content from each page is extracted and indexed at indextank.com
-    # The doc_id of each indextank document will be the absolute url to the resource without domain name 
+    # Index all pages except pages matching any value in config['elasticsearch_excludes']
     def generate(site)
-			unless site.config['reindex']
-				puts 'Skipping indexing. Use JEKYLL_REINDEX to reindex the site'
+			unless ENV['JEKYLL_REINDEX']
+				puts 'Skipping indexing'
 				return
 			end
 			
-			
-      raise ArgumentError.new 'Missing indextank_api_url.' unless site.config['indextank_api_url']
-      raise ArgumentError.new 'Missing indextank_index.' unless site.config['indextank_index']
-      puts "Indexing pages into #{site.config['indextank_index']}..."
+      excludes = site.config['elasticsearch_excludes'] || []
 
-      excludes = site.config['indextank_excludes'] || []
-
-      api = IndexTank::Client.new(site.config['indextank_api_url'])
-      index = api.indexes(site.config['indextank_index'])
-			index.delete
-			index.add :public_search => true
-			while not index.running?
-				sleep 0.5
-			end
+			index_name = site.config['elasticsearch_index']
 			
       # gather pages and posts
       items = site.pages.dup.concat(site.posts)
@@ -41,31 +28,62 @@ module Jekyll
 
       # dont process index pages
       items.reject! {|i| i.is_a?(Jekyll::Page) && i.index? }
-			      
-      items.each do |item|              
-        page_text = extract_text(site, item)
-
+			
+			# build it
+			docs = []
+			items.each do |item|
+				page_text = extract_text(site, item)
+				
 				if item.output =~ /<p\sclass=.lead.>(?<excerpt>.*?)<\/p>/m
 					excerpt = $~[:excerpt]
-				end
+				end # if
 				
-				begin
-	        index.document(item.url).add({ 
-	          :text => page_text,
-	          :title => item.data['title'] || item.name,
-						:excerpt => excerpt,
-						:link => item.url,
-						:category => item.data['categories']
-	        },
-					{ :categories => { :category => item.data['categories'] } })
-	        puts "Indexed #{item.url}..."
-				rescue => exc
-					puts "IndexTank issue due to #{exc}"
-				end
-      end
-      
+				docs << {
+					:id => item.url,
+					:title => item.data['title'] || item.name,
+          :text => page_text,
+					:excerpt => excerpt,
+					:link => item.url,
+					:tags => item.data['categories'].is_a?(String)? [item.data['categories']] : item.data['categories'],
+					:suggest => item.data['title'] || item.name
+				}
+			
+        puts "Added #{item.url}..."
+      end # each
+						
+			# index it
+			client = Elasticsearch::Client.new(:log => true, :host => site.config['elasticsearch_url'])
+			if client.indices.exists :index => index_name
+				client.indices.delete(:index => index_name)
+			end
+			client.indices.create(:index => index_name, :body => {
+				:mappings => { 
+					:help_page => { 
+						:properties => {
+							:id => { :type => 'string', :index => 'not_analyzed', :include_in_all => false },
+							:title => { :type => 'string', :boost => 10.0, :analyzer => 'snowball' },
+							:suggest => { 
+								:type => :completion,
+								:index_analyzer => 'simple',
+								:search_analyzer => 'simple',
+								:payloads => true
+							},
+							:text => { :type => 'string', :analyzer => 'snowball'},
+							:excerpt => { :type => 'string', :boost => 5.0, :analyzer => 'snowball' },
+							:link => { :type => 'string', :index => 'not_analyzed', :include_in_all => false },
+							:tags => { :type => 'string', :analyzer => 'keyword' }
+						}
+					}
+				}
+			})
+				
+			puts 'Indexing...'
+			docs.each do |doc|
+				client.index(:index => index_name, :type => 'help_page', :body => doc)
+			end # each
+			
       puts 'Indexing done'
-    end
+    end # generate
 
     # render the items, parse the output and get all text inside <p> elements
     def extract_text(site, page)
@@ -73,7 +91,7 @@ module Jekyll
       doc = Nokogiri::HTML(page.output)
       paragraphs = doc.search('p').map {|e| e.text}
       page_text = paragraphs.join(" ").gsub("\r"," ").gsub("\n"," ")
-    end
-
-  end 
-end
+    end # extract_text
+		
+  end # class
+end # module
