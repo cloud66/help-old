@@ -17,7 +17,7 @@ Now wait a couple of minutes and your load balancer will be ready to distribute 
 
 <div class="notice">
 	<div class="notice-header">
-		<b>Important</b>
+		<h3>Important</h3>
 	</div>
 	<div class="notice-body">
 		<p>This feature is only available if you have deployed your stack using a cloud provider. <strong>All your existing web servers</strong> will automatically be added to the load balancer</p>

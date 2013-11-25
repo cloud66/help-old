@@ -3,6 +3,8 @@ layout: default
 bodyclass: post
 ---
 
+{% assign current_cat = page.categories %}
+
 <nav class="crumbs container">
     {% include contents_link.html %}
     <img src="{{ site.url }}/images/logo.svg" alt="Cloud 66" width="40" class="pull-right logo-sml">
@@ -24,13 +26,15 @@ bodyclass: post
 
     <aside class="content-sec">
         <nav class="aside-mod">
+            <h3 class="side-title js-format-cat">{{ current_cat }}</h3>
             <ul class="nav-sec">
-                <li>
-                    <a href="#">Cloud Backup</a>
-                </li>
-                <li>
-                    <a href="">File Rotater</a>
-                </li>
+                {% for post in site.categories[current_cat.first] %}
+                    <li>
+                        <a href="{{post.url}}">
+                            {{ post.title }}
+                        </a>
+                    </li>
+                {% endfor %}
             </ul>
         </nav>
     </aside>

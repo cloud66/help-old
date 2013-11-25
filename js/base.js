@@ -46,7 +46,10 @@ CB.help = ( function( $, window, document ) {
 
     var init = function() {
         console.log( 'init help' );
+
+        navHighlight();
         bindEvents();
+        catFormat();
 
         if ( $('body').hasClass('home') ) {
             homeSearch();
@@ -55,6 +58,21 @@ CB.help = ( function( $, window, document ) {
             console.log('search results');
             searchResults();
         }
+    };
+
+    var navHighlight = function() {
+        // Add Active Class To Current Link
+        var url = window.location.pathname;
+        $('nav.aside-mod a[href="'+url+'"]').parent().addClass('active');
+    };
+
+    var catFormat = function() {
+        $('.js-format-cat').each(function(){
+            var $el = $(this),
+                h = $el.html(),
+                friendlyTitle = h.replace(/-/g,' ');
+            $el.html( friendlyTitle );
+        });
     };
 
     var bindEvents = function() {

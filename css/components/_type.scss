@@ -31,9 +31,19 @@
     color: #3f4957;
 }
 
-h1  { font-size: 2.8rem; } /* =26px */
+h1  { font-size: 2.8rem; }
 h2  { font-size: 2.2rem; }
 h3  { font-size: 2.2rem; }
+
+.side-title {
+    font-size: 1.4rem;
+    line-height: 1;
+    margin: 0 0 0.6em 0 !important;
+    padding-bottom: 0.6em;
+    text-transform: capitalize;
+    border-bottom: 1px dotted #ddd;
+    color: #3F4957;
+}
 
 /*
  *  Lists
@@ -71,10 +81,13 @@ dl, dd {
 }
 
 /* base type for articles */
+.content-pri > p:first-child {
+    margin-top: 0 !important;
+}
 .article {
 
     .lead {
-        font-size: 2.6rem;
+        font-size: 2.8rem;
         line-height: 33px;
         color: #999;
         font-weight: 200;
@@ -89,6 +102,10 @@ dl, dd {
         color: #3F4957;
         font-size: 1.8rem;
         margin-bottom: 26px;
+    }
+    h2:first-child {
+        margin-top: 0 !important;
+        line-height: 1 !important;
     }
     p {
         font-size: 1.7rem;
