@@ -10,10 +10,10 @@ lead: Follow this guide to rebuild Nginx with any module of your choice
 
 <div class="notice notice-standalone">
 	<div class="notice-header">
-		<b>Important</b>
+		<h3>Important</h3>
 	</div>
 	<div class="notice-body">
-<p>This document is merely a guide, and should not be seen as a sanctioned way of adding new modules to Nginx.</p>
+        <p>This document is merely a guide, and should not be seen as a sanctioned way of adding new modules to Nginx.</p>
 	</div>
 </div>
 
