@@ -42,27 +42,33 @@ Learn more about [Cloud 66 HAProxy and WebSocket](/how-to/haproxy-for-websocket.
 
 To test your WebSocket server, create a <code>.html</code> file with the code below, make sure to replace *&lt;your&#95;address&gt;* with your WebSocket server IP address and finally, open it in a web browser.
 
-<pre class='prettyprint lang-html'>
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;script src=&#39;http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js&#39;&gt;&lt;/script&gt;
-    &lt;script&gt;
+{% highlight html %}
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+      <script>
       $(document).ready(function(){
-        function debug(str){ $(&quot;#debug&quot;).append(&quot;&lt;p&gt;&quot;+str+&quot;&lt;/p&gt;&quot;); };
+        function debug( str ) {
+          $("#debug").append( str );
+        };
 
-        ws = new WebSocket(&quot;ws://your&#95;address&quot;);
-        ws.onmessage = function(evt) { $(&quot;#msg&quot;).append(&quot;&lt;p&gt;&quot;+evt.data+&quot;&lt;/p&gt;&quot;); };
-        ws.onclose = function() { debug(&quot;socket closed&quot;); };
+        ws = new WebSocket("ws://your address");
+        ws.onmessage = function(evt) {
+          $("#msg").append("evt.data");
+        };
+        ws.onclose = function() {
+          debug("socket closed");
+        };
         ws.onopen = function() {
-          debug(&quot;connected...&quot;);
-          ws.send(&quot;hello server&quot;);
+          debug("connected...");
+          ws.send("hello server");
         };
       });
-    &lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;debug&quot;&gt;&lt;/div&gt;
-    &lt;div id=&quot;msg&quot;&gt;&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+    </script>
+  </head>
+  <body>
+    <div id="debug"></div>
+    <div id="msg"></div>
+  </body>
+</html>
+{% endhighlight %}

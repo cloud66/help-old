@@ -16,12 +16,8 @@ To add a load balancer, click on the 'Add Load Balancer' link in the Protips of 
 Now wait a couple of minutes and your load balancer will be ready to distribute the load between your web servers.
 
 <div class="notice">
-	<div class="notice-header">
 		<h3>Important</h3>
-	</div>
-	<div class="notice-body">
 		<p>This feature is only available if you have deployed your stack using a cloud provider. <strong>All your existing web servers</strong> will automatically be added to the load balancer</p>
-	</div>
 </div>
 
 ## Deploying with a Load Balancer

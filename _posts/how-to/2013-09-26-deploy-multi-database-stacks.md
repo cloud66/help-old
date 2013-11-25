@@ -20,12 +20,8 @@ An example of a multi-db type of application is an application that has MySQL as
 A solution to deploy a multi-db stack with Cloud 66 would be to pass the initial analysis phase, then create the non-activerecord database yourself (if necessary) using deploy hooks.
 
 <div class="notice">
-    <div class="notice-header">
-        <b>Note</b>
-    </div>
-    <div class="notice-body">
+        <h3>Note</h3>
         <p>When modifying your Gemfile don't forget to run 'bundle install' and commit your changed Gemfile.lock file</p>
-    </div>
 </div>
 
 <ol>
