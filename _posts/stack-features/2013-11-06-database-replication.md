@@ -107,12 +107,8 @@ These include environment variables to hold the address for your database server
 			<td>PostgreSQL Slave External IP address</td>
 		</tr>
 		<tr>
-			<td>MONGODB_ADDRESSES_INT</td>
-			<td>MongoDB servers internal addresses</td>
-		</tr>
-		<tr>
-			<td>MONGODB_ADDRESSES_EXT</td>
-			<td>MongoDB servers external addresses</td>
+			<td>MONGODB_ADDRESSES</td>
+			<td>MongoDB servers DNS names</td>
 		</tr>
 		<tr>
 			<td>REDIS_SLAVE_ADDRESSES_INT</td>
