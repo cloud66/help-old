@@ -1,0 +1,14 @@
+<div class="paging-nav">
+    {% if page.nav_prev %}
+        <a class="extra" href="{{page.nav_prev}}">
+            <span class="back-ico">&nbsp;</span>
+            Prev
+        </a>
+    {% endif %}
+    {% if page.nav_next %}
+        <a class="extra" href="{{page.nav_next}}">
+            Next
+            <span class="forward-ico">&nbsp;</span>
+        </a>
+    {% endif %}
+</div>

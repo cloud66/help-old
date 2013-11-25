@@ -42,5 +42,13 @@ bodyclass: post
 </article>
 
 <nav class="crumbs crumbs-bottom container">
-    {% include contents_link.html %}
+    {% if page.nav != true %}
+        {% include contents_link.html %}
+    {% endif %}
+
+    {% if page.nav %}
+        {% include paging_link.html %}
+    {% endif %}
 </nav>
+
+

@@ -115,6 +115,23 @@ nav {
     border-bottom: none;
 }
 
+.paging-nav {
+    a {
+        display: inline-block;
+        border-right: 1px solid #ddd;
+
+        &:first-child {
+            padding-right: 6px;
+        }
+
+        &:last-child,
+        &:only-child {
+            border: none;
+        }
+    }
+
+}
+
 .back-ico {
     display: inline-block;
     line-height: 1;
@@ -122,6 +139,13 @@ nav {
     height: 13px;
     background: url('/images/ico_back.svg');
     background-size: contain;
-    position: relative;
-    // top: 1px;
+}
+.forward-ico {
+    display: inline-block;
+    line-height: 1;
+    width: 13px;
+    height: 13px;
+    background: url('/images/ico_back.svg');
+    background-size: contain;
+    transform: rotate( 180deg );
 }
