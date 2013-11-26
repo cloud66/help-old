@@ -2,6 +2,9 @@
 layout: post
 template: two-col
 title:  "An introduction to Cloud 66 - video"
+nav: true
+nav_prev: "/getting-started/adding-the-public-key.html"
+nav_next: "/getting-started/cloud66-status.html"
 date:   2013-09-24 10:51:22
 categories: getting-started
 lead: Cloud 66 let's you deploy your Ruby apps to your own servers in minutes.

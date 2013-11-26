@@ -1,9 +1,6 @@
 ---
 layout: post
 template: two-col
-nav: true
-nav_next: "/some/next/path"
-nav_prev: "some/back/path"
 title:  "Operating System Information"
 date:   2013-09-24 10:51:22
 categories: stacks

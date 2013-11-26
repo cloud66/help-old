@@ -2,6 +2,9 @@
 layout: post
 template: two-col
 title:  "Padrino Stacks"
+nav: true
+nav_prev: "/getting-started/easy-deploy-repos.html"
+nav_next: "/getting-started/sinatra-stacks.html"
 date:   2013-11-18 16:27:22
 categories: getting-started
 lead: Cloud 66 makes it easy to deploy and maintain Padrino apps

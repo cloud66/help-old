@@ -2,6 +2,9 @@
 layout: post
 template: two-col
 title:  "Cloud 66 Status"
+nav: true
+nav_prev: "/getting-started/your-first-stack.html"
+nav_next: "/getting-started/ssh-keys.html"
 date:   2013-09-24 10:51:22
 categories: getting-started
 lead: We publish our system health status live
