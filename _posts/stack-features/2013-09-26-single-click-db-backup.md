@@ -18,6 +18,13 @@ After that, you only need to tell Cloud 66 how often you would like to backup yo
 
 Backups are automatically performed on stack's database at the scheduled times.
 
+<div class="notice">
+    <h3>Important</h3>
+    <p>
+	In order for backups to work, you are required to have twice as much space on your server as your backup consumes.
+    </p>
+</div>
+
 ## Backup Reports
 You can see the backup status by clicking on the backup icon.
 

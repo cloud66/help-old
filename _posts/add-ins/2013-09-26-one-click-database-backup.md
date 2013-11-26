@@ -30,7 +30,7 @@ It costs $0.20 per GigaBytes of data stored per month. This is calculated based 
 <div class="notice">
     <h3>Important</h3>
     <p>
-	The backup cost is calculated and rounded up on a daily basis.
+	The backup cost is calculated and rounded up on a daily basis. In order for backups to work, you are required to have twice as much space on your server as your backup consumes.
     </p>
 </div>
 
@@ -39,6 +39,13 @@ It costs $0.20 per GigaBytes of data stored per month. This is calculated based 
 ![Unmanaged Backups](http://cdn.cloud66.com.s3.amazonaws.com/images/help/unmanaged_backup.png)
 
 You can save your backups on your server (locally) or on your cloud storage (Amazon S3, Rackspace Cloud Files). Your account will be charged $0.02 for every backup run.
+
+<div class="notice">
+    <h3>Important</h3>
+    <p>
+	In order for backups to work, you are required to have twice as much space on your server as your backup consumes.
+    </p>
+</div>
 
 ## Frequency
 
