@@ -7,7 +7,6 @@ categories: stack-features
 lead: Defining your servers in the Manifest file gives you fine control over their specifications.
 ---
 
-
 ## Server Section
 
 #### Name
@@ -113,7 +112,6 @@ For BYOS (*Bring-Your-Own-Server*) servers, address, username and ssh&#95;key&#9
 <div class="notice">
         <h3>Important</h3>
         <p>In order to use your chosen ssh&#95;key&#95;name for BYOS mode, your associated SSH key must already be associated with your Cloud 66 account Only a single username/ssh&#95;key is currently supported amongst all servers within a single stack.</p>
-    </div>
 </div>
 
 ### Shared Servers

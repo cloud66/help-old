@@ -121,7 +121,7 @@ nav {
         border-right: 1px solid #ddd;
 
         &:first-child {
-            padding-right: 6px;
+            padding-right: 9px;
         }
 
         &:last-child,
@@ -135,10 +135,12 @@ nav {
 .back-ico {
     display: inline-block;
     line-height: 1;
-    width: 13px;
-    height: 13px;
+    width: 12px;
+    height: 12px;
     background: url('/images/ico_back.svg');
     background-size: contain;
+    position: relative;
+    top: 1px;
 }
 .forward-ico {
     display: inline-block;
@@ -148,4 +150,6 @@ nav {
     background: url('/images/ico_back.svg');
     background-size: contain;
     transform: rotate( 180deg );
+    position: relative;
+    top: 1px;
 }

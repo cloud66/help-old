@@ -7,7 +7,9 @@ bodyclass: post
 
 <nav class="crumbs container">
     {% include contents_link.html %}
-    <img src="{{ site.url }}/images/logo.svg" alt="Cloud 66" width="40" class="pull-right logo-sml">
+    <a rel="home" href="/">
+        <img src="{{ site.url }}/images/logo.svg" alt="Cloud 66" width="40" class="pull-right logo-sml">
+    </a>
 </nav>
 
 <article class="article container">
@@ -16,9 +18,11 @@ bodyclass: post
         {{ page.title }}
     </h1>
 
+
     <p class="lead">
         {{ page.lead }}
     </p>
+
 
     <div class="content-pri">
         {{ content }}
