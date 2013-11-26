@@ -32,7 +32,7 @@ To enable replication, click on the DB Server group of your stack and click on t
 
 <div class="notice notice-danger">
 	<h3>Note</h3>
-	<p>The process of database replication will disrupt your database serving your application for the duration of scaling up and sclaing down.</p>
+	<p>The process of database replication will disrupt your database serving your application for the duration of scaling up and scaling down.</p>
 </div>
 
 That's it!
@@ -56,7 +56,7 @@ That's it!
 Here is what happens when you scale down a server group:
 
 - The server is removed from replication cluster (but it is not deleted physically from your cloud).
-- The master in the cluser, will be configured to reflect that change.
+- The master in the cluster, will be configured to reflect that change.
 - If the remaining server is the only server in the group, it will be configured back to be a standalone server.
 - All environment variables for master and replica databases will be updated and pushed to all servers.
 
@@ -75,7 +75,7 @@ Scaling up a MongoDB will result in building a [MongoDB Replica Set](http://docs
 The same rule applies to scaling down. Deleting 1 server from a 5-server cluster, will result in 2 servers being removed from it to get the total down to 3 servers.
 
 #### Redis
-There is only 1 master Redis server setup. All other servers will be setup as replias and any change in them will be overwritten by the master.
+There is only 1 master Redis server setup. All other servers will be setup as replicas and any change in them will be overwritten by the master.
 
 ### Environment Variables
 Cloud 66 generates and populates a set of [environment variables automatically](/stack-features/auto-generated-environment-variables.html) on each one of your stack servers.
@@ -132,6 +132,6 @@ For multiple IP addresses, the environment variable will contain a comma separat
 192.168.10.1,192.168.10.2
 </pre>
 
-As with any environment variable change, you will need to redeploy the stack to propgate the variable changes to all servers. 
+As with any environment variable change, you will need to redeploy the stack to propagate the variable changes to all servers.
 
 The environment variables will be available on all servers including web and database servers. This excludes HAProxy servers.

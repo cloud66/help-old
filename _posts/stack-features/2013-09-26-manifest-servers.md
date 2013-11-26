@@ -45,12 +45,12 @@ _Optional. BYOC Only_
 
 Data center region to fire up the server in. Valid values are dependent on the cloud vendor:
 
-[Vendor data center regions](/api/instance-regions.html)
+[Vendor data center regions](/api/#/api/basics/instance-regions.html)
 
 **size**
 _Optional. BYOC Only_
 
-[Size of the server instance](/api/instance-names.html) created. Valid values depend on the vendor.
+[Size of the server instance](/api/#/api/basics/instance-names.html) created. Valid values depend on the vendor.
 
 **address**
 _Optional. BYOS Only_
