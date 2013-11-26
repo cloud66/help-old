@@ -31,7 +31,7 @@
     color: #3f4957;
 }
 
-h1  { font-size: 2.8rem; }
+h1  { font-size: 3rem; }
 h2  { font-size: 2.2rem; }
 h3  { font-size: 2.2rem; }
 
@@ -40,6 +40,7 @@ h3  { font-size: 2.2rem; }
     line-height: 1;
     margin: 0 0 0.6em 0 !important;
     padding-bottom: 0.6em;
+    padding-left: 4px;
     text-transform: capitalize;
     border-bottom: 1px dotted #ddd;
     color: #3F4957;
@@ -87,8 +88,8 @@ dl, dd {
 .article {
 
     .lead {
-        font-size: 2.8rem;
-        line-height: 33px;
+        font-size: 3.1rem;
+        line-height: 36px;
         color: #999;
         font-weight: 200;
         padding-bottom: 0.8em;
