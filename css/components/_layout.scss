@@ -29,6 +29,9 @@
     max-width: $maxwidth + $gutter;
 }
 
+body.home .container {
+    max-width: 680px;
+}
 
 /*
  *  2 column layout

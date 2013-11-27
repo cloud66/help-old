@@ -29,10 +29,12 @@ bodyclass: post
     </div>
 
     <aside class="content-sec">
-        <nav class="aside-mod">
-            <h3 class="side-title js-format-cat">{{ current_cat }}</h3>
+        <nav class="aside-mod {% if page.nav_sticky %} sticky-nav {% endif %}">
+            <h3 class="side-title js-format-cat">
+                {{ current_cat }}
+            </h3>
             <ul class="nav-sec">
-                {% for post in site.categories[current_cat.first] %}
+                {% for post in site.categories[current_cat.first] | order:ascending %}
                     <li>
                         <a href="{{post.url}}">
                             {{ post.title }}
