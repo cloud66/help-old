@@ -43,6 +43,13 @@ bodyclass: post
                 {% endfor %}
             </ul>
         </nav>
+        {% if page.so_title %}
+        <div class="side-module">
+            <a href="http://stackoverflow.com/questions/tagged/cloud66+{{page.so_title | downcase}}">
+                Ask a question on {{page.so_title}} and Cloud 66 on StackOverflow
+            </a>
+        </div>
+        {% endif %}
     </aside>
 
 </article>
