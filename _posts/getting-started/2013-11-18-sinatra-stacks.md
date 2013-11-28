@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Sinatra Stacks"
+so_title: "Sinatra"
 nav_sticky: true
 nav: true
 nav_prev: "/getting-started/padrino-stacks.html"
