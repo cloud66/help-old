@@ -7,9 +7,10 @@
 .article p > code,
 .article p > kbd {
   background-color: #F7F7F7 !important;
-  color: #222;
-  font-size: 1.5rem !important;
+  color: #000;
+  font-size: 1.6rem !important;
   border: none;
+  padding: 3px;
 }
 
 /* standard */
@@ -33,7 +34,7 @@
   color: #fff;
   border: 1px solid #ddd;
   background-color: #333;
-  padding: 0.25em;
+  // padding: 0.25em;
   border-radius: 1px;
 }
 

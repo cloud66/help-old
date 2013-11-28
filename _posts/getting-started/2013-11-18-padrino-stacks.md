@@ -21,17 +21,35 @@ Cloud 66 supports stacks based on the [Padrino framework](http://www.pardinorb.c
 
 Given that Padrino applications can have different database frameworks, we allow you to specify custom commands which are run at specific points during deployment:
 
-- **Custom build command:** This command will run every time until the first build is successful. Example: `bundle exec rake db:seed`
-- **Custom deploy command:** This command will run on every deployment (including initial build). Example: `bundle exec rake db:migrate`
+<ul>
+  <li>
+    <p>
+    <strong>Custom build command</strong> &mdash; This command will run every time until the first build is successful. Example:
+    </p>
+    <p>
+      <kbd>bundle exec rake db:seed</kbd>
+    </p>
+  </li>
+  <li>
+    <p>
+      <strong>Custom deploy command</strong> &mdash; This command will run on every deployment (including initial build). Example:
+    </p>
+    <p>
+      <kbd>bundle exec rake db:migrate</kbd>
+    </p>
+  </li>
+</ul>
+
 
 These commands can be specified in the UI, but also in your [manifest file](http://help.cloud66.com/stack-features/manifest-files.html):
-<pre class="terminal">
+
+{% highlight ruby %}
 development:
     padrino:
         configuration:
-            custom&#95;build&#95;command: rake db:seed
-            custom&#95;deploy&#95;command: rake db:migrate
-</pre>
+            custom_build_command: rake db:seed
+            custom_deploy_command: rake db:migrate
+{% endhighlight %}
 
 ## Database
 
@@ -43,47 +61,47 @@ Should you wish to change the database username/password after build, you will h
 #### Active Record
 
 **YML**
-<pre class="terminal">
+{% highlight ruby %}
 production:
   adapter: mysql2
-  username: <%= ENV['MYSQL&#95;USERNAME'] %>
-  password: <%= ENV['MYSQL&#95;PASSWORD'] %>
-  host: <%= ENV['MYSQL&#95;ADDRESS'] %>
-  database: <%= ENV['MYSQL&#95;DATABASE'] %>
-</pre>
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  host: <%= ENV['MYSQL_ADDRESS'] %>
+  database: <%= ENV['MYSQL_DATABASE'] %>
+{% endhighlight %}
 
 **Declarative**
-<pre class="terminal">
+{% highlight ruby %}
 ActiveRecord::Base.configurations[:development] = {
   :adapter   => 'mysql2',
   :encoding  => 'utf8',
   :reconnect => true,
-  :database  => ENV['MYSQL&#95;DATABASE'],
+  :database  => ENV['MYSQL_DATABASE'],
   :pool      => 5,
-  :username  => ENV['MYSQL&#95;USERNAME'],
-  :password  => ENV['MYSQL&#95;PASSWORD'],
-  :host      => ENV['MYSQL&#95;ADDRESS'],
+  :username  => ENV['MYSQL_USERNAME'],
+  :password  => ENV['MYSQL_PASSWORD'],
+  :host      => ENV['MYSQL_ADDRESS'],
 }
-</pre>
+{% endhighlight %}
 
 #### DataMapper
-<pre class="terminal">
-DataMapper::setup(:default, "ENV['POSTGRESQL&#95;URL']")
-</pre>
+{% highlight ruby %}
+DataMapper::setup(:default, "ENV['POSTGRESQL_URL']")
+{% endhighlight %}
 
 #### MongoMapper
-<pre class="terminal">
+{% highlight ruby %}
 MongoMapper.connection = Mongo::Connection.from_uri(ENV['MONGODB_URL'])
-</pre>
+{% endhighlight %}
 
 #### Mongoid
-<pre class="terminal">
+{% highlight ruby %}
 development:
   sessions:
     default:
       database: mongoid
       hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
-</pre>
+{% endhighlight %}
 
 ## Example app
 

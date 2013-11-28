@@ -61,8 +61,10 @@ body.home .container {
         }
 
         .side-module {
+            border: 1px solid #EAF9FF;
             background: #F9FDFF;
-            padding: 10px 6px;
+            box-shadow: inset 0 0 10px #EFFBFF;
+            padding: 14px 12px;
         }
     }
 
