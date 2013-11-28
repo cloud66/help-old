@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Adding the Cloud 66 Public Key"
+nav_sticky: true
 nav: true
 nav_prev: "/getting-started/what-is-a-cloud66-stack.html"
 nav_next: "/getting-started/first-steps.html"

@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Sinatra Stacks"
+nav_sticky: true
 nav: true
 nav_prev: "/getting-started/padrino-stacks.html"
 date:   2013-11-18 16:27:22

@@ -2,10 +2,10 @@
 layout: post
 template: two-col
 title:  "Stand alone Servers"
+nav_sticky: true
 nav: true
 nav_prev: "/getting-started/faq.html"
 nav_next: "/getting-started/what-is-a-cloud66-stack.html"
-nav_sequence: true
 nav_sticky: true
 date:   2013-09-24 10:51:22
 categories: getting-started

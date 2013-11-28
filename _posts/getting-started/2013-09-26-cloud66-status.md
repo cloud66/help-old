@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Cloud 66 Status"
+nav_sticky: true
 nav: true
 nav_prev: "/getting-started/your-first-stack.html"
 nav_next: "/getting-started/ssh-keys.html"

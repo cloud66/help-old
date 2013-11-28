@@ -1,6 +1,7 @@
 ---
 layout: post
 template: two-col
+nav_sticky: true
 title:  "First Steps with Cloud 66"
 date:   2013-09-24 10:51:22
 categories: getting-started

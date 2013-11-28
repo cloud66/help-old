@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "What is a Cloud 66 Stack?"
+nav_sticky: true
 nav: true
 nav_prev: "/getting-started/standalone-servers.html"
 nav_next: "/getting-started/adding-the-public-key.html"

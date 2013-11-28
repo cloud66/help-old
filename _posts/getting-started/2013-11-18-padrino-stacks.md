@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Padrino Stacks"
+nav_sticky: true
 nav: true
 nav_prev: "/getting-started/easy-deploy-repos.html"
 nav_next: "/getting-started/sinatra-stacks.html"

@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "EasyDeploy Repositories"
+nav_sticky: true
 nav: true
 nav_prev: "/getting-started/toolbelt.html"
 nav_next: "/getting-started/padrino-stacks.html"

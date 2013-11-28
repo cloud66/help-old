@@ -28,8 +28,8 @@ bodyclass: post
         {{ content }}
     </div>
 
-    <aside class="content-sec">
-        <nav class="aside-mod {% if page.nav_sticky %} sticky-nav {% endif %}">
+    <aside class="content-sec  {% if page.nav_sticky %} sticky-nav {% endif %}">
+        <nav class="aside-mod">
             <h3 class="side-title js-format-cat">
                 {{ current_cat }}
             </h3>

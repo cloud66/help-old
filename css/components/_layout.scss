@@ -51,6 +51,11 @@ body.home .container {
             width: $sidebarwidth;
         }
 
+        .sticky-nav {
+            position: sticky;
+            top: 80px;
+        }
+
     }
 
   .multi-col {

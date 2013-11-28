@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "SSL Certificate"
+nav_sticky: true
 nav: true
 nav_prev: "/getting-started/ssh-keys.html"
 nav_next: "/getting-started/toolbelt.html"
