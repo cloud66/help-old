@@ -7,7 +7,7 @@ nav: true
 nav_prev: "/getting-started/toolbelt.html"
 nav_next: "/getting-started/padrino-stacks.html"
 date:   2013-10-09 15:30:22
-categories: getting-started
+categories: yo
 lead: Deploying and maintaining open source projects through Cloud 66 is extremely easy
 ---
 

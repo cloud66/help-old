@@ -7,8 +7,8 @@ nav_sticky: true
 nav: true
 nav_prev: "/getting-started/easy-deploy-repos.html"
 nav_next: "/getting-started/sinatra-stacks.html"
-date:   2013-11-18 16:27:22
-categories: getting-started
+date:   2012-11-18 16:27:22
+categories: yo
 lead: Cloud 66 makes it easy to deploy and maintain Padrino apps
 ---
 

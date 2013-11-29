@@ -2,46 +2,44 @@
 layout: post
 template: two-col
 nav_sticky: true
-title:  "First Steps with Cloud 66"
-date:   2013-09-24 10:51:22
+title:  "Building your first stack"
+date:   2037-12-24 10:51:22
 categories: getting-started
-lead: Code to Cloud in 5 Minutes - Deploying your first Cloud 66 stack
+lead: It's really easy to build your first stack
 ---
 
-
-## 1. Start a Stack
-Go to the <a href="https://www.cloud66.com/dashboard" target="_blank">Cloud 66 Dashboard</a> and click 'Build Stack'.
+## 1. Start a stack
+Visit the <a href="https://www.cloud66.com/dashboard" target="_blank">Cloud 66 Dashboard</a> and click <i>Build Stack</i>.
 
 ![First Stack](http://cdn.cloud66.com.s3.amazonaws.com/images/help/first_stack.png)
 
-## 2. Accessing Your Code
-Add your unique SSH key to your Git repository. This will allow Cloud 66 to analyze your code and suggest the stack configuration to deploy.
+## 2. Accessing your code
+If you have a <b>private Git repository</b>, please add the unique SSH key provided to your Git account. If you have a <b>public repository</b>, feel free to jump to the next step.
 
 ![Accessing Git](http://cdn.cloud66.com.s3.amazonaws.com/images/help/accessing_git.png)
 
-## 3. Tell Us About Your App
-Simply point Cloud 66 to your Git repository and give your stack a name.
+## 3. Tell us about your app
+Provide us with a URL to your Git repository, give your stack a name and select which environment to deploy in.
 
 ![About Your App](http://cdn.cloud66.com.s3.amazonaws.com/images/help/app_info.png)
 
-## 4. Cloud 66 Gets to Work
-Cloud 66 now analyzes your app. This takes around 10 - 15 seconds.
+## 4. Cloud 66 gets to work
+Cloud 66 will then analyze your application, which takes around 15 seconds depending on the size of repository.
 
 ![Analyzing](http://cdn.cloud66.com.s3.amazonaws.com/images/help/analyzing_your_app.png)
 
-## 5. Last Stop Before Cloud
-Now Cloud 66 shows you the results of the analysis and how it is going to build your full stack.
-
+## 5. Choose your setup
+You are now shown the results of our analysis, and you can choose how you would like to setup your stack.
 ![Analysis Results](http://cdn.cloud66.com.s3.amazonaws.com/images/help/analysis_results.png)
 
 ![Where to Deploy](http://cdn.cloud66.com.s3.amazonaws.com/images/help/where_to_deploy.png)
 
-## 6. Let the Builders Work
-Cloud 66 now gets to work and fires up servers in your cloud (or provisions your own servers). It then configures the servers and deploys your app to them.
+## 6. Let the builders work
+Cloud 66 now gets to work and fires up servers in your cloud (or provisions your own servers). We then configure your servers based on our analysis and deploy your application to them.
 
 ![Working](http://cdn.cloud66.com.s3.amazonaws.com/images/help/building_app.png)
 
-## 7. You Are Done!
-It's done. You now have a fully working stack with your app running. You can now see some tips on the stack if you would like to to add load balancing, SSL or backups and more to your stack. It's all done in one place.
+## 7. You're done!
+It's done. You now have a fully working stack with your application running, and are free to manage it with [backups](LINK), [scaling](LINK), [security](LINK) and so on.
 
 ![Done](http://cdn.cloud66.com.s3.amazonaws.com/images/help/app_done.png)

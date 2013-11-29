@@ -7,7 +7,7 @@ nav_sticky: true
 nav: true
 nav_prev: "/getting-started/padrino-stacks.html"
 date:   2013-11-18 16:27:22
-categories: getting-started
+categories: yo
 lead: Cloud 66 makes it easy to deploy and maintain Sinatra apps
 ---
 
