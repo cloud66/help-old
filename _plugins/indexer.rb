@@ -33,7 +33,7 @@ module Jekyll
 			docs = []
 			items.each do |item|
 				page_text = extract_text(site, item)
-				excerpt = item[item.lead]
+				excerpt = item.data['lead']
         
 				docs << {
 					:id => item.url,
