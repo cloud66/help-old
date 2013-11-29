@@ -24,12 +24,9 @@ You can also add the domain name if you want to limit the SSL to a certain domai
 ### Removing passphrase from SSL keys
 If your SSL key is protected with a passphrase, you can remove it using the following command:
 
-<p>
-<kbd>
-	openssl rsa -in wild&#95;mydomain&#95;com.key -out wild&#95;mydomain&#95;com.nopass.key
-</kbd>
-</p>
-
+{% highlight bash %}
+	openssl rsa -in wild_mydomain_com.key -out wild_mydomain_com.nopass.key
+{% endhighlight %}
 ### Adding SSL certificate with Intermediate Certificates
 Some SSL certificate providers (Certificate Authorities) like RapidSSL issue certificates that are not fully compatible with all devices (especifically Android devices). This is because they are not the ultimate CAs and usually act as a reseller for other authorities (like VeriSign).
 

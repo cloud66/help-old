@@ -7,6 +7,7 @@ module Jekyll
 			'stacks', 
 			'how-to', 
 			'stack-features',
+      'toolbelt',
 			'add-ins',
 			'api',
 			'cloud-providers',

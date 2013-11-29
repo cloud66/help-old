@@ -13,7 +13,9 @@ When *rake db:migrate*, or *rake db:structure:load* is executed as part of your 
 (note: your structure.sql may contain migrations to execute)
 
 If migrations are executed then rails will try and execute the below in an attempt to ensure that the structure.sql is kept up to date.
-<pre class="terminal">rake db:structure:dump</pre>
+{% highlight ruby %}
+rake db:structure:dump
+{% endhighlight %}
 
 However, as your deployment on Cloud 66 is an endpoint (ie. you are not commiting changes from your Cloud 66 server back to your repository) this is a completely unnecessary step.
 The structure.sql file that is generated on your webserver will never be commited back to your repository.
@@ -24,7 +26,9 @@ This occurs mainly when your database server is located externally (or on anothe
 ## The Resolution
 
 Adding the following line to your application's *Rakefile* will stop the structure dump from occuring when performing the Cloud 66 deployment:
-<pre class="terminal">Rake::Task["db:structure:dump"].clear if ENV['RAILS&#95;STACK&#95;PATH']</pre>
+{% highlight ruby %}
+Rake::Task["db:structure:dump"].clear if ENV['RAILS_STACK_PATH']
+{% endhighlight %}
 
 <div class="notice">
 	<h3>Important</h3>

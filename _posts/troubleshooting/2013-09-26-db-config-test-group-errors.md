@@ -14,10 +14,14 @@ Errors can occur during deployments due to there being different adapters define
 Your error will differ depending on the adapters you've chosen.
 
 For example, if your database.yml file's "development" group contains:
-<pre class="terminal">adapter: postgresql</pre>
+{% highlight yaml %}
+adapter: postgresql
+{% endhighlight %}
 
 And it also contains a "test" group with:
-<pre class="terminal">adapter: mysql2</pre>
+{% highlight yaml %}
+adapter: mysql2
+{% endhighlight %}
 
 This will result in the following slightly obtuse error during your code deployment:
 <div class="error">

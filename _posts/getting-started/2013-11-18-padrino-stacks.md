@@ -42,7 +42,7 @@ Given that Padrino applications can have different database frameworks, we allow
 
 These commands can be specified in the UI, but also in your [manifest file](http://help.cloud66.com/stack-features/manifest-files.html):
 
-{% highlight ruby %}
+{% highlight yaml %}
 development:
     padrino:
         configuration:
@@ -60,7 +60,7 @@ Should you wish to change the database username/password after build, you will h
 #### Active Record
 
 **YML**
-{% highlight ruby %}
+{% highlight yaml %}
 production:
   adapter: mysql2
   username: <%= ENV['MYSQL_USERNAME'] %>
@@ -94,7 +94,7 @@ MongoMapper.connection = Mongo::Connection.from_uri(ENV['MONGODB_URL'])
 {% endhighlight %}
 
 #### Mongoid
-{% highlight ruby %}
+{% highlight yaml %}
 development:
   sessions:
     default:
