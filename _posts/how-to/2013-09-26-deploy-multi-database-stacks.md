@@ -60,6 +60,7 @@ production:
 </div>
 
 <ol start="3">
-<li><strong>Proceed through the analysis phase</strong>. You will see that Cloud 66 will have detected a single database type. Proceeding to deploy your application would then create the database, and servers as required.</li>
+	<li><strong>Proceed through the analysis phase</strong>. You will see that Cloud 66 will have detected a single database type. Proceeding to deploy your application would then create the database, and servers as required.</li>
 
-<li> <strong>Once deployed</strong> or if it failed deployment due to requirement of the auxiliary database you can add your auxiliary database gem(s) back into your Gemfile, commit and redeploy.</li>
+	<li> <strong>Once deployed</strong> or if it failed deployment due to requirement of the auxiliary database you can add your auxiliary database gem(s) back into your Gemfile, commit and redeploy.</li>
+</ol>

@@ -9,12 +9,15 @@ lead: Cloud 66 supports Faye, the flexible publish-subscribe messaging system.
 
 
 ## Introduction
+
 <a href="http://faye.jcoglan.com/">Faye</a> is a publish-subscribe messaging system that provides messaging services. At Cloud 66, we recommend running Faye as a [background process](/stack-features/proc-files.html) on your stack behind a [Thin rack server](/web-server/thin-rack-server.html).
 
 ## Implementation
+
 We will use four files containing the following commands to accomplish this setup. In addition to these, be sure to open the port on which your Faye server is running to the relevant servers.
 
 #### 1. RAILS&#95;ROOT/.cloud66/deploy&#95;hooks.yml
+
 [Redeployment hooks](/stack-features/redeployment-hook.html) allow you to take action at various points during a build and/or deployment on Cloud 66. This one will run the bash script that we will create in the next step before Rails is installed on your server.
 
 <pre class='terminal'>

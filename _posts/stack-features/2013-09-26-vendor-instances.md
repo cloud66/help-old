@@ -12,10 +12,10 @@ lead: We configure the number of running threads in Nginx based on instance size
 Stacks deployed with Cloud 66 use nginx as their frontend. You can find the <a href="/web-server/nginx-settings.html">nginx configuration</a> that's pushed out. The number of workers running nginx are dependend on the number of CPU cores of the instance. Here is how they are configured by default.
 
 ### Amazon EC2
-<table class='table table-bordered table-striped'>
+<table class="table table-bordered table-striped">
   <colgroup>
-    <col width="70%">
-    <col width="30%">
+    <col width="70%"/>
+    <col width="30%"/>
   </colgroup>
 	<thead>
 		<tr>
@@ -65,7 +65,7 @@ Stacks deployed with Cloud 66 use nginx as their frontend. You can find the <a h
 
 ### Rackspace
 
-<table class='table table-bordered table-striped'>
+<table class="table table-bordered table-striped">
   <colgroup>
     <col width="70%"/>
     <col width="30%"/>
@@ -110,7 +110,7 @@ Stacks deployed with Cloud 66 use nginx as their frontend. You can find the <a h
 
 ### Linode
 
-<table class='table table-bordered table-striped'>
+<table class="table table-bordered table-striped">
   <colgroup>
     <col width="70%"/>
     <col width="30%"/>
@@ -135,7 +135,7 @@ Stacks deployed with Cloud 66 use nginx as their frontend. You can find the <a h
 
 ### Joyent
 
-<table class='table table-bordered table-striped'>
+<table class="table table-bordered table-striped">
   <colgroup>
     <col width="70%"/>
     <col width="30%"/>
@@ -161,7 +161,7 @@ Stacks deployed with Cloud 66 use nginx as their frontend. You can find the <a h
 
 ### DigitalOcean
 
-<table class='table table-bordered table-striped'>
+<table class="table table-bordered table-striped">
   <colgroup>
     <col width="70%"/>
     <col width="30%"/>
@@ -188,7 +188,7 @@ Stacks deployed with Cloud 66 use nginx as their frontend. You can find the <a h
 
 ### Telefonica
 
-<table class='table table-bordered table-striped'>
+<table class="table table-bordered table-striped">
   <colgroup>
     <col width="70%"/>
     <col width="30%"/>

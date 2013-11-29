@@ -32,7 +32,8 @@ To get started with Cloud 66:
 
 <p>Check out the tour video for a quick introduction to the product.</p>
 
-<iframe src="//player.vimeo.com/video/54524424" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/54524424">An Introduction to Cloud 66</a> from <a href="http://vimeo.com/user14808275">Cloud 66 Videos</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<iframe src="//player.vimeo.com/video/54524424" width="500" height="281" frameborder="0"></iframe>
+<p><a href="http://vimeo.com/54524424">An Introduction to Cloud 66</a> from <a href="http://vimeo.com/user14808275">Cloud 66 Videos</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 
 
