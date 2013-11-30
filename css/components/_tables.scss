@@ -41,3 +41,12 @@ th.num,
 .num {
 	text-align: right !important;
 }
+
+.table-small
+{
+  thead th,
+  tbody th,
+  tbody td {
+    font-size: 1.4rem;
+  }
+}

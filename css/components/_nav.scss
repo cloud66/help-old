@@ -180,12 +180,14 @@ nav {
 
 .forward-ico {
     display: inline-block;
-    line-height: 1;
+    // line-height: 1;
     width: 11.5px;
     height: 11.5px;
     background: url('/images/ico_back.svg');
     background-size: contain;
-    transform: rotate( 180deg );
-    position: relative;
-    top: 1px;
+    // position: relative;
+    // top: 1px;
+
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
 }
