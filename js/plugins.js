@@ -1892,3 +1892,32 @@ window.Polyfill = Polyfill
   .undoUnmatched(undoUnmatched)
 
 })( window.jQuery );
+
+
+/* Animate scrolling to fragment identifiers
+  --------------------------------------------------------------- */
+(function( $ ) {
+
+  var $toc = $('.page-toc a[href*=#]:not([href=#])');
+
+  $toc.click(function() {
+    if ( location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname ) {
+      var topBarOffSet = 60
+      var target = $(this.hash);
+
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - topBarOffSet
+        }, 400 );
+
+        console.log( target );
+        target.removeClass('target-h').addClass('target-h');
+
+        return false;
+      }
+    }
+  });
+
+})( window.jQuery );
