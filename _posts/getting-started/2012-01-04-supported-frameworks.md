@@ -5,8 +5,8 @@ title:  "Supported frameworks"
 so_title: false
 nav_sticky: true
 nav: true
-nav_prev: ""
-nav_next: "/getting-started/sinatra-stacks.html"
+nav_prev: "/getting-started/standalone-servers.html"
+nav_next: "/getting-started/what-is-a-stack.html"
 date:   2039-11-18 16:27:22
 categories: getting-started
 lead: These are the frameworks that we currently support

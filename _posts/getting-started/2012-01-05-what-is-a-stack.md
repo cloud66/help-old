@@ -4,8 +4,8 @@ template: two-col
 title:  "What is a stack?"
 nav_sticky: true
 nav: true
-nav_prev: "/getting-started/standalone-servers.html"
-nav_next: "/getting-started/adding-the-public-key.html"
+nav_prev: "/getting-started/supported-frameworks.html"
+nav_next: "/getting-started/your-first-stack.html"
 date:   2038-01-25 16:27:22
 categories: getting-started
 lead: Cloud 66 makes it easy to configure and deploy your stack
@@ -13,7 +13,7 @@ lead: Cloud 66 makes it easy to configure and deploy your stack
 
 A web application stack is a set of hardware and software components needed for your application to run. Each level of the stack represents an abstraction layer that provides a high-level overview of your setup.
 
-For example, your stack might be comprised of a load balancer, a number of web servers, process and database servers, your operating system and finally your cloud vendor:
+For example, your stack might be comprised of a load balancer, a number of web servers, process and database servers, your operating system and finally the hardware provided by your cloud vendor:
 
 ![Cloud 66 Stack](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud66_stack.png)
 

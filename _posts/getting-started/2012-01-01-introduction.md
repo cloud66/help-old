@@ -6,7 +6,7 @@ so_title: false
 nav_sticky: true
 nav: true
 nav_prev: ""
-nav_next: "/getting-started/sinatra-stacks.html"
+nav_next: "/getting-started/supported-clouds.html"
 date:   2040-11-18 16:27:22
 categories: getting-started
 lead: Learn about what Cloud 66 does and how we can help you

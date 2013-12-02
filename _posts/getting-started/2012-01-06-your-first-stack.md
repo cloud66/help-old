@@ -3,6 +3,10 @@ layout: post
 template: two-col
 nav_sticky: true
 title:  "Building your first stack"
+nav_sticky: true
+nav: true
+nav_prev: "/getting-started/what-is-a-stack.html"
+nav_next: "/getting-started/pricing.html"
 date:   2037-12-24 10:51:22
 categories: getting-started
 lead: It's really easy to build your first stack
@@ -19,7 +23,7 @@ If you have a <b>private Git repository</b>, please add the unique SSH key provi
 ![Accessing Git](http://cdn.cloud66.com.s3.amazonaws.com/images/help/accessing_git.png)
 
 ## 3. Tell us about your app
-Provide us with a URL to your Git repository, give your stack a name and select which environment to deploy in.
+Provide us with a [URL to your Git repository](LINK), give your stack a name and select which [environment to deploy](LINK) .
 
 ![About Your App](http://cdn.cloud66.com.s3.amazonaws.com/images/help/app_info.png)
 

@@ -4,8 +4,8 @@ template: two-col
 title:  "Deploy to your servers"
 nav_sticky: true
 nav: true
-nav_prev: "/getting-started/faq.html"
-nav_next: "/getting-started/what-is-a-cloud66-stack.html"
+nav_prev: "/getting-started/supported-clouds.html"
+nav_next: "/getting-started/supported-frameworks.html"
 nav_sticky: true
 date:   2040-1-24 10:51:22
 categories: getting-started

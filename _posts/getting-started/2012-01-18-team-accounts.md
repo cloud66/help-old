@@ -4,8 +4,8 @@ template: two-col
 title:  "Team accounts"
 nav_sticky: true
 nav: true
-nav_prev: "/getting-started/your-first-stack.html"
-nav_next: "/getting-started/ssh-keys.html"
+nav_prev: "/getting-started/security.html"
+nav_next: "/getting-started/cloud66-status.html"
 date:   2034-09-24 10:51:22
 categories: getting-started
 lead: You can share your Cloud 66 account with your team
