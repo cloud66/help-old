@@ -47,6 +47,14 @@ For both managed and unmanaged backups, you can simply choose how your backups s
 
 ![Backup Frequency](http://cdn.cloud66.com.s3.amazonaws.com/images/help/backup_frequency.png)
 
+## Compress your backup
+
+You can choose to have your backups compressed with Gzip if you so wish. This is not enabled by default due to the CPU overhead of performing the compression/expansion on your server. Enabling this could significantly reduce the size of your backups.
+
+If enabled, the gzip compression level used by default is 6 (this is not currently editable). See more information about this in the excellent <a href='https://github.com/meskyanichi/backup/wiki/Compressors' target='_blank'>backup gem documentation.</a>
+
+You can change this option after the job has been created by editing your backup job as specified below.
+
 ## Edit your scheduled backups
 
 Clicking on the backup icon will take you to the backup details page.
@@ -60,5 +68,6 @@ You can edit the setups, force to run a backup or remove the scheduled backup:
 You can edit the following for each backup:
 
 - Backups frequency
-- Number of previous versions of backups that are stored.
+- Number of previous versions of backups that are stored
+- Whether or not to compress backups
 
