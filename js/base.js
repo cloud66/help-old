@@ -89,6 +89,10 @@ CB.help = ( function( $, window, document ) {
           $el.searchForm.submit();
         });
 
+        $el.globalSearchInput.change(function(){
+            $('.header-nav-bar form').submit();
+        });
+
         // $(document.body).on('click', 'nav.crumbs a', function(){
         //     window.history.go(-1);
         // });
