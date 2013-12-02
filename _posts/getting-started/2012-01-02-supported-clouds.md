@@ -5,8 +5,8 @@ title:  "Deploy to your cloud"
 so_title: false
 nav_sticky: true
 nav: true
-nav_prev: ""
-nav_next: "/getting-started/sinatra-stacks.html"
+nav_prev: "/getting-started/introduction.html"
+nav_next: "/getting-started/standalone-servers.html"
 date:   2040-10-18 16:27:22
 categories: getting-started
 lead: Deploy your app with our supported cloud providers
