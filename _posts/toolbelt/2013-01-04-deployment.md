@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Deployment"
-date:   2013-11-30 16:33:13
+date:   2013-01-27 01:01:01
 categories: toolbelt
 lead: Deploy your stacks from commandline
 ---

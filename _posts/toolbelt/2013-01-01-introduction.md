@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Getting started"
-date:   2013-11-29 15:33:13
+date:   2013-01-30 01:01:01
 categories: toolbelt
 lead: Toolbelt is a commandline tool to interact with Cloud 66.
 ---

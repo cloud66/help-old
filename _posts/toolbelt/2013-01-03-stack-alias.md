@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Stack alias"
-date:   2013-11-29 15:33:13
+date:   2013-01-28 01:01:01
 categories: toolbelt
 lead: Replace Stack UIDs with friendly names
 ---

@@ -14,11 +14,7 @@ bodyclass: home
 <section class="container article-toc" id="js-primary-content">
 
     {% for category in site.sorted_categories %}
-	{% if category.first == 'api' %}
-    <h2 class="cat-title">
-		<a href="/api">API</a>
-    </h2>
-	{% else %}
+	{% if category.first != 'api' %}
     <h2 class="cat-title js-format-cat">
       {{ category | first }}
     </h2>

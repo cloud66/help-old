@@ -89,6 +89,10 @@ CB.help = ( function( $, window, document ) {
           $el.searchForm.submit();
         });
 
+        $el.globalSearchInput.change(function(){
+            $('.header-nav-bar form').submit();
+        });
+
         // $(document.body).on('click', 'nav.crumbs a', function(){
         //     window.history.go(-1);
         // });
@@ -181,11 +185,11 @@ CB.help = ( function( $, window, document ) {
         $el.homeSearchInput.appear();
 
         $(document.body).on('appear', '#q', function(e) {
-            $topSearchInput.css( 'visibility','hidden' );
+            $topSearchInput.css( 'opacity', 0 );
         });
 
         $(document.body).on('disappear', '#q', function(e) {
-            $topSearchInput.css( 'visibility','visible' ).addClass('animated pulse');
+            $topSearchInput.css( 'opacity', 1 ).addClass('animated pulse');
             $('#q-top').focus();
         });
     };

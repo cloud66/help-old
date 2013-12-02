@@ -109,3 +109,22 @@ body.loading {
     -o-animation-name: pulse;
     animation-name: pulse;
 }
+
+h2.target-h {
+    -webkit-animation: target-fade 2s 1;
+    -moz-animation: target-fade 2s 1;
+    animation: target-fade 2s 1;
+}
+
+@-webkit-keyframes target-fade {
+    0%   { background-color: rgba(0,0,0,.1); }
+    100% { background-color: rgba(0,0,0,0); }
+}
+@-moz-keyframes target-fade {
+    0%   { background-color: rgba(255,246,0,0.2); }
+    100% { background-color: rgba(0,0,0,0); }
+}
+@keyframes target-fade {
+    0%   { background-color: rgba(255,246,0,0.2); }
+    100% { background-color: rgba(0,0,0,0); }
+}
