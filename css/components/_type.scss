@@ -197,9 +197,10 @@ dl, dd {
  * --------------------------------------------------------- */
 
 hr {
-    border: 1;
-    height: 1px;
-    background: #ddd;
+    height: 0 !important;
+    clear: both;
+    border: solid #E0E0E0;
+    border-width: 1px 0 0;
 }
 
 /*
