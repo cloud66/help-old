@@ -11,7 +11,7 @@ categories: stack-features
 lead: You can be more explicit about your stack composition
 ---
 
-<h4>Contents</h4>
+<h2>Contents</h2>
 <ul class="page-toc">
 	<li>
 		<a href="#intro">Manifest files</a>
@@ -30,9 +30,44 @@ lead: You can be more explicit about your stack composition
 	<li>
 		<a href="#servers">Server configurations</a>
 	</li>
+	        <li>
+                <ul>
+                <li><a href="#shared">Shared</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#external">External</a></li>
+                </ul>
+            </li>
 	<li>
 		<a href="#app-specific">Application specific</a>
 	</li>
+	        <li>
+                <ul>
+                <li><a href="#rails">Rails</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#postgresql">PostgreSQL</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#redis">Redis</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#memcached">Memcached</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#haproxy">HAProxy</a></li>
+                </ul>
+            </li>
 </ul>
 
 <h2 id="intro">Manifest files</h2>
@@ -284,7 +319,7 @@ If you want to, you can also specify the origin and methods for CORS.
 
 <hr>
 
-<h3 id="psql">PostgreSQL</h3>
+<h3 id="postgresql">PostgreSQL</h3>
 
 - **version**<br/>
 Specify the version of PostgreSQL you want to install (does not apply to external servers types - see below)
