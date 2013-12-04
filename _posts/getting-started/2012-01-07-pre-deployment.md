@@ -11,10 +11,6 @@ categories: getting-started
 lead: An overview of your pre-deployment options
 ---
 
-<div class="notice">
-    <h3>Note</h3>
-    <p>This is not an exhaustive list of our features.</p>
-</div>
 
 ## Environment variables
 [Environment variables](LINK) are dynamically-named values that are easy for you to reference in your code and/or scripts. For example,

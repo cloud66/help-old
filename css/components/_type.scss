@@ -70,15 +70,24 @@ dl, dd {
     list-style: none;
     margin-left: 0 !important;
     padding: 0 0 1em 0 !important;
-    border-bottom: 1px dotted #ddd;
+
+    border-bottom: 1px solid #E0E0E0;
 
     li {
-        margin: 0.2em !important;
+        margin: 0.35em !important;
         list-style: none;
+
+        > ul {
+            margin-bottom: 0;
+
+            li {
+                font-size: 1.4rem;
+            }
+        }
     }
     a {
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
 
 }
@@ -197,9 +206,9 @@ dl, dd {
  * --------------------------------------------------------- */
 
 hr {
-    height: 0 !important;
     clear: both;
-    border: solid #E0E0E0;
+    height: 0 !important;
+    border: solid #E5E5E5;
     border-width: 1px 0 0;
 }
 
