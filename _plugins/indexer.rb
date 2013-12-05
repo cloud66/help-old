@@ -33,11 +33,8 @@ module Jekyll
 			docs = []
 			items.each do |item|
 				page_text = extract_text(site, item)
-				
-				if item.output =~ /<p\sclass=.lead.>(?<excerpt>.*?)<\/p>/m
-					excerpt = $~[:excerpt]
-				end # if
-				
+				excerpt = item.data['lead']
+        
 				docs << {
 					:id => item.url,
 					:title => item.data['title'] || item.name,

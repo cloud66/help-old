@@ -11,7 +11,7 @@
     font-weight: 200;
     text-transform: capitalize;
     word-spacing: 0.05em;
-    color: #3f4957;
+    color: #254E94;
 
     em {
         font-style: normal;
@@ -21,7 +21,7 @@
 
 .cat-title {
     text-transform: capitalize;
-    border-bottom: 1px dotted #ccc;
+    border-bottom: 1px solid #ccc;
     padding-bottom: 0.4em;
     margin-bottom: 0.5em;
     margin-top: 1em;
@@ -31,9 +31,22 @@
     color: #3f4957;
 }
 
-h1  { font-size: 2.8rem; } /* =26px */
+h1  { font-size: 3rem; }
 h2  { font-size: 2.2rem; }
-h3  { font-size: 2.2rem; }
+h3  { font-size: 1.9rem; }
+h4  { font-size: 1.5rem; }
+
+.side-title {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin: 0 0 0.6em 0 !important;
+    padding-bottom: 0.6em;
+    padding-left: 4px;
+    text-transform: capitalize;
+    border-bottom: 1px dotted #ddd;
+    border-bottom: 1px solid #DEE9ED;
+    color: #3F4957;
+}
 
 /*
  *  Lists
@@ -53,39 +66,57 @@ dl, dd {
 
 /* inline toc links for articles */
 .page-toc {
-
     list-style: none;
     margin-left: 0 !important;
     padding: 0 0 1em 0 !important;
-    border-bottom: 1px dotted #ddd;
+
+    border-bottom: 1px solid #E0E0E0;
 
     li {
-        margin: 0.2em !important;
+        margin: 0.35em 0 !important;
         list-style: none;
+
+        > ul {
+            margin-bottom: 0;
+
+            li {
+                font-size: 1.4rem;
+            }
+        }
     }
     a {
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
 
 }
 
 /* base type for articles */
+.content-pri > p:first-child {
+    margin-top: 0 !important;
+}
 .article {
 
     .lead {
-        font-size: 2.6rem;
-        line-height: 33px;
+        font-size: 3.1rem;
+        line-height: 36px;
         color: #999;
         font-weight: 200;
         padding-bottom: 0.8em;
         border-bottom: 1px solid #ddd;
         padding-right: 0 !important;
     }
+    .lead:empty {
+        display: none;
+    }
     .weighted {
         color: #3F4957;
         font-size: 1.8rem;
         margin-bottom: 26px;
+    }
+    h2:first-child {
+        margin-top: 0 !important;
+        line-height: 1 !important;
     }
     p {
         font-size: 1.7rem;
@@ -132,12 +163,13 @@ dl, dd {
     }
 
     p {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         color: #3F4957;
     }
 }
 
 .search-results {
+    margin-top: 1.2em;
     padding-left: 0 !important;
     list-style: none;
 
@@ -153,14 +185,30 @@ dl, dd {
     }
 }
 
+.side-module {
+    margin-top: 18px;
+    font-size: 1.2rem;
+
+    p {
+        font-size: 1.3rem;
+        line-height: 1.5 !important;
+        padding: 0 4px;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
 /*
  *  Elements
  * --------------------------------------------------------- */
 
 hr {
-    border: 0;
-    height: 1px;
-    background: #ddd;
+    clear: both;
+    height: 0 !important;
+    border: solid #E5E5E5;
+    border-width: 1px 0 0;
 }
 
 /*

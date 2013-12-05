@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Maintenance Mode"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Cloud 66 allows you to place your application in 'maintenance mode' whereby a static maintenance page is served for the duration of your maintenance.
 ---
 
-<p class="lead">Cloud 66 allows you to place your application in 'maintenance mode' whereby a static maintenance page is served for the duration of your maintenance.</p>
 
 ## What is Site Maintenance?
 

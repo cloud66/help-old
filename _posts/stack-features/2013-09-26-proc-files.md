@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Running Background Processes"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: Cloud 66 supports the widely used Procfile format files
 ---
 
-<p class="lead">Cloud 66 supports the widely used Procfile format files</p>
 
 ## Procfiles
 

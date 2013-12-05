@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Database Servers"
 date:   2013-09-24 10:51:22
 categories: stacks
+lead: Information regarding databases supported by Cloud 66
 ---
 
-<p class="lead">Information regarding databases supported by Cloud 66</p>
 
 We currently support:
 
@@ -15,9 +16,20 @@ We currently support:
 
 These are supported out of the box with no need for additional configuration. However, one thing to always remember with Cloud 66 is that you will always have root access to your servers so you can install anything else yourself if you desire.
 
-<strong>PostgreSQL</strong> &mdash; is compiled with contribs from source, and can therefore take a little while to deploy.
+<ul>
+    <li>
+        <p>
+            <strong>PostgreSQL</strong> &mdash; is compiled with contribs from source, and can therefore take a little while to deploy.
+        </p>
+    </li>
+    <li>
+        <p>
+            <strong>Redis</strong> &mdash; is <a href="/stacks/database-redis.html">automatically supported</a>.
+        </p>
+    </li>
+</ul>
 
-<strong>Redis</strong> &mdash; is [automatically supported](/stacks/database-redis.html).
+
 
 During analysis, Cloud 66 automatically detects whether you application relies on a database or not. This is based on a combination of your Gemfile and your database.yml or mongoid.yml files.
 

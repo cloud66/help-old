@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "PCI DSS Compliance Guide"
 date:   2013-09-24 10:51:22
 categories: your-account
+lead: Answers to some questions about PCI DSS compliance when using Cloud 66
 ---
 
-<p class="lead">Answers to some questions about PCI DSS compliance when using Cloud 66</p>
 
 ### Is Cloud 66 PCI Compliant?
 We do not store Credit Card Information of our customers on our servers, systems or storage. This is handled by a PCI compliant third party and therefore we do not need a PCI DSS compliance.

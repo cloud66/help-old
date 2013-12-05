@@ -1,14 +1,13 @@
 ---
 layout: post
+template: two-col
 title:  "Connect Your Cloud"
 date:   2013-09-26 15:33:13
 categories: cloud-providers
+lead: You can connect your cloud provider of choice to Cloud 66. Doing this allows Cloud 66 to automatically fire up and setup the boxes you need to run your stack.
 ---
 
 
-<p class="lead">
-    You can connect your cloud provider of choice to Cloud 66. Doing this allows Cloud 66 to automatically fire up and setup the boxes you need to run your stack.
-</p>
 
 
 ## Supported Clouds

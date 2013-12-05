@@ -422,15 +422,18 @@ table {
 .hidden { display: none; }
 .pull-right { float: right !important; }
 .pull-left  { float: left !important; }
-
+/* surpress empty paras */
+p:empty {
+  display: none !important;
+}
 /* ==========================================================================
    Misc
    ========================================================================== */
 ::-moz-placeholder {
    font-style: italic;
-   font-weight: 200;
+   font-weight: 300 !important;
 }
 ::-webkit-input-placeholder {
    font-style: italic;
-   font-weight: 200;
+   font-weight: 300 !important;
 }

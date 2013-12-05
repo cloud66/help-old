@@ -4,7 +4,6 @@
  *  NOTE - this file needs to be saved every time the sass needs to be compiled
  *  IMPORT MODULES (Order is important)
  * ============================================================================================ */
-
 @import "components/normalize";
 @import "components/vars";
 @import "components/mixins";
@@ -12,12 +11,15 @@
 @import "components/forms";
 @import "components/links";
 @import "components/layout";
+@import "components/modules";
 @import "components/nav";
 @import "components/type";
 @import "components/tables";
 @import "components/code";
 @import "components/autocomplete";
 @import "components/animation";
+@import "components/icons";
 @import "components/responsive";
+
 
 /* --------------------------------------------------------------- */

@@ -1,15 +1,15 @@
 ---
 layout: post
+template: two-col
 title:  "Custom Web Servers"
 date:   2013-09-24 10:51:22
 categories: web-server
+lead: You can run your Rack apps with Passenger, Puma, Unicorn or Thin
 ---
 
-<p class="lead">You can run your Rack apps with Passenger, Puma, Unicorn or Thin</p>
 
 <div class="notice">
 	<h3>Important</h3>
-
 	<p>You need to choose your web server at the time of initial build of the stack. Changes to the web server will not be applied after your stack has initially been analyzed. Passenger is used by default.</p>
 </div>
 

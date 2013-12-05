@@ -1,28 +1,40 @@
 ---
 layout: post
-title:  "Deploy History"
-date:   2013-11-18 11:35:00
+template: two-col
+title:  "Deployment history"
+nav_sticky: false
+nav: true
+nav_prev: ""
+nav_next: ""
+date:   2038-02-25 16:27:22
 categories: stack-features
+lead: An overview of your stack deployments and rollbacks
 ---
 
-<p class="lead">See your stack deployment history and rollback deployments.</p>
+## Introduction
+Whether working in a team or by yourself, it's always useful to have an overview of your deployment history. This history includes
+information about who deployed, when they deployed, what code revision was deployed and how the deployment was triggered (web, [API](/api/) or [redeployment hook](/stack-features/redeployment-hook.html)). In addition to this, you can also revert
+back to previous commits if need be.
 
-## Who, When, What and How
-Every time you deploy your stack, a new record is created to keep track of it. It shows who triggered the deploy (developer), what is in the deployment (git commits, git hash), when was it deployed and how the deployment was triggered (Web, [API](/api/basics.html) or [redeployment hooks](/stack-features/redeployment-hook.html))
+## Usage
+<div class="notice">
+    <h3>Important</h3>
+    <p>Reverting to a previous commit will only affect your code - you might still need to restore a [database backup](/stack-features/db-backup.html).</p>
+</div>
 
-![deployment_hisotry](http://cdn.cloud66.com/images/help/cloud66_deployment_history.png)
+Accessing your stack page, you will see a drop-down with a "View Deployment History" link:
+
+![history link](http://cdn.cloud66.com.s3.amazonaws.com/images/help/history_link.png)
+
+On this page, you can see your previous commits, and revert back to previous commits:
+
+![deploy history 1](http://cdn.cloud66.com.s3.amazonaws.com/images/help/deploy_history_1.png)
+
+Any code revisions that have not been deployed will have a hollow circle.
 
 ## Deployment Status
-A Deployment with "Live" status means the code in that deployment is the one on all of your servers.
+A "Live" status indicates that the code in that commit is live on your servers.
 
-A Red deployment is a failed one.
+A <font color="green">green</font> deployment indicates that it has been successful, whereas a <font color="red">red</font> one indicates failure.
 
-"Reverted" deployment is one that is no longer on your servers (the stack was rolled back to an earlier deployment). This is equal to a hollow circle on the line for the reverted deployment.
-
-## Rollback Your Deployments
-You can rollback to a successful deployment by clicking on the arrow icon on top right of each deployment information box.
-
-<div class="notice">
-	<h3>Note</h3>
-	<p>This will only revert the code on all servers and not the data. To revert your database back to a previous state, please use the <a href="/add-ins/one-click-database-backup.html">Managed Backups</a>.</p>
-</div>
+A reverted deployment is one that is no longer on your servers (the stack was rolled back to an earlier deployment).

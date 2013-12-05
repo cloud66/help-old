@@ -3,9 +3,13 @@ layout: default
 bodyclass: post
 ---
 
+{% assign current_cat = page.categories %}
+
 <nav class="crumbs container">
     {% include contents_link.html %}
-    <img src="{{ site.url }}/images/logo.svg" alt="Cloud 66" width="40" class="pull-right logo-sml">
+    <a rel="home" href="/">
+        <img src="{{ site.url }}/images/logo.svg" alt="Cloud 66" width="40" class="pull-right logo-sml">
+    </a>
 </nav>
 
 <article class="article container">
@@ -14,10 +18,58 @@ bodyclass: post
         {{ page.title }}
     </h1>
 
-    {{ content }}
+
+    <p class="lead">
+        {{ page.lead }}
+    </p>
+
+
+    <div class="content-pri">
+        {{ content }}
+    </div>
+
+    <aside class="content-sec  {% if page.nav_sticky %} sticky-nav {% endif %}">
+        <div class="side-module">
+            <nav class="aside-mod">
+                <h3 class="side-title js-format-cat">
+                    {{ current_cat }}
+                </h3>
+                <ul class="nav-sec">
+                    {% for post in site.categories[current_cat.first] %}
+                        <li>
+                            <a href="{{post.url}}">
+                                {{ post.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+
+        {% if page.so_title %}
+            <div class="side-module">
+                <h3 class="side-title js-format-cat">StackOverflow</h3>
+                <p>
+                    <a href="http://stackoverflow.com/questions/tagged/cloud66+{{page.so_title | downcase}}">
+                        Questions on <b>{{page.so_title}}</b> and Cloud 66
+                    </a>
+                </p>
+            </div>
+        {% endif %}
+    </aside>
 
 </article>
 
-<nav class="crumbs crumbs-bottom container">
+
+<div class="crumbs crumbs-bottom container">
+    <nav class="nav-footer">
     {% include contents_link.html %}
-</nav>
+
+    {% if page.nav %}
+        {% include paging_link.html %}
+    {% endif %}
+    </nav>
+</div>
+
+
+

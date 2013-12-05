@@ -1,12 +1,13 @@
 ---
 layout: post
+template: two-col
 title:  "Puma Rack Server"
 date:   2013-09-24 10:51:22
 categories: web-server
+lead: Run your Rack apps with Puma
 ---
 
 
-<p class="lead">Run your Rack apps with Puma</p>
 
 <p class="weighted">
     You need to choose your web server at the <strong>time of initial build</strong> of the stack. Changes to the web server will not be applied after your stack has initially been analyzed. <strong>Passenger is used by default</strong>.

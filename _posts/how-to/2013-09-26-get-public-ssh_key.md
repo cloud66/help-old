@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Getting public SSH key through Cloud 66 interface"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: At any time, you can retrieve your public SSH key through the Cloud 66.
 ---
 
-<p class="lead">At any time, you can retrieve your public SSH key through the Cloud 66.</p>
 
 <p>With it, you can allow Cloud 66 to analyse and deploy your code when you are building a private stack</p>
 

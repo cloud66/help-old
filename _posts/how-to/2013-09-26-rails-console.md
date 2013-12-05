@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Running Rails console"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: You can easily run Rails console with a single command.
 ---
 
-<p class="lead">You can easily run Rails console with a single command.</p>
 
 ## On your servers
 

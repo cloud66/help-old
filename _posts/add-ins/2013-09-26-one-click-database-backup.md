@@ -1,12 +1,13 @@
 ---
 layout: post
+template: two-col
 title:  "One-Click Database Backup"
 date:   2013-09-24 10:51:22
 categories: add-ins
+lead: Cloud 66 offers you 2 easy ways to backup your databases in one click. Your backup can be managed by Cloud 66 or by your own.
 ---
 
 
-<p class="lead">Cloud 66 offers you 2 easy ways to backup your databases in one click. Your backup can be managed by Cloud 66 or by your own.</p>
 
 You can access to one-click database backup feature from your dashboard for each stack:
 

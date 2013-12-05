@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "MongoDB Replica Sets"
 date:   2013-11-20 01:01:01
 categories: how-to
+lead: Cloud 66 Supports MongoDB Replica Sets. Make sure you know how they work and how to use them.
 ---
 
-<p class="lead">Cloud 66 Supports MongoDB Replica Sets. Make sure you know how they work and how to use them.</p>
 
 ## Introduction
 You can [scale you database backend](/stack-features/database-replication.html) with Cloud 66 with a single click. All you need is to setup [managed backups](/add-ins/one-click-database-backup.html).
@@ -25,7 +26,7 @@ When you select to scale up your MongoDB backend with Cloud 66, we take the foll
 - Configure all MongoDB instanses in the stack to act as a single Replica Set
 - Generate appropriate environment variables with the addresses of the Replica Set servers.
 
-Backups need to keep their referetial integrity. Otherwise different parts of the database might be backed up at differe times. This might affect database performance. Also configuring the servers involved will result in interruption to your service during this step. 
+Backups need to keep their referetial integrity. Otherwise different parts of the database might be backed up at differe times. This might affect database performance. Also configuring the servers involved will result in interruption to your service during this step.
 
 <div class="notice notice-danger">
 	<h3>Note</h3>
@@ -45,7 +46,7 @@ That's why once you scale your MongoDB up, we don't touch your configuration fil
 </div>
 
 #### Environment Variables
-Withou Replica Sets, you can connect to your MongoDB using environment variables that are available on all of your servers: 
+Withou Replica Sets, you can connect to your MongoDB using environment variables that are available on all of your servers:
 
 * MONGODB\_ADDRESS
 * MONGODB\_ADDRESS\_INT

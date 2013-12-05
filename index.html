@@ -6,6 +6,7 @@ bodyclass: home
 
 <!-- ===== Home banner & primary search ===== -->
 {% include banner.html %}
+{% include hero_nav.html %}
 {% include search_primary.html %}
 <!-- ===== /Home banner & primary search ===== -->
 
@@ -13,12 +14,8 @@ bodyclass: home
 <section class="container article-toc" id="js-primary-content">
 
     {% for category in site.sorted_categories %}
-	{% if category.first == 'api' %}
-    <h2 class="cat-title">
-		<a href="/api">API</a>
-    </h2>
-	{% else %}
-    <h2 class="cat-title">
+	{% if category.first != 'api' %}
+    <h2 class="cat-title js-format-cat">
       {{ category | first }}
     </h2>
 

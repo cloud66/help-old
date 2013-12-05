@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Deploy with Passenger Enterprise"
 date:   2013-11-05 15:33:13
 categories: how-to
+lead: Cloud 66 supports deploying with Passenger Enterprise
 ---
 
-<p class="lead">Cloud 66 supports deploying with Passenger Enterprise</p>
 
 ## Introduction
 

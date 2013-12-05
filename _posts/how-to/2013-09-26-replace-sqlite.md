@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Replacing SQLite with MySQL or PostgreSQL"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: While SQLite is easy to use, it is not intended as a production grade database and is not supported by Cloud 66.
 ---
 
-<p class="lead">While SQLite is easy to use, it is not intended as a production grade database and is not supported by Cloud 66.</p>
 
 ## Instructions
 Switching to another SQL-based database is easy, and the following instructions show you how to switch to MySQL or PostgreSQL in five simple steps.

@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Redis Servers"
 date:   2013-09-24 10:51:22
 categories: stacks
+lead: Information about Cloud 66 support for Redis Databases
 ---
 
-<p class="lead">Information about Cloud 66 support for Redis Databases</p>
 
 Redis databases are now automatically supported for new Cloud 66 stacks.
 During analysis, Cloud 66 automatically detects whether you application relies on Redis or not.

@@ -1,13 +1,13 @@
 ---
 layout: post
+template: two-col
 title:  "Nginx Configuration of Your Stack"
 date:   2013-09-24 10:51:22
 categories: web-server
+lead: Nginx is configured automatically for your stack. Here is some details about it
 ---
 
-<p class="lead">
-	Nginx is configured automatically for your stack. Here is some details about it
-</p>
+
 
 ## General
 <table class='table table-bordered table-striped'>

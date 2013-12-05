@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Managing your Cloud 66 backups"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: This guide shows you how to manage your Cloud 66 backups should you wish to do so.
 ---
 
-<p class="lead">This guide shows you how to manage your Cloud 66 backups should you wish to do so.</p>
 
 ## Introduction
 Cloud 66 makes it easy for you to run and restore your [database backups](/add-ins/one-click-database-backup.html), but you can also manage them yourself.

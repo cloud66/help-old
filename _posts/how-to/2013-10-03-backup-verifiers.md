@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Backup verifiers"
 date:   2013-10-03 14:17:13
 categories: how-to
+lead: Use Cloud 66 to ensure the highest quality of backup assurance.
 ---
 
-<p class="lead">Use Cloud 66 to ensure the highest quality of backup assurance.</p>
 
 ## Setup
 
@@ -14,23 +15,15 @@ Before proceeding, please ensure that you have set up [managed backups](/help/on
 Firstly, create a file in the **.cloud66** folder in the root of your repository. This file should be called **backup&#95;verifier&#95;mysql.sql** if you would like to verify a MySQL database backup, or **backup&#95;verifier&#95;pg.sql** for a PostgreSQL database backup.
 
 <div class="notice notice-standalone">
-	<div class="notice-header">
-		<b>Important</b>
-	</div>
-	<div class="notice-body">
+		<h3>Important</h3>
 		<p>By including this script in your repository, you are opting in to the use of verified backups and will be charged accordingly. Please see our <a href="/pricing">pricing page</a> for more information.</p>
-	</div>
 </div>
 
 To verify your backup, the script must contain a SQL query that returns a data set containing a single column called **result** with a value of true or false. Please find below an example of such queries and an example of the output for each respective database.
 
 <div class="notice notice-standalone">
-	<div class="notice-header">
-		<b>Important</b>
-	</div>
-	<div class="notice-body">
+		<h3>Important</h3>
 		<p>Your backup will be assumed to be <b>verified</b> if the value returned from the query is <b>true</b>.</p>
-	</div>
 </div>
 
 **MySQL**

@@ -1,20 +1,57 @@
 ---
 layout: post
+template: two-col
 title:  "Database Replication"
-date:   2013-11-06 10:51:22
+nav_sticky: false
+nav: true
+nav_prev: ""
+nav_next: ""
+date:   2038-04-01 16:27:22
 categories: stack-features
+lead: Scale your databases by setting up replication
 ---
 
-<p class="lead">Scale your databases by setting up replication with a single click.</p>
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#scaling-up">Scaling up</a>
+	</li>
+	<li>
+		<a href="#how-it-works">How it works</a>
+	</li>
+	<li>
+		<a href="#scaling-down">Scaling down</a>
+	</li>
+	<li>
+		<a href="#specifics">Database specifics</a>
+	</li>
+	        <li>
+                <ul>
+                <li><a href="#mysql">MySQL</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#postgresql">PostgreSQL</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#mongodb">MongoDB</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#redis">Redis</a></li>
+                </ul>
+            </li>
+	<li>
+		<a href="#env-vars">Environment variables</a>
+	</li>
+</ul>
 
-## Database Scaling (beta)
-With Cloud 66 you can [add a HTTP or WebSocket load balancer](/stack-features/load-balancers.html) with a single click.
 
-You can also scale your backend worker processes [on the same server](/stack-features/proc-files.html) or move them to [dedicated process servers](/stack-features/standalone-process-servers.html).
-
-Now, you can also scale your databases just as easily.
-
-Database replication is supported for **MySQL**, **PostgreSQL**, **Redis** and **MongoDB**.
+Database replication is supported for **MySQL**, **PostgreSQL**, **Redis** and **MongoDB** databases.
 
 <div class="notice">
 	<h3>Note</h3>
@@ -22,9 +59,9 @@ Database replication is supported for **MySQL**, **PostgreSQL**, **Redis** and *
 </div>
 
 
-### Scaling Up
+<h2 id="scaling-up">Scaling Up</h2>
 
-To enable replication, click on the DB Server group of your stack and click on the Scale Up button. 
+To enable replication, click on the DB Server group of your stack and click on the Scale Up button.
 
 ![](http://cdn.cloud66.com/images/help/db_scaleup.png)
 
@@ -35,50 +72,46 @@ To enable replication, click on the DB Server group of your stack and click on t
 	<p>The process of database replication will disrupt your database serving your application for the duration of scaling up and scaling down.</p>
 </div>
 
-That's it!
+<h2 id="how-it-works">How it works</h2>
 
-#### Here is what just happened!
-
-- We will fire up another server in your cloud for you. 
-- The same version of database server will be deployed onto the new server.
-- A full backup of your database is taken and restored on the slave database to seed the new database.
-- The database server will be configured to be a slave of the main database.
-- The master database will be configured to cater for this new setup.
-- A new set of environment variables will be generated to be available on all your servers pointing to the new server(s), so you can use it in your code or scripts.
+- We fire up another server in your cloud
+- We install your database server (the same version as the original server)
+- A full backup of the original server is taken and restored on the new server
+- The new server is configured as a slave of the master database
+- The master database is configured according to this new setup
+- A new set of environment variables are made available to be used in your code and scripts
 
 As with any database replication, it might take a while for the data to be fully replicated across the whole cluster. A full backup of the master database is taken and restored on the slave to speed this process up.
 
-### Scaling Down
-Scaling down your database cluster is as easy as removing the servers from your database group by clicking on the x icon.
-
-That's it!
+<h2 id="scaling-down">Scaling Down</h2>
+Scaling down your database cluster is as easy as removing the servers from your database group by clicking on the <i>x</i> icon.
 
 Here is what happens when you scale down a server group:
 
-- The server is removed from replication cluster (but it is not deleted physically from your cloud).
-- The master in the cluster, will be configured to reflect that change.
-- If the remaining server is the only server in the group, it will be configured back to be a standalone server.
-- All environment variables for master and replica databases will be updated and pushed to all servers.
+- The server is removed from the replication cluster (but it is **not** deleted physically from your cloud)
+- The master in the cluster will be configured to reflect this update
+- If the remaining server is the only server in the group, it will be configured to be a standalone server again
+- All environment variables for master and replica databases will be updated and pushed to all servers
 
-### Database Specifics
-Each database server has some specific settings, listed below:
+<h2 id="specifics">Database Specifics</h2>
+Please see the the configurations required for each specific database below.
 
-#### MySQL
-There is only 1 master server setup with MySQL. All other servers will be setup as read-only replicas.
+<h4 id="mysql">MySQL</h4>
+There is only [one master server](http://dev.mysql.com/doc/refman/5.7/en/replication.html) setup with MySQL. All other servers are set up as read-only replicas.
 
-#### PostgreSQL
-There is only 1 master server setup with PostgreSQL. All other servers will be setup as read-only replicas. PostgreSQL replication is setup as [Streaming Replication](http://wiki.postgresql.org/wiki/Streaming_Replication).
+<h4 id="postgresql">PostgreSQL</h4>
+There is only one master server setup with PostgreSQL. All other servers are set up as read-only replicas. Replication is setup as [Streaming Replication](http://wiki.postgresql.org/wiki/Streaming_Replication).
 
-#### MongoDB
-Scaling up a MongoDB will result in building a [MongoDB Replica Set](http://docs.mongodb.org/manual/replication/). This scale up builds an odd number of servers, so if you have 1 MongoDB server, it will fire up another 2 to run your Replica Set on 3 servers. The next scale up will create another 2 servers and run your cluster on 5 servers.
+<h4 id="mongodb">MongoDB</h4>
+Scaling up a MongoDB sets up a [replica set](http://docs.mongodb.org/manual/replication/). This scale up builds an odd number of servers, so if you have one MongoDB server, it will fire up an additional two to run your replica set on a total of three servers. The next scale up will create another two servers and run your cluster on five servers.
 
-The same rule applies to scaling down. Deleting 1 server from a 5-server cluster, will result in 2 servers being removed from it to get the total down to 3 servers.
+The same rule applies to scaling down. Deleting one server from a five-server cluster, will result in two servers being removed from it to get the total down to three servers.
 
-#### Redis
-There is only 1 master Redis server setup. All other servers will be setup as replicas and any change in them will be overwritten by the master.
+<h4 id="redis">Redis</h4>
+There is only [one master Redis server](http://redis.io/topics/replication) set up. All other servers will be setup as replicas and any change in them will be overwritten by the master.
 
-### Environment Variables
-Cloud 66 generates and populates a set of [environment variables automatically](/stack-features/auto-generated-environment-variables.html) on each one of your stack servers.
+<h2 id="env-vars">Environment Variables</h2>
+Cloud 66 generates and populates a set of [environment variables automatically](/stack-features/env-vars.html#auto-gen) on each of your stack servers.
 
 These include environment variables to hold the address for your database servers. With database replication enabled, a second environment variable is generated that holds the list of all slave database servers.
 
@@ -126,7 +159,7 @@ An example is
 50.23.65.12
 </pre>
 
-For multiple IP addresses, the environment variable will contain a comma separated list of all IP addresses: 
+For multiple IP addresses, the environment variable will contain a comma separated list of all IP addresses:
 
 <pre class="terminal">
 192.168.10.1,192.168.10.2

@@ -1,20 +1,24 @@
 ---
 layout: post
-title:  "Cloud 66 DNS Service"
-date:   2013-09-24 10:51:22
+template: two-col
+title:  "DNS Service"
+nav_sticky: false
+nav: true
+nav_prev: ""
+nav_next: ""
+date:   2038-03-28 16:27:22
 categories: stack-features
+lead: Use our DNS service for your stack servers
 ---
 
-<p class="lead">Cloud 66 provides a free DNS service for all servers and load balancers running under your stacks</p>
-
 ## Server Names
-Every server fired up with Cloud 66 has a unique animal themed name. This should help you find and identify your server quicker in your stack.
+Every server fired up with Cloud 66 has a unique animal-themed name. This should help you find and identify your server quickly in your stack.
 
 All servers are accessible by their Cloud 66 DNS name:
 
 <p><kbd>[server&#95;name].[stack&#95;name].[environment].c66.me</kbd></p>
 
-so that would be something like:
+For example, the DNS could look like this:
 
 <p><kbd>tiger.myapp.test.c66.me</kbd></p>
 
@@ -23,7 +27,7 @@ Load Balancers also get a name from Cloud 66 DNS. The load balancer names look l
 
 <p><kbd>[stack&#95;name].[environment].c66.me</kbd></p>
 
-so that would be something like
+For example, the DNS could look like this:
 
 <p><kbd>myapp.test.c66.me</kbd></p>
 

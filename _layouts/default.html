@@ -4,13 +4,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 
+		<link rel="shortcut icon" href="/images/favicon.ico">
 		<link rel="stylesheet" href="/css/syntax.css">
 		<link rel="stylesheet" href="/css/main.css?v=2013-09-24">
 
 		<title>{{ page.title }} | Help | Cloud 66</title>
 	</head>
 
-	<body class="{{ page.bodyclass }}">
+	<body class="{{ page.bodyclass }} {{ page.template }}">
 		<div class="is-loading"></div>
 		{% include top_nav_bar.html %}
 
@@ -21,6 +22,7 @@
 		{% include footer.html %}
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script>window.jQuery || alert('jquery not loaded from CDN')</script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
 		<script src="/js/plugins.js"></script>
 		<script src="/js/base.js"></script>

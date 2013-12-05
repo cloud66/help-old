@@ -6,7 +6,9 @@ bodyclass: search
 
 <nav class="crumbs container">
     {% include contents_link.html %}
-    <img src="{{ site.url }}/images/logo.svg" alt="Cloud 66" width="40" class="pull-right logo-sml">
+    <a href="/" rel="home">
+        <img src="{{ site.url }}/images/logo.svg" alt="Cloud 66" width="40" class="pull-right logo-sml">
+    </a>
 </nav>
 
 <article class="article container">
@@ -135,6 +137,18 @@ def foo
   puts 'foo'
 end
 {% endhighlight %}
+
+For `bash` highlighting, always use a `$` before the commands entered by the user:
+
+{% highlight bash %}
+$ pwd
+{% endhighlight %}
+
+For values returned by the system use the normal `terminal` class:
+
+<pre class="terminal">
+/Users/me/my_awesome_project
+</pre>
 
 </article>
 

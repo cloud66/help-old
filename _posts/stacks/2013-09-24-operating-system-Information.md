@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Operating System Information"
 date:   2013-09-24 10:51:22
 categories: stacks
+lead: Information about operating system requirements/configuration
 ---
 
-<p class="lead">Information about operating system requirements/configuration</p>
 
 ## Supported OS
 
@@ -33,24 +34,26 @@ The following are required by Cloud 66:
 Depending on the stack that you are deploying, Cloud 66 will install slightly different packages on your server. Sometimes the packages are installed via the default OS package management system, but other times the package will be installed directly from a stable source distribution.
 However, by default the following packages are usually installed:
 
-- acl
-- bison
-- build-essential
-- facter
-- gcc
-- git
-- libcurl4-openssl-dev
-- libffi6
-- libreadline6
-- libreadline6-dev
-- libssl-dev
-- libxml2-dev
-- libxslt-dev
-- libyaml-dev
-- make
-- sysstat
-- wget
-- zlib1g-dev
+<ul class="multi-col">
+    <li>acl</li>
+    <li>bison</li>
+    <li>build-essential</li>
+    <li>facter</li>
+    <li>gcc</li>
+    <li>git</li>
+    <li>libcurl4-openssl-dev</li>
+    <li>libffi6</li>
+    <li>libreadline6</li>
+    <li>libreadline6-dev</li>
+    <li>libssl-dev</li>
+    <li>libxml2-dev</li>
+    <li>libxslt-dev</li>
+    <li>libyaml-dev</li>
+    <li>make</li>
+    <li>sysstat</li>
+    <li>wget</li>
+    <li>zlib1g-dev</li>
+</ul>
 
 For a more complete list of packages that are installed on your system you can do the following.
 <ol>

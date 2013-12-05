@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Deploying stacks with multiple database types"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: How to deploy with Cloud 66 when your application relies on multiple database types.
 ---
 
-<p class="lead">How to deploy with Cloud 66 when your application relies on multiple database types.</p>
 
 ## The Basics
 
@@ -19,12 +20,8 @@ An example of a multi-db type of application is an application that has MySQL as
 A solution to deploy a multi-db stack with Cloud 66 would be to pass the initial analysis phase, then create the non-activerecord database yourself (if necessary) using deploy hooks.
 
 <div class="notice">
-    <div class="notice-header">
-        <b>Note</b>
-    </div>
-    <div class="notice-body">
+        <h3>Note</h3>
         <p>When modifying your Gemfile don't forget to run 'bundle install' and commit your changed Gemfile.lock file</p>
-    </div>
 </div>
 
 <ol>
@@ -63,6 +60,7 @@ production:
 </div>
 
 <ol start="3">
-<li><strong>Proceed through the analysis phase</strong>. You will see that Cloud 66 will have detected a single database type. Proceeding to deploy your application would then create the database, and servers as required.</li>
+	<li><strong>Proceed through the analysis phase</strong>. You will see that Cloud 66 will have detected a single database type. Proceeding to deploy your application would then create the database, and servers as required.</li>
 
-<li> <strong>Once deployed</strong> or if it failed deployment due to requirement of the auxiliary database you can add your auxiliary database gem(s) back into your Gemfile, commit and redeploy.</li>
+	<li> <strong>Once deployed</strong> or if it failed deployment due to requirement of the auxiliary database you can add your auxiliary database gem(s) back into your Gemfile, commit and redeploy.</li>
+</ol>

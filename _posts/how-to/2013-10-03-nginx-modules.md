@@ -1,19 +1,16 @@
 ---
 layout: post
+template: two-col
 title:  "Add modules to Nginx"
 date:   2013-10-03 14:26:13
 categories: how-to
+lead: Follow this guide to rebuild Nginx with any module of your choice
 ---
 
-<p class="lead">Follow this guide to rebuild Nginx with any module of your choice</p>
 
 <div class="notice notice-standalone">
-	<div class="notice-header">
-		<b>Important</b>
-	</div>
-	<div class="notice-body">
-<p>This document is merely a guide, and should not be seen as a sanctioned way of adding new modules to Nginx.</p>
-	</div>
+    <h3>Important</h3>
+    <p>This document is merely a guide, and should not be seen as a sanctioned way of adding new modules to Nginx.</p>
 </div>
 
 ## Introduction

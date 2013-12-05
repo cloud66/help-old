@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Errors when installing gem libv8"
 date:   2013-09-26 15:33:13
 categories: troubleshooting
+lead: Installing the libv8 gem with a specific version can sometimes cause a little pain.
 ---
 
-<p class="lead">Installing the libv8 gem with a specific version can sometimes cause a little pain.</p>
 
 ## The basics
 
@@ -65,11 +66,7 @@ compiling constants.cc
 compiling context.cc
 compiling template.cc
 linking shared-object v8/init.so
-/var/deploy/mindr-staging/web&#95;head/shared/bundle/ruby/1.9.1/gems/libv8-3.11.8.3-x86&#95;64-linux/vendor/v8/out/x64.release/obj.target/tools/gyp/libv8&#95;base.a: could not read symbols: Malformed archive
+/var/deploy/mindr-staging/web_head/shared/bundle/ruby/1.9.1/gems/libv8-3.11.8.3-x86_64-linux/vendor/v8/out/x64.release/obj.target/tools/gyp/libv_base.a: could not read symbols: Malformed archive
 collect2: ld returned 1 exit status
 make: *** [init.so] Error 1
 </pre>
-
-
-
-

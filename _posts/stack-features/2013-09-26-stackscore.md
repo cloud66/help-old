@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "StackScore"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: A simple and easy to understand guide to improving performance, reliability and resilience of your applications deployed on your own servers.
 ---
 
-<p class="lead">A simple and easy to understand guide to improving performance, reliability and resilience of your applications deployed on your own servers.</p>
 
 ## Your application reliability score
 

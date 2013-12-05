@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Upgrade Ruby/Rails on your stack"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: How to upgrade Ruby or Rails on your Stacks.
 ---
 
-<p class="lead">How to upgrade Ruby or Rails on your Stacks.</p>
 
 ### Our Philosophy
 Cloud 66 tries to make it easier to build [immutable infrastructure](http://chadfowler.com/blog/2013/06/23/immutable-deployments/). Building servers and stacks from scratch is much better than modifying existing server configurations and tinkering with settings until things start to work.

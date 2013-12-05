@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Migrate from Heroku to Cloud 66"
 date:   2013-09-26 15:33:13
 categories: how-to
+lead: It's easy to migrate from Heroku to Cloud 66 &mdash; here are some pointers to get you started.
 ---
 
-<p class="lead">It's easy to migrate from Heroku to Cloud 66 &mdash; here are some pointers to get you started.</p>
 
 ## Git Repository
 

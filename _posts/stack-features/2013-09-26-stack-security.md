@@ -1,11 +1,12 @@
 ---
 layout: post
+template: two-col
 title:  "Stack Security"
 date:   2013-09-24 10:51:22
 categories: stack-features
+lead: You can configure your server security and firewall through for the servers in your stack.
 ---
 
-<p class="lead">You can configure your server security and firewall through for the servers in your stack.</p>
 
 ## Accessing the Stack Security Page
 Stack Security page is available from Stack Security menu item on the Stack detail page.

@@ -1,12 +1,50 @@
 /* ===========================================================================================
  *  NAV
  * ============================================================================================ */
+
+/*
+ *  homepage nav
+ * --------------------------------------------------------- */
+.heros {
+
+    margin-top: 48px;
+
+    a {
+        width: 10em;
+        display: inline-block;
+        margin-right: 1.4em;
+        outline: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        i {
+            font-size: 3rem;
+            color: #246EBB;
+        }
+
+        .hero-title {
+            margin: 0;
+            line-height: 1.6;
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
 nav {
   ul {
     list-style: none;
     padding-left: 0;
   }
 }
+
 
 .global-nav {
     display: inline-block;
@@ -28,6 +66,41 @@ nav {
     }
 }
 
+/*
+ *  side nav (nav-sec)
+ * --------------------------------------------------------- */
+.nav-sec {
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+
+    li {
+        list-style: none  !important;
+        font-size: 13px   !important;
+        line-height: 1.3  !important;
+        margin-bottom: 0.4em;
+    }
+
+    a {
+        display: block;
+        padding: 4px;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    .active {
+        a {
+            color: #3F4957 !important;
+            cursor: default;
+            font-weight: 600 !important;
+        }
+    }
+}
+
+/*
+ *  toc nav
+ * --------------------------------------------------------- */
 .toc {
     a:link {
         text-decoration: none;
@@ -36,7 +109,7 @@ nav {
     }
 
     a:visited {
-        color: #00A3F4;
+        color: #6830BB;
     }
 
     a:hover {
@@ -52,6 +125,9 @@ nav {
     }
 }
 
+/*
+ *  breadcrumb nav
+ * --------------------------------------------------------- */
 .crumbs {
     border-bottom: 1px solid #ddd;
     padding: 0.2em 0 1em;
@@ -60,8 +136,8 @@ nav {
 
     a {
         position:relative;
-        left: -19px;
-        font-size: 1.5rem;
+        left: -17px;
+        font-size: 1.3rem;
         line-height: 1;
     }
     a:hover {
@@ -74,13 +150,44 @@ nav {
     border-bottom: none;
 }
 
+.paging-nav {
+    a {
+        display: inline-block;
+        border-right: 1px solid #ddd;
+
+        &:first-child {
+            padding-right: 8px;
+        }
+
+        &:last-child,
+        &:only-child {
+            border: none;
+        }
+    }
+
+}
+
 .back-ico {
     display: inline-block;
     line-height: 1;
-    width: 13px;
-    height: 13px;
+    width: 11.5px;
+    height: 11.5px;
     background: url('/images/ico_back.svg');
     background-size: contain;
     position: relative;
+    top: 1px;
+}
+
+.forward-ico {
+    display: inline-block;
+    // line-height: 1;
+    width: 11.5px;
+    height: 11.5px;
+    background: url('/images/ico_back.svg');
+    background-size: contain;
+    // position: relative;
     // top: 1px;
+
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
 }
