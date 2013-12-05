@@ -34,8 +34,8 @@ gzip:
 
 # concurrency_level: 100
 
-# redirects:
-#   index.php: /
+redirects:
+  getting-started/toolbelt.html: toolbelt/introduction.html
 #   about.php: about.html
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
 
