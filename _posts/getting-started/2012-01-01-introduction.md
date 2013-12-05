@@ -12,7 +12,7 @@ categories: getting-started
 lead: Learn about what Cloud 66 does and how we can help you
 ---
 
-In a nutshell, Cloud 66 builds your [full stack](LINK) on either your [cloud servers](LINK) or [your own](LINK), deploys your app to them and manages it for you.
+In a nutshell, Cloud 66 builds your [full stack](/getting-started/what-is-a-stack.html) on either your [cloud servers](/getting-started/supported-clouds.html) or [your own](/getting-started/standalone-servers.html), deploys your app to them and manages it for you.
 Whether you are a running a small hobby project or work in a large team of developers, Cloud 66 helps you focus on what you do best.
 
 Cloud 66 is provided as a service, so you don't need to install anything on your local machine. These are a selection of the features we provide:

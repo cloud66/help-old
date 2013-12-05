@@ -1,9 +1,9 @@
 ---
 layout: post
 template: two-col
-title:  "Cloud Server Sizes"
+title:  "Nginx configurations"
 date:   2013-09-24 10:51:22
-categories: stack-features
+categories: web-server
 lead: We configure the number of running threads in Nginx based on instance size and the cloud provider.
 ---
 

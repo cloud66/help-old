@@ -15,12 +15,12 @@ lead: Deploy your app with our supported cloud providers
 Cloud 66 currently supports the following cloud providers:
 
 <ul>
-    <li><a href="LINK" target="_blank">Amazon Web Services</a></li>
-    <li><a href="LINK" target="_blank">Digital Ocean</a></li>
-    <li><a href="LINK" target="_blank">Joyent</a></li>
-    <li><a href="LINK" target="_blank">Linode</a></li>
-    <li><a href="LINK" target="_blank">Rackspace</a></li>
-    <li><a href="LINK" target="_blank">Telefonica</a></li>
+    <li><a href="/cloud-providers/aws-keys.html" target="_blank">Amazon Web Services</a></li>
+    <li><a href="/cloud-providers/cloud-do.html" target="_blank">Digital Ocean</a></li>
+    <li><a href="/cloud-providers/cloud-joyent.html" target="_blank">Joyent</a></li>
+    <li><a href="/cloud-providers/cloud-linode.html" target="_blank">Linode</a></li>
+    <li><a href="/cloud-providers/cloud-rackspace.html" target="_blank">Rackspace</a></li>
+    <li><a href="/cloud-providers/cloud-telefonica.html" target="_blank">Telefonica</a></li>
 </ul>
 
 By providing us with your unique cloud provider API keys, Cloud 66 can provision new servers under your account.

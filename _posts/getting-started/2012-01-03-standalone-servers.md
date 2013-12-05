@@ -12,7 +12,7 @@ categories: getting-started
 lead: Bring your own servers to Cloud 66
 ---
 
-You're welcome to use your own servers with Cloud 66. They just need to be [accessible to our service](LINK) and meet our [operating system requirements](/stacks/operating-system-information.html).
+You're welcome to use your own servers with Cloud 66. They just need to be accessible to our service and meet our [operating system requirements](/stacks/operating-system-information.html).
 
 ![bring your own server](http://cdn.cloud66.com.s3.amazonaws.com/images/help/byos.png)
 

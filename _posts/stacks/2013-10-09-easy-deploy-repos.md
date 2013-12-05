@@ -4,10 +4,10 @@ template: two-col
 title:  "EasyDeploy Repositories"
 nav_sticky: true
 nav: true
-nav_prev: "/getting-started/toolbelt.html"
-nav_next: "/getting-started/padrino-stacks.html"
+nav_prev: ""
+nav_next: ""
 date:   2013-10-09 15:30:22
-categories: yo
+categories: stacks
 lead: Deploying and maintaining open source projects through Cloud 66 is extremely easy
 ---
 
