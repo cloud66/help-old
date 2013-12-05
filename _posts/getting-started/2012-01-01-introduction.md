@@ -25,4 +25,3 @@ Cloud 66 is provided as a service, so you don't need to install anything on your
 - And much more...
 
 To get started, you just have to provide us with a Git URL to your repository. We'll then analyze your code and build a stack based on it.
-
