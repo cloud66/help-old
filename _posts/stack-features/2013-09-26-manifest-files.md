@@ -141,7 +141,7 @@ Cloud 66 currently recognizes the following application types in your manifest f
 - <a href="#postgis">PostGIS</a>
 
 <h2 id="servers">Server type</h2>
-Every application defined in the manifest file must be bound to a server. Servers can be deployed specifically to host that application, [be shared between multiple applications](LINK) (eg. Rails and MySQL on the same server) or be an [external server](LINK) (eg. using an external database).
+Every application defined in the manifest file must be bound to a server. Servers can be deployed specifically to host that application, [be shared between multiple applications](/stack-features/manifest-files.html#shared) (eg. Rails and MySQL on the same server) or be an [external server](/stack-features/manifest-files.html#external) (eg. using an external database).
 
 Here is an example of a server definition:
 <pre class="terminal">
@@ -267,7 +267,7 @@ External server definitions specify that the application is hosted on a server e
 
 <div class="notice">
         <h3>Important</h3>
-        <p>You are <b>required</b> to specify a <a href="LINK">server</a> for application types, whereas configurations are <b>optional</b>.</p>
+        <p>You are <b>required</b> to specify a <a href="/stack-features/manifest-files.html#servers">server</a> for application types, whereas configurations are <b>optional</b>.</p>
 </div>
 
 <hr>

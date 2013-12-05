@@ -7,7 +7,7 @@ nav: true
 nav_prev: "/getting-started/ssh-keys.html"
 nav_next: "/getting-started/toolbelt.html"
 date:   2013-09-24 10:51:22
-categories: yo
+categories: stacks
 lead: Adding an SSL Certificate to your server
 ---
 

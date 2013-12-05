@@ -111,7 +111,7 @@ The same rule applies to scaling down. Deleting one server from a five-server cl
 There is only [one master Redis server](http://redis.io/topics/replication) set up. All other servers will be setup as replicas and any change in them will be overwritten by the master.
 
 <h2 id="env-vars">Environment Variables</h2>
-Cloud 66 generates and populates a set of [environment variables automatically](LINK) on each of your stack servers.
+Cloud 66 generates and populates a set of [environment variables automatically](/stack-features/env-vars.html#auto-gen) on each of your stack servers.
 
 These include environment variables to hold the address for your database servers. With database replication enabled, a second environment variable is generated that holds the list of all slave database servers.
 

@@ -13,13 +13,13 @@ lead: An overview of your stack deployments and rollbacks
 
 ## Introduction
 Whether working in a team or by yourself, it's always useful to have an overview of your deployment history. This history includes
-information about who deployed, when they deployed, what code revision was deployed and how the deployment was triggered (web, [API](LINK) or [redeployment hook](LINK)). In addition to this, you can also revert
+information about who deployed, when they deployed, what code revision was deployed and how the deployment was triggered (web, [API](/api/) or [redeployment hook](/stack-features/redeployment-hook.html)). In addition to this, you can also revert
 back to previous commits if need be.
 
 ## Usage
 <div class="notice">
     <h3>Important</h3>
-    <p>Reverting to a previous commit will only affect your code - you might still need to restore a [database backup](LINK).</p>
+    <p>Reverting to a previous commit will only affect your code - you might still need to restore a [database backup](/stack-features/db-backup.html).</p>
 </div>
 
 Accessing your stack page, you will see a drop-down with a "View Deployment History" link:

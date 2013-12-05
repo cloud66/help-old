@@ -44,6 +44,6 @@ Cloud 66 now gets to work and fires up servers in your cloud (or provisions your
 ![Working](http://cdn.cloud66.com.s3.amazonaws.com/images/help/building_app.png)
 
 ## 7. You're done!
-It's done. You now have a fully working stack with your application running, and are free to manage it with [backups](LINK), [scaling](LINK), [security](LINK) and so on.
+It's done. You now have a fully working stack with your application running, and are free to manage it with [backups](/stack-features/db-backup.html), [scaling](/stack-features/horizontal-scaling.html), [security](/getting-started/security.html) and so on.
 
 ![Done](http://cdn.cloud66.com.s3.amazonaws.com/images/help/app_done.png)

@@ -68,7 +68,7 @@ development:
         target: rails
 </pre>
 
-As it is scoped **development**, this deployment hook will only apply to stacks in **development** environments. At the **first&#95;thing** [hook point](LINK TO HOOK POINTS), it will transfer the file **/.cloud66/files/abc.sh** to target path **/tmp/abc.sh** on the **rails** server.
+As it is scoped **development**, this deployment hook will only apply to stacks in **development** environments. At the **first&#95;thing** [hook point](/stack-features/deploy-hooks.html#hooks), it will transfer the file **/.cloud66/files/abc.sh** to target path **/tmp/abc.sh** on the **rails** server.
 
 <h3 id="execute">Copy file to destination and execute</h3>
 
@@ -83,7 +83,7 @@ production:
         sudo: true
 </pre>
 
-The above example will only apply to stacks in **production** environments. At the **last&#95;thing** [hook point](LINK TO HOOKS), it will transfer the file **/.cloud66/my&#95;script.sh** to the target path **/tmp/my&#95;script.sh** on the **postgresql** server, then it will **execute** the script using **sudo**.
+The above example will only apply to stacks in **production** environments. At the **last&#95;thing** [hook point](/stack-features/deploy-hooks.html#hooks), it will transfer the file **/.cloud66/my&#95;script.sh** to the target path **/tmp/my&#95;script.sh** on the **postgresql** server, then it will **execute** the script using **sudo**.
 
 <h3 id="multiple">Multiple deploy hooks</h3>
 Lastly, multiple deployment hooks can be defined within the same file:
@@ -111,7 +111,7 @@ production:
         halt&#95;on&#95;error: false
 </pre>
 
-Here, two deploy hook actions will be performed in sequence at the **first&#95;thing** deploy [hook point](LINK TO HOOKS), and a single deploy hook action will be performed at the **after&#95;rails** deploy [hook point](LINK).
+Here, two deploy hook actions will be performed in sequence at the **first&#95;thing** deploy [hook point](/stack-features/deploy-hooks.html#hooks), and a single deploy hook action will be performed at the **after&#95;rails** deploy [hook point](/stack-features/deploy-hooks.html#hooks).
 There is no upper limit to the number of actions that can be defined.
 
 As you can see from the **after&#95;rails** deploy hook action above, there are additional fields/options available that you can specify. See below for details on all the fields.
@@ -165,7 +165,7 @@ This is the target server type against the deploy hook action should be performe
 The default values (if the optional field is not explicitly specified) are shown in brackets.
 
 - **apply&#95;during** (**all**)<br/>
-When do you want the deploy hook action to take place? Available options are: *build&#95;only*; *deploy&#95;only*; or *all* (see below for [build/deploy definitions](LINK))
+When do you want the deploy hook action to take place? Available options are: *build&#95;only*; *deploy&#95;only*; or *all* (see below for [build/deploy definitions](/stack-features/deploy-hooks.html#definition))
 - **execute** (**false**)<br/>
 Do you want to execute the file after it has been copied to its destination on the target server?
 - **halt&#95;on&#95;error** (**true**)<br/>
@@ -173,7 +173,7 @@ If there is an error during the deployment hook execution, should the whole depl
 - **owner** (**your&#95;server&#95;user**)<br/>
 Once the file is transmitted to the target server, what ownership permissions should be applied to it (and its destination folder)? An example could be "your&#95;user:your&#95;group".
 - **parse** (**true**)<br/>
-Specifies whether the file being transferred should be parsed for [environment variables](LINK). Using this you can embed `<%= ENV['ENV_VAR'] %>` for example in your source file, and have it resolved during the deploy hook action.
+Specifies whether the file being transferred should be parsed for [environment variables](/stack-features/env-vars.html). Using this you can embed `<%= ENV['ENV_VAR'] %>` for example in your source file, and have it resolved during the deploy hook action.
 - **run&#95;on** (**single&#95;server**)<br/>
 If you have multiple servers in the same group (eg. scaled-up Rails servers) then you can specify whether you want the deploy hook action to occur just once, or once against each server in that group. Valid values are: *single&#95;server* or *all&#95;servers*.
 - **run&#95;as** (**server&#95;user**)<br/>
