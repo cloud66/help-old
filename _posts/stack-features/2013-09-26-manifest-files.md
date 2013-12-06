@@ -3,9 +3,6 @@ layout: post
 template: two-col
 title:  "Manifest files"
 nav_sticky: false
-nav: true
-nav_prev: ""
-nav_next: ""
 date:   2038-01-25 16:27:22
 categories: stack-features
 lead: You can be more explicit about your stack composition
@@ -289,7 +286,6 @@ A value in MB that Cloud 66 will use for each passenger process when calculating
 Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy)
 
 <pre class="terminal">
------ EXAMPLE BELOW -----
 ... rails:
         server: ...
         configuration:
@@ -307,7 +303,6 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
 
 If you want to, you can also specify the origin and methods for CORS.
 <pre class="terminal">
------ EXAMPLE BELOW -----
 ... rails:
         server: ...
         configuration:
@@ -327,7 +322,6 @@ Specify the version of PostgreSQL you want to install (does not apply to externa
 Specify whether to include PostGIS (Note: unlike the PG version, this can be added after initial database creation)
 
 <pre class="terminal">
------ EXAMPLE BELOW -----
 ... postgresql:
         server: ...
         configuration:
@@ -341,7 +335,6 @@ Specify whether to include PostGIS (Note: unlike the PG version, this can be add
 Specify the version of PostGIS and GEOS you want to install
 
    <pre class="terminal">
-   ----- EXAMPLE BELOW -----
    production:
        postgresql:
            configuration:
@@ -359,7 +352,6 @@ Specify the version of PostGIS and GEOS you want to install
 Specify the version of Redis you want to install (does not apply to external servers types - see below)
 
 <pre class="terminal">
------ EXAMPLE BELOW -----
 ... redis:
         server: ...
         configuration:
@@ -392,7 +384,6 @@ Specify connection port. Default value is 11211
 Specify which IP address to listen on. Default value is 0.0.0.0
 
 <pre class="terminal">
------ EXAMPLE BELOW -----
 ... memcached:
         shared&#95;group: db
         configuration:
@@ -416,7 +407,6 @@ Location of your own custom error page content to serve in the case of receiving
 Note: To find out about the available options for each one of the values, please refer to [HAProxy manual](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt).
 
 <pre class="terminal">
------ EXAMPLE BELOW -----
 haproxy:
     configuration:
         httpchk: HEAD / HTTP/1.0 (default value)

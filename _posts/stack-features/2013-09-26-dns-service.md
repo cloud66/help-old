@@ -1,11 +1,8 @@
 ---
 layout: post
 template: two-col
-title:  "DNS Service"
+title:  "DNS service"
 nav_sticky: false
-nav: true
-nav_prev: ""
-nav_next: ""
 date:   2038-03-28 16:27:22
 categories: stack-features
 lead: Use our DNS service for your stack servers

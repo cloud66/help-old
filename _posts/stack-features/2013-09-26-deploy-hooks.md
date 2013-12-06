@@ -1,11 +1,8 @@
 ---
 layout: post
 template: two-col
-title:  "Deployment Hooks"
+title:  "Deployment hooks"
 nav_sticky: false
-nav: true
-nav_prev: ""
-nav_next: ""
 date:   2038-03-28 16:27:22
 categories: stack-features
 lead: Take action at various points during build and/or deployment

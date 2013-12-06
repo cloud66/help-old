@@ -3,17 +3,17 @@ module Jekyll
   class SortedCategoriesBuilder < Generator
   
 		ORDER = [ 
-			'getting-started', 
-			'stacks', 
-			'how-to', 
+			'getting-started',
 			'stack-features',
-      'toolbelt',
 			'add-ins',
-			'api',
-			'cloud-providers',
-			'troubleshooting',
+			'stacks',
 			'web-server',
 			'your-account',
+			'cloud-providers',
+			'toolbelt',
+			'how-to',
+			'troubleshooting',
+			'api',
 			'jekyll'
 		]
 		

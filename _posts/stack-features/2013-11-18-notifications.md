@@ -3,9 +3,6 @@ layout: post
 template: two-col
 title:  "Notifications"
 nav_sticky: false
-nav: true
-nav_prev: ""
-nav_next: ""
 date:   2038-03-29 16:27:22
 categories: stack-features
 lead: Email, iOS, Hipchat and Webhook notifications

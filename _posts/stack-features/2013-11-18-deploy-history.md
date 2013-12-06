@@ -3,9 +3,6 @@ layout: post
 template: two-col
 title:  "Deployment history"
 nav_sticky: false
-nav: true
-nav_prev: ""
-nav_next: ""
 date:   2038-02-25 16:27:22
 categories: stack-features
 lead: An overview of your stack deployments and rollbacks

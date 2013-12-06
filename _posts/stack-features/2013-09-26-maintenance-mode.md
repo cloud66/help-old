@@ -1,25 +1,25 @@
 ---
 layout: post
 template: two-col
-title:  "Maintenance Mode"
-date:   2013-09-24 10:51:22
+title:  "Maintenance mode"
+nav_sticky: false
+date:   2038-01-25 16:27:22
 categories: stack-features
-lead: Cloud 66 allows you to place your application in 'maintenance mode' whereby a static maintenance page is served for the duration of your maintenance.
+lead: Serve a static maintenance page during your maintenance
 ---
 
+During the times when you have to make manual changes to your application or push out a breaking change, you may not be able to guarantee that your application will be able to serve content or act correctly.
 
-## What is Site Maintenance?
+As a result of this, Cloud 66 has a site 'maintenance mode' option, which allows you to effectively put up a holding page (either a default Cloud 66 page, or your own) for the duration of your maintenance work.
 
-The are times when you have to make manual changes to your application, or even push out a breaking change. During these times you may not be able to guarantee that your application will still work correctly, or even that it will be able to serve content at all.
+You can still safely redeploy your stack while maintenance mode is enabled - the maintenance page will be served until you turn off maintenance mode on your stack.
 
-To address this, Cloud 66 now has a site 'maintenance mode' option. It allows you to effectively put up a holding page (either a default Cloud 66 page, or your own) for the duration of your maintenance work.
+## Activating and deactivating maintenance mode
 
-You can still safely redeploy your stack while maintenance mode is enabled - the maintenance page will be served until you turn of maintenance mode on your stack.
+You can turn on/off maintenance mode via the stack settings page. On your <i>Stack detail</i> page click on the drop-down cog on the top right of your stack and click the <i>Settings</i> option.
+<b>Note:</b> this drop-down cog is only available while your stack is not currently building or deploying.
 
-## Activating/Deactivating Maintenance Mode
-
-You can turn on/off maintenance mode via the stack settings page. On your stack detail page click on the drop-down cog on the top right of your stack for the settings option.
-Note: that this drop-down cog is only available while your stack is not currently building or deploying.
+![Maintenance mode](http://cdn.cloud66.com.s3.amazonaws.com/images/help/maintenance_mode.png)
 
 ## Using your own Maintenance Page
 

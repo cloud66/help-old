@@ -1,42 +1,42 @@
 ---
 layout: post
 template: two-col
-title:  "Redeployment Hook"
-date:   2013-09-24 10:51:22
+title:  "Redeployment hooks"
+nav_sticky: false
+date:   2038-01-25 16:27:22
 categories: stack-features
 lead: Use redeployment hooks to setup continuous deployment
 ---
-
 
 <h2>GitHub Redeployment Hook</h2>
 
 <ol class="instruction-list">
 	<li>
-		<p>From the stack drop-down menu - click <b>Information</b>:</p>
+		<p>From the stack drop-down menu - click <i>Information</i>:</p>
 		<p>
 			<img src="http://cdn.cloud66.com.s3.amazonaws.com/images/help/stack-info.png" alt="">
 		</p>
 	</li>
 	<li>
-		<p>Copy the URL</p>
+		<p>Copy the URL.</p>
 		<p>
 			<img src="http://cdn.cloud66.com.s3.amazonaws.com/images/help/stack-info-overlay.png" alt="">
 		</p>
 	</li>
 	<li>
-		<p>Access the <b>settings</b> page of your GitHub repository.</p>
+		<p>Access the <i>Settings</i> page of your GitHub repository.</p>
 		<p>
 			<img src="http://cdn.cloud66.com.s3.amazonaws.com/images/help/github-admin-nav.png" alt="">
 		</p>
 	</li>
 	<li>
-		<p>In the left navigation click <b>Service Hooks</b>.</p>
+		<p>In the left navigation click <i>Service Hooks</i>.</p>
 		<p>
 			<img src="http://cdn.cloud66.com.s3.amazonaws.com/images/help/github-service-hooks-nav.png" alt="">
 		</p>
 	</li>
 	<li>
-		<p>Click <b>WebHook URLs</b></p>
+		<p>Click <i>WebHook URLs</i></p>
 				<p>
 			<img src="http://cdn.cloud66.com.s3.amazonaws.com/images/help/github-webhook.png" alt="">
 		</p>
@@ -52,7 +52,7 @@ lead: Use redeployment hooks to setup continuous deployment
 </div>
 
 ## Using Redeployment Hook Manually
-To use the redeployment hook, you would need to POST an HTTP request to your redeployment hook URL. You can do this in curl like this:
+To use the redeployment hook, you can POST an HTTP request to your redeployment hook URL. You can do this in curl like this:
 
 <pre class="terminal">
 curl -X POST -d "" [your redeployment hook URL]

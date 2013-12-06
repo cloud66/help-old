@@ -1,11 +1,8 @@
 ---
 layout: post
 template: two-col
-title:  "Database Replication"
+title:  "Database replication"
 nav_sticky: false
-nav: true
-nav_prev: ""
-nav_next: ""
 date:   2038-04-01 16:27:22
 categories: stack-features
 lead: Scale your databases by setting up replication
