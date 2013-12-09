@@ -4,11 +4,11 @@ template: two-col
 title:  "Stack links"
 date:   2013-01-29 01:01:01
 categories: toolbelt
-lead: Link Stacks to folders for easier use of the toolbelt
+lead: Link stacks to folders for easier use of the toolbelt
 ---
 
-## Linking Stacks to Folders
-Stacks are deployed from codebase in a folder. You can run the toolbelt from anywhere on the system regardless of which folder you are in, but to make it easier to use the toolbelt, you can link a folder to a stack. This means all the stack commands of the toolbelt will run on the linked stack when you are in that folder.
+## Linking stacks to folders
+Your stacks are deployed from your codebase, which resides in a folder in your development environment. You can run the Toolbelt from anywhere on the system, regardless of which folder you are in, but it's easier if you link a folder to a stack to make it easier to use. This means that all commands you run with the Toolbelt will run on a specific stack when you are in that folder.
 
 You can link the current folder to a stack UID with the `save` command. 
 

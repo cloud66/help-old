@@ -25,7 +25,7 @@ For your convenience, Cloud 66 will [automatically generate and update certain e
 [Manifest files](/stack-features/manifest-files.html) allow you to be more explicit about your stack composition by specifying additional packages you wish to install, server sizes/regions and other options.
 
 ## Process files
-[Process files](/stack-features/proc-files.html) can be used to ensure that your background jobs always run and are monitored. Should you wish, you can also [scale processes](LINK) both on a single server or to a dedicated process server.
+[Process files](/stack-features/proc-files.html) can be used to ensure that your background jobs always run and are monitored. Should you wish, you can also [scale processes](/stack-features/standalone-process-servers.html) both on a single server or to a dedicated process server.
 
 ## Custom web servers
 By default, stacks deployed by Cloud 66 run on Phusion Passenger behind nginx, but you can choose to [run a custom web server](/web-server/custom-webserver.html) should you wish.

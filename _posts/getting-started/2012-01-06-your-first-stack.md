@@ -23,7 +23,7 @@ If you have a <b>private Git repository</b>, please add the unique SSH key provi
 ![Accessing Git](http://cdn.cloud66.com.s3.amazonaws.com/images/help/accessing_git.png)
 
 ## 3. Tell us about your app
-Provide us with a [URL to your Git repository](LINK), give your stack a name and select which [environment to deploy](LINK) .
+Provide us with a [URL to your Git repository](/how-to/git-url.html), give your stack a name and select which [environment to deploy](/stack-features/stack-envs.html) .
 
 ![About Your App](http://cdn.cloud66.com.s3.amazonaws.com/images/help/app_info.png)
 

@@ -36,7 +36,7 @@ All servers provisioned and deployed with Cloud 66 are [monitored](/stacks/serve
 This feature makes it possible for you to see an overview of your deployment history, as well as rollback any deployment that might have failed.
 
 ## Logging
-[Logs](LINK) are setup according to your application configuration, and can be automatically archived at regular intervals.
+[Logs](/stack-features/logging.html) are setup according to your application configuration, and can be automatically archived at regular intervals.
 
 ## CLI toolbelt
 We have a simple [command-line interface](/getting-started/toolbelt.html) available should you wish to control your stacks through the command line.
