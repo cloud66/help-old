@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Memcached"
-date:   2013-09-24 10:51:22
+date:   2020-09-24 10:51:22
 categories: add-ins
 lead: Install Memcached on your stack
 ---
