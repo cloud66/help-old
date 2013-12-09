@@ -15,7 +15,7 @@ lead: Deploy your app with our supported cloud providers
 Cloud 66 currently supports the following cloud providers:
 
 <ul>
-    <li><a href="/cloud-providers/aws-keys.html" target="_blank">Amazon Web Services</a></li>
+    <li><a href="/cloud-providers/cloud-aws.html" target="_blank">Amazon Web Services</a></li>
     <li><a href="/cloud-providers/cloud-do.html" target="_blank">Digital Ocean</a></li>
     <li><a href="/cloud-providers/cloud-joyent.html" target="_blank">Joyent</a></li>
     <li><a href="/cloud-providers/cloud-linode.html" target="_blank">Linode</a></li>

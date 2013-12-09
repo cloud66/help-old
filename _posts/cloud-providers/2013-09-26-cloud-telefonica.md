@@ -1,16 +1,21 @@
 ---
 layout: post
 template: two-col
-title:  "Telefonica Cloud"
-date:   2013-09-24 10:51:22
+title:  "Telefonica cloud"
+date:   2033-09-24 10:51:22
 categories: cloud-providers
-lead: Use Cloud 66 to provision and deploy your code to your own servers running under your Telefonica Cloud account
+lead: Use your Telefonica account with Cloud 66
 ---
 
+You can use Cloud 66 to provision and deploy your code to servers on Telefonica. All you need to do is add your Telefonica API keys to your Cloud 66 account.
 
+Please visit Telefonica to learn more about their <a href="https://my.instantservers.telefonica.com/login#" target="_blank">Instant Servers</a>.
 
+Once you have signed up, please add your API keys to your account while [building a new stack](/getting-started/your-first-stack.html):
 
-## External Links
-<ul>
-	<li><a href="https://my.instantservers.telefonica.com/login#" target="_blank">Telefonica Instant Servers</a></li>
-</ul>
+![cloud connect](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud_connect.png)
+
+<div class="notice notice-warning">
+    <h3>Notice</h3>
+    <p>Should you wish to delete your stack on Cloud 66, your servers <b>will not</b> be deleted on your cloud provider.</p>
+</div>

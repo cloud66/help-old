@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Database servers"
-date:   2013-09-24 10:51:22
+date:   2020-09-24 10:51:22
 categories: stacks
 lead: Databases supported by Cloud 66
 ---

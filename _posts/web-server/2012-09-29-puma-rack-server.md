@@ -1,8 +1,8 @@
 ---
 layout: post
 template: two-col
-title:  "Puma Rack Server"
-date:   2013-09-24 10:51:22
+title:  "Puma rack server"
+date:   2035-09-24 10:51:22
 categories: web-server
 lead: Run your Rack apps with Puma
 ---

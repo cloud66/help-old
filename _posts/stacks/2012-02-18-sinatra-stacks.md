@@ -6,7 +6,7 @@ so_title: "Sinatra"
 nav_sticky: true
 nav: true
 nav_prev: ""
-date:   2013-11-18 16:27:22
+date:   2037-11-18 16:27:22
 categories: stacks
 lead: Cloud 66 makes it easy to deploy and maintain Sinatra apps
 ---
@@ -50,7 +50,7 @@ development:
 
 ## Database
 
-If databases are detected, they will automatically be provisioned as required (including the database itself), and [environment variables](http://help.cloud66.com/stack-features/assign-env-vars.html) will be created. You will need to update your code with the environment variables you wish to use, for example `MYSQL_URL`.
+If [databases are detected](/stacks/databases.html), they will automatically be provisioned as required (including the database itself), and [environment variables](/stack-features/env-vars.html) will be created. You will need to update your code with the environment variables you wish to use, for example `MYSQL_URL`.
 
 Should you wish to change the database username/password after build, you will have to do this manually, which will involve recreating backup jobs to reflect the new values.
 

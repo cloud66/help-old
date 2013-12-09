@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Nginx configuration"
-date:   2013-09-24 10:51:22
+date:   2034-09-24 10:51:22
 categories: web-server
 lead: Nginx is configured automatically for your stack
 ---
@@ -24,7 +24,7 @@ lead: Nginx is configured automatically for your stack
 		</tr>
 		<tr>
 			<td>worker&#95;processes</td>
-			<td>Dynamically set <a href="/help/vendor_instances">based on instance size</a></td>
+			<td>Dynamically set <a href="/web-server/nginx-workers.html">based on instance size</a></td>
 		</tr>
 		<tr>
 			<td>error&#95;log</td>

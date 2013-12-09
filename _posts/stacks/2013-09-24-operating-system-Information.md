@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Operating system information"
-date:   2013-09-24 10:51:22
+date:   2022-09-24 10:51:22
 categories: stacks
 lead: Operating system requirements and configurations
 ---

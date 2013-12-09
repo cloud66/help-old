@@ -1,8 +1,8 @@
 ---
 layout: post
 template: two-col
-title:  "Thin Rack Server"
-date:   2013-09-24 10:51:22
+title:  "Thin rack server"
+date:   2036-09-24 10:51:22
 categories: web-server
 lead: Run your Rack apps with Thin
 ---

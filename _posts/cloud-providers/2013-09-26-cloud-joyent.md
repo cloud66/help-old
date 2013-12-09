@@ -1,18 +1,21 @@
 ---
 layout: post
 template: two-col
-title:  "Joyent Cloud"
-date:   2013-09-24 10:51:22
+title:  "Joyent cloud"
+date:   2036-09-24 10:51:22
 categories: cloud-providers
-lead:  Use Cloud 66 to provision and deploy your code to your own servers running under your Joyent account
+lead:  Use your Joyent account with Cloud 66
 ---
 
+You can use Cloud 66 to provision and deploy your code to servers on Joyent. All you need to do is add your Joyent API keys to your Cloud 66 account.
 
+Please visit Joyent to learn more about their <a href="http://joyent.com/products/joyent-cloud/data-centers" target="_blank">regions</a> and <a href="http://joyent.com/products/joyent-cloud/pricing" target="_blank">pricing</a>.
 
+Once you have signed up, please add your API keys to your account while [building a new stack](/getting-started/your-first-stack.html):
 
-## External Links
+![cloud connect](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud_connect.png)
 
-<ul>
-	<li><a href="http://joyent.com/products/joyent-cloud/data-centers" target="_blank">Joyent regions</a></li>
-	<li><a href="http://joyent.com/products/joyent-cloud/pricing" target="_blank">Joyent pricing</a></li>
-</ul>
+<div class="notice notice-warning">
+    <h3>Notice</h3>
+    <p>Should you wish to delete your stack on Cloud 66, your servers <b>will not</b> be deleted on your cloud provider.</p>
+</div>
