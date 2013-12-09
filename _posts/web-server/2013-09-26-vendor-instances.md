@@ -1,16 +1,14 @@
 ---
 layout: post
 template: two-col
-title:  "Nginx configurations"
+title:  "Nginx worker configurations"
 date:   2013-09-24 10:51:22
 categories: web-server
-lead: We configure the number of running threads in Nginx based on instance size and the cloud provider.
+lead: The size of your instance affects your nginx configuration
 ---
 
-
-## Nginx Configuration
-Stacks deployed with Cloud 66 use nginx as their frontend. You can find the <a href="/web-server/nginx-settings.html">nginx configuration</a> that's pushed out. The number of workers running nginx are dependend on the number of CPU cores of the instance. Here is how they are configured by default.
-
+## Nginx configuration
+Stacks deployed with Cloud 66 use nginx as their frontend. Apart from the <a href="/web-server/nginx-settings.html">nginx configuration</a> used, the number of workers running nginx are dependant on the number of CPU cores of the instance:
 ### Amazon EC2
 <table class="table table-bordered table-striped">
   <colgroup>

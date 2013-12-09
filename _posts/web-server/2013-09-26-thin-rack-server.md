@@ -48,5 +48,5 @@ To control your web servers manually you can use the following commands:
 
 <div class="notice">
 	<h3>Important</h3>
-	<p>Your web server is not automatically restarted during redeployment. If you would like for it to restart automatically, you can accomplish this using a <a href='/help/redeployment_hook'>redeployment hook</a>.</p>
+	<p>Your web server is not automatically restarted during redeployment. If you would like for it to restart automatically, you can accomplish this using a <a href='/stack-features/redeployment-hook.html'>redeployment hook</a>.</p>
 </div>

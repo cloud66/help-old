@@ -1,10 +1,10 @@
 ---
 layout: post
 template: two-col
-title:  "Nginx Configuration of Your Stack"
+title:  "Nginx configuration"
 date:   2013-09-24 10:51:22
 categories: web-server
-lead: Nginx is configured automatically for your stack. Here is some details about it
+lead: Nginx is configured automatically for your stack
 ---
 
 
@@ -148,7 +148,7 @@ lead: Nginx is configured automatically for your stack. Here is some details abo
 		</tr>
 		<tr>
 			<td>server&#95;name</td>
-			<td><code>&#95;</code> or <code>SSL server name</code></td>
+			<td><code>_</code> or <code>SSL server name</code></td>
 		</tr>
 		<tr>
 			<td>rails&#95;env</td>

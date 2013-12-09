@@ -1,35 +1,57 @@
 ---
 layout: post
 template: two-col
-title:  "Operating System Information"
+title:  "Operating system information"
 date:   2013-09-24 10:51:22
 categories: stacks
-lead: Information about operating system requirements/configuration
+lead: Operating system requirements and configurations
 ---
 
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#cloud">Deploying to your cloud</a>
+	</li>
+	<li>
+    	<a href="#byos">Deploying to your own servers</a>
+        	<ul>
+        		<li><a href="#errors">Permission errors</a></li>
+        	</ul>
+    </li>
+	<li>
+		<a href="#packages">Default packages installed</a>
+	</li>
+</ul>
 
-## Supported OS
+<h2 id="cloud">Deploying to your cloud</h2>
 
-Cloud 66 officially supports <strong>Ubuntu Linux 12.04</strong> and this is the OS/version that is fired up in your cloud.
-Other versions of Ubuntu Linux should work, however are not all completely tested.
+Cloud 66 officially supports <strong>Ubuntu Linux 12.04</strong> and this is what we deploy to your cloud. We will automatically configure the OS on your behalf.
 
 <div class="notice">
 	<h3>Important</h3>
-    <p>At this point no other Linux distributions are supported. Future releases will enable support for additional Linux distributions.</p>
+    <p>At this point no other Linux distributions are supported, but future releases will enable support for additional distributions.</p>
 </div>
 
-## OS Requirements/Configuration
+<h2 id="byos">Deploying to your own servers</h2>
 
-If your servers are created by Cloud 66 via your cloud provider, then Cloud 66 will automatically configure the OS on your behalf.
+If you are deploying to your own servers, you will have to configure the operating system on your server. We have certain requirements for our set up to work:
 
-However, if you are using your own standalone servers then the following is relevant.
-The following are required by Cloud 66:
+1. **Connection:**<br/>
+For security reasons, Cloud 66 only connects to your server using your secure keys. Please see our documentation on [generating an SSH key on your server](/how-to/ssh-keys.html).
+2. **Sudoer (passwordless):**<br/>
+As Cloud 66 connects to your server and provisions applications from scratch, administrator permissions are sometimes necessary. Therefore the user that you provide for use should also be a member of the sudoers group, and must not require a password to invoke sudo.
+3. **BASH**:<br/>
+At this point, we only support the the Bourne-again shell (BASH). You may encounter the error "sh: n: source: not found" during deployment if you are not using the BASH shell.
 
-1. **Connection:** For additional security, Cloud 66 only connects to your server using your secure keys. Therefore you need to ensure that you provide a relevant SSH key, and that that SSH key allows access to your server. (see [how to generate SSH keys, and connect to your server](/getting-started/ssh-keys.html) if you need a hand with this)
-2. **Sudoer (passwordless):** Because Cloud 66 will connect to your server and provision applications from scratch, administrator permissions will sometimes be required. Therefore the user that you provide for use should also be a member of the sudoers group (and must not require a password to invoke sudo)
-3. **BASH** At this point, only the Bourne-again shell (BASH) is supported. You may encounter the error "sh: n: source: not found" during deployment if you are not using the BASH shell.
+<h4 id="errors">Permission errors</h4>
+If you experience permission errors after deploying to your own server, you may want to follow these guidelines.
 
-## Default Packages Installed
+1. [SSH to your server](/how-to/shell-to-your-servers.html)
+2. `chown admin /tmp`
+3. `chmod 777 -R /tmp`
+4. `chmod o+t -R /tmp`
+
+<h2 id="packages">Default packages installed</h2>
 
 Depending on the stack that you are deploying, Cloud 66 will install slightly different packages on your server. Sometimes the packages are installed via the default OS package management system, but other times the package will be installed directly from a stable source distribution.
 However, by default the following packages are usually installed:
@@ -60,13 +82,4 @@ For a more complete list of packages that are installed on your system you can d
 <li>List of installed packages: <pre class="terminal">dpkg --get-selections</pre></li>
 <li>File installation locations of a given pacakge: <pre class="terminal">dpkg -L wget</pre></li>
 </ol>
-
-## Permission Errors
-If you experience permission errors after deploying to your own server, you may want to follow these guidelines, provided by one of our users.
-
-1. [SSH to your server](/how-to/shell-to-your-servers.html).
-2. `chown admin /tmp`
-3. `chmod 777 -R /tmp`
-4. `chmod o+t -R /tmp`
-
 

@@ -1,18 +1,15 @@
 ---
 layout: post
 template: two-col
-title:  "EasyDeploy Repositories"
+title:  "EasyDeploy repositories"
 nav_sticky: true
 nav: true
 nav_prev: ""
 nav_next: ""
 date:   2013-10-09 15:30:22
 categories: stacks
-lead: Deploying and maintaining open source projects through Cloud 66 is extremely easy
+lead: Deploy and maintain open source projects on Cloud 66
 ---
-
-
-## Introduction
 There are many open source projects out there that we love and use, and we want to make it easier for people to use them.
 
 EasyDeploy makes it easy for you to simply provide the git URL of your desired project on Cloud 66 and sit back while it deploys on your servers.

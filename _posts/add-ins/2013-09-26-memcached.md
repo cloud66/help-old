@@ -6,8 +6,6 @@ date:   2013-09-24 10:51:22
 categories: add-ins
 lead: Install Memcached on your stack
 ---
+This add-in allows you to easily install Memcached on your server:
 
-
-## Setup
-
-More details will be available soon, if you require more information now <a href="mailto:support@cloud66.com">please contact support</a>
+![memcached](http://cdn.cloud66.com.s3.amazonaws.com/images/help/memcached.png)

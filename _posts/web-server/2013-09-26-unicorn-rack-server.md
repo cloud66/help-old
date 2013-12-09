@@ -15,7 +15,7 @@ To run a Unicorn Rack server, add a line to your Procfile labeled as custom_web.
 custom_web: bundle exec unicorn_rails -c config/unicorn.rb -E $RAILS_ENV -D
 {% endhighlight %}
 
-<p>Please take note that Unicorn is running in Daemon mode with the `-D` parameter.</p>
+Please take note that Unicorn is running in Daemon mode with the `-D` parameter.
 
 <div class="notice">
 	<h3>Important</h3>
@@ -27,7 +27,7 @@ Here is an example of a unicorn.rb configuration file that is compatible with Cl
 {% highlight ruby %}
 worker_processes 2
 
-working_directory "#{ENV['RAILS_STACK_PATH']}"
+working_directory "#{ENV['STACK_PATH']}"
 
 listen "/tmp/web_server.sock", :backlog => 64
 
@@ -35,8 +35,8 @@ timeout 30
 
 pid '/tmp/web_server.pid'
 
-stderr_path "#{ENV['RAILS_STACK_PATH']}/log/unicorn.stderr.log"
-stdout_path "#{ENV['RAILS_STACK_PATH']}/log/unicorn.stdout.log"
+stderr_path "#{ENV['STACK_PATH']}/log/unicorn.stderr.log"
+stdout_path "#{ENV['STACK_PATH']}/log/unicorn.stdout.log"
 
 preload_app true
 GC.respond_to?(:copy_on_write_friendly=) and

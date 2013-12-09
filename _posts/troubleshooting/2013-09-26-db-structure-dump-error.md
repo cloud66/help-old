@@ -27,7 +27,7 @@ This occurs mainly when your database server is located externally (or on anothe
 
 Adding the following line to your application's *Rakefile* will stop the structure dump from occuring when performing the Cloud 66 deployment:
 {% highlight ruby %}
-Rake::Task["db:structure:dump"].clear if ENV['RAILS_STACK_PATH']
+Rake::Task["db:structure:dump"].clear if ENV['STACK_PATH']
 {% endhighlight %}
 
 <div class="notice">

@@ -10,7 +10,7 @@ lead: You can easily run Rails console with a single command.
 
 ## On your servers
 
-Go on your `RAILS_STACK_PATH` and run the following command:
+Go on your `STACK_PATH` and run the following command:
 
 <pre class="terminal">
 <kbd>bundle exec rails c &lt;environment&gt;</kbd>
