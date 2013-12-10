@@ -8,7 +8,7 @@ lead: The size of your instance affects your nginx configuration
 ---
 
 ## Nginx configuration
-Stacks deployed with Cloud 66 use nginx as their frontend. Apart from the <a href="/web-server/nginx-settings.html">nginx configuration</a> used, the number of workers running nginx are dependant on the number of CPU cores of the instance:
+Stacks deployed with Cloud 66 use nginx as their frontend. Apart from the <a href="/web-server/nginx-config.html">nginx configuration</a> used, the number of workers running nginx are dependant on the number of CPU cores of the instance:
 ### Amazon EC2
 <table class="table table-bordered table-striped">
   <colgroup>

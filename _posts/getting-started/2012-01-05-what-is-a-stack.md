@@ -41,7 +41,7 @@ You can choose between any of four supported databases when deploying your appli
 In addition to deploying these databases, we also make it easy for you to [backup](/stack-features/db-backup.html) and [verify your backups](/how-to/backup-verifiers.html), as well as [scale](/stack-features/database-replication.html).
 
 ## Operating system
-Your servers will be deployed with <b>Ubuntu 12.04</b>, and future releases may add support for other distributions. On the operating system level, we allow you to [monitor disk, CPU and memory](/stacks/server-monitoring.html) right from our dashboard.
+Your servers will be deployed with <b>Ubuntu 12.04</b>, and future releases may add support for other distributions. On the operating system level, we allow you to [monitor disk, CPU and memory](/stack-features/server-monitoring.html) right from our dashboard.
 
 ## Cloud vendor
 For more information about this level of abstraction, please see either [deploying to your cloud](/getting-started/supported-clouds.html) or [deploying to your own servers](/getting-started/standalone-servers.html).

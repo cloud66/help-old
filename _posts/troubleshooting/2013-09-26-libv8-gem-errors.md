@@ -23,7 +23,7 @@ You can determine the working gem version by opening a terminal to your server a
 
 Finally, if you can't get this to work and you're running Rails > 3.1.0 then you also have the option of letting Cloud 66 install Node.js for you.
 
-Remove 'therubyracer' from your Gemfile and [Cloud 66 will automatically install Node.js](/how-to/asset_pipeline.html) - simple!
+Remove 'therubyracer' from your Gemfile and [Cloud 66 will automatically install Node.js](/how-to/asset-pipeline.html) - simple!
 
 ## The specifics
 

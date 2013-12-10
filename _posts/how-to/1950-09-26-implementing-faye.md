@@ -44,7 +44,7 @@ sudo gem install faye --no-ri --no-rdoc
 </pre>
 
 #### 3. RAILS&#95;ROOT/Procfile
-Here we are creating a [background process](proc&#95;files) for Faye so that we can control and monitor it from the Cloud 66 dashboard.
+Here we are creating a [background process](/stack-features/proc-files.html) for Faye so that we can control and monitor it from the Cloud 66 dashboard.
 
 <pre class='terminal'>
 faye: thin -R $RAILS&#95;STACK&#95;PATH/faye/config.ru start
