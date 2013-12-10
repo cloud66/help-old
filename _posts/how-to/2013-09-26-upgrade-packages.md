@@ -1,10 +1,10 @@
 ---
 layout: post
 template: two-col
-title:  "Upgrade Ruby/Rails on your stack"
+title:  "Upgrading packages on your stack"
 date:   1560-09-26 15:33:13
 categories: how-to
-lead: How to upgrade Ruby or Rails on your stacks
+lead: How to upgrade packages on your stack
 ---
 
 <h2>Contents</h2>
@@ -16,13 +16,13 @@ lead: How to upgrade Ruby or Rails on your stacks
 		<a href="#updates">Security updates</a>
 	        <li>
                 <ul>
-                <li><a href="#rails">Rails</a></li>
+                <li><a href="#ubuntu">Ubuntu</a></li>
                 </ul>
                 <ul>
                 <li><a href="#ruby">Ruby</a></li>
                 </ul>
                 <ul>
-                <li><a href="#ubuntu">Ubuntu</a></li>
+                <li><a href="#rails">Rails</a></li>
                 </ul>
             </li>
 	</li>
@@ -42,15 +42,19 @@ We are always working to make it easier to build a new stack, move your data and
 
 <h2 id="updates">Security updates</h2>
 
-In the event of a security vulnerability on any of the components we deploy on the servers, we try to be as quick as possible to roll out the recommended patches:
+In the event of a security vulnerability on any of the components we deploy on the servers, we aim to be as quick as possible to roll out the recommended patches:
 
+- Ubuntu
 - Ruby
 - Rails
-- Ubuntu
 
-<h4 id="rails">Rails</h4>
+<h4 id="ubuntu">Ubuntu</h4>
+You can choose to apply upgrades to your stack during deployment:
+![auto upgrades](http://cdn.cloud66.com.s3.amazonaws.com/images/help/auto_upgrades.png)
 
-You can bump up the Rails version in your `Gemfile` and redeploy your stack. This will upgrade your Rails.
+Choosing this option will perform operating system security package upgrades and set up [unattended upgrades](https://help.ubuntu.com/community/AutomaticSecurityUpdates) for your stack. Unattended upgrades will automatically check for and install the latest Ubuntu security packages on a daily basis.
+
+Note that some security packages may require a server restart. We don't automatically restart your server, and it is at your discretion to do so. If the file `/var/run/reboot-required` exists, your server does in fact require a restart. To see which packages contributed to the requirement for a restart, please see `/var/run/reboot-required.pkgs`.
 
 <h4 id="ruby">Ruby</h4>
 
@@ -63,11 +67,9 @@ We roll out automatic upgrades in case of severe security issues, and this will 
     <p>You will need to make sure the upgrades and patches applied work with your code before applying them. Upgrade and patch your development and test environments to ensure there are no issues.</p>
 </div>
 
-<h4 id="ubuntu">Ubuntu</h4>
-You can also choose to apply upgrades to your stack during deployment:
-![auto upgrades](http://cdn.cloud66.com.s3.amazonaws.com/images/help/auto_upgrades.png)
+<h4 id="rails">Rails</h4>
 
-Choosing this option will perform operating system security package upgrades and set up [unattended upgrades](https://help.ubuntu.com/community/AutomaticSecurityUpdates) for your stack. Unattended upgrades will automatically check for and install the latest Ubuntu security packages on a daily basis.
+You can bump up the Rails version in your `Gemfile` and redeploy your stack. This will upgrade your Rails.
 
 <h2 id="manual">Manual updates</h2>
 

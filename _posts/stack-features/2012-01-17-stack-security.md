@@ -11,6 +11,9 @@ lead: Configure security and firewall for the servers in your stack
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
+		<a href="#intro">Introduction</a>
+	</li>
+	<li>
 		<a href="#default">Default firewall rules</a>
 	</li>
 	<li>
@@ -37,6 +40,9 @@ lead: Configure security and firewall for the servers in your stack
                 </ul>
             </li>
 	<li>
+		<a href="#gateway">Gateway IP addresses</a>
+	</li>
+	<li>
 		<a href="#rules">Changing firewall rules</a>
 	</li>
 	<li>
@@ -62,7 +68,10 @@ lead: Configure security and firewall for the servers in your stack
             </li>
 </ul>
 
-The security page is available from <i>Stack security</i> menu item on the <i>Stack detail</i> page:
+<h2 id="intro">Introduction</h2>
+By default, we do not allow or provision password-protected servers and only use SSH key authentication. Your servers are configured to initially only accept incoming connections from our gateway IP addresses.
+
+You can configure your stack security from the security page, which is available from <i>Stack security</i> menu item on the <i>Stack detail</i> page:
 
 ![Cloud 66 Firewall](http://cdn.cloud66.com.s3.amazonaws.com/images/help/firewall_menu_item.png)
 
@@ -97,6 +106,16 @@ Can be either `TCP` or `UDP`
 
 <h3 id="port">Port</h3>
 This is the port number of the traffic. You can either type in the port number or choose from the list of most commonly used port numbers by typing the service name (like `ssh` or `mongodb`).
+
+<h2 id="gateway">Gateway IP addresses</h2>
+Cloud 66 only attempts SSH on port 22 to your servers from one of the following IP addresses. Any addition to this list will be announced on this page.
+
+<pre class='terminal'>
+54.235.109.209
+54.235.151.248
+54.243.58.144
+54.235.157.238
+</pre>
 
 <h2 id="rules">Changing firewall rules</h2>
 Changes to firewall rules are applied immediately after clicking on the "Apply Rules" button.
