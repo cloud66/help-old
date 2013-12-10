@@ -2,9 +2,9 @@
 layout: post
 template: two-col
 title:  "Managing your Cloud 66 backups"
-date:   2013-09-26 15:33:13
+date:   1920-09-26 15:33:13
 categories: how-to
-lead: This guide shows you how to manage your Cloud 66 backups should you wish to do so.
+lead: You can manage your Cloud 66 backups if you want
 ---
 
 
@@ -51,14 +51,14 @@ To do this we will copy the file to a remote server using SCP:
 
 From the [MySQL command-line](http://dev.mysql.com/doc/refman/5.5/en/mysql.html), use the following command to restore your database from a dumped backup file `(.sql)`:
 
-`mysql -u <db_username> -p <db_password> <db_name> <path_to_your_backup_file(.sql)>`
+`mysql -u <db_username> -p <db_password> <db_name> < <path_to_your_backup_file(.sql)>`
 
 
 ### PostgreSQL database
 
 From the PostgreSQL command-line prompt, use the following command to restore your database from a dumped backup file `(.sql)`:
 
-`psql -U <db_username> --no-password <db_name> <path_to_your_backup_file(.sql)>`
+`psql -U <db_username> --no-password <db_name> < <path_to_your_backup_file(.sql)>`
 
 
 ### MongoDB database

@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Backup verifiers"
-date:   2013-10-03 14:17:13
+date:   1975-10-03 14:17:13
 categories: how-to
 lead: Ensure the highest quality of backup assurance
 ---

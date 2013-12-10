@@ -39,6 +39,7 @@ We currently support the following databases, with no need for additional config
 * PostgreSQL
 * MongoDB
 * Redis
+* SQLite (only in development environments)
 
 During analysis, Cloud 66 automatically detects whether your application relies on a database or not. This is based on a combination of your Gemfile and your database.yml or mongoid.yml files.
 

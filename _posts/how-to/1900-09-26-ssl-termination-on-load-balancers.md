@@ -2,14 +2,23 @@
 layout: post
 template: two-col
 title:  "Add a SSL certificate on a load balancer"
-date:   2013-09-26 15:33:13
+date:   2000-09-26 15:33:13
 categories: how-to
-lead: It is really easy to add SSL termination to your load balancers.
+lead: The process differs for different load balancers
 ---
 
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#aws">Amazon Elastic Load Balancer</a>
+	</li>
+	<li>
+		<a href="#haproxy">HAProxy</a>
+	</li>
+</ul>
 
-## Using AWS
 
+<h2 id="aws">Amazon Elastic Load Balancer</h2>
 
 To register an SSL certificate with Amazon Elastic Load Balancer, please refer to our [blog post](http://blog.cloud66.com/post/30990317011/registering-ssl-certificate-with-amazon-elastic-load).
 
@@ -23,7 +32,7 @@ Through the AWS dashboard:
 
 <div class="notice">
     <h3>Important</h3>
-    <p>Ensure that the certificate is valid: current date must be between the certificate’s start and end date.Certificate keys also should not be password protected</p>
+    <p>Ensure that the certificate is valid: current date must be between the certificate’s start and end date. Certificate keys also should not be password protected</p>
 </div>
 
 Through the [AWS ELB command line interface](http://aws.amazon.com/developertools/2536):
@@ -60,16 +69,8 @@ elb-create-lb-listeners ELBConfigureSSL --listener "protocol=HTTPS,lb-port=443,i
 See also: [AWS documentation](http://docs.aws.amazon.com/IAM/latest/UserGuide/InstallCert.html)
 
 
-## Using load balancing with HAProxy
-
-* DigitalOcean
-* Linode
-* Telefonica
-* Joyent
-
-HAProxy 1.4 doesn’t natively support SSL. But it possible to use an SSL encryption wrapper like Stunnel, Stud, Pound or Nginx. They can terminate TLS/SSL connections and forward the unencrypted traffic to HAProxy.
-
-##How to use HAProxy with Stunnel to handle HTTPS requests:
+<h2 id="haproxy">HAProxy</h2>
+HAProxy 1.4 doesn’t natively support SSL, but it's possible to use an SSL encryption wrapper like Stunnel, Stud, Pound or Nginx to terminate TLS/SSL connections and forward the unencrypted traffic to HAProxy.
 
 - Firstly, install Stunnel on the load balancer:
 <p>
@@ -78,7 +79,7 @@ apt-get install stunnel
 </kbd>
 </p>
 
--	Then, configure the <code>/etc/haproxy/haproxy.cfg</code>  file, find below an example:
+-	Then, configure the <code>/etc/haproxy/haproxy.cfg</code> file. For example:
 
 <pre class="terminal">
 global

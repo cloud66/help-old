@@ -2,9 +2,9 @@
 layout: post
 template: two-col
 title:  "Add modules to Nginx"
-date:   2013-10-03 14:26:13
+date:   1995-10-03 14:26:13
 categories: how-to
-lead: Follow this guide to rebuild Nginx with any module of your choice
+lead: Rebuild Nginx with modules of your choice
 ---
 
 

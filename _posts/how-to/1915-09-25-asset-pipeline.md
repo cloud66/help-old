@@ -2,9 +2,9 @@
 layout: post
 template: two-col
 title:  "Asset Pipeline Compilation"
-date:   2013-09-24 10:51:22
+date:   1980-09-24 10:51:22
 categories: how-to
-lead: Rails applications using Rails 3.1.0 and above can use the asset pipeline to improve performance
+lead: Improve performance in Rails applications => 3.1.0
 ---
 
 

@@ -2,9 +2,9 @@
 layout: post
 template: two-col
 title:  "Out of memory errors during deployment"
-date:   2013-09-26 15:33:13
+date:   1905-09-26 15:33:13
 categories: how-to
-lead: It is possible for deployment errors to occur during deployment if your server does not have sufficient memory available.
+lead: You may not have enough memory during deployment
 ---
 
 ## The Problem
@@ -29,5 +29,6 @@ You can also use a [manifest file](/stack-features/manifest-files.html) to speci
 1. Compile the assets on your own box and disable asset pipeline compilation on the stack going forward.
 2. Configure your code not to use asset pipeline pre-compilation and use live compilation (on-demand). [More information on Asset Pipeline compilation](/how-to/asset-pipeline.html).
 3. Resize your box to a bigger box either via a new stack, or [vertical scaling](/stack-features/vertical-scaling.html) if available.
-4. Manually reduce memory usage on your server before deployments (ie. manually stop your webserver)
-5. Reduce memory usage on your server by limiting Passenger memory usage (using a [manifest file](/stack-features/manifest-files.html) to specify a value for reserved&#95;server&#95;memory)
+4. [Setup swap files on your server](https://www.digitalocean.com/community/articles/how-to-add-swap-on-ubuntu-12-04). This is automatically done for 512MB and 1GB DigitalOcean servers.
+5. Manually reduce memory usage on your server before deployments (ie. manually stop your webserver).
+6. Reduce memory usage on your server by limiting Passenger memory usage (using a [manifest file](/stack-features/manifest-files.html) to specify a value for reserved&#95;server&#95;memory).

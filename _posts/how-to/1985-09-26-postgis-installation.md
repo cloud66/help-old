@@ -2,9 +2,9 @@
 layout: post
 template: two-col
 title:  "PostGIS Installation"
-date:   2013-09-26 15:33:13
+date:   1900-09-26 15:33:13
 categories: how-to
-lead: You can install PostGIS support for PostgreSQL databases either through Cloud 66 or manual installation.
+lead: You can install PostGIS automatically or manually
 ---
 
 

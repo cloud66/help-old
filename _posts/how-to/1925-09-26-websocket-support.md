@@ -2,9 +2,9 @@
 layout: post
 template: two-col
 title:  "Cloud 66 WebSocket Support"
-date:   2013-09-26 15:33:13
+date:   1970-09-26 15:33:13
 categories: how-to
-lead: WebSocket is supported by Cloud 66. This page helps you to implement Websocket on your server.
+lead: Implement WebSocket on your server
 ---
 
 
@@ -25,7 +25,7 @@ You can use a different port to use WebSocket (not supported by Cloud 66) but yo
 
 Find out more about [Stack Security page](/stack-features/stack-security.html).
 
-## WebSocket Through a Load Balancer
+## WebSocket through a load balancer
 
 At any time, you can use a load balancer and scale up your servers to have more redundancy and capacity for your WebSocket servers.
 

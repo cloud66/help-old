@@ -2,17 +2,13 @@
 layout: post
 template: two-col
 title:  "Integration with Semaphore"
-date:   2013-09-26 15:33:13
+date:   1930-09-26 15:33:13
 categories: how-to
-lead: Semaphore is a simple and powerful hosted continious integration service for Rails and has native integration with Cloud 66.
+lead: Use Semaphore for continuous integration with Cloud 66
 ---
 
+What follows is how to integrate [Semaphore](https://semaphoreapp.com) with Cloud 66.
 
-## Introduction
-In best development teams, making coffee should be difficult, deployment should be easy!
-Here is how to integrate [Semaphore](https://semaphoreapp.com) with Cloud 66.
-
-## Integration
 1. Make sure your stack is deployed with Cloud 66.
 2. Setup your project on [Semaphore](https://semaphoreapp.com). Since you're reading this page, you probably have a Semaphore project setup already!
 3. In Semaphore, go to your project setting and click on Deployment.

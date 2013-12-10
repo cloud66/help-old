@@ -2,21 +2,21 @@
 layout: post
 template: two-col
 title:  "MongoDB Replica Sets"
-date:   2013-11-20 01:01:01
+date:   1910-11-20 01:01:01
 categories: how-to
-lead: Cloud 66 Supports MongoDB Replica Sets. Make sure you know how they work and how to use them.
+lead: Cloud 66 Supports MongoDB Replica Sets
 ---
 
 
 ## Introduction
-You can [scale you database backend](/stack-features/database-replication.html) with Cloud 66 with a single click. All you need is to setup [managed backups](/add-ins/one-click-database-backup.html).
+You can [scale your database backend](/stack-features/database-replication.html) with Cloud 66 - you just need to setup [managed backups](/stack-features/db-backup.html).
 
-This is the same with MongoDB, however **you really need to know how MongoDB replica sets work and how to use them** before trying to scale up your MongoDB backend. This is to ensure continiuity of service without interruptions.
+When it comes to MongoDB replication, **you really need to know how MongoDB replica sets work and how to use them** before trying to scale up your MongoDB backend. This is to ensure continiuity of service without interruptions.
 
-### MongoDB Replica Sets
-There is quite a lot of excellent material about [MongoDB Replica Sets](http://docs.mongodb.org/manual/replication/) out on the internet. So we are not going to copy them here again. For the purpose of this document, we need to focus on how Cloud 66 scales your MongoDB servers out and how you can use them in your code.
+### MongoDB replica sets
+There is quite a lot of excellent material about [MongoDB Replica Sets](http://docs.mongodb.org/manual/replication/) on the internet. So we are not going to copy them here again. For the purpose of this document, we need to focus on how Cloud 66 scales your MongoDB servers out and how you can use them in your code.
 
-### How do we scale your MongoDB
+### How we scale your MongoDB
 When you select to scale up your MongoDB backend with Cloud 66, we take the following steps:
 
 - Backup your database
@@ -45,7 +45,7 @@ That's why once you scale your MongoDB up, we don't touch your configuration fil
 	<p>We stop modifying your MongoDB client configuration files (like mongoid.yml in Rails) after replication is enabled (Scale up).</p>
 </div>
 
-#### Environment Variables
+#### Environment variables
 Withou Replica Sets, you can connect to your MongoDB using environment variables that are available on all of your servers:
 
 * MONGODB\_ADDRESS
@@ -84,7 +84,7 @@ Once you have Replica Set enabled by scaling your MongoDB backend up, you will n
 	<p>Deployments might fail after Replica Sets are enabled if you don't change your client configuration to use the Replica Set.</p>
 </div>
 
-#### Configuring Mongoid
+#### Configuring mongoid
 As the most popular Ruby client for MongoDB, here is an example of how to change your `mongoid.yml` file to use a Replica Set.
 
 Before having a Replica Set, you had the following setup:

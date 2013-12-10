@@ -2,9 +2,9 @@
 layout: post
 template: two-col
 title:  "Configuring HAProxy for WebSocket"
-date:   2013-09-26 15:33:13
+date:   1965-09-26 15:33:13
 categories: how-to
-lead: HAProxy for WebSocket is supported by Cloud 66. This page details how to easily use it.
+lead: HAProxy for WebSocket is supported by Cloud 66
 ---
 
 

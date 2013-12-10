@@ -2,9 +2,9 @@
 layout: post
 template: two-col
 title:  "Faye on Cloud 66"
-date:   2013-09-26 15:33:13
+date:   1945-09-26 15:33:13
 categories: how-to
-lead: Cloud 66 supports Faye, the flexible publish-subscribe messaging system.
+lead: Use Faye, the flexible publish-subscribe messaging system
 ---
 
 

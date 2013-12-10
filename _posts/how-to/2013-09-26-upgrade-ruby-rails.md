@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Upgrade Ruby/Rails on your stack"
-date:   2013-09-26 15:33:13
+date:   1560-09-26 15:33:13
 categories: how-to
 lead: How to upgrade Ruby or Rails on your Stacks.
 ---

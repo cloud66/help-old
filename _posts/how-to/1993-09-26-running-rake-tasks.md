@@ -2,9 +2,9 @@
 layout: post
 template: two-col
 title:  "Running Rake Tasks"
-date:   2013-09-26 15:33:13
+date:   1870-09-26 15:33:13
 categories: how-to
-lead: You can use Cloud 66 to easily run rake tasks either automatically or manually on your stack
+lead: Run rake tasks automatically or manually on your stack
 ---
 
 

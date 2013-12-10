@@ -104,6 +104,11 @@ Scaling up a MongoDB sets up a [replica set](http://docs.mongodb.org/manual/repl
 
 The same rule applies to scaling down. Deleting one server from a five-server cluster, will result in two servers being removed from it to get the total down to three servers.
 
+<div class="notice">
+	<h3>Note</h3>
+	<p>Please see our documentation on <a href="/how-to/mongodb-replica-sets.html">MongoDB replica sets</a> for best practices.</p>
+</div>
+
 <h4 id="redis">Redis</h4>
 There is only [one master Redis server](http://redis.io/topics/replication) set up. All other servers will be setup as replicas and any change in them will be overwritten by the master.
 
