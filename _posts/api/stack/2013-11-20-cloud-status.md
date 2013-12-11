@@ -19,7 +19,7 @@ Gets the cloud status for the requesting and the given stack.
 
 One of the following values:
 
-<code>Unknown
+<code class="inline-code">Unknown
 Healthy
 Partial
 Faulty

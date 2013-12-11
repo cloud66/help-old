@@ -1,7 +1,7 @@
 ---
 layout: nil
 title:  'SSH Private Key'
-categories: 
+categories:
   - api
   - server
 type: 'GET'
@@ -21,8 +21,8 @@ This operation will send an email to the account users about the download of the
 
 A successful response will look like this:
 
-<code>{
-	"ok" : true, 
+<code class="inline-code">{
+	"ok" : true,
 	"private_key" : "-----BEGIN RSA PRIVATE KEY-----
 MIIEpAIBAAKCAQEA5f0rvHDvIGeSQG3Y07zo7hadQks41Mw7UaePUht8h12rGR1I
 C0y1Gp4Pe33ZG7LO0+pdMVnajdJmpfLUDtPslXqkcEli1I3Se5RbsFYEzimEhfta

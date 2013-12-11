@@ -1,7 +1,7 @@
 ---
 layout: nil
 title:  'Vital Signs'
-categories: 
+categories:
   - api
   - server
 type: 'GET'
@@ -19,7 +19,7 @@ Returns the vital signs history of a server. This is an array of CPU utilization
 
 JSON object containing 3 arrays one for each vital sign.
 
-<code>{
+<code class="inline-code">{
 	'Disk' : disk,
 	'Memory' : memory,
 	'CPU' : cpu
@@ -27,7 +27,7 @@ JSON object containing 3 arrays one for each vital sign.
 
 Each array is as follows:
 
-<code>[{
+<code class="inline-code">[{
 	"ts" : UTC\_date\_time,
 	"p" : data\_point\_value (utilized percentage)
 	"m" : data\_point\_text (in English)

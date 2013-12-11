@@ -28,5 +28,5 @@ Removes a device from the user account.
 
 ### Response
 
-<code>bad\_request - missing parameters
+<code class="inline-code">bad\_request - missing parameters
 not\_found - device not found</code>

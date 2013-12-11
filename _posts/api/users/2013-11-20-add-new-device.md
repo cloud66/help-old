@@ -32,6 +32,6 @@ All parameters are required.
 
 ### Response
 
-<code>bad\_request - missing parameters
+<code class="inline-code">bad\_request - missing parameters
 invalid\_resource - invalid device parameters
 conflict - device exists with the same token</code>

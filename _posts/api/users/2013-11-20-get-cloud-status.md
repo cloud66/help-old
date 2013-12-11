@@ -19,7 +19,7 @@ Gets the cloud status for the requesting user.
 
 One of the following values:
 
-<code>Unknown
+<code class="inline-code">Unknown
 Healthy
 Partial
 Faulty

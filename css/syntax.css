@@ -1,7 +1,7 @@
 .highlight code,
 .highlight pre {
-    color:#fdce93;
-    background-color:#333
+    color:#fdce93 !important;
+    background-color: #333 !important;
 }
 
 .highlight .hll {background-color:#222}

@@ -1,7 +1,7 @@
 ---
 layout: nil
 title:  'Force IP'
-categories: 
+categories:
   - api
   - server
 type: 'POST'
@@ -34,7 +34,7 @@ Please note that this API call will try to change the IP address but the change 
 
 Success or failure and the list of the IP addresses.
 
-<code>{
+<code class="inline-code">{
 	'ok' : true|false,
 	'message' : text message about the change,
 	'addresses' : list of the changed addresses

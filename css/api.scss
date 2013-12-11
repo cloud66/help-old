@@ -644,7 +644,7 @@ code {
 
 }
 
-#content .body code {
+.inline-code {
   border: 1px solid #e2e7ea;
   background: #eef1f2;
   border-radius: 2px;
@@ -654,7 +654,7 @@ code {
   padding: 0 1px;
 }
 
-#content .body p > code {
+p > .inline-code{
   display: block;
   padding: 15px;
   white-space: pre;
@@ -734,4 +734,17 @@ article + p {
   font-size: 18px;
   margin-top: 1em;
   text-transform: uppercase;
+}
+
+.body {
+
+    .highlight {
+        margin: 0 0 20px 0 !important;
+
+        pre {
+            padding: 0.8em;
+            border-radius: 2px;
+        }
+    }
+
 }
