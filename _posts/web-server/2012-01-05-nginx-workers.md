@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Nginx worker configurations"
+so_title: "nginx"
 date:   2033-09-24 10:51:22
 categories: web-server
 lead: The size of your instance affects your nginx configuration

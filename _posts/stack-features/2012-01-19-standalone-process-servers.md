@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Standalone process servers"
+so_title: "processes"
 nav_sticky: false
 date:   2082-01-25 16:27:22
 categories: stack-features

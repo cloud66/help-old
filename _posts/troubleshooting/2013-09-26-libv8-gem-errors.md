@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Errors when installing gem libv8"
+so_title: "libv8"
 date:   2013-09-26 15:33:13
 categories: troubleshooting
 lead: Installing the libv8 gem with a specific version can sometimes cause a little pain.

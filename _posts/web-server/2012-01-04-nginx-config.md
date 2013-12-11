@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Nginx configuration"
+so_title: "nginx"
 date:   2034-09-24 10:51:22
 categories: web-server
 lead: Nginx is configured automatically for your stack

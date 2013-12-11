@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Seeding your database"
+so_title: "seed"
 date:   1750-12-08 09:33:13
 categories: how-to
 lead: Seed your database with your data during deployment

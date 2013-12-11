@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Server monitoring"
+so_title: "monitoring"
 date:   2085-09-24 10:51:22
 categories: stack-features
 lead: We help you monitor your CPU, memory and disk space

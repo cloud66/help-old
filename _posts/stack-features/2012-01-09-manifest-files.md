@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Manifest files"
+so_title: "manifest"
 nav_sticky: false
 date:   2092-01-25 16:27:22
 categories: stack-features

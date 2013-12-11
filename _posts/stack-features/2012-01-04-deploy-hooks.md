@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Deployment hooks"
+so_title: "deployment hook"
 nav_sticky: false
 date:   2097-03-28 16:27:22
 categories: stack-features

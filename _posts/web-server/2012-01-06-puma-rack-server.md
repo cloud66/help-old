@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Puma rack server"
+so_title: "puma"
 date:   2030-09-24 10:51:22
 categories: web-server
 lead: Run your Rack apps with Puma

@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Redeployment hooks"
+so_title: "redeployment"
 nav_sticky: false
 date:   2090-01-25 16:27:22
 categories: stack-features

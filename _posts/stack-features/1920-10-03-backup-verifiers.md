@@ -2,8 +2,9 @@
 layout: post
 template: two-col
 title:  "Backup verifiers"
-date:   1975-10-03 14:17:13
-categories: how-to
+so_title: "verifier"
+date:   4000-10-03 14:17:13
+categories: stack-features
 lead: Ensure the highest quality of backup assurance
 ---
 

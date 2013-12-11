@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Cloud 66 WebSocket Support"
+so_title: "websocket"
 date:   1970-09-26 15:33:13
 categories: how-to
 lead: Implement WebSocket on your server

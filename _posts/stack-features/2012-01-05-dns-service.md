@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "DNS service"
+so_title: "dns"
 nav_sticky: false
 date:   2096-03-28 16:27:22
 categories: stack-features

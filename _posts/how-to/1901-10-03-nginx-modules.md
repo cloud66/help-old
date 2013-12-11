@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Add modules to Nginx"
+so_title: "nginx"
 date:   1995-10-03 14:26:13
 categories: how-to
 lead: Rebuild Nginx with modules of your choice

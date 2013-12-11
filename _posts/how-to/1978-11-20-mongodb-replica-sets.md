@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "MongoDB Replica Sets"
+so_title: "mongodb"
 date:   1910-11-20 01:01:01
 categories: how-to
 lead: Cloud 66 Supports MongoDB Replica Sets

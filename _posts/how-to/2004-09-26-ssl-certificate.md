@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "SSL Certificate"
+so_title: "ssl"
 nav: true
 date:   1650-09-24 10:51:22
 categories: how-to

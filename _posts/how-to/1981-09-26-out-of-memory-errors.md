@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Out of memory errors during deployment"
+so_title: "memory"
 date:   1905-09-26 15:33:13
 categories: how-to
 lead: You may not have enough memory during deployment

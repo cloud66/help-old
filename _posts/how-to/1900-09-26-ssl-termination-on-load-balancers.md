@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Add a SSL certificate on a load balancer"
+so_title: "ssl"
 date:   2000-09-26 15:33:13
 categories: how-to
 lead: The process differs for different load balancers

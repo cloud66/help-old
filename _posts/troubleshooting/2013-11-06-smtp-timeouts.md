@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "SMTP Timeouts on Amazon AWS EC2"
+so_title: "smtp"
 date:   2013-11-06 15:33:13
 categories: Troubleshooting
 lead: Amazon AWS EC2 enforces traffic throttling on SMTP causing intermittent timeouts when sending email.

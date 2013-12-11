@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Stack security"
+so_title: "security"
 nav_sticky: false
 date:   2084-01-25 16:27:22
 categories: stack-features

@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Database replication"
+so_title: "replication"
 nav_sticky: false
 date:   2099-04-01 16:27:22
 categories: stack-features

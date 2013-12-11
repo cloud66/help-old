@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Asset Pipeline Compilation"
+so_title: "asset pipeline"
 date:   1980-09-24 10:51:22
 categories: how-to
 lead: Improve performance in Rails applications => 3.1.0

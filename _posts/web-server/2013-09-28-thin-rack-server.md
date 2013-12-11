@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Thin rack server"
+so_title: "thin"
 date:   2029-09-24 10:51:22
 categories: web-server
 lead: Run your Rack apps with Thin

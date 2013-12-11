@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Maintenance mode"
+so_title: "maintenance"
 nav_sticky: false
 date:   2093-01-25 16:27:22
 categories: stack-features

@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Terminal Connection to your Servers"
+so_title: "terminal"
 date:  1600-09-26 15:33:13
 categories: how-to
 lead: You can connect to your servers from your terminal app or via the embedded terminal screen.

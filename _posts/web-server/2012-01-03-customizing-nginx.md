@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Customizing nginx configurations"
+so_title: "nginx"
 date:   2036-09-26 15:33:13
 categories: web-server
 lead: Cloud 66 generates and maintains your nginx configurations

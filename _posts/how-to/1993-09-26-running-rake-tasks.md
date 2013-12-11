@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Running Rake Tasks"
+so_title: "rake"
 date:   1870-09-26 15:33:13
 categories: how-to
 lead: Run rake tasks automatically or manually on your stack

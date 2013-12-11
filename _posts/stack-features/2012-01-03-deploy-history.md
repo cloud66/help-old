@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Deployment history"
+so_title: "deploy history"
 nav_sticky: false
 date:   2098-02-25 16:27:22
 categories: stack-features

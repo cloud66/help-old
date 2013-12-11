@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "PostGIS Installation"
+so_title: "postgis"
 date:   1900-09-26 15:33:13
 categories: how-to
 lead: You can install PostGIS automatically or manually

@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "StackScore"
+so_title: "stackscore"
 nav_sticky: false
 date:   2083-01-25 16:27:22
 categories: stack-features

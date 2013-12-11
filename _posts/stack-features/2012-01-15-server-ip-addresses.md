@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Server IP addresses"
+so_title: "ip addresses"
 nav_sticky: false
 date:   2086-01-25 16:27:22
 categories: stack-features

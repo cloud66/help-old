@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Scaling horizontally"
+so_title: "scaling"
 nav_sticky: false
 date:   2088-01-25 16:27:22
 categories: stack-features

@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Notifications"
+so_title: "notifications"
 nav_sticky: false
 date:   2091-03-29 16:27:22
 categories: stack-features

@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Faye on Cloud 66"
+so_title: "faye"
 date:   1945-09-26 15:33:13
 categories: how-to
 lead: Use Faye, the flexible publish-subscribe messaging system

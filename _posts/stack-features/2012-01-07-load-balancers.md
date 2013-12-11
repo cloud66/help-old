@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Load balancers"
+so_title: "load"
 nav_sticky: false
 date:   2094-01-28 16:27:22
 categories: stack-features

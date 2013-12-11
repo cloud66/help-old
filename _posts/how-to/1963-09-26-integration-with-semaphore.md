@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Integration with Semaphore"
+so_title: "semaphore"
 date:   1930-09-26 15:33:13
 categories: how-to
 lead: Use Semaphore for continuous integration with Cloud 66

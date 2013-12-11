@@ -2,6 +2,7 @@
 layout: post
 template: two-col
 title:  "Connect to your database servers"
+so_title: "database"
 date:   1960-09-26 15:33:13
 categories: how-to
 lead: There are two options when connecting to your database
