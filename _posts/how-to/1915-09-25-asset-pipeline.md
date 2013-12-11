@@ -7,8 +7,26 @@ categories: how-to
 lead: Improve performance in Rails applications => 3.1.0
 ---
 
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#requirements">Requirements</a>
+	</li>
+	<li>
+		<a href="#onoff">Enabling or disabling asset pipeline pre-compilation</a>
+            <ul>
+            	<li><a href="#application">Application.rb</a></li>
+         	</ul>
+            <ul>
+            	<li><a href="#manifest">Manifest.yml</a></li>
+         	</ul>
+	</li>
+	<li>
+		<a href="#modified">Compiling only modified assets</a>
+	</li>
+</ul>
 
-## Requirements
+<h2 id="requirements">Requirements</h2>
 
 Asset pipeline compilation uses *ExecJS* to run *JavaScript* code from within Ruby.
 
@@ -19,7 +37,7 @@ Libraries for Javascript compilation on your server that are currently supported
 2. **Node.js** &mdash; Cloud 66 will *automatically* install this on your server if you don't include "therubyracer" in your Gemfile.
 
 
-## Enabling/Disabling Asset Pipeline Precompilation
+<h2 id="onoff">Enabling or disabling asset pipeline pre-compilation</h2>
 
 You can enable/disable asset pipeline precompilation when you setup your stack or in your manifest file.
 
@@ -42,7 +60,7 @@ This will be hidden if you have enabled/disabled asset pipeline compilation in y
 </p>
 
 
-### application.rb
+<h3 id="application">Application.rb</h3>
 
 Asset Pipeline precompilation will be disabled if <code>config.assets.enabled</code> variable is assigned to *false* in your <code>application.rb</code> file:
 
@@ -54,15 +72,15 @@ config.assets.enabled = false
     <span class="highlighted">Setting this value to false means that your application doesn't use the asset pipeline at all, so precompilation is not relevant</span>.
 </p>
 
-### manifest.yml
+<h3 id="manifest">Manifest.yml</h3>
 
-Use our [Cloud 66 manifest file](/stack-features/manifest-files.html) to enable/disable asset pipeline precompilation using the following parameter with a true or false, find <td>an example</td> below:
+Use our [Cloud 66 manifest file](/stack-features/manifest-files.html) to enable/disable asset pipeline pre-compilation using the following parameter with a true or false, find <td>an example</td> below:
 
 <pre class="terminal">
 development:
-rails:
-configuration:
-use&#95;asset&#95;pipeline: true
+    rails:
+        configuration:
+            asset&#95;pipeline&#95;precompile: true
 </pre>
 
 There is an hierarchical order to set up asset pipeline precompilation. The top one will override the others.
@@ -73,6 +91,6 @@ There is an hierarchical order to set up asset pipeline precompilation. The top 
     <li>On Cloud 66 interface</li>
 </ol>
 
-## Compiling Only the Modified Assets
+<h2 id="modified">Compiling only modified assets</h2>
 
 Cloud 66 supports this through [Turbo Sprockets](https://github.com/ndbroadbent/turbo-sprockets-rails3). All you need to do is to add Turbo Sprocket gem to your Gemfile. This is only supported for Rails 3.2 and above.
