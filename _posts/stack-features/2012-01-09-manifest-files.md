@@ -41,19 +41,14 @@ lead: You can be more explicit about your stack composition
 	<li>
 		<a href="#app-specific">Application specific</a>
 	</li>
-	        <li>
+            <li>
                 <ul>
-                <li><a href="#rails">Rails</a></li>
+                <li><a href="#elastic">ElasticSearch</a></li>
                 </ul>
             </li>
             <li>
                 <ul>
-                <li><a href="#postgresql">PostgreSQL</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                <li><a href="#redis">Redis</a></li>
+                <li><a href="#haproxy">HAProxy</a></li>
                 </ul>
             </li>
             <li>
@@ -61,9 +56,34 @@ lead: You can be more explicit about your stack composition
                 <li><a href="#memcached">Memcached</a></li>
                 </ul>
             </li>
+	        <li>
+                <ul>
+                <li><a href="#mongo">MongoDB</a></li>
+                </ul>
+            </li>
             <li>
                 <ul>
-                <li><a href="#haproxy">HAProxy</a></li>
+                <li><a href="#passenger">Passenger</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#postgresql">PostgreSQL</a></li>
+                </ul>
+            </li>
+	        <li>
+                <ul>
+                <li><a href="#rabbit">RabbitMQ</a></li>
+                </ul>
+            </li>
+	        <li>
+                <ul>
+                <li><a href="#rails">Rails</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#redis">Redis</a></li>
                 </ul>
             </li>
 </ul>
@@ -129,14 +149,16 @@ You can select from the following environment:
 <h2 id="apps">Application type</h2>
 Cloud 66 currently recognizes the following application types in your manifest file:
 
-- <a href="#rails">Rails</a>
-- <a href="#mysql">MySQL</a>(MISSING)
-- <a href="#psql">PostgreSQL</a>
-- <a href="#mongo">MongoDB</a>(MISSING)
-- <a href="#redis">Redis</a>
-- <a href="#memcache">Memcached</a>
+- <a href="#elastic">ElasticSearch</a>
 - <a href="#haproxy">HAProxy</a>
+- <a href="#memcache">Memcached</a>
+- <a href="#mongo">MongoDB</a>
+- <a href="#passenger">Passenger</a>
 - <a href="#postgis">PostGIS</a>
+- <a href="#psql">PostgreSQL</a>
+- <a href="#rabbit">RabbitMQ</a>
+- <a href="#rails">Rails</a>
+- <a href="#redis">Redis</a>
 
 <h2 id="servers">Server type</h2>
 Every application defined in the manifest file must be bound to a server. Servers can be deployed specifically to host that application, [be shared between multiple applications](/stack-features/manifest-files.html#shared) (eg. Rails and MySQL on the same server) or be an [external server](/stack-features/manifest-files.html#external) (eg. using an external database).
@@ -270,6 +292,153 @@ External server definitions specify that the application is hosted on a server e
 
 <hr>
 
+<h3 id="elastic">ElasticSearch</h3>
+
+- **version**<br/>
+Specify the version of ElasticSearch you want to install (does not apply to external servers types)
+
+<pre class="terminal">
+... elasticsearch:
+        server: ...
+        configuration:
+            version: 0.90.7
+</pre>
+
+<hr>
+
+<h3 id="haproxy">HAProxy</h3>
+You can use the manifest file to make small configuration changes to the HAProxy load balancer deployed by Cloud 66. Currently they are limited to the following options:
+
+- **httpchk**<br/>
+The health-check configuration
+- **balance**<br/>
+The load balancing strategy
+- **errorfile&#95;\*** <br/>
+Location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer
+
+Note: To find out about the available options for each one of the values, please refer to [HAProxy manual](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt).
+
+<pre class="terminal">
+haproxy:
+    configuration:
+        httpchk: HEAD / HTTP/1.0 (default value)
+        balance: roundrobin (default value)
+        errorfile&#95;400: /etc/haproxy/errors/400.http
+        errorfile&#95;403: /etc/haproxy/errors/403.http
+        errorfile&#95;408: /etc/haproxy/errors/408.http
+        errorfile&#95;500: /etc/haproxy/errors/500.http
+        errorfile&#95;502: /etc/haproxy/errors/502.http
+        errorfile&#95;503: /etc/haproxy/errors/503.http
+        errorfile&#95;504: /etc/haproxy/errors/504.http
+</pre>
+
+<hr>
+
+<h3 id="memcached">Memcached</h3>
+
+#### shared&#95;group:
+
+You can use shared&#95;group to configure where your memcached server should be deployed (if it is used in your code).
+By default memcached will be deployed on your web servers. However, you can set these values under "shared&#95;group" to change this behavior:
+
+- web
+- db
+- redis
+
+This will move the memcached deployment to any of these server groups.
+
+#### configuration:
+You can use the manifest file to make small configuration changes to the Memcached server deployed by cloud66.
+
+- **memory**<br/>
+Specify maximum memory(in MB) that can be used. Default value is 64
+- **port**<br/>
+Specify connection port. Default value is 11211
+- **listen&#95;ip**<br/>
+Specify which IP address to listen on. Default value is 0.0.0.0
+
+<pre class="terminal">
+... memcached:
+        shared&#95;group: db
+        configuration:
+            memory: 1024
+            port: 11215
+            listen&#95;ip: 127.0.0.1
+</pre>
+
+<hr>
+
+<h3 id="mongo">MongoDB</h3>
+
+- **version**<br/>
+Specify the version of MongoDB you want to install (does not apply to external servers types)
+
+<pre class="terminal">
+... mongodb:
+        server: ...
+        configuration:
+            version: 2.4.8
+</pre>
+
+<hr>
+
+<h3 id="passenger">Passenger</h3>
+- **passenger_version**<br/>
+Specify the version of Passenger you'd like to use. Please replace the first line with your framework (eg. rails, padrino etc.).
+
+<pre class="terminal">
+... #{stack.stack_symbol}:
+        server: ...
+        configuration:
+            passenger_version: 4.0.25
+</pre>
+
+<h3 id="postgresql">PostgreSQL</h3>
+
+- **version**<br/>
+Specify the version of PostgreSQL you want to install (does not apply to external servers types)
+- **postgis**<br/>
+Specify whether to include PostGIS (Note: unlike the PG version, this can be added after initial database creation)
+
+<pre class="terminal">
+... postgresql:
+        server: ...
+        configuration:
+            version: 9.2.3
+            postgis: true
+</pre>
+
+#### PostGIS version configuration
+
+- **version**<br/>
+Specify the version of PostGIS and GEOS you want to install
+
+   <pre class="terminal">
+   production:
+       postgresql:
+           configuration:
+               postgis:
+                   version: 2.0.3
+               geos:
+                   version: 3.3.8
+   </pre>
+
+<hr>
+
+<h3 id="rabbit">RabbitMQ</h3>
+
+- **version**<br/>
+Specify the version of RabbitMQ you want to install (does not apply to external servers types)
+
+<pre class="terminal">
+... rabbitmq:
+        server: ...
+        configuration:
+            version: 3.2.1
+</pre>
+
+<hr>
+
 <h3 id="rails">Rails</h3>
 A Rails application type in the manifest file gives you fine control over things like the Ruby version or the server the rails application is deployed on.
 
@@ -315,38 +484,6 @@ If you want to, you can also specify the origin and methods for CORS.
 
 <hr>
 
-<h3 id="postgresql">PostgreSQL</h3>
-
-- **version**<br/>
-Specify the version of PostgreSQL you want to install (does not apply to external servers types - see below)
-- **postgis**<br/>
-Specify whether to include PostGIS (Note: unlike the PG version, this can be added after initial database creation)
-
-<pre class="terminal">
-... postgresql:
-        server: ...
-        configuration:
-            version: 9.2.3
-            postgis: true
-</pre>
-
-#### PostGIS version configuration
-
-- **version**<br/>
-Specify the version of PostGIS and GEOS you want to install
-
-   <pre class="terminal">
-   production:
-       postgresql:
-           configuration:
-               postgis:
-                   version: 2.0.3
-               geos:
-                   version: 3.3.8
-   </pre>
-
-<hr>
-
 <h3 id="redis">Redis</h3>
 
 - **version**<br/>
@@ -357,66 +494,4 @@ Specify the version of Redis you want to install (does not apply to external ser
         server: ...
         configuration:
             version: 2.6.10
-</pre>
-
-<hr>
-
-<h3 id="memcached">Memcached</h3>
-
-#### shared&#95;group:
-
-You can use shared&#95;group to configure where your memcached server should be deployed (if it is used in your code).
-By default memcached will be deployed on your web servers. However, you can set these values under "shared&#95;group" to change this behavior:
-
-- web
-- db
-- redis
-
-This will move the memcached deployment to any of these server groups.
-
-#### configuration:
-You can use the manifest file to make small configuration changes to the Memcached server deployed by cloud66.
-
-- **memory**<br/>
-Specify maximum memory(in MB) that can be used. Default value is 64
-- **port**<br/>
-Specify connection port. Default value is 11211
-- **listen&#95;ip**<br/>
-Specify which IP address to listen on. Default value is 0.0.0.0
-
-<pre class="terminal">
-... memcached:
-        shared&#95;group: db
-        configuration:
-            memory: 1024
-            port: 11215
-            listen&#95;ip: 127.0.0.1
-</pre>
-
-<hr>
-
-<h3 id="haproxy">HAProxy</h3>
-You can use the manifest file to make small configuration changes to the HAProxy load balancer deployed by Cloud 66. Currently they are limited to the following options:
-
-- **httpchk**<br/>
-The health-check configuration
-- **balance**<br/>
-The load balancing strategy
-- **errorfile&#95;\*** <br/>
-Location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer
-
-Note: To find out about the available options for each one of the values, please refer to [HAProxy manual](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt).
-
-<pre class="terminal">
-haproxy:
-    configuration:
-        httpchk: HEAD / HTTP/1.0 (default value)
-        balance: roundrobin (default value)
-        errorfile&#95;400: /etc/haproxy/errors/400.http
-        errorfile&#95;403: /etc/haproxy/errors/403.http
-        errorfile&#95;408: /etc/haproxy/errors/408.http
-        errorfile&#95;500: /etc/haproxy/errors/500.http
-        errorfile&#95;502: /etc/haproxy/errors/502.http
-        errorfile&#95;503: /etc/haproxy/errors/503.http
-        errorfile&#95;504: /etc/haproxy/errors/504.http
 </pre>
