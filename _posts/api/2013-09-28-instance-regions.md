@@ -1,15 +1,21 @@
 ---
-layout: nil
+layout: api_post
 title:  "Instance Regions"
-categories: 
+categories:
   - api
   - basics
 date: 2013-09-26
 ---
 
-<p class="lead">Cloud vendor instance regions</p>
+<div class="heading-wrap">
+    <h1>
+       Cloud vendor instance regions
+    </h1>
+</div>
 
-##### Amazon Web Services
+
+## Amazon Web Services
+
 <table class="table table-bordered table-striped">
   <colgroup>
     <col width="70%"/>
@@ -55,7 +61,7 @@ date: 2013-09-26
 </table>
 
 
-##### DigitalOcean
+## DigitalOcean
 <table class="table table-bordered table-striped">
   <colgroup>
     <col width="70%"/>
@@ -85,7 +91,7 @@ date: 2013-09-26
 </table>
 
 
-##### Joyent
+## Joyent
 <table class="table table-bordered table-striped">
   <colgroup>
     <col width="70%"/>
@@ -115,7 +121,7 @@ date: 2013-09-26
 </table>
 
 
-##### Linode
+## Linode
 <table class="table table-bordered table-striped">
   <colgroup>
     <col width="70%"/>
@@ -153,7 +159,7 @@ date: 2013-09-26
 </table>
 
 
-##### Rackspace
+## Rackspace
 <table class="table table-bordered table-striped">
   <colgroup>
     <col width="70%"/>
@@ -179,7 +185,7 @@ date: 2013-09-26
 </table>
 
 
-##### Telefonica Cloud
+## Telefonica Cloud
 <table class="table table-bordered table-striped">
   <colgroup>
     <col width="70%"/>

@@ -3851,7 +3851,7 @@ if ( !jQuery.support.submitBubbles ) {
 			});
 			// return undefined since we don't need an event listener
 		},
-		
+
 		postDispatch: function( event ) {
 			// If form was submitted by the user, bubble the event up the tree
 			if ( event._submit_bubble ) {
@@ -9610,6 +9610,8 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 })( window );
 
 });
+
+
 require.register("filter/index.js", function(exports, require, module){
 // Dependencies
 var $ = require('jquery');
@@ -9627,12 +9629,12 @@ $.expr[':'].Contains = function(a,i,m){
  */
 function Filter(list) {
     this.el = list;
-    
+
     // Filter input
     var form = $('<form>').attr({ 'action':'#' });
     var input = $('<input>').attr({ 'type':'text', 'placeholder':'Filter by keyword' });
     $(form).append(input).prependTo(this.el);
-    
+
     // Filter function
     var self = this;
     $(input).change(function () {
@@ -9643,7 +9645,7 @@ function Filter(list) {
         } else {
             $(self.el).find('li').show();
         }
-        
+
         // Hide titles when group is empty
         $(self.el).find('ul').each(function () {
             if (!$(this).find('li:visible').length) {
@@ -9656,60 +9658,49 @@ function Filter(list) {
         return false;
     })
     .keyup( function () { $(this).change(); });
-    
+
     return this;
 }
 });
+
 require.register("boot/index.js", function(exports, require, module){
-var $ = require('jquery'),
-    Filter = require('filter');
 
-// Collapsible articles
-$('article').each(function () {
-    var that = $(this);
-    var header = that.children('a');
-    var body = that.children('.body');
-    body.hide();
-    header.toggle(
-        function () { body.slideDown('fast'); that.addClass('active'); },
-        function () { body.slideUp('fast'); that.removeClass('active'); }
-    );
-});
+    var $ = require('jquery');
+    var Filter = require('filter');
 
-var anchor = window.location.hash.substring(1);
-if (anchor) $('article a[name="' + anchor + '"]').trigger('click');
-
-// Expanding the article on link click and scrolling down to it
-$('#sidebar a').each(function () {
-    var that = $(this);
-    var id = that.attr('href').substring(1);
-    that.click(function (e) {
-        var header = $('article a[name="'+ id +'"]')
-        if (!header.parent().hasClass('active')) header.trigger('click');
-        $('html, body').animate({ scrollTop: header.offset().top }, 'fast');
+    // Collapsible articles
+    $('article').each(function () {
+        var that = $(this);
+        var header = that.children('a');
+        var body = that.children('.body');
+        body.hide();
+        header.toggle(
+            function () { body.slideDown('fast'); that.addClass('active'); },
+            function () { body.slideUp('fast'); that.removeClass('active'); }
+        );
     });
 
-    // If we find a link in the body with similar anchor, add the same behavior
-    $('.body a[href="#'+ id +'"]').click(function (e) {
-        $('#sidebar a[href="#'+ id +'"]').trigger('click');
+    var anchor = window.location.hash.substring(1);
+    if (anchor) $('article a[name="' + anchor + '"]').trigger('click');
+
+    // Expanding the article on link click and scrolling down to it
+    $('#sidebar a').each(function () {
+        var that = $(this);
+        var id = that.attr('href').substring(1);
+        that.click(function (e) {
+            var header = $('article a[name="'+ id +'"]')
+            if (!header.parent().hasClass('active')) header.trigger('click');
+            $('html, body').animate({ scrollTop: header.offset().top }, 'fast');
+        });
+
+        // If we find a link in the body with similar anchor, add the same behavior
+        $('.body a[href="#'+ id +'"]').click(function (e) {
+            $('#sidebar a[href="#'+ id +'"]').trigger('click');
+        });
     });
-});
 
-// Hide all/Show all links
-var show = $('<a class=\'control show\'>Show all</a>');
-show.click(function () {
-  $('#content article:not(".active") > a').trigger('click');    
-});
-$('#content').prepend(show);
 
-var hide = $('<a class=\'control hide\'>Hide all</a>');
-hide.click(function () {
-  $('#content article.active > a').trigger('click');    
-});
-$('#content').prepend(hide);
-
-// Making our navigation sticky
-new Filter($('#sidebar > ul'));
+    new Filter($('#sidebar > ul'));
 });
 require.alias("boot/index.js", "carte/deps/boot/index.js");
 

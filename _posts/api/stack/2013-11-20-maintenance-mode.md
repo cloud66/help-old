@@ -1,5 +1,5 @@
 ---
-layout: nil
+layout: api_post
 title: 'Maintenance Mode'
 categories:
   - api
