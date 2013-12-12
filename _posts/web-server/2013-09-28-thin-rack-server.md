@@ -8,18 +8,23 @@ categories: web-server
 lead: Run your Rack apps with Thin
 ---
 
-
-<p class="weighted">
-    You need to choose your web server at the <strong>time of initial build</strong> of the stack. Changes to the web server will not be applied after your stack has initially been analyzed. <strong>Passenger is used by default</strong>.
-</p>
-
 ## Choosing Thin as your Rack server
+<div class="notice">
+	<h3>Important</h3>
+	<p>You need to choose your web server at the time of initial build of the stack. Changes to the web server will not be applied after your stack has initially been analyzed. Passenger is used by default.</p>
+</div>
+
 To run a Thin Rack server, add a line to your Procfile labeled as custom&#95;web. Here is an example:
 
 <pre class='terminal'>
 custom&#95;web: bundle exec thin start --socket /tmp/web&#95;server.sock --pid /tmp/web&#95;server.pid -e $RACK&#95;ENV -d
 </pre>
 Please take note that Thin is running in Daemon mode with the `-d` parameter.
+
+<div class="notice notice-warning">
+    <h3>Warning</h3>
+    <p>Should you have any issues, please ensure that you are using an up-to-date version of Thin with the correct configurations.</p>
+</div>
 
 ## Web server process management
 Cloud 66 uses the following signals to control custom web servers:
