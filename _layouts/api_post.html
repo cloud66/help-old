@@ -1,0 +1,35 @@
+---
+layout: api_html_tmpl
+bodyclass: api-post
+---
+
+{% include api_sidebar.html %}
+{% include api_banner.html %}
+
+<section id="content">
+    <article class="api-article" id="js-target-article">
+
+        {% if page.type %}
+            <div class="heading-wrap {{ page.type }}">
+                <h1>
+                    <code>
+                        <b>{{ page.type }}</b>
+                        {{ page.path }}
+                    </code>
+                    {{ page.title }}
+                </h1>
+            </div>
+        {% endif %}
+
+        {% if page.scope %}
+            <h3>Scope</h3>
+            <ul>
+                <li>{{page.scope}}</li>
+            </ul>
+         {% endif %}
+
+         <!-- start main post -->
+
+        {{ content }}
+    </article>
+</section>

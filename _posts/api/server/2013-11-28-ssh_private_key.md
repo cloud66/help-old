@@ -1,5 +1,5 @@
 ---
-layout: nil
+layout: api_post
 title:  'SSH Private Key'
 categories:
   - api

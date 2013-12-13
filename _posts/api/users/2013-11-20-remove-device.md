@@ -1,5 +1,5 @@
 ---
-layout: nil
+layout: api_post
 title:  'Remove Device'
 categories:
   - api
@@ -13,6 +13,7 @@ Removes a device from the user account.
 
 ### Request
 
+
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>
@@ -25,6 +26,7 @@ Removes a device from the user account.
 		<tr><td>token</td><td>Unique Device Token</td><td></td></tr>
 	</tbody>
 </table>
+
 
 ### Response
 
