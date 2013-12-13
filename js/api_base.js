@@ -1,12 +1,30 @@
-(function() {
+var CB = window.CB || {};
 
-    // Case-insensitive contains()
-    $.expr[':'].Contains = function(a,i,m){
-        return (a.textContent || a.innerText || '').toUpperCase().indexOf(m[3].toUpperCase())>=0;
+CB.api = ( function( $, window, document ) {
+
+    "use strict";
+    /*jshint devel:true, jquery:true*/
+    /*global alert $ document window*/
+
+    var init = function() {
+        console.log( 'init api' );
+
+        // Case-insensitive contains()
+        $.expr[':'].Contains = function(a,i,m){
+            return (a.textContent || a.innerText || '').toUpperCase().indexOf(m[3].toUpperCase())>=0;
+        };
+
+        new Filter( $('#sidebar > ul') );
+
+        navHighlight();
     };
 
-    var Filter = function( list ) {
-        this.el = list;
+    var navHighlight =  function() {
+         $('#links a[href="'+ window.location.pathname +'"]').addClass('active');
+    };
+
+    var Filter = function( $list ) {
+        this.el = $list;
 
         // Filter input
         var form = $('<form>').attr({ 'action':'#' });
@@ -15,8 +33,10 @@
 
         // Filter function
         var self = this;
+
         $(input).change(function () {
             var filter = $(this).val();
+
             if(filter) {
                 $(self.el).find('a:not(:Contains(' + filter + '))').parent().hide();
                 $(self.el).find('a:Contains(' + filter + ')').parent().show();
@@ -42,6 +62,10 @@
         return this;
     };
 
-    new Filter($('#sidebar > ul'));
 
-})();
+    // Return public
+    return {
+        init: init
+    };
+
+})( jQuery, this, document );
