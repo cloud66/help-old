@@ -76,6 +76,10 @@ date: 2013-09-26
 			<td>2</td>
 		</tr>
 		<tr>
+   			<td>Amsterdam, Netherlands (2nd Data Center)</td>
+			<td>5</td>
+		</tr>
+		<tr>
    			<td>New York, US</td>
 			<td>1</td>
 		</tr>
