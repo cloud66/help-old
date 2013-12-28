@@ -39,6 +39,11 @@ openssl req -new -key private&#95;key.key -out signing&#95;request.csr
 4. Provide this CSR file to your certificate authority, who will in turn provide you with a certificate (CRT) file.
 5. Use the original .key file together with this .crt file on Cloud 66.
 
+<div class="notice">
+    <h3>Important</h3>
+    <p>You cannot use passphrase protected certificate keys with Nginx. Learn how to <a href="/how-to/remove-passphrase-from-certificate-key-for-nginx.html">remove the passphrases from certificate keys</a>.</p>
+</div>
+
 ### Removing passphrase from SSL keys
 If your SSL key is protected with a passphrase, you can remove it using the following command:
 
