@@ -61,11 +61,14 @@ Note that some security packages may require a server restart. We don't automati
 
 Upgrading Ruby can be tricky. Our deployment process always deploys the latest release of Ruby on new servers, so all new stacks and scaled up servers will have the latest version of Ruby installed.
 
-We roll out automatic upgrades in case of severe security issues, and this will be made clear in your [StackScore](/stack-features/stackscore.html). You will need to redeploy your stack with the `Apply Upgrades` option from Deploy with Options menu item, which will apply the security patches and then redeploy your app as usual.
+We roll out automatic upgrades in case of security issues, and this will be made clear in your [StackScore](/stack-features/stackscore.html). You will need to redeploy your stack with the `Apply Upgrades` option from Deploy with Options menu item which will apply the security patches and then redeploy your app as usual.
+
+If you've updated your base ruby version in your Gemfile we will attempt to upgrade your ruby version to the latest patch version of your specified base version during the 'Apply Upgrades' step.
 
 <div class="notice notice-danger">
-    <h3>Note</h3>
-    <p>You will need to make sure the upgrades and patches applied work with your code before applying them. Upgrade and patch your development and test environments to ensure there are no issues.</p>
+    <h3>Important!</h3>
+    <p>It is your responsibility to ensure the upgrades and patches work with your code before applying them. Upgrade and patch your development and test environments to ensure there are no issues. Backup your environment via your Cloud provider where possible.</p>
+    <p>Although the in-place ruby base version upgrade path is provided for simplicity and ease, the <i>least risk strategy</i> remains to apply the version changes to a new stack in parallel, and switch over when appropriate (as per the immutable infrastructure guidelines).</p>
 </div>
 
 <h4 id="rails">Rails</h4>

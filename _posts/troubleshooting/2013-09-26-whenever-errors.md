@@ -8,7 +8,6 @@ categories: Troubleshooting
 lead: Whenever schedules that define certain path specific actions may have errors in your cron output similar to /bin/bash bundle command not found
 ---
 
-
 ## Problem
 The whenever schedules cause schedules to execute within a crontab context, however the context doesn't have access to the full PATH.
 You may see output from your cron jobs that looks similar to:
