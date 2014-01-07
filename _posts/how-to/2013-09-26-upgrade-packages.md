@@ -63,7 +63,7 @@ Upgrading Ruby can be tricky. Our deployment process always deploys the latest r
 
 We roll out automatic upgrades in case of security issues, and this will be made clear in your [StackScore](/stack-features/stackscore.html). You will need to redeploy your stack with the `Apply Upgrades` option from Deploy with Options menu item which will apply the security patches and then redeploy your app as usual.
 
-If you've updated your base ruby version in your Gemfile we will attempt to upgrade your ruby version to the latest patch version of your specified base version during the 'Apply Upgrades' step.
+If you've updated your base ruby version in your Gemfile we will attempt to upgrade your ruby version to the latest patch version of your specified base version during the 'Apply Upgrades' step - please note that there may be some server downtime during the ruby base version upgrade operation.
 
 <div class="notice notice-danger">
     <h3>Important!</h3>
