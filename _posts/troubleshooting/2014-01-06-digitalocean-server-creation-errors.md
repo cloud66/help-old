@@ -12,7 +12,7 @@ lead: Errors can occur during server creation under DigitalOcean. This page deta
 During a Cloud 66 deployment, if you've connected up your DigitalOcean API credentials and are deploying to your DigitalOcean cloud, we will use the DigitalOcean API to create your specified servers.
 This process may occasionally fail however due to one of the following reasons:
 
-### "HTTP Error 403"
+### "HTTP Error 401" *or* "HTTP Error 403"
 
 This error indicates that your credentials are no-longer correct for your API account. When you initially enter your DigitalOcean API credentials into Cloud 66 we validate that those credentials are correct. However, it is possible that your credentials have been altered on the DigitalOcean side (either by the user, a memeber of their team or in some cases by DigitalOcean themselves)
 
