@@ -23,7 +23,7 @@ The resolution for this error is to update your DigitalOcean Cloud API credentia
 	<p>At the time of writing, viewing your API credentials via the DigitalOcean UI will cause a new set of credentials to be generated.</p>
 </div>
 
-### "HTTP Error 404"
+### "HTTP Error 404" *or* "Size is not available in this region"
 
 This error indicates that the action we've attempted to perform is not currently possible. The reasons for this error are varied - below are the most common causes.
 
