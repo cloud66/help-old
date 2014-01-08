@@ -67,7 +67,7 @@ If you've updated your base ruby version in your Gemfile we will attempt to upgr
 
 <div class="notice notice-danger">
     <h3>Important!</h3>
-    <p>It is your responsibility to ensure the upgrades and patches work with your code before applying them. Upgrade and patch your development and test environments to ensure there are no issues. Backup your environment via your Cloud provider where possible.</p>
+    <p>Please ensure that the upgrades and patches work with your code before applying them. Upgrade and patch your development and test environments to ensure there are no issues. Backup your environment via your Cloud provider where possible.</p>
     <p>Although the in-place ruby base version upgrade path is provided for simplicity and ease, the <i>least risk strategy</i> remains to apply the version changes to a new stack in parallel, and switch over when appropriate (as per the immutable infrastructure guidelines).</p>
 </div>
 
