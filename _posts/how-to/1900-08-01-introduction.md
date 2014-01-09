@@ -57,6 +57,7 @@ Tutorials, technical how-tos or FAQs, here is a list of articles that you might 
 * [Configuring HAProxy for WebSockets](/how-to/haproxy-for-websocket.html)
 * [Add a SSL certificate on a load balancer](/how-to/ssl-termination-on-load-balancers.html)
 * [Add real-time communications to your app with Faye](/how-to/implementing-faye.html)
+* [Customize your Nginx configuration with CustomConfig](/how-to/nginx-customconfig.html)
 
 ### Security
 
