@@ -12,7 +12,7 @@ lead: Customize Nginx Configuration
 
 You can customize the nginx configuration on your servers using [CustomConfig](/stack-features/custom-config.html).
 
-CustomConfig uses the [Liquid templating language](http://liquidmarkup.org/). You can find many incredible guides and tutorials into the Liquid synatax around the web, but the syntax is easy enough to pick up in minutes.
+CustomConfig uses the [Liquid templating language](http://liquidmarkup.org/). You can find many incredible guides and tutorials into the Liquid syntax around the web, but the syntax is easy enough to pick up in minutes.
 
 The following variables are available to use in nginx CustomConfig.
 
