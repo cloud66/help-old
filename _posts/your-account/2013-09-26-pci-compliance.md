@@ -19,7 +19,7 @@ We access your servers using Secure Shell (SSH) protocol and SSH private/public 
 
 You can provide your own keys when using Cloud 66 Bring Your Own Server product.
 
-Our connection to your servers is done only through a set of [pre-announced IP addresses](https://www.cloud66.com/help/security).
+Our connection to your servers is done only through a set of [pre-announced IP addresses](/stack-features/stack-security.html).
 
 ### Where are the SSH keys stored on Cloud 66?
 The SSH keys are stored on an isolated storage in Cloud 66 network. The keys are encrypted with a key and are only readable using the secure key.
