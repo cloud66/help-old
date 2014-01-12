@@ -10,21 +10,21 @@ lead: Customize Deployed Configuration Files
 
 ## CustomConfig
 
-CustomConfig allows you to edit and modify compoent configuration templates used by Cloud 66 to configure your servers. At the moment it is enabled for nginx but more configuration templates will be enabled soon.
+CustomConfig allows you to edit and modify component configuration templates used by Cloud 66 to configure your servers. At the moment it is enabled for Nginx and HAProxy. More configuration templates are forthcoming.
 
-To use nginx as an example, go to your Web Servers group detail page and click on the CustomConfig icon on the top right.
+To use Nginx as an example, go to your Web Servers group detail page and click on the CustomConfig icon in the top right corner.
 
 ![Server Groups](http://cdn.cloud66.com/images/help/server_group.png)
 
 ![CustomConfig](http://cdn.cloud66.com/images/help/custom_config.png)
 
-Now you can see the [Liquid](http://liquidmarkup.org/) template used to build the nginx configuration when nginx is deployed during your stack built or reconfigured.
+Now you can see the [Liquid](http://liquidmarkup.org/) template used to build the Nginx configuration when Nginx is deployed during your stack built or reconfigured.
 
 ![CustomConfig Liquid](http://cdn.cloud66.com/images/help/custom_config_liquid.png)
 
 CustomConfig uses the [Liquid templating language](http://liquidmarkup.org/) developed by [Shopify](http://www.shopify.com/) and used by many websites. There are many good resources on the web on how to use the Liquid syntax. 
 
-You can read more about [Nginx CustomConfig in detail](/how-to/nginx-customconfig.html) if you want.
+Read more detail about [Nginx CustomConfig here](/how-to/nginx-customconfig.html) or [HAProxy CustomConfig here](/how-to/haproxy-customconfig.html).
 
 Once you're done with editing your template, you can Preview the results by clicking on the Preview button.
 

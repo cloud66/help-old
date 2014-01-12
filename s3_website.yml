@@ -41,6 +41,8 @@ redirects:
   add-ins/one-click-database-backup.html: stack-features/db-backup.html
   how-to/setup-hipchat-connection.html: stack-features/notifications.html
   stack-features/users-and-permissions.html: getting-started/team-accounts.html
+  web-server/customizing-nginx.html: how-to/nginx-customconfig.html
+
 #   about.php: about.html
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
 

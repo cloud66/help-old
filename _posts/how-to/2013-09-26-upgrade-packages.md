@@ -67,7 +67,7 @@ If you've updated your base ruby version in your Gemfile we will attempt to upgr
 
 <div class="notice notice-danger">
     <h3>Warning!</h3>
-    <p>If you are upgrading your ruby base version then you must put your stack in maintenance mode first! Not doing this could result in exposing ENV vars via the passenger error page depending on your configuration!</p>
+    <p>If you are upgrading your ruby base version then you should put your stack in maintenance mode first as Passenger-based stacks (and possibly others) will have some down-time during the upgrade.</p>
 </div>
 
 <div class="notice notice-danger">
