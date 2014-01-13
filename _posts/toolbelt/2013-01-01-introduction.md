@@ -19,7 +19,7 @@ You can install the Cloud 66 Toolbelt using [RubyGems](http://rubygems.org/):
 $ gem install c66
 {% endhighlight %}
 
-## Getting started
+## Initialization
 Toolbelt is a command line tool that becomes available throughout your system.
 
 Before using the Toolbelt, you are required to link it to your Cloud 66 account. You can do this by issuing the `init` command:
@@ -30,10 +30,12 @@ $ c66 init
 
 This returns a URL that you need to copy and paste into your browser.
 
-<pre class="terminal">
-https://www.cloud66.com/oauth/authorize?response_type=code&amp;client_id=173...664c&amp;redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&amp;scope=public+redeploy+admin</pre>
+Following this URL will redirect you to your account (you may need to login) and ask for your authorization to allow the Toolbelt to view, edit, redeploy and administrate your stacks and servers.
 
-This will redirect you to your account (you might need to login) and ask for your authorization to allow the Toolbelt to view, edit, redeploy and administrate your stacks and servers.
+<div class="notice">
+	<h3>Advanced</h3>
+    <p>The authorization information is stored in the <b>~/.cloud66/toolbelt.json</b> file. Removing this file will remove the authorization code from your client.</p>
+</div>
 
 Once authorized, you will be presented with a long `code` which you are prompted for in the Toolbelt.
 
@@ -44,9 +46,13 @@ Once authorized, you will be presented with a long `code` which you are prompted
     <p>To deauthorize the toolbelt, login to your Cloud 66 account and click on the <i>Revoke access</i> button under your <i>Account</i> page.</p>
 </div>
 
-Your Toolbelt is now authorized to access to your account and is ready for use.
+## Help and information
+You can use `c66 help` to list available commands, and `c66 info` to retrieve information about your toolbelt.
 
-<div class="notice">
-	<h3>Advanced</h3>
-    <p>The authorization information is stored in the <b>~/.cloud66/toolbelt.json</b> file. Removing this file will remove the authorization code from your client.</p>
-</div>
+## Contributing
+
+1. [Fork it](https://github.com/cloud66/c66toolbelt)
+2. Create your feature branch `git checkout -b my-new-feature`
+3. Commit your changes `git commit -am 'Add some feature'`
+4. Push to the branch `git push origin my-new-feature`
+5. Create new Pull Request

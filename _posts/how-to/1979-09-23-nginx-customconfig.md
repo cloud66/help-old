@@ -3,9 +3,9 @@ layout: post
 template: two-col
 title:  "Nginx CustomConfig"
 so_title: "custom config"
-date:   1560-08-26 15:33:13
+date:   1907-08-26 15:33:13
 categories: how-to
-lead: Customize Nginx Configuration
+lead: Customize your Nginx configuration
 ---
 
 ## Nginx CustomConfig

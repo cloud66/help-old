@@ -3,14 +3,14 @@ layout: post
 template: two-col
 title:  "CustomConfig™"
 so_title: "custom config"
-date:   2013-01-28 10:51:22
+date:   3999-01-28 10:51:22
 categories: stack-features
-lead: Customize Deployed Configuration Files
+lead: Customize deployed configuration files
 ---
 
 ## CustomConfig
 
-CustomConfig allows you to edit and modify component configuration templates used by Cloud 66 to configure your servers. At the moment it is enabled for Nginx and HAProxy. More configuration templates are forthcoming.
+CustomConfig allows you to edit and modify component configuration templates used by Cloud 66 to configure your servers. This is currently available for Nginx and HAProxy configurations, and more configuration templates are forthcoming.
 
 To use Nginx as an example, go to your Web Servers group detail page and click on the CustomConfig icon in the top right corner.
 
@@ -24,9 +24,9 @@ Now you can see the [Liquid](http://liquidmarkup.org/) template used to build th
 
 CustomConfig uses the [Liquid templating language](http://liquidmarkup.org/) developed by [Shopify](http://www.shopify.com/) and used by many websites. There are many good resources on the web on how to use the Liquid syntax. 
 
-Read more detail about [Nginx CustomConfig here](/how-to/nginx-customconfig.html) or [HAProxy CustomConfig here](/how-to/haproxy-customconfig.html).
+Please see our documentation for more details about [Nginx CustomConfig](/how-to/nginx-customconfig.html) and [HAProxy CustomConfig](/how-to/haproxy-customconfig.html).
 
-Once you're done with editing your template, you can Preview the results by clicking on the Preview button.
+Once you're done with editing your template, you can preview the results by clicking on the <i>Preview</i> button.
 
 ![CustomConfig Preview](http://cdn.cloud66.com/images/help/custom_config_preview.png)
 
@@ -35,10 +35,10 @@ Once you're done with editing your template, you can Preview the results by clic
     <p>Preview is generated with dummy data about your server (like the number of cores or the path for different binaries).</p>
 </div>
 
-When you are happy with the results, enter a Commit Message and Press the Commit to Server button. This will compile the configuration with real data and push it to all applicable servers in your stack. It also performs any post commit steps necessary like reloading nginx with the new configuration file so your changes can take effect.
+When you are happy with the results, enter a commit message and press the <i>Commit to Server</i> button. This will compile the configuration with real data and push it to all applicable servers in your stack. It also performs any post commit steps necessary like reloading Nginx with the new configuration file, putting your changes into effect.
 
-This process takes place in the background and might take some time to complete depending on the number of servers on a stack and the nature of the configuration.
+This process takes place in the background and might take some time to complete depending on the number of servers in a stack and the nature of the configuration.
 
-You can now see the histroy of your configuration changes with simple colored diff views alongside dates and comments.
+You can subsequently see the history of your configuration changes with simple colored diff views alongside dates and comments.
 
 ![CustomConfig Diff History](http://cdn.cloud66.com/images/help/cusom_config_diff.png)
