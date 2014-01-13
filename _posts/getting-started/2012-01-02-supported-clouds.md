@@ -21,6 +21,7 @@ Cloud 66 currently supports the following cloud providers:
     <li><a href="/cloud-providers/cloud-linode.html" target="_blank">Linode</a></li>
     <li><a href="/cloud-providers/cloud-rackspace.html" target="_blank">Rackspace</a></li>
     <li><a href="/cloud-providers/cloud-telefonica.html" target="_blank">Telefonica</a></li>
+    <li><a href="/cloud-providers/cloud-vexxhost.html" target="_blank">Vexxhost</a></li>
 </ul>
 
 By providing us with your unique cloud provider API keys, Cloud 66 can provision new servers under your account.

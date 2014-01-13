@@ -8,21 +8,26 @@ lead: Link stacks to folders for easier use of the toolbelt
 ---
 
 ## Linking stacks to folders
-Your stacks are deployed from your codebase, which resides in a folder in your development environment. You can run the Toolbelt from anywhere on the system, regardless of which folder you are in, but it's easier if you link a folder to a stack to make it easier to use. This means that all commands you run with the Toolbelt will run on a specific stack when you are in that folder.
+A stack is deployed based on your codebase, which resides in a folder in your development environment. You can run the Toolbelt from anywhere on the system, regardless of which folder you are in, but it's easier if you link a folder to a stack to make it easier to use. This means that all commands you run with the Toolbelt will run on a specific stack when you are in that folder.
 
-You can link the current folder to a stack UID with the `save` command. 
+Link your current folder to a stack UID with the `save` command.
 
 {% highlight bash %}
 $ cd ~/work/stack_a
 $ c66 save --stack 95b1645ed03e4d14a24c91456566ba63
 {% endhighlight %}
 
-Once you've done that, the `~/work/stack_a` is associated with Stack A going forward. Now you can simply change to `~/work/stack_a` folder and just run the deploy command without the `--stack` parameter.
+Doing so will associate `~/work/stack_a` with Stack A, meaning that you can run commands in `~/work/stack_a` without the `--stack` parameter.
 
 {% highlight bash %}
 $ cd ~/work/stack_a
 $ c66 deploy
 {% endhighlight %}
+
+There are two ways to retrieve your stack UID:
+
+1. Use the `c66 list` command
+2. Under the <i>Stack Information</i> item of the stack menu in the web dashboard
 
 ### Example
 Let's imagine the following:
@@ -44,7 +49,7 @@ $ c66 deploy --stack 95b1645ed03e4d14a24c91456566ba63
 $ c66 deploy --stack b0dd672e13e14973bd6aa5469912d3d3
 {% endhighlight %}
 
-However, it would be much easier if you could link Stack A to `~/work/stack_a` and Stack B to `~/work/stack_b` and deploy each stack from it's own folder. You can link the folder to the stack like this:
+However, it would be much easier if you could link Stack A to `~/work/stack_a` and Stack B to `~/work/stack_b` and deploy each stack from its own folder. You can link the folder to the stack:
 
 {% highlight bash %}
 $ cd ~/work/stack_a
