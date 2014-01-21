@@ -18,11 +18,11 @@ To use Nginx as an example, go to your Web Servers group detail page and click o
 
 ![CustomConfig](http://cdn.cloud66.com/images/help/custom_config.png)
 
-Now you can see the [Liquid](http://liquidmarkup.org/) template used to build the Nginx configuration when Nginx is deployed during your stack built or reconfigured.
+Now you can see the [Liquid](http://www.liquidmarkup.org/) template used to build the Nginx configuration when Nginx is deployed during your stack built or reconfigured.
 
 ![CustomConfig Liquid](http://cdn.cloud66.com/images/help/custom_config_liquid.png)
 
-CustomConfig uses the [Liquid templating language](http://liquidmarkup.org/) developed by [Shopify](http://www.shopify.com/) and used by many websites. There are many good resources on the web on how to use the Liquid syntax. 
+CustomConfig uses the [Liquid templating language](http://www.liquidmarkup.org/) developed by [Shopify](http://www.shopify.com/) and used by many websites. There are many good resources on the web on how to use the Liquid syntax.
 
 Please see our documentation for more details about [Nginx CustomConfig](/how-to/nginx-customconfig.html) and [HAProxy CustomConfig](/how-to/haproxy-customconfig.html).
 
