@@ -70,6 +70,10 @@ To enable replication, click on the DB Server group of your stack and click on t
 	<p>The process of database replication will disrupt your database serving your application for the duration of scaling up and scaling down.</p>
 </div>
 
+The disruption time depends entirely on your database type and size, and different databases may require a restart and/or a complete backup in order to warm-up the new server. This disruption will occur every time you scale up your server.
+
+For example, during a PostgreSQL scale-up, after reconfiguring the primary database and restarting it, a `pg_start_backup()` command is issued to output data in order to populate the new server. Your database is unavailable during this procedure. We subsequently issue a `pg_stop_backup` command that makes your database available again.
+
 <h2 id="how-it-works">How it works</h2>
 
 - We fire up another server in your cloud

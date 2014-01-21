@@ -5,7 +5,7 @@ title:  "Post-deployment options"
 nav_sticky: true
 nav: true
 nav_prev: "/getting-started/pre-deployment.html"
-nav_next: "/getting-started/pricing.html"
+nav_next: "/getting-started/security.html"
 date:   2037-11-20 10:51:22
 categories: getting-started
 lead: An overview of your post-deployment options
@@ -30,7 +30,7 @@ Your stack is deployed with a fully-configured firewall and intruder detection s
 You can see an overview of these settings on you [stack security page](/stack-features/stack-security.html).
 
 ## Monitoring
-All servers provisioned and deployed with Cloud 66 are [monitored](/stacks/server-monitoring.html) for CPU, memory and disk space, and this information is easily available from your dashboard.
+All servers provisioned and deployed with Cloud 66 are [monitored](/stack-features/server-monitoring.html) for CPU, memory and disk space, and this information is easily available from your dashboard.
 
 ## Deploy history and rollbacks
 This feature makes it possible for you to see an overview of your deployment history, as well as rollback any deployment that might have failed.

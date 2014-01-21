@@ -12,7 +12,7 @@ categories: stacks
 lead: Cloud 66 makes it easy to deploy and maintain Padrino apps
 ---
 
-Cloud 66 supports stacks based on the [Padrino framework](http://www.pardrinorb.com/), a light-weight web framework built upon [Sinatra](/stacks/sinatra-stacks.html).
+Cloud 66 supports stacks based on the [Padrino framework](http://www.padrinorb.com/), a light-weight web framework built upon [Sinatra](/stacks/sinatra-stacks.html).
 
 ## Configuration
 
@@ -50,7 +50,7 @@ development:
 
 ## Database
 
-If [databases are detected](/stacks/databases.html), they will automatically be provisioned as required (including the database itself), and [environment variables](http://help.cloud66.com/stack-features/assign-env-vars.html) will be created. You will need to update your code with the environment variables you wish to use, for example `MYSQL_URL`.
+If [databases are detected](/stacks/databases.html), they will automatically be provisioned as required (including the database itself), and [environment variables](/stack-features/env-vars.html) will be created. You will need to update your code with the environment variables you wish to use, for example `MYSQL_URL`.
 
 Should you wish to change the database username/password after build, you will have to do this manually, which will involve recreating backup jobs to reflect the new values.
 

@@ -10,7 +10,7 @@ lead: Customize your HAProxy configuration
 
 ## HAProxy CustomConfig
 
-You can customize the HAProxy configuration on your HAProxy server using [CustomConfig](/stack-features/custom-config.html). For example, you can follow these instructions to [allow for SSL termination](http://localhost:4000/how-to/ssl-termination-on-load-balancers.html#haproxy) with your HAProxy setup.
+You can customize the HAProxy configuration on your HAProxy server using [CustomConfig](/stack-features/custom-config.html). For example, you can follow these instructions to [allow for SSL termination](/how-to/ssl-termination-on-load-balancers.html#haproxy) with your HAProxy setup.
 
 CustomConfig uses the [Liquid templating language](http://liquidmarkup.org/). You can find many incredible guides and tutorials into the Liquid syntax around the web, but the syntax is easy enough to pick up in minutes.
 
