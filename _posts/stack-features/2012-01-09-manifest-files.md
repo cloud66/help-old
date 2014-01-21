@@ -249,12 +249,12 @@ Cloud vendor to fire up the server on. Valid values:
 **region**
 (_Optional, BYOC Only_)
 
-[Data center region](/api/instance-regions.html) to fire up the server in.
+[Data center region](/api/basics/instance-regions.html) to fire up the server in.
 
 **size**
 (_Optional, BYOC Only_)
 
-[Size of the server instance](/api/instance-names.html) created.
+[Size of the server instance](/api/basics/instance-names.html) created.
 
 **address**
 (_Optional, BYOS Only_)
@@ -279,7 +279,7 @@ Address of the server. For BYOS servers, <i>address</i>, <i>username</i> and <i>
 **username**
 (_Optional, BYOS Only_)
 
-Username for the server. This is only applicable to Bring Your Own Server setup and should have be a sudoer root user on the box.
+Username for the server. This is only applicable to Bring Your Own Server setups, and you need to be a sudoer root user on the box.
 
 **ssh_key_name**
 (_Optional, BYOS Only_)

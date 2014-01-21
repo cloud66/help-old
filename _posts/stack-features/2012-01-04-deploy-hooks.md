@@ -114,6 +114,20 @@ There is no upper limit to the number of actions that can be defined.
 
 As you can see from the **after&#95;rails** deploy hook action above, there are additional fields/options available that you can specify. See below for details on all the fields.
 
+If you would like to repeat multiple deployment hooks for different environments, you can do the following:
+
+<pre class="terminal">
+development: &default
+    first_thing:
+      - source: /.cloud66/script.sh
+        destination: /tmp/script.sh
+        target: rails
+        execute: true
+        sudo: true
+production:
+    <<: *default
+</pre>
+
 <h2 id="hooks">Hook Points</h2>
 <div class="notice">
 

@@ -12,10 +12,10 @@ lead: Cloud 66 Supports MongoDB Replica Sets
 ## Introduction
 You can [scale your database backend](/stack-features/database-replication.html) with Cloud 66 - you just need to setup [managed backups](/stack-features/db-backup.html).
 
-When it comes to MongoDB replication, **you really need to know how MongoDB replica sets work and how to use them** before trying to scale up your MongoDB backend. This is to ensure continiuity of service without interruptions.
+When it comes to MongoDB replication, **you really need to know how MongoDB replica sets work and how to use them** before trying to scale up your MongoDB backend. This is to ensure continuity of service without interruptions.
 
 ### MongoDB replica sets
-There is quite a lot of excellent material about [MongoDB Replica Sets](http://docs.mongodb.org/manual/replication/) on the internet. So we are not going to copy them here again. For the purpose of this document, we need to focus on how Cloud 66 scales your MongoDB servers out and how you can use them in your code.
+There is quite a lot of excellent material about [MongoDB Replica Sets](http://docs.mongodb.org/manual/replication/) on the Internet, so we're not going to repeat them here. For the purpose of this document, we need to focus on how Cloud 66 scales your MongoDB servers out and how you can use them in your code.
 
 ### How we scale your MongoDB
 When you select to scale up your MongoDB backend with Cloud 66, we take the following steps:
@@ -24,14 +24,14 @@ When you select to scale up your MongoDB backend with Cloud 66, we take the foll
 - Fire up two more server (MongoDB replica sets require an odd number of servers - 3, 5,...)
 - Deploy MongoDB on the new servers
 - Restore the backup on the new servers
-- Configure all MongoDB instanses in the stack to act as a single Replica Set
-- Generate appropriate environment variables with the addresses of the Replica Set servers.
+- Configure all MongoDB instances in the stack to act as a single Replica Set
+- Generate appropriate environment variables with the addresses of the Replica Set servers
 
-Backups need to keep their referetial integrity. Otherwise different parts of the database might be backed up at differe times. This might affect database performance. Also configuring the servers involved will result in interruption to your service during this step.
+It is important for backups to keep their referential integrity, otherwise different parts of the database might be backed up at different times, affecting database performance. Configuring Replica sets will involve an interruption to your service for the servers in question.
 
 <div class="notice notice-danger">
 	<h3>Note</h3>
-	<p>The process of database replication will disrupt your database serving your application for the duration of scaling up and sclaing down.</p>
+	<p>The process of database replication will disrupt your database serving your application for the duration of scaling up and scaling down.</p>
 </div>
 
 This interruption is during the backup and configuration steps of the scaling and not during the long process of firing up and building the servers.
@@ -39,7 +39,7 @@ This interruption is during the backup and configuration steps of the scaling an
 ### How to use the Replica Set in your code
 All MongoDB drivers support Replica Sets. This means you can pass the list of MongoDBs in your Replica Set to them and they will take care of the rest. However, switching from a single MongoDB to a Replica Set is something you need to test and be sure about. You really shouldn't make such a big change in your stack infrastructure with a click of a button!
 
-That's why once you scale your MongoDB up, we don't touch your configuration files. This is to allow you to configure the client the way you see fit and go live with your replicated database backend when you are ready.
+That's why we won't touch your configuration files after you scale your MongoDB up. This is to allow you to configure the client the way you see fit and go live with your replicated database backend when you are ready.
 
 <div class="notice">
 	<h3>Note</h3>
@@ -47,7 +47,7 @@ That's why once you scale your MongoDB up, we don't touch your configuration fil
 </div>
 
 #### Environment variables
-Withou Replica Sets, you can connect to your MongoDB using environment variables that are available on all of your servers:
+Without Replica Sets, you can connect to your MongoDB using environment variables that are available on all of your servers:
 
 * MONGODB\_ADDRESS
 * MONGODB\_ADDRESS\_INT

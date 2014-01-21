@@ -13,7 +13,7 @@ Please visit Linode to learn more about their <a href="http://www.linode.com/ava
 
 <div class="notice">
     <h3>Note</h3>
-    <p>In order to enable Linode internal networking, you need to manually modify your "/etc/network/interfaces" file as described in the <a href="https://library.linode.com/networking/configuring-static-ip-interfaces">Linode documentation</a>.</p>
+    <p>Linode private networking is automatically enabled for all servers deployed by Cloud 66. This means that servers can communicate freely between each other on the same network without counting towards bandwidth costs.</p>
 </div>
 
 Once you have signed up, please add your API keys to your account while [building a new stack](/getting-started/your-first-stack.html):
