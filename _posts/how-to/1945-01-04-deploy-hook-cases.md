@@ -4,7 +4,7 @@ template: two-col
 title:  "Deployment hook use cases"
 so_title: "deployment hook"
 nav_sticky: false
-date:   2097-03-28 16:27:22
+date:   1954-12-28 16:27:22
 categories: how-to
 lead: Common use-cases and examples for deployment hooks
 ---
