@@ -44,7 +44,9 @@ lead: Take action at various points during build and/or deployment
 	</li>
 </ul>
 
-A simple use-case for a deployment hook would be to copy a file to a target location on your server and executing at some point during your deployment. For example of other use-cases, feel free to have a look at or contribute to our <a href="https://github.com/cloud66/deploy_hooks" target="_blank">deploy hooks repository</a>.
+A simple use-case for a deployment hook would be to copy a file to a target location on your server and executing at some point during your deployment.
+
+For examples of other use-cases, please see our more detailed [use-case documentation](/how-to/deploy-hook-cases.html) or feel free to have a look at or contribute to our <a href="https://github.com/cloud66/deploy_hooks" target="_blank">deploy hooks repository</a>.
 
 <h2 id="location">File location and format</h2>
 
