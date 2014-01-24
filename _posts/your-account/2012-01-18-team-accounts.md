@@ -7,7 +7,7 @@ nav: true
 nav_prev: "/getting-started/security.html"
 nav_next: "/getting-started/cloud66-status.html"
 date:   2034-09-24 10:51:22
-categories: getting-started
+categories: your-account
 lead: You can share your Cloud 66 account with your team
 ---
 

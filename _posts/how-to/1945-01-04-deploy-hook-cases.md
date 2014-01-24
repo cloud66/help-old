@@ -57,7 +57,7 @@ development:
         run_on: all_servers
 {% endhighlight %}
 
-This deployment hook will copy the file `/.cloud66/files/abc.sh` to `/tmp/def.sh` on _all_ your Rails servers, as the first thing that will happen on the server.
+This deployment hook will copy the file `/.cloud66/files/abc.sh` to `/tmp/def.sh` on _all_ your Rails servers, as the first thing that will happen on the server. We use a first_thing hook so that this is the first thing that happens on the server.
 
 <h3 id="remote">From a remote location</h3>
 
@@ -75,21 +75,20 @@ development:
         sudo: true
         apply_during: build_only
         run_on: all_servers
-      - source: /tmp/ft-id.yml
-        destination: <%= ENV['STACK_PATH'] %>/config/remote_config.yml
-        target: rails
-        apply_during: build_only
-        run_on: all_servers
 {% endhighlight %}
 
 {% highlight yaml %}
 ### /.CLOUD66/WGET.SH ###
 
-wget https://raw.github.com/cloud66/file.yml
+cd /tmp
+wget https://raw.github.com/file.yml
+cp /tmp/file.yml $STACK_PATH/config/file.yml
 {% endhighlight %}
 
 This deployment hook will copy `/.cloud66/wget.sh` to `/tmp/wget.sh` on all Rails servers during their initial build, and execute it with sudo permissions.
-The `wget.sh` script will fetch a file from a remote location, and then second after_checkout hook will copy it into your application folder.
+The `wget.sh` script will fetch a file from a remote location, and copy it into your application folder.
+
+We use an after_checkout hook here because this means that the file will be available during the analysis period. This is important if the file contains information required by your application to run, without which it would fail during analysis.
 
 <h2 id="install">Install packages/fonts</h2>
 
@@ -117,6 +116,8 @@ apt-get install acl -y
 {% endhighlight %}
 
 This hook will copy `/.cloud66/scripts/install.sh` to `/tmp/install.sh` on all Rails servers during their initial build, and execute the script with sudo permissions. This specific script will install 2 packages on these servers.
+
+We run this as a first_thing hook because our application will need these packages to run.
 
 <div class="notice">
     <h3>Important</h3>
@@ -148,6 +149,8 @@ bundle exec rake dev:setup
 
 This hook will copy `/.cloud66/scripts/seed.sh` to `/tmp/seed.sh` on your Rails server during build and execute with sudo permissions. The script will in turn run the rake task.
 
+We run this as a last_thing hook because if we ran it earlier the application wouldn't exist on the server and be usable.
+
 <h2 id="permissions">Setting permissions</h2>
 Use this hook if you need to set custom permissions on your server.
 
@@ -171,6 +174,8 @@ sudo chmod 0644 -R /var/.cloud66_env
 {% endhighlight %}
 
 This hook will copy `/.cloud66/scripts/permissions.sh` to `/tmp/scripts/permissions.sh` on your Postgresql server and execute with sudo permissions. The script will in turn issue the relevant permission commands.
+
+These permissions are set using a first_thing hook because they are likely to be needed by the application to run successfully.
 
 <h2 id="curl">Curl scripts</h2>
 If you have performed custom configuration commands on your server and are running Passenger, it may take a while to load the first time you access it. You can use this Curl hook to warm the server up for quicker loading.
@@ -199,3 +204,5 @@ done
 {% endhighlight %}
 
 This hook will copy `/.cloud66/scripts/curl.sh` to `/tmp/curl.sh` on your Rails server during build and execute with sudo permissions. The script will in turn issue the command five times to warm up your server.
+
+We do this as a last_thing hook, because this ensures that everything has been installed and the application is ready to be accessed.

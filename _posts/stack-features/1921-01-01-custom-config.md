@@ -30,9 +30,9 @@ Once you're done with editing your template, you can preview the results by clic
 
 ![CustomConfig Preview](http://cdn.cloud66.com/images/help/custom_config_preview.png)
 
-<div class="notice">
+<div class="notice notice-danger">
     <h3>Important</h3>
-    <p>Preview is generated with dummy data about your server (like the number of cores or the path for different binaries).</p>
+    <p>Preview is generated with dummy data about your server (like the number of cores or the path for different binaries). <br/><br/>Refer to our documentation to learn about how the size of your instance affects the number of <a href="/web-server/nginx-workers.html">Nginx workers on your server.</a></p>
 </div>
 
 When you are happy with the results, enter a commit message and press the <i>Commit to Server</i> button. This will compile the configuration with real data and push it to all applicable servers in your stack. It also performs any post commit steps necessary like reloading Nginx with the new configuration file, putting your changes into effect.
