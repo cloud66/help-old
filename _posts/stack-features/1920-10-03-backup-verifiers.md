@@ -8,8 +8,22 @@ categories: stack-features
 lead: Ensure the highest quality of backup assurance
 ---
 
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#setup">Setup</a>
+	</li>
+	<li>
+		<a href="#usage">Usage</a>
+	</li>
+	<li>
+		<a href="#pricing">Pricing</a>
+	</li>
+</ul>
 
-## Setup
+Backup verifiers are a great way to ensure that your backups actually contain the data you expect.
+
+<h2 id="setup">Setup</h2>
 
 To set up backup verifiers, please ensure that you have [managed backups](/stack-features/db-backup.html) and are running either a MySQL or PostgreSQL database.
 
@@ -55,7 +69,7 @@ result
 t
 </pre>
 
-## Usage
+<h2 id="usage">Usage</h2>
 
 Once you have completed the above setup, you can check whether your backups have verified successfully by accessing the backups page
 of your stack.
@@ -68,3 +82,22 @@ A failure during backup verification will result in a red cross, and clicking on
 ![Failed verification](http://cdn.cloud66.com.s3.amazonaws.com/images/help/verification_failed.png)
 
 Should you need to change your verification script at some point, simply commit the change to Git and redeploy your code.
+
+<h2 id="pricing">Pricing</h2>
+
+<table class='table table-bordered table-striped table-small'>
+    <thead>
+        <tr>
+            <th align="center"></th>
+            <th align="center">Stack/month</th>
+            <th align="center">GB/month</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Verified backup</td>
+            <td>$25</td>
+            <td>&mdash;</td>
+        </tr>
+    </tbody>
+</table>
