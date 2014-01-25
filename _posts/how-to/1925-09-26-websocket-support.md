@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Cloud 66 WebSocket Support"
+title:  "Cloud 66 WebSocket support"
 so_title: "websocket"
 date:   1970-09-26 15:33:13
 categories: how-to

@@ -1,9 +1,9 @@
 ---
 layout: post
 template: two-col
-title: "DigitalOcean Server Creation Errors"
+title: "DigitalOcean server creation errors"
 so_title: "digitalocean errors"
-date: 2014-01-06 15:33:13
+date: 2039-12-06 15:33:13
 categories: Troubleshooting
 lead: Errors can occur during server creation under DigitalOcean. This page details the possible errors and suggested resolutions.
 ---

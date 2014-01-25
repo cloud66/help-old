@@ -33,7 +33,7 @@ lead: How to upgrade packages on your stack
 </ul>
 
 <h2 id="philosophy">Our philosophy</h2>
-Cloud 66 tries to make it easier to build [immutable infrastructure](http://chadfowler.com/blog/2013/06/23/immutable-deployments/). Building servers and stacks from scratch is much better than modifying existing server configurations and tinkering with settings until things start to work.
+Cloud 66 tries to make it easier to build [immutable infrastructure](http://www.chadfowler.com/blog/2013/06/23/immutable-deployments/). Building servers and stacks from scratch is much better than modifying existing server configurations and tinkering with settings until things start to work.
 
 Of course everyone knows that, the reasons they don't do it is that it's difficult, time consuming and can be unpredicatble. That's why we want to make building stacks from scratch as easy as possible and as quick as possible.
 
