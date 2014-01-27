@@ -68,11 +68,6 @@ lead: You can be more explicit about your stack composition
             </li>
             <li>
                 <ul>
-                <li><a href="#passenger">Passenger</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
                 <li><a href="#postgresql">PostgreSQL</a></li>
                 </ul>
             </li>
@@ -176,7 +171,6 @@ Cloud 66 currently recognizes the following application types in your manifest f
 - <a href="#haproxy">HAProxy</a>
 - <a href="#memcache">Memcached</a>
 - <a href="#mongo">MongoDB</a>
-- <a href="#passenger">Passenger</a>
 - <a href="#postgis">PostGIS</a>
 - <a href="#psql">PostgreSQL</a>
 - <a href="#rabbit">RabbitMQ</a>
@@ -404,17 +398,6 @@ Specify the version of MongoDB you want to install (does not apply to external s
 </pre>
 
 <hr>
-
-<h3 id="passenger">Passenger</h3>
-- **passenger_version**<br/>
-Specify the version of Passenger you'd like to use. Please replace the first line with your framework (eg. rails, padrino etc.).
-
-<pre class="terminal">
-... #{stack.stack_symbol}:
-        server: ...
-        configuration:
-            passenger_version: 4.0.25
-</pre>
 
 <h3 id="postgresql">PostgreSQL</h3>
 

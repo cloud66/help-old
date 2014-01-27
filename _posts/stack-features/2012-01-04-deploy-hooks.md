@@ -135,7 +135,7 @@ production:
 
         <h3>Important</h3>
 
-        <p>Deployment hooks that have your STACK&#95;PATH as a destination and that occur before the application has actually created the folder (eg. first&#95;thing, before&#95;rails etc) will cause permission errors during your code deployment.</p>
+        <p>Deploy hooks that have your STACK&#95;PATH as a destination and that occur before the application has actually created the folder (eg. first&#95;thing, before&#95;rails etc) will cause permission errors during your code deployment.</p>
 </div>
 
 Currently the following hook points are available:

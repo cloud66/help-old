@@ -59,6 +59,11 @@ Note that some security packages may require a server restart. We don't automati
 
 <h4 id="ruby">Ruby</h4>
 
+<div class="notice notice-danger">
+    <h3>Important!</h3>
+    <p>Due to the aforementioned complexities, performing in-place Ruby upgrades on your stack carries some risk.</p>
+</div>
+
 Upgrading Ruby can be tricky. Our deployment process always deploys the latest release of Ruby on new servers, so all new stacks and scaled up servers will have the latest version of Ruby installed.
 
 We roll out automatic upgrades in case of security issues, and this will be made clear in your [StackScore](/stack-features/stackscore.html). You will need to redeploy your stack with the `Apply Upgrades` option from Deploy with Options menu item which will apply the security patches and then redeploy your app as usual.
