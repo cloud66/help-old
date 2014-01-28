@@ -450,7 +450,7 @@ A Rails application type in the manifest file gives you fine control over things
 
 - <b>ruby&#95;version</b><br/>
 Specify the version of Ruby to use (overridden if present in Gemfile)
-- <b>use&#95;asset&#95;pipeline</b><br/>
+- <b>asset&#95;pipeline&#95;precompile</b><br/>
 Specify whether to use asset pipeline compilation
 - <b>do&#95;initial&#95;db&#95;schema&#95;load</b><br/>
 Specify whether to perform "rake db:schema:load" on new builds
@@ -466,7 +466,7 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
         server: ...
         configuration:
             ruby&#95;version: 1.9.3
-            use&#95;asset&#95;pipeline: true
+            asset&#95;pipeline&#95;precompile: true
             do&#95;initialdb&#95;schema&#95;load: false
             reserved&#95;server&#95;memory: 0 (default value)
             passenger&#95;process&#95;memory: 200 (default value)
