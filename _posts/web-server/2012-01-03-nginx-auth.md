@@ -19,17 +19,23 @@ Follow the instructions below to accomplish this.
 
 3. Now we can go ahead and customize the Nginx configuration, which you can see more about in our [Nginx CustomConfig documentation](/how-to/nginx-customconfig.html).
 
-You will want to add the following code within the _server_ section of your configuration, for example on line 88 of the file so that it applies to all environments.
+You will want to add the following code within the _server_ section of your configuration. Where you put it will depend on which Rack server you are running, and whether or not you are using HTTPS traffic.
 
 <pre class="terminal">
-location /
-{
 	auth_basic "Restricted";
 	auth_basic_user_file &#123;&#123; deploy_to &#125;&#125;/current/.htpasswd;
-}
 </pre>
 
+#### Passenger
+- HTTP: Line _116_
+- HTTPS: Line _190_
+
+#### Unicorn and others
+- HTTP: Line _122_
+- HTTPS: Line _197_
+
 This will read your password file from your repository directory on the server. Once you save that configuration, it will apply immediately on your server.
+
 
 
 
