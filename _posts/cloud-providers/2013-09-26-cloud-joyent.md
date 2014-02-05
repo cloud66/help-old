@@ -2,6 +2,8 @@
 layout: post
 template: two-col
 title:  "Joyent cloud"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   2036-09-24 10:51:22
 categories: cloud-providers
 lead:  Use your Joyent account with Cloud 66

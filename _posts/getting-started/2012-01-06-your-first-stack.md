@@ -3,10 +3,10 @@ layout: post
 template: two-col
 nav_sticky: true
 title:  "Building your first stack"
-nav_sticky: true
+cloud66_text: "Try Cloud 66 for free"
 nav: true
 nav_prev: "/getting-started/what-is-a-stack.html"
-nav_next: "/getting-started/pricing.html"
+nav_next: "/getting-started/pre-deployment.html"
 date:   2037-12-24 10:51:22
 categories: getting-started
 lead: It's really easy to build your first stack

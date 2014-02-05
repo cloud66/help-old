@@ -4,6 +4,7 @@ template: two-col
 title:  "Supported frameworks"
 so_title: false
 nav_sticky: true
+cloud66_text: "Try Cloud 66 for free"
 nav: true
 nav_prev: "/getting-started/standalone-servers.html"
 nav_next: "/getting-started/what-is-a-stack.html"

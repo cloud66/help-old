@@ -4,6 +4,7 @@ template: two-col
 title:  "Deploy to your servers"
 nav_sticky: true
 nav: true
+cloud66_text: "Try Cloud 66 for free"
 nav_prev: "/getting-started/supported-clouds.html"
 nav_next: "/getting-started/supported-frameworks.html"
 nav_sticky: true

@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Nginx basic authorization"
 so_title: "nginx"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   2037-09-24 10:51:22
 categories: web-server
 lead: Protect your application with HTTP basic authentication
