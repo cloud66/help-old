@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Cloud 66 WebSocket support"
 so_title: "websocket"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1970-09-26 15:33:13
 categories: how-to
 lead: Implement WebSocket on your server

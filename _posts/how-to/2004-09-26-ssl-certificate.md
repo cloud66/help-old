@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "SSL Certificate"
 so_title: "ssl"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 nav: true
 date:   1650-09-24 10:51:22
 categories: how-to

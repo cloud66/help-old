@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Upgrading packages on your stack"
 so_title: "upgrade"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1560-09-26 15:33:13
 categories: how-to
 lead: How to upgrade packages on your stack

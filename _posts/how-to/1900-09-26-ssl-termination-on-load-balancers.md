@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Add a SSL certificate on a load balancer"
 so_title: "ssl"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   2000-09-26 15:33:13
 categories: how-to
 lead: The process differs for different load balancers
@@ -76,11 +78,19 @@ HAProxy 1.4 doesn’t natively support SSL, but it's possible to use an SSL encr
 - Firstly, install Stunnel on the load balancer:
 <p>
 <kbd>
-apt-get install stunnel
+sudo apt-get install stunnel
 </kbd>
 </p>
 
--	Then, configure the <code>/etc/haproxy/haproxy.cfg</code> file. For example:
+- Then, you can use the Cloud 66 [CustomConfig](/stack-features/custom-config.html) to configure the HAProxy configuration file.
+
+<div class="notice">
+		<h3>Important</h3>
+		<p>If you're not using Cloud 66, please make these changes in your <i>/etc/haproxy/haproxy.cfg</i> file. </p>
+</div>
+
+
+For example:
 
 <pre class="terminal">
 global
@@ -126,7 +136,7 @@ listen webcluster&#95;ssl *:8081
 
 </pre>
 
-Make sure that you wrote your own load balanced servers IP instead of <code>XX.XX.XX.XX:80</code>.
+Please note that you should replace the <code>XX.XX.XX.XX:80</code> IP above with your own load balanced servers IP.
 
 -	Now,  add your SSL certificate key (.pem file) on the load balancer,  you certificate should look like the following example:
 <pre class="terminal">

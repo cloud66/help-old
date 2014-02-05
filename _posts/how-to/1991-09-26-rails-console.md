@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Running Rails console"
 so_title: "console"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1890-09-26 15:33:13
 categories: how-to
 lead: You can easily run Rails console with a single command.

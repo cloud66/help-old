@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Migrate from Heroku to Cloud 66"
 so_title: "heroku"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1915-09-26 15:33:13
 categories: how-to
 lead: Some pointers to move from Heroku to Cloud 66

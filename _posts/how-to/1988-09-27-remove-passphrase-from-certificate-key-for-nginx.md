@@ -4,6 +4,8 @@ template: two-col
 title:  "Remove passphrase from SSL certificate key"
 so_title: "ssl"
 nav: true
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1650-09-24 10:51:22
 categories: how-to
 lead: You cannot use passphrase protected certificates with nginx. Here is how to remove it.

@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Deploy hook use cases"
 so_title: "deploy hook"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 nav_sticky: false
 date:   1954-12-28 16:27:22
 categories: how-to

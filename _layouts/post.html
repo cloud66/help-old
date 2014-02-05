@@ -29,7 +29,8 @@ bodyclass: post
     </div>
 
     <aside class="content-sec  {% if page.nav_sticky %} sticky-nav {% endif %}">
-        <div class="side-module">
+		{% if page.contents != "false" %}
+		<div class="side-module">
             <nav class="aside-mod">
                 <h3 class="side-title js-format-cat">
                     {{ current_cat }}
@@ -45,7 +46,7 @@ bodyclass: post
                 </ul>
             </nav>
         </div>
-
+		{% endif %}
         {% if page.so_title %}
             <div class="side-module">
                 <h3 class="side-title js-format-cat">StackOverflow</h3>
@@ -55,7 +56,18 @@ bodyclass: post
                     </a>
                 </p>
             </div>
-        {% endif %}
+        {% endif %}<br/>
+		<aside class="content-sec  {% if page.cloud66_sticky %} sticky-nav {% endif %}">
+		{% if page.cloud66_text %}
+		<div class="side-module">
+			<a href="http://www.cloud66.com/?utm_source=help&utm_medium=web&utm_campaign=help" class="cta">
+			<img src="http://cdn.cloud66.com.s3.amazonaws.com/images/logo.svg" width="60" style="display:block;margin:0 auto">
+			<div style="text-align:center; line-height:1.8; margin-top:8px">
+				<b>{{page.cloud66_text}} &#10141;</b>
+			</div></a>
+		</div>
+		{% endif %}
+		</aside>
     </aside>
 
 </article>
