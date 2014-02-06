@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Upgrading packages on your stack"
 so_title: "upgrade"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1560-09-26 15:33:13
 categories: how-to
 lead: How to upgrade packages on your stack
@@ -58,6 +60,11 @@ Choosing this option will perform operating system security package upgrades and
 Note that some security packages may require a server restart. We don't automatically restart your server, and it is at your discretion to do so. If the file `/var/run/reboot-required` exists, your server does in fact require a restart. To see which packages contributed to the requirement for a restart, please see `/var/run/reboot-required.pkgs`.
 
 <h4 id="ruby">Ruby</h4>
+
+<div class="notice notice-danger">
+    <h3>Important!</h3>
+    <p>Due to the aforementioned complexities, performing in-place Ruby upgrades on your stack carries some risk.</p>
+</div>
 
 Upgrading Ruby can be tricky. Our deployment process always deploys the latest release of Ruby on new servers, so all new stacks and scaled up servers will have the latest version of Ruby installed.
 

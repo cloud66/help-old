@@ -1,12 +1,14 @@
 ---
 layout: post
 template: two-col
-title:  "Deployment hook use cases"
-so_title: "deployment hook"
+title:  "Deploy hook use cases"
+so_title: "deploy hook"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 nav_sticky: false
 date:   1954-12-28 16:27:22
 categories: how-to
-lead: Common use-cases and examples for deployment hooks
+lead: Common use-cases and examples for deploy hooks
 ---
 
 <h2>Contents</h2>
@@ -57,7 +59,7 @@ development:
         run_on: all_servers
 {% endhighlight %}
 
-This deployment hook will copy the file `/.cloud66/files/abc.sh` to `/tmp/def.sh` on _all_ your Rails servers, as the first thing that will happen on the server. We use a first_thing hook so that this is the first thing that happens on the server.
+This deploy hook will copy the file `/.cloud66/files/abc.sh` to `/tmp/def.sh` on _all_ your Rails servers, as the first thing that will happen on the server. We use a first_thing hook so that this is the first thing that happens on the server.
 
 <h3 id="remote">From a remote location</h3>
 
@@ -85,7 +87,7 @@ wget https://raw.github.com/file.yml
 cp /tmp/file.yml $STACK_PATH/config/file.yml
 {% endhighlight %}
 
-This deployment hook will copy `/.cloud66/wget.sh` to `/tmp/wget.sh` on all Rails servers during their initial build, and execute it with sudo permissions.
+This deploy hook will copy `/.cloud66/wget.sh` to `/tmp/wget.sh` on all Rails servers during their initial build, and execute it with sudo permissions.
 The `wget.sh` script will fetch a file from a remote location, and copy it into your application folder.
 
 We use an after_checkout hook here because this means that the file will be available during the analysis period. This is important if the file contains information required by your application to run, without which it would fail during analysis.

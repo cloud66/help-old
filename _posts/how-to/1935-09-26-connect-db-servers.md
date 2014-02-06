@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Connect to your database servers"
 so_title: "database"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1960-09-26 15:33:13
 categories: how-to
 lead: There are two options when connecting to your database

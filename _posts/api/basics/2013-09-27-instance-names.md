@@ -48,6 +48,14 @@ date: 2013-09-26
 		</tr>
 		<tr>
 			<td>General purpose</td>
+			<td>m3.medium</td>
+		</tr>
+		<tr>
+			<td>General purpose</td>
+			<td>m3.large</td>
+		</tr>
+		<tr>
+			<td>General purpose</td>
 			<td>m3.xlarge</td>
 		</tr>
 		<tr>
@@ -98,6 +106,24 @@ date: 2013-09-26
 			<td>Memory optimized</td>
 			<td>m2.4xlarge</td>
 		</tr>
+
+		<tr>
+			<td>Storage optimized</td>
+			<td>i2.xlarge</td>
+		</tr>
+		<tr>
+			<td>Storage optimized</td>
+			<td>i2.2xlarge</td>
+		</tr>
+		<tr>
+			<td>Storage optimized</td>
+			<td>i2.4xlarge</td>
+		</tr>
+		<tr>
+			<td>Storage optimized</td>
+			<td>i2.8xlarge</td>
+		</tr>
+
 		<tr>
 			<td>Memory optimized</td>
 			<td>cr1.8xlarge</td>

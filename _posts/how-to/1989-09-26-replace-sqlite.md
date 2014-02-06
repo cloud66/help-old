@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Replacing SQLite with MySQL or PostgreSQL"
 so_title: "sqlite"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1895-09-26 15:33:13
 categories: how-to
 lead: SQLite is not suitable for production environments

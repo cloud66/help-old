@@ -68,11 +68,6 @@ lead: You can be more explicit about your stack composition
             </li>
             <li>
                 <ul>
-                <li><a href="#passenger">Passenger</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
                 <li><a href="#postgresql">PostgreSQL</a></li>
                 </ul>
             </li>
@@ -176,7 +171,6 @@ Cloud 66 currently recognizes the following application types in your manifest f
 - <a href="#haproxy">HAProxy</a>
 - <a href="#memcache">Memcached</a>
 - <a href="#mongo">MongoDB</a>
-- <a href="#passenger">Passenger</a>
 - <a href="#postgis">PostGIS</a>
 - <a href="#psql">PostgreSQL</a>
 - <a href="#rabbit">RabbitMQ</a>
@@ -405,17 +399,6 @@ Specify the version of MongoDB you want to install (does not apply to external s
 
 <hr>
 
-<h3 id="passenger">Passenger</h3>
-- **passenger_version**<br/>
-Specify the version of Passenger you'd like to use. Please replace the first line with your framework (eg. rails, padrino etc.).
-
-<pre class="terminal">
-... #{stack.stack_symbol}:
-        server: ...
-        configuration:
-            passenger_version: 4.0.25
-</pre>
-
 <h3 id="postgresql">PostgreSQL</h3>
 
 - **version**<br/>
@@ -467,7 +450,7 @@ A Rails application type in the manifest file gives you fine control over things
 
 - <b>ruby&#95;version</b><br/>
 Specify the version of Ruby to use (overridden if present in Gemfile)
-- <b>use&#95;asset&#95;pipeline</b><br/>
+- <b>asset&#95;pipeline&#95;precompile</b><br/>
 Specify whether to use asset pipeline compilation
 - <b>do&#95;initial&#95;db&#95;schema&#95;load</b><br/>
 Specify whether to perform "rake db:schema:load" on new builds
@@ -483,7 +466,7 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
         server: ...
         configuration:
             ruby&#95;version: 1.9.3
-            use&#95;asset&#95;pipeline: true
+            asset&#95;pipeline&#95;precompile: true
             do&#95;initialdb&#95;schema&#95;load: false
             reserved&#95;server&#95;memory: 0 (default value)
             passenger&#95;process&#95;memory: 200 (default value)

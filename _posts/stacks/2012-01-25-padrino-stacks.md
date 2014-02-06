@@ -54,10 +54,10 @@ If [databases are detected](/stacks/databases.html), they will automatically be 
 
 Should you wish to change the database username/password after build, you will have to do this manually, which will involve recreating backup jobs to reflect the new values.
 
-### Example of connecting to your database:
+### Examples of connecting to your database:
 #### Active Record
 
-**YML**
+**MySQL YML**
 {% highlight yaml %}
 production:
   adapter: mysql2
@@ -65,6 +65,16 @@ production:
   password: <%= ENV['MYSQL_PASSWORD'] %>
   host: <%= ENV['MYSQL_ADDRESS'] %>
   database: <%= ENV['MYSQL_DATABASE'] %>
+{% endhighlight %}
+
+**PostgreSQL YML**
+{% highlight yaml %}
+production:
+  adapter: postgresql
+  username: <%= ENV['POSTGRESQL_USERNAME'] %>
+  password: <%= ENV['POSTGRESQL_PASSWORD'] %>
+  host: <%= ENV['POSTGRESQL_ADDRESS'] %>
+  database: <%= ENV['POSTGRESQL_DATABASE'] %>
 {% endhighlight %}
 
 **Declarative**

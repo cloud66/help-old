@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Asset Pipeline Compilation"
 so_title: "asset pipeline"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1980-09-24 10:51:22
 categories: how-to
 lead: Improve performance in Rails applications => 3.1.0

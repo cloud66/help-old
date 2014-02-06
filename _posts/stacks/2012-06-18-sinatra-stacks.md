@@ -57,7 +57,7 @@ Should you wish to change the database username/password after build, you will h
 ### Examples of connecting to your database:
 #### Active Record
 
-**YML**
+**MySQL YML**
 {% highlight yaml %}
 production:
   adapter: mysql2
@@ -65,6 +65,16 @@ production:
   password: <%= ENV['MYSQL_PASSWORD'] %>
   host: <%= ENV['MYSQL_ADDRESS'] %>
   database: <%= ENV['MYSQL_DATABASE'] %>
+{% endhighlight %}
+
+**PostgreSQL YML**
+{% highlight yaml %}
+production:
+  adapter: postgresql
+  username: <%= ENV['POSTGRESQL_USERNAME'] %>
+  password: <%= ENV['POSTGRESQL_PASSWORD'] %>
+  host: <%= ENV['POSTGRESQL_ADDRESS'] %>
+  database: <%= ENV['POSTGRESQL_DATABASE'] %>
 {% endhighlight %}
 
 **Declarative**

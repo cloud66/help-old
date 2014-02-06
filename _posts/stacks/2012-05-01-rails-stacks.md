@@ -20,16 +20,30 @@ If [databases are detected](/stacks/databases.html), they will automatically be 
 
 Should you wish to change the database username/password after build, you will have to do this manually, which will involve recreating backup jobs to reflect the new values.
 
-### Example of connecting to your database:
+### Examples of connecting to your database:
 
-**YML**
+The notation in the examples below allow you to seamlessly switch between your local development environment and your Cloud 66 environment without
+changing your database settings. The logic will determine if the Cloud 66 environment variable exists, and depending on the result, generate a value
+or use your own value. Alternatively, you can simply hard-code values as you wish.
+
+**MySQL YML**
 {% highlight yaml %}
-production:
-  adapter: mysql2
-  username: <%= ENV['MYSQL_USERNAME'] %>
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  host: <%= ENV['MYSQL_ADDRESS'] %>
-  database: <%= ENV['MYSQL_DATABASE'] %>
+development:
+    adapter: mysql2
+    username: <%= if ENV['MYSQL_USERNAME'].nil? then 'root' else ENV['MYSQL_USERNAME'] end %>
+    password: <%= if ENV['MYSQL_PASSWORD'].nil? then '' else ENV['MYSQL_PASSWORD'] end %>
+    database: <%= if ENV['MYSQL_DATABASE'].nil? then 'tjenare' else ENV['MYSQL_DATABASE'] end %>
+    host: <%= if ENV['MYSQL_ADDRESS'].nil? then 'localhost' else ENV['MYSQL_ADDRESS'] end %>
+{% endhighlight %}
+
+**PostgreSQL YML**
+{% highlight yaml %}
+development:
+    adapter: postgresql
+    username: <%= if ENV['POSTGRESQL_USERNAME'].nil? then 'root' else ENV['POSTGRESQL_USERNAME'] end %>
+    password: <%= if ENV['POSTGRESQL_PASSWORD'].nil? then '' else ENV['POSTGRESQL_PASSWORD'] end %>
+    database: <%= if ENV['POSTGRESQL_DATABASE'].nil? then 'tjenare' else ENV['POSTGRESQL_DATABASE'] end %>
+    host: <%= if ENV['POSTGRESQL_ADDRESS'].nil? then 'localhost' else ENV['POSTGRESQL_ADDRESS'] end %>
 {% endhighlight %}
 
 **Mongoid**
@@ -37,7 +51,7 @@ production:
 development:
   sessions:
     default:
-      database: mongoid
+      database: <%= if ENV['MONGODB_DATABASE'].nil? then 'tjenare' else ENV['MONGODB_DATABASE'] end %>
       hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
 {% endhighlight %}
 

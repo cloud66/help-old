@@ -2,8 +2,8 @@
 layout: post
 template: two-col
 title:  "What is a stack?"
-nav_sticky: true
 nav: true
+cloud66_text: "Try Cloud 66 for free"
 nav_prev: "/getting-started/supported-frameworks.html"
 nav_next: "/getting-started/your-first-stack.html"
 date:   2038-01-25 16:27:22

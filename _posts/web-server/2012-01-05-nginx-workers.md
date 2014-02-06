@@ -66,6 +66,9 @@ Stacks deployed with Cloud 66 use nginx as their frontend. Apart from the <a hre
 	</thead>
 	<tbody>
 		<tr>
+		<td>t1.micro</td><td class="num">1</td>
+		</tr>
+		<tr>
 		<td>m1.small</td><td class="num">1</td>
 		</tr>
 		<tr>
@@ -78,16 +81,19 @@ Stacks deployed with Cloud 66 use nginx as their frontend. Apart from the <a hre
 		<td>m1.xlarge</td><td class="num">8</td>
 		</tr>
 		<tr>
+        <td>m3.medium</td><td class="num">3</td>
+        </tr>
+        <tr>
+       	<td>m3.large</td><td class="num">6</td>
+        </tr>
+		<tr>
 		<td>m3.xlarge</td><td class="num">13</td>
 		</tr>
 		<tr>
 		<td>m3.2xlarge</td><td class="num">26</td>
 		</tr>
 		<tr>
-		<td>t1.micro</td><td class="num">1</td>
-		</tr>
-		<tr>
-		<td>m2.xlarge</td><td class="num">7</td>
+		<td>m2.xlarge</td><td class="num">6</td>
 		</tr>
 		<tr>
 		<td>m2.2xlarge</td><td class="num">13</td>
@@ -100,6 +106,51 @@ Stacks deployed with Cloud 66 use nginx as their frontend. Apart from the <a hre
 		</tr>
 		<tr>
 		<td>c1.xlarge</td><td class="num">20</td>
+		</tr>
+		<tr>
+		<td>c3.large</td><td class="num">7</td>
+		</tr>
+		<tr>
+		<td>c3.xlarge</td><td class="num">14</td>
+		</tr>
+		<tr>
+		<td>c3.2xlarge</td><td class="num">28</td>
+		</tr>
+		<tr>
+		<td>c3.4xlarge</td><td class="num">55</td>
+		</tr>
+		<tr>
+		<td>c3.8xlarge</td><td class="num">108</td>
+		</tr>
+		<tr>
+		<td>cc2.8xlarge</td><td class="num">88</td>
+		</tr>
+		<tr>
+		<td>i2.xlarge</td><td class="num">4</td>
+		</tr>
+		<tr>
+		<td>i2.2xlarge</td><td class="num">8</td>
+		</tr>
+		<tr>
+		<td>i2.4xlarge</td><td class="num">16</td>
+		</tr>
+		<tr>
+		<td>i2.8xlarge</td><td class="num">32</td>
+		</tr>
+		<tr>
+		<td>cr1.8xlarge</td><td class="num">88</td>
+		</tr>
+		<tr>
+		<td>hi1.4xlarge</td><td class="num">35</td>
+		</tr>
+		<tr>
+		<td>hs1.8xlarge</td><td class="num">35</td>
+		</tr>
+		<tr>
+		<td>cg1.4xlarge</td><td class="num">33</td>
+		</tr>
+		<tr>
+		<td>g2.2xlarge</td><td class="num">26</td>
 		</tr>
 	</tbody>
 </table>

@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Custom web servers"
 so_title: "web servers"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   2038-09-24 10:51:22
 categories: web-server
 lead: Run your Rack apps with Passenger, Puma, Unicorn or Thin

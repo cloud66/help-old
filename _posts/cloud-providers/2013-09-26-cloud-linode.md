@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Linode cloud"
 date:   2035-09-24 10:51:22
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 categories: cloud-providers
 lead: Use your Linode account with Cloud 66
 ---

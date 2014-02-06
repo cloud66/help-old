@@ -3,6 +3,7 @@ layout: post
 template: two-col
 title:  "Pre-deployment options"
 nav_sticky: true
+cloud66_text: "Try Cloud 66 for free"
 nav: true
 nav_prev: "/getting-started/your-first-stack.html"
 nav_next: "/getting-started/post-deployment.html"

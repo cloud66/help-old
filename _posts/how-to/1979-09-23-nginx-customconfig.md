@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Nginx CustomConfig"
 so_title: "custom config"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1907-08-26 15:33:13
 categories: how-to
 lead: Customize your Nginx configuration

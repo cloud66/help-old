@@ -5,6 +5,7 @@ title:  "Deploy to your cloud"
 so_title: false
 nav_sticky: true
 nav: true
+cloud66_text: "Try Cloud 66 for free"
 nav_prev: "/getting-started/introduction.html"
 nav_next: "/getting-started/standalone-servers.html"
 date:   2040-10-18 16:27:22
