@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Unicorn rack server"
 so_title: "unicorn"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   2027-09-24 10:51:22
 categories: web-server
 lead: Run your Rack apps with Unicorn

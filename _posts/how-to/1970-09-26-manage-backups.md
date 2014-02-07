@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Managing your Cloud 66 backups"
 so_title: "backup"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1920-09-26 15:33:13
 categories: how-to
 lead: You can manage your Cloud 66 backups if you want
@@ -44,7 +46,7 @@ This will result in a file called file.tar, which we can now unzip.
 ## Move your backup to another server
 To do this we will copy the file to a remote server using SCP:
 
-`scp  -i <identity_file> <local_file> <remote_server_user>@<remote_server_address>:<remote_server_folder>`
+`scp  -i <identity_file> database_dump.sql <remote_server_user>@<remote_server_address>:/tmp`
 
 ## Restore your backup on another server
 
@@ -52,7 +54,7 @@ To do this we will copy the file to a remote server using SCP:
 
 From the [MySQL command-line](http://dev.mysql.com/doc/refman/5.5/en/mysql.html), use the following command to restore your database from a dumped backup file `(.sql)`:
 
-`mysql -u <db_username> -p <db_password> <db_name> < <path_to_your_backup_file(.sql)>`
+`mysql -u <db_username> -p<db_password> <db_name> < /tmp/database_dump.sql`
 
 
 ### PostgreSQL database

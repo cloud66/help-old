@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Seeding your database"
 so_title: "seed"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1750-12-08 09:33:13
 categories: how-to
 lead: Seed your database with your data during deployment

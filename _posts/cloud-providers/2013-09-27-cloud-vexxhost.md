@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Vexxhost cloud"
 date:   2013-09-27 10:51:22
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 categories: cloud-providers
 lead:  Use your Vexxhost account with Cloud 66
 ---

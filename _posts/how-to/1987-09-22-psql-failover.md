@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "PostgreSQL failover procedure"
 so_title: "psql"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1897-09-24 10:51:22
 categories: how-to
 lead: How to deal with a primary server failure

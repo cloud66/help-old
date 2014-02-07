@@ -70,7 +70,7 @@ After receiving the invitation email, team members can sign up for Cloud 66 with
 If the invited email already has a Cloud 66 account, they will be notified of the pending invitation. By accepting the invitation, they will join your team.
 
 <h2 id="switch">Switching organization</h2>
-By default, you can see all the stacks you have access to under any organization. However, some pages are only acceible by the primary user of the account (Organization owner). You can select your current organization using the Organizations page under your Account menu.
+By default, you can see all the stacks you have access to under any organization. However, some pages are only accessible by the primary user of the account (organization owner). You can select your current organization using the _organizations_ page under your Account menu.
 
 ![Switch Organization](http://cdn.cloud66.com/images/help/cloud66_switch_org.png)
 

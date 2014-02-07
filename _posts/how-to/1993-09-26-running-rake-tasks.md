@@ -3,6 +3,8 @@ layout: post
 template: two-col
 title:  "Running Rake Tasks"
 so_title: "rake"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
 date:   1870-09-26 15:33:13
 categories: how-to
 lead: Run rake tasks automatically or manually on your stack
@@ -10,7 +12,7 @@ lead: Run rake tasks automatically or manually on your stack
 
 
 ## Introduction
-You can choose to run your rake tasks automatically or manually. Running them automatically involves either scheduling them by using the rake task add-on or by using deployment hooks.
+You can choose to run your rake tasks automatically or manually. Running them automatically involves either scheduling them by using the rake task add-on or by using deploy hooks.
 Alternatively, you can run them manually on your server. This guide will walk you through each of these.
 
 ### Scheduled
@@ -18,7 +20,7 @@ Please read more about this [rake task add-in](/add-ins/rake-task.html) in the d
 
 ### Deployment hooks
 
-You can use [deployment hooks](/stack-features/deploy-hooks.html) to execute your rake task at any point of your deployment.
+You can use [deploy hooks](/stack-features/deploy-hooks.html) to execute your rake task at any point of your deployment.
 
 Simply add a bash script to your stack that contains the rake task: for example, create the file */.cloud66/scripts/rake&#95;task.sh* as below:
 <pre class="terminal">

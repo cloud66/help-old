@@ -1,8 +1,8 @@
 ---
 layout: post
 template: two-col
-title:  "Deployment hooks"
-so_title: "deployment hook"
+title:  "Deploy hooks"
+so_title: "deploy hook"
 nav_sticky: false
 date:   2097-03-28 16:27:22
 categories: stack-features
@@ -21,7 +21,7 @@ lead: Take action at various points during build and/or deployment
 		<a href="#execute">Copy file to destination and execute</a>
 	</li>
 	<li>
-		<a href="#multiple">Multiple deployment hooks</a>
+		<a href="#multiple">Multiple deploy hooks</a>
 	</li>
 	<li>
 		<a href="#hooks">Hook points</a>
@@ -44,13 +44,13 @@ lead: Take action at various points during build and/or deployment
 	</li>
 </ul>
 
-A simple use-case for a deployment hook would be to copy a file to a target location on your server and executing at some point during your deployment.
+A simple use-case for a deploy hook would be to copy a file to a target location on your server and executing at some point during your deployment.
 
 For examples of other use-cases, please see our more detailed [use-case documentation](/how-to/deploy-hook-cases.html) or feel free to have a look at or contribute to our <a href="https://github.com/cloud66/deploy_hooks" target="_blank">deploy hooks repository</a>.
 
 <h2 id="location">File location and format</h2>
 
-To use deployment hooks, a file called **deploy_hooks.yml** should be present within a folder named **.cloud66**, that is in turn located in the root of your source code.
+To use deploy hooks, a file called **deploy_hooks.yml** should be present within a folder named **.cloud66**, that is in turn located in the root of your source code.
 <pre class="terminal">
 /.cloud66/deploy&#95;hooks.yml
 </pre>
@@ -68,7 +68,7 @@ development:
         target: rails
 </pre>
 
-As it is scoped **development**, this deployment hook will only apply to stacks in **development** environments. At the **first&#95;thing** [hook point](/stack-features/deploy-hooks.html#hooks), it will transfer the file **/.cloud66/files/abc.sh** to target path **/tmp/abc.sh** on the **rails** server.
+As it is scoped **development**, this deploy hook will only apply to stacks in **development** environments. At the **first&#95;thing** [hook point](/stack-features/deploy-hooks.html#hooks), it will transfer the file **/.cloud66/files/abc.sh** to target path **/tmp/abc.sh** on the **rails** server.
 
 <h3 id="execute">Copy file to destination and execute</h3>
 
@@ -86,7 +86,7 @@ production:
 The above example will only apply to stacks in **production** environments. At the **last&#95;thing** [hook point](/stack-features/deploy-hooks.html#hooks), it will transfer the file **/.cloud66/my&#95;script.sh** to the target path **/tmp/my&#95;script.sh** on the **postgresql** server, then it will **execute** the script using **sudo**.
 
 <h3 id="multiple">Multiple deploy hooks</h3>
-Lastly, multiple deployment hooks can be defined within the same file:
+Lastly, multiple deploy hooks can be defined within the same file:
 <pre class="terminal">
 production:
     first&#95;thing:
@@ -116,7 +116,7 @@ There is no upper limit to the number of actions that can be defined.
 
 As you can see from the **after&#95;rails** deploy hook action above, there are additional fields/options available that you can specify. See below for details on all the fields.
 
-If you would like to repeat multiple deployment hooks for different environments, you can do the following:
+If you would like to repeat multiple deploy hooks for different environments, you can do the following:
 
 <pre class="terminal">
 development: &default
@@ -135,7 +135,7 @@ production:
 
         <h3>Important</h3>
 
-        <p>Deployment hooks that have your STACK&#95;PATH as a destination and that occur before the application has actually created the folder (eg. first&#95;thing, before&#95;rails etc) will cause permission errors during your code deployment.</p>
+        <p>Deploy hooks that have your STACK&#95;PATH as a destination and that occur before the application has actually created the folder (eg. first&#95;thing, before&#95;rails etc) will cause permission errors during your code deployment.</p>
 </div>
 
 Currently the following hook points are available:
@@ -167,7 +167,7 @@ Available fields are divided into mandatory and optional fields:
 
 <h3 id="mandatory">Mandatory fields</h3>
 - **source**<br/>
-This specifies the source location of your deployment hook file within your repository. Wildcards are not currently supported.
+This specifies the source location of your deploy hook file within your repository. Wildcards are not currently supported.
 - **destination**<br/>
 This is the destination path on your target server. Note that you can also specify environment variables in your destination field
 (`<%= ENV['STACK_PATH'] %>` for example)
@@ -183,7 +183,7 @@ When do you want the deploy hook action to take place? Available options are: *b
 - **execute** (**false**)<br/>
 Do you want to execute the file after it has been copied to its destination on the target server?
 - **halt&#95;on&#95;error** (**true**)<br/>
-If there is an error during the deployment hook execution, should the whole deployment continue or halt?
+If there is an error during the deploy hook execution, should the whole deployment continue or halt?
 - **owner** (**your&#95;server&#95;user**)<br/>
 Once the file is transmitted to the target server, what ownership permissions should be applied to it (and its destination folder)? An example could be "your&#95;user:your&#95;group".
 - **parse** (**true**)<br/>

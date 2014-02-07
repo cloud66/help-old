@@ -4,7 +4,8 @@ template: two-col
 title:  "Cloud 66 status"
 nav_sticky: true
 nav: true
-nav_prev: "/getting-started/team-accounts.html"
+cloud66_text: "Try Cloud 66 for free"
+nav_prev: "/getting-started/security.html"
 nav_next: "/getting-started/faq.html"
 date:   2033-10-24 10:51:22
 categories: getting-started
