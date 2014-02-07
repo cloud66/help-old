@@ -14,16 +14,19 @@ lead: An overview of your post-deployment options
 
 <div class="notice">
     <h3>Note</h3>
-    <p>This is not an exhaustive list of our features.</p>
+    <p>This is not an exhaustive list of the available features.</p>
 </div>
 
 ## Terminal connection to your servers
 You always have [terminal access to servers](/how-to/shell-to-your-servers.html) deployed by Cloud 66, either from our embedded web terminal or your terminal application. For security reasons, we do not allow or provision password protected servers - we only use SSH key authentication.
 
 ## Scaling
-Cloud 66 makes it easy for you to scale any part of your stack with the click of a button. This includes web servers, databases and process servers.
+Cloud 66 makes it easy for you to scale any part of your stack with the click of a button. This includes [web servers](/stack-features/horizontal-scaling.html), [databases](/stack-features/database-replication.html) and [process servers](/stack-features/standalone-process-servers.html.
 
 In addition, we also make it possible for you to adjust the size of your server if need be.
+
+## Backups
+Use [unmanaged or managed backups](/stack-features/db-backup.html) to ensure that your data isn't lost, and use [backup verifiers](/stack-features/backup-verifiers.html) to check if your backups can actually be restored in the event of a disaster.
 
 ## Stack security
 Your stack is deployed with a fully-configured firewall and intruder detection system to improve your security. For example, database servers are only accessible by other servers in your stack to avoid third-parties gaining access to your data. Should any malicious activity be detected, the IP addresses involved are blocked.
