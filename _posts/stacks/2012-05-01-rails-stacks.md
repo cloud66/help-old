@@ -30,20 +30,20 @@ or use your own value. Alternatively, you can simply hard-code values as you wis
 {% highlight yaml %}
 development:
     adapter: mysql2
-    username: <%= if ENV['MYSQL_USERNAME'].nil? then 'root' else ENV['MYSQL_USERNAME'] end %>
-    password: <%= if ENV['MYSQL_PASSWORD'].nil? then '' else ENV['MYSQL_PASSWORD'] end %>
-    database: <%= if ENV['MYSQL_DATABASE'].nil? then 'tjenare' else ENV['MYSQL_DATABASE'] end %>
-    host: <%= if ENV['MYSQL_ADDRESS'].nil? then 'localhost' else ENV['MYSQL_ADDRESS'] end %>
+    username: <%= ENV['MYSQL_USERNAME'] || 'root' %>
+    password: <%= ENV['MYSQL_PASSWORD'] || '' %>
+    database: <%= ENV['MYSQL_DATABASE'] || 'dev' %>
+    host: <%= ENV['MYSQL_ADDRESS'] || 'localhost' %>
 {% endhighlight %}
 
 **PostgreSQL YML**
 {% highlight yaml %}
 development:
     adapter: postgresql
-    username: <%= if ENV['POSTGRESQL_USERNAME'].nil? then 'root' else ENV['POSTGRESQL_USERNAME'] end %>
-    password: <%= if ENV['POSTGRESQL_PASSWORD'].nil? then '' else ENV['POSTGRESQL_PASSWORD'] end %>
-    database: <%= if ENV['POSTGRESQL_DATABASE'].nil? then 'tjenare' else ENV['POSTGRESQL_DATABASE'] end %>
-    host: <%= if ENV['POSTGRESQL_ADDRESS'].nil? then 'localhost' else ENV['POSTGRESQL_ADDRESS'] end %>
+    username: <%= ENV['POSTGRESQL_USERNAME'] || 'root' %>
+    password: <%= ENV['POSTGRESQL_PASSWORD'] || '' %>
+    database: <%= ENV['POSTGRESQL_DATABASE'] || 'dev' %>
+    host: <%= ENV['POSTGRESQL_ADDRESS'] || 'localhost' %>
 {% endhighlight %}
 
 **Mongoid**
@@ -51,7 +51,7 @@ development:
 development:
   sessions:
     default:
-      database: <%= if ENV['MONGODB_DATABASE'].nil? then 'tjenare' else ENV['MONGODB_DATABASE'] end %>
+      database: <%= ENV['MONGODB_DATABASE'] || 'dev' %>
       hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
 {% endhighlight %}
 
