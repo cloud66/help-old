@@ -68,7 +68,7 @@ development:
         target: rails
 </pre>
 
-As it is scoped **development**, this deploy hook will only apply to stacks in **development** environments. At the **first&#95;thing** [hook point](/stack-features/deploy-hooks.html#hooks), it will transfer the file **/.cloud66/files/abc.sh** to target path **/tmp/abc.sh** on the **rails** server.
+As it is scoped **development**, this deploy hook will only apply to stacks in **development** environments. At the **first&#95;thing** <a class="page-toc" href="/stack-features/deploy-hooks.html#hooks">hook point</a>, it will transfer the file **/.cloud66/files/abc.sh** to target path **/tmp/abc.sh** on the **rails** server.
 
 <h3 id="execute">Copy file to destination and execute</h3>
 

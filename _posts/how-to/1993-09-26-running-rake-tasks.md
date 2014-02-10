@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Running Rake Tasks"
+title:  "Running rake tasks"
 so_title: "rake"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true

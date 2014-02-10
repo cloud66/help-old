@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Terminal Connection to your Servers"
+title:  "Terminal connection to your servers"
 so_title: "terminal"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true

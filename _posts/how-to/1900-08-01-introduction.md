@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "Cloud 66 Tutorials"
+title:  "Cloud 66 tutorials"
 date:   2110-08-26 15:33:13
 categories: how-to
 lead: Learning more about Cloud 66

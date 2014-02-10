@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "SSL Certificate"
+title:  "SSL certificate"
 so_title: "ssl"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
