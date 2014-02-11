@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Deploy hooks"
-so_title: "deploy hook"
+so_title: "deploy hooks"
 nav_sticky: false
 date:   2097-03-28 16:27:22
 categories: stack-features
@@ -14,14 +14,6 @@ lead: Take action at various points during build and/or deployment
 	<li>
 		<a href="#location">File location and format</a>
 	</li>
-	<li>
-		<a href="#copy">Copy file to destination</a>
-	</li>
-	<li>
-		<a href="#execute">Copy file to destination and execute</a>
-	</li>
-	<li>
-		<a href="#multiple">Multiple deploy hooks</a>
 	</li>
 	<li>
 		<a href="#hooks">Hook points</a>
@@ -40,13 +32,13 @@ lead: Take action at various points during build and/or deployment
                 </ul>
             </li>
 	<li>
-		<a href="#definition">Build/deploy definition</a>
+		<a href="#definition">Build / deploy definition</a>
 	</li>
 </ul>
 
-A simple use-case for a deploy hook would be to copy a file to a target location on your server and executing at some point during your deployment.
+Deploy hooks are scripts that you write to take action at various points during the deployment process. This allows you to customize the deployment of your application to meet your particular needs.
 
-For examples of other use-cases, please see our more detailed [use-case documentation](/how-to/deploy-hook-cases.html) or feel free to have a look at or contribute to our <a href="https://github.com/cloud66/deploy_hooks" target="_blank">deploy hooks repository</a>.
+For example, your deploy hook could copy a file to a target location on your server and execute at some point during your deployment. See our documentation for [examples of deploy hook use-cases](/how-to/deploy-hook-cases.html).
 
 <h2 id="location">File location and format</h2>
 
@@ -55,145 +47,143 @@ To use deploy hooks, a file called **deploy_hooks.yml** should be present within
 /.cloud66/deploy&#95;hooks.yml
 </pre>
 
-As the extension suggests, the deploy&#95;hooks.yml file is **YAML** formatted. And like other YAML files it is split by environment, allowing the definition of deploy hooks for different environments within a single file.
-
-<h3 id="copy">Copy file to destination</h3>
+As the extension suggests, the **deploy_hooks.yml** file is **YAML** formatted. This file is split by environment, allowing the definition of deploy hooks for different environments within a single file.
 
 A sample **deploy&#95;hooks.yml** file could look like the following:
-<pre class="terminal">
-development:
-    first&#95;thing:
-      - source: /.cloud66/files/abc.sh
+{% highlight yaml %}
+development: # Environment
+    first_thing: # Hook point
+      - source: /.cloud66/abc.sh # Available fields
         destination: /tmp/abc.sh
         target: rails
-</pre>
+{% endhighlight %}
 
-As it is scoped **development**, this deploy hook will only apply to stacks in **development** environments. At the **first&#95;thing** <a class="page-toc" href="/stack-features/deploy-hooks.html#hooks">hook point</a>, it will transfer the file **/.cloud66/files/abc.sh** to target path **/tmp/abc.sh** on the **rails** server.
-
-<h3 id="execute">Copy file to destination and execute</h3>
-
-We will take a similar approach to execute a script on the target server:
-<pre class="terminal">
-production:
-    last&#95;thing:
-      - source: /.cloud66/my&#95;script.sh
-        destination: /tmp/my&#95;script.sh
-        target: postgresql
-        execute: true
-        sudo: true
-</pre>
-
-The above example will only apply to stacks in **production** environments. At the **last&#95;thing** [hook point](/stack-features/deploy-hooks.html#hooks), it will transfer the file **/.cloud66/my&#95;script.sh** to the target path **/tmp/my&#95;script.sh** on the **postgresql** server, then it will **execute** the script using **sudo**.
-
-<h3 id="multiple">Multiple deploy hooks</h3>
-Lastly, multiple deploy hooks can be defined within the same file:
-<pre class="terminal">
-production:
-    first&#95;thing:
-      - source: /.cloud66/files/my&#95;config.conf
-        destination: /opt/somewhere/my&#95;config.conf
-        target: rails
-      - source: /.cloud66/files/my&#95;executable&#95;script.sh
-        destination: /etc/somewhere/my&#95;script.sh
-        target: rails
-        execute: true
-        sudo: true
-    after&#95;rails:
-      - source: /.cloud66/files/another&#95;executable&#95;script.sh
-        destination: /etc/somewhere/my&#95;script.sh
-        target: rails
-        owner: ubuntu
-        execute: true
-        run&#95;as: nginx
-        run&#95;on: single&#95;server
-        apply&#95;during: build&#95;only
-        parse: true
-        halt&#95;on&#95;error: false
-</pre>
-
-Here, two deploy hook actions will be performed in sequence at the **first&#95;thing** deploy [hook point](/stack-features/deploy-hooks.html#hooks), and a single deploy hook action will be performed at the **after&#95;rails** deploy [hook point](/stack-features/deploy-hooks.html#hooks).
-There is no upper limit to the number of actions that can be defined.
-
-As you can see from the **after&#95;rails** deploy hook action above, there are additional fields/options available that you can specify. See below for details on all the fields.
-
-If you would like to repeat multiple deploy hooks for different environments, you can do the following:
-
-<pre class="terminal">
-development: &default
-    first_thing:
-      - source: /.cloud66/script.sh
-        destination: /tmp/script.sh
-        target: rails
-        execute: true
-        sudo: true
-production:
-    <<: *default
-</pre>
+Refer to our documentation for [examples of deploy hook use-cases](/how-to/deploy-hook-cases.html).
 
 <h2 id="hooks">Hook Points</h2>
-<div class="notice">
+The following hook points are available:
 
-        <h3>Important</h3>
+<table class='table table-bordered table-striped table-small'>
+<tr>
+	<td><b>Hook point</b></td>
+	<td><b>Description</b></td>
+</tr>
+<tr>
+	<td>first&#95;thing</td>
+	<td>The first thing (after after_checkout) that will happen on the server. A common use-case for this hook is to install packages to run your application.</td>
+</tr>
+<tr>
+	<td>after&#95;checkout</td>
+	<td>When we create your server, your code is pulled directly from Git to it. Use this hook if you want to make a change to your code after it is pulled (but before anything else).<br/><br/>Happens during the code deployment of your application.</td>
+</tr>
+<tr>
+	<td>before&#95;<i>x</i></td>
+	<td>This hook will run before a server component is installed on your server. Accepted values for <i>x</i>: <i>redis</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i></td>
+</tr>
+<tr>
+	<td>after&#95;<i>x</i></td>
+	<td>This hook will run after a server component is installed on your server. Accepted values for <i>x</i>: <i>redis</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i></td>
+</tr>
+<tr>
+	<td>before&#95;rails</td>
+	<td>This hook will run before Rails is installed on your server.</td>
+</tr>
+<tr>
+	<td>after&#95;bundle</td>
+	<td>This hook will run after bundle but before other rake tasks, such as database migrations. <br/><br/>Happens during the code deployment of your application.</td>
+</tr>
+<tr>
+	<td>after&#95;symlink</td>
+	<td>Runs after the symbolic link to your current code folder has been created. <br/><br/>Happens during the code deployment of your application.</td>
+</tr>
+<tr>
+	<td>after&#95;rails</td>
+	<td>This hook will run after Rails is installed on your server.</td>
+</tr>
+<tr>
+	<td>before&#95;agent</td>
+	<td>This hook will run before the Cloud 66 agent is installed on your server.</td>
+</tr>
+<tr>
+	<td>after&#95;agent</td>
+	<td>This hook will run after the Cloud 66 agent is installed on your server.</td>
+</tr>
+<tr>
+	<td>last&#95;thing</td>
+	<td>This hook will run as the last thing that happens on your server.</td>
+</tr>
+</table>
 
-        <p>Deploy hooks that have your STACK&#95;PATH as a destination and that occur before the application has actually created the folder (eg. first&#95;thing, before&#95;rails etc) will cause permission errors during your code deployment.</p>
-</div>
+Deploy hook scripts that contain `$STACK_PATH` and occur before the <i>after_symlink</i> hook point will cause permission errors during deployment, because the symbolic link has not yet been created.
 
-Currently the following hook points are available:
-
-- **after&#95;checkout**<br/>
-Ensure a file gets pushed to the server before anything else happens
-- **first&#95;thing**<br/>
-The first thing (after after_checkout) that will happen on the server
-- **before&#95;redis**
-- **after&#95;redis**
-- **before&#95;mysql**
-- **after&#95;mysql**
-- **before&#95;postgresql**
-- **after&#95;postgresql**
-- **before&#95;mongodb**
-- **after&#95;mongodb**
-- **before&#95;rails**
-- **after&#95;bundle**<br/>
-Execute a task before other rake tasks (eg. db tasks) but after bundle
-- **after&#95;symlink**<br/>
-Execute a rake task after the cap deploy is done
-- **after&#95;rails**
-- **before&#95;agent**
-- **after&#95;agent**
-- **last&#95;thing**
+However, you're free to use `$STACK_PATH` as a source and/or destination for your deploy hook files before the <i>after_symlink</i> hook point.
 
 <h2 id="available">Available fields</h2>
 Available fields are divided into mandatory and optional fields:
 
 <h3 id="mandatory">Mandatory fields</h3>
-- **source**<br/>
-This specifies the source location of your deploy hook file within your repository. Wildcards are not currently supported.
-- **destination**<br/>
-This is the destination path on your target server. Note that you can also specify environment variables in your destination field
-(`<%= ENV['STACK_PATH'] %>` for example)
-- **target**<br/>
-This is the target server type against the deploy hook action should be performed. If you have a shared server (eg. Rails and MySQL) then specifying *rails* or *mysql* will result in the same physical server target.
+
+<table class='table table-bordered table-striped table-small'>
+<tr>
+	<td><b>Field</b></td>
+	<td><b>Description</b></td>
+</tr>
+<tr>
+	<td><b><i>source</i></b></td>
+	<td>This specifies the source location of your deploy hook file within your repository. Wildcards are not currently supported.</td>
+</tr>
+<tr>
+	<td><b><i>destination</i></b></td>
+	<td>The destination path on your target server. You can also specify environment variables in your destination field, <i><%= ENV['STACK_PATH'] %></i> for example.</td>
+</tr>
+<tr>
+	<td><b><i>target</i></b></td>
+	<td>This is the target server type against the deploy hook action should be performed. If you have a shared server (eg. Rails and MySQL) then specifying <i>rails</i> or <i>mysql</i> will result in the same physical server target.<br/><br/>Accepted values: <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, and <i>padrino</i>.</td>
+</tr>
+</table>
 
 <h3 id="optional">Optional fields</h3>
 
-The default values (if the optional field is not explicitly specified) are shown in brackets.
+Default values (if the field is not explicitly specified) are shown in brackets.
 
-- **apply&#95;during** (**all**)<br/>
-When do you want the deploy hook action to take place? Available options are: *build&#95;only*; *deploy&#95;only*; or *all* (see below for [build/deploy definitions](/stack-features/deploy-hooks.html#definition))
-- **execute** (**false**)<br/>
-Do you want to execute the file after it has been copied to its destination on the target server?
-- **halt&#95;on&#95;error** (**true**)<br/>
-If there is an error during the deploy hook execution, should the whole deployment continue or halt?
-- **owner** (**your&#95;server&#95;user**)<br/>
-Once the file is transmitted to the target server, what ownership permissions should be applied to it (and its destination folder)? An example could be "your&#95;user:your&#95;group".
-- **parse** (**true**)<br/>
-Specifies whether the file being transferred should be parsed for [environment variables](/stack-features/env-vars.html). Using this you can embed `<%= ENV['ENV_VAR'] %>` for example in your source file, and have it resolved during the deploy hook action.
-- **run&#95;on** (**single&#95;server**)<br/>
-If you have multiple servers in the same group (eg. scaled-up Rails servers) then you can specify whether you want the deploy hook action to occur just once, or once against each server in that group. Valid values are: *single&#95;server* or *all&#95;servers*.
-- **run&#95;as** (**server&#95;user**)<br/>
-If you are executing the file on your target server, allows you to define which user you would like the file to be executed as. Note: you can't specify both this and *sudo*.
-- **sudo** (**false**)<br/>
-If you are executing the file on your target server, do you want that execution to be sudo-ed? Note: you can't specify both this and *run&#95;as*.
+<table class='table table-bordered table-striped table-small'>
+<tr>
+	<td><b>Field</b></td>
+	<td><b>Description</b></td>
+</tr>
+<tr>
+	<td><b><i>apply&#95;during</i></b> (all)</td>
+	<td>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i> - see below for build/deploy definitions.</td>
+</tr>
+<tr>
+	<td><b><i>execute</i></b> (false)</td>
+	<td>Specify whether you want to execute the file after it has been copied to its destination on the target server.</td>
+</tr>
+<tr>
+	<td><b><i>halt&#95;on&#95;error</i></b> (true)</td>
+	<td>Specify whether the execution should continue or halt in the event of an error.</td>
+</tr>
+<tr>
+	<td><b><i>owner</i></b> (your server user)</td>
+	<td>Specify ownership permissions to be applied to the file (and destination folder) once transferred to the target server. An example could be <i>user:group</i>.</td>
+</tr>
+<tr>
+	<td><b><i>parse</i></b> (true)</td>
+	<td>Specifies whether the file being transferred should be parsed for <a href="/stack-features/env-vars.html">environment variables</a>. Using this you can embed <i><%= ENV['ENV_VAR'] %></i> for example in your source file, and have it resolved during the deploy hook action.</td>
+</tr>
+<tr>
+	<td><b><i>run_on</i></b> (single server)</td>
+	<td>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>.</td>
+</tr>
+<tr>
+	<td><b><i>run_as</i></b> (server user)</td>
+	<td>If you execute a file on your target server, specify which user you would like the file to be executed as. Note: you can't specify both this and <i>sudo</i>.</td>
+</tr>
+<tr>
+	<td><b><i>sudo</i></b> (false)</td>
+	<td>If you are executing the file on your target server, specify whether you want that execution to be sudo-ed? Note: you can't specify both this and <i>run_as</i>.</td>
+</tr>
+</table>
 
 <h2 id="definition">Build / deploy definition</h2>
 

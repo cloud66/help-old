@@ -25,6 +25,9 @@ lead: Common use-cases and examples for deploy hooks
             </ul>
         </li>
 	<li>
+		<a href="#delete">Delete a file</a>
+	</li>
+	<li>
 		<a href="#install">Install packages/fonts</a>
 	</li>
 	<li>
@@ -59,7 +62,7 @@ development:
         run_on: all_servers
 {% endhighlight %}
 
-This deploy hook will copy the file `/.cloud66/files/abc.sh` to `/tmp/def.sh` on _all_ your Rails servers, as the first thing that will happen on the server. We use a first_thing hook so that this is the first thing that happens on the server.
+This deploy hook will copy the file `/.cloud66/files/abc.sh` to `/tmp/def.sh` on _all_ your Rails servers, as the first thing that will happen on the server.
 
 <h3 id="remote">From a remote location</h3>
 
@@ -70,27 +73,54 @@ Use this hook to copy a file from a remote location to your server.
 
 development:
     after_checkout:
-      - source: /.cloud66/wget.sh
-        destination: /tmp/wget.sh
+      - source: /.cloud66/get.sh
+        destination: $STACK_PATH/get.sh
         target: rails
         execute: true
         sudo: true
-        apply_during: build_only
+        apply_during: all
         run_on: all_servers
 {% endhighlight %}
 
 {% highlight yaml %}
-### /.CLOUD66/WGET.SH ###
+### /.CLOUD66/GET.SH ###
 
-cd /tmp
-wget https://raw.github.com/file.yml
-cp /tmp/file.yml $STACK_PATH/config/file.yml
+wget https://raw.github.com/user/file.yml
+cp file.yml config/file_copied.yml
 {% endhighlight %}
 
-This deploy hook will copy `/.cloud66/wget.sh` to `/tmp/wget.sh` on all Rails servers during their initial build, and execute it with sudo permissions.
-The `wget.sh` script will fetch a file from a remote location, and copy it into your application folder.
+This deploy hook will copy `/.cloud66/get.sh` to `$STACK_PATH/get.sh` on all Rails servers during build and deployment, and execute it with sudo permissions. The destination of `$STACK_PATH/get.sh` allows the file to be copied into the new release folder - this is a special case to get around the fact that Capistrano doesn't symlink the new release folder to _current_ until later.
+
+The `wget.sh` script thus be executed inside your brand new release folder, and will fetch a file from a remote location and copy it into your _config_ folder.
 
 We use an after_checkout hook here because this means that the file will be available during the analysis period. This is important if the file contains information required by your application to run, without which it would fail during analysis.
+
+<h2 id="delete">Delete a file</h2>
+
+This hook may be useful if you have a file in your repository that is needed in your local development environment, but causes problems with your Cloud 66 deployments. For example, you might have a database.yml
+that is configured to work on your local machine.
+
+While you could always follow our [database.yml syntax](/stacks/rails-stacks.html) which accommodates for this, you could also have a hook to delete the file.
+
+{% highlight yaml %}
+### /.CLOUD66/DEPLOY_HOOKS.YML ###
+
+development:
+    after_checkout:
+      - source: /.cloud66/del.sh
+        destination: $STACK_PATH/del.sh
+        target: rails
+        execute: true
+        sudo: true
+        apply_during: all
+        run_on: all_servers
+{% endhighlight %}
+
+{% highlight yaml %}
+### /.CLOUD66/DEL.SH ###
+
+rm config/database.yml
+{% endhighlight %}
 
 <h2 id="install">Install packages/fonts</h2>
 
