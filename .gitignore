@@ -3,3 +3,5 @@
 /.versions.conf
 
 .versions.conf*
+
+.idea/
