@@ -58,6 +58,11 @@ development: # Environment
         target: rails
 {% endhighlight %}
 
+<div class="notice">
+    <h3>Note</h3>
+	<p>Our deployment hooks always take the form of copying a file to your server and optionally executing it. We will soon allow running a command directly in the deploy hook file.</p>
+</div>
+
 Refer to our documentation for [examples of deploy hook use-cases](/how-to/deploy-hook-cases.html).
 
 <h2 id="hooks">Hook Points</h2>
@@ -98,7 +103,7 @@ The following hook points are available:
 </tr>
 <tr>
 	<td>after&#95;rails</td>
-	<td>This hook will run after Rails is installed on your server.</td>
+	<td>This hook will run after Rails (and everything web related) is installed on your server.</td>
 </tr>
 <tr>
 	<td>before&#95;agent</td>
