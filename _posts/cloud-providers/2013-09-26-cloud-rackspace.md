@@ -9,7 +9,7 @@ categories: cloud-providers
 lead: Use your Rackspace account with Cloud 66
 ---
 
-You can use Cloud 66 to provision and deploy your code to servers on Rackspace. All you need to do is add your Rackspace API keys to your Cloud 66 account.
+You can use Cloud 66 to provision and deploy your code to servers in any Rackspace [region](/api/basics/instance-regions.html#rackspace). All you need to do is add your Rackspace API keys to your Cloud 66 account.
 
 Visit the Rackspace <a href="https://manage.rackspacecloud.com/pages/Login.jsp" target="_blank">US</a> or <a href="https://mycloud.rackspace.co.uk" target="_blank">EU</a> site to learn more about their offering and sign up for their services.
 

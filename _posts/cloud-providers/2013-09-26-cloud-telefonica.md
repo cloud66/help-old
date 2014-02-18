@@ -9,7 +9,7 @@ categories: cloud-providers
 lead: Use your Telefonica account with Cloud 66
 ---
 
-You can use Cloud 66 to provision and deploy your code to servers on Telefonica. All you need to do is add your Telefonica API keys to your Cloud 66 account.
+You can use Cloud 66 to provision and deploy your code to servers in any Telefonica [region](/api/basics/instance-regions.html#tef). All you need to do is add your Telefonica API keys to your Cloud 66 account.
 
 Please visit Telefonica to learn more about their <a href="https://my.instantservers.telefonica.com/login#" target="_blank">Instant Servers</a>.
 

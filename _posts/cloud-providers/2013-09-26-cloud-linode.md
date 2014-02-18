@@ -9,7 +9,7 @@ categories: cloud-providers
 lead: Use your Linode account with Cloud 66
 ---
 
-You can use Cloud 66 to provision and deploy your code to servers on Linode. All you need to do is add your Linode API keys to your Cloud 66 account.
+You can use Cloud 66 to provision and deploy your code to servers in any Linode [region](/api/basics/instance-regions.html#linode). All you need to do is add your Linode API keys to your Cloud 66 account.
 
 Please visit Linode to learn more about their <a href="http://www.linode.com/avail/" target="_blank">regions</a> and <a href="https://manager.linode.com/signup/#plans" target="_blank">Linode pricing</a>
 
