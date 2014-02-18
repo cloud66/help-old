@@ -6,84 +6,84 @@ so_title: "replication"
 nav_sticky: false
 date:   2099-01-01 16:27:22
 categories: stack-features
-lead: Use data of your stack in other stacks
+lead: Use the data in one stack in other stacks
 ---
 
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
-		<a href="#setup-data-source">Setup data source</a>
+		<a href="#intro">Introduction</a>
 	</li>
 	<li>
-		<a href="#disable-replication">Disable replication</a>
+		<a href="#setup">Initiating replication</a>
+	</li>
+	<li>
+		<a href="#disable-replication">Disabling replication</a>
 	</li>
 	<li>
 		<a href="#env-vars">Environment variables</a>
 	</li>
 </ul>
 
-You can use data of your stack in other stacks. These are some scenarios that you might use this feature :
+<h2 id="intro">Introduction</h2>
 
-- Prepare a failover for your current stack
-- Move your stack to other clouds/region
-- Use your data in other Application like reporting tools
+Cloud 66 allows you to replicate your databases between your stacks. These are some scenarios in which you might use this feature:
+
+- Prepare a fail-over for an existing stack
+- Move your stack to a different cloud/region
+- Use your database in applications like reporting tools
 
 Replication between stacks is supported for **MySQL**, **PostgreSQL** and **Redis** databases.
 
-<h2 id="setup-data-source">Setup data source</h2>
+<h2 id="setup">Initiating replication</h2>
 
-To enable replication between stacks, go to your database server detail page and click on the _Setup data source_ icon in the top right corner.
-You will see a window with list of stacks available as replication source for this server.
+Before we start replicating data between stacks, go ahead and deploy your code from your first stack (_source_) to a fresh stack (_target_).
+
+You can enable replication between stacks once this code has been successfully deployed to the _target_. You can then go to your database server detail page (on your _target_ stack) and click on the _Configure data replication_ icon in the top right corner.
 
 ![](http://cdn.cloud66.com.s3.amazonaws.com/images/help/data_source.png)
+
+This page will display a list of available replication sources for this server.
 
 ![](http://cdn.cloud66.com.s3.amazonaws.com/images/help/data_source_modal.png)
 
 <div class="notice">
 	<h3>Note</h3>
-	<p>You need to have edit access right to see the _Setup data source_ icon.</p>
+	<p>You need <i>Control stack</i> access rights to see the <i>Configure data replication</i> icon.</p>
+	<p>Additionally, you will only see stacks that have <b>managed backup installed</b> and that you have <i>Stack administrator</i> rights to in the <i>Select stack</i> field.</p>
 </div>
 
-<div class="notice">
-	<h3>Note</h3>
-	<p>You only see the stacks that managed backup is installed on them and you have admin access right.</p>
-</div>
+Select the stack you want to use as a <i>source</i> and confirm, which will start the replication between the stacks. The following steps will be initiated:
 
-Now select the stack you want as source and click Ok button.
-We are going to set up replication between your two stacks. During the process we are following below steps.
-
-- A full backup of the primary database server of your source stack is taken and restored on the destination server
-- The destination server is configured as a slave of the primary database server of your source stack
-- The master database is configured according to this new setup
-- Updating related environment variables for use in your code and scripts
-
+- We take a full backup of the primary database server in your <i>source</i> stack and restore it on the <i>target</i> server
+- The _target_ server is configured to be a slave of the _source_ database
+- The _source_ database is configured to be a master of the _target_ database
+- The relevant environment variables are updated for use in your code and scripts
 
 <div class="notice notice-danger">
 	<h3>Note</h3>
-	<p>The process of database replication will disrupt your _source_ and _destination_ database serving your applications for the duration of _Setup data source_ or _Disabling data source_.</p>
+	<p>The process of database replication will disrupt your <i>source</i> and <i>destination</i> databases for the duration of this process.</p>
 </div>
 
-The disruption time depends entirely on your database type and size, and different databases may require a restart and/or a complete backup in order to warm-up the new server. This disruption will occur every time you setup a data source or disabling it.
+The disruption time depends entirely on your database type and size, and different databases may require a restart and/or a complete backup in order to warm-up the new server. This disruption will occur every time you configure or disable data replication between stacks.
 
-<h2 id="disable-replication">Disable replication</h2>
+<h2 id="disable-replication">Disabling replication</h2>
 
-To disable replication between stacks, go to your destination database server detail page and click on the _Setup data source_ icon in the top right corner.
-You will see a window with list of stacks available as replication source for this server.
+To disable replication between stacks, go to your database server detail page (on your _target_ stack) and click on the _Configure data replication_ icon in the top right corner.
 
-Now select the "No data source" from list and click Ok button.
-We are going to disable replication between your two stacks.During the process we are following below steps.
+This page will display a list of available replication sources for this server.
 
-- Disabling replication on destination database server and configure it as a stand-alone database server.
-- Configuring primary database server of source stack and remove destination server from its slaves list
-- Configuring primary database server of source stack as a stand-alone database server if there is no slave remain.
-- Updating related environment variables for use in your code and scripts
+Now select the _Disable replication_ from the list and confirm, which will disable the replication between your stacks. The following steps will be initiated:
 
+- We disable the replication on your _target_ database server, and configure it to be a stand-alone database server
+- The _target_ database server is removed as a slave from the primary database server on the _source
+- The _source_ database server is configured as a stand-alone database server
+- The relevant environment variables are updated for use in your code and scripts
 
 <h2 id="env-vars">Environment variables</h2>
 Cloud 66 generates and populates a set of [environment variables automatically](/stack-features/env-vars.html#auto-gen) on each of your stack servers.
 
-
-During enabling/disabling replication between stacks, the value of some of environment variables will change
+The value of some environment variables will change during the enabling/disabling of replication between stacks.
 
 <table class='table table-bordered table-striped'>
 	<thead>
@@ -96,67 +96,66 @@ During enabling/disabling replication between stacks, the value of some of envir
 	<tbody>
 		<tr>
 			<td>MYSQL_SLAVE_ADDRESSES_INT</td>
-			<td>Internal IP address of new slave will add to this var.</td>
+			<td>This variable will be assigned the internal IP address of the new slave</td>
 			<td>No value.</td>
 		</tr>
 		<tr>
 			<td>MYSQL_SLAVE_ADDRESSES_EXT</td>
-			<td>External IP address of new slave will add to this var.</td>
+			<td>This variable will be assigned the external IP address of the new slave</td>
 			<td>No value.</td>
 		</tr>
 		<tr>
 			<td>MYSQL_DATABASE</td>
 			<td>No change</td>
-			<td>Database name of master will be set to this var</td>
+			<td>This variable will be assigned the database name of the master</td>
 		</tr>
 		<tr>
 			<td>MYSQL_USERNAME</td>
 			<td>No change</td>
-			<td>Database username of master will be set to this var</td>
+			<td>This variable will be assigned the database username of the master</td>
 		</tr>
 		<tr>
 			<td>MYSQL_PASSWORD</td>
 			<td>No change</td>
-			<td>Database password of master will be set to this var</td>
+			<td>This variable will be assigned the database password of the master</td>
 		</tr>
 		<tr>
 			<td>POSTGRESQL_SLAVE_ADDRESSES_INT</td>
-			<td>Internal IP address of new slave will add to this var.</td>
+			<td>This variable will be assigned the internal IP address of the new slave</td>
 			<td>No value.</td>
 		</tr>
 		<tr>
 			<td>POSTGRESQL_SLAVE_ADDRESSES_EXT</td>
-			<td>External IP address of new slave will add to this var.</td>
+			<td>This variable will be assigned the external IP address of the new slave</td>
 			<td>No value.</td>
 		</tr>
 		<tr>
 			<td>POSTGRESQL_DATABASE</td>
 			<td>No change</td>
-			<td>Database name of master will be set to this var</td>
+			<td>This variable will be assigned the database name of the master</td>
 		</tr>
 		<tr>
 			<td>POSTGRESQL_USERNAME</td>
 			<td>No change</td>
-			<td>Database username of master will be set to this var</td>
+			<td>This variable will be assigned the database username of the master</td>
 		</tr>
 		<tr>
 			<td>POSTGRESQL_PASSWORD</td>
 			<td>No change</td>
-			<td>Database password of master will be set to this var</td>
+			<td>This variable will be assigned the database password of the master</td>
 		</tr>
 		<tr>
 			<td>REDIS_SLAVE_ADDRESSES_INT</td>
-			<td>Internal IP address of new slave will add to this var.</td>
+			<td>This variable will be assigned the internal IP address of the new slave</td>
 			<td>No value.</td>
 		</tr>
 		<tr>
 			<td>REDIS_SLAVE_ADDRESSES_EXT</td>
-			<td>External IP address of new slave will add to this var.</td>
+			<td>This variable will be assigned the external IP address of the new slave</td>
 			<td>No value.</td>
 		</tr>
 	</tbody>
 </table>
-
 
 As with any environment variable change, you will need to redeploy the stack to propagate the variable changes to all servers.
 
