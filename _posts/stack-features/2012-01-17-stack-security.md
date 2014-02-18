@@ -67,6 +67,11 @@ lead: Configure security and firewall for the servers in your stack
                 <li><a href="#monitor">Monitoring the attacks</a></li>
                 </ul>
             </li>
+            <li>
+                <ul>
+                <li><a href="#tor">Blocking Tor traffic</a></li>
+                </ul>
+            </li>
 </ul>
 
 <h2 id="intro">Introduction</h2>
@@ -143,3 +148,6 @@ For Internet-facing servers (eg. web servers and load balancers), repeated HTTP/
 You can monitor attacks by clicking on the <i>Stack security</i> item on the <i>Stack details</i> menu. The page shows a list of current and past attacks (in the last 24 hours) with information about the source and destination.
 
 ![Cloud 66 DDoS Protection](http://help.cloud66.com.s3.amazonaws.com/images/cloud66_ddos_protection.png)
+
+<h3 id="tor">Blocking Tor traffic</h3>
+Refer to our page on [blocking Tor traffic](/stack-features/block-tor-traffic.html) for more information about how to enable this feature.
