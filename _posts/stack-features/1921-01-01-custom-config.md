@@ -8,7 +8,17 @@ categories: stack-features
 lead: Customize deployed configuration files
 ---
 
-## CustomConfig
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#custom">CustomConfig</a>
+	</li>
+	<li>
+		<a href="#patch">CustomConfig patch</a>
+	</li>
+</ul>
+
+<h2 id="custom">CustomConfig</h2>
 
 CustomConfig allows you to edit and modify component configuration templates used by Cloud 66 to configure your servers. This is currently available for Nginx and HAProxy configurations, and more configuration templates are forthcoming.
 
@@ -42,3 +52,9 @@ This process takes place in the background and might take some time to complete 
 You can subsequently see the history of your configuration changes with simple colored diff views alongside dates and comments.
 
 ![CustomConfig Diff History](http://cdn.cloud66.com/images/help/cusom_config_diff.png)
+
+<h2 id="patch">CustomConfig patch</h2>
+
+Every so often, Cloud 66 needs to update the base configuration files used for your application to run. When a patch is released, having customized configurations introduces complexities due to the differences in settings.
+
+Refer to our help page on [CustomConfig patches](/how-to/customconf-patch.html) for more information.
