@@ -11,7 +11,7 @@ lead: Use Cloud 66 CustomConfig to redirect HTTP to HTTPS
 If you only want to serve HTTPS traffic through your application, you may also want to redirect HTTP users to HTTPS.
 
 <p>
-<a target="_blank" rel="nofollow" class="button-home" href="http://www.cloud66.com/?utm_source=help&utm_medium=web&utm_campaign=help-page">Manage Nginx with ease on Cloud 66 &#10141;</a>
+<a target="_blank" rel="nofollow" class="button-home" href="https://www.cloud66.com/users/sign_up/?utm_source=help&utm_medium=web&utm_campaign=help-page">Manage Nginx with ease on Cloud 66 &#10141;</a>
 </p>
 
 Simply add this code to the _server_ section of your Nginx configuration using [CustomConfig](/stack-features/custom-config.html), for example on line 77. This will work even if you're not using Cloud 66.
