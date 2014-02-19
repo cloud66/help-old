@@ -21,7 +21,7 @@ We will use four files containing the following commands to accomplish this setu
 
 #### 1. RAILS&#95;ROOT/.cloud66/deploy&#95;hooks.yml
 
-[Redeployment hooks](/stack-features/redeployment-hook.html) allow you to take action at various points during a build and/or deployment on Cloud 66. This one will run the bash script that we will create in the next step before Rails is installed on your server.
+[Deploy hooks](/stack-features/redeployment-hook.html) allow you to take action at various points during a build and/or deployment on Cloud 66. This one will run the bash script that we will create in the next step before Rails is installed on your server.
 
 <pre class='terminal'>
 production:
