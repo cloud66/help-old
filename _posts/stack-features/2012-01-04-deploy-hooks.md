@@ -49,6 +49,11 @@ To use deploy hooks, a file called **deploy_hooks.yml** should be present within
 
 As the extension suggests, the **deploy_hooks.yml** file is **YAML** formatted. This file is split by environment, allowing the definition of deploy hooks for different environments within a single file.
 
+<div class="notice">
+    <h3>Note</h3>
+	<p>You can also use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.</p>
+</div>
+
 A sample **deploy&#95;hooks.yml** file could look like the following:
 {% highlight yaml %}
 development: # Environment

@@ -55,6 +55,11 @@ If [databases are detected](/stacks/databases.html), they will automatically be 
 Should you wish to change the database username/password after build, you will have to do this manually, which will involve recreating backup jobs to reflect the new values.
 
 ### Examples of connecting to your database:
+<div class="notice">
+    <h3>Note</h3>
+	<p>You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.</p>
+</div>
+
 #### Active Record
 
 **MySQL YML**

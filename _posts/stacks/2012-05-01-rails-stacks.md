@@ -22,6 +22,11 @@ Should you wish to change the database username/password after build, you will h
 
 ### Examples of connecting to your database:
 
+<div class="notice">
+    <h3>Note</h3>
+	<p>You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.</p>
+</div>
+
 The notation in the examples below allow you to seamlessly switch between your local development environment and your Cloud 66 environment without
 changing your database settings. The logic will determine if the Cloud 66 environment variable exists, and depending on the result, generate a value
 or use your own value. Alternatively, you can simply hard-code values as you wish.
