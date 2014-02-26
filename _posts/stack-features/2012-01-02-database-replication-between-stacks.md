@@ -110,16 +110,6 @@ The value of some environment variables will change during the enabling/disablin
 			<td>This variable will be assigned the database name of the master</td>
 		</tr>
 		<tr>
-			<td>MYSQL_USERNAME</td>
-			<td>No change</td>
-			<td>This variable will be assigned the database username of the master</td>
-		</tr>
-		<tr>
-			<td>MYSQL_PASSWORD</td>
-			<td>No change</td>
-			<td>This variable will be assigned the database password of the master</td>
-		</tr>
-		<tr>
 			<td>POSTGRESQL_SLAVE_ADDRESSES_INT</td>
 			<td>This variable will be assigned the internal IP address of the new slave</td>
 			<td>No value.</td>
