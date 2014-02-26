@@ -111,6 +111,11 @@ The manifest.yml file is **YAML** formatted and is split by environment just lik
 ruby -e 'require "yaml"; YAML.load&#95;file("/path&#95;to/manifest.yml")'
 </pre>
 
+<div class="notice">
+    <h3>Note</h3>
+	<p>You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.</p>
+</div>
+
 Although you are technically able to specify any number of infrastructure combinations in your manifest file, your basic stack infrastructure is still primarily defined by the Cloud 66 stack analysis result.
 For example, even though you can specify that you want a node.js server running, this will be ignored unless Cloud 66 supports that type explicitly.
 

@@ -19,7 +19,7 @@ When a patch is released, having customized configurations introduces complexiti
     <p>Failure to apply configuration updates may lead to unexpected behaviour.</p>
 </div>
 
-If you do have changes you will need to download a patch file, which is an archive containing the current template and the patch file. Next, run the following command:
+If you do have changes you will need to download a patch file, which is an archive containing the current template and the patch file. Extract the contents of the archive and run the following command:
 
 {% highlight bash %}
 patch <current_template> -i <patch_file> -o <merged_template>
