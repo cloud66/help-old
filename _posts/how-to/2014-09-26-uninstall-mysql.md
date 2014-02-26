@@ -5,7 +5,7 @@ title:  "Uninstalling MySQL"
 so_title: "mysql"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-date:   1560-09-26 15:33:13
+date:   1559-09-26 15:33:13
 categories: how-to
 lead: Uninstall MySQL completely from your Ubuntu server
 ---
