@@ -91,6 +91,10 @@ date: 2013-09-26
    			<td>San Francisco, US</td>
 			<td>3</td>
 		</tr>
+		<tr>
+   			<td>Singapore</td>
+			<td>6</td>
+		</tr>
 	</tbody>
 </table>
 
