@@ -96,12 +96,12 @@ The value of some environment variables will change during the enabling/disablin
 	<tbody>
 		<tr>
 			<td>MYSQL_SLAVE_ADDRESSES_INT</td>
-			<td>This variable will be assigned the internal IP address of the new slave</td>
+			<td>Internal IP address of the new slave will be appended</td>
 			<td>No value.</td>
 		</tr>
 		<tr>
 			<td>MYSQL_SLAVE_ADDRESSES_EXT</td>
-			<td>This variable will be assigned the external IP address of the new slave</td>
+			<td>External IP address of the new slave will be appended</td>
 			<td>No value.</td>
 		</tr>
 		<tr>
@@ -111,12 +111,12 @@ The value of some environment variables will change during the enabling/disablin
 		</tr>
 		<tr>
 			<td>POSTGRESQL_SLAVE_ADDRESSES_INT</td>
-			<td>This variable will be assigned the internal IP address of the new slave</td>
+			<td>Internal IP address of the new slave will be appended</td>
 			<td>No value.</td>
 		</tr>
 		<tr>
 			<td>POSTGRESQL_SLAVE_ADDRESSES_EXT</td>
-			<td>This variable will be assigned the external IP address of the new slave</td>
+			<td>External IP address of the new slave will be appended</td>
 			<td>No value.</td>
 		</tr>
 		<tr>
@@ -136,12 +136,12 @@ The value of some environment variables will change during the enabling/disablin
 		</tr>
 		<tr>
 			<td>REDIS_SLAVE_ADDRESSES_INT</td>
-			<td>This variable will be assigned the internal IP address of the new slave</td>
+			<td>Internal IP address of the new slave will be appended</td>
 			<td>No value.</td>
 		</tr>
 		<tr>
 			<td>REDIS_SLAVE_ADDRESSES_EXT</td>
-			<td>This variable will be assigned the external IP address of the new slave</td>
+			<td>External IP address of the new slave will be appended</td>
 			<td>No value.</td>
 		</tr>
 	</tbody>
