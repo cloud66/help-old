@@ -30,6 +30,12 @@ You can see here an example of a wrong line ending:
 ![Wrong Line Ending for SSL certificate](http://cdn.cloud66.com/images/help/wrong_encoding_of_ssl_certificate.png)
 
 ### Matching Certificates and Keys
+This usually manifests itself as the following error when starting nginx:
+
+<pre>
+nginx: [emerg] SSL_CTX_use_PrivateKey_file("FILE.key") failed (SSL: error:0B080074:x509 certificate routines:X509_check_private_key:key values mismatch
+</pre>
+
 To make sure your key and certificate match correctly, use the OpenSSL commandline tool like this:
 
 {% highlight bash %}
