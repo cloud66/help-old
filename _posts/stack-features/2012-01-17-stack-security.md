@@ -121,6 +121,7 @@ Cloud 66 only attempts SSH on port 22 to your servers from one of the following 
 54.235.151.248
 54.243.58.144
 54.235.157.238
+54.84.166.97
 </pre>
 
 <h2 id="rules">Changing firewall rules</h2>
