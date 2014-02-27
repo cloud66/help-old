@@ -114,13 +114,9 @@ Can be either `TCP` or `UDP`
 This is the port number of the traffic. You can either type in the port number or choose from the list of most commonly used port numbers by typing the service name (like `ssh` or `mongodb`).
 
 <h2 id="gateway">Gateway IP addresses</h2>
-Cloud 66 only attempts SSH on port 22 to your servers from one of the following IP addresses. Any addition to this list will be announced on this page.
+Cloud 66 only attempts SSH on port 22 to your servers from the following IP address. Any addition to this list will be announced on this page.
 
 <pre class='terminal'>
-54.235.109.209
-54.235.151.248
-54.243.58.144
-54.235.157.238
 54.84.166.97
 </pre>
 
