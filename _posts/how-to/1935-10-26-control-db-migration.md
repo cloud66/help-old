@@ -10,7 +10,7 @@ categories: how-to
 lead: Allows you to control the database migrations on your stack
 ---
 
-Running database migrations on deployment is a _Stack setting_ that you can control:
+Running Active Record migrations during deployment is a _Stack setting_ that you can control:
 
 ![Database migration](http://cdn.cloud66.com.s3.amazonaws.com/images/help/db_migration.png)
 
