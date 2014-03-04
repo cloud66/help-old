@@ -17,17 +17,21 @@ In other words, the tasks will run against each server simultaneously instead of
 	<p>This feature is only available to new stacks - please refer to our documentation on <a href="/how-to/migrate-across-dc.html">migrating your stack</a> to create a new one.</p>
 </div>
 
-Parallel deployment is a stack setting that is activated by default for [Unicorn-based stacks](/web-server/unicorn-rack-server.html) (as it supports zero downtime restarts), but not for stacks based
+Parallel deployment is a _Stack setting_ that is activated by default for [Unicorn-based stacks](/web-server/unicorn-rack-server.html) (as it supports zero downtime restarts), but not for stacks based
 on [Passenger](/web-server/custom-webserver.html).
 
 ![Parallel deploy](http://cdn.cloud66.com.s3.amazonaws.com/images/help/parallel_deploy.png)
 
-When this setting is defaulted to deploy in parallel, you have the option to do a one-off deployment in serial.
+When set to deploy in parallel, you still have the option to do a one-off deployment in serial on the _Deploy with options_ menu.
 
 ![Parallel deploy](http://cdn.cloud66.com.s3.amazonaws.com/images/help/parallel_deploy_option.png)
 
 Deploying in parallel means that servers won't be removed and re-added to your load balancer during deployment, as happens when you deploy in serial. This is
 because you could end up with no servers serving the load balancer if this were the case.
 
-If you need database migrations to run on deployment, it may be better to deploy in serial. Although they only occur on one server, depending on the changes,
-they could stop deployments on other servers from succeeding. Refer to our page on [controlling your database migrations](/how-to/control-db-migration.html) for more information.
+<div class="notice">
+	<h3>Note</h3>
+	<p>If you need database migrations to run on deployment, it may be better to deploy in serial.</p>
+</div>
+
+Although database migrations only occur on one server, depending on the changes, they could stop deployments on other servers from succeeding. Refer to our page on [controlling your database migrations](/how-to/control-db-migration.html) for more information.
