@@ -37,7 +37,7 @@ lead: Configure your DNS for maximum availability
 
 Cloud 66 provides [DNS host names](/stack-features/dns-service.html) for each server you deploy with us. This allows us to assign a new IP address to your application on your behalf when problems arise on a server, while still maintaining the same host name.
 
-For maximum scalability and resiliency you should avoid using DNS A-records (which point directly at an IP address). Instead, we recommend you use a DNS provider that supports CNAME functionality at the apex.
+For maximum scalability and resiliency you should avoid using DNS A-records (which point directly at an IP address).
 
 <h2 id="limit">Limitations</h2>
 CNAME records do not require hard-coded IP addresses, and allow Cloud 66 to manage the IP addresses associated with your application. However, CNAME records are not available to root domains (eg. example.com). In other words, you cannot set a CNAME record pointing example.com to a Cloud 66 host name.
