@@ -17,7 +17,7 @@ By default, stacks deployed by Cloud 66 run on <a href="https://www.phusionpasse
 
 <div class="notice">
 	<h3>Important</h3>
-	<p>You need to choose your web server at the time of initial build of the stack. Changes to the web server will not be applied after your stack has initially been analyzed.</p>
+	<p>You need to choose your web server at the time of initial build of the stack. Changes to or from Passenger will not be applied after your stack has initially been analyzed. You can however change freely between other supported servers after analysis.</p>
 </div>
 
 ## Configurations for your Rack server
