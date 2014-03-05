@@ -47,7 +47,7 @@ CNAME records do not require hard-coded IP addresses, and allow Cloud 66 to mana
 There are three approaches to serve traffic from your root domain while allowing Cloud 66 to manage your applications' IP addresses.
 
 <h4 id="dns">1. Use a modern DNS provider</h4>
-Some DNS hosts provide a CNAME-like functionality at the zone apex using a custom record type.
+Some DNS hosts provide a CNAME-like functionality at the zone apex (root domain) using a custom record type.
 
 For example:
 
@@ -70,7 +70,7 @@ This involves using an A record to point your root domain at your load balancer 
 <h4 id="subdomain">3. Subdomain redirection</h4>
 <div class="notice notice-danger">
 	<h3>Important</h3>
-	<p>This method will not work if you are serving content with SSL.</p>
+	<p>This method will not work if you are serving content with SSL, and only works for HTTP traffic (eg. not TCP/UDP).</p>
 </div>
 
 This method creates a 301 permanent redirect to a specified subdomain for all root domain traffic.
