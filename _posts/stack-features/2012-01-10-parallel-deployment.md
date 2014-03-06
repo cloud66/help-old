@@ -14,11 +14,11 @@ In other words, the tasks will run against each server simultaneously instead of
 
 <div class="notice">
 	<h3>Note</h3>
-	<p>This feature is only available to new stacks - please refer to our documentation on <a href="/how-to/migrate-across-dc.html">migrating your stack</a> to create a new one.</p>
+	<p>Users with existing stacks must opt-in to deploy in parallel.</p>
 </div>
 
-Parallel deployment is a _Stack setting_ that is activated by default for [Unicorn-based stacks](/web-server/unicorn-rack-server.html) (as it supports zero downtime restarts), but not for stacks based
-on [Passenger](/web-server/custom-webserver.html).
+Parallel deployment is a _Stack setting_ that is activated by default for new [stacks with a custom web server](/web-server/custom-webserver.html) (ie. Unicorn as it supports zero downtime restarts), but not for stacks based
+on [Passenger](/web-server/custom-webserver.html). New stacks based on Passenger must opt-in to deploy in parallel.
 
 ![Parallel deploy](http://cdn.cloud66.com.s3.amazonaws.com/images/help/parallel_deploy.png)
 
