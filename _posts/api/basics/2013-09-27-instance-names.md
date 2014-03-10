@@ -431,3 +431,59 @@ date: 2013-09-26
 		</tr>
 	</tbody>
 </table>
+
+## Vexxhost Cloud
+<table class='table table-bordered table-striped'>
+  <colgroup>
+    <col width="70%"/>
+    <col width="30%"/>
+  </colgroup>
+	<thead>
+		<tr>
+			<th>Instance Size</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>512MB</td>
+			<td>nb.512M</td>
+		</tr>
+		<tr>
+			<td>1GB</td>
+			<td>nb.1G</td>
+		</tr>
+		<tr>
+			<td>2GB</td>
+			<td>nb.2G</td>
+		</tr>
+		<tr>
+			<td>4GB</td>
+			<td>nb.4G</td>
+		</tr>
+		<tr>
+			<td>8GB</td>
+			<td>nb.8G</td>
+		</tr>
+		<tr>
+			<td>16GB</td>
+			<td>nb.16G</td>
+		</tr>
+		<tr>
+			<td>24GB</td>
+			<td>nb.24G</td>
+		</tr>
+		<tr>
+			<td>32GB</td>
+			<td>nb.32G</td>
+		</tr>
+		<tr>
+			<td>48GB</td>
+			<td>nb.48G</td>
+		</tr>
+		<tr>
+			<td>64GB</td>
+			<td>nb.64G</td>
+		</tr>
+	</tbody>
+</table>
