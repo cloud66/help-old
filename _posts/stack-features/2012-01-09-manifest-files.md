@@ -131,10 +131,11 @@ This simple example shows the power of **manifest.yml** files.
 {% highlight yaml %}
 production: # 1. Environment type
     rails: # 2. Application type
-        server: # 3. Server type (optional)
-            unique_name: frontend
-        configuration: # 4. Application specific configurations
-            ruby_version: 1.9.3
+        servers:
+            server: # 3. Server type (optional)
+                unique_name: frontend
+            configuration: # 4. Application specific configurations
+                ruby_version: 1.9.3
 {% endhighlight %}
 
 The above manifest is only scoped to *production* stacks. Here we have specified that we want to install Ruby version 1.9.3 on the rails server, and that it should be called <i>frontend</i>.
@@ -202,10 +203,10 @@ Cloud 66 currently recognizes the following application types in your manifest f
 Every application defined in the manifest file must be bound to a server. However, if you'd like configurations to apply to all servers in an application type, you don't need to specify a server type. Servers can be deployed specifically to host that application, [be shared between multiple applications](/stack-features/manifest-files.html#shared) (eg. Rails and MySQL on the same server) or be an [external server](/stack-features/manifest-files.html#external) (eg. using an external database).
 
 Here is an example of a server definition:
-<pre class="terminal">
+{% highlight ruby %}
 ... server:
-        unique&#95;name: frontend
-</pre>
+        unique_name: frontend
+{% endhighlight %}
 
 These are the parameters that the <i>server</i> section can take:
 
@@ -436,8 +437,8 @@ Specify whether to include PostGIS (Note: unlike the PG version, this can be add
 ... postgresql:
         server: ...
         configuration:
-            version: 9.2.3
-            postgis: true
+           	version: 9.2.3
+           	postgis: true
 </pre>
 
 <h4 id="postgis">PostGIS version configuration</h4>
@@ -445,15 +446,16 @@ Specify whether to include PostGIS (Note: unlike the PG version, this can be add
 - **version**<br/>
 Specify the version of PostGIS and GEOS you want to install
 
-   <pre class="terminal">
-   production:
-       postgresql:
-           configuration:
-               postgis:
-                   version: 2.0.3
-               geos:
-                   version: 3.3.8
-   </pre>
+<pre class="terminal">
+production:
+   postgresql:
+	   server: ...
+       configuration:
+           postgis:
+               version: 2.0.3
+           geos:
+               version: 3.3.8
+</pre>
 
 <hr>
 
@@ -465,8 +467,8 @@ Specify the version of RabbitMQ you want to install (does not apply to external 
 <pre class="terminal">
 ... rabbitmq:
         server: ...
-        configuration:
-            version: 3.2.1
+       	configuration:
+           	version: 3.2.1
 </pre>
 
 <hr>
@@ -489,16 +491,17 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
 
 <pre class="terminal">
 ... rails:
-        server: ...
-        configuration:
-            ruby&#95;version: 1.9.3
-            asset&#95;pipeline&#95;precompile: true
-            do&#95;initialdb&#95;schema&#95;load: false
-            reserved&#95;server&#95;memory: 0 (default value)
-            passenger&#95;process&#95;memory: 200 (default value)
-            nginx:
-            	cors: true
-            	perfect&#95;forward&#95;secrecy: true
+		servers:
+			server: ...
+			configuration:
+				ruby&#95;version: 1.9.3
+				asset&#95;pipeline&#95;precompile: true
+				do&#95;initial&#95;db&#95;schema&#95;load: false
+				reserved&#95;server&#95;memory: 0 (default value)
+				passenger&#95;process&#95;memory: 200 (default value)
+				nginx:
+					cors: true
+					perfect&#95;forward&#95;secrecy: true
 </pre>
 
 #### CORS configuration
@@ -506,12 +509,12 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
 If you want to, you can also specify the origin and methods for CORS.
 <pre class="terminal">
 ... rails:
-        server: ...
-        configuration:
-            nginx:
-            	cors:
-            		origin: '*'
-                	methods: 'GET, OPTION'
+		server: ...
+		configuration:
+			nginx:
+				cors:
+					origin: '*'
+					methods: 'GET, OPTION'
 </pre>
 
 <hr>
@@ -523,7 +526,7 @@ Specify the version of Redis you want to install (does not apply to external ser
 
 <pre class="terminal">
 ... redis:
-        server: ...
-        configuration:
-            version: 2.6.10
+		server: ...
+		configuration:
+			version: 2.6.10
 </pre>
