@@ -24,22 +24,22 @@ You can also add the domain name if you want to limit the SSL to a certain domai
 ### Certificate signing request
 
 To generate a .key and .crt file, follow the steps below.
-
-1. [SSH into your server](http://help.cloud66.com/how-to/shell-to-your-servers.html).
-2. Generate private key (KEY) on your server, without specifying a passphrase:
+<ol>
+<li>[SSH into your server](http://help.cloud66.com/how-to/shell-to-your-servers.html).</li>
+<li>Generate private key (KEY) on your server, without specifying a passphrase:</li>
 <p>
 <kbd>
 openssl genrsa -des3 -out private&#95;key.key 1024
 </kbd>
 </p>
-3. Create a certificate signing request file and enter your information as requested:
+<li>Create a certificate signing request file and enter your information as requested:</li>
 <p>
 <kbd>
 openssl req -new -key private&#95;key.key -out signing&#95;request.csr
 </kbd>
 </p>
-4. Provide this CSR file to your certificate authority, who will in turn provide you with a certificate (CRT) file.
-5. Use the original .key file together with this .crt file on Cloud 66.
+<li>Provide this CSR file to your certificate authority, who will in turn provide you with a certificate (CRT) file.</li>
+<li>Use the original .key file together with this .crt file on Cloud 66.</li>
 
 <div class="notice">
     <h3>Important</h3>
