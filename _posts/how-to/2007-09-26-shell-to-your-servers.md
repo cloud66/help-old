@@ -12,9 +12,8 @@ lead: You can connect directly to your servers for full control
 
 <div class="notice">
     <h3>Note</h3>
-	<p>
-		The third party embedded terminal has been discontinued.
-	</p>
+	<p>Unfortunately, due to circumstances beyond our control, the third party embedded terminal has been discontinued.</p>
+	<p>You need <a href="/your-account/team-accounts.html">administrative privileges for a stack</a> in order to download an SSH key.</p>
 </div>
 
 ## Cloud 66 toolbelt
