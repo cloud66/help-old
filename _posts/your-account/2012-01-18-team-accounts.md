@@ -56,7 +56,7 @@ You can specify the exact access rights you would like to grant to a specific us
 - View stack
 - Deploy stack
 - Control stack (can add/remove load balancer, setup backups etc.)
-- Shell to servers (given root access to servers via embedded terminal)
+[//]: # - Shell to servers
 - Delete stack
 - Stack administrator (can download server SSH keys)
 

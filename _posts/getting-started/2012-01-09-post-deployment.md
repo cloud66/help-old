@@ -18,7 +18,7 @@ lead: An overview of your post-deployment options
 </div>
 
 ## Terminal connection to your servers
-You always have [terminal access to servers](/how-to/shell-to-your-servers.html) deployed by Cloud 66, either from our embedded web terminal or your terminal application. For security reasons, we do not allow or provision password protected servers - we only use SSH key authentication.
+You always have [terminal access to servers](/how-to/shell-to-your-servers.html) deployed by Cloud 66. For security reasons, we do not allow or provision password protected servers - we only use SSH key authentication.
 
 ## Scaling
 Cloud 66 makes it easy for you to scale any part of your stack with the click of a button. This includes [web servers](/stack-features/horizontal-scaling.html), [databases](/stack-features/database-replication.html) and [process servers](/stack-features/standalone-process-servers.html).
