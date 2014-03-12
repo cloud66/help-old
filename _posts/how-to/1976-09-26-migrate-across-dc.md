@@ -13,7 +13,7 @@ lead: Migrating your stacks is easy with Cloud 66
 Do you want to move your stack from one cloud vendor or region to another? Follow the steps below for a seamless transition between stacks.
 <ol>
 <li>Reduce the TTL of your DNS to 5 minutes, and leave it for 24 hours so that it has time to propagate the network.</li>
-<li>Clone your source stack and deploy it to the new datacenter. This will save any environment variables you had configured on the source stack.</li>
+<li>[Clone your source stack](/stack-features/stack-clone.html) and deploy it to the new datacenter. This will save any environment variables you had configured on the source stack.</li>
 <img src="http://cdn.cloud66.com.s3.amazonaws.com/images/help/stack_clone.png">
 
 <li>Migrate your data across. Depending on your requirements (eg. you have a live app), you could do one of the following:</li>
