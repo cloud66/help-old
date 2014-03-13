@@ -20,17 +20,17 @@ gzip:
 
 # s3_reduced_redundancy: true
 
-# cloudfront_distribution_id: your-dist-id
+cloudfront_distribution_id: E1UWVSPFFER6JD
 
-# cloudfront_distribution_config:
-#   default_cache_behavior:
-#     min_TTL: <%= 60 * 60 * 24 %>
-#   aliases:
-#     quantity: 1
-#     items:
-#       CNAME: your.website.com
+cloudfront_distribution_config:
+  default_cache_behavior:
+    min_TTL: <%= 60 * 60 * 24 %>
+  aliases:
+    quantity: 1
+    items:
+      CNAME: help.cloud66.com
 
-# cloudfront_invalidate_root: true
+cloudfront_invalidate_root: true
 
 # concurrency_level: 100
 
