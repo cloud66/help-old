@@ -13,7 +13,7 @@ lead: Run your Rack apps with Thin
 ## Choosing Thin as your Rack server
 <div class="notice">
 	<h3>Important</h3>
-	<p>You need to choose your web server at the time of initial build of the stack. Changes to or from Passenger (the default web server) will not be applied after your stack has initially been analyzed. You can however change freely between other supported servers after analysis.</p>
+	<p>You need to choose your web server at the time of initial build of the stack. Changes to or from Passenger (the default web server) will not be applied after your stack has initially been analyzed. You can however change freely between other supported servers by simply updating your Gems and Procfile.</p>
 </div>
 
 To run a Thin Rack server, add a line to your Procfile labeled as custom&#95;web. Here is an example:
