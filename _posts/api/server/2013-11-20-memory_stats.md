@@ -9,7 +9,7 @@ path: '/stacks/:stack_uid/server_groups/:svg_id/servers/:uid/memory_stats'
 scope: 'public'
 ---
 
-Returns the disk stats of a server.
+Returns the memory stats of a server.
 
 ### Request
 
