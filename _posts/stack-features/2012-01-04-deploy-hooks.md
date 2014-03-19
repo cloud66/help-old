@@ -16,21 +16,34 @@ lead: Take action at various points during build and/or deployment
 	</li>
 	</li>
 	<li>
-		<a href="#hooks">Hook points</a>
-	</li>
-	<li>
-		<a href="#available">Available fields UPPPPPPDAATE</a>
+		<a href="#execute">1. Execute a command</a>
 	</li>
 	        <li>
                 <ul>
-                <li><a href="#mandatory">Mandatory</a></li>
+                <li><a href="#mandatory1">Mandatory fields</a></li>
                 </ul>
             </li>
             <li>
                 <ul>
-                <li><a href="#optional">Optional</a></li>
+                <li><a href="#optional1">Optional fields</a></li>
                 </ul>
             </li>
+	<li>
+		<a href="#copy">2. Copy a script or file</a>
+	</li>
+	        <li>
+                <ul>
+                <li><a href="#mandatory2">Mandatory fields</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#optional2">Optional fields</a></li>
+                </ul>
+            </li>
+	<li>
+		<a href="#hooks">Hook points</a>
+	</li>
 	<li>
 		<a href="#definition">Build / deploy definition</a>
 	</li>
@@ -60,11 +73,11 @@ This file can take one of two forms depending on your use-case:
 {% highlight yaml %}
 production: # Environment
     first_thing: # Hook point
-        command: apt-get install -y curl # Command
-        target: any ####### ADD THIS TO FIELDS - default value??
+        command: apt-get install -y curl # Mandatory fields
+        target: any
 {% endhighlight %}
 
-<h3 id="mandatory">Mandatory fields</h5>
+<h3 id="mandatory1">Mandatory fields</h5>
 <table class='table table-bordered table-striped table-small'>
 <tr>
 	<td><b>Field</b></td>
@@ -74,9 +87,13 @@ production: # Environment
 	<td><b><i>command</i></b></td>
 	<td>The command you would like to run</td>
 </tr>
+<tr>
+	<td><b><i>target</i></b></td>
+	<td>Your target - accepted values are <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, and <i>padrino</i>.</td>
+</tr>
 </table>
 
-<h3 id="optional">Optional fields</h5>
+<h3 id="optional1">Optional fields</h5>
 
 Default values (if the field is not explicitly specified) are shown in brackets.
 
@@ -94,8 +111,12 @@ Default values (if the field is not explicitly specified) are shown in brackets.
 	<td>Specify whether the execution should continue or halt in the event of an error.</td>
 </tr>
 <tr>
-	<td><b><i>run_on</i></b> (single server)</td>
-	<td>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>.</td>
+	<td><b><i>run_on</i></b></td>
+	<td>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.</td>
+</tr>
+<tr>
+	<td><b><i>run_as</i></b> (server user)</td>
+	<td>If you execute a file on your target server, specify which user you would like the file to be executed as. Note: you can't specify both this and <i>sudo</i>.</td>
 </tr>
 <tr>
 	<td><b><i>sudo</i></b> (false)</td>
@@ -108,11 +129,12 @@ Default values (if the field is not explicitly specified) are shown in brackets.
 {% highlight yaml %}
 development: # Environment
     first_thing: # Hook point
-      - source: /.cloud66/abc.sh # Source
+      - source: /.cloud66/abc.sh # Mandatory fields
         destination: /tmp/abc.sh
         target: rails
 {% endhighlight %}
-<h3 id="mandatory">Mandatory fields</h5>
+
+<h3 id="mandatory2">Mandatory fields</h5>
 <table class='table table-bordered table-striped table-small'>
 <tr>
 	<td><b>Field</b></td>
@@ -132,7 +154,7 @@ development: # Environment
 </tr>
 </table>
 
-<h3 id="optional">Optional fields</h5>
+<h3 id="optional2">Optional fields</h5>
 
 Default values (if the field is not explicitly specified) are shown in brackets.
 
