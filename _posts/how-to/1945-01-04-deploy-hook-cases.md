@@ -107,19 +107,11 @@ While you could always follow our [database.yml syntax](/stacks/rails-stacks.htm
 
 development:
     after_checkout:
-      - source: /.cloud66/del.sh
-        destination: $STACK_PATH/del.sh
+      - command: cd $STACK_PATH && rm config/database.yml
         target: rails
-        execute: true
         sudo: true
         apply_during: all
         run_on: all_servers
-{% endhighlight %}
-
-{% highlight yaml %}
-### /.CLOUD66/DEL.SH ###
-
-rm config/database.yml
 {% endhighlight %}
 
 <h2 id="install">Install packages/fonts</h2>
@@ -131,25 +123,11 @@ Use this hook example to install anything from packages to fonts on your server.
 
 production:
     first_thing:
-      - source: /.cloud66/scripts/install.sh
-        destination: /tmp/install.sh
-        target: rails
-        apply_during: build_only
-        run_on: all_servers
-        execute: true
-        sudo: true
+      - command: apt-get install libicu-dev -y && apt-get install acl -y
+        target: any
 {% endhighlight %}
 
-{% highlight yaml %}
-### /.CLOUD66/SCRIPTS/INSTALL.SH ###
-
-apt-get install libicu-dev -y
-apt-get install acl -y
-{% endhighlight %}
-
-This hook will copy `/.cloud66/scripts/install.sh` to `/tmp/install.sh` on all Rails servers during their initial build, and execute the script with sudo permissions. This specific script will install 2 packages on these servers.
-
-We run this as a first_thing hook because our application will need these packages to run.
+This hook will install 2 packages on all your servers servers. We run this as a first_thing hook because our application will need these packages to run.
 
 <div class="notice">
     <h3>Important</h3>
@@ -164,24 +142,13 @@ Use this hook if you have custom rake tasks that you need to run on your server 
 ### /.CLOUD66/DEPLOY_HOOKS.YML ###
 
 last_thing:
-  - source: /.cloud66/scripts/seed.sh
-    destination: /tmp/seed.sh
+  - command: cd $STACK_PATH && bundle exec rake dev:setup
     target: rails
+    run_on: single_server
     apply_during: build_only
-    execute: true
-    sudo: true
 {% endhighlight %}
 
-{% highlight yaml %}
-### /.CLOUD66/SCRIPTS/SEED.SH ###
-
-cd $STACK_PATH
-bundle exec rake dev:setup
-{% endhighlight %}
-
-This hook will copy `/.cloud66/scripts/seed.sh` to `/tmp/seed.sh` on your Rails server during build and execute with sudo permissions. The script will in turn run the rake task.
-
-We run this as a last_thing hook because if we ran it earlier the application wouldn't exist on the server and be usable.
+This will run our rake task on one Rails server and only during the initial build. We run this as a last_thing hook because if we ran it earlier the application wouldn't exist on the server and be usable.
 
 <h2 id="permissions">Setting permissions</h2>
 Use this hook if you need to set custom permissions on your server.
@@ -191,23 +158,13 @@ Use this hook if you need to set custom permissions on your server.
 
 production:
     first_thing:
-      - source: /.cloud66/scripts/permissions.sh
-        destination: /tmp/scripts/permissions.sh
+      - command: sudo chmod 0644 -R /var/.cloud66_env
         target: postgresql
         apply_during: build_only
-        execute: true
         sudo: true
 {% endhighlight %}
 
-{% highlight yaml %}
-### /.CLOUD66/SCRIPTS/PERMISSIONS.SH ###
-
-sudo chmod 0644 -R /var/.cloud66_env
-{% endhighlight %}
-
-This hook will copy `/.cloud66/scripts/permissions.sh` to `/tmp/scripts/permissions.sh` on your Postgresql server and execute with sudo permissions. The script will in turn issue the relevant permission commands.
-
-These permissions are set using a first_thing hook because they are likely to be needed by the application to run successfully.
+This hook will set permissions with sudo privileges on our PostgreSQL servers during the initial build. These permissions are set using a first_thing hook because they are likely to be needed by the application to run successfully.
 
 <h2 id="curl">Curl scripts</h2>
 If you have performed custom configuration commands on your server and are running Passenger, it may take a while to load the first time you access it. You can use this Curl hook to warm the server up for quicker loading.
