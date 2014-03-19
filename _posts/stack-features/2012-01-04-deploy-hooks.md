@@ -47,6 +47,9 @@ lead: Take action at various points during build and/or deployment
 	<li>
 		<a href="#definition">Build / deploy definition</a>
 	</li>
+	<li>
+		<a href="#troubleshoot">Troubleshooting</a>
+	</li>
 </ul>
 
 Deploy hooks are scripts that you write to take action at various points during the deployment process. This allows you to customize the deployment of your application to meet your particular needs.
@@ -257,3 +260,8 @@ A Cloud 66 *build* step occurs the first time a server is deployed. During *buil
 After a successful initial deployment, subsequent deployments are *deploy* steps.
 
 During a Cloud 66 *deploy* step, code is redeployed, but only minor configuration amendment will occur.
+
+<h2 id="troubleshoot">Troubleshooting</h2>
+Automating deploy hooks can sometimes be tricky. To avoid issues, it's always a good idea to run each of your commands manually to see that they complete successfully.
+
+If a specific command doesn't show any output, you can use the <code>echo $?</code> command after issuing your command to see its exit code. If it returns a _zero_, your command was successful, whereas a _one_ means it has failed.

@@ -9,7 +9,40 @@ categories: stack-features
 lead: Email, iOS, Hipchat and Webhook notifications
 ---
 
-## Account Notifications
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#account">Account notifications</a>
+	</li>
+	        <li>
+                <ul>
+                <li><a href="#emails">Emails</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#hipchat">Hipchat</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#ios">iOS</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#slack">Slack</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#webhooks">Webhooks</a></li>
+                </ul>
+            </li>
+</ul>
+
+
+<h2 id="account">Account Notifications</h3>
 You can control when and how you would like to receive notifications from Cloud 66. These is a range of events that trigger notifications, which can be sent as emails, via iOS push, Hipchat or Webhooks.
 
 ![cloud66_notifications](http://cdn.cloud66.com/images/help/notifications_menu_item.png)
@@ -21,13 +54,10 @@ You can control when and how you would like to receive notifications from Cloud 
 
 ![cloud66_alert_types](http://cdn.cloud66.com/images/help/notifications_list.png)
 
-## Emails
+<h3 id="emails">Emails</h3>
 Email notifications are enabled by default on all accounts. You will get an email for most of the cases above, with the exception of <i>deployment start</i> notifications. You can easily turn email notifications on or off for each type by clicking on the email icon.
 
-## iOS
-If you have the [Cloud 66 App](https://itunes.apple.com/us/app/cloud-66/id642299804?mt=8&uo=4) on your iOS device then you will be able to get iOS push notifications on your phone.
-
-## Hipchat
+<h3 id="hipchat">Hipchat</h3>
 [Hipchat](http://hipchat.com/) is a hosted realtime chat service by [Atlassian](https://www.atlassian.com/). You can get Cloud 66 notifications on HipChat by linking it to your HipChat account.
 
 First, generate a new Notification API token from your HipChat admin panel:
@@ -42,7 +72,25 @@ You will then start to receive notifications in your HipChat room.
 
 ![cloud66_hipchat_sample](http://cdn.cloud66.com/images/help/cloud66_hipchat_screenshot.png)
 
-## Webhooks
+<h3 id="ios">iOS</h3>
+If you have the [Cloud 66 App](https://itunes.apple.com/us/app/cloud-66/id642299804?mt=8&uo=4) on your iOS device then you will be able to get iOS push notifications on your phone.
+
+<h3 id="slack">Slack</h3>
+[Slack](https://slack.com/) is a real-time messaging, archiving and search application developed by Tiny Speck.
+
+Start by adding a service integration through the Slack dashboard, and follow the setup instructions provided. You simply need to use the URL provided by Slack in the Cloud 66 UI:
+
+![Slack URL](http://cdn.cloud66.com.s3.amazonaws.com/images/help/slack_notification.png)
+
+Specify your integration settings such as the channel you would like to broadcast to in the Slack UI:
+
+![Slack integration](http://cdn.cloud66.com.s3.amazonaws.com/images/help/slack_integration.png)
+
+You will then start to see notifications from Cloud 66 events in your Slack:
+
+![Slack notification](http://cdn.cloud66.com.s3.amazonaws.com/images/help/slack_notifications.png)
+
+<h3 id="webhooks">Webhooks</h3>
 [Webhooks](http://www.webhooks.org/) is a standard that uses HTTP POST to connect different systems, and is very simple to use but very powerful.
 
 All notification types from Cloud 66 can trigger a webhook. To setup your webhook, click on the <i>webhook</i> icon. There you can enter the URL for your webhook endpoint and test it to see how it behaves.
