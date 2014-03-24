@@ -97,6 +97,11 @@ lead: You can be more explicit about your stack composition
 
 Manifest files allow you to be more explicit about your stack composition by specifying additional packages you wish to install, server sizes/regions and other options.
 
+<div class="notice notice-danger">
+	<h3>Important</h3>
+    <p>Unless otherwise stated, manifest file specifications are only applied during the initial build of your stack.</p>
+</div>
+
 To use this functionality, you need to place a file called **manifest.yml** in a folder named **.cloud66**, that is in turn located in the root of your source code and checked into your repository.
 
 <pre class="terminal">
@@ -105,11 +110,7 @@ To use this functionality, you need to place a file called **manifest.yml** in a
 
 The manifest.yml file is **YAML** formatted and is split by environment just like database.yml or mongoid.yml. This allows for different configurations per environment within one file.
 
-<span class="highlighted">YAML files are very particular about formatting, and an extra space or tab somewhere can render the file unreadable.</span> You can always check the validity of your YAML file with the following command:
-
-<pre class="terminal">
-ruby -e 'require "yaml"; YAML.load&#95;file("/path&#95;to/manifest.yml")'
-</pre>
+<span class="highlighted">YAML files are very particular about formatting, and an extra space or tab somewhere can render the file unreadable.</span>
 
 <div class="notice">
     <h3>Note</h3>
@@ -351,7 +352,9 @@ Specify the version of ElasticSearch you want to install (does not apply to exte
 <hr>
 
 <h3 id="haproxy">HAProxy</h3>
-You can use the manifest file to make small configuration changes to the HAProxy load balancer deployed by Cloud 66. Currently they are limited to the following options:
+You can use the manifest file to make small configuration changes to the HAProxy load balancer deployed by Cloud 66 at any point. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/how-to/haproxy-customconfig.html).
+
+Currently they are limited to the following options:
 
 - **httpchk**<br/>
 The health-check configuration
@@ -479,15 +482,15 @@ A Rails application type in the manifest file gives you fine control over things
 - <b>ruby&#95;version</b><br/>
 Specify the version of Ruby to use (overridden if present in Gemfile)
 - <b>asset&#95;pipeline&#95;precompile</b><br/>
-Specify whether to use asset pipeline compilation
+Specify whether to use asset pipeline compilation - this will be taken into account during redeployment
 - <b>do&#95;initial&#95;db&#95;schema&#95;load</b><br/>
 Specify whether to perform "rake db:schema:load" on new builds
 - <b>reserved&#95;server&#95;memory</b><br/>
-A value in MB that Cloud 66 will assume should be left available. This will affect any automatically calculated values
+A value in MB that Cloud 66 will assume should be left available. This will affect any automatically calculated values, and will be taken into account during redeployment
 - <b>passenger&#95;process&#95;memory</b><br/>
-A value in MB that Cloud 66 will use for each passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only)
+A value in MB that Cloud 66 will use for each passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment
 - <b>nginx</b><br/>
-Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy)
+Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
 
 <pre class="terminal">
 ... rails:
