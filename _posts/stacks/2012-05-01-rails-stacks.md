@@ -41,6 +41,11 @@ development:
     host: <%= ENV['MYSQL_ADDRESS'] || 'localhost' %>
 {% endhighlight %}
 
+The default encoding used is UTF8 - but you can also specify your own, as long as it conforms with the [supported MySQL encodings](https://dev.mysql.com/doc/refman/5.5/en/charset-charsets.html):
+{% highlight yaml %}
+encoding: swe7
+{% endhighlight %}
+
 **PostgreSQL YML**
 {% highlight yaml %}
 development:
@@ -49,6 +54,12 @@ development:
     password: <%= ENV['POSTGRESQL_PASSWORD'] || '' %>
     database: <%= ENV['POSTGRESQL_DATABASE'] || 'dev' %>
     host: <%= ENV['POSTGRESQL_ADDRESS'] || 'localhost' %>
+{% endhighlight %}
+
+The default encoding used is UTF8 - but you can also specify your own, as long as it conforms with the [supported PostgreSQL encodings](http://www.postgresql.org/docs/9.3/static/multibyte.html):
+{% highlight yaml %}
+encoding: latin1
+template: template0
 {% endhighlight %}
 
 **Mongoid**
