@@ -315,7 +315,7 @@ You can share a server between two applications. This could be in cases like usi
 Each shared server definition specifies the name of another server definition in the manifest file for which the applications will then share the physical server:
 
 {% highlight yaml %}
-... shared_server: *another_existing_servers_unique_name*
+... same_as: *another_existing_servers_unique_name*
 {% endhighlight %}
 
 <h3 id="external">External Servers</h3>
