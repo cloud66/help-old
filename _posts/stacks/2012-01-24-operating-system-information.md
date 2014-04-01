@@ -37,7 +37,7 @@ Cloud 66 officially supports <strong>Ubuntu Linux 12.04</strong> and this is wha
 If you are deploying to your own servers, you will have to configure the operating system on your server. We have certain requirements for our set up to work:
 
 1. **Connection:**<br/>
-For security reasons, Cloud 66 only connects to your server using your secure keys. Please see our documentation on [generating an SSH key on your server](/how-to/ssh-keys.html).
+For security reasons, Cloud 66 only connects to your server using your secure keys on <b>port 22</b>. Please see our documentation on [generating an SSH key on your server](/how-to/ssh-keys.html).
 2. **Sudoer (passwordless):**<br/>
 As Cloud 66 connects to your server and provisions applications from scratch, administrator permissions are sometimes necessary. Therefore the user that you provide for use should also be a member of the sudoers group, and must not require a password to invoke sudo.
 3. **BASH**:<br/>

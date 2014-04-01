@@ -66,3 +66,5 @@ opens the web browser to visit the app served by the stack
 lists all the servers of a stack.
 ##    version
 show cx version
+##    info
+show info
