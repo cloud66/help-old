@@ -3,7 +3,7 @@ layout: post
 template: two-col
 title:  "Deploy your stack"
 date:   2035-01-27 01:01:01
-categories: toolbelt2
+categories: cloud-66-toolbelt
 lead: Deploy your stacks from the command line
 ---
 
