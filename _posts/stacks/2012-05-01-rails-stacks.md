@@ -35,10 +35,10 @@ or use your own value. Alternatively, you can simply hard-code values as you wis
 {% highlight yaml %}
 development:
     adapter: mysql2
-    username: <%= ENV['MYSQL_USERNAME'] || 'root' %>
-    password: <%= ENV['MYSQL_PASSWORD'] || '' %>
-    database: <%= ENV['MYSQL_DATABASE'] || 'dev' %>
-    host: <%= ENV['MYSQL_ADDRESS'] || 'localhost' %>
+    username: <%= ENV['MYSQL_USERNAME'] %>
+    password: <%= ENV['MYSQL_PASSWORD'] %>
+    database: <%= ENV['MYSQL_DATABASE'] %>
+    host: <%= ENV['MYSQL_ADDRESS'] %>
 {% endhighlight %}
 
 The default encoding used is UTF8 - but you can also specify your own, as long as it conforms with the [supported MySQL encodings](https://dev.mysql.com/doc/refman/5.5/en/charset-charsets.html):
@@ -50,10 +50,10 @@ encoding: swe7
 {% highlight yaml %}
 development:
     adapter: postgresql
-    username: <%= ENV['POSTGRESQL_USERNAME'] || 'root' %>
-    password: <%= ENV['POSTGRESQL_PASSWORD'] || '' %>
-    database: <%= ENV['POSTGRESQL_DATABASE'] || 'dev' %>
-    host: <%= ENV['POSTGRESQL_ADDRESS'] || 'localhost' %>
+    username: <%= ENV['POSTGRESQL_USERNAME'] %>
+    password: <%= ENV['POSTGRESQL_PASSWORD'] %>
+    database: <%= ENV['POSTGRESQL_DATABASE'] %>
+    host: <%= ENV['POSTGRESQL_ADDRESS'] %>
 {% endhighlight %}
 
 The default encoding used is UTF8 - but you can also specify your own, as long as it conforms with the [supported PostgreSQL encodings](http://www.postgresql.org/docs/9.3/static/multibyte.html):
@@ -67,7 +67,7 @@ template: template0
 development:
   sessions:
     default:
-      database: <%= ENV['MONGODB_DATABASE'] || 'dev' %>
+      database: <%= ENV['MONGODB_DATABASE'] %>
       hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
 {% endhighlight %}
 
