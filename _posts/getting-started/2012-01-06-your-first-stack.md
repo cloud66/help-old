@@ -13,7 +13,7 @@ lead: It's really easy to build your first stack
 ---
 
 ## 1. Start a stack
-Visit the <a href="https://www.cloud66.com/dashboard" target="_blank">Cloud 66 Dashboard</a> and click <i>Build Stack</i>.
+Visit the <a href="https://app.cloud66.com/dashboard" target="_blank">Cloud 66 Dashboard</a> and click <i>Build Stack</i>.
 
 ![First Stack](http://cdn.cloud66.com.s3.amazonaws.com/images/help/first_stack.png)
 

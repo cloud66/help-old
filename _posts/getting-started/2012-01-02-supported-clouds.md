@@ -42,7 +42,7 @@ If you don't want to use a cloud provider with Cloud 66, you're welcome to [depl
 
 <h2 id="remove">Removing or editing clouds</h2>
 
-If at any point you would like to remove or edit a cloud connection, you can do so from your <i>Account</i> page under the <a href="https://www.cloud66.com/clouds" target="_blank"><i>Cloud Keys menu</i></a>:
+If at any point you would like to remove or edit a cloud connection, you can do so from your <i>Account</i> page under the <a href="https://app.cloud66.com/clouds" target="_blank"><i>Cloud Keys menu</i></a>:
 
 ![cloud keys](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud_keys.png)
 

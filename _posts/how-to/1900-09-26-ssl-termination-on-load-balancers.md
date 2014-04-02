@@ -88,7 +88,7 @@ sudo apt-get install stunnel
 - You can then use the Cloud 66 [CustomConfig](/stack-features/custom-config.html) to configure the HAProxy configuration file as shown below. If you're not using Cloud 66, you have to make these changes manually in your <i>/etc/haproxy/haproxy.cfg</i> file.
 
 <p>
-<a target="_blank" rel="nofollow" class="button-home" href="https://www.cloud66.com/users/sign_up/?utm_source=help&utm_medium=web&utm_campaign=help-page">Manage your load balancers with ease on Cloud 66 &#10141;</a>
+<a target="_blank" rel="nofollow" class="button-home" href="https://app.cloud66.com/users/sign_up/?utm_source=help&utm_medium=web&utm_campaign=help-page">Manage your load balancers with ease on Cloud 66 &#10141;</a>
 </p>
 
 For example:

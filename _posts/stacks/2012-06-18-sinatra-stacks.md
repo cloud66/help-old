@@ -117,8 +117,8 @@ development:
 
 ## Example apps
 
-* <a href="https://www.cloud66.com/stacks/new?eduid=sinatra_mongodb" target="_blank">Sinatra and MongoDB</a>
-* <a href="https://www.cloud66.com/stacks/new?eduid=sinatra_mysql_ar" target="_blank">Sinatra and MySQL ActiveRecord</a>
-* <a href="https://www.cloud66.com/stacks/new?eduid=sinatra_psql_dm" target="_blank">Sinatra and PSQL DataMapper</a>
-* <a href="https://www.cloud66.com/stacks/new?eduid=sinatra_mysql_dm" target="blank">Sinatra and MySQL DataMapper</a>
-* <a href="https://www.cloud66.com/stacks/new?eduid=sinatra_redis" target="blank">Sinatra and Redis</a>
+* <a href="https://app.cloud66.com/stacks/new?eduid=sinatra_mongodb" target="_blank">Sinatra and MongoDB</a>
+* <a href="https://app.cloud66.com/stacks/new?eduid=sinatra_mysql_ar" target="_blank">Sinatra and MySQL ActiveRecord</a>
+* <a href="https://app.cloud66.com/stacks/new?eduid=sinatra_psql_dm" target="_blank">Sinatra and PSQL DataMapper</a>
+* <a href="https://app.cloud66.com/stacks/new?eduid=sinatra_mysql_dm" target="blank">Sinatra and MySQL DataMapper</a>
+* <a href="https://app.cloud66.com/stacks/new?eduid=sinatra_redis" target="blank">Sinatra and Redis</a>

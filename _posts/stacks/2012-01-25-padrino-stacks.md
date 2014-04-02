@@ -117,4 +117,4 @@ development:
 
 ## Example app
 
-* <a href="https://www.cloud66.com/stacks/new?eduid=padrino_mysql" target="_blank">Padrino with MySQL</a>
+* <a href="https://app.cloud66.com/stacks/new?eduid=padrino_mysql" target="_blank">Padrino with MySQL</a>

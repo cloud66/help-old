@@ -73,4 +73,4 @@ development:
 
 ## Example app
 
-* <a href="https://www.cloud66.com/stacks/new?eduid=rails_mysql" target="_blank">Rails with MySQL</a>
+* <a href="https://app.cloud66.com/stacks/new?eduid=rails_mysql" target="_blank">Rails with MySQL</a>
