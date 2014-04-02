@@ -27,7 +27,7 @@ Tutorials, technical how-tos or FAQs, here is a list of articles that you might 
 * [AWS Keys](/how-to/aws-keys.html)
 * [Integration with Semaphore](/how-to/integration-with-semaphore.html)
 * [Integration with Circle CI](/how-to/circle-ci-integration.html)
-* [Using the correct git URL](/how-to/git-url.html)
+* [Accessing your code](/how-to/access-your-code.html)
 
 ### Running Production Ready Stacks
 
