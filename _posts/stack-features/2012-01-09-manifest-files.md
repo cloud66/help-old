@@ -383,6 +383,8 @@ haproxy:
 
 <h3 id="memcached">Memcached</h3>
 
+We don't currently support dedicated Memcached servers, although we plan to support this in the near future. We do support standalone (and scaling) Redis, and considering the [performance differences](http://jamieonsoftware.com/post/59738699304/memcached-vs-redis), it may be worth switching.
+
 #### shared&#95;group:
 
 You can use shared&#95;group to configure where your memcached server should be deployed (if it is used in your code).
