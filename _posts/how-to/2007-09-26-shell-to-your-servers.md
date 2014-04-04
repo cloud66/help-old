@@ -31,7 +31,7 @@ The stack UID is available from the _Stack information_ page. By [linking a stac
 You can always have terminal access to your servers from your own server - just follow the steps below if you're on a Linux-based operating system. See our help page on [connecting for Windows-based systems](/how-to/shell-from-windows.html).
 <ol>
 <li>Port 22 (SSH) is closed to outside traffic by default - so you need to allow your own IP address to access it. See the [stack security](/stack-features/stack-security.html) page to accomplish this.</li>
-<li>Once the port is open, you can find your username and SSH key on your server page:</li> ![Direct Shell Access Username](http://cdn.cloud66.com.s3.amazonaws.com/images/help/ssh_download.png)
+<li>Once the port is open, you can find your username and SSH key on your server page:</li> ![Direct Shell Access Username](http://cdn.cloud66.com/images/help/ssh_download.png)
 <li>Change the access rights to the downloaded key to 0600:</li>
 <pre class="terminal">
 $ chmod 0600 /Users/xxx/Downloads/key.pem

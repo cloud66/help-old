@@ -27,7 +27,7 @@ Cloud 66 currently supports the following cloud providers:
 
 By providing us with your unique cloud provider API keys, Cloud 66 can provision new servers under your account.
 
-![cloud keys](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud_connect.png)
+![cloud keys](http://cdn.cloud66.com/images/help/cloud_connect.png)
 
 Once you've deployed to your cloud, you still have full root access and control over your servers. The servers are, and will always be yours.
 
@@ -44,7 +44,7 @@ If you don't want to use a cloud provider with Cloud 66, you're welcome to [depl
 
 If at any point you would like to remove or edit a cloud connection, you can do so from your <i>Account</i> page under the <a href="https://app.cloud66.com/clouds" target="_blank"><i>Cloud Keys menu</i></a>:
 
-![cloud keys](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud_keys.png)
+![cloud keys](http://cdn.cloud66.com/images/help/cloud_keys.png)
 
 
 

@@ -20,7 +20,7 @@ You can retrieve your backup in one of two ways:
 
 ### Cloud 66 web UI
 Access the backup page of your stack, and click the download button:
-![Backup Download](http://cdn.cloud66.com.s3.amazonaws.com/images/help/backup_download.png)
+![Backup Download](http://cdn.cloud66.com/images/help/backup_download.png)
 
 
 ### Command line

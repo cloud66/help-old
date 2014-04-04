@@ -41,11 +41,11 @@ Before we start replicating data between stacks, go ahead and deploy your code f
 
 You can enable replication between stacks once this code has been successfully deployed to the _target_. You can then go to your database server detail page (on your _target_ stack) and click on the _Configure data replication_ icon in the top right corner.
 
-![](http://cdn.cloud66.com.s3.amazonaws.com/images/help/data_source.png)
+![](http://cdn.cloud66.com/images/help/data_source.png)
 
 This page will display a list of available replication sources for this server.
 
-![](http://cdn.cloud66.com.s3.amazonaws.com/images/help/data_source_modal.png)
+![](http://cdn.cloud66.com/images/help/data_source_modal.png)
 
 <div class="notice">
 	<h3>Note</h3>

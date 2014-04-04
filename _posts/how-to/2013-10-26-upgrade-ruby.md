@@ -10,6 +10,22 @@ categories: how-to
 lead: How to upgrade Ruby on your stack
 ---
 
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#intro">Introduction</a>
+	</li>
+	<li>
+		<a href="#upgrade">Upgrade</a>
+	</li>
+			<li>
+                <ul>
+                <li><a href="#libyaml">LibYAML</a></li>
+                </ul>
+            </li>
+</ul>
+
+<h2 id="intro">Introduction</h2>
 Cloud 66 tries to make it easier to build [immutable infrastructure](http://www.chadfowler.com/blog/2013/06/23/immutable-deployments/). Building servers and stacks from scratch is much better than modifying existing server configurations and tinkering with settings until things start to work.
 
 <div class="notice notice-danger">
@@ -18,6 +34,8 @@ Cloud 66 tries to make it easier to build [immutable infrastructure](http://www.
 </div>
 
 Upgrading Ruby can be tricky. Our deployment process always deploys the latest release of Ruby on new servers, so all new stacks and scaled up servers will have the latest version of Ruby installed.
+
+<h2 id="upgrade">Upgrade</h2>
 
 We roll out automatic upgrades in case of security issues, and this will be made clear in your [StackScore](/stack-features/stackscore.html). You will need to redeploy your stack with the `Apply Upgrades` option from Deploy with Options menu item which will apply the security patches and then redeploy your app as usual.
 
@@ -32,3 +50,6 @@ If you've updated your base Ruby version in your Gemfile we will attempt to upgr
     <h3>Important!</h3>
     <p>Please ensure that the upgrades and patches work with your code before applying them. Upgrade and patch your development and test environments to ensure there are no issues. Backup your environment via your Cloud provider where possible.</p>
 </div>
+
+<h4 id="libyaml">LibYAML</h4>
+When you do a deployment with options and select "Upgrade Ruby”, in addition to other upgrades, we will upgrade your installed LibYAML version if we detect your version is not current.

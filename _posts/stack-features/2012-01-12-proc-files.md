@@ -25,11 +25,11 @@ The commands above would tell Cloud 66 to run <kbd>rake resque:work QUEUE=*</kbd
 Cloud 66 will attempt to bring processes that go down or crash up again. Processes are also instructed to start when your server is booted.
 
 An overall view of your processes is available on the dashboard:
-![Processes in Dashboard](http://cdn.cloud66.com.s3.amazonaws.com/images/help/processes_dash.png)
+![Processes in Dashboard](http://cdn.cloud66.com/images/help/processes_dash.png)
 
 ## Scaling processes
 By clicking on the process server(s) in your stack, you can scale processes up and down as well as restart them. The page looks like this:
-![Process Page](http://cdn.cloud66.com.s3.amazonaws.com/images/help/processes_page.png)
+![Process Page](http://cdn.cloud66.com/images/help/processes_page.png)
 Once you have your processes up and running, click on the + icon for each process and your process will be scaled up (or the - button to scale it down) immediately.
 
 As you can see above, the processes are being run on the web server. Should you wish, you can [scale to standalone process servers](/stack-features/standalone-process-servers.html).

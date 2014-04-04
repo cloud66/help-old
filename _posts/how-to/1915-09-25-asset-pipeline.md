@@ -44,7 +44,7 @@ Libraries for Javascript compilation on your server that are currently supported
 
 You can enable/disable asset pipeline precompilation when you setup your stack or in your manifest file.
 
-![Asset Pipeline Setting](http://cdn.cloud66.com.s3.amazonaws.com/images/help/asset_pipeline.png)
+![Asset Pipeline Setting](http://cdn.cloud66.com/images/help/asset_pipeline.png)
 
 This will be hidden if you have enabled/disabled asset pipeline compilation in your application.rb or in the manifest file.
 

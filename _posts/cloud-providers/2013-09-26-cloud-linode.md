@@ -20,7 +20,7 @@ Please visit Linode to learn more about their <a href="http://www.linode.com/ava
 
 Once you have signed up, please add your API keys to your account while [building a new stack](/getting-started/your-first-stack.html):
 
-![cloud connect](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud_connect.png)
+![cloud connect](http://cdn.cloud66.com/images/help/cloud_connect.png)
 
 <div class="notice notice-warning">
     <h3>Notice</h3>

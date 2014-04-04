@@ -15,7 +15,7 @@ lead: Bring your own servers to Cloud 66
 
 You're welcome to use your own servers with Cloud 66. They just need to be accessible to our service and meet our [operating system requirements](/stacks/operating-system-information.html).
 
-![bring your own server](http://cdn.cloud66.com.s3.amazonaws.com/images/help/byos.png)
+![bring your own server](http://cdn.cloud66.com/images/help/byos.png)
 
 However, given that we don't know anything about your local infrastructure (as we do with cloud vendors), our service offering is limited in the following regards:
 

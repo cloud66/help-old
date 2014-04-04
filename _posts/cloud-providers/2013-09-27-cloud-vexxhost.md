@@ -28,7 +28,7 @@ From that page, you will require your username and API key.   Please make sure t
 
 Once you have completed the sign up process and you would like to start deploying your application to the VEXXHOST cloud, you will need to add your username and API key to your Cloud 66 account while [building a new stack](http://help.cloud66.com/getting-started/your-first-stack.html).
 
-![Deployment Target](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud_connect.png "Deployment Target")
+![Deployment Target](http://cdn.cloud66.com/images/help/cloud_connect.png "Deployment Target")
 
 If you require any assistance in setting up your VEXXHOST cloud computing account, please contact their support team by [email](mailto:support@vexxhost.com), live chat on their [website](http://vexxhost.com/cloud-computing) or calling 1-800-910-1726.
 

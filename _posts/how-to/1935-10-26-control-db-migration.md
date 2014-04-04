@@ -12,7 +12,7 @@ lead: Allows you to control the database migrations on your stack
 
 Running Active Record migrations during deployment is a _Stack setting_ that you can control:
 
-![Database migration](http://cdn.cloud66.com.s3.amazonaws.com/images/help/db_migration.png)
+![Database migration](http://cdn.cloud66.com/images/help/db_migration.png)
 
 When you have disabled database migrations in the settings menu, you still have the option to do a one-off deployment with your selection on the _Deploy with options_ menu.
-![Database migration](http://cdn.cloud66.com.s3.amazonaws.com/images/help/db_migration_option.png)
+![Database migration](http://cdn.cloud66.com/images/help/db_migration_option.png)

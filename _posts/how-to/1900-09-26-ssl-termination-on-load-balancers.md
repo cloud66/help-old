@@ -177,4 +177,4 @@ stunnel4 &lt;path to stunnel.conf file&gt;
 <h2 id="rackspace">Rackspace</h2>
 Rackspace make it very easy for you to [add SSL certificates to their cloud load balancer](http://www.rackspace.com/knowledge_center/product-faq/cloud-load-balancers), straight from their control panel:
 
-![Rackspace SSL termination](http://cdn.cloud66.com.s3.amazonaws.com/images/help/rackspace_ssl_termination.png)
+![Rackspace SSL termination](http://cdn.cloud66.com/images/help/rackspace_ssl_termination.png)

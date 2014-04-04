@@ -53,7 +53,7 @@ In the event of a security vulnerability on any of the components we deploy on t
 
 <h4 id="ubuntu">Ubuntu</h4>
 You can choose to apply upgrades to your stack during deployment:
-![auto upgrades](http://cdn.cloud66.com.s3.amazonaws.com/images/help/auto_upgrades.png)
+![auto upgrades](http://cdn.cloud66.com/images/help/auto_upgrades.png)
 
 Choosing this option will perform operating system security package upgrades and set up [unattended upgrades](https://help.ubuntu.com/community/AutomaticSecurityUpdates) for your stack. Unattended upgrades will automatically check for and install the latest Ubuntu security packages on a daily basis.
 

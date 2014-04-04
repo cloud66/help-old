@@ -42,11 +42,11 @@ To invite your team members, access your <i>Account</i> page and select the <i>U
 
 You need to give your team a name before inviting other members. This is the same as your Company name on the Payments page. If you already have entered a company name, you will skip this part.
 
-![Users tab](http://cdn.cloud66.com.s3.amazonaws.com/images/help/users_tab.png)
+![Users tab](http://cdn.cloud66.com/images/help/users_tab.png)
 
 Clicking <i>Add a new user</i> will allow you to enter your team member's email address.
 
-![](http://help.cloud66.com.s3.amazonaws.com/pages/new_user_form.png)
+![](http://help.cloud66.com/pages/new_user_form.png)
 
 <h2 id="permissions">Permissions</h2>
 

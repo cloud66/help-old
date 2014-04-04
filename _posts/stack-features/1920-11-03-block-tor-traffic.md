@@ -24,6 +24,6 @@ Once enabled, Cloud 66 will automatically update a list of known Tor exit node I
 
 To enable this feature, simply click the drop-down cog on the top right of your stack and click the _Settings_ option:
 
-![Block tor](http://cdn.cloud66.com.s3.amazonaws.com/images/help/block_tor.png)
+![Block tor](http://cdn.cloud66.com/images/help/block_tor.png)
 
 Refer to our [stack security](/stack-features/stack-security.html) page for more information about security.

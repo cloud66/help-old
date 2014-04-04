@@ -14,7 +14,7 @@ lead: Helping you improve your stack
 
 StackScore&trade; is an <b>A</b> to <b>F</b> score that provides an indication of how reliable, resilient and performant your application is when deployed on your servers.
 
-![Cloud 66 StackScore](http://cdn.cloud66.com.s3.amazonaws.com/images/help/stackscore_overall.png)
+![Cloud 66 StackScore](http://cdn.cloud66.com/images/help/stackscore_overall.png)
 
 StackScore&trade; consists of five key metrics, each scored from <b>A</b> to <b>F</b>:
 
@@ -26,7 +26,7 @@ StackScore&trade; consists of five key metrics, each scored from <b>A</b> to <b>
 
 The overall StackScore&trade; is the lowest of the scores across these five metrics:
 
-![Cloud 66 StackScore](http://cdn.cloud66.com.s3.amazonaws.com/images/help/stackscore_detail.png)
+![Cloud 66 StackScore](http://cdn.cloud66.com/images/help/stackscore_detail.png)
 
 ### Code
 This uses a combination of known security vulnerabilities and [Gemnasium](https://gemnasium.com/).

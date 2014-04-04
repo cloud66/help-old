@@ -11,7 +11,7 @@ lead: Adding a load balancer couldn't be easier
 
 To add a load balancer, click on <i>Add a Load Balancer</i> in the Protips of the stack:
 
-![Add Load Balancer](http://cdn.cloud66.com.s3.amazonaws.com/images/help/load_balancer_protip.png)
+![Add Load Balancer](http://cdn.cloud66.com/images/help/load_balancer_protip.png)
 
 <div class="notice">
 		<h3>Important</h3>

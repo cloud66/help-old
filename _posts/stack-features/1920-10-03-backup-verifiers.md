@@ -73,13 +73,13 @@ t
 
 Once you have completed the above setup, you can check whether your backups have verified successfully by accessing the backups page
 of your stack.
-![Backup page](http://cdn.cloud66.com.s3.amazonaws.com/images/help/backup_page.png)
+![Backup page](http://cdn.cloud66.com/images/help/backup_page.png)
 
 A successfully verified backup will display a green tick.
-![Passed verification](http://cdn.cloud66.com.s3.amazonaws.com/images/help/verification_passed.png)
+![Passed verification](http://cdn.cloud66.com/images/help/verification_passed.png)
 
 A failure during backup verification will result in a red cross, and clicking on the red cross will show the error message.
-![Failed verification](http://cdn.cloud66.com.s3.amazonaws.com/images/help/verification_failed.png)
+![Failed verification](http://cdn.cloud66.com/images/help/verification_failed.png)
 
 Should you need to change your verification script at some point, simply commit the change to Git and redeploy your code.
 

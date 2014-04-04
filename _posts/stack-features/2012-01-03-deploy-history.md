@@ -22,11 +22,11 @@ back to previous commits if need be.
 
 Accessing your stack page, you will see a drop-down with a "View Deployment History" link:
 
-![history link](http://cdn.cloud66.com.s3.amazonaws.com/images/help/history_link.png)
+![history link](http://cdn.cloud66.com/images/help/history_link.png)
 
 On this page, you can see your previous commits, and revert back to previous commits:
 
-![deploy history 1](http://cdn.cloud66.com.s3.amazonaws.com/images/help/deploy_history_1.png)
+![deploy history 1](http://cdn.cloud66.com/images/help/deploy_history_1.png)
 
 Any code revisions that have not been deployed will have a hollow circle.
 

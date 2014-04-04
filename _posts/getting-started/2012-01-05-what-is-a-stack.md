@@ -15,7 +15,7 @@ A web application stack is a set of hardware and software components needed for 
 
 For example, your stack might be comprised of a load balancer, a number of web servers, process and database servers, your operating system and finally the hardware provided by your cloud vendor:
 
-![Cloud 66 Stack](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud66_stack.png)
+![Cloud 66 Stack](http://cdn.cloud66.com/images/help/cloud66_stack.png)
 
 You are offered a certain degree of freedom when choosing the different components of your stack.
 

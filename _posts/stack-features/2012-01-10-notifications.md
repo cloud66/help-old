@@ -80,15 +80,15 @@ If you have the [Cloud 66 App](https://itunes.apple.com/us/app/cloud-66/id642299
 
 Start by adding a service integration through the Slack dashboard, and follow the setup instructions provided. You simply need to use the URL provided by Slack in the Cloud 66 UI:
 
-![Slack URL](http://cdn.cloud66.com.s3.amazonaws.com/images/help/slack_notification.png)
+![Slack URL](http://cdn.cloud66.com/images/help/slack_notification.png)
 
 Specify your integration settings such as the channel you would like to broadcast to in the Slack UI:
 
-![Slack integration](http://cdn.cloud66.com.s3.amazonaws.com/images/help/slack_integration.png)
+![Slack integration](http://cdn.cloud66.com/images/help/slack_integration.png)
 
 You will then start to see notifications from Cloud 66 events in your Slack:
 
-![Slack notification](http://cdn.cloud66.com.s3.amazonaws.com/images/help/slack_notifications.png)
+![Slack notification](http://cdn.cloud66.com/images/help/slack_notifications.png)
 
 <h3 id="webhooks">Webhooks</h3>
 [Webhooks](http://www.webhooks.org/) is a standard that uses HTTP POST to connect different systems, and is very simple to use but very powerful.

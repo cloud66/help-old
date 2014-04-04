@@ -79,7 +79,7 @@ By default, we do not allow or provision password-protected servers and only use
 
 You can configure your stack security from the security page, which is available from <i>Stack security</i> menu item on the <i>Stack detail</i> page:
 
-![Cloud 66 Firewall](http://cdn.cloud66.com.s3.amazonaws.com/images/help/firewall_menu_item.png)
+![Cloud 66 Firewall](http://cdn.cloud66.com/images/help/firewall_menu_item.png)
 
 <h2 id="default">Default firewall rules</h2>
 Stack security allows you to configure and apply firewall rules per server for your stack. It acts as a UI in front of an [IP-table based firewall mechanism](https://help.ubuntu.com/community/IptablesHowTo).
@@ -88,7 +88,7 @@ By default, Cloud 66 gateway servers are the only servers allowed SSH (port 22) 
 
 Editing and removing the default firewall rules is not allowed to ensure secure accessibility to the servers at all times.
 
-![Cloud 66 Firewall Rules](http://cdn.cloud66.com.s3.amazonaws.com/images/help/firewall_rules.png)
+![Cloud 66 Firewall Rules](http://cdn.cloud66.com/images/help/firewall_rules.png)
 
 <h2 id="custom">Custom firewall rules</h2>
 You can add and remove custom rules to the firewall through the Stack Security page.
@@ -102,7 +102,7 @@ Alternatively, you can allow traffic from a range of IP addresses. For example, 
 
 You can also specify the source of the traffic by name, if that name is known in your stack. This can be chosen from the drop-down. The valid values can be `Anywhere`, the name of the any of the server groups in your stack (like `Rails Servers`, `MySQL Servers`) or the name of the individual server (like `Coyote`).
 
-![Cloud 66 Firewall Sources](http://cdn.cloud66.com.s3.amazonaws.com/images/help/firewall_from_dropdown.png)
+![Cloud 66 Firewall Sources](http://cdn.cloud66.com/images/help/firewall_from_dropdown.png)
 
 <h3 id="destination">Destination (to)</h3>
 This is the destination of the traffic. Only the servers or server groups within the stack are the valid values you can choose from the drop-down.
@@ -126,11 +126,11 @@ Changes to firewall rules are applied immediately after clicking on the "Apply R
 <h2 id="temporary">Temporary shell access</h2>
 Sometimes you need to access your servers temporarily. To avoid the dangers of leaving firewall ports open permanently, you can use the <i>temporary SSH connection</i> feature.
 
-![Access Leasing](http://cdn.cloud66.com.s3.amazonaws.com/images/help/access_least_button.png)
+![Access Leasing](http://cdn.cloud66.com/images/help/access_least_button.png)
 
 Just click on the plug icon on the top right on the security page and you are presented with a form filled with your current IP address and the period you would like to grant SSH access to that IP address. This access is to all of your servers in the stack from that IP address and once the given period is over the access rights will be revoked and the firewall port will be closed.
 
-![Access Leasing](http://cdn.cloud66.com.s3.amazonaws.com/images/help/access_least_overlay.png)
+![Access Leasing](http://cdn.cloud66.com/images/help/access_least_overlay.png)
 
 <h2 id="protect">Protecting against attacks</h2>
 All new stacks deployed with Cloud 66 are automatically protected against basic [DoS](http://en.wikipedia.org/wiki/Denial-of-service_attack) and [bruteforce](http://en.wikipedia.org/wiki/Brute-force_attack) attacks.
@@ -144,7 +144,7 @@ For Internet-facing servers (eg. web servers and load balancers), repeated HTTP/
 <h3 id="monitor">Monitoring the attacks</h3>
 You can monitor attacks by clicking on the <i>Stack security</i> item on the <i>Stack details</i> menu. The page shows a list of current and past attacks (in the last 24 hours) with information about the source and destination.
 
-![Cloud 66 DDoS Protection](http://help.cloud66.com.s3.amazonaws.com/images/cloud66_ddos_protection.png)
+![Cloud 66 DDoS Protection](http://help.cloud66.com/images/cloud66_ddos_protection.png)
 
 <h3 id="tor">Blocking Tor traffic</h3>
 Refer to our page on [blocking Tor traffic](/stack-features/block-tor-traffic.html) for more information about how to enable this feature.

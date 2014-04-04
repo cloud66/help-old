@@ -44,7 +44,7 @@ We currently support the following databases, with no need for additional config
 During analysis, Cloud 66 automatically detects whether your application relies on a database or not. This is based on a combination of your Gemfile and your database.yml or mongoid.yml files.
 
 After analysis, you are presented with the analysis results.
-![Database analysis results](http://cdn.cloud66.com.s3.amazonaws.com/images/help/database_analysis_results.png)
+![Database analysis results](http://cdn.cloud66.com/images/help/database_analysis_results.png)
 
 <h2 id="types">Database deployment types</h2>
 
@@ -54,10 +54,10 @@ As such, your application will be deployed without a database.
 If a <b>database is detected</b>, then depending on whether you are deploying to your own cloud provider or your own standalone server we will provide you with the following options for deployment.
 
 <h4 id="cloud">Deploying to your cloud</h4>
-![Cloud Provicer Database Deployment Options](http://cdn.cloud66.com.s3.amazonaws.com/images/help/cloud_database_deployment_options.png)
+![Cloud Provicer Database Deployment Options](http://cdn.cloud66.com/images/help/cloud_database_deployment_options.png)
 
 <h4 id="byos">Deploying to your own server</h4>
-![Standalone Provicer Database Deployment Options](http://cdn.cloud66.com.s3.amazonaws.com/images/help/standalone_database_deployment_options.png)
+![Standalone Provicer Database Deployment Options](http://cdn.cloud66.com/images/help/standalone_database_deployment_options.png)
 
 <h3 id="no">Choosing "no" database</h3>
 This option allows you to deploy your application without a database, and is ideal if it is hosted externally.
@@ -85,7 +85,7 @@ Choosing this option will also allow you to [database backups](/stack-features/d
 
 <h2 id="generated">Generated credentials</h2>
 If you haven't specified your username and password for your database, Cloud 66 will automatically generate these credentials for you. They will be available as environment variables and your application will be configured to use them.
-![Automatic Username Password Creation](http://cdn.cloud66.com.s3.amazonaws.com/images/help/database_username_or_password_empty.png)
+![Automatic Username Password Creation](http://cdn.cloud66.com/images/help/database_username_or_password_empty.png)
 
 <h2 id="upgrade">Upgrading your database</h2>
 Cloud 66 will not do in-place database upgrades, because the database upgrade may cause your application to stop working or may not be possible automatically. Therefore, to upgrade

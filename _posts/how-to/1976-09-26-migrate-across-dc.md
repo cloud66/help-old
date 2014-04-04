@@ -14,7 +14,7 @@ Do you want to move your stack from one cloud vendor or region to another? Follo
 <ol>
 <li>Reduce the TTL of your DNS to 5 minutes, and leave it for 24 hours so that it has time to propagate the network.</li>
 <li><a href="/stack-features/stack-clone.html">Clone your source stack</a> and deploy it to the new datacenter. This will save any environment variables you had configured on the source stack.</li>
-<img src="http://cdn.cloud66.com.s3.amazonaws.com/images/help/stack_clone.png">
+<img src="http://cdn.cloud66.com/images/help/stack_clone.png">
 
 <li>Migrate your data across. Depending on your requirements (eg. you have a live app), you could do one of the following:</li>
 <ol type="a">

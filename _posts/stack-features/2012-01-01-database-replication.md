@@ -63,7 +63,7 @@ To enable replication, click on the DB Server group of your stack and click on t
 
 ![](http://cdn.cloud66.com/images/help/db_scaleup.png)
 
-![](http://cdn.cloud66.com.s3.amazonaws.com/images/help/db_scaled.png)
+![](http://cdn.cloud66.com/images/help/db_scaled.png)
 
 <div class="notice notice-danger">
 	<h3>Note</h3>
