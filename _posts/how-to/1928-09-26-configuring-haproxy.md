@@ -20,10 +20,10 @@ lead: Configuring HAProxy to work with your application
 		<a href="#endpoint">Endpoint</a>
 	</li>
 	<li>
-		<a href="#freq">Check frequency</a>
+		<a href="#internal">Using internal IPs</a>
 	</li>
 	<li>
-		<a href="#redirects">Server redirects</a>
+		<a href="#test">Test interval</a>
 	</li>
 </ul>
 
@@ -40,7 +40,7 @@ Once logged in, you will see a variety of statistics for your load balancer, and
 
 <h2 id="endpoint">Endpoint</h2>
 
-By default, HAProxy will visit the _/_ endpoint on your application every 5 seconds to determine its state. This endpoint may need to change if that endpoint isn't available to the load balancer.
+By default, HAProxy will visit the _/_ endpoint on your application every 2 seconds to determine its state. This endpoint may need to change if that endpoint isn't available to the load balancer.
 
 You will want to look at the _httpchk_ option to change the endpoint - the simplest solution is to create a low overhead non-auth HTTP route somewhere in your application.
 
@@ -50,6 +50,16 @@ In this case, you could replace the _httpchk_ section with this:
 
 `httpchk HEAD /check.html HTTP/1.0`.
 
-<h2 id="freq">Check frequency</h2>
+<h2 id="internal">Using internal IPs</h2>
+By default, HAProxy is configured to use the external IP address of your servers, but it can be changed to use the internal addresses if you have private networking enabled.
 
-<h2 id="redirects">Server redirects</h2>
+Simply replace any `server.ext_ipv4` values with `server.int_ipv4` using [HAProxy CustomConfig](http://help.cloud66.com/how-to/haproxy-customconfig.html).
+
+<h2 id="test">Test interval</h2>
+You can also specify your own test interval if you like - this is done in the _server_ section of your HAProxy configruation. This section is on line 53 of the default configuration.
+
+To change the test interval to every 30 seconds (instead of the default 2 seconds), the template should look like this:
+<pre class="terminal">server          web&#123;&#123; forloop.index &#125;&#125; &#123;&#123; server.ext_ipv4 &#125;&#125;:80 cookie "LSW_WEB&#123;&#123; forloop.index &#125;&#125;" check inter 30000</pre>
+
+Please note the `inter 3000` at the end - this defines the test interval as 3000 milliseconds. Once this template is applied, it looks like this:
+<pre class="terminal">server          web1 107.170.99.39:80 cookie "LSW_WEB1" check inter 30000</pre>
