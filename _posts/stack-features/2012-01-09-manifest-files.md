@@ -440,14 +440,14 @@ Specify whether to include PostGIS (Note: unlike the PG version, this can be add
 ... postgresql:
         server: ...
         configuration:
-           	version: 9.2.3
+           	version: 9.3.4
            	postgis: true
 </pre>
 
 <h4 id="postgis">PostGIS version configuration</h4>
 
 - **version**<br/>
-Specify the version of PostGIS and GEOS you want to install
+Specify the version of PostGIS you want to install
 
 <pre class="terminal">
 production:
@@ -455,9 +455,7 @@ production:
 	   server: ...
        configuration:
            postgis:
-               version: 2.0.3
-           geos:
-               version: 3.3.8
+               version: 2.1.1
 </pre>
 
 <hr>

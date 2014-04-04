@@ -29,15 +29,14 @@ production:
             postgis: true
 </pre>
 
-If you would like to specify versions for PostGIS, it should look something like this:
+If you would like to specify versions, it should look something like this:
 <pre class="terminal">
 production:
     postgresql:
         configuration:
+        	version: 9.3.4
             postgis:
-                version: 2.0.3
-            geos:
-                version: 3.3.8
+                version: 2.1.1
 </pre>
 
 Once your stack has been deployed, you can find your PostGIS file in `/etc/postgresql/share/contrib/postgis-2.0/postgis.sql` on your database server.
