@@ -11,7 +11,7 @@ lead: If your application needs to write back to your webserver (and it isn't to
 
 ## The basics
 When you deploy a stack through Cloud 66, your webserver will run under a different user to the user that you've used to do the deployments.
-This user (*nginx*) does not have elevated permissions, and does not have write access to your filesystem (except explicitly to the */tmp* and the *$RAILS&#95;STACK&#95;PATH/tmp* folders)
+This user (*nginx*) does not have elevated permissions, and does not have write access to your filesystem (except explicitly to the */tmp* and the *$STACK&#95;PATH/tmp* folders)
 
 This drastically improves security on your application. However, some gems/applications required the ability to write to local files that are not in the above folders by default.
 To resolve these issues you can do one of the following:
@@ -38,7 +38,7 @@ Add a bash script to your stack that will perform the permission modification. F
 &#35;load environment variables
 source /var/.cloud66&#95;env
 &#35;assign desired permissions
-sudo chmod 0775 -R $RAILS&#95;STACK&#95;PATH/*your&#95;path&#95;here*
+sudo chmod 0775 -R $STACK&#95;PATH/*your&#95;path&#95;here*
 </pre>
 
 Then, add a deploy&#95;hook to execute the above script on each deploy. For example create the file *.cloud66/deploy&#95;hooks.yml* as below:

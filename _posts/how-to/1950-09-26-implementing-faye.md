@@ -50,7 +50,7 @@ sudo gem install faye --no-ri --no-rdoc
 Here we are creating a [background process](/stack-features/proc-files.html) for Faye so that we can control and monitor it from the Cloud 66 dashboard.
 
 <pre class='terminal'>
-faye: thin -R $RAILS&#95;STACK&#95;PATH/faye/config.ru start
+faye: thin -R $STACK&#95;PATH/faye/config.ru start
 </pre>
 
 #### 4. RAILS&#95;ROOT/faye/config.ru
@@ -64,4 +64,4 @@ faye&#95;server.listen(&lt;&lt;PUT-YOUR-PORT-HERE&gt;&gt;)
 </pre>
 
 ## Troubleshooting
-Should you need to do any troubleshooting, you can find your Faye logs in <code>$RAILS&#95;STACK&#95;PATH/log/user&#95;faye&#95;1.log</code> on your server.
+Should you need to do any troubleshooting, you can find your Faye logs in <code>$STACK&#95;PATH/log/user&#95;faye&#95;1.log</code> on your server.

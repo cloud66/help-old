@@ -65,7 +65,7 @@ We will be installing the <a href="http://wiki.nginx.org/HttpEchoModule" target=
 
 5. Enter the Nginx folder:<br><code>cd nginx-1.5.3</code>
 
-6. Execute the following command to configure the installation:<br><code>./configure --prefix='/etc/nginx' --add-module='/root/echo-nginx-module-0.46' --error-log-path='$RAILS&#95;STACK&#95;PATH/log' --user=nginx</code><br><br>Visit the Nginx website for more information about <a href="http://wiki.nginx.org/InstallOptions" target="_blank">installation and compile-time options</a>.
+6. Execute the following command to configure the installation:<br><code>./configure --prefix='/etc/nginx' --add-module='/root/echo-nginx-module-0.46' --error-log-path='$STACK&#95;PATH/log' --user=nginx</code><br><br>Visit the Nginx website for more information about <a href="http://wiki.nginx.org/InstallOptions" target="_blank">installation and compile-time options</a>.
 
 7. Execute `make` followed by `make install`, which will install Nginx with the new configuration.
 

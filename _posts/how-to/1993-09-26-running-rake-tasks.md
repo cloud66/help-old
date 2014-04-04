@@ -26,7 +26,7 @@ Simply add a bash script to your stack that contains the rake task: for example,
 <pre class="terminal">
 &#35;!/bin/bash
 &#35; access your Rails stack path
-cd $RAILS&#95;STACK&#95;PATH
+cd $STACK&#95;PATH
 &#35; run your rake task
 bundle exec rake your:task
 </pre>
@@ -49,7 +49,7 @@ This is done by starting a [terminal connection to your server](/how-to/shell-to
 
 <pre class="terminal">
 &#35; Access your Rails stack path
-cd $RAILS&#95;STACK&#95;PATH
+cd $STACK&#95;PATH
 &#35; Run your rake task
 bundle exec rake your:task
 </pre>
