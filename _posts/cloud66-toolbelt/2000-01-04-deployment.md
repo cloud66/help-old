@@ -27,12 +27,16 @@ $ cx redeploy [-s <stack>]
             <td><i>s</i></td>
             <td>Name of your stack</td>
         </tr>
+        <tr>
+        	<td><i>e</i> (optional)</td>
+        	<td>Your stack environment</td>
+        </tr>
     </tbody>
 </table>
 
 ## Example
 {% highlight bash %}
-$ cx redeploy -s "My Awesome App"
+$ cx redeploy -s "My Awesome App" -e production
 {% endhighlight %}
 
 Deploying a stack that is already being deployed will enqueue your redeploy command and will run it immediately after the current deployment is finished.
