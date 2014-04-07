@@ -23,6 +23,11 @@ lead: The process differs for different load balancers
 	</li>
 </ul>
 
+SSL termination using your load balancer allows the load balancer to handle incoming SSL connections, decrypt them and pass on unencrypted requests to your app servers.
+
+![SSL termination](http://cdn.cloud66.com/images/help/ssl_termination.png)
+
+It's important to note that _you do not need SSL termination to enable SSL on your stack_ - you can simply <a href="/add-ins/ssl.html">add your SSL certificate to your app servers</a> as an add-on.</p>
 
 <h2 id="aws">Amazon Elastic Load Balancer</h2>
 
