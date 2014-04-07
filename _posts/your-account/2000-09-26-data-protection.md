@@ -5,7 +5,7 @@ title:  "European Data protection compliance"
 so_title: false
 nav_sticky: true
 nav: true
-nav_prev: ""
+nav_prev: "/your-account/delete-account.html"
 nav_next: "/your-account/pci-compliance.html"
 date:   2040-09-24 10:51:22
 categories: your-account
