@@ -40,8 +40,8 @@ CB.help = ( function( $, window, document ) {
     };
 
     var config = {
-        typeaheadAction: 'https://www.cloud66.com/help/autocomplete?query=',
-        searchAction:    'https://www.cloud66.com/help/search.json'
+        typeaheadAction: 'https://app.cloud66.com/help/autocomplete?query=',
+        searchAction:    'https://app.cloud66.com/help/search.json'
     };
 
     var init = function() {
