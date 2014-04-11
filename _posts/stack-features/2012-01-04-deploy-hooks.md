@@ -187,6 +187,10 @@ Default values (if the field is not explicitly specified) are shown in brackets.
 	<td>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>.</td>
 </tr>
 <tr>
+	<td><b><i>execute</i></b> (false)</td>
+	<td>Do you want to execute the file after it has been copied to its destination on the target server?</td>
+</tr>
+<tr>
 	<td><b><i>run_as</i></b> (server user)</td>
 	<td>If you execute a file on your target server, specify which user you would like the file to be executed as. Note: you can't specify both this and <i>sudo</i>.</td>
 </tr>
