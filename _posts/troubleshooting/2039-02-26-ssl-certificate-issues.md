@@ -8,20 +8,48 @@ categories: Troubleshooting
 lead: Diagnose and fix the SSL certificate issues
 ---
 
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#webserver">Web server issues</a>
+	</li>
+	<li>
+		<a href="#pass">Passphrase protected keys</a>
+	</li>
+	<li>
+		<a href="#encoding">Certificate and key encoding</a>
+	</li>
+	<li>
+		<a href="#match">Matching certificates and keys</a>
+	</li>
+</ul>
 
-## Problem
 Installing SSL certificates on your Cloud 66 stack is very easy: copy the key and certificate and paste them into the SSL certificate dialog. Cloud 66 then automatically transfers the certificates to all of your frontend servers and configures the web server to use them.
 
 However, you always need to have the right SSL certificates and keys to use. Specifically, your SSL certificates need to:
 
+- Be input correctly for Nginx to start
 - Have no passphrase
 - Have the correct encoding
 - Match each other
 
-### Passphrase protected keys
-You can remove passphrases from your SSL keys easily. [Find out how to remove SSL passphrases](/how-to/remove-passphrase-from-certificate-key-for-nginx.html)
+<h3 id="webserver">Web server issues</h3>
+If you've added your SSL certificate through the Cloud 66 UI and your web server has stopped serving content, it's likely that there's some error with your SSL certificate. In this case, it's best to [SSH to your server](/how-to/shell-to-your-servers.html) and run `sudo service nginx restart`, which should highlight the error.
 
-### Certificate and key encoding
+<h3 id="pass">Passphrase protected keys</h3>
+You cannot use passphrase protected SSL certificate keys with Nginx. Using passphrase protected certificate keys will cause Nginx to prompt for the manual entry of passphrase at restart which will break the automatic deployment flow (and restart of Nginx after a server restart).
+
+The symptoms of this is that your deployment gets stuck in the _Restarting Nginx_ step.
+
+You can simply use a non-passphrase-protected version of your SSL certificate key when [adding an SSL key to your stack](/how-to/ssl-certificate.html). Use the following command to do it (on your development computer):
+
+{% highlight bash %}
+$ openssl rsa -in private_key_with_pass_phrase -out private_key_without_pass_phrase
+{% endhighlight %}
+
+You will be prompted for your passphrase and the output will be generated after that.
+
+<h3 id="encoding">Certificate and key encoding</h3>
 Certificates and key files need to have only a _new line_ character at the end (instead of both _new line_ and _carriage return_ characters). To see if that's the case, you can open them in a text editor like TextMate and show the invisible characters.
 ![TextMate Show Invisible Characters](http://cdn.cloud66.com/images/help/show_invisible_characters_textmate.png)
 
@@ -29,7 +57,7 @@ This is an example of a wrong line ending:
 
 ![Wrong Line Ending for SSL certificate](http://cdn.cloud66.com/images/help/wrong_encoding_of_ssl_certificate.png)
 
-### Matching certificates and keys
+<h3 id="match">Matching certificates and keys</h3>
 This problem usually manifests itself as the following error when starting nginx:
 
 <pre>

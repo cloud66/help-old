@@ -63,7 +63,6 @@ Tutorials, technical how-tos or FAQs, here is a list of articles that you might 
 
 * [Server and framework upgrades](/how-to/upgrade-packages.html)
 * [Generating SSL certificates](/how-to/ssl-certificate.html)
-* [Removing the Passphrase from SSL certificate keys](/how-to/remove-passphrase-from-certificate-key-for-nginx.html)
 
 ### Ruby on Rails Stacks
 

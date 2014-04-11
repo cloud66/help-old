@@ -11,7 +11,6 @@ categories: how-to
 lead: Adding an SSL Certificate to your server
 ---
 
-
 ## Adding SSL to your stacks
 To add SSL to your stack, you need to have a SSL certificate and key. Some certificate authorities also provide you with an intermediate certificate as well.
 
@@ -21,7 +20,7 @@ Once you have your certificate and key, click on the Install SSL certificate on 
 
 You can also add the domain name if you want to limit the SSL to a certain domain.
 
-### Certificate signing request
+<h3>Certificate signing request</h3>
 
 To generate a .key and .crt file, follow the steps below.
 <ol>
@@ -40,19 +39,13 @@ openssl req -new -key private&#95;key.key -out signing&#95;request.csr
 </p>
 <li>Provide this CSR file to your certificate authority, who will in turn provide you with a certificate (CRT) file.</li>
 <li>Use the original .key file together with this .crt file on Cloud 66.</li>
-
+</ol>
 <div class="notice">
     <h3>Important</h3>
-    <p>You cannot use passphrase protected certificate keys with Nginx. Learn how to <a href="/how-to/remove-passphrase-from-certificate-key-for-nginx.html">remove the passphrases from certificate keys</a>.</p>
+    <p>You cannot use passphrase protected certificate keys with Nginx. Learn how to <a href="/troubleshooting/ssl-certificate-issues.html">remove the passphrases from certificate keys</a>.</p>
 </div>
 
-### Removing passphrase from SSL keys
-If your SSL key is protected with a passphrase, you can remove it using the following command:
-
-{% highlight bash %}
-	openssl rsa -in wild_mydomain_com.key -out wild_mydomain_com.nopass.key
-{% endhighlight %}
-### Adding SSL certificate with Intermediate Certificates
+<h3>Adding SSL certificate with intermediate certificates</h3>
 Some SSL certificate providers (Certificate Authorities) like RapidSSL issue certificates that are not fully compatible with all devices (specifically Android devices). This is because they are not the ultimate CAs and usually act as a reseller for other authorities (like VeriSign).
 
 Cloud 66 supports these Certificate Authorities fully by allowing you add the intermediate certificate separately into the SSL certificate add-on form.
