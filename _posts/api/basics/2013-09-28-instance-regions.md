@@ -98,6 +98,42 @@ date: 2013-09-26
 	</tbody>
 </table>
 
+<h2 id="do">Google Compute Engine</h2>
+<table class="table table-bordered table-striped">
+  <colgroup>
+    <col width="70%"/>
+    <col width="30%"/>
+  </colgroup>
+	<thead>
+		<tr><th>Zone</th><th>Value</th></tr>
+  </thead>
+	<tbody>
+		<tr>
+   			<td>us-central1-a</td>
+			<td>us-central1-a</td>
+		</tr>
+		<tr>
+   			<td>us-central1-b</td>
+			<td>us-central1-b</td>
+		</tr>
+		<tr>
+   			<td>europe-west1-a</td>
+			<td>europe-west1-a</td>
+		</tr>
+		<tr>
+   			<td>europe-west1-b</td>
+			<td>europe-west1-b</td>
+		</tr>
+		<tr>
+   			<td>asia-east1-a</td>
+			<td>asia-east1-a</td>
+		</tr>
+		<tr>
+   			<td>asia-east1-b</td>
+			<td>asia-east1-b</td>
+		</tr>
+	</tbody>
+</table>
 
 <h2 id="joyent">Joyent</h2>
 <table class="table table-bordered table-striped">

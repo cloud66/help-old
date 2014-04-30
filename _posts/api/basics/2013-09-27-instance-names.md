@@ -204,6 +204,109 @@ date: 2013-09-26
 	</tbody>
 </table>
 
+## Google Compute Engine
+<table class='table table-bordered table-striped'>
+  <colgroup>
+    <col width="70%"/>
+    <col width="30%"/>
+  </colgroup>
+	<thead>
+		<tr>
+			<th>Instance Size</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>f1-micro</td>
+			<td>f1-micro</td>
+		</tr>
+		<tr>
+			<td>g1-small</td>
+			<td>g1-small</td>
+		</tr>
+		<tr>
+			<td>n1-highcpu-2</td>
+			<td>n1-highcpu-2</td>
+		</tr>
+		<tr>
+			<td>n1-highcpu-2-d</td>
+			<td>n1-highcpu-2-d</td>
+		</tr>
+		<tr>
+			<td>n1-highcpu-4</td>
+			<td>n1-highcpu-4</td>
+		</tr>
+		<tr>
+			<td>n1-highcpu-4-d</td>
+			<td>n1-highcpu-4-d</td>
+		</tr>
+		<tr>
+			<td>n1-highcpu-8/td>
+			<td>n1-highcpu-8</td>
+		</tr>
+		<tr>
+			<td>n1-highcpu-8-d</td>
+			<td>n1-highcpu-8-d</td>
+		</tr>
+		<tr>
+			<td>n1-highmem-2</td>
+			<td>n1-highmem-2</td>
+		</tr>
+		<tr>
+			<td>n1-highmem-2-d</td>
+			<td>n1-highmem-2-d</td>
+		</tr>
+		<tr>
+			<td>n1-highmem-4</td>
+			<td>n1-highmem-4</td>
+		</tr>
+		<tr>
+			<td>n1-highmem-4-d</td>
+			<td>n1-highmem-4-d</td>
+		</tr>
+		<tr>
+			<td>n1-highmem-8</td>
+			<td>n1-highmem-8</td>
+		</tr>
+		<tr>
+			<td>n1-highmem-8-d</td>
+			<td>n1-highmem-8-d</td>
+		</tr>
+		<tr>
+			<td>n1-standard-1</td>
+			<td>n1-standard-1</td>
+		</tr>
+		<tr>
+			<td>n1-standard-1-d</td>
+			<td>n1-standard-1-d</td>
+		</tr>
+		<tr>
+			<td>n1-standard-2</td>
+			<td>n1-standard-2</td>
+		</tr>
+		<tr>
+			<td>n1-standard-2-d</td>
+			<td>n1-standard-2-d</td>
+		</tr>
+		<tr>
+			<td>n1-standard-4</td>
+			<td>n1-standard-4</td>
+		</tr>
+		<tr>
+			<td>n1-standard-4-d</td>
+			<td>n1-standard-4-d</td>
+		</tr>
+		<tr>
+			<td>n1-standard-8</td>
+			<td>n1-standard-8</td>
+		</tr>
+		<tr>
+			<td>n1-standard-8-d</td>
+			<td>n1-standard-8-d</td>
+		</tr>
+	</tbody>
+</table>
 
 ## Joyent
 <table class='table table-bordered table-striped'>
