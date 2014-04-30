@@ -35,7 +35,7 @@ cloudfront_invalidate_root: true
 # concurrency_level: 100
 
 redirects:
-  getting-started/toolbelt.html: toolbelt/introduction.html
+  getting-started/toolbelt.html: cloud66-toolbelt/introduction.html
   how-to/upgrade-ruby-rails.html: how-to/upgrade-packages.html
   getting-started/ssh-keys.html: how-to/ssh-keys.html
   add-ins/one-click-database-backup.html: stack-features/db-backup.html
@@ -45,6 +45,15 @@ redirects:
   getting-started/team-accounts.html: your-account/team-accounts.html
   getting-started/support.html: your-account/support.html
   how-to/git-url.html: how-to/access-your-code.html
+  toolbelt/introduction.html: cloud66-toolbelt/introduction.html
+  toolbelt/stack-links.html: cloud66-toolbelt/shortcuts.html
+  toolbelt/stack-alias.html: cloud66-toolbelt/shortcuts.html
+  toolbelt/deployment.html: cloud66-toolbelt/deployment.html
+  toolbelt/set.html: cloud66-toolbelt/set.html
+  toolbelt/lease.html: cloud66-toolbelt/lease.html
+  toolbelt/ssh.html: cloud66-toolbelt/ssh.html
+  toolbelt/restart.html: cloud66-toolbelt/restart.html
+  toolbelt/download-backup.html: cloud66-toolbelt/backups.html
 
 #   about.php: about.html
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ

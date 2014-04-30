@@ -17,7 +17,7 @@ lead: You can connect directly to your servers for full control
 </div>
 
 ## Cloud 66 toolbelt
-You can use the [Cloud 66 toolbelt](/toolbelt/introduction.html) to easily [SSH to your servers](/toolbelt/ssh.html). Once initialized, the following command can be used:
+You can use the [Cloud 66 toolbelt](/cloud66-toolbelt/introduction.html) to easily [SSH to your servers](/cloud66-toolbelt/ssh.html). Once initialized, the following command can be used:
 {% highlight bash %}
 # Full
 c66 ssh --stack STACK_UID --server_name SERVER_NAME
@@ -25,7 +25,7 @@ c66 ssh --stack STACK_UID --server_name SERVER_NAME
 c66 ssh -s STACK_UID -n SERVER_NAME
 {% endhighlight %}
 
-The stack UID is available from the _Stack information_ page. By [linking a stack to a folder](/toolbelt/stack-links.html), you can also avoid the use of _stack UID_ when you'd like to connect to a server.
+The stack UID is available from the _Stack information_ page. By [linking a stack to a folder](/cloud66-toolbelt/shortcuts.html), you can also avoid the use of _stack UID_ when you'd like to connect to a server.
 
 ## Direct shell access
 You can always have terminal access to your servers from your own server - just follow the steps below if you're on a Linux-based operating system. See our help page on [connecting for Windows-based systems](/how-to/shell-from-windows.html).
