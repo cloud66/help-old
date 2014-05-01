@@ -36,7 +36,7 @@ lead: You can share your Cloud 66 account with your team
 Adding new users to your Cloud 66 account is a great way to work in a team, and access rights can be fine-tuned per stack. They range from no privileges on a stack to full administrative privileges.
 
 <h2 id="lead">Team lead</h2>
-The team lead is the only user who can invite other members and change access rights for these members.
+The team lead is the only user who can invite other members and change access rights for these members (unless this latter privilege is granted to another user).
 
 To invite your team members, access your <i>Account</i> page and select the <i>Users</i> menu. 
 
@@ -46,7 +46,7 @@ You need to give your team a name before inviting other members. This is the sam
 
 Clicking <i>Add a new user</i> will allow you to enter your team member's email address.
 
-![](http://help.cloud66.com/pages/new_user_form.png)
+![New user form](http://cdn.cloud66.com/images/help/new_user_form.png)
 
 <h2 id="permissions">Permissions</h2>
 
