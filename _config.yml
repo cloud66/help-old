@@ -7,4 +7,4 @@ permalink: /:categories/:title.html
 sass:
     syntax: scss        # scss|sass
     style:  compressed  # nested|expanded|compact|compressed
-elasticsearch_excludes: [index.html, 404.html, search.html, style.html]
+elasticsearch_excludes: [index.html, 404.html, search.html, style.html, whatsnew.json]
