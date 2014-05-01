@@ -21,7 +21,6 @@ However, given that we don't know anything about your local infrastructure (as w
 
 - Scaling your application
 - Load balancing
-- Intruder detection
 
 For the best experience possible, we strongly recommend that you [deploy to your cloud](/getting-started/supported-clouds.html).
 
