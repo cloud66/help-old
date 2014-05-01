@@ -20,7 +20,7 @@ In other words, the tasks will run against each server simultaneously instead of
 Parallel deployment is a _Stack setting_ that is activated by default for new [stacks with a custom web server](/web-server/custom-webserver.html) (ie. Unicorn as it supports zero downtime restarts), but not for stacks based
 on [Passenger](/web-server/custom-webserver.html). New stacks based on Passenger must opt-in to deploy in parallel.
 
-![Parallel deploy](http://cdn.cloud66.com/images/help/parallel_deploy.png)
+![Parallel deploy](http://cdn.cloud66.com/images/help/parallel_deployment.png)
 
 When set to deploy in parallel, you still have the option to do a one-off deployment in serial on the _Deploy with options_ menu.
 

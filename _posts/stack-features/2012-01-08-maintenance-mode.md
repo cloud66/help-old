@@ -20,7 +20,7 @@ You can still safely redeploy your stack while maintenance mode is enabled - the
 You can turn on/off maintenance mode via the stack settings page. On your <i>Stack detail</i> page click on the drop-down cog on the top right of your stack and click the <i>Settings</i> option.
 <b>Note:</b> this drop-down cog is only available while your stack is not currently building or deploying.
 
-![Maintenance mode](http://cdn.cloud66.com/images/help/maintenance_mode.png)
+![Maintenance mode](http://cdn.cloud66.com/images/help/maintenance.png)
 
 ## Using your own Maintenance Page
 

@@ -54,6 +54,7 @@ redirects:
   toolbelt/ssh.html: cloud-66-toolbelt/ssh.html
   toolbelt/restart.html: cloud-66-toolbelt/restart.html
   toolbelt/download-backup.html: cloud-66-toolbelt/backups.html
+  stacks/rename-stack.html: stacks/stack-information.hml
 
 #   about.php: about.html
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
