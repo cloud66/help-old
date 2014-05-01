@@ -1,44 +1,44 @@
 [
-	{
-	date: "2014-04-01T19:55:44Z",
-	title: "Ruby 2.1.0 support",
-	summary: "We now support Ruby 2.1.0.",
-	link: "http://blog.cloud66.com/ruby-2-1-0-support/"
-	},
-	{
-	date: "2014-04-02T19:55:44Z",
-	title: "Introducing Cloud 66 ‘Organizations’",
-	summary: "Organize your stacks in Organizations and switch between them with ease.",
-	link: "http://blog.cloud66.com/introducing-cloud-66-organizations/"
-	},
-	{
-	date: "2014-04-03T19:55:44Z",
-	title: "New supported cloud vendor: Vexxhost",
-	summary: "OpenStack Canadian cloud servers.",
-	link: "http://blog.cloud66.com/new-supported-cloud-vendor-vexxhost/"
-	},
-	{
-	date: "2014-04-04T19:55:44Z",
-	title: "Take full control of Nginx with CustomConfig",
-	summary: "Customize your Nginx configuration.",
-	link: "http://blog.cloud66.com/take-full-control-of-nginx-with-customconfig/"
-	},
-	{
-	date: "2014-04-05T19:55:44Z",
-	title: "Database replication between stacks",
-	summary: "Replicate your database between different stacks, data centers and clouds.",
-	link: "http://blog.cloud66.com/database-replication-between-stacks-is-here/"
-	},
-	{
-	date: "2014-04-06T19:55:44Z",
-	title: "Support for DigitalOcean Singapore datacenter",
-	summary: "Deploy your application to data centers across Asia.",
-	link: "http://blog.cloud66.com/support-for-digitalocean-singapore-datacenter/"
-	},
-	{
-	date: "2014-04-07T19:55:44Z",
-	title: "Speeding up your deployments!",
-	summary: "You can now deploy your servers in parallel.",
-	link: "http://blog.cloud66.com/speeding-up-your-deployments/"
-	}
+{
+date: "2014-04-01T19:55:44Z",
+title: "Ruby 2.1.0 support",
+summary: "We now support Ruby 2.1.0.",
+link: "http://blog.cloud66.com/ruby-2-1-0-support/"
+},
+{
+date: "2014-04-02T19:55:44Z",
+title: "Introducing Cloud 66 ‘Organizations’",
+summary: "Organize your stacks in Organizations and switch between them with ease.",
+link: "http://blog.cloud66.com/introducing-cloud-66-organizations/"
+},
+{
+date: "2014-04-03T19:55:44Z",
+title: "New supported cloud vendor: Vexxhost",
+summary: "OpenStack Canadian cloud servers.",
+link: "http://blog.cloud66.com/new-supported-cloud-vendor-vexxhost/"
+},
+{
+date: "2014-04-04T19:55:44Z",
+title: "Take full control of Nginx with CustomConfig",
+summary: "Customize your Nginx configuration.",
+link: "http://blog.cloud66.com/take-full-control-of-nginx-with-customconfig/"
+},
+{
+date: "2014-04-05T19:55:44Z",
+title: "Database replication between stacks",
+summary: "Replicate your database between different stacks, data centers and clouds.",
+link: "http://blog.cloud66.com/database-replication-between-stacks-is-here/"
+},
+{
+date: "2014-04-06T19:55:44Z",
+title: "Support for DigitalOcean Singapore datacenter",
+summary: "Deploy your application to data centers across Asia.",
+link: "http://blog.cloud66.com/support-for-digitalocean-singapore-datacenter/"
+},
+{
+date: "2014-04-07T19:55:44Z",
+title: "Speeding up your deployments!",
+summary: "You can now deploy your servers in parallel.",
+link: "http://blog.cloud66.com/speeding-up-your-deployments/"
+}
 ]
