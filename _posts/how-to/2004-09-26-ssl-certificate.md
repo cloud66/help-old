@@ -28,7 +28,7 @@ To generate a .key and .crt file, follow the steps below.
 <li>Generate private key (KEY) on your server, without specifying a passphrase:</li>
 <p>
 <kbd>
-openssl genrsa -des3 -out private&#95;key.key 1024
+openssl genrsa -des3 -out private&#95;key.key 2048
 </kbd>
 </p>
 <li>Create a certificate signing request file and enter your information as requested:</li>
