@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "European Data protection compliance"
+title:  "European data protection compliance"
 so_title: false
 nav_sticky: true
 nav: true

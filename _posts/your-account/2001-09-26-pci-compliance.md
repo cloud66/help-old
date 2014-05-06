@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "PCI DSS Compliance Guide"
+title:  "PCI DSS compliance guide"
 so_title: false
 nav_sticky: true
 nav: true
