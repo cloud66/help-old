@@ -43,7 +43,7 @@ This feature makes it possible for you to see an overview of your deployment his
 [Logs](/stack-features/logging.html) are setup according to your application configuration, and can be automatically archived at regular intervals.
 
 ## CLI toolbelt
-We have a simple [command-line interface](/cloud66-toolbelt/introduction.html) available should you wish to control your stacks through the command line.
+We have a simple [command-line interface](/cloud-66-toolbelt/introduction.html) available should you wish to control your stacks through the command line.
 
 ## Redeployment hooks
 You can use [redeployment hooks](/stack-features/redeployment-hook.html) to achieve continuous deployment.
