@@ -38,7 +38,7 @@ Adding new users to your Cloud 66 account is a great way to work in a team, and 
 <h2 id="lead">Team lead</h2>
 The team lead is the only user who can invite other members and change access rights for these members (unless this latter privilege is granted to another user).
 
-To invite your team members, access your <i>Account</i> page and select the <i>Users</i> menu. 
+To invite your team members, access your <i>Account</i> page and select the <i>Users</i> menu.
 
 You need to give your team a name before inviting other members. This is the same as your Company name on the Payments page. If you already have entered a company name, you will skip this part.
 
@@ -65,7 +65,7 @@ By definition, any user with access to a stack will automatically be given the r
 You also have the option of allowing team members to create a new stack. The creator of a stack becomes its default stack administrator, although this setting can be changed by the team lead.
 
 <h2 id="member">Sign up a team member</h2>
-After receiving the invitation email, team members can sign up for Cloud 66 with their specified email address. 
+After receiving the invitation email, team members can sign up for Cloud 66 with their specified email address.
 
 If the invited email already has a Cloud 66 account, they will be notified of the pending invitation. By accepting the invitation, they will join your team.
 
