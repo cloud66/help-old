@@ -17,7 +17,7 @@ lead: You can connect directly to your servers for full control
 </div>
 
 ## Cloud 66 toolbelt
-You can use the [Cloud 66 toolbelt](/cloud66-toolbelt/introduction.html) to easily [SSH to your servers](/cloud66-toolbelt/ssh.html). Once initialized, the following command can be used:
+You can use the [Cloud 66 toolbelt](/cloud-66-toolbelt/introduction.html) to easily [SSH to your servers](/cloud-66-toolbelt/ssh.html). Once initialized, the following command can be used:
 {% highlight bash %}
 # Full
 cx ssh [-s <stack>] <server name>|<server ip>|<server role>
@@ -25,7 +25,7 @@ cx ssh [-s <stack>] <server name>|<server ip>|<server role>
 cx ssh -s "My Awesome App" Lion
 {% endhighlight %}
 
-See [toolbelt shortcuts](/cloud66-toolbelt/shortcuts.html), for information on how you can make this even easier.
+See [toolbelt shortcuts](/cloud-66-toolbelt/shortcuts.html), for information on how you can make this even easier.
 
 ## Direct shell access
 You can always have terminal access to your servers from your own server - just follow the steps below if you're on a Linux-based operating system. See our help page on [connecting for Windows-based systems](/how-to/shell-from-windows.html).
