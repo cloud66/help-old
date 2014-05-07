@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Toolbelt shortcuts"
-date:   2013-01-30 01:01:01
+date:   2010-01-30 01:01:01
 categories: cloud-66-toolbelt
 lead: Shortcuts to make your life easier
 ---
