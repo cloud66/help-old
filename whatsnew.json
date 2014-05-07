@@ -3,40 +3,34 @@
 	"date": "2014-05-07T19:55:44Z",
 	"title": "Tailing your logs with CX",
 	"summary": "Tailing your logs is as easy as ever with CX!",
-	"link": "xxx"
+	"link": "http://blog.cloud66.com/tail-your-logs-straight-from-cx/"
 	},
 	{
-	"date": "2014-05-07T19:55:44Z",
+	"date": "2014-05-05T19:55:44Z",
 	"title": "Cloud 66 now supports Google Compute Engine",
 	"summary": "Combine the power of Google's global infrastructure with the convenience of Cloud 66.",
 	"link": "http://blog.cloud66.com/cloud-66-now-supports-google-cloud-engine/"
 	},
 	{
-	"date": "2014-05-07T19:55:44Z",
+	"date": "2014-05-04T19:55:44Z",
 	"title": "Updates to organizations",
 	"summary": "A number of improvements to the way organizations work.",
 	"link": "http://blog.cloud66.com/speed-and-organization-updates/"
 	},
 	{
-	"date": "2014-05-07T19:55:44Z",
+	"date": "2014-05-04T19:55:44Z",
 	"title": "Set environments variables with CX",
 	"summary": "Set your environment variables without having to redeploy.",
-	"link": "http://blog.cloud66.com/speed-and-organization-updates/"
+	"link": "http://help.cloud66.com/cloud-66-toolbelt/env-vars.html"
 	},
 	{
-	"date": "2014-05-07T19:55:44Z",
-	"title": "Set environments variables with CX",
-	"summary": "Set your environment variables without having to redeploy.",
-	"link": "http://blog.cloud66.com/speed-and-organization-updates/"
-	},
-	{
-	"date": "2014-05-07T19:55:44Z",
-	"title": "New toolbelt",
+	"date": "2014-05-03T19:55:44Z",
+	"title": "New and improved toolbelt",
 	"summary": "Faster and more powerful toolbelt is out.",
 	"link": "http://blog.cloud66.com/introducing-the-new-cloud-66-toolbelt-2/"
 	},
 	{
-	"date": "2014-05-07T19:55:44Z",
+	"date": "2014-05-01T19:55:44Z",
 	"title": "Slack integration",
 	"summary": "Receive Cloud 66 notifications right in your Slack stream.",
 	"link": "http://blog.cloud66.com/cloud-66-slack/"
