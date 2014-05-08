@@ -37,7 +37,7 @@ Add a [deploy hook](/stack-features/deploy-hooks.html) to execute the above scri
 Create the file *.cloud66/deploy&#95;hooks.yml* as below (replacing *production* with your target environment).
 <pre class="terminal">
 production:
-  after&#95;symlink:
+  after&#95;symlink: # Or use after_rails depending on your application
     - source: /.cloud66/scripts/dbseed.sh
       destination: /tmp/dbseed.sh
       target: rails
