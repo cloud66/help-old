@@ -12,7 +12,7 @@ lead: Email, iOS, Hipchat and Webhook notifications
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
-		<a href="#account">Account notifications</a>
+		<a href="#account">Notifications</a>
 	</li>
 	        <li>
                 <ul>
@@ -42,14 +42,22 @@ lead: Email, iOS, Hipchat and Webhook notifications
 </ul>
 
 
-<h2 id="account">Account Notifications</h3>
+<h2 id="account">Notifications</h3>
 You can control when and how you would like to receive notifications from Cloud 66. These is a range of events that trigger notifications, which can be sent as emails, via iOS push, Hipchat or Webhooks.
+There are 2 types of notifications : Account level and Stack Level.
+Account level notifications are global across your account and Stack level notification will be related to events that happens for a specific stack.
+
+You can access account level notifications under your account settings
 
 ![cloud66_notifications](http://cdn.cloud66.com/images/help/notifications_menu_item.png)
 
+Stack level notifications can be accessed from stack control menu
+
+![cloud66_notifications](http://cdn.cloud66.com/images/help/stack_notifications_menu_item.png)
+
 <div class="notice">
 	<h3>Note</h3>
-	<p>Notifications are set on a per-user basis, and each user can modify their own notifications under their account settings.</p>
+	<p>Notifications are set on a per-user basis, and each user can modify their own notifications under their account settings or stack menu.</p>
 </div>
 
 ![cloud66_alert_types](http://cdn.cloud66.com/images/help/notifications_list.png)
