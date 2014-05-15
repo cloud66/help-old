@@ -12,8 +12,17 @@ lead: Email, iOS, Hipchat and Webhook notifications
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
-		<a href="#account">Notifications</a>
+		<a href="#intro">Introduction</a>
 	</li>
+	<li>
+		<a href="#account">Account notifications</a>
+	</li>
+	<li>
+		<a href="#stack">Stack notifications</a>
+	</li>
+	<li>
+    	<a href="#types">Notification types</a>
+    	</li>
 	        <li>
                 <ul>
                 <li><a href="#emails">Emails</a></li>
@@ -41,29 +50,39 @@ lead: Email, iOS, Hipchat and Webhook notifications
             </li>
 </ul>
 
-
-<h2 id="account">Notifications</h3>
-You can control when and how you would like to receive notifications from Cloud 66. These is a range of events that trigger notifications, which can be sent as emails, via iOS push, Hipchat or Webhooks.
-There are 2 types of notifications : Account level and Stack Level.
-Account level notifications are global across your account and Stack level notification will be related to events that happens for a specific stack.
-
-You can access account level notifications under your account settings
-
-![cloud66_notifications](http://cdn.cloud66.com/images/help/notifications_menu_item.png)
-
-Stack level notifications can be accessed from stack control menu
-
-![cloud66_notifications](http://cdn.cloud66.com/images/help/stack_notifications_menu_item.png)
+<h2 id="intro">Introduction</h2>
+You can control when and how you would like to receive notifications from Cloud 66. There is a range of events that trigger notifications, which can be sent as emails, Hipchat, via iOS push, Slack or Webhooks.
 
 <div class="notice">
 	<h3>Note</h3>
 	<p>Notifications are set on a per-user basis, and each user can modify their own notifications under their account settings or stack menu.</p>
 </div>
 
-![cloud66_alert_types](http://cdn.cloud66.com/images/help/notifications_list.png)
+There are two types of notifications: _account_ and _stack_. _Account_ notifications are global across your account and _stack_ notifications are related to events for a specific stack.
+
+<h2 id="account">Account notifications</h2>
+You can access _account_ notifications under your account settings:
+
+![cloud66_notifications](http://cdn.cloud66.com/images/help/notifications_menu.png)
+
+You will have the following notifications available to you:
+
+![cloud66_alert_types](http://cdn.cloud66.com/images/help/notifications_account.png)
+
+<h2 id="stack">Stack notifications</h2>
+
+Stack level notifications can be accessed from stack control menu
+
+![cloud66_notifications](http://cdn.cloud66.com/images/help/notifications_stack.png)
+
+You will have the following notifications available to you:
+
+![Stack notifications](http://cdn.cloud66.com/images/help/notifications_stack_type.png)
+
+<h2 id="types">Notification types</h2>
 
 <h3 id="emails">Emails</h3>
-Email notifications are enabled by default on all accounts. You will get an email for most of the cases above, with the exception of <i>deployment start</i> notifications. You can easily turn email notifications on or off for each type by clicking on the email icon.
+Email notifications are enabled by default for all users. You will get an email for most of the cases above, with the exception of <i>deployment start</i> notifications. You can easily turn email notifications on or off for each type by clicking on the email icon.
 
 <h3 id="hipchat">Hipchat</h3>
 [Hipchat](http://hipchat.com/) is a hosted realtime chat service by [Atlassian](https://www.atlassian.com/). You can get Cloud 66 notifications on HipChat by linking it to your HipChat account.
