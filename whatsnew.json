@@ -1,5 +1,17 @@
 [
 	{
+	"date": "2014-05-15T17:54:44Z",
+	"title": "Per stack notifications",
+	"summary": "Choose notifications for each stack. No more account wide alerts!",
+	 "link": "http://help.cloud66.com/stack-features/notifications.html"
+	},
+	{
+	"date": "2014-05-15T17:53:44Z",
+	"title": "Better invoices",
+	"summary": "Nominate a secondary email address to receive a PDF invoice",
+	"link": "http://blog.cloud66.com/changelog-may15/"
+	},
+	{
 	"date": "2014-05-07T19:55:44Z",
 	"title": "Tailing your logs with CX",
 	"summary": "Tailing your logs is as easy as ever with CX!",
