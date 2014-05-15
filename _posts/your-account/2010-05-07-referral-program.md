@@ -16,7 +16,7 @@ When you share Cloud 66 with your friends, they get $10 in credit with us (on to
 
 ## How it works
 1. Tell your friend about Cloud 66.
-2. Your friend signs up and deploys their stack.
+2. Your friend signs up, gets $10 in credit and deploys their stack.
 3. We send you the credit once they've spent $20.
 
 ## Your referral code

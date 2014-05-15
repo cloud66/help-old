@@ -16,7 +16,7 @@ You can fire up additional web servers by clicking on the "+" button on the <i>W
 		<p>This feature is only available if you have deployed using your cloud provider and you have added a <a href="/stack-features/load-balancers.html">load balancer</a> to your stack.</p>
 </div>
 
-![Scaling Web Servers](http://cdn.cloud66.com/images/help/server_scaling.png)
+![Scaling Web Servers](http://cdn.cloud66.com/images/help/horizontal_scaling.png)
 
 Your new server(s) will be added to your load balancer automatically after they have completed provisioning and deployment - ready to serve traffic!
 

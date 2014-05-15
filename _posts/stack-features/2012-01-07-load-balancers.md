@@ -22,6 +22,7 @@ Depending on which cloud provider you use, this load balancer will be set up dif
 
 - **Amazon AWS**: [Elastic Load Balancing](http://aws.amazon.com/elasticloadbalancing/)
 - **DigitalOcean**: [HAProxy](http://haproxy.1wt.eu/)
+- **Google Cloud Engine**: [Forwarding rules, target pools & health checks](https://developers.google.com/compute/docs/load-balancing/)
 - **Joyent**: [HAProxy](http://haproxy.1wt.eu/)
 - **Linode**: [NodeBalancer](https://www.linode.com/nodebalancers/)
 - **Rackspace**: [Rackspace Load Balancing](http://www.rackspace.com/cloud/load-balancing/)
