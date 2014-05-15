@@ -6,7 +6,7 @@ so_title: "notifications"
 nav_sticky: false
 date:   2091-03-29 16:27:22
 categories: stack-features
-lead: Email, iOS, Hipchat and Webhook notifications
+lead: Email, iOS, Hipchat, Slack and Webhook notifications
 ---
 
 <h2>Contents</h2>
