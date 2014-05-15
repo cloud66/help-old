@@ -1,29 +1,25 @@
 ---
 layout: post
 template: two-col
-title:  "Logentries"
-date:   2028-09-24 10:51:22
+title:  "Memcached"
+date:   2025-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: add-ins
-lead: Simple web-based log analysis service for your servers
+lead: Improve application performance with Memcached
 ---
 
-Once your stack is deployed, you can easily use Logentries for centralized log files:
-![logentries_protip](http://cdn.cloud66.com/images/help/logentries.png)
+[Memcached](http://memcached.org/) is a distributed key/value caching system, intended for use in speeding up dynamic web applications by alleviating database load.
 
-If you don't have a Logentries account, just click the link to sign up for one.
-![logentries_form](http://cdn.cloud66.com/images/help/logentries_id.png)
+To illustrate the benefits of using Memcached we'll consider the simple example below, where a user is visiting your application. This stack has a load balancer, 2 web servers (each with Memcached) and a MySQL database.
 
-After signup, you will see your Logentries the Account ID on the page.
-![logentries_account_id](http://cdn.cloud66.com/images/help/logentries_page.png)
+![Memcache architecture](http://cdn.cloud66.com/images/help/memcache_architecture.png)
 
-If you already have a Logentries account, you can find your Account key in your account page.
+Reaching _web server 2_ for the first time, the web server will have to query the database for some data. It will first check Memcached to see if this data exists in cache, and as it doesn't, it will retrieve it straight from the MySQL database.
 
-Just add this key to our form:
+Once this data has been extracted, it will be cached with Memcached for future use, meaning that the database won't need to be queried for frequently used data. By definition, having a Memcached instance on every web server will allow for distributed caching - if a key/value is not available on the local cache it will check another web server on which the key/value exists.
 
-![logentries_id_entered](http://cdn.cloud66.com/images/help/logentries_id_entered.png)
-
-Within a minute, Cloud 66 sets up Logentries on all your servers for you.
-
-![logentries_added](http://cdn.cloud66.com/images/help/logentries_aux.png)
+<div class="notice">
+    <h3>Notice</h3>
+    <p>Having Memcached as a separate server will not improve performance the way it does for databases such as PostgreSQL or MySQL.</p>
+</div>

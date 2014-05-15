@@ -12,15 +12,12 @@ categories: your-account
 lead: Share Cloud 66 with your friends and earn credits
 ---
 
-Share Cloud 66 with people you respect and we'll credit their spend to your account up to $100!
+When you share Cloud 66 with your friends, they get $10 in credit with us (on top of their 2 week trial) and we'll send you a $20 Amazon credit when they spend $20.
 
 ## How it works
 1. Tell your friend about Cloud 66.
-2. Your friend signs up and deploy their stack.
-3. We will credit your account as much as they spend.
+2. Your friend signs up and deploys their stack.
+3. We send you the credit once they've spent $20.
 
 ## Your referral code
-You have your own unique referral URL. You can find it under your [Account page](https://app.cloud66.com/me). Use your referral URL to share Cloud 66 with your friends on Facebook, Twitter or just by good old fashioned email.
-
-## Redeeming your credits
-We will add credits to your account as much as your friends spend in their account for up to $100 per account. So you can earn $500 if you share Cloud 66 with 5 of your friends or $1500 if you share it with 15!
+You have your own unique referral URL that you can find under your [Account page](https://app.cloud66.com/accounts/refer). Use the referral URL to share Cloud 66 with your friends on Facebook, Twitter or just by good old fashioned email.
