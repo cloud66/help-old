@@ -132,7 +132,7 @@ These include environment variables to hold the address for your database server
 	<tbody>
 		<tr>
 			<td>MYSQL_SLAVE_ADDRESSES_INT</td>
-			<td>MySQL Slave Internal IP address.</td>
+			<td>MySQL Slave Internal IP address</td>
 		</tr>
 		<tr>
 			<td>MYSQL_SLAVE_ADDRESSES_EXT</td>
@@ -140,7 +140,7 @@ These include environment variables to hold the address for your database server
 		</tr>
 		<tr>
 			<td>POSTGRESQL_SLAVE_ADDRESSES_INT</td>
-			<td>PostgreSQL Slave Internal IP address.</td>
+			<td>PostgreSQL Slave Internal IP address</td>
 		</tr>
 		<tr>
 			<td>POSTGRESQL_SLAVE_ADDRESSES_EXT</td>

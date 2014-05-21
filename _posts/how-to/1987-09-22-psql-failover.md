@@ -10,14 +10,14 @@ categories: how-to
 lead: How to deal with a primary server failure
 ---
 
-When you scale up your PostgreSQL server group, Cloud 66 configures [Streaming Replication](http://wiki.postgresql.org/wiki/Streaming_Replication) on your servers.
+When you scale up your PostgreSQL server group, Cloud 66 configures [streaming replication](http://wiki.postgresql.org/wiki/Streaming_Replication) on your servers.
 The first server in the group will be the primary server, and the others will be configured as standby servers.
 
 If the primary server fails, you should begin failover procedures on your standby server:
 
 1. Connect to one of your standby servers via [SSH](/how-to/shell-to-your-servers.html)
 2. Run `touch /tmp/postgresql.trigger` to turn the standby into a master
-3. Change your application configuration to use new server address as database server
+3. Change your application configuration to use the newly appointed master's IP address (eg. `POSTGRESQL_SLAVE_ADDRESSES_INT` or `POSTGRESQL_SLAVE_ADDRESSES_EXT`)
 
 If and when the old primary restarts, it will no longer be the primary server and you must have a mechanism to stop it.
 This is sometimes known as _STONITH_ (Shoot The Other Node In The Head), which is necessary to avoid situations where both
