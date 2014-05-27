@@ -10,7 +10,7 @@ categories: how-to
 lead: Follow these instructions to install SMTP on your server
 ---
 
-Depending on the scale of your application, installing and maintaining a reliable emailing insfrastructure can be a time consuming task. You might find it more practical to use a service like [SendGrid](http://sendgrid.com), [Postmark](https://postmarkapp.com/) or [Mandrill](http://mandrill.com/).
+Depending on the scale of your application, installing and maintaining a reliable emailing infrastructure can be a time consuming task. You might find it more practical to use a service like [SendGrid](http://sendgrid.com), [Postmark](https://postmarkapp.com/) or [Mandrill](http://mandrill.com/).
 
 ## Installing Postfix
 
