@@ -77,7 +77,7 @@ CB.help = ( function( $, window, document ) {
 
     var bindEvents = function() {
 
-        $el.autoCompleteFields.typeahead( typeAhead );
+        //$el.autoCompleteFields.typeahead( typeAhead );
 
         $el.searchForm.submit(function() {
             var form = this;
