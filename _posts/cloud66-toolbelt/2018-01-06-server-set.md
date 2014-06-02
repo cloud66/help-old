@@ -5,6 +5,7 @@ title:  "Server settings"
 date:   2015-01-25 01:01:01
 categories: cloud-66-toolbelt
 lead: Change server settings from the command line
+tags: ['configuration','toolbelt','commandline']
 ---
 
 <h2>Contents</h2>

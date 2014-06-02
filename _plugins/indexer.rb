@@ -42,7 +42,7 @@ module Jekyll
 					:excerpt => excerpt,
 					:link => item.url,
           :lead => item.data['lead'],
-					:tags => item.data['categories'].is_a?(String)? [item.data['categories']] : item.data['categories'],
+					:tags => item.data['tags'] || [],
 					:suggest => item.data['title'] || item.name
 				}
 

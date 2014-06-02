@@ -5,6 +5,7 @@ title:  "Toolbelt shortcuts"
 date:   2010-01-30 01:01:01
 categories: cloud-66-toolbelt
 lead: Shortcuts to make your life easier
+tags: ['toolbelt','commandline','alias']
 ---
 
 ## Stack links

@@ -6,6 +6,7 @@ date:   2025-01-30 01:01:01
 nav_sticky: true
 categories: cloud-66-toolbelt
 lead: Toolbelt is a command line tool to interact with Cloud 66
+tags: ['toolbelt','commandline']
 ---
 
 <h2>Contents</h2>
