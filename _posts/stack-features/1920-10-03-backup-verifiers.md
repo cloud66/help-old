@@ -25,7 +25,7 @@ Backup verifiers are a great way to ensure that your backups actually contain th
 
 <h2 id="setup">Setup</h2>
 
-To set up backup verifiers, please ensure that you have [managed backups](/stack-features/db-backup.html) and are running either a MySQL or PostgreSQL database.
+To set up backup verifiers, please ensure that you have [managed backups](/add-ins/backups.html) and are running either a MySQL or PostgreSQL database.
 
 Firstly, create a file in the **.cloud66** folder in the root of your repository. The file should be called **backup&#95;verifier&#95;mysql.sql** to verify a MySQL database backup, or **backup&#95;verifier&#95;pg.sql** for a PostgreSQL database backup.
 

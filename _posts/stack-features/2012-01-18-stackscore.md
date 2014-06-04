@@ -19,9 +19,9 @@ StackScore&trade; is an <b>A</b> to <b>F</b> score that provides an indication o
 StackScore&trade; consists of five key metrics, each scored from <b>A</b> to <b>F</b>:
 
 - **Code**: Ensures your code does not have security issues
-- **Backup and data integrity**: Ensures you have [database backups](/stack-features/db-backup.html) set up
+- **Backup and data integrity**: Ensures you have [database backups](/add-ins/backups.html) set up
 - **Connectivity**: Checks whether or not you are sharing your frontend and backend on the same server
-- **Performance**: Checks for whether or not you have [load balancers](/stack-features/load-balancers.html) set up
+- **Performance**: Checks for whether or not you have [load balancers](/add-ins/load-balancer.html) set up
 - **Security**: Checks for open ports on your firewall
 
 The overall StackScore&trade; is the lowest of the scores across these five metrics:

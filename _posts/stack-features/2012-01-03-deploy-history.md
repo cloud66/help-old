@@ -17,7 +17,7 @@ back to previous commits if need be.
 ## Usage
 <div class="notice">
     <h3>Important</h3>
-    <p>Reverting to a previous commit will only affect your code - you might still need to restore a <a href="/stack-features/db-backup.html">database backup</a>.</p>
+    <p>Reverting to a previous commit will only affect your code - you might still need to restore a <a href="/add-ins/backups.html">database backup</a>.</p>
 </div>
 
 Accessing your stack page, you will see a drop-down with a "View Deployment History" link:

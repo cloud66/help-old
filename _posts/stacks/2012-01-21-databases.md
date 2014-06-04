@@ -73,7 +73,7 @@ Please note that if there is no connectivity to your database, or your database 
 This option deploys your chosen database to the same server as your web server. In this case, your application database configuration will be amended to target your local database server.
 If you scale up your web server, these settings will also be amend automatically to reflect your database configuration.
 
-This option will also allow you to run [backups](/stack-features/db-backup.html) on your database.
+This option will also allow you to run [backups](/add-ins/backups.html) on your database.
 
 <h3 id="ded">Choosing "dedicated" database</h3>
 If deploying to your cloud provider, we will automatically create a new server for your database and configure your application accordingly.
@@ -81,7 +81,7 @@ If deploying to your cloud provider, we will automatically create a new server f
 Similarly, if you are deploying to your own server, we will connect to the target server, deploy your database and configure your application accordingly.
 Note that we will use the same credentials (username and key) that you provided for your standalone web server to connect to your database server.
 
-Choosing this option will also allow you to [database backups](/stack-features/db-backup.html) and [database replication](/stack-features/database-replication.html).
+Choosing this option will also allow you to [database backups](/add-ins/backups.html) and [database replication](/stack-features/database-replication.html).
 
 <h2 id="generated">Generated credentials</h2>
 If you haven't specified your username and password for your database, Cloud 66 will automatically generate these credentials for you. They will be available as environment variables and your application will be configured to use them.

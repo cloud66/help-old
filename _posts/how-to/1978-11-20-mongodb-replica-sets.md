@@ -12,7 +12,7 @@ lead: Cloud 66 Supports MongoDB Replica Sets
 
 
 ## Introduction
-You can [scale your database backend](/stack-features/database-replication.html) with Cloud 66 - you just need to setup [managed backups](/stack-features/db-backup.html).
+You can [scale your database backend](/stack-features/database-replication.html) with Cloud 66 - you just need to setup [managed backups](/add-ins/backups.html).
 
 When it comes to MongoDB replication, **you really need to know how MongoDB replica sets work and how to use them** before trying to scale up your MongoDB backend. This is to ensure continuity of service without interruptions.
 
