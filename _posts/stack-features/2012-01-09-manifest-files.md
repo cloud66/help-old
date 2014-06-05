@@ -166,7 +166,7 @@ You can add your environment variables to your manifest files.
 Here is an example:
 
 {% highlight yaml %}
-production: 
+production:
     environment_variables:
         SOME_VARIABLE: value
         ANOTHER_ONE: another_value
@@ -252,6 +252,8 @@ Cloud vendor to fire up the server on. Valid values:
 - joyent
 - linode
 - telefonica
+- vexxhost
+- googlecloud
 
 {% highlight yaml %}
 ... server:

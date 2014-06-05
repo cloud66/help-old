@@ -14,12 +14,9 @@ Whether working in a team or by yourself, it's always useful to have an overview
 information about who deployed, when they deployed, what code revision was deployed and how the deployment was triggered (web, [API](/api/basics/basics.html) or [redeployment hook](/stack-features/redeployment-hook.html)). In addition to this, you can also revert
 back to previous commits if need be.
 
-## Usage
-<div class="notice">
-    <h3>Important</h3>
-    <p>Reverting to a previous commit will only affect your code - you might still need to restore a <a href="/add-ins/backups.html">database backup</a>.</p>
-</div>
+Reverting to a previous commit will only affect your code - you might still need to restore a <a href="/stack-features/db-backup.html">database backup</a>. If you wish, you can [switch off your database migrations](/how-to/control-db-migration.html), roll back your database and then roll back your code.
 
+## Usage
 Accessing your stack page, you will see a drop-down with a "View Deployment History" link:
 
 ![history link](http://cdn.cloud66.com/images/help/history_link.png)
