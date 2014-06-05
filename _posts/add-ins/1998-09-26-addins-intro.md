@@ -16,7 +16,7 @@ To get started, simply click on the _+_ button on the add-ins menu:
 ![Addins introduction](http://cdn.cloud66.com/images/help/addins_introduction.png)
 
 You will then be able to choose from a variety of add-ins for your stack:
-![Addins page](http://cdn.cloud66.com.s3.amazonaws.com/images/help/addins_page.png)
+![Addins page](http://cdn.cloud66.com/images/help/addins_page.png)
 
 In the example below, we added a database backup add-in and two custom servers to our stack:
 ![Addins example](http://cdn.cloud66.com/images/help/addins_example.png)
