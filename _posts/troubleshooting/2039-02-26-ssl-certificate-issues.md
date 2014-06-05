@@ -6,6 +6,7 @@ so_title: "ssl certificate"
 date:   1900-11-01 15:33:13
 categories: Troubleshooting
 lead: Troubleshooting SSL certificate issues
+tags: ['ssl', 'ssl issue', 'ssl troubleshoot', 'ssl error']
 ---
 
 <h2>Contents</h2>
