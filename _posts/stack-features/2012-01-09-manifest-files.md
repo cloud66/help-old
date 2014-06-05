@@ -491,6 +491,8 @@ Specify whether to perform "rake db:schema:load" on new builds
 A value in MB that Cloud 66 will assume should be left available. This will affect any automatically calculated values, and will be taken into account during redeployment
 - <b>passenger&#95;process&#95;memory</b><br/>
 A value in MB that Cloud 66 will use for each passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment
+- <b>activeprotect</b><br/>
+Specify a whitelist of IPs that should be ignored by your fail2ban configuration
 - <b>nginx</b><br/>
 Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
 
@@ -504,6 +506,8 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
 				do&#95;initial&#95;db&#95;schema&#95;load: false
 				reserved&#95;server&#95;memory: 0 (default value)
 				passenger&#95;process&#95;memory: 200 (default value)
+				activeprotect:
+                      whitelist: 123.123.123.123,234.234.234.234
 				nginx:
 					cors: true
 					perfect&#95;forward&#95;secrecy: true
