@@ -6,16 +6,16 @@ date:   2090-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: add-ins
-lead: x
+lead: Custom servers within the Cloud 66 ecosystem
 ---
 
-Adding a custom server to your stack allows you to manage your own services but still benefit from the Cloud 66 ecosystem.
+Adding a custom server to your stack allows you to manage your own services while still benefiting from the Cloud 66 ecosystem.
 
 A custom server will have the following Cloud 66 features enabled:
 
 - [Monitoring](/stack-features/server-monitoring.html)
 - [Security](/stack-features/stack-security.html)
-- Use [Cloud 66 add-ins](/add-ins/addins-intro.html)
+- Use of [Cloud 66 add-ins](/add-ins/addins-intro.html)
 - [Log rotation](/stack-features/logging.html)
 - [SSH to your server via toolbelt](/cloud-66-toolbelt/ssh.html)
 
