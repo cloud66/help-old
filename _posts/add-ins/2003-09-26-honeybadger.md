@@ -7,6 +7,7 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: add-ins
 lead: Add Honeybadger monitoring to your stack
+tags: ['hb', 'honeybadger']
 ---
 
 [Honeybadger](https://www.honeybadger.io/) is a service that provides exception, uptime, and performance monitoring for Ruby.

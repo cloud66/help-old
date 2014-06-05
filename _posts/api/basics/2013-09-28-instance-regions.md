@@ -5,6 +5,7 @@ categories:
   - api
   - basics
 date: 2013-09-26
+tags: ['instance regions', 'regions', 'api']
 ---
 
 <div class="heading-wrap">

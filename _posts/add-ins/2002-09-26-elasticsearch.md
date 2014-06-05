@@ -7,6 +7,7 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: add-ins
 lead: Add Elasticsearch to your stack with ease
+tags: ['elasticsearch']
 ---
 
 [Elasticsearch](http://www.elasticsearch.org/) is a powerful open source search and analytics engine, and it's easy to add to your stack as an add-in:

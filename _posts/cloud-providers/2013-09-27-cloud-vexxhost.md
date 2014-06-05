@@ -7,6 +7,7 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: cloud-providers
 lead:  Use your Vexxhost account with Cloud 66
+tags: ['vexxhost', 'vexxhost cloud']
 ---
 
 Our partnership with [VEXXHOST](http://www.vexxhost.com) allows you to deploy your applications to your cloud compute account.
