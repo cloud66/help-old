@@ -88,13 +88,18 @@ production: # Environment
 </tr>
 <tr>
 	<td><b><i>command</i></b></td>
-	<td>The command you would like to run</td>
+	<td>The command you would like to run - by default run in <i>/tmp/deploy_hooks</i></td>
 </tr>
 <tr>
 	<td><b><i>target</i></b></td>
 	<td>Your target - accepted values are <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, and <i>padrino</i>.</td>
 </tr>
 </table>
+
+<div class="notice">
+		<h3>Note</h3>
+		<p>To run your command elsewhere, for example in your application path, define your command as `cd $STACK_PATH && command`.</p>
+</div>
 
 <h3 id="optional1">Optional fields</h5>
 
