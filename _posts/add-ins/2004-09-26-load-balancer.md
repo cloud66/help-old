@@ -1,17 +1,18 @@
 ---
 layout: post
 template: two-col
-title:  "Load balancers"
-so_title: "load"
-nav_sticky: false
-date:   2094-01-28 16:27:22
-categories: stack-features
+title:  "Load balancer"
+date:   2060-09-24 10:51:22
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
+categories: add-ins
 lead: Adding a load balancer couldn't be easier
+tags: ['lb', 'load balancer']
 ---
 
-To add a load balancer, click on <i>Add a Load Balancer</i> in the Protips of the stack:
+To add a load balancer, access the add-ins menu of your stack:
 
-![Add Load Balancer](http://cdn.cloud66.com/images/help/load_balancer_protip.png)
+![Tja](http://cdn.cloud66.com/images/help/addin_lb.png)
 
 <div class="notice">
 		<h3>Important</h3>

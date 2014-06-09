@@ -10,8 +10,8 @@ nav_next: "/getting-started/post-deployment.html"
 date:   2037-11-24 10:51:22
 categories: getting-started
 lead: An overview of your pre-deployment options
+tags: ['pre-deployment', 'before deployment', 'options']
 ---
-
 
 ## Environment variables
 [Environment variables](/stack-features/env-vars.html) are dynamically-named values that are easy for you to reference in your code and/or scripts. For example,

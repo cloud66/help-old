@@ -10,6 +10,7 @@ nav_next: "/getting-started/security.html"
 date:   2037-11-20 10:51:22
 categories: getting-started
 lead: An overview of your post-deployment options
+tags: ['post deployment', 'after deployment', 'options']
 ---
 
 <div class="notice">
@@ -26,7 +27,7 @@ Cloud 66 makes it easy for you to scale any part of your stack with the click of
 In addition, we also make it possible for you to adjust the size of your server if need be.
 
 ## Backups
-Use [unmanaged or managed backups](/stack-features/db-backup.html) to ensure that your data isn't lost, and use [backup verifiers](/stack-features/backup-verifiers.html) to check if your backups can actually be restored in the event of a disaster.
+Use [unmanaged or managed backups](/add-ins/backups.html) to ensure that your data isn't lost, and use [backup verifiers](/stack-features/backup-verifiers.html) to check if your backups can actually be restored in the event of a disaster.
 
 ## Stack security
 Your stack is deployed with a fully-configured firewall and intruder detection system to improve your security. For example, database servers are only accessible by other servers in your stack to avoid third-parties gaining access to your data. Should any malicious activity be detected, the IP addresses involved are blocked.

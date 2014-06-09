@@ -25,7 +25,7 @@ Backup verifiers are a great way to ensure that your backups actually contain th
 
 <h2 id="setup">Setup</h2>
 
-To set up backup verifiers, please ensure that you have [managed backups](/stack-features/db-backup.html) and are running either a MySQL or PostgreSQL database.
+To set up backup verifiers, please ensure that you have [managed backups](/add-ins/backups.html) and are running either a MySQL or PostgreSQL database.
 
 Firstly, create a file in the **.cloud66** folder in the root of your repository. The file should be called **backup&#95;verifier&#95;mysql.sql** to verify a MySQL database backup, or **backup&#95;verifier&#95;pg.sql** for a PostgreSQL database backup.
 
@@ -73,13 +73,10 @@ t
 
 Once you have completed the above setup, you can check whether your backups have verified successfully by accessing the backups page
 of your stack.
-![Backup page](http://cdn.cloud66.com/images/help/backup_page.png)
+![Backup page](http://cdn.cloud66.com/images/help/addin_psql_backup.png)
 
-A successfully verified backup will display a green tick.
-![Passed verification](http://cdn.cloud66.com/images/help/verification_passed.png)
-
-A failure during backup verification will result in a red cross, and clicking on the red cross will show the error message.
-![Failed verification](http://cdn.cloud66.com/images/help/verification_failed.png)
+A successfully verified backup will display a green tick, and a failure during verification will result in a red cross - clicking on the red cross will show the error message.
+![Verification](http://cdn.cloud66.com/images/help/addin_psql_backups.png)
 
 Should you need to change your verification script at some point, simply commit the change to Git and redeploy your code.
 

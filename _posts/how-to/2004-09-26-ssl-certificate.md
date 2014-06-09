@@ -8,7 +8,8 @@ cloud66_sticky: true
 nav: true
 date:   1650-09-24 10:51:22
 categories: how-to
-lead: Adding an SSL Certificate to your server
+lead: Preparing your SSL certificate for your stack
+tags: ['prepare ssl', 'ssl certificate', 'ssl key', 'intermediate certificate', 'how', 'ssl']
 ---
 
 ## Adding SSL to your stacks

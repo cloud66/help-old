@@ -7,6 +7,7 @@ cloud66_sticky: true
 date:   2036-09-24 10:51:22
 categories: cloud-providers
 lead:  Use your Joyent account with Cloud 66
+tags: ['joyent', 'joyent cloud']
 ---
 
 You can use Cloud 66 to provision and deploy your code to servers in any Joyent [region](/api/basics/instance-regions.html#joyent). All you need to do is add your Joyent API keys to your Cloud 66 account.

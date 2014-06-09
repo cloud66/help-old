@@ -11,6 +11,7 @@ nav_sticky: true
 date:   2040-1-24 10:51:22
 categories: getting-started
 lead: Bring your own servers to Cloud 66
+tags: ['byos', 'standalone', 'dedicated', 'bring your own server']
 ---
 
 You're welcome to use your own servers with Cloud 66. They just need to be accessible to our service and meet our [operating system requirements](/stacks/operating-system-information.html).

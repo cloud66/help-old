@@ -26,7 +26,7 @@ For example, if you have a Rails application, selecting a stack to be _staging_ 
 Development environments are free of charge on Cloud 66, and are restricted in the following ways:
 
 * You cannot setup database backups for development stacks
-* Development stacks don't support [load balancing](/stack-features/load-balancers.html) or [scaling of frontend](/stack-features/horizontal-scaling.html), [background processes](/stack-features/standalone-process-servers.html) or [database replication](/stack-features/database-replication.html).
+* Development stacks don't support [load balancing](/add-ins/load-balancer.html) or [scaling of frontend](/stack-features/horizontal-scaling.html), [background processes](/stack-features/standalone-process-servers.html) or [database replication](/stack-features/database-replication.html).
 
 ## Custom Environments
 

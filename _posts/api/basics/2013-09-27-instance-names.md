@@ -5,6 +5,7 @@ categories:
   - api
   - basics
 date: 2013-09-26
+tags: ['instance names', 'server names', 'api']
 ---
 
 <div class="heading-wrap">
