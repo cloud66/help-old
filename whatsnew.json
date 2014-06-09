@@ -1,5 +1,11 @@
 [
 	{
+	"date": "2014-06-08T22:00:00Z",
+	"title": "AWS Availability Zone Selection",
+	"summary": "You can now select the Availability Zone of your servers on AWS",
+	"link": "http://blog.cloud66.com/aws-availability-zone-selection"
+	},
+	{
 	"date": "2014-05-15T17:54:44Z",
 	"title": "Per stack notifications",
 	"summary": "Choose notifications for each stack. No more account wide alerts!",
