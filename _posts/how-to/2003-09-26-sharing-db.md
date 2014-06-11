@@ -24,8 +24,24 @@ Your first stack will be deployed as normal, with a database managed by Cloud 66
 		<p>Ensure that you <b>do not</b> select the option for db:schema:load during the build of your second stack, as this could destroy the data on the first stack.</p>
 </div>
 
+Firstly, you need to [open your firewall](/stack-features/stack-security.html) on the first stack to allow your second stack's web-servers to access the database.
+
 You will then reference the database credentials from your first stack in the database.yml of your second stack. You can reference the environment variables for these credentials on your first stack like so (your stack UID is available on the stack setting page):
 
 <kbd>&#123;&#123; STACK[STACK_UID].ENV&#95;VAR &#125;&#125;</kbd>
 
-Lastly, you need to [open your firewall](/stack-features/stack-security.html) on the first stack to allow your second stack's web-servers to access the database.
+For example, your environment variables would be set like this:
+<pre class="terminal">
+MYSQL_ADDRESS=&#123;&#123; STACK[xyz].MYSQL_ADDRESS_INT &#125;&#125;
+MYSQL_DATABASE=&#123;&#123; STACK[xyz].MYSQL_DATABASE &#125;&#125;
+MYSQL_USERNAME=&#123;&#123; STACK[xyz].MYSQL_USERNAME &#125;&#125;
+MYSQL_PASSWORD=&#123;&#123; STACK[xyz].MYSQL_PASSWORD &#125;&#125;
+</pre>
+
+And your database.yml would look something like this:
+<pre class="terminal">
+username: <%= ENV['MYSQL_USERNAME'] %>
+password: <%= ENV['MYSQL_PASSWORD'] %>
+hostname: <%= ENV['MYSQL_ADDRESS'] %>
+database: <%= ENV['MYSQL_DATABASE'] %>
+</pre>

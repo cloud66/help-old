@@ -15,35 +15,29 @@ lead: Use redeployment hooks to setup continuous deployment
 	<li>
 		<p>From the stack drop-down menu - click <i>Information</i>:</p>
 		<p>
-			<img src="http://cdn.cloud66.com/images/help/stack-info.png" alt="">
+			<img src="http://cdn.cloud66.com/images/help/stack_information.png" alt="">
 		</p>
 	</li>
 	<li>
 		<p>Copy the URL.</p>
 		<p>
-			<img src="http://cdn.cloud66.com/images/help/stack-info-overlay.png" alt="">
+			<img src="http://cdn.cloud66.com/images/help/stack_info_overlay.png" alt="">
 		</p>
 	</li>
 	<li>
 		<p>Access the <i>Settings</i> page of your GitHub repository.</p>
 		<p>
-			<img src="http://cdn.cloud66.com/images/help/github-admin-nav.png" alt="">
+			<img src="http://cdn.cloud66.com/images/help/github_settings_nav.png" alt="">
 		</p>
 	</li>
 	<li>
-		<p>In the left navigation click <i>Service Hooks</i>.</p>
+		<p>In the left navigation, click <i>Webhooks & Services</i>, and then click <i>Add webhook</i>.</p>
 		<p>
-			<img src="http://cdn.cloud66.com/images/help/github-service-hooks-nav.png" alt="">
+			<img src="http://cdn.cloud66.com/images/help/github_webhook.png" alt="">
 		</p>
 	</li>
 	<li>
-		<p>Click <i>WebHook URLs</i></p>
-				<p>
-			<img src="http://cdn.cloud66.com/images/help/github-webhook.png" alt="">
-		</p>
-	</li>
-	<li>
-		<p>Paste the Redeployment hook into the <b>WebHook URLs</b> field.</p>
+		<p>Paste the redeployment hook into the <b>Payload URLs</b> field.</p>
 	</li>
 </ol>
 
