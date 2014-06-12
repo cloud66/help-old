@@ -16,4 +16,4 @@ Once your stack is deployed, you can easily use Logentries for centralized log f
 We'll ask you for your Logentries account key - if you don't have one, you can signup to a Logentries account:
 ![Logentries add](http://cdn.cloud66.com/images/help/addin_example_logentries.png)
 
-You can find your Logentries account ID in your account page.
+You can find your Logentries account ID in your account page. For more information, please see Logentries [guide to integrating with Cloud 66](https://logentries.com/doc/cloud66/).
