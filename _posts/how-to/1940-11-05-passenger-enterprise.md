@@ -34,3 +34,12 @@ We require two simple steps to deploy with Passenger Enterprise:
 2. Add a `PASSENGER_ENTERPRISE_DOWNLOAD_TOKEN` [environment variable](/stack-features/env-vars.html) which contains the value of your Passenger Enterprise download token.
 
 If both these conditions are met, any Passenger-based server is deployed with the Enterprise edition installed.
+
+<div class="notice">
+    <h3>Important</h3>
+    <p>We recommend that you choose Passenger Enterprise as your web server at the time of initial build of the stack. If you already have a stack, please <a href="/stack-features/horizontal-scaling.html">scale up</a> to a new application server and scale down the old one to add Passenger Enterprise.</p>
+</div>
+
+You will then see Passenger Enterprise listed on your _Stack information_ page:
+
+![Passenger enterprise](http://cdn.cloud66.com/images/help/passenger_enterprise.png)

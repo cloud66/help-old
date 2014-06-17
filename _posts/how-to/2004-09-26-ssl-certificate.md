@@ -25,7 +25,7 @@ You can also add the domain name if you want to limit the SSL to a certain domai
 
 To generate a .key and .crt file, follow the steps below.
 <ol>
-<li>[SSH into your server](http://help.cloud66.com/how-to/shell-to-your-servers.html).</li>
+<li><a href="http://help.cloud66.com/how-to/shell-to-your-servers.html">SSH into your server</a>.</li>
 <li>Generate private key (KEY) on your server, without specifying a passphrase:</li>
 <p>
 <kbd>
