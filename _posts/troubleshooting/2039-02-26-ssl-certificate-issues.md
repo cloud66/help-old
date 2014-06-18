@@ -1,4 +1,4 @@
-e---
+---
 layout: post
 template: two-col
 title:  "SSL certificate issues"
