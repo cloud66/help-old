@@ -492,7 +492,7 @@ A value in MB that Cloud 66 will assume should be left available. This will affe
 - <b>passenger&#95;process&#95;memory</b><br/>
 A value in MB that Cloud 66 will use for each passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment
 - <b>activeprotect</b><br/>
-Specify a whitelist of IPs that should be ignored by your fail2ban configuration
+Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration
 - <b>nginx</b><br/>
 Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
 
