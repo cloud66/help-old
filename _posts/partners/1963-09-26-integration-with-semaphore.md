@@ -6,7 +6,7 @@ so_title: "semaphore"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1930-09-26 15:33:13
-categories: how-to
+categories: partners
 lead: Use Semaphore for continuous integration with Cloud 66
 ---
 
