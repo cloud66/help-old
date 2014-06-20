@@ -8,6 +8,7 @@ module Jekyll
 			'add-ins',
 			'stacks',
 			'web-server',
+			'database',
 			'your-account',
 			'cloud-providers',
 			'toolbelt',

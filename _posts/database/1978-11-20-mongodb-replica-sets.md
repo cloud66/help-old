@@ -1,12 +1,12 @@
 ---
 layout: post
 template: two-col
-title:  "MongoDB Replica Sets"
+title:  "MongoDB replica sets"
 so_title: "mongodb"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1910-11-20 01:01:01
-categories: how-to
+categories: database
 lead: Cloud 66 Supports MongoDB Replica Sets
 ---
 

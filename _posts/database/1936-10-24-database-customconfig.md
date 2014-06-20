@@ -6,7 +6,7 @@ so_title: "custom config"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1958-06-26 15:33:13
-categories: how-to
+categories: database
 lead: Customize your database configuration
 ---
 

@@ -6,7 +6,7 @@ so_title: "backup"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1920-09-26 15:33:13
-categories: how-to
+categories: database
 lead: You can manage your Cloud 66 backups if you want
 ---
 

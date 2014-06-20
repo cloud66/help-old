@@ -7,7 +7,7 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 nav: true
 date:   1689-09-26 15:33:13
-categories: how-to
+categories: database
 lead: How to share a single database between stacks
 ---
 

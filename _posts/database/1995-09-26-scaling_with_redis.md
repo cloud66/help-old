@@ -6,7 +6,7 @@ so_title: "redis"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1800-09-26 15:33:13
-categories: how-to
+categories: database
 lead: When a stack is created with Redis, the Redis connection is often initialized in the code using localhost.
 ---
 
