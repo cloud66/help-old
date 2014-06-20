@@ -6,7 +6,7 @@ so_title: "psql"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1897-09-24 10:51:22
-categories: how-to
+categories: database
 lead: How to deal with a primary server failure
 ---
 

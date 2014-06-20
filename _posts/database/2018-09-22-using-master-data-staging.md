@@ -6,7 +6,7 @@ so_title: "data"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1525-09-24 10:51:22
-categories: how-to
+categories: database
 lead: Different ways to use production data on your staging stack
 ---
 
