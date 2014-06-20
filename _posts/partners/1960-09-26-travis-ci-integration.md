@@ -15,9 +15,9 @@ You can use Travis CI to accomplish continuous integration and deployment of you
 To get your build hooked up to Travis CI, you need to use the [redeployment hook](/stack-features/redeployment-hook.html) provided by Cloud 66:
 
 Access the _stack information_ page:
-![Stack info](http://cdn.cloud66.com/images/help/stack-info.png)
+![Stack info](http://cdn.cloud66.com/images/help/stack_information.png)
 
 Copy the redeployment hook:
-![Redeployment hook](http://cdn.cloud66.com/images/help/stack-info-overlay.png)
+![Redeployment hook](http://cdn.cloud66.com/images/help/stack_info_overlay.png)
 
 Please refer to the [Travis CI documentation for use with Cloud 66](http://docs.travis-ci.com/user/deployment/cloud66/) for more information.
