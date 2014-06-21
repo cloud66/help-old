@@ -53,4 +53,4 @@ You can use [redeployment hooks](/stack-features/redeployment-hook.html) to achi
 Our [StackScore](/stack-features/stackscore.html) is a simple A-F score for you to understand how you best can improve your stack performance and reliability.
 
 ## Maintenance mode
-Cloud 66 allows you to place your application in [maintenance mode](/stack-features/maintenance-mode.html) whereby a static maintenance page is served for the duration of your maintenance.
+Cloud 66 allows you to place your application in [maintenance mode](/stack-features/network-configuration.html) whereby a static maintenance page is served for the duration of your maintenance.
