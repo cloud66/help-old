@@ -1,15 +1,14 @@
 ---
 layout: post
 template: two-col
-title:  "Deploy with Passenger Enterprise"
+title:  "Passenger Enterprise"
 so_title: "passenger"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-date:   1955-11-05 15:33:13
-categories: how-to
+date:   2031-11-05 15:33:13
+categories: web-server
 lead: Cloud 66 supports deploying with Passenger Enterprise
 ---
-
 
 ## Introduction
 

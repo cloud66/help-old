@@ -23,6 +23,7 @@ By default, stacks deployed by Cloud 66 run on <a href="https://www.phusionpasse
 ## Configurations for your Rack server
 You need to configure your Rack server based on the recommended configuration settings of each specific server. Please see the Cloud 66 documentation for configuring
 
+- [Passenger Enterprise](/web-server/passenger-enterprise.html)
 - [Puma](/web-server/puma-rack-server.html)
 - [Unicorn](/web-server/unicorn-rack-server.html)
 - [Thin](/web-server/thin-rack-server.html)

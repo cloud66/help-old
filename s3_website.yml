@@ -55,8 +55,23 @@ redirects:
   toolbelt/restart.html: cloud-66-toolbelt/restart.html
   toolbelt/download-backup.html: cloud-66-toolbelt/backups.html
   stacks/rename-stack.html: stacks/stack-information.hml
-  stack-features/db-backup.html: /add-ins/backups.html
-  stack-features/load-balancers.html: /add-ins/load-balancer.html
+  stack-features/db-backup.html: add-ins/backups.html
+  stack-features/load-balancers.html: add-ins/load-balancer.html
+  how-to/passenger-enterprise.html: web-server/passenger-enterprise.html
+  how-to/connect-db-servers.html: database/connect-db-servers.html
+  how-to/control-db-migration.html: database/control-db-migration.html
+  how-to/database-customconfig.html: database/database-customconfig.html
+  how-to/seeding-db.html: database/seeding-db.html
+  how-to/sharing-db.html: database/sharing-db.html
+  how-to/change-psql-directory.html: database/change-psql-directory.html
+  how-to/manage-backups.html: database/manage-backups.html
+  how-to/mongodb-replica-sets.html: database/mongodb-replica-sets.html
+  how-to/postgis-installation.html: database/postgis-installation.html
+  how-to/psql-failover.html: database/psql-failover.html
+  how-to/replace-sqlite.html: database/replace-sqlite.html
+  how-to/uninstall-mysql.html: database/uninstall-mysql.html
+  how-to/using-master-data-staging.html: database/using-master-data-staging.html
+  how-to/scaling_with_redis.html: database/scaling_with_redis.html
 
 #   about.php: about.html
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ

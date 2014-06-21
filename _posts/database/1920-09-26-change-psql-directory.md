@@ -6,7 +6,7 @@ so_title: "PostgreSQL data directory"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1978-09-26 15:33:13
-categories: how-to
+categories: database
 lead: How to change your PostgreSQL data directory
 ---
 

@@ -6,7 +6,7 @@ so_title: "postgis"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1900-09-26 15:33:13
-categories: how-to
+categories: database
 lead: You can install PostGIS automatically or manually
 ---
 

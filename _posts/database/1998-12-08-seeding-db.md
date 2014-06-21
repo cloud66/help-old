@@ -6,7 +6,7 @@ so_title: "seed"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1750-12-08 09:33:13
-categories: how-to
+categories: database
 lead: Seed your database with your data during deployment
 ---
 New databases commonly require seed data in order to be functional for an application.

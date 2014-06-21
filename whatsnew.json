@@ -1,5 +1,17 @@
 [
 	{
+	"date": "2014-06-18T11:00:00Z",
+	"title": "Introducing Custom Servers",
+	"summary": "Fire up Custom Servers while benefiting from Cloud 66 management",
+	"link": "http://blog.cloud66.com/introducing-custom-servers/"
+	},
+	{
+	"date": "2014-06-18T11:00:00Z",
+	"title": "Add your phone number to your account",
+	"summary": "If you use two-factor authentication, add your phone number to avoid being locked out of your account",
+	"link": "http://blog.cloud66.com/lost-your-phone-dont-lose-your-deployments/"
+	},
+	{
 	"date": "2014-06-08T22:00:00Z",
 	"title": "AWS Availability Zone Selection",
 	"summary": "You can now select the Availability Zone of your servers on AWS",
