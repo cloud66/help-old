@@ -15,7 +15,11 @@ A not unusual issue with Unicorn is that redeployments don't reflect your code c
 3. Quiet and shut down old worker processes
 4. Shut down the existing master
 
-This mechanism allows for the zero-downtime deployments. However, if for some reason the new master or new workers can't start then the old master doesn't kill itself (in an attempt to keep service).
+This mechanism allows for the zero-downtime deployments. However, if for some reason the new master or new workers can't start then the old master doesn't kill itself (in an attempt to keep service). You can verify this by issuing the following command:
 
-The first place to look is at your logs in <code>$STACK_PATH/log/*.log</code> to see if there are any error messages. Based on those error messages, you'll be able to troubleshoot
+<code>watch -n 5 'echo UNICORN:; ps aux | grep [u]nicor;'</code>
+
+This will list the processes run by Unicorn, refreshing every 5 seconds to help you see any updates.
+
+You should also look at your logs in <code>$STACK_PATH/log/*.log</code> to see if there are any error messages. Based on those error messages, you'll be able to troubleshoot
 why new workers aren't being initiated with your updated code.
