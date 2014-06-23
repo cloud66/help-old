@@ -72,6 +72,9 @@ redirects:
   how-to/uninstall-mysql.html: database/uninstall-mysql.html
   how-to/using-master-data-staging.html: database/using-master-data-staging.html
   how-to/scaling_with_redis.html: database/scaling_with_redis.html
+  how-to/circle-ci-integration.html: partners/circle-ci-integration.html
+  how-to/travis-ci-integration.html: partners/travis-ci-integration.html
+  how-to/integration-with-semaphore.html: partners/integration-with-semaphore.html
 
 #   about.php: about.html
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ

@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "Partner Integration"
+title:  "Partner integration"
 date:   2014-02-02 00:00:00
 categories: partners
 lead: Partner Integration API
