@@ -4,7 +4,7 @@ template: two-col
 title:  "Stack network settings"
 so_title: "network"
 nav_sticky: false
-date:   2082-12-30 16:27:22
+date:   2084-12-30 16:27:22
 categories: stack-features
 lead: "Configure network traffic and redirections for your stacks"
 ---
