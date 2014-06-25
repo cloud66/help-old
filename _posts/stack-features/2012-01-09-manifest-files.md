@@ -250,7 +250,6 @@ Cloud vendor to fire up the server on. Valid values:
 {% highlight yaml %}
 ... server:
         unique_name: frontend
-        type: BYOC
         vendor: aws
         region: us-east-1
         size: t1.micro
@@ -280,7 +279,6 @@ Address of the server. For BYOS servers, <i>address</i>, <i>username</i> and <i>
 {% highlight yaml %}
 ... server:
         unique_name: frontend
-        type: BYOS
         address: 123.123.123.123
         username: ubuntu
         ssh_key_name: my_server_key
