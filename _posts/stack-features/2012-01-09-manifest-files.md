@@ -233,14 +233,6 @@ A list of extra apt packages to be installed on the server, before deploying the
                 - chrony
 {% endhighlight %}
 
-**type**
-(_Optional_)
-
-<i>Bring your own server</i> or <i>Bring your own cloud</i>. Valid values:
-
-- BYOS
-- BYOC
-
 **vendor**
 (_Optional, BYOC Only_)
 
