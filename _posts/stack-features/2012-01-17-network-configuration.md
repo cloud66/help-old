@@ -40,7 +40,7 @@ lead: "Configure network traffic and redirections for your stacks"
 
 The <i>stack network</i> page gives you an overview of your security standing and allows you to configure several network-related settings.
 
-![Cloud 66 network](http://cdn.cloud66.com/images/help/networkmenu.png)
+![Cloud 66 network](http://cdn.cloud66.com/images/help/networkmenus.png)
 
 <h2 id="active-protect">ActiveProtect</h2>
 
@@ -63,7 +63,7 @@ By default, Cloud 66 gateway servers (eg. 54.84.166.97) are the only servers all
 To add your own rules, click <i>Add a new firewall rule</i>. You can input single IP addresses or ranges, and the dropdown allows you to choose servers by name (eg. <i>Rails servers</i>).
 
 <h2 id="traffic">Traffic</h2>
-The <i>Traffic</i> tab has two sections: <i>allowed</i> traffic sources and <i>denied</i> traffic sources.
+By default, all traffic is allowed to visit your web servers on ports 80, 443, 8080 and 8443. The <i>Traffic</i> tab allows you to control this, and has two sections: <i>allowed</i> traffic sources and <i>denied</i> traffic sources.
 
 ![Cloud 66 Firewall](http://cdn.cloud66.com/images/help/networktraffic.png)
 
@@ -76,12 +76,12 @@ For each of the fields above, you can enter a single IP address, a comma-separat
 ```
 
 <h3 id="allowing">Allowing traffic</h3>
-By default, all traffic is allowed to visit your web servers on ports 80, 443, 8080 and 8443. However, repeated visits within a short time period (more than 1,500 hits per minute from a single IP address) is blocked by ActiveProtect.
+Repeated visits within a short time period on the ports mentioned above (more than 1,500 hits per minute from a single IP address) are blocked by ActiveProtect. By allowing traffic for a specific IP address or range, this limit is ignored.
 
 You can also choose not to block traffic coming from Cloudflare edge servers.
 
 <h3 id="denying">Denying traffic</h3>
-You can block specific IPs and/or ranges from visiting your web servers.
+You can block specific IPs and/or ranges from visiting the ports mentioned above.
 
 You can also automatically block traffic from the [TOR network](https://www.torproject.org/) to your servers. The list of TOR IP addresses is automatically updated by Cloud 66 and is available to your servers.
 
