@@ -1,10 +1,9 @@
 ---
 layout: api_post
-title:  "Instance Regions"
+title:  "Instance regions"
 categories:
   - api
   - basics
-date: 2013-09-26
 tags: ['instance regions', 'regions', 'api']
 ---
 
