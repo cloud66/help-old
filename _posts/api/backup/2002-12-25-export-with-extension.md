@@ -30,7 +30,7 @@ A successful export will return a JSON object:
 	<tbody>
 		<tr><td>ok</td><td>True</td><td></td></tr>
 		<tr><td>file_name</td><td>File name of backup</td><td></td></tr>
-		<tr><td>url</td><td>URL that can be used to download backup</td><td>URL is valid for 5 minutes.</td></tr>
+		<tr><td>url</td><td>URL that can be used to download backup</td><td>URL is valid for 5 minutes</td></tr>
 		<tr><td>next_extension</td><td>Extension of the next backup file </td><td>Big backups are saved in multi-part format. If this value is empty it means the backup only contains a single file</td></tr>
 	</tbody>
 </table>
