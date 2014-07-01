@@ -2,10 +2,10 @@
 layout: post
 template: two-col
 title:  "Memcached"
-date:   2025-09-24 10:51:22
+date:   1920-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-categories:
+categories: how-to
 lead: Improve application performance with Memcached
 ---
 
