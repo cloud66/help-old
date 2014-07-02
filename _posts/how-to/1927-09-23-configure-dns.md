@@ -64,7 +64,7 @@ This involves using an A record to point your root domain at your load balancer 
 <ol>
 <li>Create a CNAME record for www pointing at the Cloud 66 host name on your load balancer.</li>
 <li>Create an A record for your root domain (eg. example.com) pointing at your load balancer IP address.</li>
-<li>​Use <a href="/stack-features/custom-config.html">Nginx CustomConfig</a> to <a href="http://stackoverflow.com/questions/7947030/nginx-no-www-to-www-and-www-to-no-www">permanently redirect all traffic</a> from example.com to www.example.com.</li>
+<li>​Use <a href="/stack-features/network-configuration.html#www">network redirects</a> to <a href="http://stackoverflow.com/questions/7947030/nginx-no-www-to-www-and-www-to-no-www">permanently redirect all traffic</a> from example.com to www.example.com.</li>
 </ol>
 
 <h4 id="subdomain">3. Subdomain redirection</h4>

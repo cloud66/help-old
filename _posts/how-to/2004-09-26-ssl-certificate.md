@@ -12,27 +12,35 @@ lead: Preparing your SSL certificate for your stack
 tags: ['prepare ssl', 'ssl certificate', 'ssl key', 'intermediate certificate', 'how', 'ssl']
 ---
 
-## Adding SSL to your stacks
-To add SSL to your stack, you need to have a SSL certificate and key. Some certificate authorities also provide you with an intermediate certificate as well.
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#sign">Certificate signing request</a>
+	</li>
+	<li>
+		<a href="#intermediate">Intermediate certificates</a>
+	</li>
+	<li>
+		<a href="#multi-domain">Multi-domain certificates</a>
+	</li>
+</ul>
 
-You must make sure your SSL keys don't have any passphrases.
+To add SSL to your stack, you need to have a SSL certificate and key. Some certificate authorities also provide you with an intermediate certificate. Firstly, please make sure that your SSL keys don't have any passphrases.
 
-Once you have your certificate and key, click on the Install SSL certificate on the stack Protips and paste the certificate, key and the intermediate certificate (if you have any) into the appropriate boxes.
+Once you have your certificate, key and possibly intermediate certificate, paste them into the appropriate boxes of the [SSL certificate add-in](/add-ins/ssl.html). You can also add the domain name if you want to limit the SSL to a certain domain.
 
-You can also add the domain name if you want to limit the SSL to a certain domain.
+<h2 id="sign">Certificate signing request</h2>
 
-<h3>Certificate signing request</h3>
-
-To generate a .key and .crt file, follow the steps below.
+To generate a key and certificate signing request, follow the steps below.
 <ol>
 <li><a href="http://help.cloud66.com/how-to/shell-to-your-servers.html">SSH into your server</a>.</li>
-<li>Generate private key (KEY) on your server, without specifying a passphrase:</li>
+<li>Generate private <i>key</i> on your server, without specifying a passphrase:</li>
 <p>
 <kbd>
 openssl genrsa -des3 -out private&#95;key.key 2048
 </kbd>
 </p>
-<li>Create a certificate signing request file and enter your information as requested:</li>
+<li>Create a certificate signing request and enter your information as requested:</li>
 <p>
 <kbd>
 openssl req -new -key private&#95;key.key -out signing&#95;request.csr
@@ -46,7 +54,23 @@ openssl req -new -key private&#95;key.key -out signing&#95;request.csr
     <p>You cannot use passphrase protected certificate keys with Nginx. Learn how to <a href="/troubleshooting/ssl-certificate-issues.html">remove the passphrases from certificate keys</a>.</p>
 </div>
 
-<h3>Adding SSL certificate with intermediate certificates</h3>
-Some SSL certificate providers (Certificate Authorities) like RapidSSL issue certificates that are not fully compatible with all devices (specifically Android devices). This is because they are not the ultimate CAs and usually act as a reseller for other authorities (like VeriSign).
+<h2 id="intermediate">Intermediate certificates</h2>
+Some SSL certificate authorities (CA), like RapidSSL, issue certificates that are not fully compatible with all devices (specifically Android devices). This is because they are not the ultimate CAs and usually act as a reseller for other authorities (like VeriSign).
 
-Cloud 66 supports these Certificate Authorities fully by allowing you add the intermediate certificate separately into the SSL certificate add-on form.
+Cloud 66 supports these CAs fully by allowing you to add the intermediate certificate separately into the [SSL certificate add-in](/add-ins/ssl.html) form.
+
+<h2 id="multi-domain">Multi-domain certificates</h2>
+When installing multi-domain certificates, certificate authorities such as Comodo typically send you four files:
+
+1. Root CA Certificate - <i>AddTrustExternalCARoot.crt</i>
+2. Intermediate CA Certificate - <i>COMODORSAAddTrustCA.crt</i>
+3. Intermediate CA Certificate - <i>COMODORSAExtendedValidationSecureServerCA.crt</i>
+4. Your COMODO EV Multi-Domain SSL Certificate - <i>14637732.crt</i>
+
+To use these, you have to concatenate all files except for the last one (the certificate):
+
+<p>
+<kbd>
+cat COMODORSAExtendedValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt > bundle_file
+</kbd>
+</p>
