@@ -23,6 +23,9 @@ tags: ['prepare ssl', 'ssl certificate', 'ssl key', 'intermediate certificate', 
 	<li>
 		<a href="#multi-domain">Multi-domain certificates</a>
 	</li>
+	<li>
+		<a href="#separate">Separate domains with different certificates</a>
+	</li>
 </ul>
 
 To add SSL to your stack, you need to have a SSL certificate and key. Some certificate authorities also provide you with an intermediate certificate. Firstly, please make sure that your SSL keys don't have any passphrases.
@@ -69,8 +72,35 @@ When installing multi-domain certificates, certificate authorities such as Comod
 
 To use these, you have to concatenate all files except for the last one (the certificate):
 
-<p>
-<kbd>
+<pre class="terminal">
 cat COMODORSAExtendedValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt > bundle_file
-</kbd>
-</p>
+</pre>
+
+<h2 id="separate">Separate domains with different certificates</h2>
+You may need to serve different parts of your application on separate domains, each with its own SSL certificate. You can use [Nginx CustomConfig](/stack-features/custom-config.html) to set this up - you will basically have two server blocks listening on different domains, and serving different certificates (located on the server):
+
+<pre class="terminal">
+&#123;% if allow_ssl == true %&#125;
+
+# main domain
+server &#123;
+listen 443;
+ssl on;
+ssl_certificate_key /etc/ssl/localcerts/certificate_name_1.key;
+ssl_certificate /etc/ssl/localcerts/certificate_name_1.crt;
+server_name server_name_1.com;
+client_max_body_size 50m;
+...
+&#125;
+
+# secondary domain
+server &#123;
+listen 443;
+ssl on;
+ssl_certificate_key /etc/ssl/localcerts/certificate_name_2.key;
+ssl_certificate /etc/ssl/localcerts/certificate_name_2.crt;
+server_name server_name_2.com;
+client_max_body_size 50m;
+...
+&#125;
+</pre>
