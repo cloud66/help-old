@@ -20,6 +20,10 @@ You can fire up additional web servers by clicking on the "+" button on the <i>W
 
 Your new server(s) will be added to your load balancer automatically after they have completed provisioning and deployment - ready to serve traffic!
 
+If you are using AWS, you can choose to scale your servers to different [Availability Zones](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html) within your region:
+
+![Scale AZ AWS](http://cdn.cloud66.com/images/help/aws_horizontal_scaling.png)
+
 ## Scale down your web servers
-If you have scaled up additional web servers to deal with increased traffic, you can always scale down again. Simply click on the "-" button next to the server you want to shut down. This server will automatically be removed from your load balancer and terminated from your cloud provider.
+If you have scaled up additional web servers to deal with increased traffic, you can always scale down again. Simply click on the _X_ button next to the server you want to shut down. This server will automatically be removed from your load balancer and terminated from your cloud provider.
 Note that your primary (initially created) web server cannot be destroyed.
