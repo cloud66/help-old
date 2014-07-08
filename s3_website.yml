@@ -76,6 +76,7 @@ redirects:
   how-to/travis-ci-integration.html: partners/travis-ci-integration.html
   how-to/integration-with-semaphore.html: partners/integration-with-semaphore.html
   stack-features/stack-security.html: stack-features/network-configuration.html
+  stack-features/maintenance-mode.html: stack-features/network-configuration.html
 
 #   about.php: about.html
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
