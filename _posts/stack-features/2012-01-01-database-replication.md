@@ -12,8 +12,8 @@ lead: Scale your databases by setting up replication
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
-		<a href="#scaling-up">Scaling up</a>
-	</li>
+    	<a href="#intro">Introduction</a>
+    </li>
 	<li>
 		<a href="#how-it-works">How it works</a>
 	</li>
@@ -48,6 +48,12 @@ lead: Scale your databases by setting up replication
 	</li>
 </ul>
 
+<h2 id="intro">Introduction</h2>
+Database replication involves configuring a master/slave database architecture, whereby the slave is an exact replica of the master. This provides several benefits:
+
+- <b>Improved read performance</b><br/> The slave server only allows reads and is ideal for use with reporting tools, and any database backups are taken from the slave rather than the master.
+- <b>Improved application reliability</b><br/> Having a second server with your data, in case of hardware issues (reducing a single point of failure).
+- <b>Improved redundancy with replication between stacks</b><br> Using [database replication between stacks](/stack-features/database-replication-between-stacks.html) allows you to have a failover stack in a different region, among other benefits.
 
 Database replication is supported for **MySQL**, **PostgreSQL**, **Redis** and **MongoDB** databases.
 
@@ -56,10 +62,9 @@ Database replication is supported for **MySQL**, **PostgreSQL**, **Redis** and *
 	<p>You need to have a managed backup setup for your stack to use DB replication.</p>
 </div>
 
+<h2 id="how-it-works">How it works</h2>
 
-<h2 id="scaling-up">Scaling Up</h2>
-
-To enable replication, click on the DB Server group of your stack and click on the Scale Up button.
+To enable replication, click on the database server group of your stack and click on the <i>Scale Up</i> button.
 
 ![](http://cdn.cloud66.com/images/help/db_scaleup.png)
 
@@ -67,14 +72,14 @@ To enable replication, click on the DB Server group of your stack and click on t
 
 <div class="notice notice-danger">
 	<h3>Note</h3>
-	<p>The process of database replication will disrupt your database serving your application for the duration of scaling up and scaling down.</p>
+	<p>Database replication will disrupt the database serving your application during the replication configuration process.</p>
 </div>
 
-The disruption time depends entirely on your database type and size, and different databases may require a restart and/or a complete backup in order to warm-up the new server. This disruption will occur every time you scale up your server.
+The disruption time depends entirely on your database type and size, and different databases may require a restart and/or a complete backup in order to warm-up the new server. This disruption will occur every time you scale your server.
 
 For example, during a PostgreSQL scale-up, after reconfiguring the primary database and restarting it, a `pg_start_backup()` command is issued to output data in order to populate the new server. Your database is unavailable during this procedure. We subsequently issue a `pg_stop_backup` command that makes your database available again.
 
-<h2 id="how-it-works">How it works</h2>
+This is what happens:
 
 - We fire up another server in your cloud
 - We install your database server (the same version as the original server)
