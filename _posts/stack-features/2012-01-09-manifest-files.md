@@ -135,8 +135,8 @@ production: # 1. Environment type
         servers:
             server: # 3. Server type (optional)
                 unique_name: frontend
-            configuration: # 4. Application specific configurations
-                ruby_version: 1.9.3
+        configuration: # 4. Application specific configurations
+            ruby_version: 1.9.3
 {% endhighlight %}
 
 The above manifest is only scoped to *production* stacks. Here we have specified that we want to install Ruby version 1.9.3 on the rails server, and that it should be called <i>frontend</i>.
@@ -336,7 +336,8 @@ Specify the version of ElasticSearch you want to install (does not apply to exte
 
 <pre class="terminal">
 ... elasticsearch:
-        server: ...
+		servers:
+		    server: ...
         configuration:
             version: 0.90.7
 </pre>
@@ -416,7 +417,8 @@ Specify the version of MongoDB you want to install (does not apply to external s
 
 <pre class="terminal">
 ... mongodb:
-        server: ...
+		servers:
+		    server: ...
         configuration:
             version: 2.4.8
 </pre>
@@ -432,7 +434,8 @@ Specify whether to include PostGIS (Note: unlike the PG version, this can be add
 
 <pre class="terminal">
 ... postgresql:
-        server: ...
+		servers:
+		    server: ...
         configuration:
            	version: 9.3.4
            	postgis: true
@@ -446,7 +449,8 @@ Specify the version of PostGIS you want to install
 <pre class="terminal">
 production:
    postgresql:
-	   server: ...
+	   servers:
+	       server: ...
        configuration:
            postgis:
                version: 2.1.1
@@ -461,7 +465,8 @@ Specify the version of RabbitMQ you want to install (does not apply to external 
 
 <pre class="terminal">
 ... rabbitmq:
-        server: ...
+        servers:
+            server: ...
        	configuration:
            	version: 3.2.1
 </pre>
@@ -490,17 +495,17 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
 ... rails:
 		servers:
 			server: ...
-			configuration:
-				ruby&#95;version: 1.9.3
-				asset&#95;pipeline&#95;precompile: true
-				do&#95;initial&#95;db&#95;schema&#95;load: false
-				reserved&#95;server&#95;memory: 0 (default value)
-				passenger&#95;process&#95;memory: 200 (default value)
-				activeprotect:
-                      whitelist: 123.123.123.123,234.234.234.234
-				nginx:
-					cors: true
-					perfect&#95;forward&#95;secrecy: true
+		configuration:
+			ruby&#95;version: 1.9.3
+			asset&#95;pipeline&#95;precompile: true
+			do&#95;initial&#95;db&#95;schema&#95;load: false
+			reserved&#95;server&#95;memory: 0 (default value)
+			passenger&#95;process&#95;memory: 200 (default value)
+			activeprotect:
+                whitelist: 123.123.123.123,234.234.234.234
+			nginx:
+				cors: true
+				perfect&#95;forward&#95;secrecy: true
 </pre>
 
 #### CORS configuration
@@ -508,7 +513,8 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
 If you want to, you can also specify the origin and methods for CORS.
 <pre class="terminal">
 ... rails:
-		server: ...
+		servers:
+		    server: ...
 		configuration:
 			nginx:
 				cors:
@@ -525,7 +531,8 @@ Specify the version of Redis you want to install (does not apply to external ser
 
 <pre class="terminal">
 ... redis:
-		server: ...
+		servers:
+		    server: ...
 		configuration:
 			version: 2.6.10
 </pre>
