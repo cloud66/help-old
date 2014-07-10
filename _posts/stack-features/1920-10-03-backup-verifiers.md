@@ -43,22 +43,22 @@ To verify your backup, the script must contain a SQL query that returns a data s
 
 **MySQL**
 
-This query will count the number of results in the *users* table equal to zero.
+This query will count the number of records in the *users* table, and returns a 1 if that number is not zero.
 <pre class='terminal-commands'>
-select count(*)=0 as result from users
+select count(*)<>0 as result from users
 </pre>
 
-That query may return the following output (zero is interpreted as true in MySQL), indicating that your *users* table holds data.
+That query may return the following output (non-zero values are interpreted as true in MySQL), indicating that your *users* table holds data.
 <pre class='terminal-commands'>
 result
-0
+1
 </pre>
 
 **PostgreSQL**
 
-Similarly, this query also counts the number of results in the *users* table equal to zero.
+Similarly, this query also counts the number of records in the *users* table, and returns a boolean of _true_ if that number is not zero.
 <pre class='terminal-commands'>
-select count(*)=0 as result from users
+select count(*)<>0 as result from users
 </pre>
 
 The result of this query may be the following, indicating that your *users* table holds data.

@@ -57,16 +57,16 @@ Database replication involves configuring a master/slave database architecture, 
 
 Database replication is supported for **MySQL**, **PostgreSQL**, **Redis** and **MongoDB** databases.
 
-<div class="notice">
-	<h3>Note</h3>
-	<p>You need to have a managed backup setup for your stack to use DB replication.</p>
-</div>
-
 <h2 id="how-it-works">How it works</h2>
 
 To enable replication, click on the database server group of your stack and click on the <i>Scale Up</i> button.
 
 ![](http://cdn.cloud66.com/images/help/db_scaleup.png)
+
+<div class="notice">
+	<h3>Note</h3>
+	<p>You need to have a managed backup setup for your stack to use DB replication.</p>
+</div>
 
 ![](http://cdn.cloud66.com/images/help/db_scaled.png)
 
