@@ -95,6 +95,10 @@ tags: ['instance regions', 'regions', 'api']
    			<td>Singapore</td>
 			<td>6</td>
 		</tr>
+		<tr>
+   			<td>London</td>
+			<td>7</td>
+		</tr>
 	</tbody>
 </table>
 
