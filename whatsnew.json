@@ -1,5 +1,11 @@
 [
 	{
+	"date": "2014-07-28T11:00:00Z",
+	"title": "Introducing ElasticAddress",
+	"summary": "Build multi data center stacks in minutes",
+	"link": "http://blog.cloud66.com/introducing-elasticaddress/"
+	},
+	{
 	"date": "2014-06-18T11:00:00Z",
 	"title": "Introducing Custom Servers",
 	"summary": "Fire up Custom Servers while benefiting from Cloud 66 management",
