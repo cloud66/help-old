@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1895-09-26 15:33:13
 categories: database
 lead: SQLite is not suitable for production environments
+search-tags: ['']
+tags: ['Database']
 ---
 
 

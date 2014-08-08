@@ -4,7 +4,8 @@ title:  "Instance names"
 categories:
   - api
   - basics
-tags: ['instance names', 'server names', 'api']
+search-tags: ['instance names', 'server names', 'api']
+tags: ['API']
 ---
 
 <div class="heading-wrap">

@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1935-09-26 15:33:13
 categories: partners
 lead: Use Travis CI for a continuous deployment of all green tests
+search-tags: []
+tags: ['Partners']
 ---
 
 You can use Travis CI to accomplish continuous integration and deployment of your application together with Cloud 66.

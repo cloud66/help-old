@@ -6,6 +6,8 @@ so_title: "monitoring"
 date:   2085-05-24 10:51:22
 categories: stack-features
 lead: Create a clone of an existing stack
+search-tags: []
+tags: ['Deployment']
 ---
 
 There are many reasons why you would want to create a clone of an existing stack - for example, you might want to deploy a production version of an existing development stack. Or you might want to [migrate from one region or data center to another](/how-to/migrate-across-dc.html).

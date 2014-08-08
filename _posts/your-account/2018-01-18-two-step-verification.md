@@ -9,6 +9,8 @@ nav_next: ""
 date:   2030-09-24 10:51:22
 categories: your-account
 lead: Using two-step verification with your account
+search-tags: ['']
+tags: ['Your account']
 ---
 
 ## Usage

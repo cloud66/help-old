@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:  1581-09-26 15:33:13
 categories: how-to
 lead: You can connect directly to your servers for full control
+search-tags: ['']
+tags: ['Customization']
 ---
 
 We recommend that you use [PuTTy](http://www.chiark.greenend.org.uk/~sgtatham/putty/) to SSH to your servers from Windows - go ahead and [download PuTTY and PuTTYgen](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) and install them.

@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1997-09-26 15:33:13
 categories: how-to
 lead: Detailed log pages for each server during deployment
+search-tags: ['']
+tags: ['Logs']
 ---
 
 During your stack deployment, your stack page gives you an overview of what is going on with each server in the stack. You also have the option to see detailed logs of each server.

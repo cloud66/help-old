@@ -5,6 +5,8 @@ title:  "Partner integration"
 date:   2014-02-02 00:00:00
 categories: partners
 lead: Partner Integration API
+search-tags: []
+tags: ['Partners']
 ---
 
 Throughout this document, "user" is a Cloud 66 customer and "partner" is a Cloud 66 integration partner. 

@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2088-01-25 16:27:22
 categories: stack-features
 lead: Scaling up your web servers is easy with Cloud 66
+search-tags: []
+tags: ['Scaling']
 ---
 
 You can fire up additional web servers by clicking on the "+" button on the <i>Web servers</i> page.

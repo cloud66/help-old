@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1930-09-26 15:33:13
 categories: partners
 lead: Use Semaphore for continuous integration with Cloud 66
+search-tags: []
+tags: ['Partners']
 ---
 
 What follows is how to integrate [Semaphore](https://semaphoreapp.com) with Cloud 66.

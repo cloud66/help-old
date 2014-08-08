@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1959-09-26 15:33:13
 categories: database
 lead: Allows you to control the database migrations on your stack
+search-tags: ['']
+tags: ['Database', 'Deployment']
 ---
 
 Running Active Record migrations during deployment is a _Stack setting_ that you can control:

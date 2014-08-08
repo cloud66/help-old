@@ -9,6 +9,8 @@ nav_next: ""
 date:   1999-10-18 16:27:22
 categories: stacks
 lead: Your stack information page
+search-tags: ['']
+tags: ['']
 ---
 
 <h2>Contents</h2>

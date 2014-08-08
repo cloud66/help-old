@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1910-11-20 01:01:01
 categories: database
 lead: Cloud 66 Supports MongoDB Replica Sets
+search-tags: ['']
+tags: ['Database replication']
 ---
 
 

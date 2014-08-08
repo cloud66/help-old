@@ -6,6 +6,8 @@ so_title: "whenever"
 date: 1800-09-26 15:33:13
 categories: Troubleshooting
 lead: Whenever schedules that define certain path specific actions may have errors in your cron output similar to /bin/bash bundle command not found
+search-tags: ['']
+tags: ['Troubleshooting']
 ---
 
 ## Problem

@@ -9,6 +9,8 @@ nav_prev: ""
 date:   2015-11-18 16:27:22
 categories: stacks
 lead: Cloud 66 makes it easy to deploy and maintain Sinatra apps
+search-tags: ['']
+tags: ['']
 ---
 
 Cloud 66 supports stacks based on the [Sinatra framework](http://www.sinatrarb.com/), a light-weight web framework written in Ruby.

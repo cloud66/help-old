@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1915-09-26 15:33:13
 categories: how-to
 lead: Some pointers to move from Heroku to Cloud 66
+search-tags: ['']
+tags: ['Getting started']
 ---
 
 

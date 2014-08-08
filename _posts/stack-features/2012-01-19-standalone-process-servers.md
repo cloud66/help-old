@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2082-01-25 16:27:22
 categories: stack-features
 lead: Scale your processes to standalone process servers
+search-tags: []
+tags: ['Scaling']
 ---
 
 Your [processes](/stack-features/proc-files.html) are run on your web server by default:

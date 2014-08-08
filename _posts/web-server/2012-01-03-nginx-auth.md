@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   2037-09-24 10:51:22
 categories: web-server
 lead: Protect your application with HTTP basic authentication
+search-tags: ['']
+tags: ['Web server']
 ---
 
 You can use Cloud 66 [CustomConfig](/stack-features/custom-config.html) to protect your application or parts of it with a username and password based on HTTP basic authentication.

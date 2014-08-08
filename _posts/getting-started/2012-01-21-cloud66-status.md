@@ -10,7 +10,8 @@ nav_next: "/getting-started/faq.html"
 date:   2033-10-24 10:51:22
 categories: getting-started
 lead: You can use a number of sources to see our status
-tags: ['status', 'uptime']
+search-tags: ['status', 'uptime']
+tags: ['Getting started']
 ---
 
 ## Status and uptime

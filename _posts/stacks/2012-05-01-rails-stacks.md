@@ -10,6 +10,8 @@ nav_next: ""
 date:   2016-11-18 16:27:22
 categories: stacks
 lead: Cloud 66 makes it easy to deploy and maintain Rails apps
+search-tags: ['']
+tags: ['']
 ---
 
 Cloud 66 supports stacks based on the [Rails framework](http://rubyonrails.org/), a web framework written in Ruby.

@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1561-01-01 15:33:13
 categories: how-to
 lead: How to upgrade Ruby on your stack
+search-tags: ['']
+tags: ['Maintenance']
 ---
 
 <h2>Contents</h2>

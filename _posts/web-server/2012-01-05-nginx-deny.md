@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   2034-05-24 10:51:22
 categories: web-server
 lead: Allow and deny connections through Nginx
+search-tags: ['']
+tags: ['Web server']
 ---
 
 In addition to protecting your application (or parts of it) using [HTTP basic authentication](/web-server/nginx-auth.html), you can use Cloud 66 [CustomConfig](/stack-features/custom-config.html) to block (or allow) access to your application based on IP addresses.

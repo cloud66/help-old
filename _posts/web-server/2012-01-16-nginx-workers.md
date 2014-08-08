@@ -6,6 +6,8 @@ so_title: "nginx"
 date:   2033-09-24 10:51:22
 categories: web-server
 lead: The size of your instance affects your nginx configuration
+search-tags: ['']
+tags: ['Web server']
 ---
 
 <h2>Contents</h2>

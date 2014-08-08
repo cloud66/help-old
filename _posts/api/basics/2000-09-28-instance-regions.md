@@ -4,7 +4,8 @@ title:  "Instance regions"
 categories:
   - api
   - basics
-tags: ['instance regions', 'regions', 'api']
+search-tags: ['instance regions', 'regions', 'api']
+tags: ['API']
 ---
 
 <div class="heading-wrap">

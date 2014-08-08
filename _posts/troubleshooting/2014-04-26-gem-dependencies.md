@@ -6,6 +6,8 @@ so_title: "gem dependencies"
 date:   2035-08-15 15:33:13
 categories: troubleshooting
 lead: Gem dependency errors may arise for a number of reasons
+search-tags: ['']
+tags: ['Troubleshooting']
 ---
 
 Depending on which gems you're using together with a specific Ruby version, you may see dependency issues such as:

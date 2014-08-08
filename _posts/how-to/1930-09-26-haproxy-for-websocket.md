@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1965-09-26 15:33:13
 categories: how-to
 lead: HAProxy for WebSocket is supported by Cloud 66
+search-tags: ['']
+tags: ['Customization']
 ---
 
 

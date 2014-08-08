@@ -6,6 +6,8 @@ so_title: "custom config"
 date:   3999-01-28 10:51:22
 categories: stack-features
 lead: Customize deployed configuration files
+search-tags: []
+tags: ['Customization']
 ---
 
 <h2>Contents</h2>

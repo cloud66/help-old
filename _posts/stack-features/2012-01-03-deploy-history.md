@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2098-02-25 16:27:22
 categories: stack-features
 lead: An overview of your stack deployments and rollbacks
+search-tags: []
+tags: ['Deployment']
 ---
 
 ## Introduction

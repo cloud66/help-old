@@ -5,7 +5,8 @@ title:  "Deploy your stack"
 date:   2035-01-27 01:01:01
 categories: cloud-66-toolbelt
 lead: Deploy your stacks from the command line
-tags: ['deployment','toolbelt','commandline']
+search-tags: ['deployment','toolbelt','commandline']
+tags: ['Toolbelt']
 ---
 
 Trigger the deployment of a stack from the command line, just like clicking on <i>redeploy</i> in the UI.

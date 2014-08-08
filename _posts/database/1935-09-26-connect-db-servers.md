@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1960-09-26 15:33:13
 categories: database
 lead: There are two options when connecting to your database
+search-tags: ['']
+tags: ['Database']
 ---
 
 ## On the server

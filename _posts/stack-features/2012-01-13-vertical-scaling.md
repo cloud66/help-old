@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2087-01-25 16:27:22
 categories: stack-features
 lead: Scaling the size of an existing server
+search-tags: []
+tags: ['Scaling']
 ---
 
 A number of cloud vendors allow you to scale up/down an existing server via their control panel, allowing you to increase or decrease the memory and CPU for existing servers.

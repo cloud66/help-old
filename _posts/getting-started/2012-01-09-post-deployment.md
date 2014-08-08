@@ -10,7 +10,8 @@ nav_next: "/getting-started/security.html"
 date:   2037-11-20 10:51:22
 categories: getting-started
 lead: An overview of your post-deployment options
-tags: ['post deployment', 'after deployment', 'options']
+search-tags: ['post deployment', 'after deployment', 'options']
+tags: ['Getting started']
 ---
 
 <div class="notice">

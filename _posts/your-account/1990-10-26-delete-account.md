@@ -10,6 +10,8 @@ nav_next: "/your-account/data-protection.html"
 date:   2090-03-24 10:51:22
 categories: your-account
 lead: How to delete your Cloud 66 account
+search-tags: ['']
+tags: ['Your account']
 ---
 
 We're sorry that you want to delete your account, and would really appreciate if you could <a href="mailto:support@cloud66.com">tell us why</a>.

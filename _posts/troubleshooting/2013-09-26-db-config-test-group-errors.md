@@ -6,6 +6,8 @@ so_title: "database.yml"
 date:   2039-09-26 15:33:13
 categories: troubleshooting
 lead: Errors can occur if your specified adapter is different between your "development" and "test" groups
+search-tags: ['']
+tags: ['Troubleshooting']
 ---
 
 

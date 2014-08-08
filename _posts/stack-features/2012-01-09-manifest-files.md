@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2092-01-25 16:27:22
 categories: stack-features
 lead: You can be more explicit about your stack composition
+search-tags: []
+tags: ['Deployment']
 ---
 
 <h2>Contents</h2>

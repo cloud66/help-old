@@ -11,7 +11,8 @@ nav_next: "/getting-started/standalone-servers.html"
 date:   2040-10-18 16:27:22
 categories: getting-started
 lead: Deploy your app with our supported cloud providers
-tags: ['deploy', 'cloud', 'byoc', 'supported clouds', 'deploying']
+search-tags: ['deploy', 'cloud', 'byoc', 'supported clouds', 'deploying']
+tags: ['Getting started']
 ---
 
 Cloud 66 currently supports the following cloud providers:

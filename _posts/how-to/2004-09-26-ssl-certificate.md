@@ -9,7 +9,8 @@ nav: true
 date:   1650-09-24 10:51:22
 categories: how-to
 lead: Preparing your SSL certificate for your stack
-tags: ['prepare ssl', 'ssl certificate', 'ssl key', 'intermediate certificate', 'how', 'ssl']
+search-tags: ['prepare ssl', 'ssl certificate', 'ssl key', 'intermediate certificate', 'how', 'ssl']
+tags: ['Security']
 ---
 
 <h2>Contents</h2>

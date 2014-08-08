@@ -4,6 +4,8 @@ title:  "Browser requirements"
 date:   2040-09-24 10:51:22
 categories:
 lead: Follow the guidelines below for the best possible experience
+search-tags: ['']
+tags: ['']
 ---
 
 Browser versions are frequently updated to offer new features, address problems, optimize performance, and most importantly, ensure security.

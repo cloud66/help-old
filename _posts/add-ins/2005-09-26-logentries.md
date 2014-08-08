@@ -7,7 +7,8 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: add-ins
 lead: Simple web-based log analysis service for your servers
-tags: ['log entries', 'logentries']
+search-tags: ['log entries', 'logentries']
+tags: ['Logs', 'Add ins']
 ---
 
 Once your stack is deployed, you can easily use Logentries for centralized log files:

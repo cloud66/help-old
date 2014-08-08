@@ -9,6 +9,8 @@ nav_next: ""
 date:   2019-02-09 15:30:22
 categories: stacks
 lead: Stacks with servers in different regions
+search-tags: ['']
+tags: ['Stack failover']
 ---
 
 There are several options to consider when dealing with the infrastructure of a multi-region stack. The most challenging part is related to the application - the infrastructure usually caters for how the application is designed to deal with scalability.

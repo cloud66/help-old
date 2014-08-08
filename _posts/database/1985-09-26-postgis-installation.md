@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1900-09-26 15:33:13
 categories: database
 lead: You can install PostGIS automatically or manually
+search-tags: ['']
+tags: ['Customization', 'Database']
 ---
 
 

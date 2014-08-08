@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   2029-09-24 10:51:22
 categories: web-server
 lead: Run your Rack apps with Thin
+search-tags: ['']
+tags: ['Web server']
 ---
 
 ## Choosing Thin as your Rack server

@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1425-09-24 10:51:22
 categories: how-to
 lead: Achieving zero-downtime deployments
+search-tags: ['']
+tags: ['Deployment']
 ---
 
 Depending on your application and requirements, you can achieve zero-downtime deployments in a number of ways.

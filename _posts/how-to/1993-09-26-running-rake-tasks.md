@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1870-09-26 15:33:13
 categories: how-to
 lead: Run rake tasks automatically or manually on your stack
+search-tags: ['']
+tags: ['Customization']
 ---
 
 

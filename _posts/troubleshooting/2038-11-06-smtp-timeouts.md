@@ -6,6 +6,8 @@ so_title: "smtp"
 date:   1900-11-06 15:33:13
 categories: Troubleshooting
 lead: Amazon AWS EC2 enforces traffic throttling on SMTP causing intermittent timeouts when sending email.
+search-tags: ['']
+tags: ['Troubleshooting']
 ---
 
 

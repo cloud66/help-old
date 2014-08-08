@@ -8,7 +8,8 @@ cloud66_sticky: true
 date:   2000-09-26 15:33:13
 categories: how-to
 lead: The process differs for different load balancers
-tags: ['ssl termination', 'ssl load balancer']
+search-tags: ['ssl termination', 'ssl load balancer']
+tags: ['Scaling']
 ---
 
 <h2>Contents</h2>

@@ -9,7 +9,8 @@ nav_next: "/getting-started/your-first-stack.html"
 date:   2038-01-25 16:27:22
 categories: getting-started
 lead: Cloud 66 makes it easy to configure and deploy your stack
-tags: ['what is a stack', 'stack', 'architecture', 'infrastructure']
+search-tags: ['what is a stack', 'stack', 'architecture', 'infrastructure']
+tags: ['Getting started']
 ---
 
 A web application stack is a set of hardware and software components needed for your application to run. Each level of the stack represents an abstraction layer that provides a high-level overview of your setup.

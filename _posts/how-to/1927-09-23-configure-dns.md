@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1967-08-26 15:33:13
 categories: how-to
 lead: Configure your DNS for maximum availability
+search-tags: ['']
+tags: ['DNS']
 ---
 
 <h2>Contents</h2>

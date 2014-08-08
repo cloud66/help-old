@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1957-08-26 15:33:13
 categories: how-to
 lead: How to keep your configuration files up-to-date
+search-tags: ['']
+tags: ['Customization']
 ---
 
 Every so often, Cloud 66 needs to update the base configuration files used for your application to run. Some of these files are part of [CustomConfig](/stack-features/custom-config.html), which allows users to customize their configuration files.

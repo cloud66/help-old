@@ -6,6 +6,8 @@ so_title: "permissions"
 date:   2013-09-26 15:33:13
 categories: troubleshooting
 lead: Troubleshooting permission errors during deployment
+search-tags: ['']
+tags: ['Troubleshooting']
 ---
 
 If your application needs to write back to your web server (and it isn't to a <i>tmp</i> folder) then you may have permission errors.

@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2099-10-01 16:27:22
 categories: stack-features
 lead: Easily import data from one stack to another
+search-tags: []
+tags: ['Database']
 ---
 
 Cloud 66 allows you to easily import data from one stack to another for **MySQL**, **PostgreSQL** and **Redis** databases.

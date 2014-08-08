@@ -7,7 +7,8 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: add-ins
 lead: Extend the functionality of your stack with add-ins
-tags: ['addin', 'addins', 'add-ins']
+search-tags: ['addin', 'addins', 'add-ins']
+tags: ['Add ins']
 ---
 
 Add-ins allow you to add various internal and external features to your stack. These include [database backups](/add-ins/backups.html), [SSL certificates](/add-ins/ssl.html) and server components such as [Redis](/add-ins/redis.html) and [Elasticsearch](/add-ins/elasticsearch.html).

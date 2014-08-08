@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2089-01-25 16:27:22
 categories: stack-features
 lead: Cloud 66 supports the widely used Procfile format files
+search-tags: []
+tags: ['Deployment']
 ---
 
 You can use Procfiles to ensure that your background jobs run and are monitored. Doing so is as easy as defining them in the root of your application, in a file called <kbd>Procfile</kbd>.

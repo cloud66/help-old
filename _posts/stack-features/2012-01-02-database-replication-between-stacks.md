@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2099-01-01 16:27:22
 categories: stack-features
 lead: Use the data in one stack in other stacks
+search-tags: []
+tags: ['Database', 'Database replication']
 ---
 
 <h2>Contents</h2>

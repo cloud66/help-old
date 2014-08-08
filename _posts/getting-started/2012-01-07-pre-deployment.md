@@ -10,7 +10,8 @@ nav_next: "/getting-started/post-deployment.html"
 date:   2037-11-24 10:51:22
 categories: getting-started
 lead: An overview of your pre-deployment options
-tags: ['pre-deployment', 'before deployment', 'options']
+search-tags: ['pre-deployment', 'before deployment', 'options']
+tags: ['Getting started']
 ---
 
 ## Environment variables

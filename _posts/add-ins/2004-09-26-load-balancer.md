@@ -7,7 +7,8 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: add-ins
 lead: Adding a load balancer couldn't be easier
-tags: ['lb', 'load balancer']
+search-tags: ['lb', 'load balancer']
+tags: ['Add in', 'Scaling']
 ---
 
 To add a load balancer, access the add-ins menu of your stack:

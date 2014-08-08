@@ -10,6 +10,8 @@ nav_next: ""
 date:   2017-11-18 16:27:22
 categories: stacks
 lead: Cloud 66 makes it easy to deploy and maintain Padrino apps
+search-tags: ['']
+tags: ['']
 ---
 
 Cloud 66 supports stacks based on the [Padrino framework](http://www.padrinorb.com/), a light-weight web framework built upon [Sinatra](/stacks/sinatra-stacks.html).

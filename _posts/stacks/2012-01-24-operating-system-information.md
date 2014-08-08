@@ -5,6 +5,8 @@ title:  "Operating system information"
 date:   2018-09-24 10:51:22
 categories: stacks
 lead: Operating system requirements and configurations
+search-tags: ['']
+tags: ['']
 ---
 
 <h2>Contents</h2>
@@ -25,7 +27,7 @@ lead: Operating system requirements and configurations
 
 <h2 id="cloud">Deploying to your cloud</h2>
 
-Cloud 66 officially supports <strong>Ubuntu Linux 12.04</strong> and this is what we deploy to your cloud. We will automatically configure the OS on your behalf.
+Cloud 66 officially supports <strong>Ubuntu Linux 14.04</strong> and this is what we deploy to your cloud. We will automatically configure the OS on your behalf.
 
 <div class="notice">
 	<h3>Important</h3>

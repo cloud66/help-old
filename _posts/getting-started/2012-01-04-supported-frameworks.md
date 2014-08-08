@@ -11,7 +11,8 @@ nav_next: "/getting-started/what-is-a-stack.html"
 date:   2039-11-18 16:27:22
 categories: getting-started
 lead: These are the frameworks that we currently support
-tags: ['frameworks', 'supported frameworks', 'ruby']
+search-tags: ['frameworks', 'supported frameworks', 'ruby']
+tags: ['Getting started']
 ---
 
 We're constantly working to maintain and improve our currently supported frameworks, but also add new frameworks. If the framework you use isn't on this list, feel free to add it to our [UserVoice](https://cloud66.uservoice.com/), or <a href="mailto:hello@cloud66.com">send us an email</a> with your needs.

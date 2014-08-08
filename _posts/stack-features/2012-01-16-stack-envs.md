@@ -6,6 +6,8 @@ so_title: "environments"
 date:   2085-01-24 10:51:22
 categories: stack-features
 lead: You can deploy your stack in different environments
+search-tags: []
+tags: ['Deployment']
 ---
 
 To reflect the different stages of development, Cloud 66 lets you deploy your stacks in different environments:

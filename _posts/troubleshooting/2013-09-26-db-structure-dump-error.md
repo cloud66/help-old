@@ -6,6 +6,8 @@ so_title: "dump"
 date:   2035-09-26 15:33:13
 categories: troubleshooting
 lead: Unable to perform database dump - errors can occur during deployment if your database is on a standalone or external server AND your db schema is sql based (structure.sql) due to db dump tools missing on the webserver
+search-tags: ['']
+tags: ['Troubleshooting']
 ---
 
 

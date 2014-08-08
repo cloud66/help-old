@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:  1600-09-26 15:33:13
 categories: how-to
 lead: You can connect directly to your servers for full control
+search-tags: ['']
+tags: ['Customization']
 ---
 
 <div class="notice">

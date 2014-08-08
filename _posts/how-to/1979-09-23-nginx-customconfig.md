@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1907-08-26 15:33:13
 categories: how-to
 lead: Customize your Nginx configuration
+search-tags: ['']
+tags: ['Customization']
 ---
 
 ## Nginx CustomConfig

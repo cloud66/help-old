@@ -6,6 +6,8 @@ so_title: "digitalocean errors"
 date: 2039-12-06 15:33:13
 categories: Troubleshooting
 lead: Errors can occur during server creation under DigitalOcean. This page details the possible errors and suggested resolutions.
+search-tags: ['']
+tags: ['Troubleshooting']
 ---
 
 ## Background

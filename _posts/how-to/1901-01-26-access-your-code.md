@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1997-09-26 15:33:13
 categories: how-to
 lead: The process differs for public and private repositories
+search-tags: ['']
+tags: ['Git']
 ---
 
 <h2>Contents</h2>

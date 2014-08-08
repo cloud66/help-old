@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1561-01-26 15:33:13
 categories: how-to
 lead: How to upgrade packages on your stack
+search-tags: ['']
+tags: ['Maintenance']
 ---
 
 <h2>Contents</h2>

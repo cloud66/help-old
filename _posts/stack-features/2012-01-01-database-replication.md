@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2099-04-01 16:27:22
 categories: stack-features
 lead: Scale your databases by setting up replication
+search-tags: []
+tags: ['Database', 'Database replication']
 ---
 
 <h2>Contents</h2>

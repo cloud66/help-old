@@ -10,7 +10,8 @@ nav_next: "/getting-started/pre-deployment.html"
 date:   2037-12-24 10:51:22
 categories: getting-started
 lead: It's really easy to build your first stack
-tags: ['how to start', 'first stack', 'first', 'beginner', 'how to', 'build a stack', 'access code']
+search-tags: ['how to start', 'first stack', 'first', 'beginner', 'how to', 'build a stack', 'access code']
+tags: ['Getting started']
 ---
 
 ## 1. Start a stack

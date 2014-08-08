@@ -11,7 +11,8 @@ nav_next: "/getting-started/supported-clouds.html"
 date:   2040-11-18 16:27:22
 categories: getting-started
 lead: Learn about what Cloud 66 does and how we can help you
-tags: ['cloud66', 'cloud 66', 'introduction', 'what is']
+search-tags: ['cloud66', 'cloud 66', 'introduction', 'what is']
+tags: ['Getting started']
 ---
 
 In a nutshell, Cloud 66 builds your [full stack](/getting-started/what-is-a-stack.html) on either your [cloud servers](/getting-started/supported-clouds.html) or [your own](/getting-started/standalone-servers.html), deploys your app to them and manages it for you.

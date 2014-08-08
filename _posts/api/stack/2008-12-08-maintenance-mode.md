@@ -7,6 +7,8 @@ categories:
 type: 'POST'
 path: '/stacks/:uid/maintenance_mode'
 scope: 'redeploy'
+search-tags: ['']
+tags: ['API']
 ---
 
 Sets the stack maintenance mode on or off.

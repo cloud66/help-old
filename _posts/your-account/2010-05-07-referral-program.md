@@ -10,6 +10,8 @@ nav_next: "/your-account/support.html"
 date:   2036-10-19 16:27:22
 categories: your-account
 lead: Share Cloud 66 with your friends and earn credits
+search-tags: ['']
+tags: ['Your account']
 ---
 
 When you share Cloud 66 with your friends, they get $10 in credit with us (on top of their 2 week trial) and we'll send you a $20 Amazon credit when they spend $20.

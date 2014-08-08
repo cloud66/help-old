@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1958-06-26 15:33:13
 categories: database
 lead: Customize your database configuration
+search-tags: ['']
+tags: ['Database', 'Customization']
 ---
 
 <h2>Contents</h2>

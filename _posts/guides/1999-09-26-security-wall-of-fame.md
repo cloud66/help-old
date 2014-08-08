@@ -4,6 +4,8 @@ title:  "Security Wall of Fame"
 date:   2040-09-24 10:51:22
 categories:
 lead: Recognizing people who make responsible disclosures to us
+search-tags: ['']
+tags: ['']
 ---
 
 Keeping your servers and source code safe is our highest priority at Cloud 66, and we want to show our appreciation to the following people who have helped make our platform safer.

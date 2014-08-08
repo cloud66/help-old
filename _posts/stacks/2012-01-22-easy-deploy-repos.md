@@ -9,6 +9,8 @@ nav_next: ""
 date:   2019-10-09 15:30:22
 categories: stacks
 lead: Deploy and maintain open source projects on Cloud 66
+search-tags: ['']
+tags: ['Deployment']
 ---
 There are many open source projects out there that we love and use, and we want to make it easier for people to use them.
 

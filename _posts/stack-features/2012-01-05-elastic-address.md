@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2096-01-25 16:27:22
 categories: stack-features
 lead: Easy and seamless traffic switch between stacks
+search-tags: []
+tags: ['DNS']
 ---
 
 ElasticAddress is a managed quick response DNS address that automatically follows your stack web endpoints. You can connect it to up to 2 stacks at any time - a _primary_ and _backup_ stack. Should you need to switch traffic between your stacks, simply flip the switch and your traffic will flow to the _backup_ stack within 5 minutes.

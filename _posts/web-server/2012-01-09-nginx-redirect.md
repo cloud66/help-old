@@ -6,6 +6,8 @@ so_title: "nginx"
 date:   2033-11-24 10:51:22
 categories: web-server
 lead: Use Cloud 66 CustomConfig to redirect your visitors
+search-tags: ['']
+tags: ['Web server']
 ---
 
 <h2>Contents</h2>

@@ -7,6 +7,8 @@ categories:
 type: 'DELETE'
 path: '/users/devices/:device_token'
 scope: 'users'
+search-tags: ['']
+tags: ['API']
 ---
 
 Removes a device from the user account.

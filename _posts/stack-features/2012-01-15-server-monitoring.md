@@ -6,6 +6,8 @@ so_title: "monitoring"
 date:   2085-09-24 10:51:22
 categories: stack-features
 lead: We help you monitor your CPU, memory and disk space
+search-tags: []
+tags: ['']
 ---
 
 We use [Collectd](https://collectd.org) to monitor your servers for their CPU, memory and disk space. Collectd is a light-weight daemon that collects, transfers and stores performance data for servers. The charts for this information are displayed on your server page, and you can choose which interval you'd like to see:

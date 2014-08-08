@@ -6,6 +6,8 @@ so_title: "haproxy"
 date: 2040-09-26 15:33:13
 categories: how-to
 lead: Configuring HAProxy to work with your application
+search-tags: ['']
+tags: ['Scaling']
 ---
 
 <h2>Contents</h2>

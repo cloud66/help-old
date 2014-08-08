@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2091-02-28 16:27:22
 categories: stack-features
 lead: Save time by deploying the servers in your stack in parallel
+search-tags: []
+tags: ['Deployment']
 ---
 
 By deploying in parallel, all the deployment tasks for the servers in your stack will run in parallel as opposed to running in serial.

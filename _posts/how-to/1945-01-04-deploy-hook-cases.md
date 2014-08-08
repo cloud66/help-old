@@ -9,6 +9,8 @@ nav_sticky: false
 date:   1954-12-28 16:27:22
 categories: how-to
 lead: Common use-cases and examples for deploy hooks
+search-tags: ['']
+tags: ['Deployment']
 ---
 
 <h2>Contents</h2>

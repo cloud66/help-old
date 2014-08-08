@@ -7,6 +7,8 @@ nav_sticky: false
 date:   2090-01-25 16:27:22
 categories: stack-features
 lead: Use redeployment hooks to setup continuous deployment
+search-tags: []
+tags: ['Deployment']
 ---
 
 <h2>GitHub Redeployment Hook</h2>

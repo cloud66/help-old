@@ -7,7 +7,9 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1890-09-26 15:33:13
 categories: how-to
-lead: You can easily run Rails console with a single command.
+lead: You can easily run Rails console with a single command
+search-tags: ['']
+tags: ['Customization']
 ---
 Start by [SSHing to your server](/how-to/shell-to-your-servers.html). Then go to your `STACK_PATH` (eg. `cd $STACK_PATH`) and run the following command:
 

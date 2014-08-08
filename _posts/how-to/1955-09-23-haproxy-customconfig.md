@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1944-08-26 15:33:13
 categories: how-to
 lead: Customize your HAProxy configuration
+search-tags: ['']
+tags: ['Customization']
 ---
 
 ## HAProxy CustomConfig

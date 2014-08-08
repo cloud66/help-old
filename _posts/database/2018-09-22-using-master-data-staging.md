@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1525-09-24 10:51:22
 categories: database
 lead: Different ways to use production data on your staging stack
+search-tags: ['']
+tags: ['Database']
 ---
 
 You may wish to set up a staging stack that can use data from your production stack, to provide realistic data in your staging environment. There are several ways you can do this:

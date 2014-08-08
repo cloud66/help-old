@@ -8,6 +8,8 @@ cloud66_sticky: true
 date:   1995-10-03 14:26:13
 categories: how-to
 lead: Rebuild Nginx with modules of your choice
+search-tags: ['']
+tags: ['Web server']
 ---
 
 
