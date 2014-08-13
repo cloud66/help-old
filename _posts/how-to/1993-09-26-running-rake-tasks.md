@@ -10,6 +10,7 @@ categories: how-to
 lead: Run rake tasks automatically or manually on your stack
 search-tags: ['']
 tags: ['Customization']
+tutorial: true
 ---
 
 

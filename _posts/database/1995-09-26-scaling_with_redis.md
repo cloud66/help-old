@@ -10,6 +10,7 @@ categories: database
 lead: When a stack is created with Redis, the Redis connection is often initialized in the code using localhost
 search-tags: ['']
 tags: ['Scaling', 'Database']
+tutorial: true
 ---
 
 

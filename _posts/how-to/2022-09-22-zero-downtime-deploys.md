@@ -10,6 +10,7 @@ categories: how-to
 lead: Achieving zero-downtime deployments
 search-tags: ['']
 tags: ['Deployment']
+tutorial: true
 ---
 
 Depending on your application and requirements, you can achieve zero-downtime deployments in a number of ways.

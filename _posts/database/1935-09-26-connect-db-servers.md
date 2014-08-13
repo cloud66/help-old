@@ -10,6 +10,7 @@ categories: database
 lead: There are two options when connecting to your database
 search-tags: ['']
 tags: ['Database']
+tutorial: true
 ---
 
 ## On the server

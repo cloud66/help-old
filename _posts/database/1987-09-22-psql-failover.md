@@ -10,6 +10,7 @@ categories: database
 lead: How to deal with a primary server failure
 search-tags: ['']
 tags: ['Database', 'Stack failover']
+tutorial: true
 ---
 
 When you use [database replication](/stack-features/database-replication.html) with PostgreSQL, we configure [streaming replication](http://wiki.postgresql.org/wiki/Streaming_Replication) between your master and slave databases.

@@ -10,6 +10,7 @@ categories: how-to
 lead: How to upgrade packages on your stack
 search-tags: ['']
 tags: ['Maintenance']
+tutorial: true
 ---
 
 <h2>Contents</h2>

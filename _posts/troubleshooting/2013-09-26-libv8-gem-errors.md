@@ -8,6 +8,7 @@ categories: troubleshooting
 lead: Installing the libv8 gem with a specific version can sometimes cause a little pain.
 search-tags: ['']
 tags: ['Troubleshooting']
+tutorial: true
 ---
 
 

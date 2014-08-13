@@ -8,6 +8,7 @@ categories: Troubleshooting
 lead: Amazon AWS EC2 enforces traffic throttling on SMTP causing intermittent timeouts when sending email.
 search-tags: ['']
 tags: ['Troubleshooting']
+tutorial: true
 ---
 
 

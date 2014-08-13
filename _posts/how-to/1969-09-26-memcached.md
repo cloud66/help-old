@@ -9,6 +9,7 @@ categories: how-to
 lead: Improve application performance with Memcached
 search-tags: ['']
 tags: ['Deployment']
+tutorial: true
 ---
 
 [Memcached](http://memcached.org/) is a distributed key/value caching system, intended for use in speeding up dynamic web applications by alleviating database load.

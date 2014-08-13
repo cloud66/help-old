@@ -10,6 +10,7 @@ categories: database
 lead: SQLite is not suitable for production environments
 search-tags: ['']
 tags: ['Database']
+tutorial: true
 ---
 
 

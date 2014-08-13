@@ -10,6 +10,7 @@ categories: how-to
 lead: The process differs for public and private repositories
 search-tags: ['']
 tags: ['Git']
+tutorial: true
 ---
 
 <h2>Contents</h2>

@@ -8,6 +8,7 @@ categories: how-to
 lead: Configuring HAProxy to work with your application
 search-tags: ['']
 tags: ['Scaling']
+tutorial: true
 ---
 
 <h2>Contents</h2>

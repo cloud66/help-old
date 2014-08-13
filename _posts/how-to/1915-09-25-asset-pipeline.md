@@ -10,6 +10,7 @@ categories: how-to
 lead: Improve performance in Rails applications => 3.1.0
 search-tags: ['']
 tags: ['Deployment']
+tutorial: true
 ---
 
 <h2>Contents</h2>

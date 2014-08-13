@@ -8,6 +8,7 @@ categories: troubleshooting
 lead: Manually clearing your cache-copy
 search-tags: ['']
 tags: ['Troubleshooting']
+tutorial: true
 ---
 
 When you deploy to your web servers, a cache-copy of your application is automatically kept in the `$STACK_BASE/shared/cached-copy` folder.

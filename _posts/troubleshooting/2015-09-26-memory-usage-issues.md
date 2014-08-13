@@ -8,6 +8,7 @@ categories: troubleshooting
 lead: Troubleshooting memory usage issues
 search-tags: ['']
 tags: ['Troubleshooting']
+tutorial: true
 ---
 
 If you're experiencing memory usage issues, such as high memory usage, use the following steps to troubleshoot.

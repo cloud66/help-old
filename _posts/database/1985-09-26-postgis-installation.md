@@ -10,6 +10,7 @@ categories: database
 lead: You can install PostGIS automatically or manually
 search-tags: ['']
 tags: ['Customization', 'Database']
+tutorial: true
 ---
 
 

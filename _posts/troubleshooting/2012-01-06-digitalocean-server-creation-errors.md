@@ -8,6 +8,7 @@ categories: Troubleshooting
 lead: Errors can occur during server creation under DigitalOcean. This page details the possible errors and suggested resolutions.
 search-tags: ['']
 tags: ['Troubleshooting']
+tutorial: true
 ---
 
 ## Background

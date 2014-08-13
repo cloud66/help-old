@@ -10,6 +10,7 @@ categories: how-to
 lead: Use Faye, the flexible publish-subscribe messaging system
 search-tags: ['']
 tags: ['Customization']
+tutorial: true
 ---
 
 

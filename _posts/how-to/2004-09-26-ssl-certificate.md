@@ -11,6 +11,7 @@ categories: how-to
 lead: Preparing your SSL certificate for your stack
 search-tags: ['prepare ssl', 'ssl certificate', 'ssl key', 'intermediate certificate', 'how', 'ssl']
 tags: ['Security']
+tutorial: true
 ---
 
 <h2>Contents</h2>

@@ -10,6 +10,7 @@ categories: database
 lead: Uninstall MySQL completely from your Ubuntu server
 search-tags: ['']
 tags: ['Database']
+tutorial: true
 ---
 
 When using Cloud 66 to [deploy to your own servers](/getting-started/standalone-servers.html), you might experience trouble with an existing MySQL installation on your server.

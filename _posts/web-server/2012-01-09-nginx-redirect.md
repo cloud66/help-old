@@ -8,6 +8,7 @@ categories: web-server
 lead: Use Cloud 66 CustomConfig to redirect your visitors
 search-tags: ['']
 tags: ['Web server']
+tutorial: true
 ---
 
 <h2>Contents</h2>

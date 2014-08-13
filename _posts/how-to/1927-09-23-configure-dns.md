@@ -10,6 +10,7 @@ categories: how-to
 lead: Configure your DNS for maximum availability
 search-tags: ['']
 tags: ['DNS']
+tutorial: true
 ---
 
 <h2>Contents</h2>

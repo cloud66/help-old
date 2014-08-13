@@ -10,6 +10,7 @@ categories: database
 lead: You can manage your Cloud 66 backups if you want
 search-tags: ['']
 tags: ['Database']
+tutorial: true
 ---
 
 

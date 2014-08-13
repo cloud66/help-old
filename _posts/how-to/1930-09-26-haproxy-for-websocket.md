@@ -10,6 +10,7 @@ categories: how-to
 lead: HAProxy for WebSocket is supported by Cloud 66
 search-tags: ['']
 tags: ['Customization']
+tutorial: true
 ---
 
 

@@ -10,6 +10,7 @@ categories: how-to
 lead: Migrating your stacks is easy with Cloud 66
 search-tags: ['']
 tags: ['Stack failover']
+tutorial: true
 ---
 
 Do you want to move your stack from one cloud vendor or region to another? Follow the steps below for a seamless transition between stacks.

@@ -10,6 +10,7 @@ categories: how-to
 lead: You can connect directly to your servers for full control
 search-tags: ['']
 tags: ['Customization']
+tutorial: true
 ---
 
 <div class="notice">

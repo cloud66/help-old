@@ -7,6 +7,7 @@ categories: how-to
 lead: Learning more about Cloud 66
 search-tags: ['']
 tags: ['']
+tutorial: true
 ---
 
 ## Introduction

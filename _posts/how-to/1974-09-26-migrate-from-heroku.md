@@ -10,6 +10,7 @@ categories: how-to
 lead: Some pointers to move from Heroku to Cloud 66
 search-tags: ['']
 tags: ['Getting started']
+tutorial: true
 ---
 
 

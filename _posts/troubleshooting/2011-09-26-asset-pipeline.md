@@ -8,6 +8,7 @@ categories: Troubleshooting
 lead: How you can troubleshoot asset pipeline issues
 search-tags: ['']
 tags: ['Troubleshooting', 'Deployment']
+tutorial: true
 ---
 
 If you're experiencing deployment failures to do with your asset pipeline manifest configurations, this could be due to issues with old assets.

@@ -10,6 +10,7 @@ categories: database
 lead: Seed your database with your data during deployment
 search-tags: ['']
 tags: ['Database']
+tutorial: true
 ---
 New databases commonly require seed data in order to be functional for an application.
 When you deploy a new stack with Cloud 66 (and choose to have a new DB provisioned), we will provision that database for you. However, the database will not have any data in it.

@@ -10,6 +10,7 @@ categories: how-to
 lead: Customize your Nginx configuration
 search-tags: ['']
 tags: ['Customization']
+tutorial: true
 ---
 
 ## Nginx CustomConfig

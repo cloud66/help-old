@@ -10,6 +10,7 @@ categories: how-to
 lead: The process differs for different load balancers
 search-tags: ['ssl termination', 'ssl load balancer']
 tags: ['Scaling']
+tutorial: true
 ---
 
 <h2>Contents</h2>

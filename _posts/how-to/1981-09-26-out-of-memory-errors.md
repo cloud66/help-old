@@ -8,6 +8,7 @@ categories: how-to
 lead: You may not have enough memory during deployment
 search-tags: ['']
 tags: ['Troubleshooting']
+tutorial: true
 ---
 
 ## The Problem

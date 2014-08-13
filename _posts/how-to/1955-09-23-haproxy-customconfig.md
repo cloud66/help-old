@@ -10,6 +10,7 @@ categories: how-to
 lead: Customize your HAProxy configuration
 search-tags: ['']
 tags: ['Customization']
+tutorial: true
 ---
 
 ## HAProxy CustomConfig

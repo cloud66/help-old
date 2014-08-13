@@ -10,6 +10,7 @@ categories: database
 lead: Customize your database configuration
 search-tags: ['']
 tags: ['Database', 'Customization']
+tutorial: true
 ---
 
 <h2>Contents</h2>
