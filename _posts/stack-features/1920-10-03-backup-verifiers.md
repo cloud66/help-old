@@ -13,19 +13,30 @@ tags: ['Database']
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
-		<a href="#setup">Setup</a>
+		<a href="#what">What are backup verifiers?</a>
 	</li>
 	<li>
-		<a href="#usage">Usage</a>
+		<a href="#usage">Using backup verifiers</a>
 	</li>
 	<li>
 		<a href="#pricing">Pricing</a>
 	</li>
 </ul>
 
+<h2 id="what">What are backup verifiers?</h2>
+
 Backup verifiers are a great way to ensure that your backups actually contain the data you expect.
 
-<h2 id="setup">Setup</h2>
+When you have backup verifiers enabled, you can check whether your backups have verified successfully by accessing the backups page
+of your stack.
+![Backup page](http://cdn.cloud66.com/images/help/addin_psql_backup.png)
+
+A successfully verified backup will display a green tick, and a failure during verification will result in a red cross - clicking on the red cross will show the error message.
+![Verification](http://cdn.cloud66.com/images/help/addin_psql_backups.png)
+
+Should you need to change your verification script at some point, simply commit the change to Git and redeploy your code.
+
+<h2 id="usage">Using backup verifiers</h2>
 
 To set up backup verifiers, please ensure that you have [managed backups](/add-ins/backups.html) and are running either a MySQL or PostgreSQL database.
 
@@ -70,17 +81,6 @@ result
 --------
 t
 </pre>
-
-<h2 id="usage">Usage</h2>
-
-Once you have completed the above setup, you can check whether your backups have verified successfully by accessing the backups page
-of your stack.
-![Backup page](http://cdn.cloud66.com/images/help/addin_psql_backup.png)
-
-A successfully verified backup will display a green tick, and a failure during verification will result in a red cross - clicking on the red cross will show the error message.
-![Verification](http://cdn.cloud66.com/images/help/addin_psql_backups.png)
-
-Should you need to change your verification script at some point, simply commit the change to Git and redeploy your code.
 
 <h2 id="pricing">Pricing</h2>
 

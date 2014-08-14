@@ -14,7 +14,7 @@ tags: ['Deployment']
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
-		<a href="#intro">Manifest files</a>
+		<a href="#intro">What is a manifest file?</a>
         <li>
             <ul>
             <li><a href="#sample">Sample file</a></li>
@@ -95,12 +95,12 @@ tags: ['Deployment']
             </li>
 </ul>
 
-<h2 id="intro">Manifest files</h2>
+<h2 id="intro">What is a manifest file?</h2>
 
-Manifest files allow you to be more explicit about your stack composition by specifying additional packages you wish to install, server sizes/regions and other options.
+A manifest file allows you to be more explicit about your stack composition by specifying additional packages you wish to install, server sizes/regions and other options.
 
-<div class="notice notice-danger">
-	<h3>Important</h3>
+<div class="notice">
+	<h3>Note</h3>
     <p>Unless otherwise stated, manifest file specifications are only applied during the initial build of your stack.</p>
 </div>
 
