@@ -26,29 +26,23 @@ lead: Take action at various points during your deployment
 	</li>
 	        <li>
                 <ul>
-                <li><a href="#snippets">Snippets</a></li>
+                <li><a href="#snippets">Use a snippet deploy hook</a></li>
                 </ul>
             </li>
             <li>
                 <ul>
-                <li><a href="#commands">Commands</a></li>
+                <li><a href="#commands">Use a command deploy hook</a></li>
                 </ul>
             </li>
             <li>
                 <ul>
-                <li><a href="#scripts">Scripts</a></li>
+                <li><a href="#scripts">Use a script deploy hook</a></li>
                 </ul>
             </li>
 </ul>
 
 <h1 id="what">What are deploy hooks?</h1>
 Deploy hooks are scripts that allow you to take action at various points during the deployment process. This helps you customize the deployment of your application to meet your particular needs.
-
-To make use of deploy hooks, a file called _deploy_hooks.yml_ should be present within a folder named _.cloud66_, which is in turn located in the root of your source code.
-{% highlight bash %}
-/.cloud66/deploy_hooks.yml
-{% endhighlight %}
-<font size="2.0rem">This file should be YAML formatted. Please use <a href="http://yamllint.com/" target="_blank">YAMLlint</a> to validate your YAML.</font>
 
 <hr>
 
@@ -131,7 +125,7 @@ There are three types of deploy hooks, and the fields available (and required) v
 	<TR class="header"><TD width="13%"><b>Snippets</b> <span>-</span><TD width="15%"><TD width="70%">
 	<TR><TD><TD width="13%">snippet <img src="http://cdn.cloud66.com/images/help/required.gif"><TD width="70%">Snippet to be used - run in <i>/tmp/deploy_hooks</i> by default
 	<TR><TD><TD>target <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
-	<TR><TD><TD>apply_during<br> (all)<TD>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i> <sup>1</sup>.
+	<TR><TD><TD>apply_during<br> (all)<TD>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<TR><TD><TD>halt_on_error (true)<TD>Specify whether the execution should continue or halt in the event of an error.
 	<TR><TD><TD>run_on<br> (single server)<TD>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
 	<TR><TD><TD>run_as<br> (server user)<TD>If you execute a file on your target server, specify which user you would like the file to be executed as. Note: you can't specify both this and <i>sudo</i>.
@@ -140,7 +134,7 @@ There are three types of deploy hooks, and the fields available (and required) v
 	<TR class="header"><TD width="13%"><b>Commands</b> <span>-</span><TD><TD>
 	<TR><TD><TD width="13%">command <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Command to be used - run in <i>/tmp/deploy_hooks</i> by default
 	<TR><TD><TD>target <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
-	<TR><TD><TD>apply_during<br> (all)<TD>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i> <sup>1</sup>.
+	<TR><TD><TD>apply_during<br> (all)<TD>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<TR><TD><TD>halt_on_error (true)<TD>Specify whether the execution should continue or halt in the event of an error.
 	<TR><TD><TD>run_on<br> (single server)<TD>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
 	<TR><TD><TD>run_as<br> (server user)<TD>If you execute a file on your target server, specify which user you would like the file to be executed as. Note: you can't specify both this and <i>sudo</i>.
@@ -150,7 +144,7 @@ There are three types of deploy hooks, and the fields available (and required) v
 	<TR><TD><TD width="13%">source <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>This specifies the source location of your deploy hook file within your repository.
 	<TR><TD><TD>destination <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>The destination path on your target server. You can also specify environment variables in your destination field, <i><%= ENV['STACK_PATH'] %></i> for example.
 	<TR><TD><TD>target <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
-	<TR><TD><TD>apply_during<br> (all)<TD>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i> <sup>1</sup>.
+	<TR><TD><TD>apply_during<br> (all)<TD>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<TR><TD><TD>halt_on_error (true)<TD>Specify whether the execution should continue or halt in the event of an error.
 	<TR><TD><TD>run_on<br> (single server)<TD>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
 	<TR><TD><TD>run_as<br> (server user)<TD>If you execute a file on your target server, specify which user you would like the file to be executed as. Note: you can't specify both this and <i>sudo</i>.
@@ -160,34 +154,43 @@ There are three types of deploy hooks, and the fields available (and required) v
 	<TR><TD><TD>execute (false)<TD>Do you want to execute the file after it has been copied to its destination on the target server?
 </TABLE>
 <CAPTION align="bottom"><font size="2.0rem">
-Default values (if the field is not explicitly specified) are shown in brackets.<br>
-<sup>1</sup> The *build* step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are *deploy* steps.
+Default values (if the field is not explicitly specified) are shown in brackets.
 </font></CAPTION>
 
 <h1 id="how">How to use deploy hooks</h1>
-Automating deploy hooks can sometimes be tricky. To avoid issues, it's always a good idea to run each of your commands manually to see that they complete successfully.
+To make use of deploy hooks, a file called _deploy_hooks.yml_ should be present within a folder named _.cloud66_, which is in turn located in the root of your source code. This file should be YAML formatted, and you can use a service like <a href="http://yamllint.com/" target="_blank">YAMLlint</a> to validate it.
+{% highlight bash %}
+/.cloud66/deploy_hooks.yml
+{% endhighlight %}
 
-If a specific command doesn't show any output, you can use the <code>echo $?</code> command after issuing your command to see its exit code. If it returns a _zero_, your command was successful, whereas a _one_ means it has failed.
+Creating a deploy hook from scratch consists of a number of steps:
 
-<h2 id="snippets">Snippets</h2>
+1. Choose your environment - eg. example _production_, _development_, _staging_ and so on.
+2. Choose your [hook point](/stack-features/deploy-hooks.html#points) - eg. <i>first_thing</i>, <i>after_rails</i> and so on.
+3. Choose your deploy hook type - eg. <i>snippet</i>, <i>command</i> or <i>script</i>.
+4. Select any additional [hook fields](/stack-features/deploy-hooks.html#fields) you require
+
+Automating deploy hooks can sometimes be tricky. To avoid issues, it's good practice to run each of your commands manually to see that they complete successfully. If a specific command doesn't show any output, you can use the <code>echo $?</code> command after issuing your command to see its exit code. If it returns a _zero_, your command was successful, whereas a _one_ means it has failed.
+
+<h2 id="snippets">Use a snippet deploy hook</h2>
 Below is a bare-bone example of using a snippet with the required fields - it will execute the <a href="https://raw.githubusercontent.com/cloud66/snippets/master/cloud66/node">Cloud 66 Node snippet</a> as the first thing on all production servers.
 
 {% highlight yaml %}
-production:
-    first_thing:
-      - snippet: cloud66/node
-        target: any
+production: # Environment
+    first_thing: # Hook point
+      - snippet: cloud66/node # Hook type
+        target: any # Hook fields
 {% endhighlight %}
 
 See the available hook points and fields for more ways to customize this.
 
-<h2 id="commands">Commands</h2>
+<h2 id="commands">Use a command deploy hook</h2>
 The hook example below can be used to install anything from packages to fonts on your server.
 {% highlight yaml %}
-production:
-    first_thing:
-      - command: apt-get install curl -y
-        target: any
+production: # Environment
+    first_thing: # Hook point
+      - command: apt-get install curl -y # Hook type
+        target: any # Hook fields
 {% endhighlight %}
 
 <div class="notice">
@@ -198,24 +201,24 @@ production:
 The example below can be used to run custom rake tasks during server build. If you need to run it more than once, consider using the [rake task add-in](/add-ins/rake-task.html).
 
 {% highlight yaml %}
-production:
-    last_thing:
-      - command: cd $STACK_PATH && bundle exec rake dev:setup
-        target: rails
+production: # Environment
+    last_thing: # Hook point
+      - command: cd $STACK_PATH && bundle exec rake dev:setup # Hook type
+        target: rails # Hook fields ↓
         run_on: single_server
         apply_during: build_only
 {% endhighlight %}
 
 This will run our rake task on one Rails server and only during the initial build. We run this as a last_thing hook because if we ran it earlier the application wouldn't exist on the server and be usable.
 
-<h2 id="scripts">Scripts</h2>
+<h2 id="scripts">Use a script deploy hook</h2>
 The hook below will copy a file from your repository to your _tmp_ folder and execute it during build.
 {% highlight yaml %}
-production:
-    after_rails:
-      - source: /.cloud66/script.sh
+production: # Environment
+    after_rails: # Hook point
+      - source: /.cloud66/script.sh # Hook type
         destination: /tmp/script.sh
-        target: rails
+        target: rails # Hook fields ↓
         execute: true
         apply_during: build_only
 {% endhighlight %}

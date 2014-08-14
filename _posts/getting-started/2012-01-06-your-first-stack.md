@@ -25,36 +25,52 @@ tags: ['Getting started']
 ## 1. Start a stack
 Visit the <a href="https://app.cloud66.com/dashboard" target="_blank">Cloud 66 dashboard</a> and click <i>Get started building a stack</i>.
 
-![First Stack](http://cdn.cloud66.com/images/help/first_stackss.png)
-
 ## 2. Accessing your code
-If you have a <a href="/how-to/access-your-code.html">private Git repository</a>, please add the unique SSH key provided to your Git account. If you have a <a href="/how-to/access-your-code.html">public repository</a	>, feel free to jump to the next step.
-
-![Accessing Git](http://cdn.cloud66.com/images/help/first_stack_accesses.png)
+If you have a <a href="/how-to/access-your-code.html">private Git repository</a>, please add the unique SSH key provided to your Git account. If you have a <a href="/how-to/access-your-code.html">public repository</a>, feel free to jump to the next step.
 
 ## 3. Tell us about your app
-Provide us with a [URL to your Git repository](/how-to/git-url.html), give your stack a name and select which [environment to deploy](/stack-features/stack-envs.html).
+Now we need some information about your application:
 
-![About Your App](http://cdn.cloud66.com/images/help/first_stack_urls.png)
+<ol>
+<li>In the <i>About your app</i> dialog box, do the following actions:</li>
 
-## 4. Cloud 66 gets to work
-Cloud 66 will then analyze your application, which takes around 15 seconds depending on the size of repository.
+<ul style="margin-bottom:0em">
+<li>In the <i>Your Git Repo URL</i> box, enter the URL for your Git repository.</li>
+<li>In the <i>Git branch</i> box, type the branch name. This field defaults to the "master" branch.</li>
+<li>In the <i>Give your stack a name</i> box, type a name for your application stack.</li>
+<li>In the <i>Environment</i> list, select the environment to deploy.</li>
+</ul>
 
-![Analyzing](http://cdn.cloud66.com/images/help/analyzing_your_app.png)
+<li>Click <i>Analyze</i>. Cloud 66 will analyze your application.</li>
+</ol>
 
-## 5. Choose your setup
-You are now shown the results of our analysis, and you can choose how you would like to setup your stack.
-![Analysis Results](http://cdn.cloud66.com/images/help/first_stack_about_app.png)
+## 4. Choose your setup
+Once the analysis is complete, Cloud 66 will return the configuration details detected. Complete the following procedure to verify that the configuration is correct.
 
-![Where to Deploy](http://cdn.cloud66.com/images/help/first_stack_config.png)
-![How to deploy](http://cdn.cloud66.com/images/help/first_stack_details.png)
+1. In the <i>About your app</i> dialog box, verify the returned information. If it is incorrect, make the necessary changes and click <i>Re-analyze my code</i>.
+2. In the <i>App configuration</i> dialog box, verify the version information and select the <i>Framework info</i> option you want to use.
 
-## 6. Let the builders work
+## 5. Define deployment properties
+Complete the following steps to define the properties that determine how to deploy your application.
+
+If deploying to a cloud server, you must know the API key for your cloud provider. If deploying to your server, you must have (or generate) a SSH key for the server. For instructions on generating an SSH key, refer to [Setting up SSH keys](/how-to/ssh-keys.html).
+
+<ol>
+<li>In the <i>Where are you deploying to</i> dialog box, select the deployment target to use.</li>
+<li>Perform one of the following actions, depending on your deployment configuration:</li>
+<ul style="margin-bottom:0em">
+<li>If deploying to a cloud, select the cloud provider, server region and server size.</li>
+<li>If deploying to a server, enter your username and IP address.</li>
+</ul>
+
+<li>In the <i>Deployment details</i> dialog box, select the database option to use.</li>
+<li>Click <i>Deploy</i>.</li>
+</ol>
+
+## 6. Review the deployment logs
 Cloud 66 now gets to work and fires up servers in your cloud (or provisions your own servers). We then configure your servers based on our analysis and deploy your application to them.
 
 ![Working](http://cdn.cloud66.com/images/help/first_stack_preparing.png)
 
-## 7. You're done!
-It's done. You now have a fully working stack with your application running, and are free to manage it with [backups](/add-ins/backups.html), [scaling](/stack-features/horizontal-scaling.html), [security](/stack-features/stack-security.html) and so on.
-
-![Done](http://cdn.cloud66.com/images/help/first_stack_done.png)
+## What's next?
+Your stack is up and running, and you can start customizing it with [backups](/add-ins/backups.html), [scaling](/stack-features/horizontal-scaling.html), [security](/stack-features/stack-security.html) and more!

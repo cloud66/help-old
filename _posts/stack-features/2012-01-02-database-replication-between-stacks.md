@@ -39,7 +39,7 @@ Replication between stacks is supported for **MySQL**, **PostgreSQL** and **Redi
 
 <div class="notice notice-danger">
 	<h3>Note</h3>
-	<p>The process of database replication will disrupt your <i>source</i> and <i>destination</i> databases for the duration of this process.</p>
+	<p>The process of database replication will disrupt your source and destination databases for the duration of this process.</p>
 </div>
 
 The disruption time depends entirely on your database type and size, and different databases may require a restart and/or a complete backup in order to warm-up the new server. This disruption will occur every time you configure or disable data replication between stacks.
@@ -117,33 +117,33 @@ The environment variables will be available on all servers including web and dat
 
 <h2 id="setup">Enable replication</h2>
 
-Before we start replicating data between stacks, go ahead and deploy the code from your first stack (_source_) to a fresh stack (_target_). You need _Control stack_ access rights for the target stack.
+Before we start replicating data between stacks, go ahead and deploy the code from your first stack (source) to a fresh stack (target). You need _Control stack_ access rights for the target stack.
 
 <ol>
-<li>Go to your database server detail page on your <i>target stack</i>.</li>
+<li>Go to your database server detail page on your target stack.</li>
 <li>Click the <i>Configure data replication</i> icon in the right sidebar, which opens a dialog box.</li>
 <li>In the <i>Select stack</i> list, select the stack you want to use as a source and confirm. You will only see stacks that have a managed backup installed and that you have <i>Stack administrator</i> rights to.</li>
 
 Once your replication starts, the following steps will be initiated:<br/>
 
 <ul style="margin-bottom:0em">
-<li>We take a full backup of the primary database server in your <i>source</i> stack and restore it on the <i>target</i> stack database</li>
-<li>The <i>target</i> database is configured to be a slave of the <i>source</i> database</li>
-<li>The <i>source</i> database is configured to be a master of the </i>target</i> database</li>
+<li>We take a full backup of the primary database server in your source stack and restore it on the target stack database</li>
+<li>The target database is configured to be a slave of the source database</li>
+<li>The source database is configured to be a master of the target database</li>
 <li>The relevant environment variables are updated for use in your code and scripts</li>
 </ul>
 </ol>
 
 <h2 id="disable-replication">Disable replication</h2>
 <ol>
-<li>Go to your database server detail page on your <i>target stack</i>.</li>
+<li>Go to your database server detail page on your target stack.</li>
 <li>Click the <i>Configure data replication</i> icon in the right sidebar, which opens a dialog box.</li>
 <li>Select <i>Disable replication</i> from the list and confirm. The following steps will be initiated:</li>
 
 <ul style="margin-bottom:0em">
-<li>We disable the replication on your <i>target</i> database server, and configure it to be a stand-alone database server</li>
-<li>The <i>target</i> database server is removed as a slave from the primary database server on the <i>source</i></li>
-<li>The <i>source</i> database server is configured as a stand-alone database server</li>
+<li>We disable the replication on your target database server, and configure it to be a stand-alone database server</li>
+<li>The target database server is removed as a slave from the primary database server on the source</li>
+<li>The source database server is configured as a stand-alone database server</li>
 <li>The relevant environment variables are updated for use in your code and scripts</li>
 </ul>
 </ol>
