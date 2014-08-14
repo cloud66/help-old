@@ -14,13 +14,21 @@ search-tags: ['how to start', 'first stack', 'first', 'beginner', 'how to', 'bui
 tags: ['Getting started']
 ---
 
+<h2>What you’ll need</h2>
+
+<ul>
+	<li><a href="https://app.cloud66.com/users/sign_up" target="_blank">Cloud 66 account</a></li>
+	<li><a href="http://help.cloud66.com/how-to/access-your-code.html">Git repository with your application code</a></li>
+	<li><a href="/getting-started/supported-clouds.html">Deployment credentials</a></li>
+</ul>
+
 ## 1. Start a stack
 Visit the <a href="https://app.cloud66.com/dashboard" target="_blank">Cloud 66 dashboard</a> and click <i>Get started building a stack</i>.
 
 ![First Stack](http://cdn.cloud66.com/images/help/first_stackss.png)
 
 ## 2. Accessing your code
-If you have a <b>private Git repository</b>, please add the unique SSH key provided to your Git account. If you have a <b>public repository</b>, feel free to jump to the next step.
+If you have a <a href="/how-to/access-your-code.html">private Git repository</a>, please add the unique SSH key provided to your Git account. If you have a <a href="/how-to/access-your-code.html">public repository</a	>, feel free to jump to the next step.
 
 ![Accessing Git](http://cdn.cloud66.com/images/help/first_stack_accesses.png)
 
