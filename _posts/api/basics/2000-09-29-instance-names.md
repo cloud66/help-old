@@ -376,6 +376,10 @@ tags: ['API']
 	</thead>
 	<tbody>
 		<tr>
+			<td>Linode 1024</td>
+			<td>Linode 1024</td>
+		</tr>
+		<tr>
 			<td>Linode 2048</td>
 			<td>Linode 2048</td>
 		</tr>
