@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Rackspace cloud"
+title:  "- Rackspace cloud"
 date:   2034-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
@@ -10,6 +10,9 @@ lead: Use your Rackspace account with Cloud 66
 search-tags: ['rackspace', 'rackspace cloud']
 tags: ['']
 ---
+
+## About using Rackspace cloud
+## Add Rackspace keys to a stack
 
 You can use Cloud 66 to provision and deploy your code to servers in any Rackspace [region](/api/basics/instance-regions.html#rackspace). All you need to do is add your Rackspace API keys to your Cloud 66 account.
 

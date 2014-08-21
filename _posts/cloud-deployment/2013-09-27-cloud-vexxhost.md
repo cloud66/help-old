@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Vexxhost cloud"
+title:  "- Vexxhost cloud"
 date:   2013-09-27 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
@@ -10,6 +10,10 @@ lead:  Use your Vexxhost account with Cloud 66
 search-tags: ['vexxhost', 'vexxhost cloud']
 tags: ['']
 ---
+
+## About using Vexxhost cloud
+## Add Vexxhost keys to a stack
+## External links
 
 Our partnership with [VEXXHOST](http://www.vexxhost.com) allows you to deploy your applications to your cloud compute account.
 

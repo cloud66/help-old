@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Thin rack server"
+title:  "- Thin rack server"
 so_title: "thin"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
@@ -11,6 +11,10 @@ lead: Run your Rack apps with Thin
 search-tags: ['']
 tags: ['Web server']
 ---
+
+## About running apps with Thin rack
+## Thin rack commands
+## Deploy with Thin rack server
 
 ## Choosing Thin as your Rack server
 <div class="notice">

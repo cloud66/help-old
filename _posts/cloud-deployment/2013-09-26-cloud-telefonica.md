@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Telefonica cloud"
+title:  "- Telefonica cloud"
 date:   2033-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
@@ -10,6 +10,9 @@ lead: Use your Telefonica account with Cloud 66
 search-tags: ['telefonica', 'telefonica cloud']
 tags: ['']
 ---
+
+## About using Telefonica cloud
+## Add Telefonica keys to a stack
 
 You can use Cloud 66 to provision and deploy your code to servers in any Telefonica [region](/api/basics/instance-regions.html#tef). All you need to do is add your Telefonica API keys to your Cloud 66 account.
 

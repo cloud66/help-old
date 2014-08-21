@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Unicorn rack server"
+title:  "- Unicorn rack server"
 so_title: "unicorn"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
@@ -12,6 +12,10 @@ search-tags: ['']
 tags: ['Web server']
 ---
 
+## About running apps with Unicorn
+## Unicorn rack commands
+## Sample unicorn config file
+## Deploy with Unicorn rack server
 
 ## Choosing Unicorn as your Rack server
 <div class="notice">

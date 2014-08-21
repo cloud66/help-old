@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Notifications"
+title:  "Stack notifications"
 so_title: "notifications"
 nav_sticky: false
 date:   2091-03-29 16:27:22
@@ -10,47 +10,6 @@ lead: Email, iOS, Hipchat, Slack and Webhook notifications
 search-tags: []
 tags: ['']
 ---
-
-<h2>Contents</h2>
-<ul class="page-toc">
-	<li>
-		<a href="#intro">Introduction</a>
-	</li>
-	<li>
-		<a href="#account">Account notifications</a>
-	</li>
-	<li>
-		<a href="#stack">Stack notifications</a>
-	</li>
-	<li>
-    	<a href="#types">Notification types</a>
-    	</li>
-	        <li>
-                <ul>
-                <li><a href="#emails">Emails</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                <li><a href="#hipchat">Hipchat</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                <li><a href="#ios">iOS</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                <li><a href="#slack">Slack</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                <li><a href="#webhooks">Webhooks</a></li>
-                </ul>
-            </li>
-</ul>
 
 <h2 id="intro">Introduction</h2>
 You can control when and how you would like to receive notifications from Cloud 66. There is a range of events that trigger notifications, which can be sent as emails, Hipchat, via iOS push, Slack or Webhooks.
@@ -61,15 +20,6 @@ You can control when and how you would like to receive notifications from Cloud 
 </div>
 
 There are two types of notifications: _account_ and _stack_. _Account_ notifications are global across your account and _stack_ notifications are related to events for a specific stack.
-
-<h2 id="account">Account notifications</h2>
-You can access _account_ notifications under your account settings:
-
-![cloud66_notifications](http://cdn.cloud66.com/images/help/notifications_menu.png)
-
-You will have the following notifications available to you:
-
-![cloud66_alert_types](http://cdn.cloud66.com/images/help/notifications_account.png)
 
 <h2 id="stack">Stack notifications</h2>
 

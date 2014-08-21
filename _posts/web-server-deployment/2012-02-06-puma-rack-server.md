@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Puma rack server"
+title:  "- Puma rack server"
 so_title: "puma"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
@@ -11,6 +11,10 @@ lead: Run your Rack apps with Puma
 search-tags: ['']
 tags: ['Web server']
 ---
+
+## About running apps with Puma
+## Puma commands
+## Deploy with Puma rack server
 
 ## Choosing Puma as your Rack server
 <div class="notice">

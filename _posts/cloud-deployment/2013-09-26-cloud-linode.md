@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Linode cloud"
+title:  "- Linode cloud"
 date:   2035-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
@@ -10,6 +10,9 @@ lead: Use your Linode account with Cloud 66
 search-tags: ['linode', 'linode cloud']
 tags: ['']
 ---
+
+## About using Linode cloud
+## Add Linode keys to a stack
 
 You can use Cloud 66 to provision and deploy your code to servers in any Linode [region](/api/basics/instance-regions.html#linode). All you need to do is add your Linode API keys to your Cloud 66 account.
 

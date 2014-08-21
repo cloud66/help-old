@@ -4,7 +4,7 @@ template: two-col
 title:  "Backup verifiers"
 so_title: "verifier"
 date:   4000-10-03 14:17:13
-categories: stack-features
+categories: database-management
 lead: Ensure the highest quality of backup assurance
 search-tags: ['']
 tags: ['Database']
