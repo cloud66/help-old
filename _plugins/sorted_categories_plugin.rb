@@ -3,17 +3,20 @@ module Jekyll
   class SortedCategoriesBuilder < Generator
   
 		ORDER = [ 
-			'getting-started',
-			'stack-features',
-			'add-ins',
-			'stacks',
-			'web-server',
-			'database',
-			'your-account',
-			'cloud-providers',
+			'introduction-to-cloud-66',
+			'stack-definition',
+			'cloud-deployment',
+			'web-server-deployment',
+			'database-management',
+			'account-management',
+			'notifications',
+			'logging',
+			'dns',
+			'ssh',
+			'ssl',
 			'toolbelt',
-			'how-to',
-			'troubleshooting',
+			'partner-integration',
+			'compliance-guides',			
 			'api',
 			'jekyll'
 		]
