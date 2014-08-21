@@ -4,11 +4,16 @@ template: two-col
 title:  "Getting started"
 date:   2050-01-30 01:01:01
 nav_sticky: true
-categories: cloud-66-toolbelt
+categories: toolbelt
 lead: Toolbelt is a command line tool to interact with Cloud 66
 search-tags: ['toolbelt','commandline']
 tags: ['Toolbelt']
 ---
+
+## What is Toolbelt?
+## Initialize Toolbelt
+## View Toolbelt information
+## Toolbelt shortcuts
 
 <h2>Contents</h2>
 <ul class="page-toc">
