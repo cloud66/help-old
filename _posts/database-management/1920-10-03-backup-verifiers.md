@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Backup verifiers"
+title:  "- Backup verification"
 so_title: "verifier"
 date:   4000-10-03 14:17:13
 categories: database-management
@@ -9,6 +9,11 @@ lead: Ensure the highest quality of backup assurance
 search-tags: ['']
 tags: ['Database']
 ---
+
+What is a backup verifier?
+Set up a backup verifier
+View backup verification status
+Pricing
 
 <h2>Contents</h2>
 <ul class="page-toc">

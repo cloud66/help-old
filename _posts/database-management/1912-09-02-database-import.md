@@ -11,6 +11,9 @@ search-tags: []
 tags: ['Database']
 ---
 
+## About importing database information
+## Import database information
+
 Cloud 66 allows you to easily import data from one stack to another for **MySQL**, **PostgreSQL** and **Redis** databases.
 
 To do this, you will need two stacks with the same database type - one will be the _source_ and the other will be the _target_ for the data migration.

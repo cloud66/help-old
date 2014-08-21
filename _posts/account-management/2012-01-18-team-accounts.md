@@ -13,6 +13,13 @@ search-tags: ['']
 tags: ['Your account']
 ---
 
+## About using team accounts
+## Account user roles and permissions
+## Add a team member
+## Sign up a team member
+## Switch organizations
+## Leave a team
+
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>

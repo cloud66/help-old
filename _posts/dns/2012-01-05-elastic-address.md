@@ -11,6 +11,9 @@ search-tags: []
 tags: ['DNS']
 ---
 
+## What is ElasticAddress? 
+## Add an ElasticAddress
+
 ElasticAddress is a managed quick response DNS address that automatically follows your stack web endpoints. You can connect it to up to 2 stacks at any time - a _primary_ and _backup_ stack. Should you need to switch traffic between your stacks, simply flip the switch and your traffic will flow to the _backup_ stack within 5 minutes.
 
 There are two major use cases for this:

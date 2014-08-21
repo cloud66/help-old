@@ -12,6 +12,10 @@ search-tags: ['']
 tags: ['Database replication']
 ---
 
+## About scaling your MongoDB servers
+## Configure a MongoDB replica set
+## Environment variables
+## Configure mongoid
 
 ## Introduction
 You can [scale your database backend](/stack-features/database-replication.html) with Cloud 66 - you just need to setup [managed backups](/add-ins/backups.html).

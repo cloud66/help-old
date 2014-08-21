@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Integration with Semaphore"
+title:  "- Integration with Semaphore"
 so_title: "semaphore"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true

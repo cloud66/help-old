@@ -1,39 +1,18 @@
 ---
 layout: post
 template: two-col
-title:  "Database servers"
-date:   2020-09-24 10:51:22
+title:  "Database management"
+so_title: "database"
+cloud66_text: "Try Cloud 66 for free"
+cloud66_sticky: true
+date:   1959-09-26 15:33:13
 categories: database-management
-lead: Databases supported by Cloud 66
+lead: 
 search-tags: ['']
-tags: ['Database']
+tags: ['']
 ---
 
-<h2>Contents</h2>
-<ul class="page-toc">
-	<li>
-		<a href="#types">Database deployment types</a>
-			<ul>
-            	<li><a href="#cloud">Deploying to your cloud</a></li>
-            	<li><a href="#byos">Deploying to your own server</a></li>
-            </ul>
-	</li>
-	<li>
-    	<a href="#no">Choosing "no" database</a>
-    </li>
-	<li>
-		<a href="#local">Choosing "local" database</a>
-	</li>
-	<li>
-		<a href="#ded">Choosing "dedicated" database</a>
-	</li>
-	<li>
-		<a href="#generated">Generated credentials</a>
-	</li>
-	<li>
-		<a href="#upgrade">Upgrading your database</a>
-	</li>
-</ul>
+## About deploying databases
 
 We currently support the following databases, with no need for additional configuration after deployment.
 
@@ -96,3 +75,16 @@ your database through Cloud 66, create a new stack (at which point Cloud 66 will
 Once the new stack is created, you can migrate data from your old stack to your new stack, and delete your old stack when you're happy.
 
 
+
+
+## About connecting to database servers
+## Database options (replication vs. replication between stacks vs one-time import)
+## Configure database migrations
+Running Active Record migrations during deployment is a _Stack setting_ that you can control:
+
+![Database migration](http://cdn.cloud66.com/images/help/db_migration.png)
+
+When you have disabled database migrations in the settings menu, you still have the option to do a one-off deployment with your selection on the _Deploy with options_ menu.
+![Database migration](http://cdn.cloud66.com/images/help/db_migration_option.png)
+
+## What is Memcached?

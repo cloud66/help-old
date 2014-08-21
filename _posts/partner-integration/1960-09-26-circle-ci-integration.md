@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Integration with Circle CI"
+title:  "- Integration with Circle CI"
 so_title: "circle ci"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true

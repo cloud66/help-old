@@ -13,6 +13,10 @@ search-tags: ['']
 tags: ['Your account']
 ---
 
+## What is two-step verification? 
+## Enable two-step verification
+## Add a recovery phone number
+
 ## Usage
 
 You can make your Cloud 66 account more secure by enabling two-step verification from the _Account_ menu:

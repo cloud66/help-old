@@ -13,6 +13,11 @@ tags: ['Database', 'Customization']
 tutorial: true
 ---
 
+## What is CustomConfig?
+## Config variables
+## About committing config changes
+## About updating configuration files
+
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>

@@ -9,6 +9,12 @@ search-tags: ['deployment','toolbelt','commandline']
 tags: ['Toolbelt']
 ---
 
+## About using Toolbelt to manage stacks
+## Stack parameters
+## Available settings
+## Deploy your stack
+## Modify stack settings
+
 Trigger the deployment of a stack from the command line, just like clicking on <i>redeploy</i> in the UI.
 
 ## Usage

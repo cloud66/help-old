@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Integration with Travis CI"
+title:  "- Integration with Travis CI"
 so_title: "travis ci"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
