@@ -24,4 +24,3 @@ This is an uptime report for our dashboard during the last 30 days:
 We also publish [live status updates on Twitter](https://twitter.com/cloud66status), the latest of which you can see here:
 <a class="twitter-timeline"  data-chrome="nofooter transparent"  href="https://twitter.com/cloud66status"  data-widget-id="407483519829430273">Tweets by @cloud66status</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-

@@ -19,6 +19,14 @@
     }
 }
 
+.cat-title-caps {
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.4em;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
 .cat-title {
     text-transform: capitalize;
     border-bottom: 1px solid #ccc;

@@ -48,7 +48,7 @@ module Jekyll
 			end
 			
 			# takeout all the API crap
-			ordered_keys.delete_if { |x| ['basics', 'server', 'stack', 'users', 'server group'].include? x }
+			ordered_keys.delete_if { |x| ['basics', 'server', 'stack', 'users', 'server group', 'backup'].include? x }
 			
 			# now order the list based on the ordered keys
 			ordered = {}
