@@ -5,8 +5,8 @@ module Jekyll
 		ORDER = [ 
 			'introduction-to-cloud-66',
 			'stack-definition',
-			'cloud-deployment',
-			'web-server-deployment',
+			'deployment',
+			'web-server',
 			'database-management',
 			'account-management',
 			'notifications',

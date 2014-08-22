@@ -5,7 +5,7 @@ title:  "- Telefonica cloud"
 date:   2033-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-categories: cloud-deployment
+categories: deployment
 lead: Use your Telefonica account with Cloud 66
 search-tags: ['telefonica', 'telefonica cloud']
 tags: ['']

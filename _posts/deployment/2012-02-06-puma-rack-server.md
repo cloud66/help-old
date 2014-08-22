@@ -6,7 +6,7 @@ so_title: "puma"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   2030-09-24 10:51:22
-categories: web-server-deployment
+categories: web-server
 lead: Run your Rack apps with Puma
 search-tags: ['']
 tags: ['Web server']

@@ -4,7 +4,7 @@ template: two-col
 title:  "Optimizing for server load"
 so_title: "server load"
 date:   1906-09-26 15:33:13
-categories: web-server-deployment
+categories: 
 lead: The science and art of optimizing server load
 search-tags: ['']
 tags: ['Load testing']

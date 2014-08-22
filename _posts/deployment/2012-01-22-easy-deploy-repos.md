@@ -7,7 +7,7 @@ nav: true
 nav_prev: ""
 nav_next: ""
 date:   2019-10-09 15:30:22
-categories: cloud-deployment
+categories: deployment
 lead: Deploy and maintain open source projects on Cloud 66
 search-tags: ['']
 tags: ['Deployment']

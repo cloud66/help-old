@@ -6,7 +6,7 @@ so_title: "unicorn"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   2027-09-24 10:51:22
-categories: web-server-deployment
+categories: web-server
 lead: Run your Rack apps with Unicorn
 search-tags: ['']
 tags: ['Web server']

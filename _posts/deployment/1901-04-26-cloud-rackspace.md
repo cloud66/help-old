@@ -5,7 +5,7 @@ title:  "- Rackspace cloud"
 date:   2034-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-categories: cloud-deployment
+categories: deployment
 lead: Use your Rackspace account with Cloud 66
 search-tags: ['rackspace', 'rackspace cloud']
 tags: ['']

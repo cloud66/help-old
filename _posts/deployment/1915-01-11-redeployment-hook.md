@@ -5,7 +5,7 @@ title:  "Redeployment hooks"
 so_title: "redeployment"
 nav_sticky: false
 date:   2090-01-25 16:27:22
-categories: cloud-deployment
+categories: deployment
 lead: Use redeployment hooks to setup continuous deployment
 search-tags: []
 tags: ['Deployment']

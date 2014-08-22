@@ -6,7 +6,7 @@ so_title: "custom config"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1907-08-26 15:33:13
-categories: web-server-deployment
+categories: web-server
 lead: Customize your Nginx configuration
 search-tags: ['']
 tags: ['Customization']

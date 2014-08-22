@@ -6,7 +6,7 @@ so_title: "passenger"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   2031-11-05 15:33:13
-categories: web-server-deployment
+categories: web-server
 lead: Cloud 66 supports deploying with Passenger Enterprise
 search-tags: ['']
 tags: ['Web server']

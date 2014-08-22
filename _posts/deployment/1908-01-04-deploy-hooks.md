@@ -5,7 +5,7 @@ title:  "Deploy hooks"
 so_title: "deploy hooks"
 nav_sticky: false
 date:   2097-03-28 16:27:22
-categories: cloud-deployment
+categories: deployment
 lead: Take action at various points during your deployment
 ---
 

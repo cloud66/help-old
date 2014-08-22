@@ -5,7 +5,7 @@ title:  "Parallel deployments"
 so_title: "parallel deployment"
 nav_sticky: false
 date:   2091-02-28 16:27:22
-categories: cloud-deployment
+categories: deployment
 lead: Save time by deploying the servers in your stack in parallel
 search-tags: []
 tags: ['Deployment']
