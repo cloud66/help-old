@@ -1,80 +1,75 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Stack network settings"
-so_title: "network"
 nav_sticky: false
 date:   2084-12-30 16:27:22
 categories: stack-definition
-lead: "Configure network traffic and redirections for your stacks"
+lead: Configure security and network settings
 search-tags: []
-tags: ['Security']
+tags: ['']
 ---
-
-## About configuring network settings
-## What is activeprotect?
-## Open your firewall
-## Add a firewall rule
-## Configure network traffic
-## Enable maintenance mode
 
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
-		<a href="#active-protect">ActiveProtect</a>
+		<a href="#about">About Network Settings</a>
+	</li>
+	<li>
+		<a href="#activeprotect">What is ActiveProtect&trade;?</a>
 	</li>
 	<li>
 		<a href="#firewall">Firewall</a>
 	</li>
 	<li>
-		<a href="#traffic">Traffic</a>
-	</li>
-	<li>
         <ul>
-        <li><a href="#allowing">Allowing traffic</a></li>
-        <li><a href="#denying">Denying traffic</a></li>
+        <li><a href="#add-firewall">Add a firewall rule</a></li>
         </ul>
     </li>
 	<li>
-		<a href="#redirects">Redirects</a>
+		<a href="#configure">Configure network traffic</a>
 	</li>
+	<li>
+        <ul>
+        <li><a href="#allow">Allowing traffic</a></li>
+        <li><a href="#deny">Denying traffic</a></li>
+        </ul>
+    </li>
+	<li>
+		<a href="#network">Using network redirects</a>
+	</li>    
 	<li>
         <ul>
         <li><a href="#maintenance">Maintenance mode</a></li>
         <li><a href="#https">Redirect HTTP to HTTPS</a></li>
         <li><a href="#www">WWW or non-WWW in your URL</a></li>
         </ul>
-    </li>
+    </li>    
 </ul>
 
-The <i>stack network</i> page gives you an overview of your security standing and allows you to configure several network-related settings.
+<h2 id="about">About Network Settings</h2>
+The _Network Settings_ page contains all things network-related, in four tabs: 
 
-![Cloud 66 network](http://cdn.cloud66.com/images/help/networkmenus.png)
+- <b>ActiveProtect&trade;:</b> Protects against denial of service and brute-force attacks
+- <b>Firewall:</b> Restricts access to your servers
+- <b>Traffic:</b> Allows or denies access from different source IP addresses
+- <b>Redirects:</b> Sets server-level redirects for web traffic
 
-<h2 id="active-protect">ActiveProtect</h2>
-
-All stacks deployed with Cloud 66 are automatically protected against [Denial of Service](http://en.wikipedia.org/wiki/Denial-of-service_attack) and [brute-force](http://en.wikipedia.org/wiki/Brute-force_attack) attacks. The <i>ActiveProtect</i> page shows a list of current and past attacks (in the last 24 hours) with information about the source and destination.
-
-![Cloud 66 Firewall](http://cdn.cloud66.com/images/help/network_activeprotect.png)
+<h2 id="activeprotect">What is ActiveProtect&trade;?</h2>
+All stacks deployed with Cloud 66 are automatically protected against [denial of service](http://en.wikipedia.org/wiki/Denial-of-service_attack) and [brute-force](http://en.wikipedia.org/wiki/Brute-force_attack) attacks. The <i>ActiveProtect</i> page shows a list of current and past attacks (in the last 24 hours) with information about the source and destination.
 
 Servers deployed with Cloud 66 only allow incoming SSH traffic from known IP addresses. To protect against brute-force SSH attacks, the servers are also configured to only accept SSH keys and not passwords. However, it is possible that user configurations result in vulnerabilities, and for such cases, repeated SSH login attempts are detected and blocked for at least 10 minutes.
 
 <h2 id="firewall">Firewall</h2>
+The <i>Firewall</i> tab allows you to configure and apply firewall rules per server for your stack. You can open your firewall temporarily in cases when you need temporary access to your servers by clicking the icon at the top right of the page. This will automatically fill with your current IP address, and allow you to choose the duration of the opening and the server port you wish to access. Doing this avoids the dangers of leaving firewall ports open permanently unnecessarily.
 
-The <i>Firewall</i> tab allows you to configure and apply firewall rules per server for your stack.
+By default, Cloud 66 gateway servers (eg. 54.84.166.97) are the only servers allowed SSH (port 22) access to stack servers. The default firewall rules include database and web ports appropriate for the stack deployed but also includes ports 8080 and 8443 as alternative HTTP ports for WebSocket-based applications like [Faye](#). Editing and removing the default firewall rules is disabled to ensure secure accessibility to the servers at all times.
 
-You can open your firewall temporarily in cases when you need temporary access to your servers (see top right of the image below). This avoids the dangers of leaving firewall ports open permanently unnecessarily.
-
-![Cloud 66 Firewall](http://cdn.cloud66.com/images/help/networkfirewalls.png)
-
-By default, Cloud 66 gateway servers (eg. 54.84.166.97) are the only servers allowed SSH (port 22) access to stack servers. The default firewall rules include database and web ports appropriate for the stack deployed but also includes ports 8080 and 8443 as alternative HTTP ports for WebSocket-based applications like [Faye](/how-to/implementing-faye.html). Editing and removing the default firewall rules is disabled to ensure secure accessibility to the servers at all times.
-
+<h3 id="add-firewall">Add a firewall rule</h2>
 To add your own rules, click <i>Add a new firewall rule</i>. You can input single IP addresses or ranges, and the dropdown allows you to choose servers by name (eg. <i>Rails servers</i>).
 
-<h2 id="traffic">Traffic</h2>
+<h2 id="configure">Configure network traffic</h2>
 By default, all traffic is allowed to visit your web servers on ports 80, 443, 8080 and 8443. The <i>Traffic</i> tab allows you to control this, and has two sections: <i>allowed</i> traffic sources and <i>denied</i> traffic sources.
-
-![Cloud 66 Firewall](http://cdn.cloud66.com/images/help/networktraffic.png)
 
 For each of the fields above, you can enter a single IP address, a comma-separated list, or range. For example:
 
@@ -84,26 +79,17 @@ For each of the fields above, you can enter a single IP address, a comma-separat
 23.213.76.19,31.152.18.22,197.222.132.0/24
 ```
 
-<h3 id="allowing">Allowing traffic</h3>
+<h3 id="allow">Allowing traffic</h3>
 Repeated visits within a short time period on the ports mentioned above (more than 1,500 hits per minute from a single IP address) are blocked by ActiveProtect. By allowing traffic for a specific IP address or range, this limit is ignored.
 
 You can also choose not to block traffic coming from Cloudflare edge servers.
 
-<h3 id="denying">Denying traffic</h3>
+<h3 id="deny">Denying traffic</h3>
 You can block specific IPs and/or ranges from visiting the ports mentioned above.
 
-You can also automatically block traffic from the [TOR network](https://www.torproject.org/) to your servers. The list of TOR IP addresses is automatically updated by Cloud 66 and is available to your servers.
-
-<div class="notice">
-		<h3>Important</h3>
-		<p>Traffic features do not work with HTTPS traffic behind an HAProxy load balancer. This is a limitation of HAProxy 1.4, and will be updated in version 1.5.</p>
-</div>
-
-<h2 id="redirects">Redirects</h2>
+<h2 id="network">Using network redirects</h2>
 
 The <i>Redirects</i> tab helps you perform simple but frequently used network redirects. These include redirecting traffic from _HTTP_ to _HTTPS_ or adding or removing the _www_ prefix from your domain name.
-
-![Cloud 66 Firewall](http://cdn.cloud66.com/images/help/networkredirects.png)
 
 <h3 id="maintenance">Maintenance mode</h3>
 When you have to make manual changes to your application or push out a breaking change, you may not be able to guarantee that your application will be able to serve content or act correctly.
