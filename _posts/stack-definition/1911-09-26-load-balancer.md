@@ -11,14 +11,16 @@ search-tags: ['lb', 'load balancer']
 tags: ['Add in', 'Scaling']
 ---
 
-To add a load balancer, access the add-ins menu of your stack:
-
-![Tja](http://cdn.cloud66.com/images/help/addin_lb.png)
+## What is load balancing? 
+A load balancer is used to distribute traffic across your web servers, and offers benefits such as maximizing throughoutput, minimizing response times and avoiding overload on any single server. Ultimately, load balancing increases the reliability of your stack.
 
 <div class="notice">
-		<h3>Important</h3>
-		<p>This feature is only available if you have deployed using a cloud vendor.</p>
+	<h3>Note</h3>
+	<p>This feature is only available if you have deployed using a cloud vendor.</p>
 </div>
+
+## Add a load balancer
+To add a load balancer, access the add-ins menu of your stack and click _Load balancer_.
 
 Depending on which cloud provider you use, this load balancer will be set up differently:
 

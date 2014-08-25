@@ -11,9 +11,8 @@ search-tags: ['elasticsearch']
 tags: ['Add in']
 ---
 
-[Elasticsearch](http://www.elasticsearch.org/) is a powerful open source search and analytics engine, and it's easy to add to your stack as an add-in:
+## What is Elasticsearch? 
+[Elasticsearch](http://www.elasticsearch.org/) is a powerful open source search and analytics engine, and it's easy to add to your stack as an add-in.
 
-![Tja](http://cdn.cloud66.com/images/help/addin_elasticsearch.png)
-
-You'll be able to choose the size of the server used for Elasticsearch:
-![Tja](http://cdn.cloud66.com/images/help/addin_example_elasticsearch.png)
+## Add Elasticearch
+To add Elasticsearch to your stack, access the add-ins menu, click _Elasticsearch_ and choose the size of your new server.

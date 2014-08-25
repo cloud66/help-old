@@ -11,10 +11,12 @@ search-tags: ['log entries', 'logentries']
 tags: ['Logs', 'Add ins']
 ---
 
-Once your stack is deployed, you can easily use Logentries for centralized log files:
-![Logentries example](http://cdn.cloud66.com/images/help/addin_logentries.png)
+## About using Logentries
+Logentries is a great service for centralizing your log files, and this add-in makes it easy to add across your servers.
 
-We'll ask you for your Logentries account key - if you don't have one, you can signup to a Logentries account:
-![Logentries add](http://cdn.cloud66.com/images/help/addin_example_logentries.png)
+## Add Logentries to your stack
+To add Logentries, access the add-ins menu of your stack and click _Logentries_.
 
-You can find your Logentries account ID in your account page. For more information, please see Logentries [guide to integrating with Cloud 66](https://logentries.com/doc/cloud66/).
+We'll ask you for your Logentries account key - if you don't have one, you can signup to a Logentries account.
+
+You can find your Logentries account ID in your account page. For more information, please see the [Logentries guide to integrating with Cloud 66](https://logentries.com/doc/cloud66/).

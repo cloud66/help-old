@@ -11,23 +11,16 @@ search-tags: ['custom server', 'manage own server']
 tags: ['Customization', 'Add in']
 ---
 
+## What is the custom server add-in? 
 Adding a custom server to your stack allows you to manage your own services while still benefiting from the Cloud 66 ecosystem.
 
 A custom server will have the following Cloud 66 features enabled:
 
-- [Monitoring](/stack-features/server-monitoring.html)
-- [Security](/stack-features/stack-security.html)
-- Use of [Cloud 66 add-ins](/add-ins/addins-intro.html)
-- [Log rotation](/stack-features/logging.html)
-- [SSH to your server via toolbelt](/cloud-66-toolbelt/ssh.html)
+- [Monitoring](#)
+- [Security](#)
+- Use of [Cloud 66 add-ins](#)
+- [Log rotation](#)
+- [SSH to your server via toolbelt](#)
 
-To add a custom server, begin by accessing the add-ins menu:
-
-![Add custom server](http://cdn.cloud66.com/images/help/addin_custom_server.png)
-
-You will then be able to choose the size of your new server and how many you'd like to add:
-
-![Choose custom server](http://cdn.cloud66.com/images/help/addin_example_custom_server.png)
-
-Once your server is added, you'll be able to see and manage it as part of your stack:
-![Manage your custom server](http://cdn.cloud66.com/images/help/addin_custom_server_screen.png)
+## Add a custom server
+To add a custom server, access the add-ins menu and click _Custom Server_. You will then be able to choose the size of your new server and how many you'd like to add. Once your server is added, you'll be able to see and manage it as part of your stack.

@@ -152,7 +152,7 @@ To clone a stack, visit your stack page and click _Clone this stack_ from the ri
 
 <hr>
 
-<h2 id="clone">Delete a stack</h2>
+<h2 id="delete">Delete a stack</h2>
 <div class="notice notice-danger notice-standalone">
 		<h3>Important</h3>
 		<p>Deleting a stack will not delete your cloud servers - remember to delete the servers from your cloud account.</p>

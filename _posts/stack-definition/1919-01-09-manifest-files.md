@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Manifest files"
 so_title: "manifest"
 nav_sticky: false
@@ -11,104 +11,44 @@ search-tags: []
 tags: ['Deployment']
 ---
 
-## What are manifest files?
-## Sample manifest file
-## About specifying server types
-## Add an environment variable to a manifest file
-## Add a manifest file to an ElasticSearch application
-
 <h2>Contents</h2>
 <ul class="page-toc">
-	<li>
-		<a href="#intro">What is a manifest file?</a>
-        <li>
-            <ul>
-            <li><a href="#sample">Sample file</a></li>
-            </ul>
+	<li><a href="#intro">What are manifest files?</a></li>
+         
+    <li><a href="#composition">Composition of a manifest file</a></li>   
+        <li><ul>
+            <li><a href="#sample">Sample manifest file</a></li>
+            <li><a href="#environments">Environments</a></li>   
+            <li><a href="#apps">Application types</a></li>
+            <li><a href="#servers">Server configurations</a></li>
+            <li>
+                <ul><li><a href="#shared">Shared</a></li></ul>
+            </li>
+            <li>
+                <ul><li><a href="#external">External</a></li></ul>
+            </li>
+    <li><a href="#app-specific">Application specific</a></li>
+            <li><ul><li><a href="#elastic">ElasticSearch</a></li></ul></li>
+            <li><ul><li><a href="#haproxy">HAProxy</a></li></ul></li>
+            <li><ul><li><a href="#memcached">Memcached</a></li></ul></li>
+            <li><ul><li><a href="#mongo">MongoDB</a></li></ul></li>
+            <li><ul><li><a href="#postgis">PostGIS</a></li></ul></li>
+            <li><ul><li><a href="#postgresql">PostgreSQL</a></li></ul></li>
+            <li><ul><li><a href="#rabbit">RabbitMQ</a></li></ul></li>
+            <li><ul><li><a href="#rails">Rails</a></li></ul></li>
+            <li><ul><li><a href="#redis">Redis</a></li></ul>
         </li>
-	</li>
-	<li>
-		<a href="#environments">Environments</a>
-	</li>
-	<li>
-		<ul>
-			<a href="#environment_variables">Environment Variables</a>
-		</ul>
-	</li>
-	<li>
-		<a href="#apps">Application types</a>
-	</li>
-	<li>
-		<a href="#servers">Server configurations</a>
-	</li>
-	        <li>
-                <ul>
-                <li><a href="#shared">Shared</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                <li><a href="#external">External</a></li>
-                </ul>
-            </li>
-	<li>
-		<a href="#app-specific">Application specific</a>
-	</li>
-            <li>
-                <ul>
-                <li><a href="#elastic">ElasticSearch</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                <li><a href="#haproxy">HAProxy</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                <li><a href="#memcached">Memcached</a></li>
-                </ul>
-            </li>
-	        <li>
-                <ul>
-                <li><a href="#mongo">MongoDB</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                <li><a href="#postgis">PostGIS</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                <li><a href="#postgresql">PostgreSQL</a></li>
-                </ul>
-            </li>
-	        <li>
-                <ul>
-                <li><a href="#rabbit">RabbitMQ</a></li>
-                </ul>
-            </li>
-	        <li>
-                <ul>
-                <li><a href="#rails">Rails</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                <li><a href="#redis">Redis</a></li>
-                </ul>
-            </li>
+    </ul>
+    <li><a href="#environment_variables">Environment variables in the manifest</a></li> 
+</li>    
+	
+	
+	
 </ul>
 
-<h2 id="intro">What is a manifest file?</h2>
+<h2 id="intro">What are manifest files?</h2>
 
-A manifest file allows you to be more explicit about your stack composition by specifying additional packages you wish to install, server sizes/regions and other options.
-
-<div class="notice">
-	<h3>Note</h3>
-    <p>Unless otherwise stated, manifest file specifications are only applied during the initial build of your stack.</p>
-</div>
+A manifest file allows you to be more explicit about your stack composition by specifying additional packages you wish to install, server sizes/regions and other options. <b>Unless otherwise stated, manifest file specifications are only applied during the initial build of your stack.</b>
 
 To use this functionality, you need to place a file called **manifest.yml** in a folder named **.cloud66**, that is in turn located in the root of your source code and checked into your repository.
 
@@ -116,24 +56,18 @@ To use this functionality, you need to place a file called **manifest.yml** in a
 [source&#95;repo]/.cloud66/manifest.yml
 </pre>
 
-The manifest.yml file is **YAML** formatted and is split by environment just like database.yml or mongoid.yml. This allows for different configurations per environment within one file.
+The manifest.yml file is **YAML** formatted and is split by environment just like database.yml or mongoid.yml. This allows for different configurations per environment within one file. YAML files are very particular about formatting, and an extra space or tab somewhere can render the file unreadable. You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.
 
-<span class="highlighted">YAML files are very particular about formatting, and an extra space or tab somewhere can render the file unreadable.</span>
-
-<div class="notice">
-    <h3>Note</h3>
-	<p>You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.</p>
-</div>
-
-Although you are technically able to specify any number of infrastructure combinations in your manifest file, your basic stack infrastructure is still primarily defined by the Cloud 66 stack analysis result.
-For example, even though you can specify that you want a node.js server running, this will be ignored unless Cloud 66 supports that type explicitly.
+Although you are technically able to specify any number of infrastructure combinations in your manifest file, your basic stack infrastructure is still primarily defined by the Cloud 66 stack analysis result. For example, even though you can specify that you want a node.js server running, this will be ignored unless Cloud 66 supports that type explicitly.
 
 <div class="notice notice-danger">
 	<h3>Important</h3>
     <p>The result of your Cloud 66 analysis will override configurations specified in your manifest file.</p>
 </div>
 
-<h2 id="sample">Sample manifest.yml</h2>
+<h2 id="composition">Composition of a manifest file</h2>
+
+<h3 id="sample">Sample manifest file</h3>
 
 This simple example shows the power of **manifest.yml** files.
 
@@ -149,10 +83,10 @@ production: # 1. Environment type
 
 The above manifest is only scoped to *production* stacks. Here we have specified that we want to install Ruby version 1.9.3 on the rails server, and that it should be called <i>frontend</i>.
 
-The manifest file is divided into four broad sections (as seen above):
+The manifest file is divided into four broad sections:
 
-<ul class="page-toc">
-<li><a href="/stack-features/manifest-files.html#environments">Environment type</a></li>
+<ul>
+<li><a href="/stack-features/manifest-files.html#environments">Environments</a></li>
 <li><a href="/stack-features/manifest-files.html#apps">Application type</a></li>
 <li><a href="/stack-features/manifest-files.html#servers">Server configurations</a></li>
 <li><a href="/stack-features/manifest-files.html#app-specific">Application-specific configurations</a></li>
@@ -160,40 +94,17 @@ The manifest file is divided into four broad sections (as seen above):
 
 What follows is an in-depth guide into how each section can be used.
 
-<h2 id="environments">Environment type</h2>
-You can select from the following environment:
+<hr>
+
+<h3 id="environments">Environments</h3>
+You can select from the following environments:
 
 - Production
 - Development
 - Staging
 - QA
 
-<h3 id="environment_variables">Environment Variables</h3>
-You can add your environment variables to your manifest files.
-
-Here is an example:
-
-{% highlight yaml %}
-production:
-    environment_variables:
-        SOME_VARIABLE: value
-        ANOTHER_ONE: another_value
-        THIRD_ONE: AUTO_GENERATE
-        LONG_ONE: AUTO_GENERATE_15
-{% endhighlight %}
-
-The example above is pretty clear. If you need to auto generate a value, you can use the `AUTO_GENERATE` keyword. It generates a 10 character long random string unless you specify the length after it: `AUTO_GENERATE_15` which generates a 15 character random string.
-
-<div class="notice">
-
-        <h3>Important</h3>
-
-        <p>Environment variables set in your manifest file will only apply during the initial build of your stack. Please refer to our documentation on <a href="/stack-features/env-vars.html">environment variables</a> if you'd like to set them beyond this point.</p>
-</div>
-
-Any environment variable that is generated by the result of the code analysis (like database addresses) will override any value specified in the manifest file. In other words, you cannot specify a value like `MYSQL_ADDRESS` in your manifest file as it will be ignored.
-
-<h2 id="apps">Application type</h2>
+<h3 id="apps">Application type</h3>
 Cloud 66 currently recognizes the following application types in your manifest file:
 
 <ul class="page-toc">
@@ -208,7 +119,7 @@ Cloud 66 currently recognizes the following application types in your manifest f
 <li><a href="#redis">Redis</a></li>
 </ul>
 
-<h2 id="servers">Server type</h2>
+<h3 id="servers">Server type</h3>
 Every application defined in the manifest file must be bound to a server. However, if you'd like configurations to apply to all servers in an application type, you don't need to specify a server type. Servers can be deployed specifically to host that application, [be shared between multiple applications](/stack-features/manifest-files.html#shared) (eg. Rails and MySQL on the same server) or be an [external server](/stack-features/manifest-files.html#external) (eg. using an external database).
 
 Here is an example of a server definition:
@@ -308,7 +219,7 @@ Username for the server. This is only applicable to Bring Your Own Server setups
 
 Name of the SSH key used to access the server. You can add this SSH key via Cloud 66 web UI.
 
-<h3 id="shared">Shared Servers</h3>
+<h4 id="shared">Shared Servers</h4>
 
 You can share a server between two applications. This could be in cases like using the same server for both your Rails app and the MySQL server behind it.
 
@@ -318,7 +229,7 @@ Each shared server definition specifies the name of another server definition in
 ... same_as: *another_existing_servers_unique_name*
 {% endhighlight %}
 
-<h3 id="external">External Servers</h3>
+<h4 id="external">External Servers</h4>
 
 If you would like to use an external server for an application (like using your own MySQL or AWS RDS for example), you can define that server as external.
 
@@ -328,7 +239,7 @@ External server definitions specify that the application is hosted on a server e
 ... server: external
 </pre>
 
-<h2 id="app-specific">Application Type Section</h2>
+<h3 id="app-specific">Application Type Section</h3>
 
 <div class="notice">
         <h3>Important</h3>
@@ -337,7 +248,7 @@ External server definitions specify that the application is hosted on a server e
 
 <hr>
 
-<h3 id="elastic">ElasticSearch</h3>
+<h4 id="elastic">ElasticSearch</h4>
 
 - **version**<br/>
 Specify the version of ElasticSearch you want to install (does not apply to external servers types)
@@ -352,7 +263,7 @@ Specify the version of ElasticSearch you want to install (does not apply to exte
 
 <hr>
 
-<h3 id="haproxy">HAProxy</h3>
+<h4 id="haproxy">HAProxy</h4>
 You can use the manifest file to make small configuration changes to the HAProxy load balancer deployed by Cloud 66 at any point. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/how-to/haproxy-customconfig.html).
 
 Currently they are limited to the following options:
@@ -382,7 +293,7 @@ haproxy:
 
 <hr>
 
-<h3 id="memcached">Memcached</h3>
+<h4 id="memcached">Memcached</h4>
 
 We don't currently support dedicated Memcached servers, although we plan to support this in the near future. We do support standalone (and scaling) Redis, and considering the [performance differences](http://jamieonsoftware.com/post/59738699304/memcached-vs-redis), it may be worth switching.
 
@@ -418,7 +329,7 @@ Specify which IP address to listen on. Default value is 0.0.0.0
 
 <hr>
 
-<h3 id="mongo">MongoDB</h3>
+<h4 id="mongo">MongoDB</h4>
 
 - **version**<br/>
 Specify the version of MongoDB you want to install (does not apply to external servers types)
@@ -433,7 +344,7 @@ Specify the version of MongoDB you want to install (does not apply to external s
 
 <hr>
 
-<h3 id="postgresql">PostgreSQL</h3>
+<h4 id="postgresql">PostgreSQL</h4>
 
 - **version**<br/>
 Specify the version of PostgreSQL you want to install (does not apply to external servers types)
@@ -449,7 +360,7 @@ Specify whether to include PostGIS (Note: unlike the PG version, this can be add
            	postgis: true
 </pre>
 
-<h4 id="postgis">PostGIS version configuration</h4>
+<h5 id="postgis">PostGIS version configuration</h5>
 
 - **version**<br/>
 Specify the version of PostGIS you want to install
@@ -466,7 +377,7 @@ production:
 
 <hr>
 
-<h3 id="rabbit">RabbitMQ</h3>
+<h4 id="rabbit">RabbitMQ</h4>
 
 - **version**<br/>
 Specify the version of RabbitMQ you want to install (does not apply to external servers types)
@@ -481,7 +392,7 @@ Specify the version of RabbitMQ you want to install (does not apply to external 
 
 <hr>
 
-<h3 id="rails">Rails</h3>
+<h4 id="rails">Rails</h4>
 A Rails application type in the manifest file gives you fine control over things like the Ruby version or the server the rails application is deployed on.
 
 - <b>ruby&#95;version</b><br/>
@@ -532,7 +443,7 @@ If you want to, you can also specify the origin and methods for CORS.
 
 <hr>
 
-<h3 id="redis">Redis</h3>
+<h4 id="redis">Redis</h4>
 
 - **version**<br/>
 Specify the version of Redis you want to install (does not apply to external servers types - see below)
@@ -544,3 +455,25 @@ Specify the version of Redis you want to install (does not apply to external ser
 		configuration:
 			version: 2.6.10
 </pre>
+
+<hr>
+
+<h2 id="environment_variables">Environment variables in the manifest</h3>
+You can add your environment variables to your manifest files.
+
+Here is an example:
+
+{% highlight yaml %}
+production:
+    environment_variables:
+        SOME_VARIABLE: value
+        ANOTHER_ONE: another_value
+        THIRD_ONE: AUTO_GENERATE
+        LONG_ONE: AUTO_GENERATE_15
+{% endhighlight %}
+
+If you need to auto generate a value, you can use the `AUTO_GENERATE` keyword. It generates a 10 character long random string unless you specify the length after it: `AUTO_GENERATE_15` which generates a 15 character random string.
+
+Environment variables set in your manifest file will only apply during the initial build of your stack. Please refer to our documentation on <a href="/stack-features/env-vars.html">environment variables</a> if you'd like to set them beyond this point.
+
+Any environment variable that is generated by the result of the code analysis (like database addresses) will override any value specified in the manifest file. In other words, you cannot specify a value like `MYSQL_ADDRESS` in your manifest file as it will be ignored.

@@ -11,14 +11,13 @@ search-tags: ['hb', 'honeybadger']
 tags: ['Add in']
 ---
 
+## About using Honeybadger
 [Honeybadger](https://www.honeybadger.io/) is a service that provides exception, uptime, and performance monitoring for Ruby.
-
-![Honeybadger addin](http://cdn.cloud66.com/images/help/addin_hb.png)
-
-We'll then connect to your Honeybadger account and install it on your stack:
-![Honeybadger API](http://cdn.cloud66.com/images/help/addin_example_honeybadger.png)
 
 The beauty of adding this to your stack is that your error counters in Honeybadger are reset every time you deploy your stack, making it easier to keep
 track of your errors across deployments.
+
+## Add Honeybadger stack monitoring
+To add Honeybadger to your stack, access the add-ins menu, click _Honeybadger_.
 
 Honeybadger has a great resource on [how to setup the integration on their side](http://docs.honeybadger.io/article/174-how-to-get-setup-with-cloud-66-and-honeybadger).
