@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "- Asset Pipeline Compilation"
 so_title: "asset pipeline"
 cloud66_text: "Try Cloud 66 for free"
@@ -10,66 +10,34 @@ categories: stack-definition
 lead: Improve performance in Rails applications => 3.1.0
 search-tags: ['']
 tags: ['Deployment']
-tutorial: true
 ---
-
-## What is asset pipeline compilation?
-## Asset pipeline compilation requirements
-## Enable asset pipeline compilation
-## Disable asset pipeline compilation
-## Compile only modified assets
-## About speeding Rails deployments
-While Cloud 66 works hard to improve your deployment speeds on our side, we recommend the following enhancements to [Asset Pipeline Compilation](http://guides.rubyonrails.org/asset_pipeline.html) on your side to speed up your deployments.
-
-#### Below Rails 3.2
-Unfortunately these measures are not available to Rails versions before 3.2.
-
-#### Rails 3.2 and above
-If you are running Rails 3.2 or later, you can use [Turbo Sprockets](https://github.com/ndbroadbent/turbo-sprockets-rails3), which speeds up deployments by only compiling changed assets.
-
-It is also good practice to use [Asset Sync](https://github.com/rumblelabs/asset_sync) to sync your assets with a CDN like S3. This means that only the first server in your stack will compile the assets and the rest will simply refer to the CDN.
-
-#### Rails 4 and above
-Rails 4 has Turbo Sprockets enabled by default, and again, we suggest that you use [Asset Sync](https://github.com/rumblelabs/asset_sync) to sync your assets with a CDN like S3.
-
 
 <h2>Contents</h2>
 <ul class="page-toc">
-	<li>
-		<a href="#requirements">Requirements</a>
-	</li>
-	<li>
-		<a href="#onoff">Enabling or disabling asset pipeline pre-compilation</a>
+    <li>
+        <a href="#onoff">Enabling or disabling asset pipeline pre-compilation</a>
             <ul>
-            	<li><a href="#application">Application.rb</a></li>
-         	</ul>
+                <li><a href="#application">Application.rb</a></li>
+            </ul>
             <ul>
-            	<li><a href="#manifest">Manifest.yml</a></li>
-         	</ul>
-	</li>
-	<li>
-		<a href="#modified">Compiling only modified assets</a>
-	</li>
+                <li><a href="#manifest">Manifest.yml</a></li>
+            </ul>
+    </li>
+    <li>
+        <a href="#requirements">Asset pipeline compilation requirements</a>
+    </li>
+    <li>
+        <a href="#modified">Compiling only modified assets</a>
+    </li>
+    <li>
+        <a href="#speeding">About speeding up Rails deployments</a>
+    </li>    
 </ul>
 
-<h2 id="requirements">Requirements</h2>
+<h2 id="onoff">Enable/disable asset pipeline compilation</h2>
+You can enable/disable asset pipeline precompilation after the analysis step of your stack creation, or in your manifest file.
 
-Asset pipeline compilation uses *ExecJS* to run *JavaScript* code from within Ruby.
-
-The ExecJS library in turn requires that you have at least one library available on your server that is capable of compiling Javascript.
-Libraries for Javascript compilation on your server that are currently supported by Cloud 66 are:
-
-1. **therubyracer** &mdash;  Google V8 embedded within Ruby. Installed by including "therubyracer" in your Gemfile.
-2. **Node.js** &mdash; Cloud 66 will *automatically* install this on your server if you don't include "therubyracer" in your Gemfile.
-
-
-<h2 id="onoff">Enabling or disabling asset pipeline pre-compilation</h2>
-
-You can enable/disable asset pipeline precompilation when you setup your stack or in your manifest file.
-
-![Asset Pipeline Setting](http://cdn.cloud66.com/images/help/asset_pipeline.png)
-
-This will be hidden if you have enabled/disabled asset pipeline compilation in your application.rb or in the manifest file.
+The asset pipeline compilation option will be hidden if you have enabled/disabled asset pipeline compilation in your application.rb or in the manifest file.
 
 <div class="notice notice-error">
 
@@ -114,9 +82,31 @@ There is an hierarchical order to set up asset pipeline precompilation. The top 
 <ol>
     <li>In application.rb</li>
     <li>In the Cloud 66 manifest file</li>
-    <li>On Cloud 66 interface</li>
+    <li>In the Cloud 66 interface</li>
 </ol>
 
-<h2 id="modified">Compiling only modified assets</h2>
+<h2 id="requirements">Asset pipeline compilation requirements</h2>
+Asset pipeline compilation uses *ExecJS* to run *JavaScript* code from within Ruby.
 
+The ExecJS library in turn requires that you have at least one library available on your server that is capable of compiling Javascript.
+Libraries for Javascript compilation on your server that are currently supported by Cloud 66 are:
+
+1. **therubyracer** &mdash;  Google V8 embedded within Ruby. Installed by including "therubyracer" in your Gemfile.
+2. **Node.js** &mdash; Cloud 66 will *automatically* install this on your server if you don't include "therubyracer" in your Gemfile.
+
+<h2 id="modified">Compile only modified assets</h2>
 Cloud 66 supports this through [Turbo Sprockets](https://github.com/ndbroadbent/turbo-sprockets-rails3). All you need to do is to add Turbo Sprocket gem to your Gemfile. This is only supported for Rails 3.2 and above.
+
+<h2 id="speeding">About speeding up Rails deployments</h2>
+While Cloud 66 works hard to improve your deployment speeds on our side, we recommend the following enhancements to [Asset Pipeline Compilation](http://guides.rubyonrails.org/asset_pipeline.html) on your side to speed up your deployments.
+
+#### Below Rails 3.2
+Unfortunately these measures are not available to Rails versions before 3.2.
+
+#### Rails 3.2 and above
+If you are running Rails 3.2 or later, you can use [Turbo Sprockets](https://github.com/ndbroadbent/turbo-sprockets-rails3), which speeds up deployments by only compiling changed assets.
+
+It is also good practice to use [Asset Sync](https://github.com/rumblelabs/asset_sync) to sync your assets with a CDN like S3. This means that only the first server in your stack will compile the assets and the rest will simply refer to the CDN.
+
+#### Rails 4 and above
+Rails 4 has Turbo Sprockets enabled by default, and again, we suggest that you use [Asset Sync](https://github.com/rumblelabs/asset_sync) to sync your assets with a CDN like S3.

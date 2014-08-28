@@ -1,9 +1,8 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Rails stacks"
 so_title: "Rails"
-nav_sticky: true
 nav: true
 nav_prev: ""
 nav_next: ""
@@ -14,28 +13,30 @@ search-tags: ['']
 tags: ['']
 ---
 
-## About maintaining Rails applications
-## Connect to your database
-## Example application
+<h2>Contents</h2>
+<ul class="page-toc">   
+  <li><a href="#connect">Connect to your database</a></li>         
+  <li><a href="#example">Example application</a></li>   
+</li>    
+</ul>
 
 Cloud 66 supports stacks based on the [Rails framework](http://rubyonrails.org/), a web framework written in Ruby.
 
-## Database
-
-If [databases are detected](/stacks/databases.html), they will automatically be provisioned as required (including the database itself), and [environment variables](/stack-features/env-vars.html) will be created. You will need to update your code with the environment variables you wish to use, for example `MYSQL_URL`.
+<h2 id="connect">Connect to your database</h2>
+If a database is detected, it will automatically be provisioned as required (including the database itself), and environment variables will be created. You will need to update your code with the environment variables you wish to use, for example `MYSQL_URL`.
 
 Should you wish to change the database username/password after build, you will have to do this manually, which will involve recreating backup jobs to reflect the new values.
 
-### Examples of connecting to your database:
-
-<div class="notice">
-    <h3>Note</h3>
-	<p>You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.</p>
-</div>
+### Examples of connecting to your database
 
 The notation in the examples below allow you to seamlessly switch between your local development environment and your Cloud 66 environment without
 changing your database settings. The logic will determine if the Cloud 66 environment variable exists, and depending on the result, generate a value
 or use your own value. Alternatively, you can simply hard-code values as you wish.
+
+<div class="notice">
+    <h3>Note</h3>
+    <p>You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.</p>
+</div>
 
 **MySQL YML**
 {% highlight yaml %}
@@ -77,6 +78,5 @@ development:
       hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
 {% endhighlight %}
 
-## Example app
-
+<h2 id="example">Example application</h2>
 * <a href="https://app.cloud66.com/stacks/new?eduid=rails_mysql" target="_blank">Rails with MySQL</a>

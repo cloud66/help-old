@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Server monitoring"
 so_title: "monitoring"
 date:   2085-09-24 10:51:22

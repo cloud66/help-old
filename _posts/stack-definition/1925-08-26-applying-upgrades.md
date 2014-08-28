@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Applying upgrades"
 so_title: "upgrade"
 cloud66_text: "Try Cloud 66 for free"

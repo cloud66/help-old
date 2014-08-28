@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Stack notifications"
 so_title: "notifications"
 nav_sticky: false

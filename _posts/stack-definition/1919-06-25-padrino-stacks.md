@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Padrino stacks"
 so_title: "Padrino"
 nav_sticky: true
@@ -14,15 +14,17 @@ search-tags: ['']
 tags: ['']
 ---
 
-## About maintaining Padrino applications
-## Custom commands
-## Connect to your database
-## Example application
+<h2>Contents</h2>
+<ul class="page-toc">
+  <li><a href="#custom">Custom commands</a></li>      
+  <li><a href="#connect">Connect to your database</a></li>         
+  <li><a href="#example">Example application</a></li>   
+</li>    
+</ul>
 
 Cloud 66 supports stacks based on the [Padrino framework](http://www.padrinorb.com/), a light-weight web framework built upon [Sinatra](/stacks/sinatra-stacks.html).
 
-## Configuration
-
+<h2 id="custom">Custom commands</h2>
 Given that Padrino applications can have different database frameworks, we allow you to specify custom commands which are run at specific points during deployment:
 
 <ul>
@@ -44,8 +46,7 @@ Given that Padrino applications can have different database frameworks, we allow
   </li>
 </ul>
 
-
-These commands can be specified in the UI, but also in your [manifest file](http://help.cloud66.com/stack-features/manifest-files.html):
+These commands can be specified in the UI, but also in your manifest file:
 
 {% highlight yaml %}
 development:
@@ -55,19 +56,18 @@ development:
             custom_deploy_command: rake db:migrate
 {% endhighlight %}
 
-## Database
-
-If [databases are detected](/stacks/databases.html), they will automatically be provisioned as required (including the database itself), and [environment variables](/stack-features/env-vars.html) will be created. You will need to update your code with the environment variables you wish to use, for example `MYSQL_URL`.
+<h2 id="connect">Connect to your database</h2>
+If a database is detected, it will automatically be provisioned as required (including the database itself), and environment variables will be created. You will need to update your code with the environment variables you wish to use, for example `MYSQL_URL`.
 
 Should you wish to change the database username/password after build, you will have to do this manually, which will involve recreating backup jobs to reflect the new values.
 
-### Examples of connecting to your database:
+<h3>Examples of connecting to your database</h3>
 <div class="notice">
     <h3>Note</h3>
-	<p>You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.</p>
+  <p>You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.</p>
 </div>
 
-#### Active Record
+<h3>Active Record</h3>
 
 **MySQL YML**
 {% highlight yaml %}
@@ -103,17 +103,17 @@ ActiveRecord::Base.configurations[:development] = {
 }
 {% endhighlight %}
 
-#### DataMapper
+<h3>DataMapper</h3>
 {% highlight ruby %}
 DataMapper::setup(:default, "ENV['POSTGRESQL_URL']")
 {% endhighlight %}
 
-#### MongoMapper
+<h3>MongoMapper</h3>
 {% highlight ruby %}
 MongoMapper.connection = Mongo::Connection.from_uri(ENV['MONGODB_URL'])
 {% endhighlight %}
 
-#### Mongoid
+<h3>Mongoid</h3>
 {% highlight yaml %}
 development:
   sessions:
@@ -122,6 +122,5 @@ development:
       hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
 {% endhighlight %}
 
-## Example app
-
+<h2 id="example">Example application</h2>
 * <a href="https://app.cloud66.com/stacks/new?eduid=padrino_mysql" target="_blank">Padrino with MySQL</a>
