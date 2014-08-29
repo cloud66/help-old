@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "EasyDeploy repositories"
 nav_sticky: true
 nav: true
@@ -12,11 +12,21 @@ lead: Deploy and maintain open source projects on Cloud 66
 search-tags: ['']
 tags: ['Deployment']
 ---
+
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#about">About EasyDeploy repositories</a>
+	</li>
+	<li>
+		<a href="#using">Using EasyDeploy repositories</a>
+	</li>
+</ul>
+
+<h2 id="about">About EasyDeploy repositories</h2>
 There are many open source projects out there that we love and use, and we want to make it easier for people to use them.
 
 EasyDeploy makes it easy for you to simply provide the git URL of your desired project on Cloud 66 and sit back while it deploys on your servers.
-
-**How does this work?**
 
 When you see the Cloud 66 EasyDeploy badge on a repository, you can:
 
@@ -24,7 +34,7 @@ When you see the Cloud 66 EasyDeploy badge on a repository, you can:
 2. <a href="http://help.cloud66.com/getting-started/your-first-stack.html" target="_blank">Create a new stack</a> with the git URL of the repository
 3. Make yourself a coffee while the project deploys
 
-## EasyDeploy Repositories
+<h2 id="using">Using EasyDeploy repositories</h2>
 These are the repositories that we currently support. Please contact us on [hello@cloud66.com](mailto:hello@cloud66.com) if you would like to add your project to this list.
 
 <a href="https://github.com/cloud66-samples/discourse" target="_blank">Discourse</a> ([EasyDeploy](https://app.cloud66.com/stacks/new?eduid=discourse))

@@ -13,7 +13,7 @@ tags: ['']
 
 <h2>Contents</h2>
 <ul class="page-toc">
-    <li><a href="#about">About receiving stack notifications with Cloud 66</a></li>
+    <li><a href="#about">About receiving stack notifications</a></li>
     <li><a href="#view">Viewing your stack notifications</a></li> 
     <li><a href="#setup">Setting up your notification types</a></li>
         <ul style="margin-bottom:0em">
@@ -26,7 +26,7 @@ tags: ['']
     </li>    
 </ul>
 
-<h2 id="about">About receiving stack notifications with Cloud 66</h2>
+<h2 id="about">About receiving stack notifications</h2>
 You can control when and how you would like to receive notifications from Cloud 66. There is a range of events that trigger notifications, which can be sent as emails, Hipchat, via iOS push, Slack or Webhooks. Each stack can have its own notification settings and channels.
 
 <h2 id="view">Viewing your stack notifications</h2>
