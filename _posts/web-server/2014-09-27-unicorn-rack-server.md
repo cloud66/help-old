@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "- Unicorn rack server"
 so_title: "unicorn"
 cloud66_text: "Try Cloud 66 for free"
@@ -12,16 +12,59 @@ search-tags: ['']
 tags: ['Web server']
 ---
 
-## About running apps with Unicorn
-## Unicorn rack commands
-## Sample unicorn config file
-## Deploy with Unicorn rack server
+<h2>Contents</h2>
+<ul class="page-toc">
+    <li>
+        <a href="#about">About running apps with Thin</a>
+    </li>         
+        <ul style="margin-bottom:0em">            
+            <li><a href="#stop">Kill the web server</a></li>
+            <li><a href="#stop">Stop the web server</a></li>
+            <li><a href="#start">Start the web server</a></li>
+            <li><a href="#hot-restart">Restart the web server (hot-restart)</a></li>
+        </ul>   
+    <li>
+        <a href="#deploy">Deploy with Thin</a>
+    </li>         
+</ul>
 
-## Choosing Unicorn as your Rack server
-<div class="notice">
-	<h3>Important</h3>
-	<p>You need to choose your web server at the time of initial build of the stack. Changes to or from Passenger (the default web server) will not be applied after your stack has initially been analyzed. You can however change freely between other supported servers by simply updating your Gems and Procfile.</p>
-</div>
+## About Unicorn
+[Unicorn](http://unicorn.bogomips.org/) is a Rack HTTP server that uses forked processes to handle multiple incoming requests concurrently.
+
+Cloud 66 uses the following signals to control Unicorn:
+
+### Kill the web server
+
+- kill -QUIT &lt;pid>: Stop the process
+- kill -USR2 &lt;pid>: Spin off another master process.
+- kill -s TTIN &lt;pid>: Add a new worker to the master process
+
+### Stop the web server
+<p>
+<kbd>
+	sudo bluepill cloud66_web_server stop
+</kbd>
+</p>
+
+### Start the web server
+<p>
+<kbd>
+	sudo bluepill cloud66_web_server quit
+</kbd><br/>
+<kbd>
+	sudo bluepill load /etc/bluepill/autoload/cloud66_web_server.pill
+</kbd>
+</p>
+
+### Restart the web server (zero-downtime)
+<p>
+<kbd>
+	sudo bluepill cloud66_web_server restart
+</kbd>
+</p>
+
+## About running apps with Unicorn
+You need to choose your web server at the time of initial build of the stack. Changes to or from Passenger (the default web server) will not be applied after your stack has initially been analyzed. You can however change freely between other supported servers by simply updating your Gems and Procfile.
 
 To run a Unicorn Rack server, add a line to your Procfile labeled as custom_web. Here is an example:
 
@@ -77,42 +120,3 @@ after_fork do |server, worker|
 		ActiveRecord::Base.establish_connection
 end
 {% endhighlight %}
-
-## Web server process management
-Cloud 66 uses the following signals to control Unicorn:
-
-### kill -QUIT &lt;pid>
-Stop the process
-
-### kill -USR2 &lt;pid>
-Spin off another master process.
-
-### kill -s TTIN &lt;pid>
-Add a new worker to the master process
-
-## Manual control of the web servers
-To control your web servers manually you can use the following commands:
-
-### Stop the web server
-<p>
-<kbd>
-	sudo bluepill cloud66_web_server stop
-</kbd>
-</p>
-
-### Start the web server
-<p>
-<kbd>
-	sudo bluepill cloud66_web_server quit
-</kbd><br/>
-<kbd>
-	sudo bluepill load /etc/bluepill/autoload/cloud66_web_server.pill
-</kbd>
-</p>
-
-### Restart the web server (zero-downtime)
-<p>
-<kbd>
-	sudo bluepill cloud66_web_server restart
-</kbd>
-</p>

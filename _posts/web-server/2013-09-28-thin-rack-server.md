@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "- Thin rack server"
 so_title: "thin"
 cloud66_text: "Try Cloud 66 for free"
@@ -12,46 +12,32 @@ search-tags: ['']
 tags: ['Web server']
 ---
 
-## About running apps with Thin rack
-## Thin rack commands
-## Deploy with Thin rack server
+<h2>Contents</h2>
+<ul class="page-toc">
+    <li>
+        <a href="#about">About running apps with Thin</a>
+    </li>         
+        <ul style="margin-bottom:0em">            
+            <li><a href="#stop">Stop the web server</a></li>
+            <li><a href="#start">Start the web server</a></li>
+            <li><a href="#hot-restart">Restart the web server (hot-restart)</a></li>
+        </ul>   
+    <li>
+        <a href="#deploy">Deploy with Thin</a>
+    </li>         
+</ul>
 
-## Choosing Thin as your Rack server
-<div class="notice">
-	<h3>Important</h3>
-	<p>You need to choose your web server at the time of initial build of the stack. Changes to or from Passenger (the default web server) will not be applied after your stack has initially been analyzed. You can however change freely between other supported servers by simply updating your Gems and Procfile.</p>
-</div>
+<h2 id="about">About running apps with Puma</h2>
+[Thin](http://code.macournoyer.com/thin/) is a Ruby web server that can handle high levels of concurrency. Cloud 66 uses the following signals to control Thin:
 
-To run a Thin Rack server, add a line to your Procfile labeled as custom&#95;web. Here is an example:
-
-<pre class='terminal'>
-custom&#95;web: bundle exec thin start --socket /tmp/web&#95;server.sock --pid /tmp/web&#95;server.pid -e $RACK&#95;ENV -d
-</pre>
-Please take note that Thin is running in Daemon mode with the `-d` parameter.
-
-<div class="notice notice-warning">
-    <h3>Warning</h3>
-    <p>Should you have any issues, please ensure that you are using an up-to-date version of Thin with the correct configurations.</p>
-    <p>We recommend that you run <a href="/web-server/unicorn-rack-server.html">Unicorn</a>, as you may have to handle server restarts manually with Thin.</p>
-</div>
-
-## Web server process management
-Cloud 66 uses the following signals to control custom web servers:
-
-### kill -QUIT &#60;pid&#62;
-Stop the process
-
-## Manual control of the web servers
-To control your web servers manually you can use the following commands:
-
-### Stop the web server
+<h3 id="stop">Stop the web server</h3>
 <p>
 <kbd>
 	sudo bluepill cloud66&#95;web&#95;server stop
 </kbd>
 </p>
 
-### Start the web server
+<h3 id="start">Start the web server</h3>
 <p>
 <kbd>
 	sudo bluepill cloud66&#95;web&#95;server quit
@@ -61,7 +47,29 @@ To control your web servers manually you can use the following commands:
 </kbd>
 </p>
 
+<h3 id="hot-restart">Restart the web server (hot-restart)</h3>
+<p>
+<kbd>
+	sudo bluepill cloud66&#95;web&#95;server restart
+</kbd>
+</p>
+<p>
+<kbd>
+	kill -USR2 &lt;pid>
+</kbd>
+</p>
+
+<h2 id="deploy">Deploy with Thin</h2>
+You need to choose your web server at the time of initial build of the stack. Changes to or from Passenger (the default web server) will not be applied after your stack has initially been analyzed. You can however change freely between other supported servers by simply updating your Gems and Procfile.
+
+To run a Thin Rack server, add a line to your Procfile labeled as custom&#95;web. Here is an example:
+
+<pre class='terminal'>
+custom&#95;web: bundle exec thin start --socket /tmp/web&#95;server.sock --pid /tmp/web&#95;server.pid -e $RACK&#95;ENV -d
+</pre>
+Please take note that Thin is running in Daemon mode with the `-d` parameter.
+
 <div class="notice">
 	<h3>Important</h3>
-	<p>Your web server is not automatically restarted during redeployment. If you would like for it to restart automatically, you can accomplish this using a <a href='/stack-features/redeployment-hook.html'>redeployment hook</a>.</p>
+	<p>Your web server is not automatically restarted during redeployment. If you would like for it to restart automatically, you can accomplish this using a <a href='#'>deploy hook</a>.</p>
 </div>

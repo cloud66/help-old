@@ -12,7 +12,17 @@ search-tags: ['']
 tags: ['Web server']
 ---
 
-## What is Passenger Enterprise?  
+<h2>Contents</h2>
+<ul class="page-toc">
+    <li>
+        <a href="#what">What is Passenger Enterprise?  </a>
+    </li>
+    <li>
+        <a href="#deploy">Deploy with Passenger Enterprise</a>
+    </li>
+</ul>
+
+<h2 id="what">What is Passenger Enterprise?</h2>
 Passenger is an open-source, popular multi-language (Ruby, Python, Node) web & app server which can integrate into Apache and Nginx. Cloud 66 offers enterprise customers the ability to deploy stacks with Passenger Enterprise, which has several key benefits:
 
 - Rolling restarts
@@ -25,7 +35,7 @@ Passenger is an open-source, popular multi-language (Ruby, Python, Node) web & a
 
 See the [Passenger Enterprise website](https://www.phusionpassenger.com/enterprise) for more information about benefits.
 
-## Deploy with Passenger Enterprise
+<h2 id="deploy">Deploy with Passenger Enterprise</h2>
 We require two simple steps to deploy with Passenger Enterprise:
 
 1. Place your `passenger-enterprise-license` file into your .cloud66 folder, which in turn is located in the root of your repository.

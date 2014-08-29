@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "- Puma rack server"
 so_title: "puma"
 cloud66_text: "Try Cloud 66 for free"
@@ -12,27 +12,32 @@ search-tags: ['']
 tags: ['Web server']
 ---
 
-## What is Puma?
-[Puma](http://puma.io/) is a light-weight Rack server built for speed and parallelism.
+<h2>Contents</h2>
+<ul class="page-toc">
+    <li>
+        <a href="#about">About running apps with Puma</a>
+    </li>         
+        <ul style="margin-bottom:0em">            
+            <li><a href="#stop">Stop the web server</a></li>
+            <li><a href="#start">Start the web server</a></li>
+            <li><a href="#hot-restart">Restart the web server (hot-restart)</a></li>
+        </ul>   
+    <li>
+        <a href="#deploy">Deploy with Puma</a>
+    </li>         
+</ul>
 
-## About running apps with Puma
-Cloud 66 uses the following signal to control Puma:
+<h2 id="about">About running apps with Puma</h2>
+[Puma](http://puma.io/) is a light-weight Rack server built for speed and parallelism. Cloud 66 uses the following signals to control Puma:
 
-### Perform hot-restart
-<p>
-<kbd>
-	kill -USR2 &lt;pid>
-</kbd>
-</p>
-
-### Stop the web server
+<h3 id="stop">Stop the web server</h3>
 <p>
 <kbd>
 	sudo bluepill cloud66&#95;web&#95;server stop
 </kbd>
 </p>
 
-### Start the web server
+<h3 id="start">Start the web server</h3>
 <p>
 <kbd>
 	sudo bluepill cloud66&#95;web&#95;server quit
@@ -42,18 +47,20 @@ Cloud 66 uses the following signal to control Puma:
 </kbd>
 </p>
 
-### Restart the web server (hot-restart)
+<h3 id="hot-restart">Restart the web server (hot-restart)</h3>
 <p>
 <kbd>
 	sudo bluepill cloud66&#95;web&#95;server restart
 </kbd>
 </p>
+<p>
+<kbd>
+	kill -USR2 &lt;pid>
+</kbd>
+</p>
 
-## Deploy with Puma
-<div class="notice">
-	<h3>Important</h3>
-	<p>You need to choose your web server at the time of initial build of the stack. Changes to or from Passenger (the default web server) will not be applied after your stack has initially been analyzed. You can however change freely between other supported servers by simply updating your Gems and Procfile.</p>
-</div>
+<h2 id="deploy">Deploy with Puma</h2>
+You need to choose your web server at the time of initial build of the stack. Changes to or from Passenger (the default web server) will not be applied after your stack has initially been analyzed. You can however change freely between other supported servers by simply updating your Gems and Procfile.
 
 To run a Puma Rack server, add a line to your Procfile labeled as custom&#95;web. Here is an example:
 
@@ -61,7 +68,7 @@ To run a Puma Rack server, add a line to your Procfile labeled as custom&#95;web
 custom&#95;web: bundle exec puma -e $RACK&#95;ENV -b unix:///tmp/web&#95;server.sock --pidfile /tmp/web&#95;server.pid -d
 </pre>
 
-Please take note that Puma is running in Daemon mode with the `-d` parameter.
+Take note that Puma is running in Daemon mode with the `-d` parameter.
 
 <div class="notice notice-warning">
     <h3>Warning</h3>
