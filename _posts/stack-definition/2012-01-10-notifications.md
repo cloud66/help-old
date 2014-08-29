@@ -11,72 +11,50 @@ search-tags: []
 tags: ['']
 ---
 
-<h2 id="intro">Introduction</h2>
-You can control when and how you would like to receive notifications from Cloud 66. There is a range of events that trigger notifications, which can be sent as emails, Hipchat, via iOS push, Slack or Webhooks.
+<h2>Contents</h2>
+<ul class="page-toc">
+    <li><a href="#about">About receiving stack notifications with Cloud 66</a></li>
+    <li><a href="#view">Viewing your stack notifications</a></li> 
+    <li><a href="#setup">Setting up your notification types</a></li>
+        <ul style="margin-bottom:0em">
+	        <li><a href="#emails">Emails</a></li>
+	        <li><a href="#hipchat">Hipchat</a></li>
+	        <li><a href="#ios">iOS</a></li>
+	        <li><a href="#slack">Slack</a></li>
+	        <li><a href="#webhooks">Webhooks</a></li>
+        </ul>
+    </li>    
+</ul>
 
-<div class="notice">
-	<h3>Note</h3>
-	<p>Notifications are set on a per-user basis, and each user can modify their own notifications under their account settings or stack menu.</p>
-</div>
+<h2 id="about">About receiving stack notifications with Cloud 66</h2>
+You can control when and how you would like to receive notifications from Cloud 66. There is a range of events that trigger notifications, which can be sent as emails, Hipchat, via iOS push, Slack or Webhooks. Each stack can have its own notification settings and channels.
 
-There are two types of notifications: _account_ and _stack_. _Account_ notifications are global across your account and _stack_ notifications are related to events for a specific stack.
+<h2 id="view">Viewing your stack notifications</h2>
+_Stack notifications_ can be accessed from the right sidebar of your stack page, and feature notifications for events such as failed backups or jobs, stack deployments and many more.
 
-<h2 id="stack">Stack notifications</h2>
-
-Stack level notifications can be accessed from stack control menu
-
-![cloud66_notifications](http://cdn.cloud66.com/images/help/notifications_stack.png)
-
-You will have the following notifications available to you:
-
-![Stack notifications](http://cdn.cloud66.com/images/help/notifications_stack_type.png)
-
-<h2 id="types">Notification types</h2>
-
+<h2 id="setup">Setting up your notification types</h2>
 <h3 id="emails">Emails</h3>
-Email notifications are enabled by default for all users. You will get an email for most of the cases above, with the exception of <i>deployment start</i> notifications. You can easily turn email notifications on or off for each type by clicking on the email icon.
+Email notifications are enabled by default for all users. By default, you will get an email for a number of events, with the exception of <i>deployment start</i> notifications. You can easily turn email notifications _on_ or _off_ for each type by clicking on the email icon.
 
 <h3 id="hipchat">Hipchat</h3>
-[Hipchat](http://hipchat.com/) is a hosted realtime chat service by [Atlassian](https://www.atlassian.com/). You can get Cloud 66 notifications on HipChat by linking it to your HipChat account.
+[Hipchat](http://hipchat.com/) is a hosted realtime chat service by Atlassian, and you can link your account to Cloud 66 to receive notifications on Hipchat.
 
-First, generate a new Notification API token from your HipChat admin panel:
-
-![cloud66_hipchat_api](http://cdn.cloud66.com/images/help/cloud66_hipchat_link.png)
-
-Now you can use the generated API token and the name of the room you would like to receive the notifications from Cloud 66 in. Click on the HipChat icon and you enter your API token and room name. After that, clicking on the HipChat icon will turn the notification on or off. You can change the API token or room name under the <i>Channels</i> tab.
-
-![cloud66_hipchat](http://cdn.cloud66.com/images/help/cloud66_hipchat.png)
-
-You will then start to receive notifications in your HipChat room.
-
-![cloud66_hipchat_sample](http://cdn.cloud66.com/images/help/cloud66_hipchat_screenshot.png)
+From the Hipchat _Account settings_ menu, click _API access_, and then the link for _API version 1_. Once on the API v1 page, create an API token. By selecting the Hipchat icon on the _Stack notifications_ page, you can add this token and select which room you would like your notifications to appear in. 
 
 <h3 id="ios">iOS</h3>
-If you have the [Cloud 66 App](https://itunes.apple.com/us/app/cloud-66/id642299804?mt=8&uo=4) on your iOS device then you will be able to get iOS push notifications on your phone.
+Download the [Cloud 66 iOS application](https://itunes.apple.com/us/app/cloud-66/id642299804?mt=8&uo=4) to get iOS push notifications on your phone.
 
 <h3 id="slack">Slack</h3>
 [Slack](https://slack.com/) is a real-time messaging, archiving and search application developed by Tiny Speck.
 
-Start by adding a service integration through the Slack dashboard, and follow the setup instructions provided. You simply need to use the URL provided by Slack in the Cloud 66 UI:
-
-![Slack URL](http://cdn.cloud66.com/images/help/slack_notification.png)
-
-Specify your integration settings such as the channel you would like to broadcast to in the Slack UI:
-
-![Slack integration](http://cdn.cloud66.com/images/help/slack_integration.png)
-
-You will then start to see notifications from Cloud 66 events in your Slack:
-
-![Slack notification](http://cdn.cloud66.com/images/help/slack_notifications.png)
+Visit the Slack [Integrations page](https://slack.com/integrations) and select the Cloud 66 integration. Choose the channel you would like to receive notifications in (or create a new one), and click _Add Cloud 66 Integration_. You will then receive a URL, which you can provide in Cloud 66 integration modal.
 
 <h3 id="webhooks">Webhooks</h3>
-[Webhooks](http://www.webhooks.org/) is a standard that uses HTTP POST to connect different systems, and is very simple to use but very powerful.
+The [Webhooks](http://www.webhooks.org/) standard uses HTTP POST to connect different systems, and is very simple to use but very powerful.
 
-All notification types from Cloud 66 can trigger a webhook. To setup your webhook, click on the <i>webhook</i> icon. There you can enter the URL for your webhook endpoint and test it to see how it behaves.
+All notification types from Cloud 66 can trigger a webhook. To setup your webhook, click on the <i>Webhook</i> icon. There you can enter the URL for your webhook endpoint and test it to see how it behaves.
 
-![cloud66_webhooks](http://cdn.cloud66.com/images/help/cloud66_webhooks.png)
-
-Each event type has its own payload that is sent to the endpoint via HTTP POST. The payload is the same as the one used with the API with two additional fields: `timestamp` and `event_type`
+Each event type has its own payload that is sent to the endpoint via HTTP POST. The payload is the same as the one used with the API with two additional fields: <i>timestamp</i> and <i>event_type</i>:
 
 <table class='table table-bordered table-striped'>
 	<thead>
@@ -97,7 +75,7 @@ Each event type has its own payload that is sent to the endpoint via HTTP POST. 
 	</tbody>
 </table>
 
-#### Event Types
+The following event types are available:
 
 <table class='table table-bordered table-striped'>
 	<thead></tr>

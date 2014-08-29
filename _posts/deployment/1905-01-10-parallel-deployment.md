@@ -11,32 +11,29 @@ search-tags: []
 tags: ['Deployment']
 ---
 
-## What is parallel deployment?
-## Configure parallel deployment
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#what">What is parallel deployment?</a>
+	</li>
+	<li>
+		<a href="#configure">Configure parallel deployment</a>
+	</li>
+</ul>
 
-By deploying in parallel, all the deployment tasks for the servers in your stack will run in parallel as opposed to running in serial.
-In other words, the tasks will run against each server simultaneously instead of running on one server at a time.
+<h2 id="what">What is parallel deployment?</h2>
+When you deploy in parallel, all the deployment tasks for the servers in your stack will run in parallel as opposed to running in serial. In other words, the tasks will run against each server simultaneously instead of running on one server at a time. For large stacks, this can have significant time benefits.
 
-<div class="notice">
-	<h3>Note</h3>
-	<p>Users with existing stacks must opt-in to deploy in parallel.</p>
-</div>
-
-Parallel deployment is a _Stack setting_ that is activated by default for new [stacks with a custom web server](/web-server/custom-webserver.html) (ie. Unicorn as it supports zero downtime restarts), but not for stacks based
-on [Passenger](/web-server/custom-webserver.html). New stacks based on Passenger must opt-in to deploy in parallel.
-
-![Parallel deploy](http://cdn.cloud66.com/images/help/parallel_deployment.png)
-
-When set to deploy in parallel, you still have the option to do a one-off deployment in serial on the _Deploy with options_ menu.
-
-![Parallel deploy](http://cdn.cloud66.com/images/help/parallel_deploy_option.png)
-
-Deploying in parallel means that servers won't be removed and re-added to your load balancer during deployment, as happens when you deploy in serial. This is
-because you could end up with no servers serving the load balancer if this were the case.
+Deploying in serial involves removing each server from your load balancer, deploying to it, and re-adding it to the load balancer. When you deploy in parallel, your servers won't be removed from the load balancer, because you could end up with no servers serving the load balancer if this were the case.
 
 <div class="notice">
 	<h3>Note</h3>
-	<p>If you need database migrations to run on deployment, it may be better to deploy in serial.</p>
+	<p>To run database migrations during deployment, it is advisable to deploy in serial.</p>
 </div>
 
-Although database migrations only occur on one server, depending on the changes, they could stop deployments on other servers from succeeding. Refer to our page on [controlling your database migrations](/how-to/control-db-migration.html) for more information.
+Although database migrations only occur on one server, depending on the changes, they could stop deployments on other servers from succeeding. Refer to our page on [controlling your database migrations](#) for more information.
+
+<h2 id="configure">Configure parallel deployment</h2>
+To activate parallel deployments, access your _Stack settings_ page and select _Redeploy in parallel_. Once set, any future deployments will be done in parallel. Should you wish to do a one-off deployment in serial, you can do so by clicking _Deploy_ -> _Deploy with options_ and selecting _Deploy in serial_. Similarly, if you have your stack set to deploy in serial, you can perform a one-off deploying in parallel through this menu.
+
+Parallel deployments are activated by default for [stacks with a custom web server](#) (eg. Unicorn as it supports zero downtime restarts), but not for stacks based on [Passenger](#).

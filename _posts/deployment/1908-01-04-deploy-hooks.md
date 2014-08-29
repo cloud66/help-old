@@ -9,12 +9,6 @@ categories: deployment
 lead: Take action at various points during your deployment
 ---
 
-## What are deploy hooks?
-## Hook points
-## Build/deploy definitions
-## Enable deploy hooks (add the file)
-## Execute a command with deploy hooks
-
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
