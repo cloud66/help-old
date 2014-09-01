@@ -1,18 +1,39 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Database management"
 so_title: "database"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1959-09-26 15:33:13
 categories: database-management
-lead: 
+lead: Deploying and managing your database with Cloud 66
 search-tags: ['']
 tags: ['']
 ---
 
-## About deploying databases
+<h2>Contents</h2>
+<ul class="page-toc">
+    <li>
+        <a href="#about">About deploying databases</a>
+    </li>
+    <li>
+        <a href="#types">Database deployment types</a>
+    </li>
+        <ul style="margin-bottom:0em">
+            <li><a href="#no">No database (external)</a></li>
+            <li><a href="#local">Local database</a></li>
+            <li><a href="#ded">Dedicated database</a></li>
+        </ul>       
+    <li>
+        <a href="#upgrade">Upgrading your database</a>
+    </li>
+    <li>
+        <a href="#migrations">Control your database migrations</a>
+    </li>               
+</ul>
+
+<h2 id="about">About deploying databases</h2>
 
 We currently support the following databases, with no need for additional configuration after deployment.
 
@@ -24,67 +45,24 @@ We currently support the following databases, with no need for additional config
 
 During analysis, Cloud 66 automatically detects whether your application relies on a database or not. This is based on a combination of your Gemfile and your database.yml or mongoid.yml files.
 
-After analysis, you are presented with the analysis results.
-![Database analysis results](http://cdn.cloud66.com/images/help/database_analysis_results.png)
+After you have analyzed your code, ensure that your desired database type is displayed in the _About your app_ section of the analysis results. If you haven't specified a username and password for your database, Cloud 66 will automatically generate these credentials for you. They will be available as environment variables and your application will be configured to use them.
 
 <h2 id="types">Database deployment types</h2>
 
-If a <b>database is not detected</b>, it is assumed that your application does not rely on one.
-As such, your application will be deployed without a database.
-
-If a <b>database is detected</b>, then depending on whether you are deploying to your own cloud provider or your own standalone server we will provide you with the following options for deployment.
-
-<h4 id="cloud">Deploying to your cloud</h4>
-![Cloud Provicer Database Deployment Options](http://cdn.cloud66.com/images/help/cloud_database_deployment_options.png)
-
-<h4 id="byos">Deploying to your own server</h4>
-![Standalone Provicer Database Deployment Options](http://cdn.cloud66.com/images/help/standalone_database_deployment_options.png)
-
-<h3 id="no">Choosing "no" database</h3>
-This option allows you to deploy your application without a database, and is ideal if it is hosted externally.
+<h3 id="no">No database (external)</h3>
+This option allows you to deploy your application without a database managed by Cloud 66, and is ideal if it is hosted externally.
 Please note that if there is no connectivity to your database, or your database host is not configured correctly, the deployment will fail.
 
-<h3 id="local">Choosing "local" database</h3>
-<div class="notice">
-	<h3>Important</h3>
+<h3 id="local">Local database</h3>
+This option deploys your chosen database to the same server as your web server - this is intended primarily for development, as running your database locally in production is not advised. In this case, your application database configuration will be amended to target your local database server. If you scale up your web server, these settings will also be amend automatically to reflect your database configuration.
 
-	<p>This option is intended primarily for development environments, as it isn't recommended to run your database locally in production</p>
-</div>
-
-This option deploys your chosen database to the same server as your web server. In this case, your application database configuration will be amended to target your local database server.
-If you scale up your web server, these settings will also be amend automatically to reflect your database configuration.
-
-This option will also allow you to run [backups](/add-ins/backups.html) on your database.
-
-<h3 id="ded">Choosing "dedicated" database</h3>
-If deploying to your cloud provider, we will automatically create a new server for your database and configure your application accordingly.
-
-Similarly, if you are deploying to your own server, we will connect to the target server, deploy your database and configure your application accordingly.
-Note that we will use the same credentials (username and key) that you provided for your standalone web server to connect to your database server.
-
-Choosing this option will also allow you to [database backups](/add-ins/backups.html) and [database replication](/stack-features/database-replication.html).
-
-<h2 id="generated">Generated credentials</h2>
-If you haven't specified your username and password for your database, Cloud 66 will automatically generate these credentials for you. They will be available as environment variables and your application will be configured to use them.
-![Automatic Username Password Creation](http://cdn.cloud66.com/images/help/database_username_or_password_empty.png)
+<h3 id="ded">Dedicated database</h3>
+This option will automatically create a new server for your database and configure your application accordingly.
 
 <h2 id="upgrade">Upgrading your database</h2>
-Cloud 66 will not do in-place database upgrades, because the database upgrade may cause your application to stop working or may not be possible automatically. Therefore, to upgrade
-your database through Cloud 66, create a new stack (at which point Cloud 66 will deploy the newer database version).
+Cloud 66 will not do in-place database upgrades, because this process may cause your application to stop working or may not be possible automatically. To upgrade your database through Cloud 66, we recommend that you create a new stack (at which point Cloud 66 will deploy the newer database version).
 
-Once the new stack is created, you can migrate data from your old stack to your new stack, and delete your old stack when you're happy.
+Once the new stack is created, you can migrate data from your old stack to your new stack.
 
-
-
-
-## About connecting to database servers
-## Database options (replication vs. replication between stacks vs one-time import)
-## Configure database migrations
-Running Active Record migrations during deployment is a _Stack setting_ that you can control:
-
-![Database migration](http://cdn.cloud66.com/images/help/db_migration.png)
-
-When you have disabled database migrations in the settings menu, you still have the option to do a one-off deployment with your selection on the _Deploy with options_ menu.
-![Database migration](http://cdn.cloud66.com/images/help/db_migration_option.png)
-
-## What is Memcached?
+<h2 id="migrations">Control your database migrations</h2>
+You can control your database migrations by accessing your stack detail page, then clicking _Stack settings_ in the right sidebar. This page gives you the option of running migrations or not. When you have disabled database migrations in _Stack settings_ page, you still have the option to run migrations on a one-off deployment by clicking _Deploy_ -> _Deploy with options_ and selecting _Run database migrations_.

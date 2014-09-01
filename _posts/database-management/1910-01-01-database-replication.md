@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Database replication"
 so_title: "replication"
 nav_sticky: false
@@ -11,303 +11,156 @@ search-tags: []
 tags: ['Database', 'Database replication']
 ---
 
-## About replicating databases
-## About replicating between stacks
-<h2 id="intro">About replicating between stacks</h2>
-
-Cloud 66 allows you to replicate your databases between your stacks. These are some scenarios in which you might use this feature:
-
-- Prepare a fail-over for an existing stack
-- Move your stack to a different cloud/region
-- Use your database in applications like reporting tools
-
-Replication between stacks is supported for **MySQL**, **PostgreSQL** and **Redis** databases.
-
-<div class="notice notice-danger">
-	<h3>Note</h3>
-	<p>The process of database replication will disrupt your source and destination databases for the duration of this process.</p>
-</div>
-
-The disruption time depends entirely on your database type and size, and different databases may require a restart and/or a complete backup in order to warm-up the new server. This disruption will occur every time you configure or disable data replication between stacks.
-
-<h2 id="env-vars">Environment variables</h2>
-Cloud 66 generates and populates a set of [environment variables automatically](/stack-features/env-vars.html#auto-gen) on each of your stack servers.
-
-The value of some environment variables will change during the enabling/disabling of replication between stacks.
-
-<table class='table table-bordered table-striped'>
-	<thead>
-		<tr>
-			<th>Environment Variable</th>
-			<th>Master</th>
-			<th>Slave</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>MYSQL_SLAVE_ADDRESSES_INT</td>
-			<td>Internal IP address of the new slave will be appended</td>
-			<td>No value.</td>
-		</tr>
-		<tr>
-			<td>MYSQL_SLAVE_ADDRESSES_EXT</td>
-			<td>External IP address of the new slave will be appended</td>
-			<td>No value.</td>
-		</tr>
-		<tr>
-			<td>MYSQL_DATABASE</td>
-			<td>No change</td>
-			<td>This variable will be assigned the database name of the master</td>
-		</tr>
-		<tr>
-			<td>POSTGRESQL_SLAVE_ADDRESSES_INT</td>
-			<td>Internal IP address of the new slave will be appended</td>
-			<td>No value.</td>
-		</tr>
-		<tr>
-			<td>POSTGRESQL_SLAVE_ADDRESSES_EXT</td>
-			<td>External IP address of the new slave will be appended</td>
-			<td>No value.</td>
-		</tr>
-		<tr>
-			<td>POSTGRESQL_DATABASE</td>
-			<td>No change</td>
-			<td>This variable will be assigned the database name of the master</td>
-		</tr>
-		<tr>
-			<td>POSTGRESQL_USERNAME</td>
-			<td>No change</td>
-			<td>This variable will be assigned the database username of the master</td>
-		</tr>
-		<tr>
-			<td>POSTGRESQL_PASSWORD</td>
-			<td>No change</td>
-			<td>This variable will be assigned the database password of the master</td>
-		</tr>
-		<tr>
-			<td>REDIS_SLAVE_ADDRESSES_INT</td>
-			<td>Internal IP address of the new slave will be appended</td>
-			<td>No value.</td>
-		</tr>
-		<tr>
-			<td>REDIS_SLAVE_ADDRESSES_EXT</td>
-			<td>External IP address of the new slave will be appended</td>
-			<td>No value.</td>
-		</tr>
-	</tbody>
-</table>
-
-As with any environment variable change, you will need to redeploy the stack to propagate the variable changes to all servers.
-
-The environment variables will be available on all servers including web and database servers. This excludes HAProxy servers.
-
-<h2 id="setup">Enable replication</h2>
-
-Before we start replicating data between stacks, go ahead and deploy the code from your first stack (source) to a fresh stack (target). You need _Control stack_ access rights for the target stack.
-
-<ol>
-<li>Go to your database server detail page on your target stack.</li>
-<li>Click the <i>Configure data replication</i> icon in the right sidebar, which opens a dialog box.</li>
-<li>In the <i>Select stack</i> list, select the stack you want to use as a source and confirm. You will only see stacks that have a managed backup installed and that you have <i>Stack administrator</i> rights to.</li>
-
-Once your replication starts, the following steps will be initiated:<br/>
-
-<ul style="margin-bottom:0em">
-<li>We take a full backup of the primary database server in your source stack and restore it on the target stack database</li>
-<li>The target database is configured to be a slave of the source database</li>
-<li>The source database is configured to be a master of the target database</li>
-<li>The relevant environment variables are updated for use in your code and scripts</li>
-</ul>
-</ol>
-
-<h2 id="disable-replication">Disable replication</h2>
-<ol>
-<li>Go to your database server detail page on your target stack.</li>
-<li>Click the <i>Configure data replication</i> icon in the right sidebar, which opens a dialog box.</li>
-<li>Select <i>Disable replication</i> from the list and confirm. The following steps will be initiated:</li>
-
-<ul style="margin-bottom:0em">
-<li>We disable the replication on your target database server, and configure it to be a stand-alone database server</li>
-<li>The target database server is removed as a slave from the primary database server on the source</li>
-<li>The source database server is configured as a stand-alone database server</li>
-<li>The relevant environment variables are updated for use in your code and scripts</li>
-</ul>
-</ol>
-
-## Environment variables
-## Database configuration
-## Enable replication
-## Configure data replication
-## Disable replication
-
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
-    	<a href="#intro">Introduction</a>
+    	<a href="#about">About database replication</a>
     </li>
 	<li>
-		<a href="#how-it-works">How it works</a>
-	</li>
-	<li>
-		<a href="#scaling-down">Scaling down</a>
-	</li>
-	<li>
-		<a href="#specifics">Database specifics</a>
+		<a href="#how">How it works</a>
 	</li>
 	        <li>
                 <ul>
                 <li><a href="#mysql">MySQL</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
                 <li><a href="#postgresql">PostgreSQL</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
                 <li><a href="#mongodb">MongoDB</a></li>
-                </ul>
-            </li>
-            <li>
-                <ul>
                 <li><a href="#redis">Redis</a></li>
                 </ul>
-            </li>
+            </li> 	
 	<li>
-		<a href="#env-vars">Environment variables</a>
+		<a href="#vars">Environment variables</a>
+	</li>
+	<li>
+		<a href="#enable">Enable database replication</a>
+	</li>
+	<li>
+		<a href="#disable">Disable database replication</a>
 	</li>
 </ul>
 
-<h2 id="intro">Introduction</h2>
-Database replication involves configuring a master/slave database architecture, whereby the slave is an exact replica of the master. This provides several benefits:
+<h2 id="about">About database replication</h2>
+Database replication involves configuring a master and slave database architecture, whereby the slave is an exact replica of the master at all times. This feature is supported for MySQL, PostgreSQL, Redis and MongoDB databases.
 
-- <b>Improved read performance</b><br/> The slave server only allows reads and is ideal for use with reporting tools, and any database backups are taken from the slave rather than the master.
-- <b>Improved application reliability</b><br/> Having a second server with your data, in case of hardware issues (reducing a single point of failure).
-- <b>Improved redundancy with replication between stacks</b><br> Using [database replication between stacks](/stack-features/database-replication-between-stacks.html) allows you to have a failover stack in a different region, among other benefits.
+Database replication can be set up for a single stack, or between stacks, with various benefits:
 
-Database replication is supported for **MySQL**, **PostgreSQL**, **Redis** and **MongoDB** databases.
+<b>Single stack</b>:<br/>
 
-<h2 id="how-it-works">How it works</h2>
+- Improved read performance: The slave server only allows reads and is ideal for use with reporting tools, and any database backups are taken from the slave rather than the master.
+- Improved application reliability: Having a second server with your data, in case of hardware issues (reducing a single point of failure).
 
-To enable replication, click on the database server group of your stack and click on the <i>Scale Up</i> button.
+<b>Between stacks</b>:<br/>
 
-![](http://cdn.cloud66.com/images/help/db_scaleup.png)
+- Improved redundancy: Allows you to have a failover stack in a different region.
+- Data migration: Makes it easy to migrate your stack with minimal downtime.
 
-<div class="notice">
-	<h3>Note</h3>
-	<p>You need to have a managed backup setup for your stack to use DB replication.</p>
-</div>
+Note that <b>replication between stacks is not supported for MongoDB.</b>
 
-![](http://cdn.cloud66.com/images/help/db_scaled.png)
+<h2 id="how">How it works</h3>
+When you start replicating your database, the Cloud 66 will commence the following process:<br/><br/>
 
-<div class="notice notice-danger">
-	<h3>Note</h3>
-	<p>Database replication will disrupt the database serving your application during the replication configuration process.</p>
-</div>
+<ul style="margin-bottom:0em">
+<li>We take a full backup of the master database server in your source stack</li>
+    <ul style="margin-bottom:0em">
+        <li>Single stack: we create a secondary database server in your cloud and restore your backup on it</li>
+        <li>Between stacks: we restore your backup on the secondary database server</li>
+    </ul>
+<li>The secondary database is configured to be a slave of the source database</li>
+<li>The source database is configured to be a master of the secondary database</li>
+<li>The relevant environment variables are updated for use in your code and scripts</li>
+</ul>
+</ol>
 
-The disruption time depends entirely on your database type and size, and different databases may require a restart and/or a complete backup in order to warm-up the new server. This disruption will occur every time you scale your server.
+Similarly, when you disable replication, the following steps are initiated:
+<ul style="margin-bottom:0em">
+<li>We disable replication on your master database, and configure it to be a standalone database server</li>
+<li>The secondary database server is removed as a slave from the master database server on the source</li>
+<li>The source database server is configured as a standalone database server</li>
+<li>The relevant environment variables are updated for use in your code and scripts</li>
+</ul>
 
-For example, during a PostgreSQL scale-up, after reconfiguring the primary database and restarting it, a `pg_start_backup()` command is issued to output data in order to populate the new server. Your database is unavailable during this procedure. We subsequently issue a `pg_stop_backup` command that makes your database available again.
+<h3 id="mysql">MySQL</h3>
+MySQL database replication is configured as per the [MySQL manual](http://dev.mysql.com/doc/refman/5.7/en/replication.html). There is one master server and all other servers are set up as read-only replicas.
 
-This is what happens:
+<h3 id="postgresql">PostgreSQL</h3>
+PostgreSQL database replication is configured with [streaming replication](http://wiki.postgresql.org/wiki/Streaming_Replication). There is one master server and all other servers are set up as read-only replicas.
 
-- We fire up another server in your cloud
-- We install your database server (the same version as the original server)
-- A full backup of the original server is taken and restored on the new server
-- The new server is configured as a slave of the master database
-- The master database is configured according to this new setup
-- A new set of environment variables are made available to be used in your code and scripts
+<h3 id="mongodb">MongoDB</h3>
+MongoDB database replication is configured with a [replica set](http://docs.mongodb.org/manual/replication/). This requires an odd number of servers, so if you have one MongoDB server, it will fire up an additional two to run your replica set on a total of three servers. The next scale up will create another two servers and run your cluster on five servers. This also applies to scaling down - deleting one server from a five-server cluster will result in two servers being removed from it to get the total down to three servers.
 
-As with any database replication, it might take a while for the data to be fully replicated across the whole cluster. A full backup of the master database is taken and restored on the slave to speed this process up.
+See our documentation on <a href="#">MongoDB replica sets</a> for best practices.
 
-<h2 id="scaling-down">Scaling Down</h2>
-Scaling down your database cluster is as easy as removing the servers from your database group by clicking on the <i>x</i> icon.
+<h3 id="redis">Redis</h3>
+Redis database replication is configured as per the [Redis manual](http://redis.io/topics/replication). There is one master and all other servers are setup as replicas.
 
-Here is what happens when you scale down a server group:
-
-- The server is removed from the replication cluster (but it is **not** deleted physically from your cloud)
-- The master in the cluster will be configured to reflect this update
-- If the remaining server is the only server in the group, it will be configured to be a standalone server again
-- All environment variables for master and replica databases will be updated and pushed to all servers
-
-<h2 id="specifics">Database Specifics</h2>
-Please see the the configurations required for each specific database below.
-
-<h4 id="mysql">MySQL</h4>
-There is only [one master server](http://dev.mysql.com/doc/refman/5.7/en/replication.html) setup with MySQL. All other servers are set up as read-only replicas.
-
-<h4 id="postgresql">PostgreSQL</h4>
-There is only one master server setup with PostgreSQL. All other servers are set up as read-only replicas. Replication is setup as [Streaming Replication](http://wiki.postgresql.org/wiki/Streaming_Replication).
-
-<h4 id="mongodb">MongoDB</h4>
-Scaling up a MongoDB sets up a [replica set](http://docs.mongodb.org/manual/replication/). This scale up builds an odd number of servers, so if you have one MongoDB server, it will fire up an additional two to run your replica set on a total of three servers. The next scale up will create another two servers and run your cluster on five servers.
-
-The same rule applies to scaling down. Deleting one server from a five-server cluster, will result in two servers being removed from it to get the total down to three servers.
-
-<div class="notice">
-	<h3>Note</h3>
-	<p>Please see our documentation on <a href="/how-to/mongodb-replica-sets.html">MongoDB replica sets</a> for best practices.</p>
-</div>
-
-<h4 id="redis">Redis</h4>
-There is only [one master Redis server](http://redis.io/topics/replication) set up. All other servers will be setup as replicas and any change in them will be overwritten by the master.
-
-<h2 id="env-vars">Environment Variables</h2>
-Cloud 66 generates and populates a set of [environment variables automatically](/stack-features/env-vars.html#auto-gen) on each of your stack servers.
-
-These include environment variables to hold the address for your database servers. With database replication enabled, a second environment variable is generated that holds the list of all slave database servers.
+<h2 id="vars">Environment variables</h2>
+Cloud 66 generates and maintains a number of environment variables automatically on your servers, including those that hold the address for your database server. When you enable database replication, we will generate additional environment variables for your slave server(s). The value of these variables will change when you enable or disable replication.
 
 <table class='table table-bordered table-striped'>
 	<thead>
 		<tr>
-			<th>Environment Variable</th>
-			<th>Comments</th>
+			<th>Environment variable</th>
+			<th>Value</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>MYSQL_SLAVE_ADDRESSES_INT</td>
-			<td>MySQL Slave Internal IP address</td>
+			<td>Internal IP address of your slave</td>
 		</tr>
 		<tr>
 			<td>MYSQL_SLAVE_ADDRESSES_EXT</td>
-			<td>MySQL Slave External IP address</td>
+			<td>External IP address your slave</td>
+		</tr>
+		<tr>
+			<td>MYSQL_DATABASE</td>
+			<td>The database name of the master</td>
 		</tr>
 		<tr>
 			<td>POSTGRESQL_SLAVE_ADDRESSES_INT</td>
-			<td>PostgreSQL Slave Internal IP address</td>
+			<td>Internal IP address of your slave</td>
 		</tr>
 		<tr>
 			<td>POSTGRESQL_SLAVE_ADDRESSES_EXT</td>
-			<td>PostgreSQL Slave External IP address</td>
+			<td>External IP address of your slave</td>
 		</tr>
 		<tr>
-			<td>MONGODB_ADDRESSES</td>
-			<td>MongoDB servers DNS names</td>
+			<td>POSTGRESQL_DATABASE</td>
+			<td>The database name of the master</td>
+		</tr>
+		<tr>
+			<td>POSTGRESQL_USERNAME</td>
+			<td>The database username of the master</td>
+		</tr>
+		<tr>
+			<td>POSTGRESQL_PASSWORD</td>
+			<td>The database password of the master</td>
 		</tr>
 		<tr>
 			<td>REDIS_SLAVE_ADDRESSES_INT</td>
-			<td>Redis Slave Internal IP address</td>
+			<td>Internal IP address of your slave</td>
 		</tr>
 		<tr>
 			<td>REDIS_SLAVE_ADDRESSES_EXT</td>
-			<td>Redis Slave External IP address</td>
-		</tr>
+			<td>External IP address of your slave</td>
+		</tr>	
 	</tbody>
 </table>
 
-An example is
-<pre class="terminal">
-50.23.65.12
-</pre>
+In the case that an environment variable contains multiple values, such as IP addresses, these are separated by comma.
 
-For multiple IP addresses, the environment variable will contain a comma separated list of all IP addresses:
+<h2 id="enable">Enable database replication</h2>
+The process of enabling database replication varies slightly for a single stack as opposed to replication between stacks. 
+<br/><br/>
+<div class="notice notice-danger">
+	<h3>Important</h3>
+	<p>Database replication will disrupt the database serving your application during the replication configuration process. The disruption time depends entirely on your database type and size, and different databases may require a restart and/or a complete backup in order to warm-up the new server. This disruption will occur every time you scale your server.</p>
+</div>
 
-<pre class="terminal">
-192.168.10.1,192.168.10.2
-</pre>
+<b>Single stack</b>:<br/>
+To enable replication on a single stack, visit your stack detail page, click on the database server group (eg. _MySQL server_) and click <i>Scale Up</i> in the top right corner. This will allow you to choose your new server size. Your new server should contain at least two times more disk space than the size of your database backup, and we recommend that it is comparable to your master server (in terms of memory).
 
-As with any environment variable change, you will need to redeploy the stack to propagate the variable changes to all servers.
+<b>Between stacks</b>:<br/>
+To enable replication between stacks, ensure that you have a secondary stack deployed, and that its database server contains at least two times more disk space than the size of your database backup. Visit your stack detail page, click on the database server group (eg. _MySQL server_) click into your main database server page. Next, click _Configure data replication_ in the right sidebar, and select a source stack. Confirm to commence the replication process.
 
-The environment variables will be available on all servers including web and database servers. This excludes HAProxy servers.
+<h2 id="disable">Disable database replication</h2>
+To disable replication between stacks, visit your stack detail page, click on the database server group (eg. _MySQL server_) click into your main database server page. Next, click _Configure data replication_ in the right sidebar, and select _Disable replication_. Confirm to commence the replication process.
