@@ -115,31 +115,34 @@ Stack description.
 
     + Body
 
-      "response":
-          {
-              "uid": "5be6b763474b0eafa5fafb64bff0ba80",
-              "name": "Awesome App",
-              "git": "http://github.com/cloud66-samples/awesome-app.git",
-              "git_branch": "fig",
-              "environment": "production",
-              "cloud": "DigitalOcean",
-              "fqdn": "awesome-app.dev.c66.me",
-              "language": "ruby",
-              "framework": "rails",
-              "status": 1,
-              "health": 3,
-              "last_activity": "2014-08-14T01:46:53+00:00",
-              "last_activity_iso": "2014-08-14T01:46:53+00:00",
-              "maintenance_mode": false,
-              "has_loadbalancer": false,
-              "created_at": "2014-08-14 00:38:14 UTC",
-              "updated_at": "2014-08-14 01:46:52 UTC",
-              "deploy_directory": "/var/deploy/awesome_app",
-              "cloud_status": "partial",
-              "created_at_iso": "2014-08-14T00:38:14Z",
-              "updated_at_iso": "2014-08-14T01:46:52Z",
-              "redeploy_hook": "http://hooks.cloud66.com/stacks/redeploy/b806f1c3344eb3aa2a024b23254b75b3/6d677352a6b2eefec6e345ee2b491521"
-          }
+    	{
+		 	"response":
+				{
+				 	"uid": "5be6b763474b0eafa5fafb64bff0ba80",
+				  	"name": "Awesome App",
+				  	"git": "http://github.com/cloud66-samples/awesome-app.git",
+				  	"git_branch": "fig",
+				  	"environment": "production",
+				  	"cloud": "DigitalOcean",
+				  	"fqdn": "awesome-app.dev.c66.me",
+				  	"language": "ruby",
+				  	"framework": "rails",
+				  	"status": 1,
+				  	"health": 3,
+				  	"last_activity": "2014-08-14T01:46:53+00:00",
+				  	"last_activity_iso": "2014-08-14T01:46:53+00:00",
+				  	"maintenance_mode": false,
+				  	"has_loadbalancer": false,
+				  	"created_at": "2014-08-14 00:38:14 UTC",
+				  	"updated_at": "2014-08-14 01:46:52 UTC",
+				  	"deploy_directory": "/var/deploy/awesome_app",
+				  	"cloud_status": "partial",
+				  	"created_at_iso": "2014-08-14T00:38:14Z",
+				  	"updated_at_iso": "2014-08-14T01:46:52Z",
+				  	"redeploy_hook": "http://hooks.cloud66.com/stacks/redeploy/b806f1c3344eb3aa2a024b23254b75b3/6d677352a6b2eefec6e345ee2b491521"
+			  }
+    	}
+
 
 ### Get Stack [GET]
 Get a single stack.
@@ -148,26 +151,10 @@ Get a single stack.
 
     [Stack][]
 
-# Group Stack Actions
-
-# Group Deployments
-
-# Group Environment Variables
-
-# Group Firewalls
-
-# Group Server Groups
-
-# Group Servers
-
-# Group Notifications
-
-# Backups
-
 # Group Accounts
 
 ## Account List [/accounts]
-Get a list of accounts that caller belongs to
+Get list of accounts that caller belongs to
 
 - Scope: _users_
 
@@ -210,7 +197,7 @@ Get a list of accounts that caller belongs to.
 
 
 ## Account [/accounts/{id}]
-Get detail information about an Account
+Get information of an Account
 
 - Scope: _users_
 
@@ -245,17 +232,174 @@ Get a single account.
 
     [Account][]
 
-
 # Group Users
 
-## User List
+## User List [/users]
+Get list of users that caller has access to.
 
-## User
+- Scope: _users_
 
-# Group Devices
++ Model (application/json)
 
-## New Device
+    + Headers
 
-## Update Device
+        X-RateLimit-Limit: 3600
+        X-RateLimit-Remaining: 3597
 
-## Delete Device
+    + Body
+
+
+    	{
+    		"response": [
+    			{
+    				"id": 18,
+    				"email": "test@cloud66.com",
+    				"primary_account_id": 14,
+    				"accounts": [
+    					{
+    						"account": 14,
+    						"user": 18,
+    						"role": "owner",
+    						"can_create_stack": true,
+    						"can_admin_users": true,
+    						"default_permission_level": 60
+    					}
+    				],
+    				"access_rights": [
+    					{
+    						"user": 18,
+    						"stack": "5acd43412ea412e32897c40d46f91183",
+    						"access_level":
+    							{
+    								"code": 60,
+    								"meaning":"admin"
+    							}
+    					},
+    					{
+    						"user": 18,
+    						"stack": "8cc984959ebe28bcb75d6bd6d810767e",
+    						"access_level":
+    							{
+    								"code": 60,
+    								"meaning": "admin"
+    							}
+    					}],
+    				"locked": false,
+    				"uses_tfa": false,
+    				"timezone": "UTC",
+    				"has_valid_phone": false,
+    				"developer_program": true,
+    				"github_login": false,
+    				"last_login": "2014-08-29T17:17:11Z",
+    				"devices": [
+    					{
+    						"device_type": 1,
+    						"sub_type": 2,
+    						"token": "wertqy",
+    						"enabled": true,
+    						"created_at": "2014-08-04 11:57:36 UTC",
+    						"updated_at": "2014-08-04 12:03:22 UTC",
+    						"created_at_iso": "2014-08-04T11:57:36Z",
+    						"updated_at_iso": "2014-08-04T12:03:22Z"
+    					}
+    				],
+    				"created_at": "2013-06-19T11:08:02Z",
+    				"updated_at": "2014-09-01T08:11:34Z",
+    				"cloud_status": "partial"
+    			}
+    		],
+        	"count":1,
+        	"pagination":{
+        		"previous": null,
+        		"next": null,
+        		"current": 1,
+        		"per_page": 30,
+        		"count": 1,
+        		"pages": 1
+        	}
+        }
+
+### User List [GET]
+Get list of users that caller has access to
+
++ Response 200
+
+    [User List][]
+
+## User [/users/{id}]
+Get detail information about a user
+
+- Scope: _users_
+
++ Parameters
+
+    + id (required, integer, `1`) ... The user ID
+
++ Model (application/json)
+
+    + Headers
+
+        X-RateLimit-Limit: 3600
+        X-RateLimit-Remaining: 3597
+
+    + Body
+
+
+		{
+			"response":
+				{
+					"id": 18,
+					"email": "test@cloud66.com",
+					"primary_account_id": 14,
+					"accounts": [
+						{
+							"account": 14,
+							"user": 18,
+							"role": "owner",
+							"can_create_stack":true,
+							"can_admin_users":true, "default_permission_level":60
+						}
+					],
+					"access_rights": [
+						{
+							"user": 18,
+							"stack": "5acd43412ea412e32897c40d46f91183",
+							"access_level":
+								{
+									"code": 60,
+									"meaning": "admin"
+								}
+						}
+					],
+					"locked": false,
+					"uses_tfa": false,
+					"timezone": "UTC",
+					"has_valid_phone": false,
+					"developer_program": true,
+					"github_login": false,
+					"last_login": "2014-08-29T17:17:11Z",
+					"devices":[
+						{
+							"device_type": 1,
+							"sub_type": 2,
+							"token": "wertqy",
+							"enabled": true,
+							"created_at": "2014-08-04 11:57:36 UTC",
+							"updated_at": "2014-08-04 12:03:22 UTC",
+							"created_at_iso": "2014-08-04T11:57:36Z",
+							"updated_at_iso": "2014-08-04T12:03:22Z"
+						}
+					],
+					"created_at": "2013-06-19T11:08:02Z",
+					"updated_at": "2014-09-01T08:33:43Z",
+					"cloud_status": "partial"
+				}
+			}
+		}
+
+### Get User [GET]
+Get information of a user.
+
++ Response 200
+
+    [User][]
