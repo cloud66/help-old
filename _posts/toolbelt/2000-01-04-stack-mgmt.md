@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Deploy your stack"
+title:  "Stack management"
 date:   2035-01-27 01:01:01
 categories: toolbelt
 lead: Deploy your stacks from the command line

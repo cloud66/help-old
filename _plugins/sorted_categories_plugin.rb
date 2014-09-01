@@ -8,6 +8,7 @@ module Jekyll
 			'deployment',
 			'web-server',
 			'database-management',
+			'load-balancing',
 			'account-management',
 			'notifications',
 			'logging',

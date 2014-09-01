@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Team accounts"
 nav_sticky: true
 nav: true
@@ -13,51 +13,33 @@ search-tags: ['']
 tags: ['Your account']
 ---
 
-## About using team accounts
-## Account user roles and permissions
-## Add a team member
-## Sign up a team member
-## Switch organizations
-## Leave a team
-
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
-		<a href="#lead">Team lead</a>
+		<a href="#about">About using team accounts</a>
 	</li>
 	<li>
-		<a href="#permissions">Permissions</a>
+		<a href="#permissions">Account user roles and permissions</a>
 	</li>
 	<li>
-		<a href="#memeber">Sign up a team member</a>
+		<a href="#add">Add a team member</a>
 	</li>
 	<li>
-		<a href="#switch">Switching organization</a>
+		<a href="#switch">Switch organizations</a>
 	</li>
 	<li>
-		<a href="#leave">Leaving a team</a>
+		<a href="#leave">Leave a team</a>
 	</li>
 	<li>
 		<a href="#pricing">Pricing</a>
 	</li>
 </ul>
 
+<h2 id="about">About using team accounts</h2>
 Adding new users to your Cloud 66 account is a great way to work in a team, and access rights can be fine-tuned per stack. They range from no privileges on a stack to full administrative privileges.
 
-<h2 id="lead">Team lead</h2>
-The team lead is the only user who can invite other members and change access rights for these members (unless this latter privilege is granted to another user).
-
-To invite your team members, access your <i>Account</i> page and select the <i>Users</i> menu.
-
-You need to give your team a name before inviting other members. This is the same as your Company name on the Payments page. If you already have entered a company name, you will skip this part.
-
-![Users tab](http://cdn.cloud66.com/images/help/users_tab.png)
-
-Clicking <i>Add a new user</i> will allow you to enter your team member's email address.
-
-![New user form](http://cdn.cloud66.com/images/help/new_user_form.png)
-
-<h2 id="permissions">Permissions</h2>
+<h2 id="permissions">Account user roles and permissions</h2>
+The account administrator is the only user who can invite other members and change access rights for these members (unless this latter privilege is granted to another user).
 
 You can specify the exact access rights you would like to grant to a specific users per stack. The available access rights are:
 
@@ -65,26 +47,28 @@ You can specify the exact access rights you would like to grant to a specific us
 - View stack
 - Deploy stack
 - Control stack (can add/remove load balancer, setup backups etc.)
-[//]: # - Shell to servers
+- Shell to servers
 - Delete stack
-- Stack administrator (can download server SSH keys)
+- Stack administrator
 
 By definition, any user with access to a stack will automatically be given the rights the the lower levels of permissions. For example, a user who can control a stack will also be able to deploy and view that same stack.
 
-You also have the option of allowing team members to create a new stack. The creator of a stack becomes its default stack administrator, although this setting can be changed by the team lead.
+You also have the option of allowing team members to create a new stack. The creator of a stack becomes its default stack administrator, although this setting can be changed by the team lead. In addition to this, you can also allow a user to control permissions for others.
 
-<h2 id="member">Sign up a team member</h2>
-After receiving the invitation email, team members can sign up for Cloud 66 with their specified email address.
+<h2 id="add">Add a team member</h2>
+To invite your team members, access your <i>Account</i> page and select the <i>Organizations & Team</i> menu.
 
-If the invited email already has a Cloud 66 account, they will be notified of the pending invitation. By accepting the invitation, they will join your team.
+You need to give your team a name before inviting other members. This is the same as your _Company name_ on the _Payments_ page. If you already have entered a company name, you will skip this part.
 
-<h2 id="switch">Switching organization</h2>
-By default, you can see all the stacks you have access to under any organization. However, some pages are only accessible by the primary user of the account (organization owner). You can select your current organization using the _organizations_ page under your Account menu.
+Next, click into the _Team_ tab, and click the <i>+</i> button in the top right corner. This will allow you to input an email address and set the user permissions.
 
-![Switch Organization](http://cdn.cloud66.com/images/help/cloud66_switch_org.png)
+Upon confirmation, an email will be sent to the email address specified, giving this user the option to sign up for Cloud 66 with their specified email address. If the invited email already has a Cloud 66 account, they will be notified of the pending invitation. By accepting the invitation, they will join your team.
 
-<h2 id="leave">Leaving a team</h2>
-To leave a team, you can go to the Organizations page under your Account menu and click on the Leave button of the appropriate organization.
+<h2 id="switch">Switch organizations</h2>
+If you are part of several organizations, you will have to switch organization to see stacks that belong to a different organization. To switch your organization, use the dropdown menu in the top right corner of your Cloud 66 account, and simply select the name of the organization you would like to switch to.
+
+<h2 id="leave">Leave a team</h2>
+To leave a team, visit the _Account_ page, then click _Organizations & Team_. Next, find the organization you would like to leave, and click the _Leave_ button.
 
 You cannot leave your primary organization (the one you own).
 

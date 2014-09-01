@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Two-step verification"
 nav_sticky: true
 nav: true
@@ -14,23 +14,12 @@ tags: ['Your account']
 ---
 
 ## What is two-step verification? 
+Two-step verification adds an extra layer of security to your Cloud 66 account, drastically reducing the chances of having the personal information in your account stolen. To break into an account with two-step verification, bad guys would not only have to know your username and password, they'd also have to get a hold of your phone.
+
 ## Enable two-step verification
+To enable two-step verification on your Cloud 66 account, start by visiting your _Account_ page. Next, click _Enable 2-step verification_ to install Google Authenticator on your phone and scan your barcode.
+
 ## Add a recovery phone number
-
-## Usage
-
-You can make your Cloud 66 account more secure by enabling two-step verification from the _Account_ menu:
-![TFA enable](http://cdn.cloud66.com/images/help/tfa_enable.png)
-
-This will ask you to install the Google Authenticator application on your phone:
-![TFA install](http://cdn.cloud66.com/images/help/tfa_installer.png)
-
-Finally, you just need to scan the barcode to get a verification code:
-![TFA verify](http://cdn.cloud66.com/images/help/tfa_verifier.png)
-
-## Recovery
-
-We suggest that you add your phone number on the _Account_ menu to recover your account should you at some point not be able to access your verification codes on your phone:
-![TFA phone](http://cdn.cloud66.com/images/help/tfa_phone.png)
+We strongly suggest that you add your phone number on the _Account_ page to recover your account should you at some point not be able to access your verification codes on your phone.
 
 If you haven't added your phone number and are locked out, please <a href="mailto:support@cloud66.com">contact support</a> from the email address you are registered with and we'll take you through a security procedure.

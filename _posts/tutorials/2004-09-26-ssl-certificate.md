@@ -7,7 +7,7 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 nav: true
 date:   1650-09-24 10:51:22
-categories: ssl
+categories: 
 lead: Preparing your SSL certificate for your stack
 search-tags: ['prepare ssl', 'ssl certificate', 'ssl key', 'intermediate certificate', 'how', 'ssl']
 tags: ['Security']

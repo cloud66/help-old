@@ -41,9 +41,6 @@ tags: ['Deployment']
     </ul>
     <li><a href="#environment_variables">Environment variables in the manifest</a></li> 
 </li>    
-	
-	
-	
 </ul>
 
 <h2 id="intro">What are manifest files?</h2>

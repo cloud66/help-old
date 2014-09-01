@@ -1,18 +1,13 @@
 ---
 layout: post
 template: two-col
-title:  "Backups"
+title:  "Backup management"
 date:   2040-01-18 01:01:01
 categories: toolbelt
 lead: List and download your backups through the command line
 search-tags: ['backups','toolbelt','commandline','database']
 tags: ['Toolbelt']
 ---
-
-## About using Toolbelt for backup management
-## Backup parameters
-## List your backups
-## Download your backups
 
 <h2>Contents</h2>
 <ul class="page-toc">

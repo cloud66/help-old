@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "- Backup verification"
 so_title: "verifier"
 date:   4000-10-03 14:17:13
@@ -10,49 +10,34 @@ search-tags: ['']
 tags: ['Database']
 ---
 
-What is a backup verifier?
-Set up a backup verifier
-View backup verification status
-Pricing
-
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li>
-		<a href="#what">What are backup verifiers?</a>
+		<a href="#what">What is a backup verifier?</a>
 	</li>
 	<li>
-		<a href="#usage">Using backup verifiers</a>
+		<a href="#usage">Set up a backup verifier</a>
 	</li>
+    <li>
+        <a href="#view">View backup verification status</a>
+    </li>    
 	<li>
 		<a href="#pricing">Pricing</a>
 	</li>
 </ul>
 
-<h2 id="what">What are backup verifiers?</h2>
+<h2 id="what">What is a backup verifier?</h2>
+A backup verifier is a great way to ensure that your backups actually contain the data you expect. You simply provide a query that you expect to return a specific result, and we verify that your backup actually returns this value. This feature supports both MySQL and PostgreSQL databases, and requires the use of managed backups.
 
-Backup verifiers are a great way to ensure that your backups actually contain the data you expect.
-
-When you have backup verifiers enabled, you can check whether your backups have verified successfully by accessing the backups page
-of your stack.
-![Backup page](http://cdn.cloud66.com/images/help/addin_psql_backup.png)
-
-A successfully verified backup will display a green tick, and a failure during verification will result in a red cross - clicking on the red cross will show the error message.
-![Verification](http://cdn.cloud66.com/images/help/addin_psql_backups.png)
-
-Should you need to change your verification script at some point, simply commit the change to Git and redeploy your code.
-
-<h2 id="usage">Using backup verifiers</h2>
-
-To set up backup verifiers, please ensure that you have [managed backups](/add-ins/backups.html) and are running either a MySQL or PostgreSQL database.
-
-Firstly, create a file in the **.cloud66** folder in the root of your repository. The file should be called **backup&#95;verifier&#95;mysql.sql** to verify a MySQL database backup, or **backup&#95;verifier&#95;pg.sql** for a PostgreSQL database backup.
+<h2 id="usage">Set up a backup verifier</h2>
+Create a file in the `.cloud66` folder in the root of your repository. Name the file `backup_verifier_mysql.sql` to verify a MySQL database backup, or `backup_verifier_pg.sql` for a PostgreSQL database backup.
 
 <div class="notice notice-standalone">
 		<h3>Important</h3>
-		<p>By including this script in your repository, you are opting in to the use of verified backups and will be charged accordingly. Please see our <a href="http://cloud66.com/pricing" target="_blank">pricing page</a> for more information.</p>
+		<p>By including this script in your repository, you are opting in to the use of verified backups and will be charged accordingly. Please see our pricing below for more information.</p>
 </div>
 
-To verify your backup, the script must contain a SQL query that returns a data set containing a single column called **result** with a value of true or false. Please find below an example of such queries and an example of the output for each respective database.
+To verify your backup, the script must contain a SQL query that returns a data set containing a single column called **result** with a value of true or false. Should you need to change your verification script at some point, simply commit the change to Git and redeploy your code. Please find below an example of such queries and an example of the output for each respective database.
 
 <div class="notice notice-standalone">
 		<h3>Important</h3>
@@ -86,6 +71,9 @@ result
 --------
 t
 </pre>
+
+<h2 id="view">View backup verification status</h2>
+To see your backup verification status, visit your stack detail page, and click the link to your managed backup page. A successfully verified backup will display a green tick, and a failure during verification will result in a red cross - clicking on the red cross will show the error message.
 
 <h2 id="pricing">Pricing</h2>
 
