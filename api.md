@@ -151,6 +151,209 @@ Get a single stack.
 
     [Stack][]
 
+# Group Deployments
+
+## Deployment list [/stacks/{id}/deployments]
+Get list of all deployments of stack
+
+- Scope: _public_
+
++ Parameters
+
+    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+
+    	{
+    		"response":[
+    			{
+    				"id":107,
+    				"triggered_by":"test@cloud66.com",
+    				"triggered_via":
+    					{
+    						"code":0,
+    						"meaning":"web"
+    					},
+    				"started_at":"2014-08-29T17:46:16Z",
+    				"finished_at":"2014-08-29T17:58:23Z",
+    				"outcome":
+    					{
+    						"code":1,
+    						"meaning":"success"
+    					},
+    				"git_hash":"5675fcd8f9e6dc534ecf1410c0661c066097e310",
+    				"deploy_session":"OhBHNzkXSl",
+    				"deploy_type":
+    					{
+    						"code":0,
+    						"meaning":"build"
+    					},
+    				"is_head":true,
+    				"is_live":true,
+    				"reverted":null,
+    				"reverted_by":null,
+    				"reverted_at":null,
+    				"is_deploying":false,
+    				"commit_url":"https://github.com/cloud66-samples/rails-test/commit/5675fcd8f9e6dc534ecf1410c0661c066097e310"
+    			}
+    		],
+    		"count":1,
+    		"pagination":
+    			{
+    				"previous":null,
+    				"next":null,
+    				"current":1,
+    				"per_page":30,
+    				"count":1,
+    				"pages":1
+    			}
+    		}
+
+
+### Deployment list [GET]
+Get list of all deployments of stack
+
++ Response 200
+
+    [Deployment list][]
+
+## Deployment [/stacks/{stack_id}/deployments/{id}]
+Get information of a single deployment
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, integer, `107`) ... The deployment id
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+        {
+        	"response":
+        		{
+        			"id":107,
+        			"triggered_by":"test@cloud66.com",
+        			"triggered_via":
+        				{
+        					"code":0,
+        					"meaning":"web"
+        				},
+        			"started_at":"2014-08-29T17:46:16Z",
+        			"finished_at":"2014-08-29T17:58:23Z",
+        			"outcome":
+        				{
+        					"code":1,
+        					"meaning":"success"
+        				},
+        			"git_hash":"5675fcd8f9e6dc534ecf1410c0661c066097e310",
+        			"deploy_session":"OhBHNzkXSl",
+        			"deploy_type":
+        				{
+        					"code":0,
+        					"meaning":"build"
+        				},
+        			"is_head":true,
+        			"is_live":true,
+        			"reverted":null,
+        			"reverted_by":null,
+        			"reverted_at":null,
+        			"is_deploying":false,
+        			"commit_url":"https://github.com/cloud66-samples/rails-test/commit/5675fcd8f9e6dc534ecf1410c0661c066097e310"
+        		}
+        	}
+        }
+
+### Deployment [GET]
+Get information of a single deployment
+
++ Response 200
+
+    [Deployment][]
+
+## Redeploy [/stacks/{stack_id}/deployments]
+Redeploy a stack
+
+- Scope: _redeploy_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+    	{
+    		"response":
+    			{
+    				"ok":true,
+    				"message":"Stack queued for redeployment"
+    			}
+    	}
+
+
+### Redeploy [POST]
+Redeploy a stack
+
++ Response 200
+
+    [Redeploy][]
+
+## Cancel deployment [/stacks/{stack_id}/deployments/{id}]
+Cancel a live stack deployment
+
+- Scope: _redeploy_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, integer, `112`) ... The deployment id
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+		{
+			"response":
+				{
+					"ok":true,
+					"message":"Cancelling deployment"
+				}
+		}
+
+### Cancel deployment [DELETE]
+Cancel a live stack deployment
+
++ Response 200
+
+    [Cancel deployment][]
+
+
 # Group Environment Variables
 
 ## Environment Variable list [/stacks/{id}/environments]
