@@ -246,6 +246,169 @@ Get information of a single server group
     [Server Group][]
 
 
+# Group Servers
+
+## Server List [/stacks/{id}/servers]
+Get list of all servers of stack
+
+- Scope: _public_
+
++ Parameters
+
+    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+		{
+			"response": [
+				{
+					"uid": "f8468fc145ea49bac474b30a8fea888d",
+					"vendor_uid": "2492780",
+					"name": "Caribou",
+					"address": "146.185.133.183",
+					"distro": "ubuntu",
+					"distro_version": "14.04",
+					"dns_record": "caribou.sb-elastic-1.dev.c66.me",
+					"user_name": "root",
+					"server_type": "Cloud (DigitalOcean) ",
+					"server_roles": [
+						"rails",
+						"postgresql",
+						"elasticsearch",
+						"web",
+						"app",
+						"db"
+					],
+					"server_group_id": 128,
+					"stack_uid": "5acd43412ea412e32897c40d46f91183",
+					"has_agent": true,
+					"params":
+						{
+							"availability_zone": "2",
+							"size": "63",
+							"region": "2",
+							"ips":["146.185.133.183"],
+							"was_baselined": true,
+							"cached_cores":1,
+							"cached_memory": 1042336972,
+							"passenger_version": "4.0.48",
+							"passenger_enterprise": false,
+							"supports_nginx_realip": true,
+							"passenger_pool_max": 4
+						},
+					"created_at": "2014-08-29T17:21:47Z",
+					"updated_at": "2014-08-29T17:54:41Z",
+					"region":"2",
+					"availability_zone": "2",
+					"ext_ipv4": "146.185.133.183",
+					"health_state": 3,
+					"int_ipv4": "146.185.133.183",
+					"int_ipv6": null,
+					"ext_ipv6": null
+				}
+			],
+			"count":1,
+			"pagination":
+				{
+					"previous": null,
+					"next": null,
+					"current": 1,
+					"per_page": 30,
+					"count": 1,
+					"pages": 1
+				}
+		}
+
+### Server List [GET]
+Get list of all servers of stack
+
++ Response 200
+
+    [Server List][]
+
+## Server [/stacks/{stack_id}/servers/{id}]
+Get information of a single server
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `f8468fc145ea49bac474b30a8fea888d`) ... The server UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+    	{
+    		"response":
+    			{
+    				"uid": "f8468fc145ea49bac474b30a8fea888d",
+    				"vendor_uid": "2492780",
+    				"name": "Caribou",
+    				"address": "146.185.133.183",
+    				"distro": "ubuntu",
+    				"distro_version": "14.04",
+    				"dns_record": "caribou.sb-elastic-1.dev.c66.me",
+    				"user_name": "root",
+    				"server_type": "Cloud (DigitalOcean) ",
+    				"server_roles":[
+    					"rails",
+    					"postgresql",
+    					"elasticsearch",
+    					"web",
+    					"app",
+    					"db"
+    				],
+    				"server_group_id": 128,
+    				"stack_uid": "5acd43412ea412e32897c40d46f91183",
+    				"has_agent": true,
+    				"params":
+    					{
+    				 		"availability_zone": "2",
+    				 		"size": "63",
+    				 		"region": "2",
+    				 		"ips":["146.185.133.183"],
+    				 		"was_baselined": true,
+    				 		"cached_cores": 1,
+    				 		"cached_memory": 1042336972,
+    				 		"passenger_version": "4.0.48",
+    				 		"passenger_enterprise": false,
+    				 		"supports_nginx_realip": true,
+    				 		"passenger_pool_max":4
+    				 	},
+    				 "created_at": "2014-08-29T17:21:47Z",
+    				 "updated_at": "2014-08-29T17:54:41Z",
+    				 "region": "2",
+    				 "availability_zone": "2",
+    				 "ext_ipv4": "146.185.133.183",
+    				 "health_state":3,
+    				 "int_ipv4": "146.185.133.183",
+    				 "int_ipv6": null,
+    				 "ext_ipv6": null
+    			}
+    	}
+
+### Server [GET]
+Get information of a single server
+
++ Response 200
+
+    [Server][]
+
+
 # Group Accounts
 
 ## Account List [/accounts]
@@ -498,10 +661,4 @@ Get information of a user.
 + Response 200
 
     [User][]
-
-# Group Devices
-
-## Devices List [GET]
-
-
 
