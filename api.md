@@ -1515,6 +1515,253 @@ Update value of a server setting item
     [Update Server Setting][]
 
 
+# Group Backups
+
+## Backups list [/stacks/{id}/backups]
+Get list of all backups of stack.
+
+- Scope: _public_
+
++ Parameters
+
+    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + group (optional, integer, `15`) ... The backup group id
+    + db_type (optional, string, `mysql`) ... Database type of backup . Valid options or : mysql, postgresql, redis, mongodb
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+		{
+			"response":[
+				{
+					"id":4,
+					"server_uid":"e63e859d5ab72b0bcf14321f0ffb013d",
+					"db_type":"mysql",
+					"database_name":"test-db",
+					"file_base":"",
+					"backup_date_iso":"2014-09-01T19:00:33Z",
+					"backup_status":0,
+					"backup_result":"",
+					"restore_status":0,
+					"restore_result":null,
+					"created_at_iso":"2014-09-01T19:00:33Z",
+					"updated_at_iso":"2014-09-01T19:00:33Z",
+					"verify_status":0,
+					"verify_result":null,
+					"storage_path":"2aad2bb5a70e621ecf251fbd85af6927/backups/3c656a1bcc160769762763c6276c18b9/mysql/test_db_11/2014.09.01.19.00.31",
+					"skip_tables":"","backup_size":0
+				},
+				{
+					"id":1,
+					"server_uid":"e63e859d5ab72b0bcf14321f0ffb013d",
+					"db_type":"mysql",
+					"database_name":"test-db",
+					"file_base":"",
+					"backup_date_iso":"2014-09-01T18:16:16Z",
+					"backup_status":0,
+					"backup_result":"",
+					"restore_status":0,
+					"restore_result":null,
+					"created_at_iso":"2014-09-01T18:16:16Z",
+					"updated_at_iso":"2014-09-01T18:16:16Z",
+					"verify_status":0,
+					"verify_result":null,
+					"storage_path":"2aad2bb5a70e621ecf251fbd85af6927/backups/3c656a1bcc160769762763c6276c18b9/mysql/test_db_11/2014.09.01.18.16.14",
+					"skip_tables":"","backup_size":0
+				}
+			],
+			"count":2,
+			"pagination":
+				{
+					"previous":null,
+					"next":null,
+					"current":1,
+					"per_page":30,
+					"count":2,
+					"pages":1
+				}
+		}
+
+### Backups list [GET]
+Get list of all backups of stack.
+
++ Response 200
+
+    [Backups list][]
+
+## Backup [/stacks/{stack_id}/backups/{id}]
+Get information of a single backup
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, integer, `4153`) ... The backup id
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+		{
+			"response":
+				{
+					"id":1,
+					"server_uid":"e63e859d5ab72b0bcf14321f0ffb013d",
+					"db_type":"mysql",
+					"database_name":"shab-test-db",
+					"file_base":"",
+					"backup_date_iso":"2014-09-01T18:16:16Z",
+					"backup_status":0,
+					"backup_result":"",
+					"restore_status":0,
+					"restore_result":null,
+					"created_at_iso":"2014-09-01T18:16:16Z",
+					"updated_at_iso":"2014-09-01T18:16:16Z",
+					"verify_status":0,
+					"verify_result":null,
+					"storage_path":"2aad2bb5a70e621ecf251fbd85af6927/backups/3c656a1bcc160769762763c6276c18b9/mysql/test_db_11/2014.09.01.18.16.14",
+					"skip_tables":"",
+					"backup_size":0
+				}
+		}
+
+
+### Backup [GET]
+Get information of a single backup
+
++ Response 200
+
+    [Backup][]
+
+
+## Import Backup [/stacks/{stack_id}/backups]
+Import an external backup.
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + group (required, integer, `5`) ... The group id of backups that imported backup must be place in
+    + db_type (required, string, `mysql`) ... Database type of backup . Valid options or : mysql, postgresql, redis, mongodb
+    + remote_url (required, string, `https://s3.amazonaws.com/c66-managed-backup-non-prod/2aad2bb5a70e621ecf251fbd85af6927/backups/09a7dec0efdaa19b44148fccbf6128ec/redis/redis_23/2014.07.01.07.00.46/redis_23.tar`) ... A valid url to backup file that is going to be imported
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+    	{
+    		"response":
+    			{
+    				"ok":true,
+    				"message":"Your external backup queued for upload"
+    			}
+    	}
+
+### Import Backup [POST]
+Add a new environment variable
+
++ Response 200
+
+    [Import Backup][]
+
+
+## Backup files [/stacks/{stack_id}/backups/{backup_id}/files]
+Get list of all files of a backup
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + backup_id (required, integer, `4153`) ... The backup id
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+    	{
+    		"response":[
+    			{
+    				"id":"tar",
+    				"name":"test_db_11.tar"
+    			}
+    		],
+    		"count":1,
+    		"pagination":
+    			{
+    				"previous":null,
+    				"next":null,
+    				"current":1,
+    				"per_page":30,
+    				"count":1,
+    				"pages":1
+    			}
+    	}
+
+
+### Backup files [GET]
+Get list of all files of a backup
+
++ Response 200
+
+    [Backup files][]
+
+
+## Backup file [/stacks/{stack_id}/backups/{backup_id}/files/{id}]
+Get public url to a backup file
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + backup_id (required, integer, `4153`) ... The backup id
+    + id (required, string, `tar-aa`) ... The file id
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+		{
+			"response":
+				{
+					"ok":true,
+					"public_url":"https://c66-managed-backup-non-prod.s3.amazonaws.com/2aad2bb5a70e621ecf251fbd85af6927/backups/3c656a1bcc160769762763c6276c18b9/mysql/test_db_11/2014.09.01.18.16.14/test_db_11.tar?AWSAccessKeyId=AKIAIKCYITLQBEJDIETQ\u0026Expires=1409603570\u0026Signature=C2au7Jq%252F1m6uHGHRfGJPn%252F2GSS8%253D"
+				}
+		}
+
+### Backup file [GET]
+Get public url to a backup file
+
++ Response 200
+
+    [Backup file][]
+
 # Group Accounts
 
 ## Account List [/accounts]
