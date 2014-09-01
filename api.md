@@ -38,7 +38,7 @@ Authorization: bearer 5262d64b892e8d4341000001
 Most of the interactions with Cloud 66 API is at the stack level. Stacks are created using the UI dashboard but can be listed and returned via the API.
 
 ## Stack List [/stacks]
-Get a list of all stacks accessible by the caller.
+Get list of all stacks accessible by the caller.
 
 - Scope: _public_
 
@@ -98,7 +98,7 @@ Get a list of all stacks accessible by the caller.
 
 
 ## Stack [/stacks/{id}]
-Stack description.
+Get a single stack.
 
 - Scope: _public_
 
@@ -150,6 +150,101 @@ Get a single stack.
 + Response 200
 
     [Stack][]
+
+# Group Server Groups
+
+## Server Group List [/stacks/{id}/server_groups]
+Get list of all server groups of stack
+
+- Scope: _public_
+
++ Parameters
+
+    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+		{
+			"response": [
+				{
+					"id": 128,
+					"name": "Rails Server",
+					"type": "rails",
+					"created_at": "2014-08-29T17:21:47Z",
+					"updated_at": "2014-08-29T17:21:47Z"
+				},
+				{
+					"id":129,
+					"name":
+					"PostgreSQL Server",
+					"type": "postgresql",
+					"created_at": "2014-08-29T17:21:47Z",
+					"updated_at":"2014-08-29T17:21:47Z"
+				}
+			],
+			"count": 2,
+			"pagination":
+				{
+					"previous": null,
+					"next": null,
+					"current": 1,
+					"per_page": 30,
+					"count":2,
+					"pages":1
+				}
+		}
+
+### Server Group List [GET]
+Get list of all server groups of stack
+
++ Response 200
+
+    [Server Group List][]
+
+## Server Group [/stacks/{stack_id}/server_groups/{id}]
+Get information of a single server group
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, integer, `128`) ... The server group id
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+    	{
+
+    		"response":
+    			{
+    				"id": 128,
+    				"name": "Rails Server",
+    				"type": "rails",
+    				"created_at": "2014-08-29T17:21:47Z",
+    				"updated_at": "2014-08-29T17:21:47Z"
+    			}
+    	}
+
+### Server Group [GET]
+Get information of a single server group
+
++ Response 200
+
+    [Server Group][]
+
 
 # Group Accounts
 
@@ -403,3 +498,10 @@ Get information of a user.
 + Response 200
 
     [User][]
+
+# Group Devices
+
+## Devices List [GET]
+
+
+
