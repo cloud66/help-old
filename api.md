@@ -151,6 +151,247 @@ Get a single stack.
 
     [Stack][]
 
+# Group Environment Variables
+
+## Environment Variable list [/stacks/{id}/environments]
+Get list of all environment variables of stack
+
+- Scope: _admin_
+
++ Parameters
+
+    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+    	{
+    		"response": [
+    			{
+    				"id": 4152,
+    				"key": "STACK_GIT_BRANCH",
+    				"value": "master",
+    				"readonly": true,
+    				"created_at": "2014-08-29T17:21:25Z",
+    				"updated_at": "2014-08-29T17:21:25Z",
+    				"is_password":false,
+    				"is_generated": true
+    			},
+    			{
+    				"id": 4153,
+    				"key": "STACK_PATH",
+    				"value": "/var/deploy/test-elastic-1/web_head/current",
+    				"readonly": true,
+    				"created_at": "2014-08-29T17:21:25Z",
+    				"updated_at": "2014-08-29T17:21:25Z",
+    				"is_password": false,
+    				"is_generated": true
+    			},
+    			{
+    				"id": 4167,
+    				"key": "POSTGRESQL_USERNAME",
+    				"value": "tja",
+    				"readonly": false,
+    				"created_at": "2014-08-29T17:21:26Z",
+    				"updated_at":"2014-08-29T17:21:26Z",
+    				"is_password":false,
+    				"is_generated":true
+    			},
+    			{
+    				"id":4168,
+    				"key": "POSTGRESQL_PASSWORD",
+    				"value": "tjena",
+    				"readonly":false,
+    				"created_at":"2014-08-29T17:21:26Z",
+    				"updated_at":"2014-08-29T17:21:26Z",
+    				"is_password":true,
+    				"is_generated":true
+    			}
+    		],
+    		"count":30,
+    		"pagination":
+    			{
+    				"previous":null,
+    				"next":null,
+    				"current":1,
+    				"per_page":30,
+    				"count":4,
+    				"pages":1
+    			}
+    	}
+
+### Environment Variable list [GET]
+Get list of all environment variables of stack
+
++ Response 200
+
+    [Environment Variable list][]
+
+## Environment Variable [/stacks/{stack_id}/environments/{id}]
+Get information of a single environment variable
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, integer, `4153`) ... The environment variable id
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+
+		{
+			"response":
+				{
+					"id": 4153,
+					"key":
+					"STACK_PATH",
+					"value":"/var/deploy/test-elastic-1/web_head/current",
+					"readonly":true,
+					"created_at":"2014-08-29T17:21:25Z",
+					"updated_at":"2014-08-29T17:21:25Z",
+					"is_password":false,
+					"is_generated":true
+				}
+			}
+
+### Environment Variable [GET]
+Get information of a single environment variable
+
++ Response 200
+
+    [Environment Variable][]
+
+## Add Environment Variable [/stacks/{stack_id}/environments]
+Add a new environment variable
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + key (required, string, `MY_ENVIRONMENT_VALUE`) ... The new environment variable key
+    + value (required, string, `SOME_VALUE`) ... The new environment variable new value
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+
+		{
+			"response":
+				{
+					"id":5,
+					"user":"test@cloud66.com",
+					"resource_type": "stack",
+					"action": "env-var-new",
+					"resource_id": "280",
+					"started_via":"api",
+					"started_at": "2014-09-01T10:56:57Z",
+					"finished_at": null,
+					"finished_success":null,
+					"finished_message":null
+				}
+		}
+
+
+### Add Environment Variable [POST]
+Add a new environment variable
+
++ Response 200
+
+    [Add Environment Variable][]
+
+## Update Environment Variable [/stacks/{stack_id}/environments/{key}]
+Update value of an environment variable if it is not readonly
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + key (required, string, `POSTGRESQL_SLAVE_ADDRESSES`) ... The environment variable key
+    + value (required, string, `127.0.0.1`) ... The environment variable new value
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+
+		{
+			"response":
+				{
+					"id":3,
+					"user": "test@cloud66.com",
+					"resource_type": "stack",
+					"action": "env-var-update",
+					"resource_id":"280",
+					"started_via":"api",
+					"started_at": "2014-09-01T10:44:52Z",
+					"finished_at": null,
+					"finished_success":null,
+					"finished_message":null
+				}
+		}
+
+
+### Update Environment Variable [PUT]
+Update value of an environment variable if it is not readonly
+
++ Response 200
+
+    [Update Environment Variable][]
+
+
+## Delete Environment Variable [/stacks/{stack_id}/environments/{key}]
+Delete an environment variable if it is not readonly or generated by cloud66
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + key (required, string, `MY_ENV_1`) ... The environment variable key
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+
+### Delete Environment Variable [DELETE]
+Delete an environment variable if it is not readonly or generated by cloud66
+
++ Response 200
+
+    [Delete Environment Variable][]
+
+
 # Group Server Groups
 
 ## Server Group List [/stacks/{id}/server_groups]
