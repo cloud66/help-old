@@ -1042,6 +1042,134 @@ Get information of a single server
 
     [Server][]
 
+# Group Server settings
+
+## Server Settings list [/stacks/{stack_id}/servers/{server_id}/settings]
+Get list of all settings of a server
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + server_id (required, string, `f8468fc145ea49bac474b30a8fea888d`) ... The server UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+		{
+			"response":[
+				{
+					"key":"server.name",
+					"value":"Caribou",
+					"readonly":true,
+					"warning_text":"Warning! Changing this value will also modify your Cloud 66 *.c66.me DNS values"}
+			],
+			"count":1,
+			"pagination":
+				{
+					"previous":null,
+					"next":null,
+					"current":1,
+					"per_page":30,
+					"count":1,
+					"pages":1
+				}
+
+### Server Settings list [GET]
+Get list of all settings of a server
+
++ Response 200
+
+    [Server Settings list][]
+
+
+## Server Setting [/stacks/{stack_id}/servers/{server_id}/settings/{id}]
+Get information of a single server setting item
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + server_id (required, string, `f8468fc145ea49bac474b30a8fea888d`) ... The server UID
+    + id (required, string, `server-name`) ... The setting item id
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+		{
+			"response":
+				{
+					"key":"server.name",
+					"value":"Caribou"
+				}
+		}
+
+### Server Setting [GET]
+Get information of a single server setting item
+
++ Response 200
+
+    [Server Setting][]
+
+## Update Server Setting [/stacks/{stack_id}/servers/{server_id}/settings/{id}]
+Update value of a server setting item
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + server_id (required, string, `f8468fc145ea49bac474b30a8fea888d`) ... The server UID
+    + id (required, string, `server-name`) ... The setting item id
+    + value (required, string, `newname`) ... The setting item new value
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+        {
+        	"response":
+        		{
+        			"id":9,
+        			"user":"test@cloud66.com",
+        			"resource_type":"server",
+        			"action":"server-set: server.name",
+        			"resource_id":"445",
+        			"started_via":"api",
+        			"started_at":"2014-09-01T13:07:35Z",
+        			"finished_at":null,
+        			"finished_success":null,
+        			"finished_message":null
+        		}
+        }
+
+
+### Update Server Setting [PUT]
+Update value of a server setting item
+
++ Response 200
+
+    [Update Server Setting][]
+
 
 # Group Accounts
 
