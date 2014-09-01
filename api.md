@@ -38,7 +38,7 @@ Authorization: bearer 5262d64b892e8d4341000001
 Most of the interactions with Cloud 66 API is at the stack level. Stacks are created using the UI dashboard but can be listed and returned via the API.
 
 ## Stack List [/stacks]
-Actions on stacks accessible to the caller.
+Get a list of all stacks accessible by the caller.
 
 - Scope: _public_
 
@@ -89,7 +89,7 @@ Actions on stacks accessible to the caller.
             }
         }
 
-### Get Stack [GET]
+### Stack List [GET]
 Get a list of all stacks accessible by the caller.
 
 + Response 200
@@ -148,91 +148,114 @@ Get a single stack.
 
     [Stack][]
 
-# Group Users
-Group description
+# Group Stack Actions
 
-## User List [/users{?name,joinedBefore,joinedAfter,sort,limit}]
-A list of users
+# Group Deployments
 
-+ Parameters
+# Group Environment Variables
 
-    + name (optional, string, `alice`) ... Search for a user by name
-    + joinedBefore (optional, string, `2011-01-01`) ... Search by join date
-    + joinedAfter (optional, string, `2011-01-01`) ... Search by join date
-    + sort = `name` (optional, string, `joined`) ... Which field to sort by
+# Group Firewalls
 
-        + Values
-            + `name`
-            + `joined`
-            + `-joined`
+# Group Server Groups
 
-    + limit = `10` (optional, integer, `25`) ... The maximum number of users to return, up to `50`
+# Group Servers
 
-+ Model
+# Group Notifications
+
+# Backups
+
+# Group Accounts
+
+## Account List [/accounts]
+Get a list of accounts that caller belongs to
+
+- Scope: _users_
+
++ Model (application/json)
 
     + Headers
 
-            Content-Type: application/json
+        X-RateLimit-Limit: 3600
+        X-RateLimit-Remaining: 3597
 
     + Body
 
-            [
-                {
-                    "name": "alice",
-                    "image": "http://foo.com/alice.jpg",
-                    "joined": "2013-11-01"
-                },
-                {
-                    "name": "bob",
-                    "image": "http://foo.com/bob.jpg",
-                    "joined": "2013-11-02"
-                }
-            ]
+        {
+        	"response": [
+        		{
+        			"owner": "test@cloud66.com",
+        			"created_at_iso": "2013-06-19T11:08:03Z",
+        			"updated_at_iso": "2014-02-20T12:55:58Z",
+        			"stack_count": 2,
+        			"used_clouds": ["digitalocean","rackspace"]
+        		}
+        	],
+        	"count":1,
+        	"pagination":{
+        		"previous": null,
+        		"next": null,
+        		"current": 1,
+        		"per_page": 30,
+        		"count": 1,
+        		"pages": 1
+        	}
+        }
 
-    + Schema
-
-            {
-                "type": "array",
-                "maxItems": 50,
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "name": {
-                            "type": "string"
-                        },
-                        "image": {
-                            "type": "string"
-                        },
-                        "joined": {
-                            "type": "string",
-                            "pattern": "\d{4}-\d{2}-\d{2}"
-                        }
-                    }
-                }
-            }
-
-### Get users [GET]
-Get a list of users. Example:
-
-```no-highlight
-https://api.mywebsite.com/users?sort=joined&limit=5
-```
+### Account List [GET]
+Get a list of accounts that caller belongs to.
 
 + Response 200
 
-    [User List][]
+    [Account List][]
 
-# Group Tags
-Get or set tags on notes
 
-## GET /tags
-Get a list of bars
+## Account [/accounts/{id}]
+Get detail information about an Account
+
+- Scope: _users_
+
++ Parameters
+
+    + id (required, integer, `1`) ... The account ID
+
++ Model (application/json)
+
+    + Headers
+
+        X-RateLimit-Limit: 3600
+        X-RateLimit-Remaining: 3597
+
+    + Body
+
+		{
+			"response":
+				{
+        			"owner": "test@cloud66.com",
+        			"created_at_iso": "2013-06-19T11:08:03Z",
+        			"updated_at_iso": "2014-02-20T12:55:58Z",
+        			"stack_count": 2,
+        			"used_clouds": ["digitalocean","rackspace"]
+				}
+		}
+
+### Get Account [GET]
+Get a single account.
 
 + Response 200
 
-## Get one tag [/tags/{id}]
-Get a single tag
+    [Account][]
 
-### GET
 
-+ Response 200
+# Group Users
+
+## User List
+
+## User
+
+# Group Devices
+
+## New Device
+
+## Update Device
+
+## Delete Device
