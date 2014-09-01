@@ -513,6 +513,278 @@ Get information of a single firewall rule
 
 
 
+# Group Notifications
+
+## Notifications list [/stacks/{id}/notifications]
+Get list of all notifications of stack
+
+- Scope: _public_
+
++ Parameters
+
+    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + alert_type (optional,string, `server.stopped`) ... Type of alert
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+		{
+			"response":[
+				{
+					"id":1189,
+					"user_id":18,
+					"alert_type":"stack.provision.ok",
+					"channels":["email"],
+					"stack_id":"5acd43412ea412e32897c40d46f91183",
+					"params":{},
+					"created_at":"2014-05-29T17:29:54Z",
+					"updated_at":"2014-05-29T17:29:54Z"
+				},
+				{
+					"id":1190,
+					"user_id":18,
+					"alert_type":"stack.provision.fail",
+					"channels":["email"],
+					"stack_id":"5acd43412ea412e32897c40d46f91183",
+					"params":{},
+					"created_at":"2014-05-29T17:29:54Z",
+					"updated_at":"2014-05-29T17:29:54Z"
+				},
+				{
+					"id":1191,
+					"user_id":18,
+					"alert_type":"stack.redeploy.ok",
+					"channels":["email"],
+					"stack_id":"5acd43412ea412e32897c40d46f91183",
+					"params":{},
+					"created_at":"2014-05-29T17:29:54Z",
+					"updated_at":"2014-05-29T17:29:54Z"
+				}
+			],
+			"count":30,
+			"pagination":
+				{
+					"previous":null,
+					"next":2,
+					"current":1,
+					"per_page":30,
+					"count":48,
+					"pages":2
+				}
+			}
+
+### Notifications list [GET]
+Get list of all environment variables of stack
+
++ Response 200
+
+    [Notifications list][]
+
+## Notification [/stacks/{stack_id}/notifications/{id}]
+Get information of a single notification
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, integer, `4153`) ... The notification id
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+		{
+			"response":
+				{
+					"id":1191,
+					"user_id":18,
+					"alert_type":
+					"stack.redeploy.ok",
+					"channels":["email"],
+					"stack_id":"5acd43412ea412e32897c40d46f91183",
+					"params":{},
+					"created_at":"2014-05-29T17:29:54Z",
+					"updated_at":"2014-05-29T17:29:54Z"
+				}
+		}
+
+### Notification [GET]
+Get information of a single notification
+
++ Response 200
+
+    [Notification][]
+
+
+# Group Stack settings
+
+## Settings list [/stacks/{id}/settings]
+Get list of all settings of stack
+
+- Scope: _public_
+
++ Parameters
+
+    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+		{
+			"response":[
+				{
+					"id":"allowed-web-source",
+					"key":"allowed.web.source",
+					"value":null,
+					"readonly":false,
+					"warning_text":""
+				},
+				{
+					"id":"asset-prefix",
+					"key":"asset.prefix",
+					"value":"assets",
+					"readonly":false,
+					"warning_text":""
+				},
+				{
+					"id":"git-branch",
+					"key":"git.branch",
+					"value":"master",
+					"readonly":false,
+					"warning_text":""
+				},
+				{
+					"id":"reconfigure-nginx",
+					"key":"reconfigure.nginx",
+					"value":false,
+					"readonly":false,
+					"warning_text":""
+				},
+				{
+					"id":"stack-name",
+					"key":"stack.name",
+					"value":"test-elastic-1",
+					"readonly":true,
+					"warning_text":"Warning! Changing this value will also modify your Cloud 66 *.c66.me DNS values"}
+			],
+			"count":5,
+			"pagination":
+				{
+					"previous":null,
+					"next":null,
+					"current":1,
+					"per_page":30,
+					"count":6,
+					"pages":1
+				}
+			}
+
+
+### Settings list [GET]
+Get list of all settings of stack
+
++ Response 200
+
+    [Settings list][]
+
+
+## Setting [/stacks/{stack_id}/settings/{id}]
+Get information of a single setting item
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `git-branch`) ... The setting item id
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+		{
+			"response":
+				{
+					"key":"git.branch",
+					"value":"master"
+				}
+		}
+
+### Setting [GET]
+Get information of a single setting item
+
++ Response 200
+
+    [Setting][]
+
+## Update Setting [/stacks/{stack_id}/settings/{id}]
+Update value of a setting item
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `git-branch`) ... The setting item id
+    + value (required, string, `staging`) ... The setting item new value
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+        {
+        	"response":
+        		{
+        			"id":7,
+        			"user":"test@cloud66.com",
+        			"resource_type":"stack",
+        			"action":"stack-set: git.branch",
+        			"resource_id":"280",
+        			"started_via":"api",
+        			"started_at":"2014-09-01T12:47:24Z",
+        			"finished_at":null,
+        			"finished_success":null,
+        			"finished_message":null
+        		}
+        }
+
+
+### Update Setting [PUT]
+Update value of a setting item
+
++ Response 200
+
+    [Update Setting][]
+
+
 # Group Server Groups
 
 ## Server Group List [/stacks/{id}/server_groups]
