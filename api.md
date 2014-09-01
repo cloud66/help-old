@@ -855,6 +855,44 @@ Get information of a single firewall rule
 
     [Firewall rule][]
 
+## Add Firewall rule [/stacks/{stack_id}/firewalls]
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+	+ ttl (optional, integer, `20`) ... Time that firewall rule will be expires in
+	+ from_ip (optional, string, `123.123.123.123`) ... From IP value of rule
+	+ from_group_id (optional, integer, `19`) ...  You can specify a server group id as From
+	+ from_server_id (optional, integer, `193`) ...  You can specify a server id as From
+	+ to_ip (optional, string, `123.123.123.123`) ... To IP value of rule
+	+ to_group_id (optional, integer, `19`) ...  You can specify a server group id as To
+	+ to_server_id (optional, integer, `1`) ...  You can specify a server id as To
+	+ protocol (required, integer, `1`) ...  Protocol of firewall rule . TCP = 1 , UDP = 2 , ICMP = 3
+	+ port (required,integer, `80`) ... Port of firewall rule
+
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+
+### Add Firewall rule [POST]
+Add a firewall rule.
+One of the from/to params must be specified.
+If you specify ttl , from_ip can be set as 'AUTO', then caller IP will be set as from_ip
+
++ Response 200
+
+    [Add Firewall rule][]
+
+
 
 
 # Group Notifications
