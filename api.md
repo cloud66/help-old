@@ -354,6 +354,147 @@ Cancel a live stack deployment
     [Cancel deployment][]
 
 
+# Group Stack Actions
+
+## Stack Action list [/stacks/{id}/actions]
+Get list of all async actions that happened to stack.
+
+- Scope: _public_
+
++ Parameters
+
+    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+		{
+			"response":[
+				{
+					"id":10,
+					"user":"test@cloud66.com",
+					"resource_type":"stack",
+					"action":"clear_caches",
+					"resource_id":"283",
+					"started_via":"api",
+					"started_at":
+					"2014-09-01T19:08:05Z",
+					"finished_at":"2014-09-01T19:08:09Z",
+					"finished_success":true,
+					"finished_message":null
+				}
+			],
+			"count":1,
+			"pagination":
+				{
+					"previous":null,
+					"next":null,
+					"current":1,
+					"per_page":30,
+					"count":1,
+					"pages":1
+				}
+		}
+
+### Stack Action list [GET]
+Get list of all async actions that happened to stack.
+
++ Response 200
+
+    [Stack Action list][]
+
+## Stack Action [/stacks/{stack_id}/actions/{id}]
+Get information of a single stack async action
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, integer, `4153`) ... The async action id
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+		{
+			"response":
+				{
+					"id":10,
+					"user":"test@cloud66.com",
+					"resource_type":"stack",
+					"action":"clear_caches",
+					"resource_id":"283",
+					"started_via":"api",
+					"started_at":
+					"2014-09-01T19:08:05Z",
+					"finished_at":"2014-09-01T19:08:09Z",
+					"finished_success":true,
+					"finished_message":null
+				}
+		}
+
+
+### Stack Action [GET]
+Get information of a single stack async action
+
++ Response 200
+
+    [Stack Action][]
+
+
+## Run Stack action [/stacks/{stack_id}/actions]
+Start running an action(clear_caches, maintenance_mode, restart) on stack
+
+- Scope: _redeploy_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + command (required, string, `restart`) ... Valid commands are clear_caches, maintenance_mode, restart
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+    	{
+    		"response":
+    			{
+    				"id":10,
+    				"user":"test@cloud66.com",
+    				"resource_type":"stack",
+    				"action":"clear_caches",
+    				"resource_id":"283",
+    				"started_via":"api",
+    				"started_at":"2014-09-01T19:08:05Z",
+    				"finished_at":null,
+    				"finished_success":null,
+    				"finished_message":null
+    			}
+    	}
+
+### Run Stack action [POST]
+Add a new environment variable
+
++ Response 200
+
+    [Run Stack action][]
+
+
 # Group Environment Variables
 
 ## Environment Variable list [/stacks/{id}/environments]
