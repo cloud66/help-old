@@ -488,7 +488,7 @@ Start running an action(clear_caches, maintenance_mode, restart) on stack
     	}
 
 ### Run Stack action [POST]
-Add a new environment variable
+Start running an action(clear_caches, maintenance_mode, restart) on stack
 
 + Response 200
 
@@ -1008,6 +1008,36 @@ Get information of a single notification
 + Response 200
 
     [Notification][]
+
+## Update Notification [/stacks/{stack_id}/notifications/{id}]
+Update channel/params of a notification
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, integer, `4153`) ... The notification id
+    + channels (optional, string, `[email,ios]`) ... Channels of notification , Valid channels are : email,ios,hipchat,webhook,slack
+	+ params (optional, string, `{'hipchat_room' : 'test'}`) ... parameters of notification channel . It must be a valid json string. Valid keys are : hipchat_token, hipchat_room, slack_url, slack_channel, webhook_url
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+### Update Notification [PUT]
+Update channel/params of a notification
+
++ Response 200
+
+    [Update Notification][]
+
+
 
 
 # Group Stack settings
@@ -2053,3 +2083,101 @@ Get information of a user.
 
     [User][]
 
+# Group Devices
+
+## Add Device [/users/{id}/devices]
+Add a new device for user
+
+- Scope: _users_
+
++ Parameters
+
+    + id (required, integer, `1`) ... The user ID
+    + device_type (required, integer, `1`) ... Device type 1 = IOS, 2 = Android
+    + sub_type (required, integer, `1`) ... 1 = IPHONE, 2 = IPAD, 3 = IPOD
+    + token (required, string, `htyukjbnnmshthkr`) ... token of device
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+    	{
+			"response":
+				{
+					"device_type": 1,
+					"sub_type": 1,
+					"token": "mmccdd",
+					"enabled": true,
+					"created_at": "2014-09-01 09:15:50 UTC",
+					"updated_at": "2014-09-01 09:15:50 UTC",
+					"created_at_iso": "2014-09-01T09:15:50Z",
+					"updated_at_iso": "2014-09-01T09:15:50Z"
+				}
+		}
+
+### Add Device [POST]
+Add a new environment variable
+
++ Response 200
+
+    [Add Device][]
+
+
+## Update Device [/users/{id}/devices]
+Update device_type/sub_type of a device
+
+- Scope: _users_
+
++ Parameters
+
+    + id (required, integer, `1`) ... The user ID
+    + token (required, string, `htyukjbnnmshthkr`) ... token of device
+    + device_type (required, integer, `1`) ... Device type 1 = IOS, 2 = Android
+    + sub_type (required, integer, `1`) ... 1 = IPHONE, 2 = IPAD, 3 = IPOD
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+
+### Update Device [PUT]
+Update device_type/sub_type of a device
+
++ Response 200
+
+    [Update Device][]
+
+## Delete Device [/users/{id}/devices/token]
+Delete a device
+
+- Scope: _users_
+
++ Parameters
+
+    + id (required, integer, `1`) ... The user ID
+    + token (required, string, `htyukjbnnmshthkr`) ... token of device
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+
+### Delete Device [DELETE]
+Delete a device
+
++ Response 200
+
+    [Delete Device][]
