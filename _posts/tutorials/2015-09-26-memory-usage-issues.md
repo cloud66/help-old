@@ -25,7 +25,9 @@ Once it's installed, run it with _htop_:
 
 The screen above will show you lots of statistics on memory and CPU usage, but we'll make two changes to make potential issues more visible:
 
-1. Hit _F2_ (setup), _Display options_, and enable _Hide userland threads_ by hitting the spacebar once selected. Hit _q_ to exit this screen.
-2. On the home screen, hit _F6_ (sort by), and select _MEM%_, which will sort your processes by memory usage.
+<ol class="article-list">
+<li>Hit _F2_ (setup), _Display options_, and enable _Hide userland threads_ by hitting the spacebar once selected. Hit _q_ to exit this screen.</li>
+<li>On the home screen, hit _F6_ (sort by), and select _MEM%_, which will sort your processes by memory usage.</li>
+</ol>
 
 Once done, this view should give you a good idea of which processes are using the most memory.

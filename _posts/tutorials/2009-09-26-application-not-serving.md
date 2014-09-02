@@ -16,7 +16,7 @@ There are a number of factors that can lead your application to stop serving con
 Start by checking if you can [SSH to your server](/how-to/shell-to-your-servers.html), remembering to open the firewall beforehand as described.
 
 If you're able to SSH to the server, follow the steps below. If not, we recommend that you use your cloud vendor dashboard to try to connect to the server.
-<ol>
+<ol class="article-list">
 <li>Is your application redirecting to HTTPS by default, and you don't have an SSL certificate installed? You can check by visiting the IP address of your server in your browser, or using the following command to see if there is a redirect in place:</li>
 
 <pre class="prettyprint">

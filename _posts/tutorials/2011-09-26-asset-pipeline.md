@@ -16,5 +16,7 @@ If you're experiencing deployment failures to do with your asset pipeline manife
 
 You can clear up old assets on the server manually by [starting a terminal connection to your server](/how-to/shell-to-your-servers.html) and following these steps:
 
-1. Remove all the contents from your `$STACK_BASE/shared/assets` folder
-2. Create a new, empty manifest.yml file by issuing `touch $STACK_BASE/shared/assets/manifest.yml`
+<ol class="article-list">
+<li>Remove all the contents from your `$STACK_BASE/shared/assets` folder</li>
+<li>Create a new, empty manifest.yml file by issuing `touch $STACK_BASE/shared/assets/manifest.yml`</li>
+</ol>

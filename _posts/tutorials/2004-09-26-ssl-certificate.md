@@ -45,7 +45,7 @@ Once you have your certificate, key and possibly intermediate certificate, paste
 <h2 id="sign">Certificate signing request</h2>
 
 To generate a key and certificate signing request, follow the steps below.
-<ol>
+<ol class="article-list">
 <li><a href="http://help.cloud66.com/how-to/shell-to-your-servers.html">SSH into your server</a>.</li>
 <li>Generate private <i>key</i> on your server, without specifying a passphrase:</li>
 
@@ -75,10 +75,12 @@ Cloud 66 supports these CAs fully by allowing you to add the intermediate certif
 <h2 id="multi-domain">Multi-domain certificates</h2>
 When installing multi-domain certificates, certificate authorities such as Comodo typically send you four files:
 
-1. Root CA Certificate - <i>AddTrustExternalCARoot.crt</i>
-2. Intermediate CA Certificate - <i>COMODORSAAddTrustCA.crt</i>
-3. Intermediate CA Certificate - <i>COMODORSAExtendedValidationSecureServerCA.crt</i>
-4. Your COMODO EV Multi-Domain SSL Certificate - <i>14637732.crt</i>
+<ol class="article-list">
+<li>Root CA Certificate - <i>AddTrustExternalCARoot.crt</i></li>
+<li>Intermediate CA Certificate - <i>COMODORSAAddTrustCA.crt</i></li>
+<li>Intermediate CA Certificate - <i>COMODORSAExtendedValidationSecureServerCA.crt</i></li>
+<li>Your COMODO EV Multi-Domain SSL Certificate - <i>14637732.crt</i></li>
+</ol>
 
 To use these, you have to concatenate all files except for the last one (the certificate):
 

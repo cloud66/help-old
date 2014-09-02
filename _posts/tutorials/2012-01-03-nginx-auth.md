@@ -17,13 +17,14 @@ difficulty: 1
 You can use Cloud 66 [CustomConfig](/stack-features/custom-config.html) to protect your application or parts of it with a username and password based on HTTP basic authentication.
 Follow the instructions below to accomplish this.
 
-1. We'll use [htpasswd](http://httpd.apache.org/docs/2.2/programs/htpasswd.html) to create your password file - it encrypts it the password with MD5 encryption. Install it:
+<ol class="article-list">
+<li>We'll use [htpasswd](http://httpd.apache.org/docs/2.2/programs/htpasswd.html) to create your password file - it encrypts it the password with MD5 encryption. Install it:</li>
 <br>`sudo apt-get install apache2-utils -y`<br>
 
-2. Once that is installed, we're ready to create your password file. We recommend that you create this file within your repository, which will be deployed to your servers. This command will prompt you to input a password.
+<li>Once that is installed, we're ready to create your password file. We recommend that you create this file within your repository, which will be deployed to your servers. This command will prompt you to input a password.</li>
 <br>`sudo htpasswd -c <directory>.htpasswd <user_name>`<br>
 
-3. Now we can go ahead and customize the Nginx configuration, which you can see more about in our [Nginx CustomConfig documentation](/how-to/nginx-customconfig.html).
+<li>Now we can go ahead and customize the Nginx configuration, which you can see more about in our [Nginx CustomConfig documentation](/how-to/nginx-customconfig.html).</li>
 
 You will want to add the following code within the _server_ section of your configuration. Where you put it will depend on which Rack server you are running, and whether or not you are using HTTPS traffic.
 
@@ -41,8 +42,4 @@ You will want to add the following code within the _server_ section of your conf
 - HTTPS: Line _197_
 
 This will read your password file from your repository directory on the server. Once you save that configuration, it will apply immediately on your server.
-
-
-
-
-
+</ol>

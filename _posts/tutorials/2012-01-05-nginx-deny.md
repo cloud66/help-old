@@ -17,9 +17,9 @@ difficulty: 1
 In addition to protecting your application (or parts of it) using [HTTP basic authentication](/web-server/nginx-auth.html), you can use Cloud 66 [CustomConfig](/stack-features/custom-config.html) to block (or allow) access to your application based on IP addresses.
 Follow the instructions below to accomplish this.
 
-1. Create a file in the root of your repository called _blockips.conf_. This file will contain the IPs you wish to allow/deny.
-
-2. To deny a single IP address, you can use the following syntax:
+<ol class="article-list">
+<li>Create a file in the root of your repository called _blockips.conf_. This file will contain the IPs you wish to allow/deny.</li>
+<li>To deny a single IP address, you can use the following syntax:</li>
 <br>`deny 1.2.3.4;`<br><br>
 You can also deny an entire subnet as follows:
 <br>`deny 91.212.45.0/24;`<br><br>
@@ -28,7 +28,7 @@ Should you wish to only allow access to your IP address, do this:
 allow 1.2.3.4/24;<br>
 deny all;</code>
 <br><br>There are [lots](http://www.cyberciti.biz/faq/linux-unix-nginx-access-control-howto/) of [resources](http://wiki.nginx.org/HttpAccessModule) about this syntax on the Internet in case you need more guidance.
-3. Now we can go ahead and customize the Nginx configuration, which you can see more about in our [Nginx CustomConfig documentation](/how-to/nginx-customconfig.html).
+<li>Now we can go ahead and customize the Nginx configuration, which you can see more about in our [Nginx CustomConfig documentation](/how-to/nginx-customconfig.html).</li>
 
 You will want to add the following code within the _http_ section of your configuration, for example on line 22.
 
@@ -37,8 +37,4 @@ You will want to add the following code within the _http_ section of your config
 </pre>
 
 This will read the file from your repository directory on the server. Once you save that configuration, it will apply immediately on your server.
-
-
-
-
-
+</ol>

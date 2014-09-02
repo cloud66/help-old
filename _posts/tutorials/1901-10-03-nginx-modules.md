@@ -53,18 +53,13 @@ We will be installing the <a href="http://wiki.nginx.org/HttpEchoModule" target=
 
 <p>We will be installing the <a href="http://wiki.nginx.org/HttpEchoModule" target="_blank">HTTP Echo Nginx</a> module during this example. Please be sure to replace this with your own module(s).</p>
 
-1. Get the latest version of Nginx source from their <a href="http://nginx.org/en/download.html" target="_blank">website</a>. At the moment of writing this is version 1.5.3:<br><code>wget http://nginx.org/download/nginx-1.5.3.tar.gz</code>
-
-2. Use tar to extract the files from their archive:<br><code>tar xvzf nginx-1.5.3.tar.gz</code>
-
-3. Get the latest version of your module(s):<br><code>wget http://github.com/agentzh/echo-nginx-module/archive/v0.46.tar.gz</code><br><br>Visit the Nginx website for more information about <a href="http://wiki.nginx.org/Modules" target="_blank">default</a> and <a href="http://wiki.nginx.org/3rdPartyModules" target="_blank">third party modules</a>.
-
-4. Use tar to extract the files from their archive:<br><code>tar xvzf v0.46.tar.gz</code>
-
-5. Enter the Nginx folder:<br><code>cd nginx-1.5.3</code>
-
-6. Execute the following command to configure the installation:<br><code>./configure --prefix='/etc/nginx' --add-module='/root/echo-nginx-module-0.46' --error-log-path='$STACK&#95;PATH/log' --user=nginx</code><br><br>Visit the Nginx website for more information about <a href="http://wiki.nginx.org/InstallOptions" target="_blank">installation and compile-time options</a>.
-
-7. Execute `make` followed by `make install`, which will install Nginx with the new configuration.
-
-8. Type <code>nginx -V</code> to confirm whether your module(s) installed.
+<ol class="article-list">
+<li>Get the latest version of Nginx source from their <a href="http://nginx.org/en/download.html" target="_blank">website</a>. At the moment of writing this is version 1.5.3:<br><code>wget http://nginx.org/download/nginx-1.5.3.tar.gz</code></li>
+<li>Use tar to extract the files from their archive:<br><code>tar xvzf nginx-1.5.3.tar.gz</code></li>
+<li>Get the latest version of your module(s):<br><code>wget http://github.com/agentzh/echo-nginx-module/archive/v0.46.tar.gz</code><br><br>Visit the Nginx website for more information about <a href="http://wiki.nginx.org/Modules" target="_blank">default</a> and <a href="http://wiki.nginx.org/3rdPartyModules" target="_blank">third party modules</a>.</li>
+<li>Use tar to extract the files from their archive:<br><code>tar xvzf v0.46.tar.gz</code></li>
+<li>Enter the Nginx folder:<br><code>cd nginx-1.5.3</code></li>
+<li>Execute the following command to configure the installation:<br><code>./configure --prefix='/etc/nginx' --add-module='/root/echo-nginx-module-0.46' --error-log-path='$STACK&#95;PATH/log' --user=nginx</code><br><br>Visit the Nginx website for more information about <a href="http://wiki.nginx.org/InstallOptions" target="_blank">installation and compile-time options</a>.</li>
+<li>Execute `make` followed by `make install`, which will install Nginx with the new configuration.</li>
+<li>Type <code>nginx -V</code> to confirm whether your module(s) installed.</li>
+</ol>

@@ -32,10 +32,12 @@ Installing SSL certificates on your Cloud 66 stack is very easy: copy the key an
 
 However, you always need to have the right SSL certificates and keys to use. Specifically, your SSL certificates need to:
 
-- Be input correctly for Nginx to start
-- Have no passphrase
-- Have the correct encoding
-- Match each other
+<ul class="article-list">
+<li>Be input correctly for Nginx to start</li>
+<li>Have no passphrase</li>
+<li>Have the correct encoding</li>
+<li>Match each other</li>
+</ul>
 
 <h3 id="webserver">Web server issues</h3>
 If you've added your SSL certificate through the Cloud 66 UI and your web server has stopped serving content, it's likely that there's some error with your SSL certificate. In this case, it's best to [SSH to your server](/how-to/shell-to-your-servers.html) and run `sudo service nginx restart`, which should highlight the error.

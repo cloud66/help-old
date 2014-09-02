@@ -20,7 +20,7 @@ $ bundle exec rails c &lt;environment&gt;
 </pre>
 
 **Possible values for &lt;environment&gt;:**
-<ul>
+<ul class="article-list">
     <li>development (default)</li>
     <li>test</li>
     <li>production</li>

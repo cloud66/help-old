@@ -14,10 +14,12 @@ difficulty: 1
 
 A not unusual issue with Unicorn is that redeployments don't reflect your code changes. As a background on this, when you redeploy your stack, we send a USR2 signal to Unicorn which tells it to:
 
-1. Fire up a new master in parallel
-2. Fire up new worker processes under the new master
-3. Quiet and shut down old worker processes
-4. Shut down the existing master
+<ol class="article-list">
+<li>Fire up a new master in parallel</li>
+<li>Fire up new worker processes under the new master</li>
+<li>Quiet and shut down old worker processes</li>
+<li>Shut down the existing master</li>
+</ol>
 
 This mechanism allows for the zero-downtime deployments. However, if for some reason the new master or new workers can't start then the old master doesn't kill itself (in an attempt to keep service). You can verify this by issuing the following command:
 

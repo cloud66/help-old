@@ -22,8 +22,10 @@ We use [Fail2Ban](http://www.fail2ban.org/wiki/index.php/Main_Page) to protect y
 
 Your application performance is dependant on many factors, such as code efficiency, server performance, networking and so on. Answering these two questions helps us gauge your requirements and recommend a custom solution:
 
-1. What is the desired traffic level you want to be able to handle (eg. users/sec)?
-2. What is the average response time of your application?
+<ol class="article-list">
+<li>What is the desired traffic level you want to be able to handle (eg. users/sec)?</li>
+<li>What is the average response time of your application?</li>
+</ol>
 
 As an example, an application that takes 1 second to respond which is running on a server with 1 worker (thread) would need 1,000 servers to handle 1,000 concurrent connections. If your servers have 10 workers, you would need 100 servers. The more workers you have, the more resources you require, and consequently the more concurrent requests you can handle.
 
@@ -33,6 +35,8 @@ Determining the number of Unicorn workers you can have on your server [depends o
 
 There are a number of steps you can take when expecting an increase in server load. It's always best to scale _before_ you need it - the relative cost for more servers for a few days is worth more than the potential lost traffic, and you can always scale down easily.
 
-1. [Add a load balancer](/add-ins/load-balancer.html) to your stack, and point your DNS to it. It will distribute traffic across your web servers, and offers benefits such as maximizing throughoutput, minimizing response times and avoiding overload on any single server.
-2. [Scale your application servers horizontally](/stack-features/horizontal-scaling.html) to the extent that you require.
-2. [Monitor your servers](/stack-features/server-monitoring.html) to ensure that they are able to serve your users.
+<ol class="article-list">
+<li><a href="#">Add a load balancer to your stack</a>, and point your DNS to it. It will distribute traffic across your web servers, and offers benefits such as maximizing throughoutput, minimizing response times and avoiding overload on any single server.</li>
+<li><a href="/stack-features/horizontal-scaling.html">Scale your application servers horizontally</a> to the extent that you require.</li>
+<li><a href="/stack-features/server-monitoring.html">Monitor your servers</a> to ensure that they are able to serve your users.</li>
+</ol>

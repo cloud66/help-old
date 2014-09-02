@@ -17,7 +17,7 @@ difficulty: 1
 We use the default data folder when installing PostgreSQL on your server, which is  <code>/usr/local/pgsql/data</code>.
 To change this folder, follow the instructions below.
 
-<ol>
+<ol class="article-list">
 <li>Connect to your servers via <a href="/how-to/shell-to-your-servers.html">SSH</a>.</li>
 
 <li>Stop the PostgreSQL service by issuing this command:</li>
