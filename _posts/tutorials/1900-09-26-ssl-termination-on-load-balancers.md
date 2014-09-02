@@ -41,9 +41,10 @@ Thanks to the AWS dashboard or the command line interface, you can easily upload
 
 Through the AWS dashboard:
 
-- Sign in to the AWS management console and open the Amazon EC2 console
-- Select your load balancer and upload a new SSL Certificate or choose an existing one.
-- In case it is a new certificate, enter a name for the certificate and copy paste the contents of the private key file and the public key file into the related fields, then save.
+<ul class="article-list">
+<li>Sign in to the AWS management console and open the Amazon EC2 console.</li>
+<li>Select your load balancer and upload a new SSL Certificate or choose an existing one.</li>
+<li>In case it is a new certificate, enter a name for the certificate and copy paste the contents of the private key file and the public key file into the related fields, then save.</li>
 
 <div class="notice">
     <h3>Important</h3>
@@ -52,25 +53,37 @@ Through the AWS dashboard:
 
 Through the [AWS ELB command line interface](http://aws.amazon.com/developertools/2536):
 
-- Run the command below to add a new SSL certificate:
+<ul class="article-list">
+<li>Run the command below to add a new SSL certificate:</li>
+</ul>
 
 <pre class="prettyprint">
 $ iam-servercertupload -b &lt;CA authenticated SSL&gt; -k &lt;private key file(.pem)&gt; -s &lt;certificate name&gt;  -c  &lt;certificate chain file&gt; –v
 </pre>
 
-- You should retrieve any available SSL certificate using this command:
+<ul class="article-list">
+<li>
+You should retrieve any available SSL certificate using this command:</li>
+</ul>
 
 <pre class="prettyprint">
 $ iam-servercertlistbypathx
 </pre>
 
-- Run the command below to attach the SSL certificate to the load balancer:
+<ul class="article-list">
+<li>
+Run the command below to attach the SSL certificate to the load balancer:</li>
+</ul>
 
 <pre class="prettyprint">
 $ elb-create-lb-listeners ELBConfigureSSL --listener "protocol=HTTPS,lb-port=443,instance-port=80,instance-protocol=HTTP, cert-id=&#60;certificate name&#62;"
 </pre>
 
--	To delete a certificate, run the following command:
+<ul class="article-list">
+<li>
+To delete a certificate, run the following command:
+</li>
+</ul>
 
 <pre class="prettyprint">
 $ iam-servercertdel -s &#60;certificate name&#62;
@@ -81,13 +94,21 @@ See also: [AWS documentation](http://docs.aws.amazon.com/IAM/latest/UserGuide/In
 <h2 id="haproxy">HAProxy</h2>
 HAProxy 1.4 doesn’t natively support SSL, but it's possible to use an SSL encryption wrapper like Stunnel, Stud, Pound or Nginx to terminate TLS/SSL connections and forward the unencrypted traffic to HAProxy.
 
-- Firstly, install Stunnel on the load balancer:
+<ul class="article-list">
+<li>
+Firstly, install Stunnel on the load balancer:
+</li>
+</ul>
 
 <pre class="prettyprint">
 $ sudo apt-get install stunnel
 </pre>
 
-- You can then use the Cloud 66 [CustomConfig](/stack-features/custom-config.html) to configure the HAProxy configuration file as shown below. If you're not using Cloud 66, you have to make these changes manually in your <i>/etc/haproxy/haproxy.cfg</i> file.
+<ul class="article-list">
+<li>
+You can then use the Cloud 66 [CustomConfig](/stack-features/custom-config.html) to configure the HAProxy configuration file as shown below. If you're not using Cloud 66, you have to make these changes manually in your <i>/etc/haproxy/haproxy.cfg</i> file.
+</li>
+</ul>
 
 <p>
 <a target="_blank" rel="nofollow" class="button-home" href="https://app.cloud66.com/users/sign_up/?utm_source=help&utm_medium=web&utm_campaign=help-page">Manage your load balancers with ease on Cloud 66 &#10141;</a>
@@ -141,7 +162,11 @@ listen webcluster&#95;ssl *:8081
 
 Please note that you should replace the <code>XX.XX.XX.XX:80</code> IP above with your own load balanced servers IP.
 
--	Now,  add your SSL certificate key (.pem file) on the load balancer,  you certificate should look like the following example:
+<ul class="article-list">
+<li>
+Now,  add your SSL certificate key (.pem file) on the load balancer,  you certificate should look like the following example:
+</li>
+</ul>
 
 <pre class="prettyprint">
 -----BEGIN RSA PRIVATE KEY-----
@@ -152,7 +177,11 @@ Please note that you should replace the <code>XX.XX.XX.XX:80</code> IP above wit
 -----END CERTIFICATE-----
 </pre>
 
--	Then, create and configure a <code>stunnel.conf</code> file, find below an example:
+<ul class="article-list">
+<li>
+Then, create and configure a <code>stunnel.conf</code> file, find below an example:
+</li>
+</ul>
 
 <pre class="prettyprint">
 sslVersion = all
@@ -171,7 +200,11 @@ connect = 8081
 TIMEOUTclose = 0
 </pre>
 
-- After that, you can run stunnel with the <code>stunnel.conf</code> file:
+<ul class="article-list">
+<li>
+After that, you can run stunnel with the <code>stunnel.conf</code> file:
+</li>
+</ul>
 
 <pre class="prettyprint">
 stunnel4 &lt;path to stunnel.conf file&gt;

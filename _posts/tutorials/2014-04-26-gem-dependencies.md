@@ -24,7 +24,7 @@ libraries and/or headers.
 
 This may happen with a gem such as `debugger`, which is designed to hook into low level components of a language to dynamically stop and inspect the execution of code.
 
-<ol>
+<ol class="article-list">
 <li><p>This should <i>not</i> be done in production, so you could start by moving the gem to your <code>development</code> group in your <code>Gemfile</code>:</p></li>
 
 <pre class="prettyprint">
