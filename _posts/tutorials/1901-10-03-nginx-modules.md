@@ -32,9 +32,9 @@ important to remember to recompile Nginx with the previous configuration paramet
 We will be installing the <a href="http://wiki.nginx.org/HttpEchoModule" target="_blank">HTTP Echo Nginx</a> module during this example. Please be sure to replace this with your own module(s).
 
 <ol class="article-list">
-<li>Get the latest version of Nginx source from their <a href="http://nginx.org/en/download.html" target="_blank">website</a>. At the moment of writing this is version 1.5.3:<br><code>wget http://nginx.org/download/nginx-1.5.3.tar.gz</code></li>
-<li>Use tar to extract the files from their archive:<br><code>tar xvzf nginx-1.5.3.tar.gz</code></li>
-<li>Get the latest version of your module(s):<br><code>wget http://github.com/agentzh/echo-nginx-module/archive/v0.46.tar.gz</code><br><br>Visit the Nginx website for more information about <a href="http://wiki.nginx.org/Modules" target="_blank">default</a> and <a href="http://wiki.nginx.org/3rdPartyModules" target="_blank">third party modules</a>.</li>
+<li>Get the latest version of Nginx source from their <a href="http://nginx.org/en/download.html" target="_blank">website</a>. At the moment of writing this is version 1.5.3: <code>wget http://nginx.org/download/nginx-1.5.3.tar.gz</code></li>
+<li>Use tar to extract the files from their archive: <code>tar xvzf nginx-1.5.3.tar.gz</code></li>
+<li>Get the latest version of your module(s): <code>wget http://github.com/agentzh/echo-nginx-module/archive/v0.46.tar.gz</code>. Visit the Nginx website for more information about <a href="http://wiki.nginx.org/Modules" target="_blank">default</a> and <a href="http://wiki.nginx.org/3rdPartyModules" target="_blank">third party modules</a>.</li>
 <li>Use tar to extract the files from their archive:<br><code>tar xvzf v0.46.tar.gz</code></li>
 <li>Install the Passenger gem:<br><code>gem install passenger</code></li>
 <li>Install Passenger with Nginx:<br><code>sudo passenger-install-nginx-module</code></li>
