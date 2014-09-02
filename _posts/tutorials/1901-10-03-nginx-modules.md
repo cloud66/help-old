@@ -39,7 +39,12 @@ We will be installing the <a href="http://wiki.nginx.org/HttpEchoModule" target=
 <li>Install the Passenger gem: <code>gem install passenger</code></li>
 <li>Install Passenger with Nginx: <code>sudo passenger-install-nginx-module</code></li>
 <li>During the install process,
-	
+	<ul>
+        <li>Select option `2` for <i>advanced users</i></li>
+        <li>Specify the directory in which you extracted Nginx</li>
+        <li>Specify the installation directory as <code>/opt/nginx</code> so as to overwrite the previous installation</li>
+        <li>Specify your module(s), eg. <code>--add-module='/root/echo-nginx-module-0.46'</code></li>
+    </ul>
 </li>
 <li>Type <code>nginx -V</code> to confirm whether your module(s) installed.</li>
 </ol>
