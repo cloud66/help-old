@@ -9,6 +9,7 @@ lead: Troubleshooting Unicorn deployment issues
 search-tags: ['']
 tags: ['Troubleshooting', 'Deployment']
 tutorial: true
+difficulty: 1
 ---
 
 A not unusual issue with Unicorn is that redeployments don't reflect your code changes. As a background on this, when you redeploy your stack, we send a USR2 signal to Unicorn which tells it to:

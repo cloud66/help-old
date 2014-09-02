@@ -12,6 +12,7 @@ lead: How to share a single database between stacks
 search-tags: ['']
 tags: ['Database']
 tutorial: true
+difficulty: 0
 ---
 
 There are a number of reasons why you might want to share a database between your stacks. For example, you can test UI changes with your users while still using production data.

@@ -11,6 +11,7 @@ lead: The process differs for public and private repositories
 search-tags: ['']
 tags: ['Git']
 tutorial: true
+difficulty: 0
 ---
 
 <h2>Contents</h2>

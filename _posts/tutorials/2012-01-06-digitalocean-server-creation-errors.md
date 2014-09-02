@@ -9,6 +9,7 @@ lead: Errors can occur during server creation under DigitalOcean. This page deta
 search-tags: ['']
 tags: ['Troubleshooting']
 tutorial: true
+difficulty: 1
 ---
 
 ## Background

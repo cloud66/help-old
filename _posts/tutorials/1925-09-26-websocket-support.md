@@ -11,6 +11,7 @@ lead: Implement WebSocket on your server
 search-tags: ['']
 tags: ['Web server']
 tutorial: true
+difficulty: 2
 ---
 
 

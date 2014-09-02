@@ -9,6 +9,7 @@ lead: Gem dependency errors may arise for a number of reasons
 search-tags: ['']
 tags: ['Troubleshooting']
 tutorial: true
+difficulty: 0
 ---
 
 Depending on which gems you're using together with a specific Ruby version, you may see dependency issues such as:

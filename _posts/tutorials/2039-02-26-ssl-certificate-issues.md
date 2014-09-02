@@ -9,6 +9,7 @@ lead: Troubleshooting SSL certificate issues
 search-tags: ['ssl', 'ssl issue', 'ssl troubleshoot', 'ssl error']
 tags: ['Troubleshooting']
 tutorial: true
+difficulty: 1
 ---
 
 <h2>Contents</h2>

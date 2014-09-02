@@ -11,6 +11,7 @@ lead: There are two options when connecting to your database
 search-tags: ['']
 tags: ['Database']
 tutorial: true
+difficulty: 0
 ---
 
 ## On the server

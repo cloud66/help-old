@@ -9,6 +9,7 @@ lead: Use Cloud 66 CustomConfig to redirect your visitors
 search-tags: ['']
 tags: ['Web server']
 tutorial: true
+difficulty: 1
 ---
 
 <h2>Contents</h2>

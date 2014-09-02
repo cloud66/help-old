@@ -9,6 +9,7 @@ lead: Whenever schedules that define certain path specific actions may have erro
 search-tags: ['']
 tags: ['Troubleshooting']
 tutorial: true
+difficulty: 1
 ---
 
 ## Problem

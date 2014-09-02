@@ -9,6 +9,7 @@ lead: You may not have enough memory during deployment
 search-tags: ['']
 tags: ['Troubleshooting']
 tutorial: true
+difficulty: 0
 ---
 
 ## The Problem

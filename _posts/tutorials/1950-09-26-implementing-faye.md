@@ -11,6 +11,7 @@ lead: Use Faye, the flexible publish-subscribe messaging system
 search-tags: ['']
 tags: ['Customization']
 tutorial: true
+difficulty: 1
 ---
 
 

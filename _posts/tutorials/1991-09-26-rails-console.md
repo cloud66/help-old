@@ -11,6 +11,7 @@ lead: You can easily run Rails console with a single command
 search-tags: ['']
 tags: ['Customization']
 tutorial: true
+difficulty: 0
 ---
 Start by [SSHing to your server](/how-to/shell-to-your-servers.html). Then go to your `STACK_PATH` (eg. `cd $STACK_PATH`) and run the following command:
 

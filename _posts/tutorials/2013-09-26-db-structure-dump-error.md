@@ -9,6 +9,7 @@ lead: Unable to perform database dump - errors can occur during deployment if yo
 search-tags: ['']
 tags: ['Troubleshooting']
 tutorial: true
+difficulty: 0
 ---
 
 

@@ -11,6 +11,7 @@ lead: SQLite is not suitable for production environments
 search-tags: ['']
 tags: ['Database']
 tutorial: true
+difficulty: 0
 ---
 
 

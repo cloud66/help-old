@@ -11,6 +11,7 @@ lead: Run rake tasks automatically or manually on your stack
 search-tags: ['']
 tags: ['Customization']
 tutorial: true
+difficulty: 0
 ---
 
 

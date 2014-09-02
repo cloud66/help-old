@@ -9,6 +9,7 @@ lead: Installing the libv8 gem with a specific version can sometimes cause a lit
 search-tags: ['']
 tags: ['Troubleshooting']
 tutorial: true
+difficulty: 0
 ---
 
 

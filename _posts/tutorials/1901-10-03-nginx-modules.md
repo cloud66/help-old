@@ -11,6 +11,7 @@ lead: Rebuild Nginx with modules of your choice
 search-tags: ['']
 tags: ['Web server']
 tutorial: true
+difficulty: 1
 ---
 
 

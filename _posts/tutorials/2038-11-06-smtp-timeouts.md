@@ -9,6 +9,7 @@ lead: Amazon AWS EC2 enforces traffic throttling on SMTP causing intermittent ti
 search-tags: ['']
 tags: ['Troubleshooting']
 tutorial: true
+difficulty: 0
 ---
 
 

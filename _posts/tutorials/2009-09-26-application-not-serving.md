@@ -8,6 +8,7 @@ lead: Troubleshooting an application that isn't serving content
 search-tags: ['site down', 'not working', 'application error', 'nginx error', 'site not working']
 tags: ['Troubleshooting']
 tutorial: true
+difficulty: 1
 ---
 
 There are a number of factors that can lead your application to stop serving content. Follow this guide to eliminate the most common issues.

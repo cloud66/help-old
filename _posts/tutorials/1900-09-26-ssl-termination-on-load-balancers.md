@@ -11,6 +11,7 @@ lead: The process differs for different load balancers
 search-tags: ['ssl termination', 'ssl load balancer']
 tags: ['Scaling']
 tutorial: true
+difficulty: 2
 ---
 
 <h2>Contents</h2>
