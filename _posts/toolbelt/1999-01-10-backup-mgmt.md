@@ -11,6 +11,9 @@ tags: ['Toolbelt']
 
 <h2>Contents</h2>
 <ul class="page-toc">
+    <li>
+        <a href="#list">About backup management</a>
+    </li>
 	<li>
 		<a href="#list">List your backups</a>
 	</li>
