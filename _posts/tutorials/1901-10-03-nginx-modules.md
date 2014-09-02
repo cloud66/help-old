@@ -39,7 +39,7 @@ We will be installing the <a href="http://wiki.nginx.org/HttpEchoModule" target=
 <li>Install the Passenger gem: <code>gem install passenger</code></li>
 <li>Install Passenger with Nginx: <code>sudo passenger-install-nginx-module</code></li>
 <li>During the install process,
-	<ul>
+	<ul class="article-list">
         <li>Select option `2` for <i>advanced users</i></li>
         <li>Specify the directory in which you extracted Nginx</li>
         <li>Specify the installation directory as <code>/opt/nginx</code> so as to overwrite the previous installation</li>
