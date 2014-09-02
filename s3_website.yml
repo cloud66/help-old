@@ -77,7 +77,53 @@ redirects:
   how-to/integration-with-semaphore.html: partners/integration-with-semaphore.html
   stack-features/stack-security.html: stack-features/network-configuration.html
   stack-features/maintenance-mode.html: stack-features/network-configuration.html
-
+  ### pages moved from help to community (tutorials)
+  troubleshooting/unicorn-issues.html: http://community.cloud66.com/articles/unicorn-deployment-issues
+  troubleshooting/whenever-errors.html: http://community.cloud66.com/articles/whenever-cron-errors
+  troubleshooting/gem-dependencies.html: http://community.cloud66.com/articles/gem-dependency-errors
+  database/psql-failover.html: http://community.cloud66.com/articles/postgresql-failover-procedure
+  database/change-psql-directory.html: http://community.cloud66.com/articles/change-the-data-directory-for-postgresql
+  how-to/ssl-certificate.html: http://community.cloud66.com/articles/ssl-certificate
+  database/postgis-installation.html: http://community.cloud66.com/articles/postgis-installation
+  how-to/symlink-folders.html: http://community.cloud66.com/articles/create-symbolic-links-in-ubuntu
+  database/using-master-data-staging.html: http://community.cloud66.com/articles/using-production-data-on-your-staging-stack
+  how-to/github.html: http://community.cloud66.com/articles/use-github-with-cloud-66
+  how-to/out-of-memory-errors.html: http://community.cloud66.com/articles/out-of-memory-errors-during-deployment
+  troubleshooting/memory-usage-issues.html: http://community.cloud66.com/articles/memory-usage-issues
+  database/sharing-db.html: http://community.cloud66.com/articles/sharing-a-database-between-stacks
+  troubleshooting/application-not-serving.html: http://community.cloud66.com/articles/application-not-serving-content
+  troubleshooting/smtp-timeouts.html: http://community.cloud66.com/articles/smtp-timeouts-on-amazon-aws-ec2
+  how-to/migrate-from-heroku.html: http://community.cloud66.com/articles/migrate-from-heroku-to-cloud-66
+  how-to/rails-console.html: http://community.cloud66.com/articles/running-rails-console
+  web-server/nginx-auth.html: http://community.cloud66.com/articles/nginx-basic-authorization
+  database/manage-backups.html: http://community.cloud66.com/articles/managing-your-cloud-66-backups
+  how-to/implementing-faye.html: http://community.cloud66.com/articles/faye-on-cloud-66
+  troubleshooting/permission-denied-errors.html: http://community.cloud66.com/articles/permission-errors-during-deployment
+  how-to/nginx-modules.html: http://community.cloud66.com/articles/add-modules-to-nginx
+  web-server/nginx-deny.html: http://community.cloud66.com/articles/nginx-allow-and-deny-by-ip
+  how-to/haproxy-for-websocket.html: http://community.cloud66.com/articles/configuring-haproxy-for-websocket
+  how-to/migrate-across-dc.html: http://community.cloud66.com/articles/migrate-your-stacks-across-data-centers
+  database/uninstall-mysql.html: http://community.cloud66.com/articles/uninstalling-mysql
+  troubleshoting/whenever.html: 
+  how-to/ssl-termination-on-load-balancers.html: http://community.cloud66.com/articles/add-a-ssl-certificate-on-a-load-balancer
+  how-to/access-your-code.html: http://community.cloud66.com/articles/accessing-your-git-repository
+  how-to/bluepill.html: http://community.cloud66.com/articles/managing-processes-with-bluepill
+  how-to/optimizing-performance.html: http://community.cloud66.com/articles/optimizing-for-server-load
+  database/connect-db-servers.html: http://community.cloud66.com/articles/connect-to-your-database-servers
+  troubleshooting/local-cached-copy-error.html: http://community.cloud66.com/articles/local-cached-copy-error
+  how-to/websocket-support.html: http://community.cloud66.com/articles/cloud-66-websocket-support
+  web-server/nginx-redirect.html: http://community.cloud66.com/articles/nginx-redirects
+  how-to/memcached.html: http://community.cloud66.com/articles/memcached
+  troubleshooting/libv8-gem-errors.html: http://community.cloud66.com/articles/errors-when-installing-gem-libv8
+  troubleshooting/smtp-installation.html: http://community.cloud66.com/articles/installing-smtp-on-your-server
+  troubleshooting/ssl-certificate-issues.html: http://community.cloud66.com/articles/ssl-certificate-issues
+  how-to/asset-pipeline.html: http://community.cloud66.com/articles/asset-pipeline-errors
+  database/replace-sqlite.html: http://community.cloud66.com/articles/asset-pipeline-errors
+  troubleshooting/db-structure-dump-error.html: http://community.cloud66.com/articles/errors-during-deployment-around-database-dumping
+  database/seeding-db.html: http://community.cloud66.com/articles/seeding-your-database
+  troubleshooting/digitalocean-server-creation-errors.html: http://community.cloud66.com/articles/digitalocean-server-creation-errors
+  troubleshooting/db-config-test-group-errors.html:
+  how-to/running-rake-tasks.html: http://community.cloud66.com/articles/running-rake-tasks
 #   about.php: about.html
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
 
