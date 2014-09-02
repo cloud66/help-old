@@ -26,16 +26,19 @@ You can retrieve your backup in one of two ways:
 Access the backup page of your stack, and click the download button:
 ![Backup Download](http://cdn.cloud66.com/images/help/backup_download.png)
 
-
 ### Command line
 Use the `wget` command to download your backup:
-`wget <generated_public_link>`
+{% highlight bash %}
+$ wget <generated_public_link>
+{% endhighlight %}
 
 You can find the link to the file by clicking the download button (shown above) and copying the link. <b>Remember to put quotes around it.</b>
 
 ## Unzip your backup
 Now that you have downloaded your backup, you can go ahead and unzip it with the following command:
-`tar -xvf <tar_file>  -C <folder_name>`
+{% highlight bash %}
+tar -xvf <tar_file>  -C <folder_name>
+{% endhighlight %}
 
 The `-C` option allows you to choose which folder to extract the files to.
 
@@ -43,14 +46,19 @@ If your backup is greater than 250 MB, Cloud 66 will divide it into separate fil
 concatenate the parts into a single file before using the command above.
 
 For example, if we had three files called
-file.tar-aa, file.tar-ab and file.tar-ac, we would use the following command: `cat file.tar-aa file.tar-ab file.tar-ac > file.tar`
+file.tar-aa, file.tar-ab and file.tar-ac, we would use the following command: 
+{% highlight bash %}
+cat file.tar-aa file.tar-ab file.tar-ac > file.tar
+{% endhighlight %}
 
 This will result in a file called file.tar, which we can now unzip.
 
 ## Move your backup to another server
 To do this we will copy the file to a remote server using SCP:
 
-`scp  -i <identity_file> database_dump.sql <remote_server_user>@<remote_server_address>:/tmp`
+{% highlight bash %}
+$ scp  -i <identity_file> database_dump.sql <remote_server_user>@<remote_server_address>:/tmp
+{% endhighlight %}
 
 ## Restore your backup on another server
 
@@ -58,21 +66,26 @@ To do this we will copy the file to a remote server using SCP:
 
 From the [MySQL command-line](http://dev.mysql.com/doc/refman/5.5/en/mysql.html), use the following command to restore your database from a dumped backup file `(.sql)`:
 
-`mysql -u <db_username> -p<db_password> <db_name> < /tmp/database_dump.sql`
+{% highlight bash %}
+$ mysql -u <db_username> -p<db_password> <db_name> < /tmp/database_dump.sql
+{% endhighlight %}
 
 
 ### PostgreSQL database
 
 From the PostgreSQL command-line prompt, use the following command to restore your database from a dumped backup file `(.sql)`:
 
-`psql -U <db_username> --no-password <db_name> < <path_to_your_backup_file(.sql)>`
-
+{% highlight bash %}
+$ psql -U <db_username> --no-password <db_name> < <path_to_your_backup_file(.sql)>
+{% endhighlight %}
 
 ### MongoDB database
 
 From the MongoShell, use the following command to restore your database from a dumped backup folder:
 
-`mongorestore  --drop --username <db_username> --password <db_password> --db <db_name> <path_to_your_backup_folder(dump)>`
+{% highlight bash %}
+$ mongorestore  --drop --username <db_username> --password <db_password> --db <db_name> <path_to_your_backup_folder(dump)>
+{% endhighlight %}
 
 ### Redis database
 
@@ -83,4 +96,6 @@ From the MongoShell, use the following command to restore your database from a d
 
 Redis data are simply represented by a single `dump.rdb` file. You just have to copy this file into the right folder using your command-line interface:
 
-`sudo rm -rf /data/redis/dump.rdb && sudo cp <path_to_your_backup_file(.rdb)> /data/redis/dump.rdb`
+{% highlight bash %}
+$ sudo rm -rf /data/redis/dump.rdb && sudo cp <path_to_your_backup_file(.rdb)> /data/redis/dump.rdb
+{% endhighlight %}

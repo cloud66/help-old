@@ -26,20 +26,18 @@ This could be a *custom script*, a *custom rake command*, or the default Rails *
 In our example, we will use the default Rails [rake db:seed command](http://edgeguides.rubyonrails.org/migrations.html#migrations-and-seed-data). 
 
 Create the file */.cloud66/scripts/dbseed.sh* as below:
-<pre class="terminal">
+{% highlight bash %}
 &#35;!/bin/bash
-&#35; access your Rails stack path
-cd $STACK&#95;PATH
-&#35; run your seed task
-bundle exec rake db:seed
-</pre>
+$ cd $STACK&#95;PATH
+$ bundle exec rake db:seed
+{% endhighlight %}
 
 ## Deploy hook
 
 Add a [deploy hook](/stack-features/deploy-hooks.html) to execute the above script during the first deploy (on the first server only). 
 
 Create the file *.cloud66/deploy&#95;hooks.yml* as below (replacing *production* with your target environment).
-<pre class="terminal">
+{% highlight yaml %}
 production:
   after&#95;symlink: # Or use after_rails depending on your application
     - source: /.cloud66/scripts/dbseed.sh
@@ -48,7 +46,7 @@ production:
       execute: true
       run&#95;on: single&#95;server
       apply&#95;during: build&#95;only      
-</pre>
+{% endhighlight %}
 
 <div class="notice">
     <h3>Note</h3>

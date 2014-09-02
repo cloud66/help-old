@@ -21,43 +21,44 @@ To change this folder, follow the instructions below.
 <li>Connect to your servers via <a href="/how-to/shell-to-your-servers.html">SSH</a>.</li>
 
 <li>Stop the PostgreSQL service by issuing this command:</li>
-<pre class="terminal">
-(sudo -u postgres pg_ctl stop -D /usr/local/pgsql/data -m i -t 5 || true) && sudo stop postgresql  
-</pre>
+
+{% highlight bash %}
+$ (sudo -u postgres pg_ctl stop -D /usr/local/pgsql/data -m i -t 5 || true) && sudo stop postgresql  
+{% endhighlight %}
 
 <li>Make sure that PostgreSQL is no longer running:</li>
 
-<pre class="terminal">
-ps aux | grep pgsql
-</pre>
+{% highlight bash %}
+$ ps aux | grep pgsql
+{% endhighlight %}
 
 This command must not return any running PostgreSQL processes.<br/><br/>
 
 <li>Make a new directory for your data:</li>
-<pre class="terminal">
-mkdir /new/path/folder
-</pre>
+{% highlight bash %}
+$ mkdir /new/path/folder
+{% endhighlight %}
 
 <li>Make sure that your new folder is only accessible by the PostgreSQL user:</li>
-<pre class="terminal">
-chown postgres /new/path/folder
-chmod 700 /new/path/folder
-</pre>
+{% highlight bash %}
+$ chown postgres /new/path/folder
+$ chmod 700 /new/path/folder
+{% endhighlight %}
 
 <li>Move your data from the old folder to new one:</li>
-<pre class="terminal">
-mv /usr/local/pgsql/data /new/path/folder
-</pre>
+{% highlight bash %}
+$ mv /usr/local/pgsql/data /new/path/folder
+{% endhighlight %}
 
 <li>Create a symlink to your new folder from the old one:</li>
-<pre class="terminal">
-ln -s /new/path/folder/data /usr/local/pgsql/data
-</pre>
+{% highlight bash %}
+$ ln -s /new/path/folder/data /usr/local/pgsql/data
+{% endhighlight %}
 
 <li>Start the PostgreSQL service again:</li>
-<pre class="terminal">
-sudo start postgresql
-</pre>
+{% highlight bash %}
+$ sudo start postgresql
+{% endhighlight %}
 
 Your PostgreSQL service should now be working with new data folder.
 </ol>

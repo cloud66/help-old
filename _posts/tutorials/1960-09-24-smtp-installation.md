@@ -22,27 +22,27 @@ Postfix is a free and open-source mail transfer agent that routes and delivers e
 
 Start by [SSHing to your server](/how-to/shell-to-your-servers.html) and installing it:
 
-<pre class="terminal">
-sudo apt-get install postfix
-</pre>
+{% highlight bash %}
+$ sudo apt-get install postfix
+{% endhighlight %}
 
 The installation will ask you what type of installation you prefer - select _Internet site_. It will also ask you to input your domain name.
 
 That's it! You now have a SMTP server installed. We just need to make some configurations to start using it:
 
-<pre class="terminal">
-sudo nano /etc/postfix/main.cf
-</pre>
+{% highlight bash %}
+$ sudo nano /etc/postfix/main.cf
+{% endhighlight %}
 
 In the _myhostname_ field, input your hostname:
-<pre class="terminal">
+{% highlight bash %}
 myhostname = example.com
-</pre>
+{% endhighlight %}
 
 This one configuration is enough to have a functional SMTP server. Use [deploy hooks](/stack-features/deploy-hooks.html) to automate this procedure on any new servers you fire up through Cloud 66. You can go ahead and save and exit the configuration, and reload to put these changes into effect:
-<pre class="terminal">
-sudo /etc/init.d/postfix reload
-</pre>
+{% highlight bash %}
+$ sudo /etc/init.d/postfix reload
+{% endhighlight %}
 
 You can confirm that the server is running by issuing <code>nc localhost 25</code>, and you can also send a test email with <code>sendmail sample@example.com</code>.
 

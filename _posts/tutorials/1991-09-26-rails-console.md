@@ -15,9 +15,9 @@ difficulty: 0
 ---
 Start by [SSHing to your server](/how-to/shell-to-your-servers.html). Then go to your `STACK_PATH` (eg. `cd $STACK_PATH`) and run the following command:
 
-<pre class="terminal">
-<kbd>bundle exec rails c &lt;environment&gt;</kbd>
-</pre>
+{% highlight bash %}
+$ bundle exec rails c &lt;environment&gt;
+{% endhighlight %}
 
 **Possible values for &lt;environment&gt;:**
 <ul>

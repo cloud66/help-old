@@ -64,9 +64,9 @@ This is an example of a wrong line ending:
 <h3 id="match">Matching certificates and keys</h3>
 This problem usually manifests itself as the following error when starting nginx:
 
-<pre>
+{% highlight bash %}
 nginx: [emerg] SSL_CTX_use_PrivateKey_file("FILE.key") failed (SSL: error:0B080074:x509 certificate routines:X509_check_private_key:key values mismatch
-</pre>
+{% endhighlight %}
 
 To make sure your key and certificate match correctly, use the OpenSSL commandline tool like this:
 
