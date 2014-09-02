@@ -26,17 +26,17 @@ Please read more about this [rake task add-in](/add-ins/rake-task.html) in the d
 
 You can use [deploy hooks](/stack-features/deploy-hooks.html) to execute your rake task at any point of your deployment.
 
-Simply add a bash script to your stack that contains the rake task: for example, create the file */.cloud66/scripts/rake&#95;task.sh* as below:
-{% highlight bash %}
-$ &#35;!/bin/bash
-$ &#35; access your Rails stack path
-$ cd $STACK&#95;PATH
-$ &#35; run your rake task
-$ bundle exec rake your:task
-{% endhighlight %}
+Simply add a bash script to your stack that contains the rake task: for example, create the file `/.cloud66/scripts/rake_task.sh` as below:
 
-Then, add a deploy&#95;hook to execute the above script on each deploy: create the file *.cloud66/deploy&#95;hooks.yml* as below:
-{% highlight yaml %}
+<pre class="prettyprint">
+&#35;!/bin/bash
+$ cd $STACK&#95;PATH
+$ bundle exec rake your:task
+</pre>
+
+Then, add a deploy&#95;hook to execute the above script on each deploy: create the file `.cloud66/deploy_hooks.yml` as below:
+
+<pre class="prettyprint">
 production:
   after&#95;rails:
     - source: /.cloud66/scripts/rake&#95;task.sh
@@ -46,12 +46,12 @@ production:
       run&#95;on: all&#95;servers
       apply&#95;during: all
       sudo: true
-{% endhighlight %}
+</pre>
 
 ## Manually
 This is done by starting a [terminal connection to your server](/how-to/shell-to-your-servers.html) and executing your rake task.
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ cd $STACK&#95;PATH
 $ bundle exec rake your:task
-{% endhighlight %}
+</pre>

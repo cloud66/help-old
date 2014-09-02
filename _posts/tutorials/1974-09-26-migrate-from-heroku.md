@@ -39,7 +39,8 @@ Take note of these database settings from your [Heroku database dashboard](https
 - &lt;db&#95;password&gt;
 
 Modify your <code>config/database.yml</code> by adding those settings for your environment:
-{% highlight yaml %}
+
+<pre class="prettyprint">
 development:
     adapter: postgresql
     database: &lt;db&#95;name&gt;
@@ -47,34 +48,34 @@ development:
     password: &lt;db&#95;password&gt;
     host: localhost
     port: 5432
-{% endhighlight %}
+</pre>
 
 From the Heroku Toolbelt, you can create a publicly accessible backup URL:
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ heroku pgbackups:url
-{% endhighlight %}
+</pre>
 
 Please refer to [Heroku documentation](https://devcenter.heroku.com/articles/pgbackups#creating-a-backup) for more information.
 
 Once you have your <code>&lt;backup&#95;url&gt;</code>, you need to download it to your Cloud 66 server.
 You can do that by [connecting to your database server](/how-to/connect-db-servers.html) and using the following command:
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ curl -o myBackup.dump "&lt;backup&#95;url&gt;"
-{% endhighlight %}
+</pre>
 
 Once complete, you can [restore your database backup](https://devcenter.heroku.com/articles/heroku-postgres-import-export#restore-to-local-database):
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ pg&#95;restore --verbose --clean --no-acl --no-owner -U &lt;db&#95;username&gt; -d &lt;db&#95;name&gt; myBackup.dump
-{% endhighlight %}
+</pre>
 
 Finally, redeploy your application or restart PostgreSQL:
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ sudo -u postgres pg&#95;ctl -D /usr/local/pgsql/data -m immediate restart
-{% endhighlight %}
+</pre>
 
 ## Dynos &amp; Scaling up
 

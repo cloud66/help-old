@@ -32,22 +32,24 @@ Firstly, you need to [open your firewall](/stack-features/stack-security.html) o
 
 You will then reference the database credentials from your first stack in the database.yml of your second stack. You can reference the environment variables for these credentials on your first stack like so (your stack UID is available on the stack setting page):
 
-{% highlight bash %}
+<pre class="prettyprint">
 &#123;&#123; STACK[STACK_UID].ENV&#95;VAR &#125;&#125;
-{% endhighlight %}
+</pre>
 
 For example, your environment variables would be set like this:
-{% highlight bash %}
+
+<pre class="prettyprint">
 MYSQL_ADDRESS=&#123;&#123; STACK[xyz].MYSQL_ADDRESS_INT &#125;&#125;
 MYSQL_DATABASE=&#123;&#123; STACK[xyz].MYSQL_DATABASE &#125;&#125;
 MYSQL_USERNAME=&#123;&#123; STACK[xyz].MYSQL_USERNAME &#125;&#125;
 MYSQL_PASSWORD=&#123;&#123; STACK[xyz].MYSQL_PASSWORD &#125;&#125;
-{% endhighlight %}
+</pre>
 
 And your database.yml would look something like this:
-{% highlight bash %}
+
+<pre class="prettyprint">
 username: <%= ENV['MYSQL_USERNAME'] %>
 password: <%= ENV['MYSQL_PASSWORD'] %>
 hostname: <%= ENV['MYSQL_ADDRESS'] %>
 database: <%= ENV['MYSQL_DATABASE'] %>
-{% endhighlight %}
+</pre>

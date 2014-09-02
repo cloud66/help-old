@@ -47,9 +47,9 @@ The symptoms of this is that your deployment gets stuck in the _Restarting Nginx
 
 You can simply use a non-passphrase-protected version of your SSL certificate key when [adding an SSL key to your stack](/how-to/ssl-certificate.html). Use the following command to do it (on your development computer):
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ openssl rsa -in private_key_with_pass_phrase -out private_key_without_pass_phrase
-{% endhighlight %}
+</pre>
 
 You will be prompted for your passphrase and the output will be generated after that.
 
@@ -64,16 +64,16 @@ This is an example of a wrong line ending:
 <h3 id="match">Matching certificates and keys</h3>
 This problem usually manifests itself as the following error when starting nginx:
 
-{% highlight bash %}
+<pre class="prettyprint">
 nginx: [emerg] SSL_CTX_use_PrivateKey_file("FILE.key") failed (SSL: error:0B080074:x509 certificate routines:X509_check_private_key:key values mismatch
-{% endhighlight %}
+</pre>
 
 To make sure your key and certificate match correctly, use the OpenSSL commandline tool like this:
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ openssl rsa -noout -modulus -in FILE.key
 $ openssl req -noout -modulus -in FILE.csr
 $ openssl x509 -noout -modulus -in FILE.cer
-{% endhighlight %}
+</pre>
 
 If everything matches (same modulus), the files are compatible. If not, one of the file is not linked to the others.

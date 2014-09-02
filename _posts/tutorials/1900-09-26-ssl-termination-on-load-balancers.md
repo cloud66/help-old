@@ -53,37 +53,39 @@ Through the AWS dashboard:
 Through the [AWS ELB command line interface](http://aws.amazon.com/developertools/2536):
 
 - Run the command below to add a new SSL certificate:
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ iam-servercertupload -b &lt;CA authenticated SSL&gt; -k &lt;private key file(.pem)&gt; -s &lt;certificate name&gt;  -c  &lt;certificate chain file&gt; –v
-{% endhighlight %}
+</pre>
 
 - You should retrieve any available SSL certificate using this command:
-{% highlight bash %}
-$ iam-servercertlistbypathx
-{% highlight bash %}
 
+<pre class="prettyprint">
+$ iam-servercertlistbypathx
+</pre>
 
 - Run the command below to attach the SSL certificate to the load balancer:
-{% highlight bash %}
-$ elb-create-lb-listeners ELBConfigureSSL --listener "protocol=HTTPS,lb-port=443,instance-port=80,instance-protocol=HTTP, cert-id=&lt;certificate name&gt;"
-{% endhighlight %}
+
+<pre class="prettyprint">
+$ elb-create-lb-listeners ELBConfigureSSL --listener "protocol=HTTPS,lb-port=443,instance-port=80,instance-protocol=HTTP, cert-id=&#60;certificate name&#62;"
+</pre>
 
 -	To delete a certificate, run the following command:
-{% highlight bash %}
-$ iam-servercertdel -s &lt;certificate name&gt;
-{% endhighlight %}
 
+<pre class="prettyprint">
+$ iam-servercertdel -s &#60;certificate name&#62;
+</pre>
 
 See also: [AWS documentation](http://docs.aws.amazon.com/IAM/latest/UserGuide/InstallCert.html)
-
 
 <h2 id="haproxy">HAProxy</h2>
 HAProxy 1.4 doesn’t natively support SSL, but it's possible to use an SSL encryption wrapper like Stunnel, Stud, Pound or Nginx to terminate TLS/SSL connections and forward the unencrypted traffic to HAProxy.
 
 - Firstly, install Stunnel on the load balancer:
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ sudo apt-get install stunnel
-{% endhighlight %}
+</pre>
 
 - You can then use the Cloud 66 [CustomConfig](/stack-features/custom-config.html) to configure the HAProxy configuration file as shown below. If you're not using Cloud 66, you have to make these changes manually in your <i>/etc/haproxy/haproxy.cfg</i> file.
 
@@ -93,7 +95,7 @@ $ sudo apt-get install stunnel
 
 For example:
 
-{% highlight bash %}
+<pre class="prettyprint">
 global
     maxconn     4096
     user        haproxy
@@ -135,23 +137,24 @@ listen webcluster&#95;ssl *:8081
     server      web1 XX.XX.XX.XX:80 cookie "LSW&#95;WEB1" check
     server      web2 XX.XX.XX.XX:80 cookie "LSW&#95;WEB2" check
 
-{% endhighlight %}
+</pre>
 
 Please note that you should replace the <code>XX.XX.XX.XX:80</code> IP above with your own load balanced servers IP.
 
 -	Now,  add your SSL certificate key (.pem file) on the load balancer,  you certificate should look like the following example:
-{% highlight bash %}
+
+<pre class="prettyprint">
 -----BEGIN RSA PRIVATE KEY-----
 &lt;encoded string>
 -----END RSA PRIVATE KEY-----
 -----BEGIN CERTIFICATE-----
 &lt;encoded string>
 -----END CERTIFICATE-----
-{% endhighlight %}
+</pre>
 
 -	Then, create and configure a <code>stunnel.conf</code> file, find below an example:
 
-{% highlight bash %}
+<pre class="prettyprint">
 sslVersion = all
 options = NO&#95;SSLv2
 cert= &lt;path to SSL certificate key file&gt;
@@ -166,13 +169,13 @@ output = /var/log/stunnel.log
 accept = 443
 connect = 8081
 TIMEOUTclose = 0
-{% endhighlight %}
+</pre>
 
 - After that, you can run stunnel with the <code>stunnel.conf</code> file:
 
-{% highlight bash %}
+<pre class="prettyprint">
 stunnel4 &lt;path to stunnel.conf file&gt;
-{% endhighlight %}
+</pre>
 
 <h2 id="rackspace">Rackspace</h2>
 Rackspace make it very easy for you to [add SSL certificates to their cloud load balancer](http://www.rackspace.com/knowledge_center/product-faq/cloud-load-balancers), straight from their control panel:

@@ -14,24 +14,24 @@ difficulty: 0
 
 Depending on which gems you're using together with a specific Ruby version, you may see dependency issues such as:
 
-{% highlight yaml %}
+<pre class="prettyprint">
 Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
 /usr/local/bin/ruby extconf.rb
 *** extconf.rb failed ***
 Could not create Makefile due to some reason, probably lack of necessary
 libraries and/or headers.
-{% endhighlight %}
+</pre>
 
 This may happen with a gem such as `debugger`, which is designed to hook into low level components of a language to dynamically stop and inspect the execution of code.
 
 <ol>
 <li><p>This should <i>not</i> be done in production, so you could start by moving the gem to your <code>development</code> group in your <code>Gemfile</code>:</p></li>
 
-{% highlight ruby %}
+<pre class="prettyprint">
 group :development do
   gem "debugger"
 end
-{% endhighlight %}
+</pre>
 
 <p>Once this is done, run <code>bundle install</code>, commit to your Git and re-deploy.</p>
 <li><p>You may be running an old version of a gem while running a later version of Ruby - try running <code>bundle update debugger</code> to update the gem. Your other option is to downgrade your Ruby version.</p></li>

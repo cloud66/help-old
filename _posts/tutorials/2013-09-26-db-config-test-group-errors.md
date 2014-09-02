@@ -19,16 +19,19 @@ Errors can occur during deployments due to there being different adapters define
 Your error will differ depending on the adapters you've chosen.
 
 For example, if your database.yml file's "development" group contains:
-{% highlight yaml %}
+
+<pre class="prettyprint">
 adapter: postgresql
-{% endhighlight %}
+</pre>
 
 And it also contains a "test" group with:
-{% highlight yaml %}
+
+<pre class="prettyprint">
 adapter: mysql2
-{% endhighlight %}
+</pre>
 
 This will result in the following slightly obtuse error during your code deployment:
-<div class="error">
+
+<pre class="prettyprint">
 uninitialized constant Mysql2
-</div>
+</pre>

@@ -49,11 +49,11 @@ Learn more about [Cloud 66 HAProxy and WebSocket](/how-to/haproxy-for-websocket.
 
 To test your WebSocket server, create a <code>.html</code> file with the code below, make sure to replace *&lt;your&#95;address&gt;* with your WebSocket server IP address and finally, open it in a web browser.
 
-{% highlight html %}
-<html>
-  <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-      <script>
+<pre class="prettyprint">
+&#60;html&#62;
+  &#60;head&#62;
+    &#60;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"&#62;&#60;/script&#62;
+      &#60;script&#62;
       $(document).ready(function(){
         function debug( str ) {
           $("#debug").append( str );
@@ -71,11 +71,11 @@ To test your WebSocket server, create a <code>.html</code> file with the code be
           ws.send("hello server");
         };
       });
-    </script>
-  </head>
-  <body>
-    <div id="debug"></div>
-    <div id="msg"></div>
-  </body>
-</html>
-{% endhighlight %}
+    &#60;/script&#62;
+  &#60;/head&#62;
+  &#60;body&#62;
+    &#60;div id="debug"&#62;&#60;/div&#62;
+    &#60;div id="msg"&#62;&#60;/div&#62;
+  &#60;/body&#62;
+&#60;/html&#62;
+</pre>

@@ -49,15 +49,15 @@ To generate a key and certificate signing request, follow the steps below.
 <li><a href="http://help.cloud66.com/how-to/shell-to-your-servers.html">SSH into your server</a>.</li>
 <li>Generate private <i>key</i> on your server, without specifying a passphrase:</li>
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ openssl genrsa -des3 -out private&#95;key.key 2048
-{% endhighlight %}
+</pre>
 
 <li>Create a certificate signing request and enter your information as requested:</li>
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ openssl req -new -key private&#95;key.key -out signing&#95;request.csr
-{% endhighlight %}
+</pre>
 
 <li>Provide this CSR file to your certificate authority, who will in turn provide you with a certificate (CRT) file.</li>
 <li>Use the original .key file together with this .crt file on Cloud 66.</li>
@@ -82,14 +82,14 @@ When installing multi-domain certificates, certificate authorities such as Comod
 
 To use these, you have to concatenate all files except for the last one (the certificate):
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ cat COMODORSAExtendedValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt > bundle_file
-{% endhighlight %}
+</pre>
 
 <h2 id="separate">Separate domains with different certificates</h2>
 You may need to serve different parts of your application on separate domains, each with its own SSL certificate. You can use [Nginx CustomConfig](/stack-features/custom-config.html) to set this up - you will basically have two server blocks listening on different domains, and serving different certificates (located on the server):
 
-{% highlight bash %}
+<pre class="prettyprint">
 &#123;% if allow_ssl == true %&#125;
 
 # main domain
@@ -113,4 +113,4 @@ server_name server_name_2.com;
 client_max_body_size 50m;
 ...
 &#125;
-{% endhighlight %}
+</pre>

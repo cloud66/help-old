@@ -22,27 +22,29 @@ Postfix is a free and open-source mail transfer agent that routes and delivers e
 
 Start by [SSHing to your server](/how-to/shell-to-your-servers.html) and installing it:
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ sudo apt-get install postfix
-{% endhighlight %}
+</pre>
 
 The installation will ask you what type of installation you prefer - select _Internet site_. It will also ask you to input your domain name.
 
 That's it! You now have a SMTP server installed. We just need to make some configurations to start using it:
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ sudo nano /etc/postfix/main.cf
-{% endhighlight %}
+</pre>
 
 In the _myhostname_ field, input your hostname:
-{% highlight bash %}
+
+<pre class="prettyprint">
 myhostname = example.com
-{% endhighlight %}
+</pre>
 
 This one configuration is enough to have a functional SMTP server. Use [deploy hooks](/stack-features/deploy-hooks.html) to automate this procedure on any new servers you fire up through Cloud 66. You can go ahead and save and exit the configuration, and reload to put these changes into effect:
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ sudo /etc/init.d/postfix reload
-{% endhighlight %}
+</pre>
 
 You can confirm that the server is running by issuing <code>nc localhost 25</code>, and you can also send a test email with <code>sendmail sample@example.com</code>.
 
@@ -52,11 +54,11 @@ Once you enter the command, you can type your message and hit _CTRL-D_ to send i
 
 Add the following code (or variation thereof) to your Rails application environments configuration to send email through this SMTP server:
 
-{% highlight ruby %}
+<pre class="prettyprint">
 config.action_mailer.delivery_method = :sendmail
 config.action_mailer.smtp_settings = {
   :address => "localhost",
   :port => 25,
   :domain => "example.com",
 }
-{% endhighlight %}
+</pre>

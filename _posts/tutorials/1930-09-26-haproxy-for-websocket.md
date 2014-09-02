@@ -35,7 +35,7 @@ To by pass the auto detection and traffic redirection by HAProxy, you can connec
 
 To test your WebSocket servers, create a <code>.html</code> file with the code below, make sure to replace *&lt;your&#95;address&gt;* with your own LB IP address and finally, open it in a web browser.
 
-{% highlight bash %}
+<pre class="prettyprint">
 &lt;html&gt;
   &lt;head&gt;
     &lt;script src=&#39;http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js&#39;&gt;&lt;/script&gt;
@@ -58,4 +58,4 @@ To test your WebSocket servers, create a <code>.html</code> file with the code b
     &lt;div id=&quot;msg&quot;&gt;&lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-{% endhighlight %}
+</pre>

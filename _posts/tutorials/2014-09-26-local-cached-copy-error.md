@@ -21,6 +21,6 @@ When you change your Git URL or branch, Cloud 66 is involved and will automatica
 
 In this case, the easiest thing to do is to use the [Cloud 66 toolbelt](/cloud-66-toolbelt/introduction.html) to clear your caches:
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ cx clear-caches [-s <stack>]
-{% endhighlight %}
+</pre>

@@ -24,20 +24,22 @@ Along with our [general operating system requirements](/stacks/operating-system-
 
 Use apt to uninstall and remove all MySQL packages:
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ sudo apt-get remove --purge mysql-server mysql-client mysql-common -y
 $ sudo apt-get autoremove -y
 $ sudo apt-get autoclean
-{% endhighlight %}
+</pre>
 
 Remove the MySQL folder:
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ rm -rf /etc/mysql
-{% endhighlight %}
+</pre>
 
 Delete all MySQL files on your server:
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ sudo find / -iname 'mysql*' -exec rm -rf {} \;
-{% endhighlight %}
+</pre>
 
 Your system should no longer contain MySQL related files.

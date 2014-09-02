@@ -32,9 +32,9 @@ deny all;</code>
 
 You will want to add the following code within the _http_ section of your configuration, for example on line 22.
 
-{% highlight bash %}
+<pre class="prettyprint">
 	include &#123;&#123; deploy_to &#125;&#125;/current/blockips.conf;
-{% endhighlight %}
+</pre>
 
 This will read the file from your repository directory on the server. Once you save that configuration, it will apply immediately on your server.
 

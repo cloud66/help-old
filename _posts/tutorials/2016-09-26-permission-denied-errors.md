@@ -35,9 +35,9 @@ Many gems allow the use of a configuration file, or have initializers to configu
 
 You can use a [deploy hook](/stack-features/deploy-hooks.html) to execute a script after each deployment that will setup the permissions required:
 
-{% highlight yaml %}
+<pre class="prettyprint">
 production:
     after_rails:
       - command: sudo mkdir $STACK_PATH/tmp/folder && sudo chmod 0775 -R $STACK_PATH/tmp/folder
         target: rails
-{% endhighlight %}
+</pre>

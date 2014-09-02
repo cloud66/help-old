@@ -32,9 +32,9 @@ If you only want to serve HTTPS traffic through your application, you may also w
 
 Simply add this code to the _server_ section of your Nginx configuration using [CustomConfig](/stack-features/custom-config.html), for example on line 81. This will work even if you're not using Cloud 66.
 
-{% highlight bash %}
+<pre class="prettyprint">
 	return 301 https://$host$request_uri;
-{% endhighlight %}
+</pre>
 
 <h2 id="complex">Redirect between domains with HTTP and HTTPS</h2>
 
@@ -45,20 +45,20 @@ Create DNS records for domain A, pointing it at domain B. We will then create Ng
 #### HTTP
 We simply want to add a permanent redirect for visitors to domain A towards domain B (you can add this around line 65):
 
-{% highlight bash %}
+<pre class="prettyprint">
 server {
     server_name             _;
     listen                  80;
     rewrite ^ https://domainb.com$request_uri? permanent;
 }
-{% endhighlight %}
+</pre>
 
 #### HTTPS
 The above method will not work for HTTPS traffic, because visitors from domain A will be expecting SSL certificates for that domain, not those of domain B.
 
 As such, users from domain A must first be met with the SSL certificate for that domain, and then be redirected to domain B (and met with those certificates).
 
-{% highlight bash %}
+<pre class="prettyprint">
 &#123;% if allow_ssl == true %&#125;
 server {
     server_name          *.domaina.com;
@@ -68,6 +68,6 @@ server {
     ssl_certificate /etc/ssl/localcerts/domaina.crt;
     rewrite ^ https://domainb.com$request_uri? permanent;
 }
-{% endhighlight %}
+</pre>
 
 This will create a permanent redirect from domain A to B over SSL. Just remember to add your key and certificate files to the location specified on your server!

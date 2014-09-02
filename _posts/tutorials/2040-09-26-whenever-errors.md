@@ -16,13 +16,13 @@ difficulty: 1
 The whenever schedules cause schedules to execute within a crontab context, however the context doesn't have access to the full PATH.
 You may see output from your cron jobs that looks similar to:
 
-{% highlight bash %}
+<pre class="prettyprint">
 /bin/bash: bundle: command not found
-{% endhighlight %}
+</pre>
 
 ## Resolution
 Simply add the following line to the top of your *config/schedule.rb* file (then commit it, push it and redeploy your stack):
 
-{% highlight bash %}
+<pre class="prettyprint">
 env :PATH, ENV['PATH']
-{% endhighlight %}
+</pre>

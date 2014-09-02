@@ -22,22 +22,24 @@ To address this, you can make use of a [deploy hook](/stack-features/deploy-hook
 
 Simply add a bash script to your repository that contains the script for seeding your database.
 
-This could be a *custom script*, a *custom rake command*, or the default Rails *rake db:seed command* depending on your requirements/implementation. 
+This could be a *custom script*, a *custom rake command*, or the default Rails `rake db:seed command` depending on your requirements/implementation. 
 In our example, we will use the default Rails [rake db:seed command](http://edgeguides.rubyonrails.org/migrations.html#migrations-and-seed-data). 
 
-Create the file */.cloud66/scripts/dbseed.sh* as below:
-{% highlight bash %}
+Create the file `/.cloud66/scripts/dbseed.sh` as below:
+
+<pre class="prettyprint">
 &#35;!/bin/bash
 $ cd $STACK&#95;PATH
 $ bundle exec rake db:seed
-{% endhighlight %}
+</pre>
 
 ## Deploy hook
 
 Add a [deploy hook](/stack-features/deploy-hooks.html) to execute the above script during the first deploy (on the first server only). 
 
-Create the file *.cloud66/deploy&#95;hooks.yml* as below (replacing *production* with your target environment).
-{% highlight yaml %}
+Create the file `.cloud66/deploy&#95;hooks.yml` as below (replacing *production* with your target environment).
+
+<pre class="prettyprint">
 production:
   after&#95;symlink: # Or use after_rails depending on your application
     - source: /.cloud66/scripts/dbseed.sh
@@ -46,7 +48,7 @@ production:
       execute: true
       run&#95;on: single&#95;server
       apply&#95;during: build&#95;only      
-{% endhighlight %}
+</pre>
 
 <div class="notice">
     <h3>Note</h3>

@@ -27,10 +27,10 @@ Follow the instructions below to accomplish this.
 
 You will want to add the following code within the _server_ section of your configuration. Where you put it will depend on which Rack server you are running, and whether or not you are using HTTPS traffic.
 
-{% highlight bash %}
+<pre class="prettyprint">
 	auth_basic "Restricted";
 	auth_basic_user_file &#123;&#123; deploy_to &#125;&#125;/current/.htpasswd;
-{% endhighlight %}
+</pre>
 
 #### Passenger
 - HTTP: Line _116_

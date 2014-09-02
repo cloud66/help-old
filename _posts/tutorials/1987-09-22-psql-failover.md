@@ -21,7 +21,7 @@ If the master server fails, you should begin failover procedures on your standby
 
 1. Connect to one of your standby servers via [SSH](/how-to/shell-to-your-servers.html).
 2. Run `touch /tmp/postgresql.trigger` to turn the slave into a master.
-3. You now need to point your application to use this new master. Edit your <i>POSTGRESQL_ADDRESS</i> <a href="/stack-features/env-vars.html">environment variable</a> to <i>{{POSTGRESQL_SLAVE_ADDRESSES_INT}}</i> - this format references the value of that variable.</li>
+3. You now need to point your application to use this new master. Edit your <i>POSTGRESQL_ADDRESS</i> <a href="/stack-features/env-vars.html">environment variable</a> to <i>{{POSTGRESQL_SLAVE_ADDRESSES_INT}}</i> - this format references the value of that variable.
 
 If and when the old primary restarts, it will no longer be the primary server and you must have a mechanism to stop it.
 This is sometimes known as _STONITH_ (Shoot The Other Node In The Head), which is necessary to avoid situations where both

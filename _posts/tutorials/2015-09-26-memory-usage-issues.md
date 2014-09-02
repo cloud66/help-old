@@ -16,9 +16,9 @@ If you're experiencing memory usage issues, such as high memory usage, use the f
 
 [SSH into your server](/how-to/shell-to-your-servers.html) and install htop:
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ sudo apt-get install htop
-{% endhighlight %}
+</pre>
 
 Once it's installed, run it with _htop_:
 ![htop](http://cdn.cloud66.com/images/help/htop.png)

@@ -33,23 +33,19 @@ Alternatively, you can use [deploy hooks](/stack-features/deploy-hooks.html) to 
 
 To create the symbolic link, your deploy hook script could contain this:
 
-{% highlight yaml %}
-### /.CLOUD66/MY_SCRIPT.SH ###
-
-mkdir -p $STACK_BASE/shared/uploads
-chown nginx:app_writers $STACK_BASE/shared/uploads
-rm -rf $STACK_PATH/uploads
-ln -nsf $STACK_BASE/shared/uploads $STACK_PATH/uploads
-{% endhighlight %}
+<pre class="prettyprint">
+$ mkdir -p $STACK_BASE/shared/uploads
+$ chown nginx:app_writers $STACK_BASE/shared/uploads
+$ rm -rf $STACK_PATH/uploads
+$ ln -nsf $STACK_BASE/shared/uploads $STACK_PATH/uploads
+</pre>
 
 The reason we are doing _rm -rf_ on the _$STACK_PATH/uploads_ directory is due to the way that the _ln_ command works. When you issue the _ln_ command,
 it places a link to the source directory inside the target directory, so we have to remove the directory before creating the symbolic link.
 
 The deploy hook would look like this:
 
-{% highlight yaml %}
-### /.CLOUD66/DEPLOY_HOOKS.YML ###
-
+<pre class="prettyprint">
 production:
     after_symlink:
       - source: /.cloud66/my_script.sh
@@ -59,6 +55,6 @@ production:
         sudo: true
         apply_during: all
         run_on: all_servers
-{% endhighlight %}
+</pre>
 
 
