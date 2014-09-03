@@ -1388,6 +1388,7 @@ Get information of a single server
 
     + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, string, `f8468fc145ea49bac474b30a8fea888d`) ... The server UID
+    + include_private_key (optional, integer, `1`) ... if set to 1 then private_key will included in response
 
 + Model (application/json)
 
