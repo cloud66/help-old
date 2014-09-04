@@ -71,7 +71,7 @@ $ cx backups [-s <stack>] [-l] [<db type>]
     </thead>
     <tbody>
         <tr>
-            <td><i>s</i></td>
+            <td><i>stack</i></td>
             <td>Name of your stack</td>
         </tr>
         <tr>

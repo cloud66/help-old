@@ -16,6 +16,9 @@ tags: ['Toolbelt']
 		<a href="#intro">What is toolbelt?</a>
 	</li>
 	<li>
+		<a href="#install">Install the toolbelt</a>
+	</li>
+	<li>
 		<a href="#init">Initialize the toolbelt</a>
 	</li>
 	<li>
@@ -29,29 +32,28 @@ tags: ['Toolbelt']
 	</li>
 </ul>
 
-<h2 id="intro">What is Toolbelt?</h2>
+<h2 id="intro">What is toolbelt?</h2>
 
-The Cloud 66 toolbelt makes it possible to interact with Cloud 66 from the comfort of your command line, and is available for Linux, Mac and Windows. To get started, simply download the <a href="https://app.cloud66.com/toolbelt" target="_blank">toolbelt executable</a>, unzip and copy it to a directory accessible in your PATH.
+The Cloud 66 toolbelt makes it possible to interact with Cloud 66 from the comfort of your command line, and is available for Linux, Mac and Windows. 
+
+<h2 id="install">Install the toolbelt?</h2>
+To get started, simply download the <a href="https://app.cloud66.com/toolbelt" target="_blank">toolbelt executable</a>, unzip and copy it to a directory accessible in your PATH. On Mac OS X, your PATH is likely `/usr/local/bin`, but you can run `echo $PATH` in your terminal to determine your specific path. Placing the executable in this folder allows it to be used globally.
 
 <h2 id="init">Initialize the toolbelt</h2>
-Before using the toolbelt, you need to link it to your Cloud 66 account. You can do this by issuing one of the available commands, which will prompt you to authorize it:
+Before using the toolbelt, you need to link it to your Cloud 66 account. You can do this by issuing one of the available commands, which will return a URL that you need to copy and paste into your browser.
 
 {% highlight bash %}
 $ cx stacks
 {% endhighlight %}
 
-This returns a URL that you need to copy and paste into your browser.
-
-Following this URL will redirect you to your account (you may need to login) and ask for your authorization to allow the toolbelt to view, edit, redeploy and administrate your stacks and servers.
+Following this URL will redirect you to your account (you need to be logged in) and ask for your authorization to allow the toolbelt to view, edit, redeploy and administrate your stacks and servers.
 
 <div class="notice">
 	<h3>Advanced</h3>
     <p>The authorization information is stored in the <b>~/.cloud66/cx.json</b> file. Removing this file will remove the authorization code from your client.</p>
 </div>
 
-Once authorized, you will be presented with a long `code` to paste into your toolbelt.
-
-![Toolbelt Authorization](http://cdn.cloud66.com/images/help/toolbelt_authorization.png)
+Once authorized, you will be presented with an authorization code to paste into your toolbelt.
 
 <div class="notice notice-warning">
 	<h3>Note</h3>
@@ -66,7 +68,7 @@ Once authorized, you will be presented with a long `code` to paste into your too
 - `cx servers` lists available servers
 - `cx open` opens your web browser to visit the app server in your stack
 
-Refer to the menu on the right for more available commands and how to use them.
+Refer to the right sidebar for more available commands and how to use them.
 
 <h2 id="shortcuts">Toolbelt shortcuts</h2>
 <b>Stack links</b>
