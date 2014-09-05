@@ -45,7 +45,7 @@ Through the AWS dashboard:
 <li>Sign in to the AWS management console and open the Amazon EC2 console.</li>
 <li>Select your load balancer and upload a new SSL Certificate or choose an existing one.</li>
 <li>In case it is a new certificate, enter a name for the certificate and copy paste the contents of the private key file and the public key file into the related fields, then save.</li>
-<ul>
+</ul>
 
 <div class="notice">
     <h3>Important</h3>
