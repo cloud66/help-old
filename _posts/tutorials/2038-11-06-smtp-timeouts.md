@@ -23,6 +23,6 @@ You have the following options:
 
 <ol class="article-list">
 <li>Use a different port other than 25.</li>
-<li>If using Mandrill, use their RESTful API, instead of standard SMTP. This might not be very straight forward as the [Mandrill gem](https://mandrillapp.com/api/docs/index.ruby.html) is not a drop-in replacement.</li>
-<li>Use another service like [Postmark](https://postmarkapp.com) where they have a drop-in gem which uses their RESTful API.</li>
+<li>If using Mandrill, use their RESTful API, instead of standard SMTP. This might not be very straight forward as the <a href="https://mandrillapp.com/api/docs/index.ruby.html">Mandrill gem</a> is not a drop-in replacement.</li>
+<li>Use another service like <a href="https://postmarkapp.com">Postmark</a> where they have a drop-in gem which uses their RESTful API.</li>
 </ol>

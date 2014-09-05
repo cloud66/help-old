@@ -19,7 +19,7 @@ difficulty: 2
 
 [WebSocket](http://www.websocket.org) allows bi-directional web communication between client and server and provides a true standard that can be used to build scalable, real-time web applications.
 
-## Cloud 66 Configuration for WebSocket
+## Cloud 66 configuration for WebSocket
 
 Cloud 66 opens **8080** and **8443** ports by default on your rails servers to allow you to use WebSocket.
 
@@ -30,7 +30,7 @@ If you want to use WebSocket with Cloud 66, your WebSocket servers need to liste
 
 You can use a different port to use WebSocket (not supported by Cloud 66) but you will need manually open the ports to allow external connections to your Rails servers.
 
-Find out more about [Stack Security page](/stack-features/stack-security.html).
+Find out more about [Stack networking page](http://help.cloud66.com/stack-definition/network-configuration.html).
 
 ## WebSocket through a load balancer
 
@@ -41,7 +41,7 @@ At any time, you can use a load balancer and scale up your servers to have more 
         <p>ELB (Amazon) doesn't support WebSocket traffic.</p>
 </div>
 
-Learn more about [Cloud 66 HAProxy and WebSocket](/how-to/haproxy-for-websocket.html) setup.
+Learn more about [Cloud 66 HAProxy and WebSocket](/articles/configuring-haproxy-for-websocket) setup.
 
 **Linode** alternative HTTP ports 8080 and 8443 are opened on NodeBalancers and can be used for WebSockets.
 

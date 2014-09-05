@@ -40,14 +40,14 @@ However, you always need to have the right SSL certificates and keys to use. Spe
 </ul>
 
 <h3 id="webserver">Web server issues</h3>
-If you've added your SSL certificate through the Cloud 66 UI and your web server has stopped serving content, it's likely that there's some error with your SSL certificate. In this case, it's best to [SSH to your server](/how-to/shell-to-your-servers.html) and run `sudo service nginx restart`, which should highlight the error.
+If you've added your SSL certificate through the Cloud 66 UI and your web server has stopped serving content, it's likely that there's some error with your SSL certificate. In this case, it's best to [SSH to your server](http://help.cloud66.com/stack-definition/ssh-to-server.html) and run `sudo service nginx restart`, which should highlight the error.
 
 <h3 id="pass">Passphrase protected keys</h3>
 You cannot use passphrase protected SSL certificate keys with Nginx. Using passphrase protected certificate keys will cause Nginx to prompt for the manual entry of passphrase at restart which will break the automatic deployment flow (and restart of Nginx after a server restart).
 
 The symptoms of this is that your deployment gets stuck in the _Restarting Nginx_ step.
 
-You can simply use a non-passphrase-protected version of your SSL certificate key when [adding an SSL key to your stack](/how-to/ssl-certificate.html). Use the following command to do it (on your development computer):
+You can simply use a non-passphrase-protected version of your SSL certificate key when [adding an SSL key to your stack](/articles/ssl-certificate). Use the following command to do it (on your development computer):
 
 <pre class="prettyprint">
 $ openssl rsa -in private_key_with_pass_phrase -out private_key_without_pass_phrase
@@ -56,7 +56,8 @@ $ openssl rsa -in private_key_with_pass_phrase -out private_key_without_pass_phr
 You will be prompted for your passphrase and the output will be generated after that.
 
 <h3 id="encoding">Certificate and key encoding</h3>
-Certificates and key files need to have only a _new line_ character at the end (instead of both _new line_ and _carriage return_ characters). To see if that's the case, you can open them in a text editor like TextMate and show the invisible characters.
+Certificates and key files need to have only a _new line_ character at the end (instead of both _new line_ and _carriage return_ characters). To see if that's the case, you can open them in a text editor like TextMate and show the invisible characters.<br/>
+
 ![TextMate Show Invisible Characters](http://cdn.cloud66.com/images/help/show_invisible_characters_textmate.png)
 
 This is an example of a wrong line ending:

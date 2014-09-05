@@ -14,7 +14,7 @@ difficulty: 0
 
 If you're experiencing memory usage issues, such as high memory usage, use the following steps to troubleshoot.
 
-[SSH into your server](/how-to/shell-to-your-servers.html) and install htop:
+[SSH into your server](http://help.cloud66.com/stack-definition/ssh-to-server.html) and install htop:
 
 <pre class="prettyprint">
 $ sudo apt-get install htop
@@ -26,8 +26,8 @@ Once it's installed, run it with _htop_:
 The screen above will show you lots of statistics on memory and CPU usage, but we'll make two changes to make potential issues more visible:
 
 <ol class="article-list">
-<li>Hit _F2_ (setup), _Display options_, and enable _Hide userland threads_ by hitting the spacebar once selected. Hit _q_ to exit this screen.</li>
-<li>On the home screen, hit _F6_ (sort by), and select _MEM%_, which will sort your processes by memory usage.</li>
+<li>Hit <i>F2</i> (setup), <i>Display options</i>, and enable <i>Hide userland threads</i> by hitting the spacebar once selected. Hit <i>q</i> to exit this screen.</li>
+<li>On the home screen, hit <i>F6</i> (sort by), and select <i>MEM%</i>, which will sort your processes by memory usage.</li>
 </ol>
 
 Once done, this view should give you a good idea of which processes are using the most memory.

@@ -18,17 +18,17 @@ difficulty: 0
 ## Git Repository
 
 Simply provide Cloud 66 with a URL to your git repository and we'll be able to analyze your code.
-Use your unique SSH key to provide us [access to your code](/getting-started/your-first-stack.html).
+Use your unique SSH key to provide us [access to your code](/articles/accessing-your-git-repository).
 
 ## Procfile
 
-With Cloud 66, you can use [Procfiles](/stack-features/proc-files.html) to manage your background jobs.
+With Cloud 66, you can use [Procfiles](http://help.cloud66.com/deployment/proc-files.html) to manage your background jobs.
 
 ## Asset Pipeline Compilation
 
 If you haven't compiled assets locally, Heroku will attempt to run the assets:precompile task during slug compilation.
 
-Cloud 66 allows you to [specify whether or not to run this](/how-to/asset-pipeline.html) during deployment.
+Cloud 66 allows you to [specify whether or not to run this](http://help.cloud66.com/stack-definition/asset-pipeline.html) during deployment.
 
 ## Database
 
@@ -59,7 +59,7 @@ $ heroku pgbackups:url
 Please refer to [Heroku documentation](https://devcenter.heroku.com/articles/pgbackups#creating-a-backup) for more information.
 
 Once you have your <code>&lt;backup&#95;url&gt;</code>, you need to download it to your Cloud 66 server.
-You can do that by [connecting to your database server](/how-to/connect-db-servers.html) and using the following command:
+You can do that by [connecting to your database server](http://help.cloud66.com/stack-definition/ssh-to-server.html) and using the following command:
 
 <pre class="prettyprint">
 $ curl -o myBackup.dump "&lt;backup&#95;url&gt;"
@@ -81,5 +81,4 @@ $ sudo -u postgres pg&#95;ctl -D /usr/local/pgsql/data -m immediate restart
 
 Dynos are the unit of computing power on Heroku, and adding new dynos often results in better overall performance.
 
-On Cloud 66 you can use [horizontal](/stack-features/horizontal-scaling.html) and/or [vertical scaling](/stack-features/vertical-scaling.html)
-to improve performance.
+On Cloud 66 you can use [horizontal and/or vertical scaling](http://help.cloud66.com/deployment/scaling.html) to improve performance.

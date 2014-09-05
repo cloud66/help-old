@@ -29,15 +29,15 @@ and your files get served directly by Nginx without security.
 
 ### Symbolic link
 
-Alternatively, you can use [deploy hooks](/stack-features/deploy-hooks.html) to create the symbolic link. Also, you can use _$STACK_BASE_ for your stack base path (eg. _$STACK_BASE/shared/uploads_) for your deploy hook script.
+Alternatively, you can use [deploy hooks](http://help.cloud66.com/deployment/deploy-hooks.html) to create the symbolic link. Also, you can use _$STACK_BASE_ for your stack base path (eg. _$STACK_BASE/shared/uploads_) for your deploy hook script.
 
 To create the symbolic link, your deploy hook script could contain this:
 
 <pre class="prettyprint">
-$ mkdir -p $STACK_BASE/shared/uploads
-$ chown nginx:app_writers $STACK_BASE/shared/uploads
-$ rm -rf $STACK_PATH/uploads
-$ ln -nsf $STACK_BASE/shared/uploads $STACK_PATH/uploads
+mkdir -p $STACK_BASE/shared/uploads
+chown nginx:app_writers $STACK_BASE/shared/uploads
+rm -rf $STACK_PATH/uploads
+ln -nsf $STACK_BASE/shared/uploads $STACK_PATH/uploads
 </pre>
 
 The reason we are doing _rm -rf_ on the _$STACK_PATH/uploads_ directory is due to the way that the _ln_ command works. When you issue the _ln_ command,

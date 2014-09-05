@@ -13,13 +13,14 @@ tags: ['Customization']
 tutorial: true
 difficulty: 0
 ---
-Start by [SSHing to your server](/how-to/shell-to-your-servers.html). Then go to your `STACK_PATH` (eg. `cd $STACK_PATH`) and run the following command:
+Start by [SSHing to your server](http://help.cloud66.com/stack-definition/ssh-to-server.html). Then go to your `STACK_PATH` (eg. `cd $STACK_PATH`) and run the following command:
 
 <pre class="prettyprint">
 $ bundle exec rails c &lt;environment&gt;
 </pre>
 
 **Possible values for &lt;environment&gt;:**
+
 <ul class="article-list">
     <li>development (default)</li>
     <li>test</li>

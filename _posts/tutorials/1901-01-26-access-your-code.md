@@ -15,17 +15,16 @@ difficulty: 0
 ---
 
 <h2>Contents</h2>
-<ul class="page-toc">
+<ul class="page-toc" style="margin-bottom:0em">
 	<li>
 		<a href="#public">Public repositories</a>
 	</li>
 	<li><a href="#private">Private repositories</a></li>
-		<li>
             <ul>
                 <li><a href="#github">GitHub example</a></li>
                 <li><a href="#bitbucket">BitBucket example</a></li>
             </ul>
-        </li>
+        
 </ul>
 
 <h2 id="public">Public repositories</h2>

@@ -17,7 +17,7 @@ difficulty: 1
 
 ## Introduction
 
-<a href="http://faye.jcoglan.com/">Faye</a> is a publish-subscribe messaging system that provides messaging services. At Cloud 66, we recommend running Faye as a [background process](/stack-features/proc-files.html) on your stack behind a [Thin rack server](/web-server/thin-rack-server.html).
+<a href="http://faye.jcoglan.com/">Faye</a> is a publish-subscribe messaging system that provides messaging services. At Cloud 66, we recommend running Faye as a [background process](http://help.cloud66.com/deployment/proc-files.html) on your stack behind a [Thin rack server](http://help.cloud66.com/web-server/thin-rack-server.html).
 
 ## Implementation
 
@@ -25,7 +25,7 @@ We will use four files containing the following commands to accomplish this setu
 
 #### 1. RAILS&#95;ROOT/.cloud66/deploy&#95;hooks.yml
 
-[Deploy hooks](/stack-features/redeployment-hook.html) allow you to take action at various points during a build and/or deployment on Cloud 66. This one will run the bash script that we will create in the next step before Rails is installed on your server.
+[Deploy hooks](http://help.cloud66.com/deployment/deploy-hooks.html) allow you to take action at various points during a build and/or deployment on Cloud 66. This one will run the bash script that we will create in the next step before Rails is installed on your server.
 
 <pre class="prettyprint">
 production:
@@ -46,8 +46,8 @@ This bash script ensures that Thin and Faye are installed on your server during 
 
 <pre class="prettyprint">
 #!/bin/bash
-$ sudo gem install thin --no-ri --no-rdoc
-$ sudo gem install faye --no-ri --no-rdoc
+sudo gem install thin --no-ri --no-rdoc
+sudo gem install faye --no-ri --no-rdoc
 </pre>
 
 #### 3. RAILS&#95;ROOT/Procfile
