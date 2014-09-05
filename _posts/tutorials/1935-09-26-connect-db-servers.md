@@ -16,8 +16,8 @@ difficulty: 0
 
 ## On the server
 
-You can connect directly into your database server and invoke a database console from there. To do that, please refer to the [terminal connection to servers](/how-to/shell-to-your-servers.html) documentation.
+You can connect directly into your database server and invoke a database console from there. To do that, please refer to the [terminal connection to servers](http://help.cloud66.com/stack-definition/ssh-to-server.html) documentation.
 
 ## With a client
 
-You can also open a firewall port in your database server to allow a remote machine to connect the it. This is possible using the [Stack Security](/stack-features/stack-security.html) page, and then you can use a database client from your local computer.
+You can also open a firewall port in your database server to allow a remote machine to connect the it. This is possible using the [Stack security](http://help.cloud66.com/stack-definition/network-configuration.html) page, and then you can use a database client from your local computer.

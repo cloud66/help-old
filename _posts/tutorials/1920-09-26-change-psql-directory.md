@@ -18,9 +18,9 @@ We use the default data folder when installing PostgreSQL on your server, which 
 To change this folder, follow the instructions below.
 
 <ol class="article-list">
-<li>Connect to your servers via <a href="/how-to/shell-to-your-servers.html">SSH</a>.</li>
+<li>Connect to your servers via <a href="http://help.cloud66.com/stack-definition/ssh-to-server.html">SSH</a>.</li>
 
-<li>Stop the PostgreSQL service by issuing this command:</li>
+<li>Stop the PostgreSQL service by issuing the following command:</li>
 
 <pre class="prettyprint">
 $ (sudo -u postgres pg_ctl stop -D /usr/local/pgsql/data -m i -t 5 || true) && sudo stop postgresql  
