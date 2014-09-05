@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Connect to your database servers"
+title:  "How to connect to your database servers"
 so_title: "database"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true

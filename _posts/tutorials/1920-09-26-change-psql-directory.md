@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Change the data directory for PostgreSQL"
+title:  "How to change the data directory for PostgreSQL"
 so_title: "PostgreSQL data directory"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true

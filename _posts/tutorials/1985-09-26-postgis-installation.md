@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "PostGIS installation"
+title:  "How to install PostGIS"
 so_title: "postgis"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
@@ -14,10 +14,19 @@ tutorial: true
 difficulty: 1
 ---
 
+<h2>Contents</h2>
+<ul class="page-toc">
+	<li>
+		<a href="#cloud66">Installing with Cloud 66</a>
+	</li>
+	<li>
+		<a href="#manual">Manual installation</a>
+	</li>
+</ul>
 
-## Installing through Cloud 66
+<h2 id="cloud66">Installing through Cloud 66</h2>
 
-Installing through Cloud 66 is as simple as a manifest file entry. For more information on manifest files, please see our documentation on [Manifest Files](/stack-features/manifest-files.html).
+Installing through Cloud 66 is as simple as a manifest file entry. Refer to our [Manifest file](http://help.cloud66.com/stack-definition/manifest-files.html) documentation for more information.
 
 In order for your manifest file to be picked up, you need a file called **manifest.yml** to be present within a folder named **.cloud66** that is in turn located in the root of your source code, and checked into your repository.
 
@@ -47,8 +56,8 @@ production:
 
 Once your stack has been deployed, you can find your PostGIS file in `/etc/postgresql/share/contrib/postgis-2.1/postgis.sql` on your database server.
 
-## Manual installation
-Applies specifically to Ubuntu 12.04 (the officially supported Cloud66 OS).
+<h2 id="manual">Manual installation</h2>
+Applies specifically to Ubuntu 14.04 (the officially supported Cloud66 OS).
 
 ### Prerequisites
 A number of prerequisites are needed, which can either be built from source or installed from pre-built packages, as shown below.
