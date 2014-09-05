@@ -31,7 +31,7 @@ SSL termination using your load balancer allows the load balancer to handle inco
 
 ![SSL termination](http://cdn.cloud66.com/images/help/ssl_termination.png)
 
-It's important to note that _you do not need SSL termination to enable SSL on your stack_ - you can simply <a href="/add-ins/ssl.html">add your SSL certificate to your app servers</a> as an add-on.</p>
+It's important to note that _you do not need SSL termination to enable SSL on your stack_ - you can simply <a href="http://help.cloud66.com/stack-definition/ssl.html">add your SSL certificate to your app servers</a> as an add-on.
 
 <h2 id="aws">Amazon Elastic Load Balancer</h2>
 
@@ -45,6 +45,7 @@ Through the AWS dashboard:
 <li>Sign in to the AWS management console and open the Amazon EC2 console.</li>
 <li>Select your load balancer and upload a new SSL Certificate or choose an existing one.</li>
 <li>In case it is a new certificate, enter a name for the certificate and copy paste the contents of the private key file and the public key file into the related fields, then save.</li>
+<ul>
 
 <div class="notice">
     <h3>Important</h3>
@@ -89,7 +90,7 @@ To delete a certificate, run the following command:
 $ iam-servercertdel -s &#60;certificate name&#62;
 </pre>
 
-See also: [AWS documentation](http://docs.aws.amazon.com/IAM/latest/UserGuide/InstallCert.html)
+Refer to the <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/InstallCert.html">AWS documentation for more information</a>.
 
 <h2 id="haproxy">HAProxy</h2>
 HAProxy 1.4 doesn’t natively support SSL, but it's possible to use an SSL encryption wrapper like Stunnel, Stud, Pound or Nginx to terminate TLS/SSL connections and forward the unencrypted traffic to HAProxy.
@@ -109,10 +110,6 @@ $ sudo apt-get install stunnel
 You can then use the Cloud 66 [CustomConfig](/stack-features/custom-config.html) to configure the HAProxy configuration file as shown below. If you're not using Cloud 66, you have to make these changes manually in your <i>/etc/haproxy/haproxy.cfg</i> file.
 </li>
 </ul>
-
-<p>
-<a target="_blank" rel="nofollow" class="button-home" href="https://app.cloud66.com/users/sign_up/?utm_source=help&utm_medium=web&utm_campaign=help-page">Manage your load balancers with ease on Cloud 66 &#10141;</a>
-</p>
 
 For example:
 
@@ -211,6 +208,4 @@ stunnel4 &lt;path to stunnel.conf file&gt;
 </pre>
 
 <h2 id="rackspace">Rackspace</h2>
-Rackspace make it very easy for you to [add SSL certificates to their cloud load balancer](http://www.rackspace.com/knowledge_center/product-faq/cloud-load-balancers), straight from their control panel:
-
-![Rackspace SSL termination](http://cdn.cloud66.com/images/help/rackspace_ssl_termination.png)
+Rackspace make it very easy for you to <a href="(http://www.rackspace.com/knowledge_center/product-faq/cloud-load-balancers">add SSL certificates to their cloud load balancer</a>, straight from their control panel.

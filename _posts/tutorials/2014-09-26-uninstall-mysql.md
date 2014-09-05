@@ -14,13 +14,9 @@ tutorial: true
 difficulty: 0
 ---
 
-When using Cloud 66 to [deploy to your own servers](/getting-started/standalone-servers.html), you might experience trouble with an existing MySQL installation on your server.
+When using Cloud 66 to [deploy to your own servers](http://help.cloud66.com/deployment/server-deployment.html), you might experience trouble with an existing MySQL installation on your server.
 
-<p>
-<a target="_blank" rel="nofollow" class="button-home" href="http://app.cloud66.com/?utm_source=help&utm_medium=web&utm_campaign=help-page">Deploy and manage your applications with Cloud 66 &#10141;</a>
-</p>
-
-Along with our [general operating system requirements](/stacks/operating-system-information.html) for the deployment to your server to work, we also recommend that you uninstall all MySQL related files from your server before deploying.
+Along with our general operating system requirements for the deployment to your server to work, we also recommend that you uninstall all MySQL related files from your server before deploying.
 
 Use apt to uninstall and remove all MySQL packages:
 

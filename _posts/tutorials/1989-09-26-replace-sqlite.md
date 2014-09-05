@@ -38,4 +38,4 @@ Switching to another SQL-based database is easy, and the following instructions 
     <li>Rebuild your stack.</li>
 </ol>
 
-More information about [databases](/stacks/databases.html) supported by Cloud 66.
+More information about [databases](http://help.cloud66.com/database-management/database-management.html) supported by Cloud 66.
