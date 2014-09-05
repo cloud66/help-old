@@ -107,7 +107,7 @@ $ sudo apt-get install stunnel
 
 <ul class="article-list">
 <li>
-You can then use the Cloud 66 [CustomConfig](/stack-features/custom-config.html) to configure the HAProxy configuration file as shown below. If you're not using Cloud 66, you have to make these changes manually in your <i>/etc/haproxy/haproxy.cfg</i> file.
+You can then use the Cloud 66 <a href="http://help.cloud66.com/stack-definition/custom-config.html">CustomConfig</a> to configure the HAProxy configuration file as shown below. If you're not using Cloud 66, you have to make these changes manually in your <i>/etc/haproxy/haproxy.cfg</i> file.
 </li>
 </ul>
 
@@ -208,4 +208,4 @@ stunnel4 &lt;path to stunnel.conf file&gt;
 </pre>
 
 <h2 id="rackspace">Rackspace</h2>
-Rackspace make it very easy for you to <a href="(http://www.rackspace.com/knowledge_center/product-faq/cloud-load-balancers">add SSL certificates to their cloud load balancer</a>, straight from their control panel.
+Rackspace make it very easy for you to <a href="http://www.rackspace.com/knowledge_center/product-faq/cloud-load-balancers">add SSL certificates to their cloud load balancer</a>, straight from their control panel.
