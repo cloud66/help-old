@@ -24,7 +24,7 @@ difficulty: 1
 	</li>
 </ul>
 
-<h2 id="cloud66">Installing through Cloud 66</h2>
+<h2 id="cloud66">Installing with Cloud 66</h2>
 
 Installing through Cloud 66 is as simple as a manifest file entry. Refer to our [Manifest file](http://help.cloud66.com/stack-definition/manifest-files.html) documentation for more information.
 
