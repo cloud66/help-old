@@ -274,19 +274,19 @@ redirects:
   #/troubleshooting/ssl-certificate-issues.html
   #/troubleshooting/unicorn-issues.html
   #/troubleshooting/whenever-errors.html
-  /cloud-66-toolbelt/introduction.html
-  /cloud-66-toolbelt/backups.html
-  /cloud-66-toolbelt/deployment.html
-  /cloud-66-toolbelt/file-download.html
-  /cloud-66-toolbelt/file-upload.html
-  /cloud-66-toolbelt/ssh.html
-  /cloud-66-toolbelt/env-vars.html
-  /cloud-66-toolbelt/restart.html
-  /cloud-66-toolbelt/server-set.html
-  /cloud-66-toolbelt/set.html
-  /cloud-66-toolbelt/tail-logs.html
-  /cloud-66-toolbelt/shortcuts.html
-  /cloud-66-toolbelt/lease.html
+  /cloud-66-toolbelt/introduction.html: /toolbelt/introduction.html
+  /cloud-66-toolbelt/backups.html: /toolbelt/backup-mgmt.html
+  /cloud-66-toolbelt/deployment.html: /toolbelt/stack-mgmt.html
+  /cloud-66-toolbelt/file-download.html: /toolbelt/file-mgmt.html
+  /cloud-66-toolbelt/file-upload.html: /toolbelt/file-mgmt.html
+  /cloud-66-toolbelt/ssh.html: /toolbelt/ssh.html
+  /cloud-66-toolbelt/env-vars.html: /toolbelt/env-vars.html
+  /cloud-66-toolbelt/restart.html: /toolbelt/stack-mgmt.html
+  /cloud-66-toolbelt/server-set.html: /toolbelt/server-setup.html
+  /cloud-66-toolbelt/set.html: /toolbelt/stack-mgmt.html
+  /cloud-66-toolbelt/tail-logs.html: /toolbelt/logging.html
+  /cloud-66-toolbelt/shortcuts.html: /toolbelt/introduction.html
+  /cloud-66-toolbelt/lease.html: /toolbelt/ssh.html
   /partners/circle-ci-integration.html: /partner-integration/circle-ci-integration.html
   /partners/travis-ci-integration.html: /partner-integration/travis-ci-integration.html
   /partners/integration-with-semaphore.html: /partner-integration/semaphore-integration.html
