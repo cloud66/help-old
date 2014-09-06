@@ -1,5 +1,11 @@
 [
 	{
+	"date": "2014-09-06T11:00:00Z",
+	"title": "Say hello to your new dashboard",
+	"summary": "Search, new navigation and many more improvements in the UI",
+	"link": "http://blog.cloud66.com/say-hello-to-your-new-dashboard/"
+	},
+	{
 	"date": "2014-07-28T11:00:00Z",
 	"title": "Introducing ElasticAddress",
 	"summary": "Build multi data center stacks in minutes",
