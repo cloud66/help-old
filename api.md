@@ -50,7 +50,7 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 | ---------- | ------------ | -------------------------------- | ------------- |
 | uid | string | The unique identifier of the stack. | 5be6b763474b0eafa5fafb64bff0ba80 |
 | name | string | The name defined for the stack. | My Awesome App |
-| git | string | The git repository URL associated with the stack. | http://github.com/cloud66-samples/awesome-app.git |
+| git | string | The git repository URL associated with the stack. | http://github.com/mysamples/awesome-app.git |
 | git_branch | string | The git repository branch associated with the stack. | fig |
 | environment | string | The environment associated with the stack. | production |
 | cloud | string | The cloud provider associated with the stack. | DigitalOcean |
@@ -71,7 +71,7 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 | updated_at_iso | datetime | The date and time the stack was last modified, in UTC datetime | 2014-08-14 01:46:52 UTC |
 | redeploy_hook | string | If applicable, the deploy hook URL associated with the stack. | http://hooks.cloud66.com/stacks/redeploy/ b806f1c3344eb3aa2a024b23254b75b3/ 6d677352a6b2eefec6e345ee2b491521 |
 
-### <a name="The stack action object></a> The stack action object
+### <a name="The stack action object"></a> The stack action object
 | Property | Data type | Description | Sample value |
 | ------------- | --------- | ----------------------------------- | ---------------- |
 | id | int | The numeric identifier of the stack action. Identifiers increment by one for each performed action. | 10 |
