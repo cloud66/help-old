@@ -47,7 +47,7 @@ Using the Stacks endpoint, you can submit requests for the following methods.
 
 ### The stack object
 | Property | Data type | Description | Sample value |
-| ---------- | ------------ | ------------------------------------------------ | ---------------------- |
+| ---------- | ------------ | -------------------------------- | ------------- |
 | uid | string | The unique identifier of the stack. | 5be6b763474b0eafa5fafb64bff0ba80 |
 | name | string | The name defined for the stack. | My Awesome App |
 | git | string | The git repository URL associated with the stack. | http://github.com/cloud66-samples/awesome-app.git |
@@ -73,7 +73,7 @@ Using the Stacks endpoint, you can submit requests for the following methods.
 
 ### The stack action object
 | Property | Data type | Description | Sample value |
-| ------------- | --------- | ---------------------------------------------------------------- | ---------------------- |
+| ------------- | --------- | ----------------------------------- | ---------------- |
 | id | int | The numeric identifier of the stack action. Identifiers increment by one for each performed action. | 10 |
 | user | string | The email address of the user who performed the stack action. | hello@cloud66.com |
 | resource_type | string | The resource for which the action was performed, which is stack in this case. | stack |
@@ -87,7 +87,7 @@ Using the Stacks endpoint, you can submit requests for the following methods.
 
 ### Stack status values
 | Status | Code | Description |
-| ----------- | :---: | ---------------------------------------------------------- |
+| ----------- | :---: | ----------------------------------------- |
 | STK_QUEUED | 0 | Pending analysis |
 | STK_SUCCESS | 1 | Deployed successfully |
 | STK_FAILED | 2 | Deployment failed |
@@ -99,7 +99,7 @@ Using the Stacks endpoint, you can submit requests for the following methods.
 
 ### Stack health status values
 | Status | Code | Description |
-| ----------- | :---: | ---------------------------------------------------------- |
+| ----------- | :---: | ------------------------------------------ |
 | HLT_UNKNOWN | 0 | Unknown |
 | HLT_BUILDING | 1 | Building |
 | HLT_PARTIAL | 2 | Impaired |
