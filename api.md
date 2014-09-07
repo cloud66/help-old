@@ -166,7 +166,7 @@ Retrieves a paged list of all the stack objects the user can access.
     [Stack List][]
 
 ## <a name="View a stack"></a> View a stack [/stacks/{id}]
-Retrieve the details of the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack object](#The stack object)
+Retrieve the details of the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack object](#The stack object).
 
 - Scope: _public_
 
@@ -220,7 +220,7 @@ Retrieve the details of the stack specified in the request.
     [Stack][]
 
 ## <a name="List all stack actions"></a> List all stack actions [/stacks/{id}/actions]
-Retrieve a paged list of all asynchronous actions performed for the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object)
+Retrieve a paged list of all asynchronous actions performed for the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object).
 
 - Scope: _public_
 
@@ -272,7 +272,7 @@ Retrieve a paged list of all asynchronous actions performed for the stack specif
     [Stack Action list][]
 
 ## <a name="View a stack action"></a> View a stack action [/stacks/{stack_id}/actions/{id}]
-Retrieve the details of an asynchronous action performed for the the stack specified in the request based on the supplied action ID. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object)
+Retrieve the details of an asynchronous action performed for the the stack specified in the request based on the supplied action ID. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object).
 
 - Scope: _public_
 
@@ -316,7 +316,7 @@ Retrieve the details of an asynchronous action performed for the the stack speci
 
 
 ## <a name="Perform a stack action"></a> Perform a stack action [/stacks/{stack_id}/actions]
-Perform an asynchronous action for the stack specified in the request. You can use this method to restart the stack, clear the stack's cache, or enable maintenance mode. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object)
+Perform an asynchronous action for the stack specified in the request. You can use this method to restart the stack, clear the stack's cache, or enable maintenance mode. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object).
 
 - Scope: _redeploy_
 
