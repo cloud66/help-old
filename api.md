@@ -35,17 +35,17 @@ Authorization: bearer 5262d64b892e8d4341000001
 ```
 
 # Stacks
-Most of the interactions with Cloud 66 API are performed at the stack level. Using the Stacks resource, you can list stacks and view stack details, but you can only create, update, or delete stacks using the UI dashboard.
+Most interactions with the Cloud 66 API are performed at the stack level. Using the Stacks resource, you can list stacks and view stack details, but you can only create, update, or delete stacks using the UI dashboard.
 
 ### Methods
-Using the Stacks endpoint, you can submit requests for the following methods.
+Using the Stacks endpoint, you can submit requests using the following methods.
 * [List all stacks](#List all stacks)
 * [View a stack](#View a stack)
 * [List all stack actions](#List all stack actions)
 * [View a stack action](#View a stack action)
 * [Perform a stack action](#Perform a stack action)
 
-### The stack object
+### <a name="The stack object"></a> The stack object
 | Property | Data type | Description | Sample value |
 | ---------- | ------------ | -------------------------------- | ------------- |
 | uid | string | The unique identifier of the stack. | 5be6b763474b0eafa5fafb64bff0ba80 |
@@ -69,9 +69,9 @@ Using the Stacks endpoint, you can submit requests for the following methods.
 | cloud_status | string | The current cloud provider status associated with the stack. | partial |
 | created_at_iso | datetime | The date and time the stack was created, in UTC datetime | 2014-08-14 00:38:14 UTC |
 | updated_at_iso | datetime | The date and time the stack was last modified, in UTC datetime | 2014-08-14 01:46:52 UTC |
-| redeploy_hook | string | If applicable, the deploy hook URL associated with the stack. | http://hooks.cloud66.com/stacks/redeploy/b806f1c3344eb3aa2a024b23254b75b3/6d677352a6b2eefec6e345ee2b491521 |
+| redeploy_hook | string | If applicable, the deploy hook URL associated with the stack. | http://hooks.cloud66.com/stacks/redeploy/ b806f1c3344eb3aa2a024b23254b75b3/ 6d677352a6b2eefec6e345ee2b491521 |
 
-### The stack action object
+### <a name="The stack action object></a> The stack action object
 | Property | Data type | Description | Sample value |
 | ------------- | --------- | ----------------------------------- | ---------------- |
 | id | int | The numeric identifier of the stack action. Identifiers increment by one for each performed action. | 10 |
@@ -85,7 +85,7 @@ Using the Stacks endpoint, you can submit requests for the following methods.
 | finished_success | bool | Whether the action completed successfully. | true |
 | finished_message | string | If applicable, the system message associated with the completed action. | null |
 
-### Stack status values
+### <a name="Stack status values"></a> Stack status values
 | Status | Code | Description |
 | ----------- | :---: | ----------------------------------------- |
 | STK_QUEUED | 0 | Pending analysis |
@@ -97,7 +97,7 @@ Using the Stacks endpoint, you can submit requests for the following methods.
 | STK_DEPLOYING | 6 | Deploying |
 | STK_TERMINAL_FAILURE | 7 | Unable to analyze |
 
-### Stack health status values
+### <a name="Stack health status values"></a> Stack health status values
 | Status | Code | Description |
 | ----------- | :---: | ------------------------------------------ |
 | HLT_UNKNOWN | 0 | Unknown |
@@ -106,7 +106,7 @@ Using the Stacks endpoint, you can submit requests for the following methods.
 | HLT_OK | 3 | Healthy |
 | HLT_BROKEN | 4 | Failed |
 
-## List all stacks [/stacks]
+## <a name="List all stacks"></a> List all stacks [/stacks]
 Retrieves a paged list of all the stack objects the user can access. For more information about the object properties returned in the response, refer to [the stack object](#The stack object).
 
 - Scope: _public_
@@ -165,7 +165,7 @@ Retrieves a paged list of all the stack objects the user can access.
 
     [Stack List][]
 
-## View a stack [/stacks/{id}]
+## <a name="View a stack"></a> View a stack [/stacks/{id}]
 Retrieve the details of the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack object](#The stack object)
 
 - Scope: _public_
@@ -219,7 +219,7 @@ Retrieve the details of the stack specified in the request.
 
     [Stack][]
 
-## List all stack actions [/stacks/{id}/actions]
+## <a name="List all stack actions"></a> List all stack actions [/stacks/{id}/actions]
 Retrieve a paged list of all asynchronous actions performed for the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object)
 
 - Scope: _public_
@@ -271,7 +271,7 @@ Retrieve a paged list of all asynchronous actions performed for the stack specif
 
     [Stack Action list][]
 
-## View a stack action [/stacks/{stack_id}/actions/{id}]
+## <a name="View a stack action"></a> View a stack action [/stacks/{stack_id}/actions/{id}]
 Retrieve the details of an asynchronous action performed for the the stack specified in the request based on the supplied action ID. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object)
 
 - Scope: _public_
@@ -315,7 +315,7 @@ Retrieve the details of an asynchronous action performed for the the stack speci
     [Stack Action][]
 
 
-## Perform a stack action [/stacks/{stack_id}/actions]
+## <a name="Perform a stack action"></a> Perform a stack action [/stacks/{stack_id}/actions]
 Perform an asynchronous action for the stack specified in the request. You can use this method to restart the stack, clear the stack's cache, or enable maintenance mode. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object)
 
 - Scope: _redeploy_
@@ -356,7 +356,6 @@ Perform an asynchronous action for the stack specified in the request. You can u
 + Response 200
 
     [Run Stack action][]
-
 
 
 # Group Deployments
