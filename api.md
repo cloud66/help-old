@@ -34,11 +34,80 @@ Alternatively, you can include the OAuth authentication token in the header of e
 Authorization: bearer 5262d64b892e8d4341000001
 ```
 
-# Group Stacks
-Most of the interactions with Cloud 66 API is at the stack level. Stacks are created using the UI dashboard but can be listed and returned via the API.
+# Stacks
+Most of the interactions with Cloud 66 API are performed at the stack level. Using the Stacks resource, you can list stacks and view stack details, but you can only create, update, or delete stacks using the UI dashboard.
 
-## Stack List [/stacks]
-Get list of all stacks accessible by the caller.
+### Methods
+Using the Stacks endpoint, you can submit requests for the following methods.
+* [List all stacks](#List all stacks)
+* [View a stack](#View a stack)
+* [List all stack actions](#List all stack actions)
+* [View a stack action](#View a stack action)
+* [Perform a stack action](#Perform a stack action)
+
+### The stack object
+| Property | Data type | Description | Sample value |
+| ---------- | ------------ | ------------------------------------------------ | ---------------------- |
+| uid | string | The unique identifier of the stack. | 5be6b763474b0eafa5fafb64bff0ba80 |
+| name | string | The name defined for the stack. | My Awesome App |
+| git | string | The git repository URL associated with the stack. | http://github.com/cloud66-samples/awesome-app.git |
+| git_branch | string | The git repository branch associated with the stack. | fig |
+| environment | string | The environment associated with the stack. | production |
+| cloud | string | The cloud provider associated with the stack. | DigitalOcean |
+| fqdn | string | The fully qualified namespace of the stack. | awesome-app.dev.c66.me |
+| language | string | The programming language of the stack. | ruby |
+| framework | string | The framework used for the stack. | rails |
+| status | int | The current status code for the stack. | 1 | 
+| health | int | The current health code for the stack. | 3 |
+| last_activity | datetime | The date and time the last action was performed for the stack, in UTC datetime. | 2014-08-14T01:46:53+00:00 |
+| last_activity_iso | datetime | The date and time the last action was performed for the stack, in UTC datetime | 2014-08-14T01:46:53+00:00 |
+| maintenance mode | bool | Whether the stack currently has maintenance mode enabled. | false |
+| has_loadbalancer | bool | Whether the stack has an associated load balancer add-in. | false |
+| created_at | datetime | The date and time the stack was created, in UTC datetime | 2014-08-14 00:38:14 UTC |
+| updated_at | datetime | The date and time the stack was last modified, in UTC datetime | 2014-08-14 01:46:52 UTC |
+| deploy_directory | string | The target directory for stack deployment. | /var/deploy/awesome_app |
+| cloud_status | string | The current cloud provider status associated with the stack. | partial |
+| created_at_iso | datetime | The date and time the stack was created, in UTC datetime | 2014-08-14 00:38:14 UTC |
+| updated_at_iso | datetime | The date and time the stack was last modified, in UTC datetime | 2014-08-14 01:46:52 UTC |
+| redeploy_hook | string | If applicable, the deploy hook URL associated with the stack. | http://hooks.cloud66.com/stacks/redeploy/b806f1c3344eb3aa2a024b23254b75b3/6d677352a6b2eefec6e345ee2b491521 |
+
+### The stack action object
+| Property | Data type | Description | Sample value |
+| ------------- | --------- | ---------------------------------------------------------------- | ---------------------- |
+| id | int | The numeric identifier of the stack action. Identifiers increment by one for each performed action. | 10 |
+| user | string | The email address of the user who performed the stack action. | hello@cloud66.com |
+| resource_type | string | The resource for which the action was performed, which is stack in this case. | stack |
+| action | string | The action that was performed for the stack. | restart |
+| resource_id | int | The unique ID of the resource | 283 |
+| started_via | string | The process that initiated the action, which is the UI, API, or command line. | api |
+| started_at | datetime | The date and time the action was initiated, in UTC datetime. | 2014-09-01T19:08:05Z |
+| finished_at | datetime | The date and time the action was completed, in UTC datetime. | 2014-09-01T19:08:09Z |
+| finished_success | bool | Whether the action completed successfully. | true |
+| finished_message | string | If applicable, the system message associated with the completed action. | null |
+
+### Stack status values
+| Status | Code | Description |
+| ----------- | :---: | ---------------------------------------------------------- |
+| STK_QUEUED | 0 | Pending analysis |
+| STK_SUCCESS | 1 | Deployed successfully |
+| STK_FAILED | 2 | Deployment failed |
+| STK_ANALYSING | 3 | Analyzing |
+| STK_ANALYSED | 4 | Analyzed |
+| STK_QUEUED_FOR_DEPLOYING | 5 | Queued for deployment | 
+| STK_DEPLOYING | 6 | Deploying |
+| STK_TERMINAL_FAILURE | 7 | Unable to analyze |
+
+### Stack health status values
+| Status | Code | Description |
+| ----------- | :---: | ---------------------------------------------------------- |
+| HLT_UNKNOWN | 0 | Unknown |
+| HLT_BUILDING | 1 | Building |
+| HLT_PARTIAL | 2 | Impaired |
+| HLT_OK | 3 | Healthy |
+| HLT_BROKEN | 4 | Failed |
+
+## List all stacks [/stacks]
+Retrieves a paged list of all the stack objects the user can access. For more information about the object properties returned in the response, refer to [the stack object](#The stack object).
 
 - Scope: _public_
 
@@ -89,21 +158,21 @@ Get list of all stacks accessible by the caller.
             }
         }
 
-### Stack List [GET]
-Get a list of all stacks accessible by the caller.
+### List all stacks [GET]
+Retrieves a paged list of all the stack objects the user can access.
 
 + Response 200
 
     [Stack List][]
 
-## Stack [/stacks/{id}]
-Get a single stack.
+## View a stack [/stacks/{id}]
+Retrieve the details of the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack object](#The stack object)
 
 - Scope: _public_
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack.
 
 + Model (application/json)
 
@@ -143,21 +212,21 @@ Get a single stack.
     	}
 
 
-### Get Stack [GET]
-Get a single stack.
+### View a stack [GET]
+Retrieve the details of the stack specified in the request.
 
 + Response 200
 
     [Stack][]
 
-## Stack Action list [/stacks/{id}/actions]
-Get list of all async actions that happened to stack.
+## List all stack actions [/stacks/{id}/actions]
+Retrieve a paged list of all asynchronous actions performed for the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object)
 
 - Scope: _public_
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack
 
 + Model (application/json)
 
@@ -195,22 +264,22 @@ Get list of all async actions that happened to stack.
 				}
 		}
 
-### Stack Action list [GET]
-Get list of all async actions that happened to stack.
+### List all stack actions [GET]
+Retrieve a paged list of all asynchronous actions performed for the stack specified in the request.
 
 + Response 200
 
     [Stack Action list][]
 
-## Stack Action [/stacks/{stack_id}/actions/{id}]
-Get information of a single stack async action
+## View a stack action [/stacks/{stack_id}/actions/{id}]
+Retrieve the details of an asynchronous action performed for the the stack specified in the request based on the supplied action ID. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object)
 
 - Scope: _public_
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
-    + id (required, integer, `4153`) ... The async action id
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack
+    + id (required, integer, `4153`) ... Identifier of the asynchronous action
 
 + Model (application/json)
 
@@ -238,23 +307,23 @@ Get information of a single stack async action
 		}
 
 
-### Stack Action [GET]
-Get information of a single stack async action
+### View a stack action [GET]
+Retrieve the details of an asynchronous action performed for the the stack specified in the request based on the supplied action ID.
 
 + Response 200
 
     [Stack Action][]
 
 
-## Run Stack action [/stacks/{stack_id}/actions]
-Start running an action(clear_caches, maintenance_mode, restart) on stack
+## Perform a stack action [/stacks/{stack_id}/actions]
+Perform an asynchronous action for the stack specified in the request. You can use this method to restart the stack, clear the stack's cache, or enable maintenance mode. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object)
 
 - Scope: _redeploy_
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
-    + command (required, string, `restart`) ... Valid commands are clear_caches, maintenance_mode, restart
+    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack
+    + command (required, string, `restart`) ... The action to perform for the stack. Valid values are clear_caches, maintenance_mode, and restart.
 
 + Model (application/json)
 
@@ -281,8 +350,8 @@ Start running an action(clear_caches, maintenance_mode, restart) on stack
     			}
     	}
 
-### Run Stack action [POST]
-Start running an action(clear_caches, maintenance_mode, restart) on stack
+### Perform a stack action [POST]
+Perform an asynchronous action for the stack specified in the request. You can use this method to restart the stack, clear the stack's cache, or enable maintenance mode.
 
 + Response 200
 
