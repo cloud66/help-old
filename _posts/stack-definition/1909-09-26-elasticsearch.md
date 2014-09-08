@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "- Elasticsearch"
 date:   2075-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"

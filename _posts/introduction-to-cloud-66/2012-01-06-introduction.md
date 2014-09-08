@@ -65,15 +65,15 @@ Before you get get started, you may want to look at our Technical specifications
 
 <ul>
 	<li><a href="https://app.cloud66.com/users/sign_up" target="_blank">Cloud 66 account</a></li>
-	<li><a href="http://help.cloud66.com/how-to/access-your-code.html">Git repository with your application code</a></li>
+	<li><a href="http://community.cloud66.com/articles/accessing-your-git-repository">Git repository with your application code</a></li>
 	<ul style="margin-bottom:0em">
-		<li>Public (<a href="#">access a public repository</a>)</li>
-		<li>Private (<a href="#">access a private repository</a>)</li>
+		<li>Public (<a href="http://community.cloud66.com/articles/accessing-your-git-repository#public">access a public repository</a>)</li>
+		<li>Private (<a href="http://community.cloud66.com/articles/accessing-your-git-repository#private">access a private repository</a>)</li>
 	</ul> 
-	<li><a href="/getting-started/supported-clouds.html">Deployment credentials</a></li>
+	<li><a href="/deployment/cloud-deployment.html">Deployment credentials</a></li>
 	<ul style="margin-bottom:0em">
-		<li>The API key for your cloud provider (<a href="#">add a cloud platform</a>)</li>
-		<li>An SSH key and IP address for your server (<a href="#">add a SSH key</a>)</li>
+		<li>The API key for your cloud provider (<a href="/deployment/cloud-deployment.html">add a cloud platform</a>)</li>
+		<li>An SSH key and IP address for your server (<a href="/deployment/server-deployment.html">add a SSH key</a>)</li>
 	</ul> 
 </ul>
 
@@ -94,7 +94,7 @@ If you have a private Git repository, complete the following steps to generate t
 Complete the following steps to define the properties Cloud 66 uses to identify your application.
 
 <b>Prerequisites</b><br/>
-You must know the URL for your Git repository and the associated Git branch. For instructions on retrieving the Git repo URL and how to format it for this procedure, refer to <a href="#">Access a public Git repository</a> or <a href="#">Access a private Git repository</a>.
+You must know the URL for your Git repository and the associated Git branch. For instructions on retrieving the Git repo URL and how to format it for this procedure, refer to <a href="http://community.cloud66.com/articles/accessing-your-git-repository#public">Access a public Git repository</a> or <a href="http://community.cloud66.com/articles/accessing-your-git-repository#private">Access a private Git repository</a>.
 
 <ol>
 <li>In the <i>About your app</i> dialog box, do the following actions:</li>
