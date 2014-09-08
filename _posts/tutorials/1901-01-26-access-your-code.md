@@ -20,7 +20,7 @@ difficulty: 0
 		<a href="#public">Public repositories</a>
 	</li>
 	<li><a href="#private">Private repositories</a></li>
-            <ul>
+            <ul style="margin-bottom:0em; margin-top:0em">
                 <li><a href="#github">GitHub example</a></li>
                 <li><a href="#bitbucket">BitBucket example</a></li>
             </ul>

@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Migrate from Heroku to Cloud 66"
 so_title: "heroku"
 cloud66_text: "Try Cloud 66 for free"
@@ -14,71 +14,49 @@ tutorial: true
 difficulty: 0
 ---
 
+<h2>Contents</h2>
+<ul class="page-toc" style="margin-bottom:0em">
+	<li><a href="#about">About migrating from Heroku</a></li>	
+	<li><a href="#server">What server size do I need?</a></li>
+	<li><a href="#migrating">Migrating</a></li>
+            <ul style="margin-bottom:0em; margin-top:0em">
+                <li><a href="#code">1. Code</a></li>
+                <li><a href="#data">2. Data</a></li>
+                <li><a href="#traffic">3. Traffic</a></li>
+            </ul>
+	<li><a href="#pointers">Useful pointers</a></li>
+            <ul style="margin-top:0em">
+                <li><a href="#webserver">Web server and Procfile</a></li>
+                <li><a href="#apc">Asset pipeline compilation</a></li>
+            </ul>        
+</ul>
 
-## Git Repository
+<h2 id="about">About migrating from Heroku</h2>
+Migrating your application from Heroku to Cloud 66 involves deploying your code, importing your data and redirecting your traffic to the new endpoint. 
 
-Simply provide Cloud 66 with a URL to your git repository and we'll be able to analyze your code.
-Use your unique SSH key to provide us [access to your code](/articles/accessing-your-git-repository).
+<h2 id="server">What server size do I need?</h2>
+Using Heroku, you can choose between 1X (512 MB), 2X (1 GB) and PX (6 GB) server sizes. This makes it easy to calculate your server requirements, and we recommend that you use similar server resources when deploying your stack with Cloud 66. We also recommend that you have a seperate server for your database in production environments.
 
-## Procfile
+<h2 id="migrating">Migrating</h2>
 
-With Cloud 66, you can use [Procfiles](http://help.cloud66.com/deployment/proc-files.html) to manage your background jobs.
+<h3 id="code">1. Code</h3>
+Simply provide Cloud 66 the URL to your Git repository so that it can be analyzed. For more information, see [Accessing your Git repository](http://community.cloud66.com/articles/accessing-your-git-repository).
 
-## Asset Pipeline Compilation
+<h3 id="data">2. Data</h3>
+Once your code is deployed, it's time to migrate your data across. From your Heroku toolbelt, create a database backup URL by running <code>heroku pgbackups:url</code>. Next, visit your stack detail page and click the _Import Heroku data_ link. Paste the URL provided by the toolbelt into the field, and click _Import Heroku data_.
 
-If you haven't compiled assets locally, Heroku will attempt to run the assets:precompile task during slug compilation.
+<h3 id="traffic">3. Traffic</h3>
+Once you're ready to serve traffic from your Cloud 66 stack, you need to redirect your traffic to it. For more information, see [Configure your DNS](http://help.cloud66.com/dns/configure-dns.html).
 
-Cloud 66 allows you to [specify whether or not to run this](http://help.cloud66.com/stack-definition/asset-pipeline.html) during deployment.
+<h2 id="pointers">Useful pointers</h2>
 
-## Database
+<h3 id="webserver">Web server and Procfile</h3>
+By default, Cloud 66 will deploy your stack with Phusion Passenger, but you can also choose a [custom web server](http://help.cloud66.com/web-server/custom-webserver.html) like Unicorn. You may have a <code>web</code> entry in your Procfile to do this on Heroku. Cloud 66 ignores this entry to avoid compatability issues.
 
-Take note of these database settings from your [Heroku database dashboard](https://postgres.heroku.com/databases):
+To run a custom web server, we require a <code>custom_web</code> entry. It is important to set this before analyzing your stack, to avoid building the stack with Passenger.
 
-- &lt;db&#95;name&gt;
-- &lt;db&#95;username&gt;
-- &lt;db&#95;password&gt;
+You can also use the [Procfile](http://help.cloud66.com/deployment/proc-files.html) to define other background jobs.
 
-Modify your <code>config/database.yml</code> by adding those settings for your environment:
+<h3 id="apc">Asset Pipeline Compilation</h3>
 
-<pre class="prettyprint">
-development:
-    adapter: postgresql
-    database: &lt;db&#95;name&gt;
-    username: &lt;db&#95;username&gt;
-    password: &lt;db&#95;password&gt;
-    host: localhost
-    port: 5432
-</pre>
-
-From the Heroku Toolbelt, you can create a publicly accessible backup URL:
-
-<pre class="prettyprint">
-$ heroku pgbackups:url
-</pre>
-
-Please refer to [Heroku documentation](https://devcenter.heroku.com/articles/pgbackups#creating-a-backup) for more information.
-
-Once you have your <code>&lt;backup&#95;url&gt;</code>, you need to download it to your Cloud 66 server.
-You can do that by [connecting to your database server](http://help.cloud66.com/stack-definition/ssh-to-server.html) and using the following command:
-
-<pre class="prettyprint">
-$ curl -o myBackup.dump "&lt;backup&#95;url&gt;"
-</pre>
-
-Once complete, you can [restore your database backup](https://devcenter.heroku.com/articles/heroku-postgres-import-export#restore-to-local-database):
-
-<pre class="prettyprint">
-$ pg&#95;restore --verbose --clean --no-acl --no-owner -U &lt;db&#95;username&gt; -d &lt;db&#95;name&gt; myBackup.dump
-</pre>
-
-Finally, redeploy your application or restart PostgreSQL:
-
-<pre class="prettyprint">
-$ sudo -u postgres pg&#95;ctl -D /usr/local/pgsql/data -m immediate restart
-</pre>
-
-## Dynos &amp; Scaling up
-
-Dynos are the unit of computing power on Heroku, and adding new dynos often results in better overall performance.
-
-On Cloud 66 you can use [horizontal and/or vertical scaling](http://help.cloud66.com/deployment/scaling.html) to improve performance.
+If you haven't compiled assets locally, Heroku will attempt to run the assets:precompile task during slug compilation. Cloud 66 allows you to [specify whether or not to run this](http://help.cloud66.com/stack-definition/asset-pipeline.html) during deployment.
