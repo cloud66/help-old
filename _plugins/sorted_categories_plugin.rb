@@ -19,7 +19,8 @@ module Jekyll
 			'partner-integration',
 			'compliance-guides',			
 			'api',
-			'jekyll'
+			'jekyll',
+			'tech-specs'
 		]
 		
     safe true
