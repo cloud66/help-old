@@ -15,7 +15,7 @@ difficulty: 0
 ---
 
 <h2>Contents</h2>
-<ul class="page-toc" style="margin-bottom:0em">
+<ul class="page-toc">
 	<li><a href="#about">About migrating from Heroku</a></li>	
 	<li><a href="#server">What server size do I need?</a></li>
 	<li><a href="#migrating">Migrating</a></li>
