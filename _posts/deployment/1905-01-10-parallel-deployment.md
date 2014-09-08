@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Parallel deployments"
 so_title: "parallel deployment"
 nav_sticky: false

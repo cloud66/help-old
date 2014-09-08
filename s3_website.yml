@@ -131,8 +131,8 @@ redirects:
   /getting-started/supported-frameworks.html: /tech-specs/versions.html
   /getting-started/what-is-a-stack.html: /stack-definition/stack-definition.html
   /getting-started/your-first-stack.html: /introduction-to-cloud-66/introduction.html
-  /getting-started/pre-deployment.html: /
-  /getting-started/post-deployment.html: /
+  /getting-started/pre-deployment.html: http://help.cloud66.com
+  /getting-started/post-deployment.html: http://help.cloud66.com
   /getting-started/security.html: /introduction-to-cloud-66/security.html
   /getting-started/cloud66-status.html: /introduction-to-cloud-66/cloud66-status.html
   /getting-started/faq.html: /introduction-to-cloud-66/faq.html
@@ -177,7 +177,7 @@ redirects:
   /stacks/versions.html: /tech-specs/versions.html
   /stacks/databases.html: /database-management/database-management.html
   /stacks/easy-deploy-repos.html: /deployment/easy-deploy-repos.html
-  /stacks/multi-region-stack.html
+  /stacks/multi-region-stack.html: http://community.cloud66.com/articles/multi-region-stacks
   /stacks/operating-system-information.html: /deployment/server-deployment.html
   /stacks/padrino-stacks.html: /stack-definition/padrino-stacks.html
   /stacks/rails-stacks.html: /stack-definition/rails-stacks.html
@@ -224,12 +224,12 @@ redirects:
   /cloud-providers/cloud-rackspace.html: /deployment/cloud-rackspace.html
   /cloud-providers/cloud-telefonica.html: http://help.cloud66.com
   /cloud-providers/cloud-vexxhost.html: /deployment/cloud-vexxhost.html
-  /how-to/introduction.html: http://community.cloud66.com/articles
+  /how-to/introduction.html: http://community.cloud66.com
   #/how-to/ssl-termination-on-load-balancers.html
   /how-to/detailed-server-logs.html: /stack-definition/logging.html
   #/how-to/access-your-code.html
   #/how-to/nginx-modules.html
-  /how-to/aws-keys.html
+  /how-to/aws-keys.html: http://community.cloud66.com
   #/how-to/asset-pipeline.html
   #/how-to/websocket-support.html
   /how-to/configure-dns.html: /dns/configure-dns.html
@@ -245,7 +245,7 @@ redirects:
   #/how-to/memcached.html
   #/how-to/migrate-from-heroku.html
   #/how-to/migrate-across-dc.html
-  /how-to/monitoring-health.html
+  /how-to/monitoring-health.html: http://community.cloud66.com
   /how-to/nginx-customconfig.html: /web-server/nginx.html
   #/how-to/optimizing-performance.html
   #/how-to/out-of-memory-errors.html
@@ -255,11 +255,11 @@ redirects:
   /how-to/speed-deploy.html: /stack-definition/asset-pipeline.html
   #/how-to/ssl-certificate.html
   /how-to/shell-to-your-servers.html: /stack-definition/ssh-to-server.html
-  /how-to/shell-from-windows.html
+  /how-to/shell-from-windows.html: /stack-definition/ssh-to-server.html
   /how-to/upgrade-packages.html: /stack-definition/applying-upgrades.html
   /how-to/upgrade-ruby.html: /stack-definition/applying-upgrades.html
   #/how-to/github.html
-  /how-to/zero-downtime-deploys.html
+  /how-to/zero-downtime-deploys.html: http://community.cloud66.com/articles/zero-downtime-deployments
   #/troubleshooting/application-not-serving.html
   /troubleshooting/asset-pipeline.html: http://community.cloud66.com/articles/asset-pipeline-errors
   #/troubleshooting/digitalocean-server-creation-errors.html
