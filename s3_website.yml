@@ -157,7 +157,7 @@ redirects:
   /stack-features/vertical-scaling.html: /deployment/scaling.html
   /stack-features/server-ip-addresses.html: /dns/server-ip-addresses.html
   /stack-features/server-monitoring.html: /stack-definition/server-monitoring.html
-  /stack-features/stack-clone.html
+  /stack-features/stack-clone.html: /stack-definition/stack-definition.html
   /stack-features/stack-envs.html: /stack-definition/stack-definition.html
   /stack-features/network-configuration.html: /stack-definition/network-configuration.html
   /stack-features/stackscore.html: /stack-definition/stack-definition.html
@@ -211,9 +211,9 @@ redirects:
   /your-account/delete-account.html: /account-management/account-management.html
   /your-account/data-protection.html: /compliance-guides/data-protection.html
   /your-account/pci-compliance.html: /compliance-guides/pci-compliance.html
-  /your-account/pricing.html
-  /your-account/referral-program.html
-  /your-account/support.html
+  /your-account/pricing.html: http://cloud66.com/pricing
+  /your-account/referral-program.html: /account-management/referral-program.html
+  /your-account/support.html: http://cloud66.com/pricing
   /your-account/team-accounts.html: /account-management/team-accounts.html
   /your-account/two-step-verification.html: /account-management/two-step-verification.html
   /cloud-providers/cloud-aws.html: /deployment/cloud-aws.html
@@ -222,7 +222,7 @@ redirects:
   /cloud-providers/cloud-joyent.html: /deployment/cloud-joyent.html
   /cloud-providers/cloud-linode.html: /deployment/cloud-linode.html
   /cloud-providers/cloud-rackspace.html: /deployment/cloud-rackspace.html
-  /cloud-providers/cloud-telefonica.html
+  /cloud-providers/cloud-telefonica.html: http://help.cloud66.com
   /cloud-providers/cloud-vexxhost.html: /deployment/cloud-vexxhost.html
   /how-to/introduction.html: http://community.cloud66.com/articles
   #/how-to/ssl-termination-on-load-balancers.html

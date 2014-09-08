@@ -1,6 +1,6 @@
 ---
 layout: post
-template: two-col
+template: one-col
 title:  "Referral program"
 so_title: false
 nav_sticky: true
@@ -8,7 +8,7 @@ nav: true
 nav_prev: "/your-account/pricing.html"
 nav_next: "/your-account/support.html"
 date:   2036-10-19 16:27:22
-categories: 
+categories: account-management
 lead: Share Cloud 66 with your friends and earn credits
 search-tags: ['']
 tags: ['Your account']
