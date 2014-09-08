@@ -40,7 +40,7 @@ difficulty: 1
 
 To add SSL to your stack, you need to have a SSL certificate and key. Some certificate authorities also provide you with an intermediate certificate. Firstly, please make sure that your SSL keys don't have any passphrases.
 
-Once you have your certificate, key and possibly intermediate certificate, paste them into the appropriate boxes of the [SSL certificate add-in](/add-ins/ssl.html). You can also add the domain name if you want to limit the SSL to a certain domain.
+Once you have your certificate, key and possibly intermediate certificate, paste them into the appropriate boxes of the [SSL certificate add-in](http://help.cloud66.com/stack-definition/ssl.html). You can also add the domain name if you want to limit the SSL to a certain domain.
 
 <h2 id="sign">Certificate signing request</h2>
 
@@ -65,6 +65,7 @@ $ openssl req -new -key private&#95;key.key -out signing&#95;request.csr
 </ol>
 
 <br/>
+
 <div class="notice">
     <h3>Important</h3>
     <p>You cannot use passphrase protected certificate keys with Nginx. Learn how to <a href="/articles/ssl-certificate-issues">remove the passphrases from certificate keys</a>.</p>

@@ -16,6 +16,7 @@ There are a number of factors that can lead your application to stop serving con
 Start by checking if you can [SSH to your server](http://help.cloud66.com/stack-definition/ssh-to-server.html), remembering to open the firewall beforehand as described.
 
 If you're able to SSH to the server, follow the steps below. If not, we recommend that you use your cloud vendor dashboard to try to connect to the server.
+
 <ol class="article-list">
 <li>Is your application redirecting to HTTPS by default, and you don't have an SSL certificate installed?</li> 
 
