@@ -27,6 +27,7 @@ difficulty: 0
 	<li><a href="#pointers">Useful pointers</a></li>
             <ul style="margin-top:0em">
                 <li><a href="#webserver">Web server and Procfile</a></li>
+                <li><a href="#cycle">Dyno recycling</a></li>
                 <li><a href="#apc">Asset pipeline compilation</a></li>
             </ul>        
 </ul>
@@ -56,6 +57,17 @@ By default, Cloud 66 will deploy your stack with Phusion Passenger, but you can 
 To run a custom web server, we require a <code>custom_web</code> entry. It is important to set this before analyzing your stack, to avoid building the stack with Passenger.
 
 You can also use the [Procfile](http://help.cloud66.com/deployment/proc-files.html) to define other background jobs.
+
+<h3 id="cycle">Dyno recyling</h3>
+Heroku restarts all dynos at 24 hours of uptime, which may conceal possible memory leaks in your application. When you migrate to Cloud 66, these will become noticeable because we don't restart your workers (other than during a deployment), so the leak can grow to be bigger. A temporary solution is to re-create the Heroku restart behavior, for example with this script:
+
+{% highlight bash %}
+for OUTPUT in $(pgrep -f sidekiq); do kill -TERM $OUTPUT; done
+{% endhighlight %}
+
+This will send a TERM signal to any Sidekiq workers, giving them 10 seconds (by default) to finish gracefully. Any workers that don't finish within this time period are forcefully terminated and their messages are sent back to Redis for future processing. You can customize this script to fit your needs, and add it to your stack as a [shell add-in](/stack-definition/shell.html).
+
+Note that this is a temporary solution, and we recommend that you use a server monitoring solution to identify the source of your leak.
 
 <h3 id="apc">Asset Pipeline Compilation</h3>
 
