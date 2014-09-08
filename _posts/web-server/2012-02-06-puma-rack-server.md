@@ -76,5 +76,5 @@ Take note that Puma is running in Daemon mode with the `-d` parameter.
     <p>We recommend that you run <a href="/web-server/unicorn-rack-server.html">Unicorn</a>, as you may have to handle server restarts manually with Puma.</p>
 </div>
 
-To solve the issue of manual restarts with Puma, you can use an <i>after_rails</i> [deploy hook](/stack-features/deploy-hooks.html) to manually run the following command in case you find that it is not responding to the SIGUSR2 that Cloud 66 issues.
+To solve the issue of manual restarts with Puma, you can use an <i>after_rails</i> [deploy hook](/deployment/deploy-hooks.html) to manually run the following command in case you find that it is not responding to the SIGUSR2 that Cloud 66 issues.
 <pre class='terminal'>bundle exec pumactl -P /tmp/web_server.pid restart</pre>

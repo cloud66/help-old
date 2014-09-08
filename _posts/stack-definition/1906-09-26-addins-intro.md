@@ -11,7 +11,7 @@ search-tags: ['addin', 'addins', 'add-ins']
 tags: ['Add ins']
 ---
 
-Add-ins allow you to add various internal and external features to your stack. These include [database backups](#), [SSL certificates](#) and server components such as [Redis](#) and [Elasticsearch](#).
+Add-ins allow you to add various internal and external features to your stack. These include database backups, SSL certificates and server components such as Redis and Elasticsearch.
 
 To get started, simply click on the _+_ button on the add-ins menu of your stack page, which will show you a variety of add-ins for your stack
 

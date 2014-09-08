@@ -65,7 +65,7 @@ This involves using an A record to point your root domain at your load balancer 
 <ol>
 <li>Create a CNAME record for www pointing at the Cloud 66 hostname on your load balancer.</li>
 <li>Create an A record for your root domain (eg. example.com) pointing at your load balancer IP address.</li>
-<li>​Use <a href="#">network redirects</a> to permanently redirect all traffic from example.com to www.example.com.</li>
+<li>​Use <a href="/stack-definition/network-configuration.html">network redirects</a> to permanently redirect all traffic from example.com to www.example.com.</li>
 </ol>
 
 <h3 id="subdomain">3. Subdomain redirection</h3>

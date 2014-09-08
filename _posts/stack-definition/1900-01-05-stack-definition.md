@@ -62,13 +62,13 @@ You have a great degree of freedom when choosing the different components of you
 <h3 id="lb">Load balancer (optional)</h3>
 A load balancer is used to distribute traffic across your web servers, and offers benefits such as maximizing throughoutput, minimizing response times and avoiding overload on any single server. Ultimately, load balancing increases the reliability of your stack.
 
-The type of [load balancer deployed in your stack](#) is dependent on your cloud provider.
+The type of [load balancer deployed in your stack](/stack-definition/load-balancer.html) is dependent on your cloud provider.
 
 <h3 id="web">Web servers</h3>
-By default, your applications are served with Nginx and Phusion Passenger, and you are also free to [customize this selection](#). You can [scale your web server](#) with the click of a button.
+By default, your applications are served with Nginx and Phusion Passenger, and you are also free to [customize this selection](/web-server/custom-webserver.html). You can [scale your web server](/deployment/scaling.html) with the click of a button.
 
 <h3 id="background">Background workers (optional)</h3>
-To relieve pressure from your application, we recommend that you use background workers to run memory-intensive processes. Cloud 66 makes it easy for you to [control and monitor these processes](#), as well as [scale them](#) at the click of a button.
+To relieve pressure from your application, we recommend that you use background workers to run memory-intensive processes. Cloud 66 makes it easy for you to [control and monitor these processes](/deployment/proc-files.html), as well as [scale them](/deployment/scaling.html) at the click of a button.
 
 <h3 id="db">Database servers (optional)</h3>
 You can choose between any of four supported databases:
@@ -78,13 +78,13 @@ You can choose between any of four supported databases:
 - MongoDB
 - Redis
 
-Cloud 66 makes it easy for you to [backup your database](#), [verify the backup](#) and [replicate your databases](#).
+Cloud 66 makes it easy for you to [backup your database](/database-management/database-backup.html), [verify the backup](/database-management/backup-verifiers.html) and [replicate your databases](/database-management/database-replication.html).
 
 <h3 id="os">Operating system</h3>
-Depending on which cloud you deploy to, your servers will be deployed with <b>Ubuntu 14.04 LTS</b> or <b>Debian 7.0 Wheezy</b>. On the operating system level, you can [monitor disk, CPU and memory](#) from the dashboard.
+Depending on which cloud you deploy to, your servers will be deployed with <b>Ubuntu 14.04 LTS</b> or <b>Debian 7.0 Wheezy</b>. On the operating system level, you can [monitor disk, CPU and memory](/stack-definition/server-monitoring.html) from the dashboard.
 
 <h3 id="cloud">Cloud vendor</h3>
-You can either [deploy to your cloud](#) or [deploy to your own server](#).
+You can either [deploy to your cloud](/deployment/cloud-deployment.html) or [deploy to your own server](/deployment/server-deployment.html).
 
 <hr>
 
@@ -104,7 +104,7 @@ has a directory in `config/environments` that contains settings for each environ
 With the exception of _development_, there is no difference between these environments when it comes to features and supported tools apart from what you define in your code. Development environments are free of charge on Cloud 66, and are restricted in the following regards:
 
 * Database backups are disabled for development stacks
-* Development stacks don't support [load balancing](#) or [scaling of frontend](#), [background processes](#) or [database replication](#)
+* Development stacks don't support load balancing or scaling of frontend, background processes or database replication
 
 <hr>
 
@@ -141,7 +141,7 @@ It also allows you to edit your stack name, Git repository and branch by clickin
 		<p>Internal c66 domain names (*.c66.me) are based on your stack name, and will change if you rename the stack.</p>
 </div>
 
-Unless you use [Elastic Address](#), you will have to update your DNS to point at the new address to keep your application accessible. By using Elastic Address, this will be updated automatically for you.
+Unless you use [Elastic Address](/dns/elastic-address.html), you will have to update your DNS to point at the new address to keep your application accessible. By using Elastic Address, this will be updated automatically for you.
 
 <hr>
 

@@ -14,7 +14,7 @@ tags: ['Partners']
 
 You can use Circle CI to accomplish continuous integration and deployment of your application together with Cloud 66.
 
-To get your build hooked up to Circle CI, you need to use the [redeployment hook](/stack-features/redeployment-hook.html) provided by Cloud 66:
+To get your build hooked up to Circle CI, you need to use the [redeployment hook](/deployment/redeployment-hook.html) provided by Cloud 66:
 
 Access the _stack information_ page:
 ![Stack info](http://cdn.cloud66.com/images/help/stack_information.png)

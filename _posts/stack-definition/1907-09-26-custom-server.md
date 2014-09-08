@@ -16,11 +16,11 @@ Adding a custom server to your stack allows you to manage your own services whil
 
 A custom server will have the following Cloud 66 features enabled:
 
-- [Monitoring](#)
-- [Security](#)
-- Use of [Cloud 66 add-ins](#)
-- [Log rotation](#)
-- [SSH to your server via toolbelt](#)
+- [Monitoring](/stack-definition/server-monitoring.html)
+- [Security](/stack-definition/network-configuration.html)
+- Use of [Cloud 66 add-ins](/stack-definition/addins-intro.html)
+- [Log rotation](/stack-definition/logging.html)
+- [SSH to your server via toolbelt](/toolbelt/ssh.html)
 
 ## Add a custom server
 To add a custom server, access the add-ins menu and click _Custom Server_. You will then be able to choose the size of your new server and how many you'd like to add. Once your server is added, you'll be able to see and manage it as part of your stack.

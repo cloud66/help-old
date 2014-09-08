@@ -27,11 +27,11 @@ CustomConfig uses the [Liquid templating language](http://www.liquidmarkup.org/)
 <h2 id="preview">Preview a template</h2>
 To use Nginx as an example, go to your Web Servers group detail page and click _Nginx CustomConfig_ in the right sidebar. This page will show you the template used to build the Nginx configuration when Nginx is deployed during your stack built or reconfigured. Once you're done with editing your template, you can preview the results by clicking on the <i>Preview</i> button.
 
-See our documentation for more details about CustomConfig for [Nginx](#), [HAProxy](#) and [databases](#).
+See our documentation for more details about CustomConfig for [Nginx](/web-server/nginx.html), [HAProxy](/load-balancing/haproxy.html) and [databases](/database-management/database-management.html).
 
 <div class="notice">
     <h3>Important</h3>
-    <p>Preview is generated with dummy data about your server (like the number of cores or the path for different binaries). Refer to our documentation to learn about how the size of your instance affects the number of <a href="/web-server/nginx-workers.html">Nginx workers on your server.</a></p>
+    <p>Preview is generated with dummy data about your server (like the number of cores or the path for different binaries). Refer to our documentation to learn about how the size of your instance affects the number of <a href="/web-server/nginx.html">Nginx workers on your server.</a></p>
 </div>
 
 <h2 id="submit">Submit template changes</h2>

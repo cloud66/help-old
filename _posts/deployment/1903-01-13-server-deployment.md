@@ -15,7 +15,7 @@ Cloud 66 supports deploying to your own server - it just needs to be accessible 
 
 We also have a number of other requirements:
 
-1. Connection: For security reasons, Cloud 66 only connects to your server using your secure keys on <b>port 22</b>. See our documentation on [generating SSH keys on your server](#).
+1. Connection: For security reasons, Cloud 66 only connects to your server using your secure keys on <b>port 22</b>. See our documentation on [generating SSH keys on your server](http://community.cloud66.com/articles/setting-up-ssh-keys).
 2. Sudo: As Cloud 66 connects to your server and provisions applications from scratch, administrator permissions are sometimes necessary. The user that you provide for use should therefore also be a member of the sudoers group, and must not require a password to invoke sudo.
 3. Bash: We currently only support Bourne-again shell (Bash). The error `sh: n: source: not found` during deployment may arise if you are not using the Bash shell.
 

@@ -44,7 +44,7 @@ Cloud 66 provides two types of backups: _managed_ and _unmanaged_.
 <h3 id="managed">Managed backups</h3>
 Having managed backups carries several benefits:
 
-- You can download database backups through the web UI and [API](#)
+- You can download database backups through the web UI and API
 - [Backup verifiers](/database-management/backup-verifiers.html) ensure that your backups actually contain what you expect
 - Use [database replication](/database-management/database-replication.html) to scale your databases
 - You can easily restore database backups

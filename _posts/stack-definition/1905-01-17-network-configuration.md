@@ -63,7 +63,7 @@ Servers deployed with Cloud 66 only allow incoming SSH traffic from known IP add
 <h2 id="firewall">Firewall</h2>
 The <i>Firewall</i> tab allows you to configure and apply firewall rules per server for your stack. You can open your firewall temporarily in cases when you need temporary access to your servers by clicking the icon at the top right of the page. This will automatically fill with your current IP address, and allow you to choose the duration of the opening and the server port you wish to access. Doing this avoids the dangers of leaving firewall ports open permanently unnecessarily.
 
-By default, Cloud 66 gateway servers (eg. 54.84.166.97) are the only servers allowed SSH (port 22) access to stack servers. The default firewall rules include database and web ports appropriate for the stack deployed but also includes ports 8080 and 8443 as alternative HTTP ports for WebSocket-based applications like [Faye](#). Editing and removing the default firewall rules is disabled to secure accessibility to the servers at all times.
+By default, Cloud 66 gateway servers (eg. 54.84.166.97) are the only servers allowed SSH (port 22) access to stack servers. The default firewall rules include database and web ports appropriate for the stack deployed but also includes ports 8080 and 8443 as alternative HTTP ports for WebSocket-based applications like [Faye](http://community.cloud66.com/articles/faye-on-cloud-66). Editing and removing the default firewall rules is disabled to secure accessibility to the servers at all times.
 
 <h3 id="add-firewall">Add a firewall rule</h2>
 To add your own rules, click <i>Add a new firewall rule</i>. You can input single IP addresses or ranges, and the dropdown allows you to choose servers by name (eg. <i>Rails servers</i>).
@@ -103,7 +103,7 @@ To supply your own maintenance page, simply place your file in the following pat
 </pre>
 
 <h3 id="https">Redirect HTTP to HTTPS</h3>
-You can easily [add your SSL certificates](#) to your stacks and serve your traffic securely with HTTPS. To ensure that all your visitors use HTTPS instead of HTTP, you need to redirect anyone using HTTP to HTTPS.
+You can easily [add your SSL certificates](/stack-definition/ssl.html) to your stacks and serve your traffic securely with HTTPS. To ensure that all your visitors use HTTPS instead of HTTP, you need to redirect anyone using HTTP to HTTPS.
 
 This works by reconfiguring your Nginx configuration, so any visitor that arrives at port 80 and HTTP will receive a permanent HTTP redirect (301) to the same address on HTTPS.
 
