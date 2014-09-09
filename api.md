@@ -37,7 +37,7 @@ Authorization: bearer 5262d64b892e8d4341000001
 # Stacks
 Most interactions with the Cloud 66 API are performed at the stack level. Using the Stacks resource, you can list stacks and view stack details, but you can only create, update, or delete stacks using the UI dashboard.
 
-### Methods
+**Methods**
 Using the Stacks endpoint, you can submit requests using the following methods.
 * [List all stacks](#List all stacks)
 * [View a stack](#View a stack)
@@ -45,7 +45,7 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 * [View a stack action](#View a stack action)
 * [Perform a stack action](#Perform a stack action)
 
-### <a name="The stack object"></a> The stack object
+**<a name="The stack object"></a> The stack object**
 | Property | Data type | Description | Sample value |
 | ---------- | ------------ | -------------------------------- | ------------- |
 | uid | string | The unique identifier of the stack. | 5be6b763474b0eafa5fafb64bff0ba80 |
@@ -71,7 +71,7 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 | updated_at_iso | datetime | The date and time the stack was last modified, in UTC datetime | 2014-08-14 01:46:52 UTC |
 | redeploy_hook | string | If applicable, the deploy hook URL associated with the stack. | http://hooks.cloud66.com/stacks/redeploy/ b806f1c3344eb3aa2a024b23254b75b3/ 6d677352a6b2eefec6e345ee2b491521 |
 
-### <a name="The stack action object"></a> The stack action object
+**<a name="The stack action object"></a> The stack action object**
 | Property | Data type | Description | Sample value |
 | ------------- | --------- | ----------------------------------- | ---------------- |
 | id | int | The numeric identifier of the stack action. Identifiers increment by one for each performed action. | 10 |
@@ -85,7 +85,7 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 | finished_success | bool | Whether the action completed successfully. | true |
 | finished_message | string | If applicable, the system message associated with the completed action. | null |
 
-### <a name="Stack status values"></a> Stack status values
+**<a name="Stack status values"></a> Stack status values**
 | Status | Code | Description |
 | ----------- | :---: | ----------------------------------------- |
 | STK_QUEUED | 0 | Pending analysis |
@@ -97,7 +97,7 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 | STK_DEPLOYING | 6 | Deploying |
 | STK_TERMINAL_FAILURE | 7 | Unable to analyze |
 
-### <a name="Stack health status values"></a> Stack health status values
+**<a name="Stack health status values"></a> Stack health status values**
 | Status | Code | Description |
 | ----------- | :---: | ------------------------------------------ |
 | HLT_UNKNOWN | 0 | Unknown |
