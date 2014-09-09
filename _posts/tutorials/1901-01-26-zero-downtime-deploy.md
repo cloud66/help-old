@@ -8,7 +8,7 @@ cloud66_sticky: true
 date:   1425-09-24 10:51:22
 categories:
 lead: Achieving zero-downtime deployments
-tags: ['downtime']
+tags: ['Downtime']
 tutorial: true
 difficulty: 1
 ---

@@ -9,7 +9,7 @@ nav_next: ""
 date:   2019-02-09 15:30:22
 categories: 
 lead: Stacks with servers in different regions
-tags: ['region']
+tags: ['Region']
 tutorial: true
 difficulty: 2
 ---
