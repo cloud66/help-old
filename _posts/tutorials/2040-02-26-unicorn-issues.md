@@ -21,7 +21,7 @@ A not unusual issue with Unicorn is that redeployments don't reflect your code c
 <li>Shut down the existing master</li>
 </ol>
 
-This mechanism allows for the zero-downtime deployments. However, if for some reason the new master or new workers can't start then the old master doesn't kill itself (in an attempt to keep service). You can verify this by issuing the following command:
+This mechanism allows for the zero-downtime deployments. However, if for some reason the new master or new workers can't start then the old master doesn't kill itself (in an attempt to keep the existing service running). You can verify this by issuing the following command:
 
 <code>watch -n 5 'echo UNICORN:; ps aux | grep [u]nicor;'</code>
 
