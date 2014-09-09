@@ -34,9 +34,9 @@ Use [Elastic Address](http://help.cloud66.com/dns/elastic-address.html) to make 
 If and when your main stack fails, you will need to switch to the failover stack.
 
 <ol class="article-list">
-<li>Set your main stack into [maintenance mode](http://help.cloud66.com/stack-definition/network-configuration.html#maintenance), to prevent new data being written to it.</li>
-<li>Turn off the [database replication](http://help.cloud66.com/database-management/database-replication.html#disable).</li>
-<li>Make your [database slave a master](http://community.cloud66.com/articles/postgresql-failover-procedure) - this will allow data to be written to the database.</li>
-<li>Turn off [maintenance mode](http://help.cloud66.com/stack-definition/network-configuration.html#maintenance) on your failover stack.</li>
-<li>Use your [Elastic Address](http://help.cloud66.com/dns/elastic-address.html) menu to switch your traffic to the failover stack. The TTL on the Elastic Address is 5 minutes, so you should see your users on the new stack momentarily.</li>
+<li>Set your main stack into <a href="http://help.cloud66.com/stack-definition/network-configuration.html#maintenance">maintenance mode</a>, to prevent new data being written to it.</li>
+<li>Turn off the <a href="http://help.cloud66.com/database-management/database-replication.html#disable">database replication</a>.</li>
+<li>Make your <a href="http://community.cloud66.com/articles/postgresql-failover-procedure">database slave a master</a> - this will allow data to be written to the database.</li>
+<li>Turn off <a href="http://help.cloud66.com/stack-definition/network-configuration.html#maintenance">maintenance mode</a> on your failover stack.</li>
+<li>Use your <a href="http://help.cloud66.com/dns/elastic-address.html">Elastic Address</a> menu to switch your traffic to the failover stack. The TTL on the Elastic Address is 5 minutes, so you should see your users on the new stack momentarily.</li>
 </ol>
