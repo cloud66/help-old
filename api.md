@@ -40,11 +40,11 @@ Most interactions with the Cloud 66 API are performed at the stack level. Using 
 **Methods**
 
 Using the Stacks endpoint, you can submit requests using the following methods.
-* [List all stacks](#List all stacks)
-* [View a stack](#View a stack)
-* [List all stack actions](#List all stack actions)
-* [View a stack action](#View a stack action)
-* [Perform a stack action](#Perform a stack action)
+* List all stacks
+* View a stack
+* List all stack actions
+* View a stack action
+* Perform a stack action
 
 **<a name="The stack object"></a> The stack object**
 
