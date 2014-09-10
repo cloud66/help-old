@@ -203,7 +203,7 @@ redirects:
   #/database/postgis-installation.html
   #/database/psql-failover.html
   #/database/replace-sqlite.html
-  /database/scaling_with_redis.html
+  /database/scaling_with_redis.html: /deployment/scaling.html
   #/database/seeding-db.html
   #/database/sharing-db.html
   #/database/uninstall-mysql.html
