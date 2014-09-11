@@ -7,6 +7,8 @@ categories:
 type: 'GET'
 path: '/stacks/:uid/managed_backups'
 scope: 'public'
+search-tags: ['']
+tags: ['API']
 ---
 
 Gets the list of all managed backups under this stack.

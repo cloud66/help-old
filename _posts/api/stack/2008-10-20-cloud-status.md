@@ -7,6 +7,8 @@ categories:
 type: 'GET'
 path: '/stacks/:uid/status'
 scope: 'public'
+search-tags: ['']
+tags: ['API']
 ---
 
 Gets the cloud status for the requesting and the given stack.

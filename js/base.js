@@ -7,6 +7,15 @@ Handlebars.c66.config = {
     tmplExtention: '.handlebars'
 };
 
+var $headers = $('.header').click(function () {
+	$(this).find('span').text(function (_, value) {
+		return value == '\u25B6' ? '\u25BC' : '\u25B6'
+	});
+	$(this).nextUntil('tr.header').slideToggle(100, function () {});
+});
+$headers.find('span').text('\u25B6')
+$("#fields tr:not(:first-child)").hide();
+
 Handlebars.getTemplate = function( name ) {
     if ( Handlebars.templates === undefined || Handlebars.templates[name] === undefined ) {
         $.ajax({

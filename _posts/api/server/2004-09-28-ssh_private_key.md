@@ -7,7 +7,8 @@ categories:
 type: 'GET'
 path: '/servers/:server_uid/ssh_private_key'
 scope: 'admin'
-tags: ['ssh private']
+search-tags: ['ssh private']
+tags: ['API']
 ---
 
 Receives the private SSH key for the server. Caller must have Admin rights over the stack.

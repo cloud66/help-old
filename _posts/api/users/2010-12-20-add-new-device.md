@@ -7,6 +7,8 @@ categories:
 type: 'POST'
 path: '/users/devices'
 scope: 'users'
+search-tags: ['']
+tags: ['API']
 ---
 
 Adds a new device for the user.

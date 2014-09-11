@@ -7,7 +7,8 @@ categories:
 type: 'GET'
 path: '/stacks/:stack_uid/server_groups/:svg_id/servers/:uid/memory_stats'
 scope: 'public'
-tags: ['memory stats']
+search-tags: ['memory stats']
+tags: ['API']
 ---
 
 Returns the memory stats of a server.

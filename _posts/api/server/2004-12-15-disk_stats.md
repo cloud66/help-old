@@ -7,7 +7,8 @@ categories:
 type: 'GET'
 path: '/stacks/:stack_uid/server_groups/:svg_id/servers/:uid/disk_stats'
 scope: 'public'
-tags: ['disk stats']
+search-tags: ['disk stats']
+tags: ['API']
 ---
 
 Returns the disk stats of a server.
