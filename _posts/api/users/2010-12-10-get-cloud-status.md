@@ -7,6 +7,8 @@ categories:
 type: 'GET'
 path: '/users/cloud_status'
 scope: 'public'
+search-tags: ['']
+tags: ['API']
 ---
 
 Gets the cloud status for the requesting user.

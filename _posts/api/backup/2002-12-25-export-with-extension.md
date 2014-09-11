@@ -1,13 +1,14 @@
 ---
 layout: api_post
-title: "Export with extension"
+title: 'Export with extension'
 categories:
   - api
   - backup
 type: 'GET'
 path: 'backups/:backup_id/export/:extension'
 scope: 'admin'
-tags: ['export with extension']
+search-tags: ['export with extension']
+tags: ['API']
 ---
 
 Generate a public URL for a file in a multi-part backup. <i>:backup_id</i> is the ID of multi-part backup that is going to be exported. <i>:extension</i> is the extension of the file that is going to be exported.

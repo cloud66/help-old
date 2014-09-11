@@ -7,7 +7,8 @@ categories:
 type: 'POST'
 path: '/servers/:server_uid/force_ip'
 scope: 'admin'
-tags: ['ip change', 'notify']
+search-tags: ['ip change', 'notify']
+tags: ['API']
 ---
 
 Notifies your stack of a server IP change. This can be changes in the internal or external IPv4 or IPv6 addresses. This notification will update all the DNS records related to the server as well. Also, if two servers share the same physical servers (like your web server and db server) the change will affect both.

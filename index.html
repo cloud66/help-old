@@ -15,9 +15,15 @@ bodyclass: home
 
     {% for category in site.sorted_categories %}
 	{% if category.first != 'api' %}
-    <h2 class="cat-title js-format-cat">
-      {{ category | first }}
-    </h2>
+    {% if category.first == 'ssh' or category.first == 'ssl' or category.first == 'dns' %}
+      <h2 class="cat-title-caps js-format-cat">
+        {{ category | first }}
+      </h2>
+    {% else %}
+      <h2 class="cat-title js-format-cat">
+        {{ category | first }}
+      </h2>  
+    {% endif %}
 
     <nav class="toc">
       <ul>

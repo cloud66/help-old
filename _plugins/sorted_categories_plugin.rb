@@ -3,19 +3,24 @@ module Jekyll
   class SortedCategoriesBuilder < Generator
   
 		ORDER = [ 
-			'getting-started',
-			'stack-features',
-			'add-ins',
-			'stacks',
+			'introduction-to-cloud-66',
+			'stack-definition',
+			'deployment',
 			'web-server',
-			'database',
-			'your-account',
-			'cloud-providers',
+			'database-management',
+			'load-balancing',
+			'account-management',
+			'notifications',
+			'logging',
+			'dns',
+			'ssh',
+			'ssl',
 			'toolbelt',
-			'how-to',
-			'troubleshooting',
+			'partner-integration',
+			'compliance-guides',			
 			'api',
-			'jekyll'
+			'jekyll',
+			'tech-specs'
 		]
 		
     safe true
@@ -45,7 +50,7 @@ module Jekyll
 			end
 			
 			# takeout all the API crap
-			ordered_keys.delete_if { |x| ['basics', 'server', 'stack', 'users', 'server group'].include? x }
+			ordered_keys.delete_if { |x| ['basics', 'server', 'stack', 'users', 'server group', 'backup'].include? x }
 			
 			# now order the list based on the ordered keys
 			ordered = {}
