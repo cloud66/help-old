@@ -45,7 +45,7 @@ redirects:
   getting-started/team-accounts.html: your-account/team-accounts.html
   getting-started/support.html: your-account/support.html
   how-to/git-url.html: how-to/access-your-code.html
-  toolbelt/introduction.html: cloud-66-toolbelt/introduction.html
+  #toolbelt/introduction.html: cloud-66-toolbelt/introduction.html
   toolbelt/stack-links.html: cloud-66-toolbelt/shortcuts.html
   toolbelt/stack-alias.html: cloud-66-toolbelt/shortcuts.html
   toolbelt/deployment.html: cloud-66-toolbelt/deployment.html
@@ -187,7 +187,7 @@ redirects:
   how-to/upgrade-ruby.html: /stack-definition/applying-upgrades.html
   how-to/zero-downtime-deploys.html: "http://community.cloud66.com/articles/zero-downtime-deployments"
   troubleshooting/asset-pipeline.html: "http://community.cloud66.com/articles/asset-pipeline-errors"
-  #cloud-66-toolbelt/introduction.html: /toolbelt/introduction.html
+  cloud-66-toolbelt/introduction.html: /toolbelt/introduction.html
   cloud-66-toolbelt/backups.html: /toolbelt/backup-mgmt.html
   cloud-66-toolbelt/deployment.html: /toolbelt/stack-mgmt.html
   cloud-66-toolbelt/file-download.html: /toolbelt/file-mgmt.html
