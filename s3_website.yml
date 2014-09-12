@@ -46,7 +46,7 @@ redirects:
   getting-started/support.html: your-account/support.html
   how-to/git-url.html: how-to/access-your-code.html
   toolbelt/introduction.html: cloud-66-toolbelt/introduction.html
-  toolbelt/stack-links.html: cloud-66-toolbelt/shortcuts.html 
+  toolbelt/stack-links.html: cloud-66-toolbelt/shortcuts.html
   toolbelt/stack-alias.html: cloud-66-toolbelt/shortcuts.html
   toolbelt/deployment.html: cloud-66-toolbelt/deployment.html
   toolbelt/set.html: cloud-66-toolbelt/set.html
