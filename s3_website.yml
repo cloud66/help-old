@@ -274,7 +274,7 @@ redirects:
   #/troubleshooting/ssl-certificate-issues.html
   #/troubleshooting/unicorn-issues.html
   #/troubleshooting/whenever-errors.html
-  # /cloud-66-toolbelt/introduction.html: /toolbelt/introduction.html
+  #/cloud-66-toolbelt/introduction.html: /toolbelt/introduction.html
   /cloud-66-toolbelt/backups.html: /toolbelt/backup-mgmt.html
   /cloud-66-toolbelt/deployment.html: /toolbelt/stack-mgmt.html
   /cloud-66-toolbelt/file-download.html: /toolbelt/file-mgmt.html
