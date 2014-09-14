@@ -51,7 +51,7 @@ redirects:
   toolbelt/deployment.html: cloud-66-toolbelt/deployment.html
   toolbelt/set.html: cloud-66-toolbelt/set.html
   toolbelt/lease.html: cloud-66-toolbelt/lease.html
-  toolbelt/ssh.html: cloud-66-toolbelt/ssh.html
+  #toolbelt/ssh.html: cloud-66-toolbelt/ssh.html
   toolbelt/restart.html: cloud-66-toolbelt/restart.html
   toolbelt/download-backup.html: cloud-66-toolbelt/backups.html
   stacks/rename-stack.html: stacks/stack-information.hml
