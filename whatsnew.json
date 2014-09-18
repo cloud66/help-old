@@ -1,5 +1,11 @@
 [
 	{
+	"date": "2014-09-18T11:00:00Z",
+	"title": "Ubuntu 14.04, VPC support and T2 instance types",
+	"summary": "Support for developer friendly T2 instances types are here, and more!",
+	"link": "http://blog.cloud66.com/ubuntu-14-04-vpc-support-and-t2-instance-types/"
+	},
+	{
 	"date": "2014-09-06T11:00:00Z",
 	"title": "Say hello to your new dashboard",
 	"summary": "Search, new navigation and many more improvements in the UI",
