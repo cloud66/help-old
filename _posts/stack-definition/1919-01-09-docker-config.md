@@ -1,0 +1,248 @@
+---
+layout: post
+template: one-col
+title:  "Docker deployments"
+so_title: "Docker"
+nav_sticky: false
+date:   2092-01-25 16:27:22
+categories: api,stack-definition
+lead: Deploy docker stacks through Cloud 66
+search-tags: ['docker', 'docker_deployment.yml', 'docker deployment', 'deployment']
+tags: ['Deployment', 'Docker']
+exclude_from_search: true
+---
+
+<h2>Contents</h2>
+<ul class="page-toc">
+
+	<li><a href="#intro">How do I define a Docker stack?</a></li>
+    <li><a href="#samples">Sample deployment configuration files</a></li>
+    <li><a href="#composition">Composition of the docker_deployment.yml file</a></li>
+        <li>
+            <ul>
+            <li><a href="#environments">Environments</a></li>
+		   	<li><a href="#repositories">Repositories</a></li>
+		   	<li><a href="#services">Services</a></li>
+		   	<li><a href="#databases">Databases</a></li>
+            <li><a href="#env_vars">Environment Variables</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+</ul>
+
+<h2 id="intro">How do I define a Docker stack?</h2>
+
+<div class="notice notice-danger">
+	<h3>Important</h3>
+    <p>Docker stacks are only currently available to users in the private beta (<a href="http://bit.ly/1oVXtQg">join the beta program</a>)</p>
+</div>
+
+Cloud 66 uses the presence of a docker_deployment.yml file to determine that your stack will be docker based, and figure out exactly what your docker stack architecture should be.
+
+You can use this file to specify repositories for images, services that you would like to run as containers, and supporting services that you would like to run outside of containers (ie. databases)
+In order for this file to be detected, it must be present in the root of your source repository with the name docker_deployment.yml
+
+<pre class="terminal">
+[source&#95;repo]/docker_deployment.yml
+</pre>
+
+The docker_deployment.yml file is **YAML** formatted and is split by environment just like database.yml or mongoid.yml. This allows for different configurations per environment within one file. YAML files are very particular about formatting, and an extra space or tab somewhere can render the file unreadable. You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.
+
+<h3 id="samples">Sample docker_deployment.yml files</h3>
+
+A simple example of a **docker_deployment.yml** files is as follows:
+
+{% highlight yaml %}
+production:                                 # Environment type
+  services:                                 # container services
+    my_web:                                 # arbitrary name for your service
+      image: quay.io/cloud66/sample-rails   # source of your service's image
+      command: rackup -p 3000               # command to start your container
+      build_command: rake db:migrate        # migrate db (during build)
+      deploy_command: rake db:migrate       # migrate db (during deploy)
+      log_folder: /usr/src/app/log          # the container log folder
+      local_ports: [3000]                   # ports for your container service
+      public_port: "80:443"                 # exposed HTTP:HTTPS ports
+  databases:                                # system services
+    - "mysql"                               # install mysql
+{% endhighlight %}
+
+The above deployment configuration is only scoped to *production* stacks.
+Here we have specified that we want to run a single service (with a mysql database backend)
+
+A more powerful example of **docker_deployment.yml** is:
+
+{% highlight yaml %}
+production:                                 # Environment type
+  repositories:                             # image repositories (can be private)
+    my_repo:                                # arbitrary repo name
+      url: quay.io                          # repository url
+      username: _env:QUAY_USERNAME          # repository username (from Stack ENV var)
+      password: _env:QUAY_PASSWORD          # repository password (from Stack ENV var)
+      email: _env:QUAY_EMAIL                # repository email (from Stack ENV var)
+  services:                                 # container services
+    my_web:                                 # arbitrary name for your service
+      image: quay.io/cloud66/sample-rails   # source of your service's image
+      command: rackup -p 3000               # command to start your container
+      build_command: rake db:migrate        # migrate db (during build)
+      deploy_command: rake db:migrate       # migrate db (during deploy)
+      log_folder: /usr/src/app/log          # the container log folder
+      local_ports: [3000]                   # ports for your container service
+      public_port: "80:443"                 # exposed ports for this service
+    api_svc:                                # another arbitrary name
+      image: quay.io/khash/node             # another image source
+      command: node test.js                 # command to start your container
+      local_ports: [1337]                   # ports for your container service
+      public_port: "8080"                   # exposed HTTP:HTTPS ports for this service
+      requires: ["web"]                     # requires that the "web" services is present
+  databases:                                # system services
+    - "mysql"                               # install MySQL
+    - "redis"                               # install Redis
+{% endhighlight %}
+
+The above deployment configuration is only scoped to *production* stacks.
+Here we have specified that we want to run two services (with a mysql database backend) - the services are being pulled from a private repository.
+
+<div class="notice">
+  <h3>Service servers</h3>
+  <p>Services can be scaled up one or many times on single servers or across multiple servers, as desired.</p>
+</div>
+
+<h2 id="composition">Composition of the docker_deployment.yml file</h2>
+
+The manifest file is divided into three broad sections:
+
+<ul>
+  <li>Repositories</li>
+  <li>Services</li>
+  <li>Databases</li>
+</ul>
+
+What follows is an in-depth guide into the options can be used.
+
+<hr>
+
+<h3 id="environments">Environments</h3>
+You can select from the following environments:
+
+- Production
+- Development
+- Staging
+- QA
+- Custom defined stack environment
+
+<h3 id="repositories">Repositories</h3>
+You can define your private repositories here. It is recommended to use environment variables to define any username/password/secret information in this file so you can avoid committing those to your source control.
+
+At this point only a single private repository is allowed. An example of the repositories section is:
+
+{% highlight yaml %}
+... repositories:
+      a_repo:                           # an arbitrary repo name
+        url: quay.io                    # repository url
+        username: _env:QUAY_USERNAME    # repository username (from Stack ENV var)
+        password: _env:QUAY_PASSWORD    # repository password (from Stack ENV var)
+        email: _env:QUAY_EMAIL     
+{% endhighlight %}
+
+<h3 id="services">Services</h3>
+Each service is given an arbitrary name to identify it, then you have the following options to configure:
+
+<table class='table table-bordered table-striped table-small'>
+<tr>
+    <td><b>Option</b></td>
+    <td><b>Description</b></td>
+</tr>
+<tr>
+    <td>image</td>
+    <td>The name source of your docker image. This can optionally come from a private repo as long as the private repo credentials are supplied in the repositories section</td>
+</tr>
+<tr>
+    <td>command</td>
+    <td>the command to run in order to start the service</td>
+</tr>
+<tr>
+    <td>build_command</td>
+    <td>A command to run on the image the first time it is instantiated. An example of this could be a command to prepare the database tables</td>
+</tr>
+<tr>
+    <td>deploy_command</td>
+    <td>A command to run on the image every time it is deployed. An example of this could be a command to perform database migrations</td>
+</tr>
+<tr>
+    <td>log_folder</td>
+    <td>This is the folder into which the service will log, and will be mounted to /var/log/containers/service in the host filesystem</td>
+</tr>
+<tr>
+    <td>local_ports</td>
+    <td>The service ports that are runnin within the container</td>
+</tr>
+<tr>
+    <td>public_port</td>
+    <td>The ports that are made externally available. This value is in the format HTTP:HTTPS. An example is "80:443". For HTTP-only traffic it could be "80", and for HTTPS-only traffic could be ":443"</td>
+</tr>
+<tr>
+    <td>requires</td>
+    <td>This is an array of other defined service names that should be started before this service during build and deployment</td>
+</tr>
+<tr>
+    <td>pre_start_signal</td>
+    <td>This is a signal that is sent to the existing running containers of the service before the new service containers are started during deployment. An example could be "USR1" - but it depends on what your container is running as to which signals make sense</td>
+</tr>
+<tr>
+    <td>pre_stop_sequence</td>
+    <td>This is a stop sequence that is executed on your running containers before they are shut down. It is a sequence of wait times and signals to send to the process. If the sequence completes and the container is still running, a force kill will be sent. An example is "1m:USR2:30s:USR1:50s".</td>
+</tr>
+<tr>
+    <td>stop_grace</td>
+    <td>This is a time between the docker TERM and KILL signals when docker stop is called and a container is stopped</td>
+</tr>
+<!-- <tr>
+    <td>stop_grace</td>
+    <td>This is a time between the docker TERM and KILL signals when docker stop is called and a container is stopped</td>
+</tr>-->
+</table>
+
+Example services section with some of the options defined above:
+
+{% highlight yaml %}
+... services:
+      my_web:                                 
+        image: quay.io/cloud66/sample-rails
+        command: rackup -p 3000
+        build_command: rake db:migrate
+        deploy_command: rake db:migrate
+        log_folder: /usr/src/app/log
+        local_ports: [3000]                   
+        public_port: "80:443"                 
+{% endhighlight %}
+
+<h3 id="databases">Databases</h3>
+Databases are installed on your specified servers directly. As databases are fairly static components that rarely change without a migration, this avoids the complexity and overhead of running the DB in a container, and allows us to perform replication/backups as normal.
+
+The allowed database values are:
+
+- postgresql
+- mysql
+- redis
+- mongodb
+- elasticsearch
+- rabbitmq
+
+An example databases section is:
+
+{% highlight yaml %}
+... databases:
+      - "mysql"
+      - "elasticsearch"
+{% endhighlight %}
+
+<h3 id="env_vars">Environment Variables</h3>
+Any environment variables defined in your stack will be made available within your service container.
+
+You can reference environment variables in your deployment configuration using the following syntax:
+
+{% highlight yaml %}
+value: _env:MY_ENV_VAR
+{% endhighlight %}
