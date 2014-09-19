@@ -5,10 +5,11 @@ title:  "Docker deployments"
 so_title: "Docker"
 nav_sticky: false
 date:   2092-01-25 16:27:22
-categories: stack-definition
+categories: api,stack-definition
 lead: Deploy docker stacks through Cloud 66
 search-tags: ['docker', 'docker_deployment.yml', 'docker deployment', 'deployment']
 tags: ['Deployment', 'Docker']
+exclude_from_search: true
 ---
 
 <h2>Contents</h2>
