@@ -5,11 +5,12 @@ title:  "Docker deployments"
 so_title: "Docker"
 nav_sticky: false
 date:   2092-01-25 16:27:22
-categories: api,stack-definition
+categories: stack-definition
 lead: Deploy docker stacks through Cloud 66
 search-tags: ['docker', 'docker_deployment.yml', 'docker deployment', 'deployment']
 tags: ['Deployment', 'Docker']
 exclude_from_search: true
+exclude_from_index: true
 ---
 
 <h2>Contents</h2>
@@ -35,13 +36,13 @@ exclude_from_search: true
 
 <div class="notice notice-danger">
 	<h3>Important</h3>
-    <p>Docker stacks are only currently available to users in the private beta (<a href="http://bit.ly/1oVXtQg">join the beta program</a>)</p>
+    <p>Docker stacks are only currently available to users in the private beta &mdash; <a href="http://go.c66.me/c66beta">join the beta program</a></p>
 </div>
 
-Cloud 66 uses the presence of a docker_deployment.yml file to determine that your stack will be docker based, and figure out exactly what your docker stack architecture should be.
+Cloud 66 uses the presence of a `docker_deployment.yml` file to determine that your stack will be docker based, and figure out exactly what your docker stack architecture should be.
 
 You can use this file to specify repositories for images, services that you would like to run as containers, and supporting services that you would like to run outside of containers (ie. databases)
-In order for this file to be detected, it must be present in the root of your source repository with the name docker_deployment.yml
+In order for this file to be detected, it must be present in the root of your source repository with the name `docker_deployment.yml`
 
 <pre class="terminal">
 [source&#95;repo]/docker_deployment.yml
@@ -91,7 +92,7 @@ production:                                 # Environment type
       local_ports: [3000]                   # ports for your container service
       public_port: "80:443"                 # exposed ports for this service
     api_svc:                                # another arbitrary name
-      image: quay.io/khash/node             # another image source
+      image: quay.io/john/node             # another image source
       command: node test.js                 # command to start your container
       local_ports: [1337]                   # ports for your container service
       public_port: "8080"                   # exposed HTTP:HTTPS ports for this service
@@ -172,7 +173,7 @@ Each service is given an arbitrary name to identify it, then you have the follow
 </tr>
 <tr>
     <td>log_folder</td>
-    <td>This is the folder into which the service will log, and will be mounted to /var/log/containers/service in the host filesystem</td>
+    <td>This is the folder into which the service will log, and will be mounted to <code>/var/log/containers/service</code> in the host filesystem</td>
 </tr>
 <tr>
     <td>local_ports</td>
@@ -180,7 +181,7 @@ Each service is given an arbitrary name to identify it, then you have the follow
 </tr>
 <tr>
     <td>public_port</td>
-    <td>The ports that are made externally available. This value is in the format HTTP:HTTPS. An example is "80:443". For HTTP-only traffic it could be "80", and for HTTPS-only traffic could be ":443"</td>
+    <td>The ports that are made externally available. This value is in the format HTTP:HTTPS. An example is <code>80:443</code>. For HTTP-only traffic it could be <code>80</code>, and for HTTPS-only traffic could be <code>:443</code></td>
 </tr>
 <tr>
     <td>requires</td>
@@ -188,21 +189,33 @@ Each service is given an arbitrary name to identify it, then you have the follow
 </tr>
 <tr>
     <td>pre_start_signal</td>
-    <td>This is a signal that is sent to the existing running containers of the service before the new service containers are started during deployment. An example could be "USR1" - but it depends on what your container is running as to which signals make sense</td>
+    <td>This is a signal that is sent to the existing running containers of the service before the new service containers are started during deployment. An example could be <code>USR1</code> - but it depends on what your container is running as to which signals make sense</td>
 </tr>
 <tr>
     <td>pre_stop_sequence</td>
-    <td>This is a stop sequence that is executed on your running containers before they are shut down. It is a sequence of wait times and signals to send to the process. If the sequence completes and the container is still running, a force kill will be sent. An example is "1m:USR2:30s:USR1:50s".</td>
+    <td>This is a stop sequence that is executed on your running containers before they are shut down. It is a sequence of wait times and signals to send to the process. If the sequence completes and the container is still running, a force kill will be sent. An example is <code>1m:USR2:30s:USR1:50s</code>.</td>
 </tr>
 <tr>
     <td>stop_grace</td>
-    <td>This is a time between the docker TERM and KILL signals when docker stop is called and a container is stopped</td>
+    <td>This is a duration (see below) between the docker <code>TERM</code> and <code>KILL</code> signals when docker stop is called and a container is stopped</td>
 </tr>
-<!-- <tr>
-    <td>stop_grace</td>
-    <td>This is a time between the docker TERM and KILL signals when docker stop is called and a container is stopped</td>
-</tr>-->
 </table>
+
+These are some examples of duration value like **stop_grace** or the duration part of **pre_stop_sequence**:
+
+{% highlight yaml %}
+  1m  # 1 minutes
+  30s # 30 seconds
+  1h  # 1 hour
+{% endhighlight %}
+
+Valid values are `s` for seconds, `m` for minutes and `h` for hours.
+
+Valid values for a signal are below (without the quotes):
+
+{% highlight ruby %}
+  'ABRT', 'ALRM', 'BUS', 'CHLD', 'CONT', 'FPE', 'HUP', 'ILL', 'INT', 'IO', 'IOT', 'KILL', 'PIPE', 'PROF', 'QUIT', 'SEGV', 'STOP', 'SYS', 'TERM', 'TRAP', 'TSTP', 'TTIN', 'TTOU', 'URG', 'USR1', 'USR2', 'VTALRM', 'WINCH', 'XCPU', 'XFSZ'
+{% endhighlight %}
 
 Example services section with some of the options defined above:
 
