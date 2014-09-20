@@ -126,7 +126,7 @@ Users with this scope have public read-only access and can view limited stack in
 **public**
 Users with this scope have public read-only access and can view limited stack information.
 
-*redeploy*
+**redeploy**
 Users with this scope can redeploy any stacks they can access.
 
 **jobs**
