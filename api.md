@@ -27,10 +27,10 @@ Authorization: bearer 5262d64b892e8d4341000001
 ```
 You can generate an OAuth token by visiting the , under your Account of the control panel for your account.
 
-#### How to Authenticate with OAuth
+#### How to authenticate with OAuth2
 You can generate an OAuth token using the Your Account > [Apps](https://app.cloud66.com/oauth/authorized_applications) area of the Cloud 66 user interface or using the API. 
 
-1. Redirect users to request Cloud 66 access
+**Step 1 - Redirect users to request Cloud 66 access**
 ```http
 GET https://app.cloud66.com/oauth/authorize
 ```
@@ -40,7 +40,7 @@ GET https://app.cloud66.com/oauth/authorize
 | redirect_url | URL in your app where users will be sent after authorization. | Required |
 | scope | Comma separated list of scopes. | Optional |
 
-2. Cloud 66 redirects back to your site
+**Step 2 - Cloud 66 redirects back to your site**
 
 If the user accepts your request, Cloud 66 redirects back to your site with a temporary code in a code parameter as well as the state you provided in the previous step in a state parameter. If the states don’t match, the request has been created by a third party and the process should be aborted.
 
@@ -62,7 +62,7 @@ access_token=e72e16c7e42f292c6912e7710c838347ae178b4a&amp;token_type=bearer
 Accept: application/json {"access_token":"e72e16c7e42f292c6912e7710c838347ae178b4a","token_type":"bearer"}
 ```
 
-3. Use the access token to access the API
+**Step 3 - Use the access token to access the API**
 
 The access token allows you to make requests to the API on a behalf of a user.
 ```http
