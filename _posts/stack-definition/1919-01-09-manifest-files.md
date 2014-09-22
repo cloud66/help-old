@@ -374,21 +374,6 @@ production:
 
 <hr>
 
-<h4 id="rabbit">RabbitMQ</h4>
-
-- **version**<br/>
-Specify the version of RabbitMQ you want to install (does not apply to external servers types)
-
-<pre class="terminal">
-... rabbitmq:
-        servers:
-            server: ...
-       	configuration:
-           	version: 3.2.1
-</pre>
-
-<hr>
-
 <h4 id="rails">Rails</h4>
 A Rails application type in the manifest file gives you fine control over things like the Ruby version or the server the rails application is deployed on.
 
