@@ -79,7 +79,7 @@ require 'oauth2'
 require 'json'
 
 base = 'https://app.cloud66.com'
-api_url = 'https://app.cloud66.com/api/2'
+api_url = 'https://app.cloud66.com/api/3'
 
 if File.exists? '/tmp/cloud66_oauth_test.json'
     config = JSON.parse(File.read('/tmp/cloud66_oauth_test.json'))
@@ -106,10 +106,6 @@ response = token.get("#{api_url}/stacks.json")
 # list all the servers in the stack
 stack_uid = 'ENTER_STACK_UID'
 response = token.get("#{api_url}/stacks/#{stack_uid}/servers.json")
-
-server_uid = 'ENTER_SERVER_UID'
-# or force an IP change notification for the server
-response = token.post("#{api_url}/servers/#{server_uid}/force_ip.json", :body => { :ext_ipv4 => 'NEW_IP_ADDRESS_HERE' })
 
 # show the response (no error handling)
 puts JSON.parse(response.body)['response']
