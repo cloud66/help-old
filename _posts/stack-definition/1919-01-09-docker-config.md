@@ -32,6 +32,11 @@ exclude_from_index: true
 </li>
 </ul>
 
+<div class="notice">
+  <h3>Before your start</h3>
+    <p>You might want to also read a <a href="/deployment/deploying-docker-stacks.html">step by step guide to building your first Docker backed stack</a>.</p>
+</div>
+
 <h2 id="intro">How do I define a Docker stack?</h2>
 
 <div class="notice notice-danger">
