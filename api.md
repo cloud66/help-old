@@ -153,8 +153,6 @@ Find **Personal Access Tokens**  in dashboard under account/settings/authorized 
 
 
 
-
-
 Assume that your personal_access_token is : 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477 
 These are some examples for using curl :
 
@@ -193,7 +191,9 @@ Delete device with token 'wertqy' :
 curl -X DELETE "https://app.cloud66.com/api/3/users/18/devices/wertqy.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"
 ```
 
+### go Example
 
+You can use this repository if you want to use go : https://github.com/cloud66/cloud66 
 
 ### Synchronous vs. asynchronous requests
 The Cloud 66 API uses both synchronous and asynchronous methods. Asynchronous methods are specified in the documentation for the associated calls; all others are generally considered synchronous.
