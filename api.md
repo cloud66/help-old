@@ -138,6 +138,63 @@ _NOTE Your application can request scopes in the initial redirection. You can sp
 https://app.cloud66.com/oauth/authorize?client_id=...&scope=public+redeploy
 ````
 
+### curl Example 
+
+You can use **Personal Access Token** to call api with curl. You must pass **Personal Access Token** as a header.
+
+
+As an example you can get lists of stacks with this command :  
+
+```http
+curl -X GET "https://app.cloud66.com/api/3/stacks.json"  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
+```
+
+Find **Personal Access Tokens**  in dashboard under account/settings/authorized applications.
+
+
+
+
+
+Assume that your personal_access_token is : 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477 
+These are some examples for using curl :
+
+#### Simple GET
+Get list of stacks : 
+
+```http
+curl -X GET "https://app.cloud66.com/api/3/stacks.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"
+```
+
+#### GET with some params
+Get list of all 'mysql' backups in '1345' backup group :  
+
+```http
+curl -X GET "https://app.cloud66.com/api/3/stacks/f196c5b41758cb7977620d49eb1492ef/backups.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477" -d group=1345 -d db_type=mysql
+```
+#### POST 
+Add a new iphone to user's 18 devices with 'wertqy' as a token : 
+
+```http
+curl -X POST "https://app.cloud66.com/api/3/users/18/devices.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"  -d token=wertqy  -d device_type=1 -d sub_type=1
+```
+
+#### PUT 
+Update the type of device with token 'wertqy' to ipad :
+
+```http
+curl -X PUT "https://app.cloud66.com/api/3/users/18/devices/wertqy.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"  -d device_type=1 -d sub_type=2
+```
+
+
+#### DELETE 
+Delete device with token 'wertqy' :
+
+```http
+curl -X DELETE "https://app.cloud66.com/api/3/users/18/devices/wertqy.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"
+```
+
+
+
 ### Synchronous vs. asynchronous requests
 The Cloud 66 API uses both synchronous and asynchronous methods. Asynchronous methods are specified in the documentation for the associated calls; all others are generally considered synchronous.
 
