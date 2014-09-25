@@ -1,5 +1,11 @@
 [
 	{
+	"date": "2014-09-25T11:00:00Z",
+	"title": "Announcing OS level security monitoring",
+	"summary": "We are now actively monitoring your servers for OS security issues",
+	"link": "http://blog.cloud66.com/announcing-os-level-security-monitoring/"
+	},
+	{
 	"date": "2014-09-18T11:00:00Z",
 	"title": "Ubuntu 14.04, VPC support and T2 instance types",
 	"summary": "Support for developer friendly T2 instances types are here, and more!",
