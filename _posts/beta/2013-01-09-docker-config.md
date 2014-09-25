@@ -5,7 +5,7 @@ title:  "Docker deployments"
 so_title: "Docker"
 nav_sticky: false
 date:   2092-01-25 16:27:22
-categories: stack-definition
+categories: beta
 lead: Deploy docker stacks through Cloud 66
 search-tags: ['docker', 'docker_deployment.yml', 'docker deployment', 'deployment']
 tags: ['Deployment', 'Docker']
@@ -34,7 +34,7 @@ exclude_from_index: true
 
 <div class="notice">
   <h3>Before your start</h3>
-    <p>You might want to also read a <a href="/deployment/deploying-docker-stacks.html">step by step guide to building your first Docker backed stack</a>.</p>
+    <p>You might want to also read a <a href="/beta/deploying-docker-stacks.html">step by step guide to building your first Docker backed stack</a>.</p>
 </div>
 
 <h2 id="intro">How do I define a Docker stack?</h2>

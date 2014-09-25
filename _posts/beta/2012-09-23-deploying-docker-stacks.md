@@ -4,8 +4,8 @@ template: one-col
 title:  "Step by step guid to your first Docker stack"
 so_title: "docker"
 nav_sticky: false
-date:   2089-01-26 16:27:22
-categories: deployment
+date:   2090-01-26 16:27:22
+categories: beta
 lead: Use Cloud 66 to deploy your apps in Docker containers
 search-tags: []
 tags: ['Deployment']
@@ -355,5 +355,5 @@ This will scale web by adding 1 container running "web" on server "Snake". Pleas
 
 <div class="notice">
   <h3>Further reading</h3>
-    <p>Find out more about <a href="/stack-definition/docker-config.html">Docker stack definition format and options</a>.</p>
+    <p>Find out more about <a href="/beta/docker-config.html">Docker stack definition format and options</a>.</p>
 </div>
