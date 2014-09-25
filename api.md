@@ -521,6 +521,8 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 | HLT_OK | 3 | Healthy |
 | HLT_BROKEN | 4 | Failed |
 
+# Group Stacks
+
 ## Stack List [/stacks]
 Retrieves a paged list of all the stack objects the user can access. For more information about the object properties returned in the response, refer to [the stack object](#The stack object).
 
