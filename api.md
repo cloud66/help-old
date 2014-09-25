@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: https://app.cloud66.com/api/v3
+HOST: https://app.cloud66.com/api/3
 
 # Introduction
 [Cloud 66](http://www.cloud66.com) is DevOps as a Service. It allows you to build, provision, configure and manage your servers to run [Rack](http://rack.github.io/) backed web applications on any server.
