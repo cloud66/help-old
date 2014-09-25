@@ -1,13 +1,14 @@
 FORMAT: 1A
 HOST: https://app.cloud66.com/api/v3
 
-# Cloud 66 API
+# Introduction
 [Cloud 66](http://www.cloud66.com) is DevOps as a Service. It allows you to build, provision, configure and manage your servers to run [Rack](http://rack.github.io/) backed web applications on any server.
 You can find more information on Cloud 66 on [our help site](http://help.cloud66.com/).
 
-## API Reference
+## About the Cloud 66 API
 The Cloud 66 API is organised around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer).
 
+### Resource model
 Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors.
 
 We use built-in HTTP features, like HTTP authentication and HTTP verbs, which can be understood by off-the-shelf HTTP clients.
@@ -15,24 +16,433 @@ We use built-in HTTP features, like HTTP authentication and HTTP verbs, which ca
 [JSON](http://www.json.org/) will be returned in all responses from the API, including errors (though if you're using API bindings, we will convert the response to the appropriate language-specific object).
 
 ### Authentication
-You authenticate to the Cloud 66 API by providing [OAuth2](http://oauth.net/2/).
+Cloud 66 uses [OAuth2](http://oauth.net/2/) to authenticate users and grant access to stacks and redeployments. To use it, you need an OAuth 2.0 compatible client. To submit API requests, you must pass an OAuth token. An OAuth token functions as a complete authentication request, acting as a substitute for a username and password pair. Because of this, it is absolutely essential that you keep your OAuth tokens secure.
 
-You can generate an OAuth token by visiting the [Apps](https://app.cloud66.com/oauth/authorized_applications), under your Account of the control panel for your account.
-
-An OAuth token functions as a complete authentication request. In effect, it acts as a substitute for a username and password pair.
-
-Because of this, it is absolutely essential that you keep your OAuth tokens secure.
-
-#### How to Authenticate with OAuth
 To authenticate your requests with OAuth you need to send a bearer authorization header with your request. This is the preferred method of authenticating because it completes the authorization request in the header portion, away from the actual request.
 
-Usually, you use a language binding (like a [Ruby gem](https://rubygems.org/) or [go package](http://golang.org/pkg/)) to deal with the OAuth authentication.
-
-Alternatively, you can include the OAuth authentication token in the header of each request:
+Usually, you use a language binding (like a [Ruby gem](https://rubygems.org/) or [go package](http://golang.org/pkg/)) to deal with the OAuth authentication. Alternatively, you can include the OAuth authentication token in the header of each request:
 
 ```http
 Authorization: bearer 5262d64b892e8d4341000001
 ```
+You can generate an OAuth token by visiting the , under your Account of the control panel for your account.
+
+#### How to authenticate with OAuth2
+You can generate an OAuth token using the Your Account > [Apps](https://app.cloud66.com/oauth/authorized_applications) area of the Cloud 66 user interface or using the API. 
+
+**Step 1 - Redirect users to request Cloud 66 access**
+```http
+GET https://app.cloud66.com/oauth/authorize
+```
+| Parameter | Description | Presence |
+| ----------- | ---------------------------- | --------- |
+| client_id | The client ID you received from Cloud 66 when you registered. | Required |
+| redirect_url | URL in your app where users will be sent after authorization. | Required |
+| scope | Comma separated list of scopes. | Optional |
+
+**Step 2 - Cloud 66 redirects back to your site**
+
+If the user accepts your request, Cloud 66 redirects back to your site with a temporary code in a code parameter as well as the state you provided in the previous step in a state parameter. If the states don’t match, the request has been created by a third party and the process should be aborted.
+
+Exchange this for an access token:
+```http
+POST https://app.cloud66.com/oauth/token
+```
+
+| Parameter | Description | Presence |
+| ----------- | ---------------------------- | --------- |
+| client_id | The client ID you received from Cloud 66 when you registered. | Required |
+| redirect_url | URL in your app where users will be sent after authorization. | Optional |
+| client_secret | The client secret you received from Cloud 66 when you registered. | Required |
+
+**Response**
+By default, the response will take the following form:
+```http
+access_token=e72e16c7e42f292c6912e7710c838347ae178b4a&amp;token_type=bearer
+Accept: application/json {"access_token":"e72e16c7e42f292c6912e7710c838347ae178b4a","token_type":"bearer"}
+```
+
+**Step 3 - Use the access token to access the API**
+
+The access token allows you to make requests to the API on a behalf of a user.
+```http
+GET https://app.cloud66.com/api/2/a/stack.json?access_token=e72e...b4a
+```
+#### Ruby example
+This example shows how to get the first token using the Application (Client) ID and Secret. This is using **urn:ietf:wg:oauth:2.0:oob** for commandline tools.
+
+Once you have the code, you can apply for a token. Tokens issued by the API server do not expire and are valid until the user revokes their access. You can see how to store and retrieve the token for future use in this example.
+
+```ruby
+require 'rubygems'
+require 'oauth2'
+require 'json'
+
+base = 'https://app.cloud66.com'
+api_url = 'https://app.cloud66.com/api/3'
+
+if File.exists? '/tmp/cloud66_oauth_test.json'
+    config = JSON.parse(File.read('/tmp/cloud66_oauth_test.json'))
+    client = OAuth2::Client.new(config['app_id'], config['app_secret'], :site => base)
+    token = OAuth2::AccessToken.new(client, config['token'])
+else
+    client = OAuth2::Client.new(ENV['APP_ID'], ENV['APP_SECRET'], :site => base)
+    puts client.auth_code.authorize_url(:redirect_uri => 'urn:ietf:wg:oauth:2.0:oob', :scope => 'public admin redeploy')
+
+    puts "Enter the code:"
+    code = gets.strip
+
+    token = client.auth_code.get_token(code, :redirect_uri => "urn:ietf:wg:oauth:2.0:oob")
+
+    # save it
+    File.write('/tmp/cloud66_oauth_test.json', { :app_id => ENV['APP_ID'], :app_secret => ENV['APP_SECRET'], :token => token.token }.to_json)
+end
+
+# Now you can use the toekn to call API methods, like:
+
+# List all the stacks
+response = token.get("#{api_url}/stacks.json")
+
+# list all the servers in the stack
+stack_uid = 'ENTER_STACK_UID'
+response = token.get("#{api_url}/stacks/#{stack_uid}/servers.json")
+
+# show the response (no error handling)
+puts JSON.parse(response.body)['response']
+````
+
+### Scoped access
+A user’s scope defines the limits of the actions the user can perform with the Cloud 66 API. The user’s scope is encrypted as part of the OAuth access token. Users cannot submit requests not allowed by their defined scopes.
+
+For the web flow, requested scopes be displayed to the user on the authorize form.
+
+**(no scope)**
+Users with this scope have public read-only access and can view limited stack information.
+
+**public**
+Users with this scope have public read-only access and can view limited stack information.
+
+**redeploy**
+Users with this scope can redeploy any stacks they can access.
+
+**jobs**
+Users with this scope can view the scheduled jobs for the stacks they can access.
+
+**users**
+Users with this scope can manage other users’ mobile devices.
+
+**admin**
+Users with this scope can set and manage settings for the servers they can access.
+_NOTE Your application can request scopes in the initial redirection. You can specify multiple scopes by separating them with a space character._
+```http
+https://app.cloud66.com/oauth/authorize?client_id=...&scope=public+redeploy
+````
+
+### curl Example 
+
+You can use **Personal Access Token** to call api with curl. You must pass **Personal Access Token** as a header.
+
+
+As an example you can get lists of stacks with this command :  
+
+```http
+curl -X GET "https://app.cloud66.com/api/3/stacks.json"  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
+```
+
+Find **Personal Access Tokens**  in dashboard under account/settings/authorized applications.
+
+
+
+Assume that your personal_access_token is : 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477 
+These are some examples for using curl :
+
+#### Simple GET
+Get list of stacks : 
+
+```http
+curl -X GET "https://app.cloud66.com/api/3/stacks.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"
+```
+
+#### GET with some params
+Get list of all 'mysql' backups in '1345' backup group :  
+
+```http
+curl -X GET "https://app.cloud66.com/api/3/stacks/f196c5b41758cb7977620d49eb1492ef/backups.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477" -d group=1345 -d db_type=mysql
+```
+#### POST 
+Add a new iphone to user's 18 devices with 'wertqy' as a token : 
+
+```http
+curl -X POST "https://app.cloud66.com/api/3/users/18/devices.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"  -d token=wertqy  -d device_type=1 -d sub_type=1
+```
+
+#### PUT 
+Update the type of device with token 'wertqy' to ipad :
+
+```http
+curl -X PUT "https://app.cloud66.com/api/3/users/18/devices/wertqy.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"  -d device_type=1 -d sub_type=2
+```
+
+
+#### DELETE 
+Delete device with token 'wertqy' :
+
+```http
+curl -X DELETE "https://app.cloud66.com/api/3/users/18/devices/wertqy.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"
+```
+
+### go Example
+
+You can use this repository if you want to use go : https://github.com/cloud66/cloud66 
+
+### Synchronous vs. asynchronous requests
+The Cloud 66 API uses both synchronous and asynchronous methods. Asynchronous methods are specified in the documentation for the associated calls; all others are generally considered synchronous.
+
+**Synchronous** methods will wait for the server to return a response for the request before it will continue processing. Your application will not perform any additional actions until it receives a response from the server. 
+
+**Asynchronous** methods will submit the request to the server, but the application will not wait for a response from the server to continue processing. When the server returns a response, the application can execute a callback function to retrieve the response object, but will continue processing until the response is received.
+
+### Date formats
+Cloud 66 accepts and returns date values according to the ISO 8601 standard. Combined date and time values appear in UTC including local time zone offsets. For example: `2014-06-15T14:13:18+00:00`
+
+### Rate limiting
+The Cloud 66 API can receive a maximum of 3000 requests per user per hour. When the request level reaches the maximum rate, subsequent requests will return a `503: throttled` HTTP status message and the user must retry the request in the next hourly interval.
+
+### Standard HTTP response statuses
+Requests made using the Cloud 66 API can return any of the following response status codes.
+
+| Code | Message | Description |
+| :---: | ---------- | ---------------------------------------------------- |
+| 200 | ok | The request completed successfully. |
+| 400 | bad_request | The system cannot parse the request syntax. It might be missing required parameters or include an invalid value. |
+| 401 | unauthenticated | No authentication token was passed in the request. |
+| 402 | trial_expired | The user’s Cloud 66 trial period has expired. |
+| 403 | forbidden | The user does not have the scope required to submit this request. |
+| 404 | not_found | The system cannot find a response for this request URI. |
+| 408 | time_out | The system did not return a response before the server timed out. |
+| 409 | conflict | The system did not return a response because there is a current conflict with the resource. |
+| 503 | not_implemented | This resource is not actively implemented in this version of the Cloud 66 API. |
+| 503 | throttled | The user has reached or exceeded the maximum rate limit and must wait until the next hourly interval to retry the request. |
+
+## Stack UID retrieval
+Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric string that uniquely identifies your stack. You can retrieve this value by accessing the Stack information page from the right sidebar of your stack page or by submitting an API request to list all stacks. The Stack UID appears in the response body for each stack you maintain.
+
+## Cloud provider instance names
+### Amazon Web Services
+| Instance size | Value |
+| ------------- | ------------ |
+| Micro instance | t1.micro |
+| General purpose | m1.small |
+| General purpose | m1.medium |
+| General purpose | m1.large |
+| General purpose | m1.xlarge |
+| General purpose | m3.medium |
+| General purpose | m3.large |
+| General purpose | m3.xlarge |
+| General purpose | m3.2xlarge |
+| Compute optimized | c1.medium |
+| Compute optimized | c1.xlarge |
+| Compute optimized | c3.large |
+| Compute optimized | c3.xlarge |
+| Compute optimized | c3.2xlarge |
+| Compute optimized | c3.4xlarge |
+| Compute optimized | c3.8xlarge |
+| Compute optimized | cc2.8xlarge |
+| Memory optimized | m2.xlarge |
+| Memory optimized | m2.2xlarge |
+| Memory optimized | m2.4xlarge |
+| Storage optimized | i2.xlarge |
+| Storage optimized | i2.2xlarge |
+| Storage optimized | i2.4xlarge |
+| Storage optimized | i2.8xlarge |
+| Memory optimized | cr1.8xlarge |
+| Storage optimized | hi1.4xlarge |
+| Storage optimized | hs1.8xlarge |
+| GPU instances | cg1.4xlarge |
+| GPU instances | g2.2xlarge |
+
+### Digital Ocean
+| Instance size | Value |
+| --------- | --------- |
+| 512MB - 1 CPU | 66 |
+| 1GB - 1 CPU | 63 |
+| 2GB - 2 CPU | 62 |
+| 4GB - 2 CPU | 64 |
+| 8GB - 4 CPU | 65 |
+| 16GB - 8 CPU | 61 |
+| 32GB - 12 CPU | 60 |
+| 48GB - 16 CPU | 70 |
+| 64GB - 20 CPU | 69 |
+| 96GB - 24 CPU | 68 |
+
+### Google Compute Engine
+| Instance size | Value |
+| ---------- | ---------- |
+| f1-micro | f1-micro |
+| g1-small | g1-small |
+| n1-highcpu-2 | n1-highcpu-2 |
+| n1-highcpu-2-d | n1-highcpu-2-d |
+| n1-highcpu-4 | n1-highcpu-4 |
+| n1-highcpu-4-d | n1-highcpu-4-d |
+| n1-highcpu-8 | n1-highcpu-8 |
+| n1-highcpu-8-d | n1-highcpu-8-d |
+| n1-highmem-2 | n1-highmem-2 |
+| n1-highmem-2-d | n1-highmem-2-d |
+| n1-highmem-4 | n1-highmem-4 |
+| n1-highmem-4-d | n1-highmem-4-d |
+| n1-highmem-8 | n1-highmem-8 |
+| n1-highmem-8-d | n1-highmem-8-d |
+| n1-standard-1 | n1-standard-1 |
+| n1-standard-1-d | n1-standard-1-d |
+| n1-standard-2 | n1-standard-2 |
+| n1-standard-2-d | n1-standard-2-d |
+| n1-standard-4 | n1-standard-4 |
+| n1-standard-4-d | n1-standard-4-d |
+| n1-standard-8 | n1-standard-8 |
+| n1-standard-8-d | n1-standard-8-d |
+
+### Joyent
+| Instance size | Value |
+| ---------- | ---------- |
+| Extra Small 512 MB | Extra Small 512 MB |
+| Small 1GB | Small 1GB |
+| Medium 2GB | Medium 2GB |
+| Medium 4GB | Medium 4GB |
+| Large 16GB | Large 16GB |
+| Large 8GB | Large 8GB |
+| XL 32GB | XL 32GB |
+| XXL 48GB | XXL 48GB |
+| XXXL 64GB | XXXL 64GB |
+
+### Linode
+| Instance size | Value |
+| ---------- | ---------- |
+| Linode 1024 | Linode 1024 |
+| Linode 2048 | Linode 2048 |
+| Linode 4096 | Linode 4096 |
+| Linode 8192 | Linode 8192 |
+| Linode 16384 | Linode 16384 |
+| Linode 24576 | Linode 24576 |
+| Linode 32768 | Linode 32768 |
+| Linode 40960 | Linode 40960 |
+
+### Rackspace
+| Instance size | Value |
+| ---------- | ---------- |
+| 512MB Standard Instance | 512MB Standard Instance |
+| 1GB Standard Instance | 1GB Standard Instance |
+| 2GB Standard Instance | 2GB Standard Instance |
+| 4GB Standard Instance | 4GB Standard Instance |
+| 8GB Standard Instance | 8GB Standard Instance |
+| 15GB Standard Instance | 15GB Standard Instance |
+| 30GB Standard Instance | 30GB Standard Instance |
+| 1 GB Performance | 1 GB Performance |
+| 2 GB Performance | 2 GB Performance |
+| 4 GB Performance | 4 GB Performance |
+| 8 GB Performance | 8 GB Performance |
+| 15 GB Performance | 15 GB Performance |
+| 30 GB Performance | 30 GB Performance |
+| 60 GB Performance | 60 GB Performance |
+| 90 GB Performance | 90 GB Performance |
+| 120 GB Performance | 120 GB Performance |
+
+### Telefonica Cloud
+| Instance size | Value |
+| ---------- | ---------- |
+| 1 CPU, 512MB | g1_standard_1cpu_512mb |
+| 1 CPU, 1GB | g1_standard_1cpu_1024mb |
+| 1 CPU, 1.5GB | g1_standard_1cpu_1536mb |
+| 1 CPU, 2GB | g1_standard_1cpu_2048mb |
+| 1 CPU, 4GB | g1_standard_1cpu_4096mb |
+| 2 CPU, 8GB | g1_standard_2cpu_8192mb |
+| 3 CPU, 16GB | g1_standard_3cpu_16384mb |
+
+### Vexxhost Cloud
+| Instance size | Value |
+| ---------- | ---------- |
+| 512MB | nb.512M |
+| 1GB | nb.1G |
+| 2GB | nb.2G |
+| 4GB | nb.4G |
+| 8GB | nb.8G |
+| 16GB | nb.16G |
+| 24GB | nb.24G |
+| 32GB | nb.32G |
+| 48GB | nb.48G 
+| 64GB | nb.64G |
+
+## Cloud vendor instance regions
+### Amazon Web Services
+| Region | Value |
+| ---------- | ---------- |
+| US East (Northern Virginia)| us-east-1 |
+| US West (Northern California) | us-west-1 |
+| US West (Oregon) | us-west-2 |
+| South America (Sao Paulo, Brazil) | sa-east-1 |
+| Europe (Dublin, Ireland) | eu-west-1 |
+| Asia Pacific (Singapore) | ap-southeast-1 |
+| Asia Pacific (Tokyo) | ap-northeast-1 |
+| Asia Pacific (Sydney) | ap-southeast-2 |
+
+### Digital Ocean
+| Region | Value |
+| ---------- | ---------- |
+| Amsterdam, Netherlands| 2 |
+| Amsterdam, Netherlands (2nd Data Center) | 5 |
+| New York, US | 1 |
+| New York 2, US | 4 |
+| San Francisco, US | 3 |
+| Singapore | 6 |
+| London | 7 |
+
+### Google Compute Engine
+| Zone | Value |
+| ---------- | ---------- |
+| us-central1-a | us-central1-a |
+| us-central1-b | us-central1-b |
+| europe-west1-a | europe-west1-a |
+| europe-west1-b | europe-west1-b |
+| asia-east1-a | asia-east1-a |
+| asia-east1-b | asia-east1-b |
+
+### Joyent 
+| Region | Value |
+| ---------- | ---------- |
+| US East (Northern Virginia) | us-east-1 |
+| US West (Northern California) | us-west-1 |
+| US South West (Nevada) | us-sw-1 |
+| Europe (Amsterdam) | eu-ams-1 |
+
+### Linode
+| Region | Value |
+| ---------- | ---------- |
+| Atlanta, GA, USA | Atlanta, GA, USA |
+| Dallas, TX, USA | Dallas, TX, USA |
+| Fremont, CA, USA | Fremont, CA, USA |
+| London, England, UK | London, England, UK |
+| Newark, NJ, USA | Newark, NJ, USA |
+| Tokyo, JP | Tokyo, JP |
+
+### Rackspace
+| Region | Value |
+| ---------- | ---------- |
+| Chicago | chicago |
+| Dallas | dallas |
+| Hong Kong | hong_kong |
+| London | london |
+| Northern Virginia | northern_virginia |
+| Sydney | sydney |
+
+### Telefonica Cloud
+| Region | Value |
+| ---------- | ---------- |
+| Europe (Madrid) | eu-mad-1 |
+| Europe (London) | eu-lon-1 |
+
+### Vexxhost Cloud
+| Region | Value |
+| ---------- | ---------- |
+| Montreal | default |
 
 # Stacks
 Most interactions with the Cloud 66 API are performed at the stack level. Using the Stacks resource, you can list stacks and view stack details, but you can only create, update, or delete stacks using the UI dashboard.
