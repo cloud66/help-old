@@ -37,6 +37,7 @@ tags: ['Deployment']
             <li><ul><li><a href="#rabbit">RabbitMQ</a></li></ul></li>
             <li><ul><li><a href="#rails">Rails</a></li></ul></li>
             <li><ul><li><a href="#redis">Redis</a></li></ul>
+            <li><ul><li><a href="#sinatra">Sinatra</a></li></ul>
         </li>
     </ul>
     <li><a href="#environment_variables">Environment variables in the manifest</a></li> 
@@ -436,6 +437,54 @@ Specify the version of Redis you want to install (does not apply to external ser
 		    server: ...
 		configuration:
 			version: 2.6.10
+</pre>
+
+<hr>
+
+<h4 id="sinatra">Sinatra</h4>
+A Sinatra application type in the manifest file gives you fine control over things like the Ruby version or which server the application is deployed on.
+
+- <b>ruby&#95;version</b><br/>
+Specify the version of Ruby to use (overridden if present in Gemfile)
+- <b>do&#95;initial&#95;db&#95;schema&#95;load</b><br/>
+Specify whether to perform "rake db:schema:load" on new builds
+- <b>reserved&#95;server&#95;memory</b><br/>
+A value in MB that Cloud 66 will assume should be left available. This will affect any automatically calculated values, and will be taken into account during redeployment
+- <b>passenger&#95;process&#95;memory</b><br/>
+A value in MB that Cloud 66 will use for each passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment
+- <b>activeprotect</b><br/>
+Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration
+- <b>nginx</b><br/>
+Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
+
+<pre class="terminal">
+... sinatra:
+        servers:
+            server: ...
+        configuration:
+            ruby&#95;version: 1.9.3        
+            do&#95;initial&#95;db&#95;schema&#95;load: false
+            reserved&#95;server&#95;memory: 0 (default value)
+            passenger&#95;process&#95;memory: 200 (default value)
+            activeprotect:
+                whitelist: 123.123.123.123,234.234.234.234
+            nginx:
+                cors: true
+                perfect&#95;forward&#95;secrecy: true
+</pre>
+
+#### CORS configuration
+
+If you want to, you can also specify the origin and methods for CORS.
+<pre class="terminal">
+... sinatra:
+        servers:
+            server: ...
+        configuration:
+            nginx:
+                cors:
+                    origin: '*'
+                    methods: 'GET, OPTION'
 </pre>
 
 <hr>
