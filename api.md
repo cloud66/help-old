@@ -460,7 +460,7 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 
 | Property | Data type | Description | Sample value |
 | ---------- | ------------ | -------------------------------- | ------------- |
-| uid | string | The unique identifier of the stack. | 5be6b763474b0eafa5fafb64bff0ba80 |
+| uid | string | The unique identifier of the stack. | 5999b763474b0eafa5fafb64bff0ba80 |
 | name | string | The name defined for the stack. | My Awesome App |
 | git | string | The git repository URL associated with the stack. | http://github.com/mysamples/awesome-app.git |
 | git_branch | string | The git repository branch associated with the stack. | fig |
@@ -540,7 +540,7 @@ Retrieves a paged list of all the stack objects the user can access. For more in
         {
             "response": [
                 {
-                    "uid": "5be6b763474b0eafa5fafb64bff0ba80",
+                    "uid": "5999b763474b0eafa5fafb64bff0ba80",
                     "name": "Awesome App",
                     "git": "http://github.com/cloud66-samples/awesome-app.git",
                     "git_branch": "fig",
@@ -589,7 +589,7 @@ Retrieve the details of the stack specified in the request. For more information
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack.
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack.
 
 + Model (application/json)
 
@@ -603,7 +603,7 @@ Retrieve the details of the stack specified in the request. For more information
     	{
 		 	"response":
 				{
-				 	"uid": "5be6b763474b0eafa5fafb64bff0ba80",
+				 	"uid": "5999b763474b0eafa5fafb64bff0ba80",
 				  	"name": "Awesome App",
 				  	"git": "http://github.com/cloud66-samples/awesome-app.git",
 				  	"git_branch": "fig",
@@ -643,7 +643,7 @@ Retrieve a paged list of all asynchronous actions performed for the stack specif
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack
 
 + Model (application/json)
 
@@ -695,7 +695,7 @@ Retrieve the details of an asynchronous action performed for the the stack speci
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack
     + id (required, integer, `4153`) ... Identifier of the asynchronous action
 
 + Model (application/json)
@@ -739,7 +739,7 @@ Perform an asynchronous action for the stack specified in the request. You can u
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack
     + command (required, string, `restart`) ... The action to perform for the stack. Valid values are clear_caches, maintenance_mode, and restart.
 
 + Model (application/json)
@@ -784,7 +784,7 @@ Get list of all deployments of stack
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
 
 + Model (application/json)
 
@@ -856,7 +856,7 @@ Get information of a single deployment
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, integer, `107`) ... The deployment id
 
 + Model (application/json)
@@ -917,7 +917,7 @@ Redeploy a stack
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
 
 + Model (application/json)
 
@@ -951,7 +951,7 @@ Cancel a live stack deployment
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, integer, `112`) ... The deployment id
 
 + Model (application/json)
@@ -977,6 +977,480 @@ Cancel a live stack deployment
 
     [Cancel deployment][]
 
+# Group Services
+
+<style>
+.notice {
+  border-top: 1px solid #e2eaee;
+  border-bottom: 1px solid #e2eaee;
+  background: rgba( 209, 228, 240, 0.3 );
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  /*margin-left: -12px;*/
+  background: #FEFBED !important;
+  border-top: 1px solid #EFE1A7;
+  p:nth-child(2) {
+    margin-top: -0.4em;
+  }
+}
+</style>
+
+<div class="notice">
+<h3>Notice</h3>
+<p>The Services API endpoints are currently only available to <a href='http://go.c66.me/c66beta'>beta program members</a> with Docker-based stacks.</p>
+</div>
+
+## Services list [/stacks/{id}/services]
+Get list of all services of the stack
+
+- Scope: _public_
+
++ Parameters
+
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + server_uid (optional, string `1239b763474b0eafa5fafb64bff0ba80`) ... Server UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+        {
+          "response": [
+            {
+              "name": "web",
+              "containers": [
+                {
+                  "uid": "1339d2dfa5a86dfce497f8f2e1bb29492f246288c722d11c8e6fc9348bfeece6",
+                  "server_uid": "edfbd7a9b97e999ebf17984282d4b457",
+                  "server_name": "Cormorant",
+                  "service_name": "web",
+                  "image": "quay.io/cloud66/sample-rails",
+                  "port_list": "[\"5128:3000\"]",
+                  "command": "rackup -p 3000",
+                  "started_at": "2014-09-30T09:59:45Z",
+                  "web_ports": "80:443",
+                  "created_at": "2014-09-30T09:59:45Z",
+                  "updated_at": "2014-09-30T09:59:48Z"
+                }
+              ]
+            }
+          ],
+          "count": 1,
+          "pagination": {
+            "previous": null,
+            "next": null,
+            "current": 1,
+            "per_page": 30,
+            "count": 1,
+            "pages": 1
+          }
+        }
+
+### Services list [GET]
+Get list of all services of the stack
+
++ Response 200
+
+	[Services list][]    
+
+## Service show [/stacks/{stack_id}/services/{id}]
+Get service of the stack
+
+- Scope: _public_
+
++ Parameters
+
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `web`) ... The service name
+    + server_uid (optional, string `1239b763474b0eafa5fafb64bff0ba80`) ... Server UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+        {
+          "response": {
+            "name": "web",
+            "containers": [
+              {
+                "uid": "1339d233a5a86dfce497f8f2e1bb29492f246288c722d11c8e6fc9348bfeece6",
+                "server_uid": "1239b763474b0eafa5fafb64bff0ba80",
+                "server_name": "Cormorant",
+                "service_name": "web",
+                "image": "quay.io/cloud66/sample-rails",
+                "port_list": "[\"5128:3000\"]",
+                "command": "rackup -p 3000",
+                "started_at": "2014-09-30T09:59:45Z",
+                "web_ports": "80:443",
+                "created_at": "2014-09-30T09:59:45Z",
+                "updated_at": "2014-09-30T09:59:48Z"
+              }
+            ]
+          }
+        }
+
+### Service show [GET]
+Get service of the stack
+
++ Response 200
+
+	[Service show][]    
+	
+## Service scale [/stacks/{stack_id}/services]
+Scale the given service over the stack
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    
+    + service_name (required, string, `web`) ... The service name    
+    + server_count (required, string, `{"123123cfcb7d3d2b54614b19e2a6c673":2}`) ... A hash of server uid to count of containers desired on that server
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+          {
+            "response": {
+              "id": 1234,
+              "user": "theuser@yourdomain.com",
+              "resource_type": "stack",
+              "action": "service_scale",
+              "resource_id": "15633",
+              "started_via": "api",
+              "started_at": "2014-09-30T11:36:58Z",
+              "finished_at": null,
+              "finished_success": null,
+              "finished_message": null
+            }
+          }
+        
+### Service scale [POST]
+Scale the given service over the stack
+
++ Response 200
+
+    [Service scale][]	
+
+## Service stop [/stacks/{stack_id}/services/{id}]
+Stop all of the given service on the stack (across all servers, unless server_uid supplied)
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `web`) ... The service name
+    + server_uid (optional, string `1239b763474b0eafa5fafb64bff0ba80`) ... Server UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+          {
+            "response": {
+              "id": 1234,
+              "user": "theuser@yourdomain.com",
+              "resource_type": "stack",
+              "action": "service_stop",
+              "resource_id": "15633",
+              "started_via": "api",
+              "started_at": "2014-09-30T11:36:58Z",
+              "finished_at": null,
+              "finished_success": null,
+              "finished_message": null
+            }
+          }
+        
+### Service stop [DELETE]
+Stop all of the given service on the stack (across all servers, unless server_uid supplied)
+
++ Response 200
+
+    [Service stop][]          
+
+# Group Containers
+
+<div class="notice">
+<h3>Notice</h3>
+<p>The containers API endpoints are currently only available to <a href='http://go.c66.me/c66beta'>beta program members</a> with Docker-based stacks.</p>
+</div>
+
+## Containers list [/stacks/{id}/containers]
+Get list of all containers of the stack
+
+- Scope: _public_
+
++ Parameters
+
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + server_uid (optional, string `1239b763474b0eafa5fafb64bff0ba80`) ... Server UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+        {
+          "response": [
+            {
+              "uid": "12344cd3c84eb64591598312c9f12e5c3ed64454545f987016916f64ff25e363",
+              "server_uid": "1239b763474b0eafa5fafb64bff0ba80",
+              "server_name": "Cormorant",
+              "service_name": "web",
+              "image": "quay.io/cloud66/sample-rails",
+              "port_list": "[\"5293:3000\"]",
+              "command": "rackup -p 3000",
+              "started_at": "2014-09-30T11:42:51Z",
+              "web_ports": "80:443",
+              "capture_output": true,
+              "created_at": "2014-09-30T11:42:51Z",
+              "updated_at": "2014-09-30T11:42:53Z"
+            }
+          ],
+          "count": 1,
+          "pagination": {
+            "previous": null,
+            "next": null,
+            "current": 1,
+            "per_page": 30,
+            "count": 1,
+            "pages": 1
+          }
+        }
+
+### Containers list [GET]
+Get list of all containers of the stack
+
++ Response 200
+
+	[Containers list][]    
+
+## Container show [/stacks/{stack_id}/containers/{id}]
+Get container of the stack (includes container runtime information
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `12344cd3c84eb64591598312c9f12e5c3ed64454545f987016916f64ff25e363`) ... The container UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+        {
+          "response": {
+            "uid": "12344cd3c84eb64591598312c9f12e5c3ed64454545f987016916f64ff25e363",
+            "server_uid": "1239b763474b0eafa5fafb64bff0ba80",
+            "server_name": "Cormorant",
+            "service_name": "web",
+            "image": "quay.io/cloud66/sample-rails",
+            "port_list": "[\"5293:3000\"]",
+            "command": "rackup -p 3000",
+            "started_at": "2014-09-30T11:42:51Z",
+            "web_ports": "80:443",
+            "capture_output": true,
+            "created_at": "2014-09-30T11:42:51Z",
+            "updated_at": "2014-09-30T11:42:53Z",
+            "runtime": {
+              "Args": [
+                "-p",
+                "3000"
+              ],
+              "Config": {
+                "AttachStderr": false,
+                "AttachStdin": false,
+                "AttachStdout": false,
+                "Cmd": [
+                  "rackup",
+                  "-p",
+                  "3000"
+                ],
+                "CpuShares": 0,
+                "Cpuset": "",
+                "Domainname": "",
+                "Entrypoint": null,
+                "Env": [
+                  ...
+                ],
+                "ExposedPorts": {
+                  "3000/tcp": {
+                  }
+                },
+                "Hostname": "...",
+                "Image": "quay.io/cloud66/sample-rails",
+                "Memory": 0,
+                "MemorySwap": 0,
+                "NetworkDisabled": false,
+                "OnBuild": null,
+                "OpenStdin": false,
+                "PortSpecs": null,
+                "StdinOnce": false,
+                "Tty": false,
+                "User": "",
+                "Volumes": null,
+                "WorkingDir": "/usr/src/app"
+              },
+              "Created": "2014-09-30T11:42:51.267660159Z",
+              "Driver": "aufs",
+              "ExecDriver": "native-0.2",
+              "HostConfig": {
+                "Binds": [
+                  "/var/log/containers:/usr/src/app/log"
+                ],
+                "CapAdd": null,
+                "CapDrop": null,
+                "ContainerIDFile": "",
+                "Devices": [
+        
+                ],
+                "Dns": null,
+                "DnsSearch": null,
+                "Links": null,
+                "LxcConf": [
+        
+                ],
+                "NetworkMode": "bridge",
+                "PortBindings": {
+                  "3000/tcp": [
+                    {
+                      "HostIp": "",
+                      "HostPort": "5293"
+                    }
+                  ]
+                },
+                "Privileged": false,
+                "PublishAllPorts": false,
+                "RestartPolicy": {
+                  "MaximumRetryCount": 0,
+                  "Name": "always"
+                },
+                "VolumesFrom": null
+              },
+              "HostnamePath": "...",
+              "HostsPath": "...",
+              "Id": "...",
+              "Image": "...",
+              "MountLabel": "",
+              "Name": "/lonely_yonath",
+              "NetworkSettings": {
+                "Bridge": "docker0",
+                "Gateway": "172.17.42.1",
+                "IPAddress": "172.17.0.7",
+                "IPPrefixLen": 16,
+                "PortMapping": null,
+                "Ports": {
+                  "3000/tcp": [
+                    {
+                      "HostIp": "0.0.0.0",
+                      "HostPort": "5293"
+                    }
+                  ]
+                }
+              },
+              "Path": "rackup",
+              "ProcessLabel": "",
+              "ResolvConfPath": "...",
+              "State": {
+                "ExitCode": 0,
+                "FinishedAt": "0001-01-01T00:00:00Z",
+                "Paused": false,
+                "Pid": 30152,
+                "Restarting": false,
+                "Running": true,
+                "StartedAt": "2014-09-30T11:42:51.396771169Z"
+              },
+              "Volumes": {
+                "/usr/src/app/log": "/var/log/containers"
+              },
+              "VolumesRW": {
+                "/usr/src/app/log": true
+              }
+            }
+          }
+        }
+
+### Container show [GET]
+Get container of the stack (includes container runtime information
+
++ Response 200
+
+	[Container show][]    
+	
+## Container stop [/stacks/{stack_id}/containers/{id}]
+Stop the given container 
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `12344cd3c84eb64591598312c9f12e5c3ed64454545f987016916f64ff25e363`) ... The container UID
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+          {
+            "response": {
+              "id": 1234,
+              "user": "theuser@yourdomain.com",
+              "resource_type": "stack",
+              "action": "container_stop",
+              "resource_id": "15633",
+              "started_via": "api",
+              "started_at": "2014-09-30T11:36:58Z",
+              "finished_at": null,
+              "finished_success": null,
+              "finished_message": null
+            }
+          }
+        
+### Container stop [DELETE]
+Stop the given container
+
++ Response 200
+
+    [Container stop][]          
+
 # Group Environment Variables
 
 ## Environment Variable list [/stacks/{id}/environments]
@@ -986,7 +1460,7 @@ Get list of all environment variables of stack
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
 
 + Model (application/json)
 
@@ -1066,7 +1540,7 @@ Get information of a single environment variable
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, integer, `4153`) ... The environment variable id
 
 + Model (application/json)
@@ -1108,7 +1582,7 @@ Add a new environment variable
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + key (required, string, `MY_ENVIRONMENT_VALUE`) ... The new environment variable key
     + value (required, string, `SOME_VALUE`) ... The new environment variable new value
 
@@ -1153,7 +1627,7 @@ Update value of an environment variable if it is not readonly
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + key (required, string, `POSTGRESQL_SLAVE_ADDRESSES`) ... The environment variable key
     + value (required, string, `127.0.0.1`) ... The environment variable new value
 
@@ -1199,7 +1673,7 @@ Delete an environment variable if it is not readonly or generated by cloud66
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + key (required, string, `MY_ENV_1`) ... The environment variable key
 
 + Model (application/json)
@@ -1227,7 +1701,7 @@ Get list of all firewall rules of stack
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
 
 + Model (application/json)
 
@@ -1298,7 +1772,7 @@ Get information of a single firewall rule
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, integer, `4153`) ... The firewall rule id
 
 + Model (application/json)
@@ -1343,7 +1817,7 @@ Get information of a single firewall rule
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
 	+ ttl (optional, integer, `20`) ... Time that firewall rule will be expires in
 	+ from_ip (optional, string, `123.123.123.123`) ... From IP value of rule
 	+ from_group_id (optional, integer, `19`) ...  You can specify a server group id as From
@@ -1386,7 +1860,7 @@ Get list of all notifications of stack
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + alert_type (optional,string, `server.stopped`) ... Type of alert
 
 + Model (application/json)
@@ -1457,7 +1931,7 @@ Get information of a single notification
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, integer, `4153`) ... The notification id
 
 + Model (application/json)
@@ -1498,7 +1972,7 @@ Update channel/params of a notification
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, integer, `4153`) ... The notification id
     + channels (optional, string, `[email,ios]`) ... Channels of notification , Valid channels are : email,ios,hipchat,webhook,slack
 	+ params (optional, string, `{'hipchat_room' : 'test'}`) ... parameters of notification channel . It must be a valid json string. Valid keys are : hipchat_token, hipchat_room, slack_url, slack_channel, webhook_url
@@ -1531,7 +2005,7 @@ Get list of all settings of stack
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
 
 + Model (application/json)
 
@@ -1607,7 +2081,7 @@ Get information of a single setting item
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, string, `git-branch`) ... The setting item id
 
 + Model (application/json)
@@ -1641,7 +2115,7 @@ Update value of a setting item
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, string, `git-branch`) ... The setting item id
     + value (required, string, `staging`) ... The setting item new value
 
@@ -1688,7 +2162,7 @@ Get list of all server groups of stack
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
 
 + Model (application/json)
 
@@ -1743,7 +2217,7 @@ Get information of a single server group
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, integer, `128`) ... The server group id
 
 + Model (application/json)
@@ -1783,7 +2257,7 @@ Get list of all servers of stack
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
 
 + Model (application/json)
 
@@ -1868,7 +2342,7 @@ Get information of a single server
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, string, `f8468fc145ea49bac474b30a8fea888d`) ... The server UID
     + include_private_key (optional, integer, `1`) ... if set to 1 then private_key will included in response
 
@@ -1946,7 +2420,7 @@ Get list of all settings of a server
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + server_id (required, string, `f8468fc145ea49bac474b30a8fea888d`) ... The server UID
 
 + Model (application/json)
@@ -1992,7 +2466,7 @@ Get information of a single server setting item
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + server_id (required, string, `f8468fc145ea49bac474b30a8fea888d`) ... The server UID
     + id (required, string, `server-name`) ... The setting item id
 
@@ -2027,7 +2501,7 @@ Update value of a server setting item
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + server_id (required, string, `f8468fc145ea49bac474b30a8fea888d`) ... The server UID
     + id (required, string, `server-name`) ... The setting item id
     + value (required, string, `newname`) ... The setting item new value
@@ -2075,7 +2549,7 @@ Get list of all backups of stack.
 
 + Parameters
 
-    + id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + group (optional, integer, `15`) ... The backup group id
     + db_type (optional, string, `mysql`) ... Database type of backup . Valid options or : mysql, postgresql, redis, mongodb
 
@@ -2152,7 +2626,7 @@ Get information of a single backup
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, integer, `4153`) ... The backup id
 
 + Model (application/json)
@@ -2202,7 +2676,7 @@ Import an external backup.
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + group (required, integer, `5`) ... The group id of backups that imported backup must be place in
     + db_type (required, string, `mysql`) ... Database type of backup . Valid options or : mysql, postgresql, redis, mongodb
     + remote_url (required, string, `https://s3.amazonaws.com/c66-managed-backup-non-prod/2aad2bb5a70e621ecf251fbd85af6927/backups/09a7dec0efdaa19b44148fccbf6128ec/redis/redis_23/2014.07.01.07.00.46/redis_23.tar`) ... A valid url to backup file that is going to be imported
@@ -2239,7 +2713,7 @@ Get list of all files of a backup
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + backup_id (required, integer, `4153`) ... The backup id
 
 + Model (application/json)
@@ -2286,7 +2760,7 @@ Get public url to a backup file
 
 + Parameters
 
-    + stack_id (required, string, `5be6b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + backup_id (required, integer, `4153`) ... The backup id
     + id (required, string, `tar-aa`) ... The file id
 
