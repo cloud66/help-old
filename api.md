@@ -25,7 +25,7 @@ Usually, you use a language binding (like a [Ruby gem](https://rubygems.org/) or
 ```http
 Authorization: bearer 5262d64b892e8d4341000001
 ```
-You can generate an OAuth token by visiting the , under your Account of the control panel for your account.
+You can generate an OAuth token by visiting the [Apps](https://app.cloud66.com/oauth/authorized_applications) , under your Account.
 
 #### How to authenticate with OAuth2
 You can generate an OAuth token using the Your Account > [Apps](https://app.cloud66.com/oauth/authorized_applications) area of the Cloud 66 user interface or using the API. 
@@ -64,11 +64,38 @@ Accept: application/json {"access_token":"e72e16c7e42f292c6912e7710c838347ae178b
 
 **Step 3 - Use the access token to access the API**
 
-The access token allows you to make requests to the API on a behalf of a user.
+The access token allows you to make requests to the API on behalf of a user.
 ```http
-GET https://app.cloud66.com/api/2/a/stack.json?access_token=e72e...b4a
+GET "https://app.cloud66.com/api/3/stack.json" -H "Authorization: Bearer e72e...b4a"   
 ```
-#### Ruby example
+### Scoped access
+A user’s scope defines the limits of the actions the user can perform with the Cloud 66 API. The user’s scope is encrypted as part of the OAuth access token. Users cannot submit requests not allowed by their defined scopes.
+
+For the web flow, requested scopes be displayed to the user on the authorize form.
+
+**(no scope)**
+Users with this scope have public read-only access and can view limited stack information.
+
+**public**
+Users with this scope have public read-only access and can view limited stack information.
+
+**redeploy**
+Users with this scope can redeploy any stacks they can access.
+
+**jobs**
+Users with this scope can view the scheduled jobs for the stacks they can access.
+
+**users**
+Users with this scope can manage other users’ mobile devices.
+
+**admin**
+Users with this scope can set and manage settings for the servers they can access.
+_NOTE Your application can request scopes in the initial redirection. You can specify multiple scopes by separating them with a space character._
+```http
+https://app.cloud66.com/oauth/authorize?client_id=...&scope=public+redeploy
+````
+
+### Ruby example
 This example shows how to get the first token using the Application (Client) ID and Secret. This is using **urn:ietf:wg:oauth:2.0:oob** for commandline tools.
 
 Once you have the code, you can apply for a token. Tokens issued by the API server do not expire and are valid until the user revokes their access. You can see how to store and retrieve the token for future use in this example.
@@ -109,33 +136,6 @@ response = token.get("#{api_url}/stacks/#{stack_uid}/servers.json")
 
 # show the response (no error handling)
 puts JSON.parse(response.body)['response']
-````
-
-### Scoped access
-A user’s scope defines the limits of the actions the user can perform with the Cloud 66 API. The user’s scope is encrypted as part of the OAuth access token. Users cannot submit requests not allowed by their defined scopes.
-
-For the web flow, requested scopes be displayed to the user on the authorize form.
-
-**(no scope)**
-Users with this scope have public read-only access and can view limited stack information.
-
-**public**
-Users with this scope have public read-only access and can view limited stack information.
-
-**redeploy**
-Users with this scope can redeploy any stacks they can access.
-
-**jobs**
-Users with this scope can view the scheduled jobs for the stacks they can access.
-
-**users**
-Users with this scope can manage other users’ mobile devices.
-
-**admin**
-Users with this scope can set and manage settings for the servers they can access.
-_NOTE Your application can request scopes in the initial redirection. You can specify multiple scopes by separating them with a space character._
-```http
-https://app.cloud66.com/oauth/authorize?client_id=...&scope=public+redeploy
 ````
 
 ### curl Example 
@@ -389,8 +389,10 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | ---------- | ---------- |
 | Amsterdam, Netherlands| 2 |
 | Amsterdam, Netherlands (2nd Data Center) | 5 |
+| Amsterdam, Netherlands (3rd Data Center) | 9 |
 | New York, US | 1 |
 | New York 2, US | 4 |
+| New York 3, US | 8 |
 | San Francisco, US | 3 |
 | Singapore | 6 |
 | London | 7 |
@@ -475,12 +477,10 @@ Using the Stacks endpoint, you can submit requests using the following methods.
 | last_activity_iso | datetime | The date and time the last action was performed for the stack, in UTC datetime | 2014-08-14T01:46:53+00:00 |
 | maintenance mode | bool | Whether the stack currently has maintenance mode enabled. | false |
 | has_loadbalancer | bool | Whether the stack has an associated load balancer add-in. | false |
-| created_at | datetime | The date and time the stack was created, in UTC datetime | 2014-08-14 00:38:14 UTC |
-| updated_at | datetime | The date and time the stack was last modified, in UTC datetime | 2014-08-14 01:46:52 UTC |
+| created_at | datetime | The date and time the stack was created, in iso8601 format | 2014-09-01T19:08:05Z |
+| updated_at | datetime | The date and time the stack was last modified, in iso8601 format | 2014-09-01T19:18:05Z |
 | deploy_directory | string | The target directory for stack deployment. | /var/deploy/awesome_app |
 | cloud_status | string | The current cloud provider status associated with the stack. | partial |
-| created_at_iso | datetime | The date and time the stack was created, in UTC datetime | 2014-08-14 00:38:14 UTC |
-| updated_at_iso | datetime | The date and time the stack was last modified, in UTC datetime | 2014-08-14 01:46:52 UTC |
 | redeploy_hook | string | If applicable, the deploy hook URL associated with the stack. | http://hooks.cloud66.com/stacks/redeploy/ b806f1c3344eb3aa2a024b23254b75b3/ 6d677352a6b2eefec6e345ee2b491521 |
 
 **<a name="The stack action object"></a> The stack action object**
