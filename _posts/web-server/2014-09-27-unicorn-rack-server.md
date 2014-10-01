@@ -15,7 +15,7 @@ tags: ['Web server']
 <h2>Contents</h2>
 <ul class="page-toc">
     <li>
-        <a href="#about">About running apps with Thin</a>
+        <a href="#about">About running apps with Unicorn</a>
     </li>         
         <ul style="margin-bottom:0em">            
             <li><a href="#stop">Kill the web server</a></li>
@@ -24,11 +24,11 @@ tags: ['Web server']
             <li><a href="#hot-restart">Restart the web server (hot-restart)</a></li>
         </ul>   
     <li>
-        <a href="#deploy">Deploy with Thin</a>
+        <a href="#deploy">Deploy with Unicorn</a>
     </li>         
 </ul>
 
-## About Unicorn
+<h2 id="about">About Unicorn</h2>
 [Unicorn](http://unicorn.bogomips.org/) is a Rack HTTP server that uses forked processes to handle multiple incoming requests concurrently.
 
 Cloud 66 uses the following signals to control Unicorn:
@@ -63,7 +63,7 @@ Cloud 66 uses the following signals to control Unicorn:
 </kbd>
 </p>
 
-## About running apps with Unicorn
+<h2 id="deploy">Deploy with Unicorn</h2>
 You need to choose your web server at the time of initial build of the stack. Changes to or from Passenger (the default web server) will not be applied after your stack has initially been analyzed. You can however change freely between other supported servers by simply updating your Gems and Procfile.
 
 To run a Unicorn Rack server, add a line to your Procfile labeled as custom_web. Here is an example:
