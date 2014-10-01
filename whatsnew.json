@@ -1,5 +1,11 @@
 [
 	{
+	"date": "2014-10-01T11:00:00Z",
+	"title": "API v3 is here",
+	"summary": "Use the API directly from cURL with Personal Tokens",
+	"link": "http://blog.cloud66.com/cloud-66-api-v3-is-here/"
+	},
+	{
 	"date": "2014-09-25T11:00:00Z",
 	"title": "Announcing OS level security monitoring",
 	"summary": "We are now actively monitoring your servers for OS security issues",
