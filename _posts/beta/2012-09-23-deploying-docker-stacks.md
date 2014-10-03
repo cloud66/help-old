@@ -357,3 +357,45 @@ This will scale web by adding 1 container running "web" on server "Snake". Pleas
   <h3>Further reading</h3>
     <p>Find out more about <a href="/beta/docker-config.html">Docker stack definition format and options</a>.</p>
 </div>
+
+
+### Service Discovery
+
+Docker is the perfect solution to build micro services that run different parts of an application. Those services need to communicate with each other. 
+
+By default every container started on a server is registered with a central service discovery service hosted by Cloud 66. This services, called **Discovery**, is available to all Docker backed stacks at `https://discovery.cloud66.com` and is compatible with [etcd](https://github.com/coreos/etcd). You can use available `etcd` client libraries to connect to it. 
+
+Unlike standard etcd, Discovery has only 1 endpoint (`discovery.cloud66.com`) and therefore there is no need for automatic "leader discovery" on the client side. Calls to Discovery are authenticated using "Stack API keys".
+
+#### Using Discovery
+
+To connect to Discovery, using the [etcd ruby gem](https://github.com/ranjib/etcd-ruby), you can follow these steps:
+
+1. Find the Stack API key of your stack. You can find this under the Stack Information page.
+2. Configure the etcd ruby client with the following parameters:
+
+{% highlight ruby %}
+require 'etcd'
+client = Etcd.client(host: 'discovery.cloud66.com', port: 443, user_name: 'x', password: 'STACK_API_KEY', use_ssl: true)
+backend_service = client.get('/services/my_api/cd6db91edc2747e0bd603aa8634ac9a2')
+{% endhighlight %}
+
+By default all containers are registered under the following path:
+
+```
+/services/SERVICE_NAME/CONTAINER_UID
+```
+
+Each container key will contain the following JSON serialized object:
+
+{% highlight json %}
+{ "public_ip" : SERVER_ADDRESS, "public_port" : SERVICE_PORT }
+{% endhighlight %}
+
+For example, you can get the list of the containers running in a stack for a specific service:
+
+
+{% highlight ruby %}
+backend_services = client.get('/services/my_api/')
+{% endhighlight %}
+
