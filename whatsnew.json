@@ -1,5 +1,11 @@
 [
 	{
+	"date": "2014-10-19T11:00:00Z",
+	"title": "Two new awesome features",
+	"summary": "Individual Linux Users and RabbitMQ AddOn.",
+	"link": "http://blog.cloud66.com/two-new-awesome-features/"
+	},
+	{
 	"date": "2014-10-01T11:00:00Z",
 	"title": "API v3 is here",
 	"summary": "Use the API directly from cURL with Personal Tokens",
