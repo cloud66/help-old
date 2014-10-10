@@ -68,8 +68,7 @@ production:                                 # Environment type
       build_command: rake db:migrate        # migrate db (during build)
       deploy_command: rake db:migrate       # migrate db (during deploy)
       log_folder: /usr/src/app/log          # the container log folder
-      local_ports: [3000]                   # ports for your container service
-      public_port: "80:443"                 # exposed HTTP:HTTPS ports
+      ports: ["3000:80:443"]                # ports definitions for your container service            
   databases:                                # system services
     - "mysql"                               # install mysql
 {% endhighlight %}
@@ -94,13 +93,12 @@ production:                                 # Environment type
       build_command: rake db:migrate        # migrate db (during build)
       deploy_command: rake db:migrate       # migrate db (during deploy)
       log_folder: /usr/src/app/log          # the container log folder
-      local_ports: [3000]                   # ports for your container service
-      public_port: "80:443"                 # exposed ports for this service
+      ports: ["3000:80:443", "4000"]        # ports definitions for your container service
+      volumes: ["/tmp:/tmp/mnt_folder"]     # mount volumes definitions
     api_svc:                                # another arbitrary name
-      image: quay.io/john/node             # another image source
+      image: quay.io/john/node              # another image source
       command: node test.js                 # command to start your container
-      local_ports: [1337]                   # ports for your container service
-      public_port: "8080"                   # exposed HTTP:HTTPS ports for this service
+      ports: ["1337:8080"]                  # ports definitions for your container service
       requires: ["web"]                     # requires that the "web" services is present
   databases:                                # system services
     - "mysql"                               # install MySQL
@@ -181,12 +179,16 @@ Each service is given an arbitrary name to identify it, then you have the follow
     <td>This is the folder into which the service will log, and will be mounted to <code>/var/log/containers/service</code> in the host filesystem</td>
 </tr>
 <tr>
-    <td>local_ports</td>
-    <td>The service ports that are runnin within the container</td>
+    <td>volumes</td>
+    <td>The volumes that are mounted from your host into your container. This is an array of volume definitions; each volume definition is in the format <i>HOST_FOLDER:CONTAINER_FOLDER:(RW/RO)</i>. The RW/RO on the end is optional to indicate readonly/readwrite access from the container - the default is readwrite. An example is
+      <code>["/tmp:/tmp/mount_from_host"]</code>.</td>
 </tr>
 <tr>
-    <td>public_port</td>
-    <td>The ports that are made externally available. This value is in the format HTTP:HTTPS. An example is <code>80:443</code>. For HTTP-only traffic it could be <code>80</code>, and for HTTPS-only traffic could be <code>:443</code></td>
+    <td>ports</td>
+    <td>The ports that are running within the container, as well as their corresponding external ports. This is an array of port definitions; each port definition values is in the format <i>CONTAINER_PORT:HTTP_PORT:HTTPS_PORT</i>. An example is
+      <code>["3000:80:443"]</code>. For no external ports being exposed, it could be
+      <code>["3000"]</code>. For HTTP-only traffic it could be
+      <code>["3000:80"]</code>, and for HTTPS-only traffic could be <code>["3000::443"]</code></td>
 </tr>
 <tr>
     <td>requires</td>
@@ -232,8 +234,7 @@ Example services section with some of the options defined above:
         build_command: rake db:migrate
         deploy_command: rake db:migrate
         log_folder: /usr/src/app/log
-        local_ports: [3000]                   
-        public_port: "80:443"                 
+        ports: ["3000:80:443"]                   
 {% endhighlight %}
 
 <h3 id="databases">Databases</h3>
