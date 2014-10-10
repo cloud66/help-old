@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "Step by step guid to your first Docker stack"
+title:  "Step by step guide to your first Docker stack"
 so_title: "docker"
 nav_sticky: false
 date:   2090-01-26 16:27:22
@@ -101,9 +101,7 @@ production:
     web:
       image: khash/simple_web
       command: bundle exec rackup -p 3000
-      local_ports:
-        - 3000
-      public_port: "80:443"
+      ports: ["3000:80:443"]
 {% endhighlight %}
 
 This is a YAML file. 
@@ -124,18 +122,13 @@ The main section is `services`. Any item under `services` is a Docker image. You
 
 This is the command that starts the container. In our example we are using `bundle exec rackup -p 3000` to start our Rails app on port 3000.
 
-**local_ports**
+**ports**
 
-A list of all ports that need to be exposed on the container. In our example the app is listening on port 3000 in the container.
+A list of all ports that need to be exposed on the container. The format of the ports definition is a list of `CONTAINER_PORT:HTTP_PORT:HTTPS_PORT`. Note that the HTTP and HTTPS are optional (also, you can have HTTPS without HTTP if you wish and vica versa by including the colons, but leaing that corresponding port number blank). You can define multiple port definition triplets for a single service using the above format, ie. `["3000:80:443", "4000::8443", "5000"]`
 
-**public_ports**
-
-These are HTTP/HTTPS ports that are going to be available from outside the server. Any traffic to these ports will be redirected to any containers running this service. `80:443` means any HTTP traffic on port 80 and any HTTPS traffic on port 443 will be redirected to the `web` container. 
-
-If you would like to have only HTTP or HTTPS traffic redirected, you can emit the non-applicable part of the setting. For example redirecting only HTTP on port 8080 would be through “8080:” and redirecting HTTPS only traffic on port 8443 is achieved through “:8443”.
+In our example the app is listening on port 3000 in the container, and that port is exposed via HTTP on port 80, and HTTPS on port 443. These HTTP/HTTPS port are going to be available from outside the server. Any traffic to these ports will be redirected to any containers running this service. `80:443` means any HTTP traffic on port 80 and any HTTPS traffic on port 443 will be redirected to the `web` container. 
 
 During scaling any containers running this service will get traffic distributed to them in a round robin fashion.
-
 
 <h2 id="adding-databases">Adding databases</h2>
 
@@ -147,9 +140,7 @@ production:
     web:
       image: khash/simple_web
       command: bundle exec rackup -p 3000
-      local_ports:
-        - 3000
-      public_port: "80:443"
+      ports: ["3000:80:443"]
   # adding databases
   databases:
     - "mysql"
@@ -172,9 +163,7 @@ production:
     web:
       image: khash/simple_web
       command: bundle exec rackup -p 3000
-      local_ports:
-        - 3000
-      public_port: "80:443"
+      ports: ["3000:80:443"]
       log_folder: /var/deploy/app/log  # this will be /var/log/containers/web on the host
   databases:
     - "mysql"
@@ -197,9 +186,7 @@ production:
     web:
       image: khash/simple_web
       command: bundle exec rackup -p 3000
-      local_ports:
-        - 3000
-      public_port: "80:443"
+      ports: ["3000:80:443"]
       log_folder: /var/deploy/app/log 
   databases:
     - "mysql"
@@ -220,7 +207,7 @@ The aim of container lifecycle management is to:
 
 <h3 id="http-containers">Containers serving HTTP/HTTPS traffic</h3>
 
-In case of a conatiner serving web traffic (one with `public_ports`) starting a deployment with Cloud 66 will pull the latest version of the image from your image repository and start them on the servers. It then stops any of the old containers from getting new web traffic and puts the new ones in flow to get web traffic. Once the old web traffic is all drained, it will take them down. 
+In case of a conatiner serving web traffic (one with a port definition that includes `HTTP/HTTPS` ports) starting a deployment with Cloud 66 will pull the latest version of the image from your image repository and start them on the servers. It then stops any of the old containers from getting new web traffic and puts the new ones in flow to get web traffic. Once the old web traffic is all drained, it will take them down. 
 
 <h3 id="long-running-processes">Long runnning and background process containers</h3>
 
@@ -270,13 +257,11 @@ production:
     my_web:
       image: cloud66/sample-rails
       command: rackup -p 3000
-      local_ports: [3000]
-      public_port: "80:443"
+      ports: ["3000:80:443"]
     my_api:
       image: john/node
       command: node test.js
-      local_ports: [1337]
-      public_port: "8080"
+      ports: ["1337:8080"]
 {% endhighlight %}
 
 <h2 id="service-dependencies">Service dependencies</h2>
@@ -292,16 +277,14 @@ production:
   services:
     my_web:
       image: cloud66/sample-rails
-      command: rackup -p 3000
-      local_ports: [3000]
-      public_port: "80:443"
+      command: rackup -p 3000      
+      ports: ["3000:80:443"]
       requires:
         - "my_api"
     my_api:
       image: john/node
       command: node test.js
-      local_ports: [1337]
-      public_port: "8080"
+      ports: ["1337:8080"]
 {% endhighlight %}
 
 <h2 id="scaling">Scaling</h2>
@@ -389,7 +372,7 @@ By default all containers are registered under the following path:
 Each container key will contain the following JSON serialized object:
 
 {% highlight json %}
-{ "public_ip" : SERVER_ADDRESS, "public_port" : SERVICE_PORT }
+{ "public_ip" : SERVER_ADDRESS, "ports" : SERVICE_PORTS } # SERVICE_PORTS is a hash of port information
 {% endhighlight %}
 
 For example, you can get the list of the containers running in a stack for a specific service:
