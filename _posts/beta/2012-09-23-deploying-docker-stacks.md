@@ -22,6 +22,7 @@ tags: ['Deployment']
         </li>
     <li><a href="#adding-databases">Adding databases</a></li>
     <li><a href="#logging">Logging</a></li>
+    <li><a href="#volumes">Mounting Volumes</a></li>
     <li><a href="#using-private-repositories">Using Private Repositories</li></a>
     <li><a href="#container-lifecycle-management">Container lifecycle management</a></li>
             <li>
@@ -124,7 +125,7 @@ This is the command that starts the container. In our example we are using `bund
 
 **ports**
 
-A list of all ports that need to be exposed on the container. The format of the ports definition is a list of `CONTAINER_PORT:HTTP_PORT:HTTPS_PORT`. Note that the HTTP and HTTPS are optional (also, you can have HTTPS without HTTP if you wish and vica versa by including the colons, but leaing that corresponding port number blank). You can define multiple port definition triplets for a single service using the above format, ie. `["3000:80:443", "4000::8443", "5000"]`
+A list of all ports that need to be exposed on the container. The format of the ports definition is a list of `CONTAINER_PORT:HTTP_PORT:HTTPS_PORT`. Note that the HTTP and HTTPS are optional (also, you can have HTTPS without HTTP if you wish and vica versa by including the colons, but leaving that corresponding port number blank). You can define multiple port definition triplets for a single service using the above format, ie. `["3000:80:443", "4000::8443", "5000"]`
 
 In our example the app is listening on port 3000 in the container, and that port is exposed via HTTP on port 80, and HTTPS on port 443. These HTTP/HTTPS port are going to be available from outside the server. Any traffic to these ports will be redirected to any containers running this service. `80:443` means any HTTP traffic on port 80 and any HTTPS traffic on port 443 will be redirected to the `web` container. 
 
@@ -165,6 +166,23 @@ production:
       command: bundle exec rackup -p 3000
       ports: ["3000:80:443"]
       log_folder: /var/deploy/app/log  # this will be /var/log/containers/web on the host
+  databases:
+    - "mysql"
+    - "redis"
+{% endhighlight %}
+
+<h2 id="volumes">Mounting Volumes</h2>
+
+You can use `volumes` option to mount custom host folders inside your container. This is useful if you're looking to run a datbaase service for instance as data written to your container local filesystem will not be persisted between container instances. The volumes option is a list of `HOST_FOLDER:CONTAINER_FOLDER`. You can optionally specify `ro` or `rw` on the end to specify that the the container can read/write to the host folder (the default is read/write if not specified)
+
+{% highlight yaml %}
+production:
+  services:
+    web:
+      image: khash/simple_web
+      command: bundle exec rackup -p 3000
+      ports: ["3000:80:443"]
+      volumes: ["/tmp:/tmp_host", "/readonly/folder:/mnted_readony:ro", "/readwrite/folder:/mnted_readwrite:rw"]
   databases:
     - "mysql"
     - "redis"
