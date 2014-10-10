@@ -181,7 +181,7 @@ Each service is given an arbitrary name to identify it, then you have the follow
 <tr>
     <td>volumes</td>
     <td>The volumes that are mounted from your host into your container. This is an array of volume definitions; each volume definition is in the format <i>HOST_FOLDER:CONTAINER_FOLDER:(RW/RO)</i>. The RW/RO on the end is optional to indicate readonly/readwrite access from the container - the default is readwrite. An example is
-      <code>["/tmp:/tmp/mount_from_host"]</code>.</td>
+      <code>["/tmp:/tmp/mount_from_host"]</code> or <code>["/tmp:/tmp/mount_from_host","/my/folder:/somewhere_else:ro"]</code>.</td>
 </tr>
 <tr>
     <td>ports</td>
