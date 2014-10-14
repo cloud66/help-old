@@ -475,9 +475,9 @@ Available settings:
 The URL visited to check your server health
 
 <pre class="terminal">
-load_balancer:
-    configuration:
-        httpchk: / 
+... load_balancer:
+        configuration:
+            httpchk: / 
 </pre>
 
 <hr>
@@ -494,10 +494,10 @@ The URL visited to check your server health
 The load balancing strategy. You can use these values: NONE, CLIENT_IP or CLIENT_IP_PROTO.
 
 <pre class="terminal">
-load_balancer:
-    configuration:
-        httpchk: / 
-        balance: CLIENT_IP_PROTO 
+... load_balancer:
+        configuration:
+            httpchk: / 
+            balance: CLIENT_IP_PROTO 
 </pre>
 
 <hr>
@@ -515,17 +515,17 @@ The load balancing strategy
 Location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer
 
 <pre class="terminal">
-load_balancer:
-    configuration:
-        httpchk: HEAD / HTTP/1.0 (default value)
-        balance: roundrobin (default value)
-        errorfile&#95;400: /etc/haproxy/errors/400.http
-        errorfile&#95;403: /etc/haproxy/errors/403.http
-        errorfile&#95;408: /etc/haproxy/errors/408.http
-        errorfile&#95;500: /etc/haproxy/errors/500.http
-        errorfile&#95;502: /etc/haproxy/errors/502.http
-        errorfile&#95;503: /etc/haproxy/errors/503.http
-        errorfile&#95;504: /etc/haproxy/errors/504.http
+... load_balancer:
+        configuration:
+            httpchk: HEAD / HTTP/1.0 (default value)
+            balance: roundrobin (default value)
+            errorfile&#95;400: /etc/haproxy/errors/400.http
+            errorfile&#95;403: /etc/haproxy/errors/403.http
+            errorfile&#95;408: /etc/haproxy/errors/408.http
+            errorfile&#95;500: /etc/haproxy/errors/500.http
+            errorfile&#95;502: /etc/haproxy/errors/502.http
+            errorfile&#95;503: /etc/haproxy/errors/503.http
+            errorfile&#95;504: /etc/haproxy/errors/504.http
 </pre>
 
 <hr>
@@ -541,10 +541,10 @@ The health-check configuration
 The load balancing strategy. You can use these values : roundrobin, leastconn or source.
 
 <pre class="terminal">
-load_balancer:
-    configuration:
-        httpchk: / 
-        balance: leastconn 
+... load_balancer:
+        configuration:
+            httpchk: / 
+            balance: leastconn 
 </pre>
 
 <hr>
@@ -558,9 +558,9 @@ Available settings (refer to the [Rackspace documentation](http://docs.rackspace
 The load balancing strategy. You can use these values : ROUND_ROBIN, RANDOM or LEAST_CONNECTIONS.
 
 <pre class="terminal">
-load_balancer:
-    configuration:
-        balance: LEAST_CONNECTIONS 
+... load_balancer:
+        configuration:
+            balance: LEAST_CONNECTIONS 
 </pre>
 
 <hr>
