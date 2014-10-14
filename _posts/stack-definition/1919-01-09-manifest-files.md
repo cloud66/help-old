@@ -38,13 +38,12 @@ tags: ['Deployment']
             <li><ul><li><a href="#redis">Redis</a></li></ul>
             <li><ul><li><a href="#sinatra">Sinatra</a></li></ul>
         </li>
-    <li><a href="#loadbalancer">LoadBalancer</a></li>
-            <li><ul><li><a href="#haproxy">HAProxy</a></li></ul></li>
+    <li><a href="#loadbalancer">Load balancers</a></li>
+            <li><ul><li><a href="#aws_elb">AWS load balancer</a></li></ul></li>
+            <li><ul><li><a href="#gce_lb">GCE load balancer</a></li></ul></li>
+            <li><ul><li><a href="#haproxy">HAProxy</a></li></ul></li>            
             <li><ul><li><a href="#nodebalancer">Linode Nodebalancer</a></li></ul></li>
-            <li><ul><li><a href="#rs_loadbalancer">Rackspace Loadbalancer</a></li></ul></li>
-            <li><ul><li><a href="#aws_elb">AWS LoadBalancer</a></li></ul></li>
-            <li><ul><li><a href="#gce_lb">GCE Nodebalancer</a></li></ul></li>
-
+            <li><ul><li><a href="#rs_loadbalancer">Rackspace load balancer</a></li></ul></li>
         </li>
     </ul>
     <li><a href="#environment_variables">Environment variables in the manifest</a></li> 
@@ -465,14 +464,48 @@ If you want to, you can also specify the origin and methods for CORS.
 
 <hr>
 
-<h3 id="loadbalancer">LoadBalancer</h3>
+<h3 id="loadbalancer">Load balancers</h3>
+
+<h4 id="aws_elb">AWS load balancer</h4>
+Use a manifest file to the AWS load balancer deployed by Cloud 66. These changes will only apply when you create a new load balancer.
+
+Available settings:
+
+- **httpchk**<br/>
+The URL visited to check your server health
+
+<pre class="terminal">
+load_balancer:
+    configuration:
+        httpchk: / 
+</pre>
+
+<hr>
+
+<h4 id="gce_lb">GCE load balancer</h4>
+Use a manifest file to the GCE load balancer deployed by Cloud 66. These changes will only apply when you create a new load balancer.
+
+Available settings (refer to the [GCE documentation](https://cloud.google.com/compute/docs/load-balancing/network/target-pools) for more information):
+
+- **httpchk**<br/>
+The URL visited to check your server health
+
+- **balance**<br/>
+The load balancing strategy. You can use these values: NONE, CLIENT_IP or CLIENT_IP_PROTO.
+
+<pre class="terminal">
+load_balancer:
+    configuration:
+        httpchk: / 
+        balance: CLIENT_IP_PROTO 
+</pre>
 
 <hr>
 
 <h4 id="haproxy">HAProxy</h4>
-You can use the manifest file to make small configuration changes to the HAProxy load balancer deployed by Cloud 66 at any point. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/how-to/haproxy-customconfig.html).
+Use a manifest file to configure your HAProxy load balancer deployed by Cloud 66. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/load-balancing/haproxy.html).
 
-Currently they are limited to the following options:
+Available settings (refer to the [HAProxy documentation](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt) for more information):
 
 - **httpchk**<br/>
 The health-check configuration
@@ -480,8 +513,6 @@ The health-check configuration
 The load balancing strategy
 - **errorfile&#95;\*** <br/>
 Location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer
-
-Note: To find out about the available options for each one of the values, please refer to [HAProxy manual](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt).
 
 <pre class="terminal">
 load_balancer:
@@ -500,9 +531,9 @@ load_balancer:
 <hr>
 
 <h4 id="nodebalancer">Linode Nodebalancer</h4>
-You can use the manifest file to make small configuration changes to the Linode nodebalancer deployed by Cloud 66. These changes will apply when you add a new NodeBalancer.
+Use a manifest file to the Linode Nodebalancer deployed by Cloud 66. These changes will only apply when you create a new load balancer.
 
-Currently they are limited to the following options:
+Available settings (refer to the [Linode documentation](https://www.linode.com/docs/platform/nodebalancer/nodebalancer-reference-guide) for more information):
 
 - **httpchk**<br/>
 The health-check configuration
@@ -518,10 +549,10 @@ load_balancer:
 
 <hr>
 
-<h4 id="rs_loadbalancer">Rackspace Loadbalancer</h4>
-You can use the manifest file to make small configuration changes to the Rackspace loadbalancer deployed by Cloud 66. These changes will apply when you add a new LoadBalancer.
+<h4 id="rs_loadbalancer">Rackspace load balancer</h4>
+Use a manifest file to the Rackspace load balancer deployed by Cloud 66. These changes will only apply when you create a new load balancer.
 
-Currently you can change load balancing strategy:
+Available settings (refer to the [Rackspace documentation](http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Algorithms-d1e4367.html) for more information):
 
 - **balance**<br/>
 The load balancing strategy. You can use these values : ROUND_ROBIN, RANDOM or LEAST_CONNECTIONS.
@@ -530,41 +561,6 @@ The load balancing strategy. You can use these values : ROUND_ROBIN, RANDOM or L
 load_balancer:
     configuration:
         balance: LEAST_CONNECTIONS 
-</pre>
-
-<hr>
-
-<h4 id="aws_elb">AWS LoadBalancer</h4>
-You can use the manifest file to make small configuration changes to the AWS Loadbalancer deployed by Cloud 66. These changes will apply when you add a new LoadBalancer.
-
-Currently you can change health-check configuration:
-
-- **httpchk**<br/>
-The health-check configuration
-
-<pre class="terminal">
-load_balancer:
-    configuration:
-        httpchk: / 
-</pre>
-
-<hr>
-
-<h4 id="gce_lb">GCE Loadbalancer</h4>
-You can use the manifest file to make small configuration changes to the GCE loadbalancer deployed by Cloud 66. These changes will apply when you add a new LoadBalancer.
-
-Currently they are limited to the following options:
-
-- **httpchk**<br/>
-The health-check configuration
-- **balance**<br/>
-The load balancing strategy. You can use these values : NONE,CLIENT_IP or CLIENT_IP_PROTO.
-
-<pre class="terminal">
-load_balancer:
-    configuration:
-        httpchk: / 
-        balance: CLIENT_IP_PROTO 
 </pre>
 
 <hr>
