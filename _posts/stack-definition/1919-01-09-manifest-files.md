@@ -11,7 +11,7 @@ search-tags: []
 tags: ['Deployment']
 ---
 
-<h2>Contents</h2>
+<h2>Contents</h2>                                                                           
 <ul class="page-toc">
 	<li><a href="#intro">What are manifest files?</a></li>
          
@@ -29,7 +29,6 @@ tags: ['Deployment']
             </li>
     <li><a href="#app-specific">Application specific</a></li>
             <li><ul><li><a href="#elastic">ElasticSearch</a></li></ul></li>
-            <li><ul><li><a href="#haproxy">HAProxy</a></li></ul></li>
             <li><ul><li><a href="#memcached">Memcached</a></li></ul></li>
             <li><ul><li><a href="#mongo">MongoDB</a></li></ul></li>
             <li><ul><li><a href="#postgis">PostGIS</a></li></ul></li>
@@ -38,6 +37,14 @@ tags: ['Deployment']
             <li><ul><li><a href="#rails">Rails</a></li></ul></li>
             <li><ul><li><a href="#redis">Redis</a></li></ul>
             <li><ul><li><a href="#sinatra">Sinatra</a></li></ul>
+        </li>
+    <li><a href="#loadbalancer">LoadBalancer</a></li>
+            <li><ul><li><a href="#haproxy">HAProxy</a></li></ul></li>
+            <li><ul><li><a href="#nodebalancer">Linode Nodebalancer</a></li></ul></li>
+            <li><ul><li><a href="#rs_loadbalancer">Rackspace Loadbalancer</a></li></ul></li>
+            <li><ul><li><a href="#aws_elb">AWS LoadBalancer</a></li></ul></li>
+            <li><ul><li><a href="#gce_lb">GCE Nodebalancer</a></li></ul></li>
+
         </li>
     </ul>
     <li><a href="#environment_variables">Environment variables in the manifest</a></li> 
@@ -107,7 +114,6 @@ Cloud 66 currently recognizes the following application types in your manifest f
 
 <ul class="page-toc">
 <li><a href="#elastic">ElasticSearch</a></li>
-<li><a href="#haproxy">HAProxy</a></li>
 <li><a href="#memcache">Memcached</a></li>
 <li><a href="#mongo">MongoDB</a></li>
 <li><a href="#postgis">PostGIS</a></li>
@@ -257,36 +263,6 @@ Specify the version of ElasticSearch you want to install (does not apply to exte
 		    server: ...
         configuration:
             version: 0.90.7
-</pre>
-
-<hr>
-
-<h4 id="haproxy">HAProxy</h4>
-You can use the manifest file to make small configuration changes to the HAProxy load balancer deployed by Cloud 66 at any point. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/how-to/haproxy-customconfig.html).
-
-Currently they are limited to the following options:
-
-- **httpchk**<br/>
-The health-check configuration
-- **balance**<br/>
-The load balancing strategy
-- **errorfile&#95;\*** <br/>
-Location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer
-
-Note: To find out about the available options for each one of the values, please refer to [HAProxy manual](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt).
-
-<pre class="terminal">
-haproxy:
-    configuration:
-        httpchk: HEAD / HTTP/1.0 (default value)
-        balance: roundrobin (default value)
-        errorfile&#95;400: /etc/haproxy/errors/400.http
-        errorfile&#95;403: /etc/haproxy/errors/403.http
-        errorfile&#95;408: /etc/haproxy/errors/408.http
-        errorfile&#95;500: /etc/haproxy/errors/500.http
-        errorfile&#95;502: /etc/haproxy/errors/502.http
-        errorfile&#95;503: /etc/haproxy/errors/503.http
-        errorfile&#95;504: /etc/haproxy/errors/504.http
 </pre>
 
 <hr>
@@ -485,6 +461,110 @@ If you want to, you can also specify the origin and methods for CORS.
                 cors:
                     origin: '*'
                     methods: 'GET, OPTION'
+</pre>
+
+<hr>
+
+<h3 id="loadbalancer">LoadBalancer</h3>
+
+<hr>
+
+<h4 id="haproxy">HAProxy</h4>
+You can use the manifest file to make small configuration changes to the HAProxy load balancer deployed by Cloud 66 at any point. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/how-to/haproxy-customconfig.html).
+
+Currently they are limited to the following options:
+
+- **httpchk**<br/>
+The health-check configuration
+- **balance**<br/>
+The load balancing strategy
+- **errorfile&#95;\*** <br/>
+Location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer
+
+Note: To find out about the available options for each one of the values, please refer to [HAProxy manual](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt).
+
+<pre class="terminal">
+load_balancer:
+    configuration:
+        httpchk: HEAD / HTTP/1.0 (default value)
+        balance: roundrobin (default value)
+        errorfile&#95;400: /etc/haproxy/errors/400.http
+        errorfile&#95;403: /etc/haproxy/errors/403.http
+        errorfile&#95;408: /etc/haproxy/errors/408.http
+        errorfile&#95;500: /etc/haproxy/errors/500.http
+        errorfile&#95;502: /etc/haproxy/errors/502.http
+        errorfile&#95;503: /etc/haproxy/errors/503.http
+        errorfile&#95;504: /etc/haproxy/errors/504.http
+</pre>
+
+<hr>
+
+<h4 id="nodebalancer">Linode Nodebalancer</h4>
+You can use the manifest file to make small configuration changes to the Linode nodebalancer deployed by Cloud 66. These changes will apply when you add a new NodeBalancer.
+
+Currently they are limited to the following options:
+
+- **httpchk**<br/>
+The health-check configuration
+- **balance**<br/>
+The load balancing strategy. You can use these values : roundrobin, leastconn or source.
+
+<pre class="terminal">
+load_balancer:
+    configuration:
+        httpchk: / 
+        balance: leastconn 
+</pre>
+
+<hr>
+
+<h4 id="rs_loadbalancer">Rackspace Loadbalancer</h4>
+You can use the manifest file to make small configuration changes to the Rackspace loadbalancer deployed by Cloud 66. These changes will apply when you add a new LoadBalancer.
+
+Currently you can change load balancing strategy:
+
+- **balance**<br/>
+The load balancing strategy. You can use these values : ROUND_ROBIN, RANDOM or LEAST_CONNECTIONS.
+
+<pre class="terminal">
+load_balancer:
+    configuration:
+        balance: LEAST_CONNECTIONS 
+</pre>
+
+<hr>
+
+<h4 id="aws_elb">AWS LoadBalancer</h4>
+You can use the manifest file to make small configuration changes to the AWS Loadbalancer deployed by Cloud 66. These changes will apply when you add a new LoadBalancer.
+
+Currently you can change health-check configuration:
+
+- **httpchk**<br/>
+The health-check configuration
+
+<pre class="terminal">
+load_balancer:
+    configuration:
+        httpchk: / 
+</pre>
+
+<hr>
+
+<h4 id="gce_lb">GCE Loadbalancer</h4>
+You can use the manifest file to make small configuration changes to the GCE loadbalancer deployed by Cloud 66. These changes will apply when you add a new LoadBalancer.
+
+Currently they are limited to the following options:
+
+- **httpchk**<br/>
+The health-check configuration
+- **balance**<br/>
+The load balancing strategy. You can use these values : NONE,CLIENT_IP or CLIENT_IP_PROTO.
+
+<pre class="terminal">
+load_balancer:
+    configuration:
+        httpchk: / 
+        balance: CLIENT_IP_PROTO 
 </pre>
 
 <hr>
