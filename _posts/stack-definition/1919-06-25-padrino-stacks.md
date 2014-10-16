@@ -22,7 +22,7 @@ tags: ['']
 </li>    
 </ul>
 
-Cloud 66 supports stacks based on the [Padrino framework](http://www.padrinorb.com/), a light-weight web framework built upon [Sinatra](/stacks/sinatra-stacks.html).
+Cloud 66 supports stacks based on the [Padrino framework](http://www.padrinorb.com/), a light-weight web framework built upon [Sinatra](/stack-definition/sinatra-stacks.html).
 
 <h2 id="custom">Custom commands</h2>
 Given that Padrino applications can have different database frameworks, we allow you to specify custom commands which are run at specific points during deployment:

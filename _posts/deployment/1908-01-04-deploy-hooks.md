@@ -166,9 +166,9 @@ To make use of deploy hooks, a file called _deploy_hooks.yml_ should be present 
 Creating a deploy hook from scratch consists of a number of steps:
 
 1. Choose your environment - eg. example _production_, _development_, _staging_ and so on.
-2. Choose your [hook point](/stack-features/deploy-hooks.html#points) - eg. <i>first_thing</i>, <i>after_rails</i> and so on.
+2. Choose your hook point - eg. <i>first_thing</i>, <i>after_rails</i> and so on.
 3. Choose your deploy hook type - eg. <i>snippet</i>, <i>command</i> or <i>script</i>.
-4. Select any additional [hook fields](/stack-features/deploy-hooks.html#fields) you require
+4. Select any additional hook fields you require
 
 Automating deploy hooks can sometimes be tricky. To avoid issues, it's good practice to run each of your commands manually to see that they complete successfully. If a specific command doesn't show any output, you can use the <code>echo $?</code> command after issuing your command to see its exit code. If it returns a _zero_, your command was successful, whereas a _one_ means it has failed.
 
@@ -198,7 +198,7 @@ production: # Environment
     <p>When automating the installation of packages, remember to use the <i>-y</i> flag to answer yes to all prompts.</p>
 </div>
 
-The example below can be used to run custom rake tasks during server build. If you need to run it more than once, consider using the [rake task add-in](/add-ins/rake-task.html).
+The example below can be used to run custom rake tasks during server build. If you need to run it more than once, consider using the [rake task add-in](/stack-definition/rake-task.html).
 
 {% highlight yaml %}
 production: # Environment
