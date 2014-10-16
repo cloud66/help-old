@@ -33,7 +33,6 @@ tags: ['Deployment']
             <li><ul><li><a href="#mongo">MongoDB</a></li></ul></li>
             <li><ul><li><a href="#postgis">PostGIS</a></li></ul></li>
             <li><ul><li><a href="#postgresql">PostgreSQL</a></li></ul></li>
-            <li><ul><li><a href="#rabbit">RabbitMQ</a></li></ul></li>
             <li><ul><li><a href="#rails">Rails</a></li></ul></li>
             <li><ul><li><a href="#redis">Redis</a></li></ul>
             <li><ul><li><a href="#sinatra">Sinatra</a></li></ul>
@@ -117,13 +116,12 @@ Cloud 66 currently recognizes the following application types in your manifest f
 <li><a href="#mongo">MongoDB</a></li>
 <li><a href="#postgis">PostGIS</a></li>
 <li><a href="#psql">PostgreSQL</a></li>
-<li><a href="#rabbit">RabbitMQ</a></li>
 <li><a href="#rails">Rails</a></li>
 <li><a href="#redis">Redis</a></li>
 </ul>
 
 <h3 id="servers">Server type</h3>
-Every application defined in the manifest file must be bound to a server. However, if you'd like configurations to apply to all servers in an application type, you don't need to specify a server type. Servers can be deployed specifically to host that application, [be shared between multiple applications](/stack-definition/manifest-files.html#shared) (eg. Rails and MySQL on the same server) or be an [external server](/stack-definition/manifest-files.html#external) (eg. using an external database).
+Every application defined in the manifest file must be bound to a server. However, if you'd like configurations to apply to all servers in an application type, you don't need to specify a server type. Servers can be deployed specifically to host that application, be shared between multiple applications (eg. Rails and MySQL on the same server) or be an external server (eg. using an external database).
 
 Here is an example of a server definition:
 {% highlight ruby %}
@@ -186,12 +184,12 @@ Cloud vendor to fire up the server on. Valid values:
 **region**
 (_Optional, BYOC Only_)
 
-[Data center region](/api/basics/instance-regions.html) to fire up the server in.
+[Data center region](http://developers.cloud66.com/#cloud-vendor-instance-regions) to fire up the server in.
 
 **size**
 (_Optional, BYOC Only_)
 
-[Size of the server instance](/api/basics/instance-names.html) created.
+[Size of the server instance](http://developers.cloud66.com/#cloud-provider-instance-names) created.
 
 **address**
 (_Optional, BYOS Only_)
@@ -525,7 +523,7 @@ Location of your own custom error page content to serve in the case of receiving
             errorfile&#95;500: /etc/haproxy/errors/500.http
             errorfile&#95;502: /etc/haproxy/errors/502.http
             errorfile&#95;503: /etc/haproxy/errors/503.http
-            errorfile&#95;504: /etc/haproxy/errors/504.http
+            errorfile&#95;504: /etc/haproxy/errors/504.https
 </pre>
 
 <hr>
