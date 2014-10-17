@@ -195,6 +195,10 @@ Each service is given an arbitrary name to identify it, then you have the follow
     <td>This is an array of other defined service names that should be started before this service during build and deployment</td>
 </tr>
 <tr>
+    <td>restart_on_deploy</td>
+    <td>This is a boolean value to indicate whether the containers of this service should be restarted during deployment or not (default: true)</td>
+</tr>
+<tr>
     <td>pre_start_signal</td>
     <td>This is a signal that is sent to the existing running containers of the service before the new service containers are started during deployment. An example could be <code>USR1</code> - but it depends on what your container is running as to which signals make sense</td>
 </tr>
