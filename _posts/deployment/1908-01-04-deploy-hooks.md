@@ -125,6 +125,7 @@ There are three types of deploy hooks, and the fields available (and required) v
 	<TR class="header"><TD width="13%"><b>Snippets</b> <span>-</span><TD width="15%"><TD width="70%">
 	<TR><TD><TD width="13%">snippet <img src="http://cdn.cloud66.com/images/help/required.gif"><TD width="70%">Snippet to be used - run in <i>/tmp/deploy_hooks</i> by default
 	<TR><TD><TD>target <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
+	<TR><TD><TD>execute <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Set to true for the snippet to be executable.
 	<TR><TD><TD>apply_during<br> (all)<TD>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<TR><TD><TD>halt_on_error (true)<TD>Specify whether the execution should continue or halt in the event of an error.
 	<TR><TD><TD>run_on<br> (single server)<TD>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
@@ -134,6 +135,7 @@ There are three types of deploy hooks, and the fields available (and required) v
 	<TR class="header"><TD width="13%"><b>Commands</b> <span>-</span><TD><TD>
 	<TR><TD><TD width="13%">command <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Command to be used - run in <i>/tmp/deploy_hooks</i> by default
 	<TR><TD><TD>target <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
+	<TR><TD><TD>execute <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Set to true for the command to execute.
 	<TR><TD><TD>apply_during<br> (all)<TD>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<TR><TD><TD>halt_on_error (true)<TD>Specify whether the execution should continue or halt in the event of an error.
 	<TR><TD><TD>run_on<br> (single server)<TD>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
@@ -180,6 +182,7 @@ production: # Environment
     first_thing: # Hook point
       - snippet: cloud66/node # Hook type
         target: any # Hook fields
+        execute: true
 {% endhighlight %}
 
 See the available hook points and fields for more ways to customize this.
@@ -191,6 +194,7 @@ production: # Environment
     first_thing: # Hook point
       - command: apt-get install curl -y # Hook type
         target: any # Hook fields
+        execute: true
 {% endhighlight %}
 
 <div class="notice">
