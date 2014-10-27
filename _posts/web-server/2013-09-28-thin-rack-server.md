@@ -27,7 +27,7 @@ tags: ['Web server']
     </li>         
 </ul>
 
-<h2 id="about">About running apps with Puma</h2>
+<h2 id="about">About running apps with Thin</h2>
 [Thin](http://code.macournoyer.com/thin/) is a Ruby web server that can handle high levels of concurrency. Cloud 66 uses the following signals to control Thin:
 
 <h3 id="stop">Stop the web server</h3>
