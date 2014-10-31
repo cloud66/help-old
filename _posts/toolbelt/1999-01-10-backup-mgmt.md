@@ -58,7 +58,7 @@ This will list all the managed backups of a stack grouped by their database type
 
 <h3 id="list_usage">Usage</h3>
 {% highlight bash %}
-$ cx backups [-s <stack>] [-l] [<db type>]
+$ cx backups [-s &lt;stack&gt;] [-l] [&lt;db type&gt;]
 {% endhighlight %}
 
 <h3 id="list_params">Parameters</h3>
@@ -102,7 +102,7 @@ Allows you to download a database backup through the command line, concatenating
 
 <h3 id="download_usage">Usage</h3>
 {% highlight bash %}
-$ cx download-backup [-d <download directory>] <backup id>
+$ cx download-backup [-d &lt;download directory&gt;] &lt;backup id&gt;
 {% endhighlight %}
 
 <h3 id="download_params">Parameters</h3>
