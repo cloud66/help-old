@@ -14,12 +14,19 @@ We provide two different ways for you to SSH to your server - an automated way w
 
 ## Cloud 66 toolbelt
 You can use the [Cloud 66 toolbelt](/toolbelt/introduction.html) to easily SSH to your servers. Once initialized, the following command can be used:
-{% highlight bash %}
+
+
 # Full
+
+{% highlight bash %}
 cx ssh [-s <stack>] <server name>|<server ip>|<server role>
+{% endhighlight %}
+
 # Example
+{% highlight bash %}
 cx ssh -s "My Awesome App" web
 {% endhighlight %}
+
 
 See [toolbelt shortcuts](/toolbelt/introduction.html), for information on how you can make this even easier.
 
