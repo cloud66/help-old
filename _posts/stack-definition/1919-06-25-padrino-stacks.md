@@ -16,10 +16,10 @@ tags: ['']
 
 <h2>Contents</h2>
 <ul class="page-toc">
-  <li><a href="#custom">Custom commands</a></li>      
-  <li><a href="#connect">Connect to your database</a></li>         
-  <li><a href="#example">Example application</a></li>   
-</li>    
+  <li><a href="#custom">Custom commands</a></li>
+  <li><a href="#connect">Connect to your database</a></li>
+  <li><a href="#example">Example application</a></li>
+</li>
 </ul>
 
 Cloud 66 supports stacks based on the [Padrino framework](http://www.padrinorb.com/), a light-weight web framework built upon [Sinatra](/stack-definition/sinatra-stacks.html).
@@ -67,9 +67,10 @@ Should you wish to change the database username/password after build, you will h
   <p>You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.</p>
 </div>
 
-<h3>Active Record</h3>
+<h2>Active Record</h2>
 
-**MySQL YML**
+<h3>MySQL YML</h3>
+
 {% highlight yaml %}
 production:
   adapter: mysql2
@@ -80,6 +81,7 @@ production:
 {% endhighlight %}
 
 **PostgreSQL YML**
+
 {% highlight yaml %}
 production:
   adapter: postgresql
@@ -90,6 +92,7 @@ production:
 {% endhighlight %}
 
 **Declarative**
+
 {% highlight ruby %}
 ActiveRecord::Base.configurations[:development] = {
   :adapter   => 'mysql2',

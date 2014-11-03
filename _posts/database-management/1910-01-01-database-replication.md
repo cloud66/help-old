@@ -56,9 +56,9 @@ Database replication can be set up for a single stack, or between stacks, with v
 Note that <b>replication between stacks is not supported for MongoDB.</b>
 
 <h2 id="how">How it works</h2>
-When you start replicating your database, the Cloud 66 will commence the following process:<br/><br/>
+When you start replicating your database, the Cloud 66 will commence the following process:
 
-<ul style="margin-bottom:0em">
+<ol>
 	<li>We take a full backup of the master database server in your source stack
 	    <ul style="margin-bottom:0em">
 	        <li>Single stack: we create a secondary database server in your cloud and restore your backup on it</li>
@@ -68,14 +68,15 @@ When you start replicating your database, the Cloud 66 will commence the followi
 	<li>The secondary database is configured to be a slave of the source database</li>
 	<li>The source database is configured to be a master of the secondary database</li>
 	<li>The relevant environment variables are updated for use in your code and scripts</li>
-</ul>
+</ol>
 
-Similarly, when you disable replication, the following steps are initiated:
-<ul style="margin-bottom:0em">
-<li>We disable replication on your master database, and configure it to be a standalone database server</li>
-<li>The secondary database server is removed as a slave from the master database server on the source</li>
-<li>The source database server is configured as a standalone database server</li>
-<li>The relevant environment variables are updated for use in your code and scripts</li>
+<p>Similarly, when you disable replication, the following steps are initiated:</p>
+
+<ul>
+	<li>We disable replication on your master database, and configure it to be a standalone database server</li>
+	<li>The secondary database server is removed as a slave from the master database server on the source</li>
+	<li>The source database server is configured as a standalone database server</li>
+	<li>The relevant environment variables are updated for use in your code and scripts</li>
 </ul>
 
 <h3 id="mysql">MySQL</h3>
@@ -149,17 +150,18 @@ Cloud 66 generates and maintains a number of environment variables automatically
 In the case that an environment variable contains multiple values, such as IP addresses, these are separated by comma.
 
 <h2 id="enable">Enable database replication</h2>
+
 The process of enabling database replication varies slightly for a single stack as opposed to replication between stacks.
-<br/><br/>
+
 <div class="notice notice-danger">
 	<h3>Important</h3>
 	<p>Database replication will disrupt the database serving your application during the replication configuration process. The disruption time depends entirely on your database type and size, and different databases may require a restart and/or a complete backup in order to warm-up the new server. This disruption will occur every time you scale your server.</p>
 </div>
 
-<b>Single stack</b>:<br/>
+<h3>Single stack</h3>
 To enable replication on a single stack, visit your stack detail page, click on the database server group (eg. _MySQL server_) and click <i>Scale Up</i> in the top right corner. This will allow you to choose your new server size. Your new server should contain at least two times more disk space than the size of your database backup, and we recommend that it is comparable to your master server (in terms of memory).
 
-<b>Between stacks</b>:<br/>
+<h3>Between stacks</h3>
 To enable replication between stacks, ensure that you have a secondary stack deployed, and that its database server contains at least two times more disk space than the size of your database backup. Visit your stack detail page, click on the database server group (eg. _MySQL server_) click into your main database server page. Next, click _Configure data replication_ in the right sidebar, and select a source stack. Confirm to commence the replication process.
 
 <h2 id="disable">Disable database replication</h2>
