@@ -6,7 +6,7 @@ so_title: "asset pipeline"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1980-09-24 10:51:22
-categories: stack-definition
+categories: building-your-stack
 lead: Improve performance in Rails applications => 3.1.0
 search-tags: ['']
 tags: ['Deployment']
@@ -31,7 +31,7 @@ tags: ['Deployment']
     </li>
     <li>
         <a href="#speeding">About speeding up Rails deployments</a>
-    </li>    
+    </li>
 </ul>
 
 <h2 id="onoff">Enable/disable asset pipeline compilation</h2>

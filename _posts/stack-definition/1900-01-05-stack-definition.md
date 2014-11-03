@@ -5,7 +5,7 @@ title:  "Stack definition"
 nav: true
 cloud66_text: "Try Cloud 66 for free"
 date:   2038-01-25 16:27:22
-categories: stack-definition
+categories: building-your-stack
 lead: Everything you need to know about stacks
 search-tags: ['']
 tags: ['']
@@ -26,13 +26,13 @@ tags: ['']
 	        <li><a href="#db">Database servers (optional)</a></li>
 	        <li><a href="#os">Operating system</a></li>
 	        <li><a href="#cloud">Cloud vendor</a></li>
-        </ul>	
+        </ul>
 	<li>
 		<a href="#envs">Stack environments</a>
 	</li>
 	<li>
 		<a href="#stackscore">StackScore</a>
-	</li>	
+	</li>
 	<li>
 		<a href="#build">Build a stack</a>
 	</li>
@@ -44,7 +44,7 @@ tags: ['']
 	</li>
 	<li>
 		<a href="#delete">Delete a stack</a>
-	</li>	
+	</li>
 </ul>
 
 <h2 id="what">What is a stack?</h2>

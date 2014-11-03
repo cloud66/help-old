@@ -5,20 +5,20 @@ title:  "Manifest files"
 so_title: "manifest"
 nav_sticky: false
 date:   2092-01-25 16:27:22
-categories: stack-definition
+categories: building-your-stack
 lead: You can be more explicit about your stack composition
 search-tags: []
 tags: ['Deployment']
 ---
 
-<h2>Contents</h2>                                                                           
+<h2>Contents</h2>
 <ul class="page-toc">
 	<li><a href="#intro">What are manifest files?</a></li>
-         
-    <li><a href="#composition">Composition of a manifest file</a></li>   
+
+    <li><a href="#composition">Composition of a manifest file</a></li>
         <li><ul>
             <li><a href="#sample">Sample manifest file</a></li>
-            <li><a href="#environments">Environments</a></li>   
+            <li><a href="#environments">Environments</a></li>
             <li><a href="#apps">Application types</a></li>
             <li><a href="#servers">Server configurations</a></li>
             <li>
@@ -40,13 +40,13 @@ tags: ['Deployment']
     <li><a href="#loadbalancer">Load balancers</a></li>
             <li><ul><li><a href="#aws_elb">AWS load balancer</a></li></ul></li>
             <li><ul><li><a href="#gce_lb">GCE load balancer</a></li></ul></li>
-            <li><ul><li><a href="#haproxy">HAProxy</a></li></ul></li>            
+            <li><ul><li><a href="#haproxy">HAProxy</a></li></ul></li>
             <li><ul><li><a href="#nodebalancer">Linode Nodebalancer</a></li></ul></li>
             <li><ul><li><a href="#rs_loadbalancer">Rackspace load balancer</a></li></ul></li>
         </li>
     </ul>
-    <li><a href="#environment_variables">Environment variables in the manifest</a></li> 
-</li>    
+    <li><a href="#environment_variables">Environment variables in the manifest</a></li>
+</li>
 </ul>
 
 <h2 id="intro">What are manifest files?</h2>
@@ -433,7 +433,7 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
         servers:
             server: ...
         configuration:
-            ruby&#95;version: 1.9.3        
+            ruby&#95;version: 1.9.3
             do&#95;initial&#95;db&#95;schema&#95;load: false
             reserved&#95;server&#95;memory: 0 (default value)
             passenger&#95;process&#95;memory: 200 (default value)
@@ -473,7 +473,7 @@ The URL visited to check your server health
 <pre class="terminal">
 ... load_balancer:
         configuration:
-            httpchk: / 
+            httpchk: /
 </pre>
 
 <hr>
@@ -492,8 +492,8 @@ The load balancing strategy. You can use these values: NONE, CLIENT_IP or CLIENT
 <pre class="terminal">
 ... load_balancer:
         configuration:
-            httpchk: / 
-            balance: CLIENT_IP_PROTO 
+            httpchk: /
+            balance: CLIENT_IP_PROTO
 </pre>
 
 <hr>
@@ -539,8 +539,8 @@ The load balancing strategy. You can use these values : roundrobin, leastconn or
 <pre class="terminal">
 ... load_balancer:
         configuration:
-            httpchk: / 
-            balance: leastconn 
+            httpchk: /
+            balance: leastconn
 </pre>
 
 <hr>
@@ -556,7 +556,7 @@ The load balancing strategy. You can use these values : ROUND_ROBIN, RANDOM or L
 <pre class="terminal">
 ... load_balancer:
         configuration:
-            balance: LEAST_CONNECTIONS 
+            balance: LEAST_CONNECTIONS
 </pre>
 
 <hr>

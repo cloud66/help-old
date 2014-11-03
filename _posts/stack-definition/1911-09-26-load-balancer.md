@@ -5,13 +5,13 @@ title:  "- Load balancer"
 date:   2060-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-categories: stack-definition
+categories: add-ins
 lead: Adding a load balancer couldn't be easier
 search-tags: ['lb', 'load balancer']
 tags: ['Add in', 'Scaling']
 ---
 
-## What is load balancing? 
+## What is load balancing?
 A load balancer is used to distribute traffic across your web servers, and offers benefits such as maximizing throughoutput, minimizing response times and avoiding overload on any single server. Ultimately, load balancing increases the reliability of your stack.
 
 <div class="notice">

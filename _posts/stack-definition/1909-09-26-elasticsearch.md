@@ -5,13 +5,13 @@ title:  "- Elasticsearch"
 date:   2075-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-categories: stack-definition
+categories: add-ins
 lead: Add Elasticsearch to your stack with ease
 search-tags: ['elasticsearch']
 tags: ['Add in']
 ---
 
-## What is Elasticsearch? 
+## What is Elasticsearch?
 [Elasticsearch](http://www.elasticsearch.org/) is a powerful open source search and analytics engine, and it's easy to add to your stack as an add-in.
 
 ## Add Elasticearch

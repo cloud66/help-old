@@ -5,7 +5,7 @@ title:  "- Logentries"
 date:   2055-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-categories: stack-definition
+categories: add-ins
 lead: Simple web-based log analysis service for your servers
 search-tags: ['log entries', 'logentries']
 tags: ['Logs', 'Add ins']

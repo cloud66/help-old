@@ -5,7 +5,7 @@ title:  "Add-in implementation"
 date:   2100-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-categories: stack-definition
+categories: add-ins
 lead: Extend the functionality of your stack with add-ins
 search-tags: ['addin', 'addins', 'add-ins']
 tags: ['Add ins']

@@ -6,18 +6,18 @@ so_title: "Sinatra"
 nav: true
 nav_prev: ""
 date:   2015-11-18 16:27:22
-categories: stack-definition
+categories: building-your-stack
 lead: Cloud 66 makes it easy to deploy and maintain Sinatra apps
 search-tags: ['']
 tags: ['']
 ---
 
 <h2>Contents</h2>
-<ul class="page-toc">   
-  <li><a href="#custom">Custom commands</a></li>    
-  <li><a href="#connect">Connect to your database</a></li>         
-  <li><a href="#example">Example applications</a></li>   
-</li>    
+<ul class="page-toc">
+  <li><a href="#custom">Custom commands</a></li>
+  <li><a href="#connect">Connect to your database</a></li>
+  <li><a href="#example">Example applications</a></li>
+</li>
 </ul>
 
 Cloud 66 supports stacks based on the [Sinatra framework](http://www.sinatrarb.com/), a light-weight web framework written in Ruby.
