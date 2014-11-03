@@ -59,16 +59,16 @@ Note that <b>replication between stacks is not supported for MongoDB.</b>
 When you start replicating your database, the Cloud 66 will commence the following process:<br/><br/>
 
 <ul style="margin-bottom:0em">
-<li>We take a full backup of the master database server in your source stack</li>
-    <ul style="margin-bottom:0em">
-        <li>Single stack: we create a secondary database server in your cloud and restore your backup on it</li>
-        <li>Between stacks: we restore your backup on the secondary database server</li>
-    </ul>
-<li>The secondary database is configured to be a slave of the source database</li>
-<li>The source database is configured to be a master of the secondary database</li>
-<li>The relevant environment variables are updated for use in your code and scripts</li>
+	<li>We take a full backup of the master database server in your source stack
+	    <ul style="margin-bottom:0em">
+	        <li>Single stack: we create a secondary database server in your cloud and restore your backup on it</li>
+	        <li>Between stacks: we restore your backup on the secondary database server</li>
+	    </ul>
+	</li>
+	<li>The secondary database is configured to be a slave of the source database</li>
+	<li>The source database is configured to be a master of the secondary database</li>
+	<li>The relevant environment variables are updated for use in your code and scripts</li>
 </ul>
-</ol>
 
 Similarly, when you disable replication, the following steps are initiated:
 <ul style="margin-bottom:0em">
