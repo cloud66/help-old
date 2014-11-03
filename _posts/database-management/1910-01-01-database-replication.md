@@ -26,7 +26,7 @@ tags: ['Database', 'Database replication']
                 <li><a href="#mongodb">MongoDB</a></li>
                 <li><a href="#redis">Redis</a></li>
                 </ul>
-            </li> 	
+            </li>
 	<li>
 		<a href="#vars">Environment variables</a>
 	</li>
@@ -43,19 +43,19 @@ Database replication involves configuring a master and slave database architectu
 
 Database replication can be set up for a single stack, or between stacks, with various benefits:
 
-<b>Single stack</b>:<br/>
+<h3>Single stack</h3>
 
 - Improved read performance: The slave server only allows reads and is ideal for use with reporting tools, and any database backups are taken from the slave rather than the master.
 - Improved application reliability: Having a second server with your data, in case of hardware issues (reducing a single point of failure).
 
-<b>Between stacks</b>:<br/>
+<h3>Between stacks</h3>
 
 - Improved redundancy: Allows you to have a failover stack in a different region.
 - Data migration: Makes it easy to migrate your stack with minimal downtime.
 
 Note that <b>replication between stacks is not supported for MongoDB.</b>
 
-<h2 id="how">How it works</h3>
+<h2 id="how">How it works</h2>
 When you start replicating your database, the Cloud 66 will commence the following process:<br/><br/>
 
 <ul style="margin-bottom:0em">
@@ -142,14 +142,14 @@ Cloud 66 generates and maintains a number of environment variables automatically
 		<tr>
 			<td>REDIS_SLAVE_ADDRESSES_EXT</td>
 			<td>External IP address of your slave</td>
-		</tr>	
+		</tr>
 	</tbody>
 </table>
 
 In the case that an environment variable contains multiple values, such as IP addresses, these are separated by comma.
 
 <h2 id="enable">Enable database replication</h2>
-The process of enabling database replication varies slightly for a single stack as opposed to replication between stacks. 
+The process of enabling database replication varies slightly for a single stack as opposed to replication between stacks.
 <br/><br/>
 <div class="notice notice-danger">
 	<h3>Important</h3>
