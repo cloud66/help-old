@@ -5,7 +5,7 @@ title:  "- Honeybadger"
 date:   2070-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-categories: add-ins
+categories: stack-add-ins
 lead: Add Honeybadger monitoring to your stack
 search-tags: ['hb', 'honeybadger']
 tags: ['Add in']

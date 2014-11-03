@@ -5,7 +5,7 @@ title:  "- Load balancer"
 date:   2060-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-categories: add-ins
+categories: stack-add-ins
 lead: Adding a load balancer couldn't be easier
 search-tags: ['lb', 'load balancer']
 tags: ['Add in', 'Scaling']

@@ -5,7 +5,7 @@ title:  "- Memcached"
 date:   2075-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-categories: add-ins
+categories: stack-add-ins
 lead: Add Memcached to your stack with ease
 search-tags: ['memcached']
 tags: ['Add in']
