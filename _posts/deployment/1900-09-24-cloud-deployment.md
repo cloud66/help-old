@@ -24,7 +24,7 @@ tags: ['']
     </li>
     <li>
         <a href="#edit">Edit or delete cloud keys</a>
-    </li>       
+    </li>
 </ul>
 
 <h2 id="about">About deploying to the cloud</h2>
@@ -40,7 +40,6 @@ Cloud 66 currently supports the following cloud providers:
     <li><a href="/deployment/cloud-joyent.html" target="_blank">Joyent</a></li>
     <li><a href="/deployment/cloud-linode.html" target="_blank">Linode</a></li>
     <li><a href="/deployment/cloud-rackspace.html" target="_blank">Rackspace</a></li>
-    <li><a href="/deployment/cloud-telefonica.html" target="_blank">Telefonica</a></li>
     <li><a href="/deployment/cloud-vexxhost.html" target="_blank">Vexxhost</a></li>
 </ul>
 
