@@ -19,7 +19,7 @@ You can use the [Cloud 66 toolbelt](/toolbelt/introduction.html) to easily SSH t
 # Full
 
 {% highlight bash %}
-cx ssh [-s <stack>] <server name>|<server ip>|<server role>
+cx ssh [-s &lt;stack&gt;] &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt;
 {% endhighlight %}
 
 # Example
