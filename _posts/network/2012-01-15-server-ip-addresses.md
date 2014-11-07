@@ -5,7 +5,7 @@ title:  "Server IP addresses and hostnames"
 so_title: "ip addresses"
 nav_sticky: false
 date:   2086-01-25 16:27:22
-categories: dns
+categories: network
 lead: We keep track of your IP addresses for you
 search-tags: []
 tags: ['DNS']

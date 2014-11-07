@@ -3,7 +3,7 @@ layout: post
 template: one-col
 title: "Load balancing"
 date: 2040-09-26 15:33:13
-categories: load-balancing
+categories: web-server
 lead: Improve the reliability of your stack
 search-tags: ['']
 tags: ['']

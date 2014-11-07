@@ -2,7 +2,7 @@
 layout: post
 title:  "Browser requirements"
 date:   2040-09-24 10:51:22
-categories:
+categories: account-management
 lead: Follow the guidelines below for the best possible experience
 search-tags: ['']
 tags: ['']

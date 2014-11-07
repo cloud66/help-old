@@ -2,7 +2,7 @@
 layout: post
 title:  "Security Wall of Fame"
 date:   2040-09-24 10:51:22
-categories:
+categories: account-management
 lead: Recognizing people who make responsible disclosures to us
 search-tags: ['']
 tags: ['']

@@ -2,7 +2,7 @@
 layout: post
 title:  "Agent communication issue"
 date:   2040-09-24 10:51:22
-categories:
+categories: account-management
 lead: How to deal with agent communication issues
 ---
 

@@ -6,7 +6,7 @@ so_title: "dns"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1967-08-26 15:33:13
-categories: dns
+categories: network
 lead: Configure your DNS for maximum availability
 search-tags: ['']
 tags: ['DNS']

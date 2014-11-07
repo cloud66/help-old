@@ -5,7 +5,7 @@ title:  "ElasticAddress"
 so_title: "elastic address"
 nav_sticky: false
 date:   2096-01-25 16:27:22
-categories: dns
+categories: network
 lead: Easy and seamless traffic switch between stacks
 search-tags: []
 tags: ['DNS']
