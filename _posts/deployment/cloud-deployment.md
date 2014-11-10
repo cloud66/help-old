@@ -34,13 +34,13 @@ By providing Cloud 66 with your unique cloud provider API keys, Cloud 66 can con
 Cloud 66 currently supports the following cloud providers:
 
 <ul>
-    <li><a href="/articles/digitalocean-cloud">Digital Ocean</a></li>
-    <li><a href="/articles/amazon-web-services-cloud">Amazon Web Services</a></li>
-    <li><a href="/articles/rackspace-cloud">Rackspace</a></li>
-    <li><a href="/articles/linode-cloud">Linode</a></li>
-    <li><a href="/articles/google-compute-engine-cloud">Google Compute Engine</a></li>
-    <li><a href="/articles/vexxhost-cloud">Vexxhost</a></li>
-    <li><a href="/articles/joyent-cloud">Joyent</a></li>
+    <li><a href="/deployment/digitalocean-cloud">Digital Ocean</a></li>
+    <li><a href="/deployment/amazon-web-services-cloud">Amazon Web Services</a></li>
+    <li><a href="/deployment/rackspace-cloud">Rackspace</a></li>
+    <li><a href="/deployment/linode-cloud">Linode</a></li>
+    <li><a href="/deployment/google-compute-engine-cloud">Google Compute Engine</a></li>
+    <li><a href="/deployment/vexxhost-cloud">Vexxhost</a></li>
+    <li><a href="/deployment/joyent-cloud">Joyent</a></li>
 </ul>
 
 <div class="notice notice-warning">
