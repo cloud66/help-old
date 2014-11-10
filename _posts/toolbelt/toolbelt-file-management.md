@@ -52,6 +52,7 @@ Use these commands to upload and download files to and from your servers.
 <h2 id="upload">Upload</h2>
 
 <h3 id="usage">Usage</h3>
+
 {% highlight bash %}
 $ cx upload [-s <stack>] <server name> [source file] [target directory]
 {% endhighlight %}
@@ -98,10 +99,10 @@ If you don't specify a target directory, the file will be uploaded to /tmp on yo
 $ cx upload -s My_Awesome_App web /tmp/file.txt /tmp/file.txt
 {% endhighlight %}
 
-
 <h2 id="download">Download</h2>
 
 <h3 id="usage2">Usage</h3>
+
 {% highlight bash %}
 $ cx download [-s <stack>] <server name> [source file] [target directory]
 {% endhighlight %}
