@@ -65,7 +65,7 @@ The <i>Firewall</i> tab allows you to configure and apply firewall rules per ser
 
 By default, Cloud 66 gateway servers (eg. 54.84.166.97) are the only servers allowed SSH (port 22) access to stack servers. The default firewall rules include database and web ports appropriate for the stack deployed but also includes ports 8080 and 8443 as alternative HTTP ports for WebSocket-based applications like [Faye](http://community.cloud66.com/articles/faye-on-cloud-66). Editing and removing the default firewall rules is disabled to secure accessibility to the servers at all times.
 
-<h3 id="add-firewall">Add a firewall rule</h2>
+<h3 id="add-firewall">Add a firewall rule</h3>
 To add your own rules, click <i>Add a new firewall rule</i>. You can input single IP addresses or ranges, and the dropdown allows you to choose servers by name (eg. <i>Rails servers</i>).
 
 <h2 id="configure">Configure network traffic</h2>
@@ -73,11 +73,11 @@ By default, all traffic is allowed to visit your web servers on ports 80, 443, 8
 
 For each of these fields, you can enter a single IP address, a comma-separated list, or range. For example:
 
-```
+<pre class="prettyprint">
 23.213.76.19
 23.213.76.1/16
 23.213.76.19,31.152.18.22,197.222.132.0/24
-```
+</pre>
 
 <h3 id="allow">Allowing traffic</h3>
 Repeated visits within a short time period on the ports mentioned above (more than 1,500 hits per minute from a single IP address) are blocked by ActiveProtect. By allowing traffic for a specific IP address or range, this limit is ignored. You can also choose not to block traffic coming from Cloudflare edge servers.
@@ -87,7 +87,7 @@ You can block specific IPs and/or ranges from visiting the ports mentioned above
 
 <h2 id="network">Using network redirects</h2>
 
-The <i>Redirects</i> tab helps you perform simple but frequently used network redirects. These include redirecting traffic from _HTTP_ to _HTTPS_ or adding or removing the _www_ prefix from your domain name.
+The <i>Redirects</i> tab helps you perform simple but frequently used network redirects. These include redirecting traffic from <i>HTTP</i> to <i>HTTPS</i> or adding or removing the <i>www</i> prefix from your domain name.
 
 <h3 id="maintenance">Maintenance mode</h3>
 When you have to make manual changes to your application or push out a breaking change, you may not be able to guarantee that your application will be able to serve content or act correctly.
@@ -103,9 +103,9 @@ To supply your own maintenance page, simply place your file in the following pat
 </pre>
 
 <h3 id="https">Redirect HTTP to HTTPS</h3>
-You can easily [add your SSL certificates](/stack-add-ins/ssl-certificate) to your stacks and serve your traffic securely with HTTPS. To ensure that all your visitors use HTTPS instead of HTTP, you need to redirect anyone using HTTP to HTTPS.
+You can easily <a href="add your SSL certificates">/stack-add-ins/ssl-certificate</a> to your stacks and serve your traffic securely with HTTPS. To ensure that all your visitors use HTTPS instead of HTTP, you need to redirect anyone using HTTP to HTTPS.
 
 This works by reconfiguring your Nginx configuration, so any visitor that arrives at port 80 and HTTP will receive a permanent HTTP redirect (301) to the same address on HTTPS.
 
 <h3 id="www">WWW or non-WWW in your URL</h3>
-Some sites serve traffic on `www.domain.com`, while others use the bare `domain.com`. By default, your servers will serve traffic for any DNS record pointing to their address. This setting allows your to redirect visits to `www.domain.com` to `domain.com`, and vice-versa. This works by changing your Nginx configuration to permanently redirect (HTTP 301) visitors to the desired address.
+Some sites serve traffic on <code>www.domain.com</code>, while others use the bare <code>domain.com</code>. By default, your servers will serve traffic for any DNS record pointing to their address. This setting allows your to redirect visits to <code>www.domain.com</code> to <code>domain.com</code>, and vice-versa. This works by changing your Nginx configuration to permanently redirect (HTTP 301) visitors to the desired address.

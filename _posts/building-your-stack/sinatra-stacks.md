@@ -47,14 +47,13 @@ Given that Sinatra applications can have different database frameworks, we allow
 
 These commands can be specified in the UI, but also in your [manifest file](/building-your-stack/manifest-files):
 
-
-{% highlight yaml %}
+<pre class="prettyprint">
 development:
     sinatra:
         configuration:
             custom_build_command: rake db:seed
             custom_deploy_command: rake db:migrate
-{% endhighlight %}
+</pre>
 
 <h2 id="connect">Connect to your database</h2>
 If a database is detected, they will automatically be provisioned as required (including the database itself), and environment variables will be created. You will need to update your code with the environment variables you wish to use, for example `MYSQL_URL`.
@@ -70,27 +69,30 @@ Should you wish to change the database username/password after build, you will h
 <h3>Active Record</h3>
 
 **MySQL YML**
-{% highlight yaml %}
+
+<pre class="prettyprint">
 production:
   adapter: mysql2
   username: <%= ENV['MYSQL_USERNAME'] %>
   password: <%= ENV['MYSQL_PASSWORD'] %>
   host: <%= ENV['MYSQL_ADDRESS'] %>
   database: <%= ENV['MYSQL_DATABASE'] %>
-{% endhighlight %}
+</pre>
 
 **PostgreSQL YML**
-{% highlight yaml %}
+
+<pre class="prettyprint">
 production:
   adapter: postgresql
   username: <%= ENV['POSTGRESQL_USERNAME'] %>
   password: <%= ENV['POSTGRESQL_PASSWORD'] %>
   host: <%= ENV['POSTGRESQL_ADDRESS'] %>
   database: <%= ENV['POSTGRESQL_DATABASE'] %>
-{% endhighlight %}
+</pre>
 
 **Declarative**
-{% highlight ruby %}
+
+<pre class="prettyprint">
 ActiveRecord::Base.configurations[:development] = {
   :adapter   => 'mysql2',
   :encoding  => 'utf8',
@@ -101,26 +103,29 @@ ActiveRecord::Base.configurations[:development] = {
   :password  => ENV['MYSQL_PASSWORD'],
   :host      => ENV['MYSQL_ADDRESS'],
 }
-{% endhighlight %}
+</pre>
 
 <h3>DataMapper</h3>
-{% highlight ruby %}
+
+<pre class="prettyprint">
 DataMapper::setup(:default, "ENV['POSTGRESQL_URL']")
-{% endhighlight %}
+</pre>
 
 <h3>MongoMapper</h3>
-{% highlight ruby %}
+
+<pre class="prettyprint">
 MongoMapper.connection = Mongo::Connection.from_uri(ENV['MONGODB_URL'])
-{% endhighlight %}
+</pre>
 
 <h3>Mongoid</h3>
-{% highlight yaml %}
+
+<pre class="prettyprint">
 development:
   sessions:
     default:
       database: mongoid
       hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
-{% endhighlight %}
+</pre>
 
 <h2 id="example">Example applications</h2>
 

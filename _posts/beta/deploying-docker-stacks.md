@@ -213,7 +213,7 @@ production:
 
 The `url` is the same as the one you would use when calling `docker pull` directly. For example, if you are using _Quay.io_ as your private repository, you will use `docker pull quay.io/namespace/image_name` to pull the image from that repository. In this case the `url` is `quay.io`.
 
-One convention here is using `_env:` before an environment variable. This can be used anywhere in `docker_deployment.yml` to avoid checking in passwords and other sensitive information. You can use [environment variable management](/deployment/environment-variables) in the console or toolbelt to add your environment variables.
+One convention here is using `_env:` before an environment variable. This can be used anywhere in `docker_deployment.yml` to avoid checking in passwords and other sensitive information. You can use <a href="/deployment/environment-variables">environment variable management</a> in the console or toolbelt to add your environment variables.
 
 <h2 id="container-lifecycle-management">Container lifecycle management</h2>
 

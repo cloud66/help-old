@@ -19,7 +19,7 @@ Welcome to Cloud 66 Beta Program. Here you will find resources and documents on 
 
 ### Docker Backed Stacks
 
-The first feature to be exclusively available to private Beta Program members is support for Docker backed stacks. You can find out more about [Cloud 66 Docker backed stacks](/beta/docker-deployments) and try deploying stacks that are not limited to Ruby and one stack per server. Roll out all your services from different source repositories on any number of servers on any cloud provider or your own servers.
+The first feature to be exclusively available to private Beta Program members is support for Docker backed stacks. You can find out more about <a href="/beta/docker-deployments">Cloud 66 Docker backed stacks</a> and try deploying stacks that are not limited to Ruby and one stack per server. Roll out all your services from different source repositories on any number of servers on any cloud provider or your own servers.
 
 ## Contact us
 

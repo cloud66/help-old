@@ -55,7 +55,7 @@ A manifest file allows you to be more explicit about your stack composition by s
 
 To use this functionality, you need to place a file called **manifest.yml** in a folder named **.cloud66**, that is in turn located in the root of your source code and checked into your repository.
 
-<pre class="terminal">
+<pre class="prettyprint">
 [source&#95;repo]/.cloud66/manifest.yml
 </pre>
 
@@ -74,7 +74,7 @@ Although you are technically able to specify any number of infrastructure combin
 
 This simple example shows the power of **manifest.yml** files.
 
-{% highlight yaml %}
+<pre class="prettyprint">
 production: # 1. Environment type
     rails: # 2. Application type
         servers:
@@ -82,7 +82,7 @@ production: # 1. Environment type
                 unique_name: frontend
         configuration: # 4. Application specific configurations
             ruby_version: 1.9.3
-{% endhighlight %}
+</pre>
 
 The above manifest is only scoped to *production* stacks. Here we have specified that we want to install Ruby version 1.9.3 on the rails server, and that it should be called <i>frontend</i>.
 
@@ -124,10 +124,11 @@ Cloud 66 currently recognizes the following application types in your manifest f
 Every application defined in the manifest file must be bound to a server. However, if you'd like configurations to apply to all servers in an application type, you don't need to specify a server type. Servers can be deployed specifically to host that application, be shared between multiple applications (eg. Rails and MySQL on the same server) or be an external server (eg. using an external database).
 
 Here is an example of a server definition:
-{% highlight ruby %}
+
+<pre class="prettyprint">
 ... server:
         unique_name: frontend
-{% endhighlight %}
+</pre>
 
 These are the parameters that the <i>server</i> section can take:
 
@@ -146,12 +147,12 @@ A unique name for this server.
 
 A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
-{% highlight ruby %}
+<pre class="prettyprint">
 ... server:
         unique_name: frontend
         extra_packages:
                 - chrony
-{% endhighlight %}
+</pre>
 
 **vendor**
 (_Optional, BYOC Only_)
@@ -167,13 +168,13 @@ Cloud vendor to fire up the server on. Valid values:
 - vexxhost
 - googlecloud
 
-{% highlight yaml %}
+<pre class="prettyprint">
 ... server:
         unique_name: frontend
         vendor: aws
         region: us-east-1
         size: t1.micro
-{% endhighlight %}
+</pre>
 
 <div class="notice notice-danger">
 	<h3>Important</h3>
@@ -196,13 +197,13 @@ Cloud vendor to fire up the server on. Valid values:
 
 Address of the server. For BYOS servers, <i>address</i>, <i>username</i> and <i>ssh_key_name</i> can be defined:
 
-{% highlight yaml %}
+<pre class="prettyprint">
 ... server:
         unique_name: frontend
         address: 123.123.123.123
         username: ubuntu
         ssh_key_name: my_server_key
-{% endhighlight %}
+</pre>
 
 <div class="notice notice-danger">
         <h3>Important</h3>
@@ -236,7 +237,7 @@ If you would like to use an external server for an application (like using your 
 
 External server definitions specify that the application is hosted on a server external to Cloud 66. This is not a valid target for your main application (ie. Rails) but may be appropriate for another application type (ie. MongoDB):
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... server: external
 </pre>
 
@@ -254,7 +255,7 @@ External server definitions specify that the application is hosted on a server e
 - **version**<br/>
 Specify the version of ElasticSearch you want to install (does not apply to external servers types)
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... elasticsearch:
 		servers:
 		    server: ...
@@ -287,7 +288,7 @@ Specify connection port. Default value is 11211
 - **listen&#95;ip**<br/>
 Specify which IP address to listen on. Default value is 0.0.0.0
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... memcached:
         shared&#95;group: db
         configuration:
@@ -303,7 +304,7 @@ Specify which IP address to listen on. Default value is 0.0.0.0
 - **version**<br/>
 Specify the version of MongoDB you want to install (does not apply to external servers types)
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... mongodb:
 		servers:
 		    server: ...
@@ -320,7 +321,7 @@ Specify the version of PostgreSQL you want to install (does not apply to externa
 - **postgis**<br/>
 Specify whether to include PostGIS (Note: unlike the PG version, this can be added after initial database creation)
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... postgresql:
 		servers:
 		    server: ...
@@ -334,7 +335,7 @@ Specify whether to include PostGIS (Note: unlike the PG version, this can be add
 - **version**<br/>
 Specify the version of PostGIS you want to install
 
-<pre class="terminal">
+<pre class="prettyprint">
 production:
    postgresql:
 	   servers:
@@ -364,7 +365,7 @@ Specify a whitelist of IPs that should be ignored by your ActiveProtect configur
 - <b>nginx</b><br/>
 Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... rails:
 		servers:
 			server: ...
@@ -384,7 +385,8 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
 #### CORS configuration
 
 If you want to, you can also specify the origin and methods for CORS.
-<pre class="terminal">
+
+<pre class="prettyprint">
 ... rails:
 		servers:
 		    server: ...
@@ -402,7 +404,7 @@ If you want to, you can also specify the origin and methods for CORS.
 - **version**<br/>
 Specify the version of Redis you want to install (does not apply to external servers types - see below)
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... redis:
 		servers:
 		    server: ...
@@ -428,7 +430,7 @@ Specify a whitelist of IPs that should be ignored by your ActiveProtect configur
 - <b>nginx</b><br/>
 Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... sinatra:
         servers:
             server: ...
@@ -447,7 +449,8 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
 #### CORS configuration
 
 If you want to, you can also specify the origin and methods for CORS.
-<pre class="terminal">
+
+<pre class="prettyprint">
 ... sinatra:
         servers:
             server: ...
@@ -470,7 +473,7 @@ Available settings:
 - **httpchk**<br/>
 The URL visited to check your server health
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... load_balancer:
         configuration:
             httpchk: /
@@ -489,7 +492,7 @@ The URL visited to check your server health
 - **balance**<br/>
 The load balancing strategy. You can use these values: NONE, CLIENT_IP or CLIENT_IP_PROTO.
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... load_balancer:
         configuration:
             httpchk: /
@@ -510,7 +513,7 @@ The load balancing strategy
 - **errorfile&#95;\*** <br/>
 Location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... load_balancer:
         configuration:
             httpchk: HEAD / HTTP/1.0 (default value)
@@ -536,7 +539,7 @@ The health-check configuration
 - **balance**<br/>
 The load balancing strategy. You can use these values : roundrobin, leastconn or source.
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... load_balancer:
         configuration:
             httpchk: /
@@ -553,7 +556,7 @@ Available settings (refer to the [Rackspace documentation](http://docs.rackspace
 - **balance**<br/>
 The load balancing strategy. You can use these values : ROUND_ROBIN, RANDOM or LEAST_CONNECTIONS.
 
-<pre class="terminal">
+<pre class="prettyprint">
 ... load_balancer:
         configuration:
             balance: LEAST_CONNECTIONS
@@ -561,19 +564,19 @@ The load balancing strategy. You can use these values : ROUND_ROBIN, RANDOM or L
 
 <hr>
 
-<h2 id="environment_variables">Environment variables in the manifest</h3>
+<h2 id="environment_variables">Environment variables in the manifest</h2>
 You can add your environment variables to your manifest files.
 
 Here is an example:
 
-{% highlight yaml %}
+<pre class="prettyprint">
 production:
     environment_variables:
         SOME_VARIABLE: value
         ANOTHER_ONE: another_value
         THIRD_ONE: AUTO_GENERATE
         LONG_ONE: AUTO_GENERATE_15
-{% endhighlight %}
+</pre>
 
 If you need to auto generate a value, you can use the `AUTO_GENERATE` keyword. It generates a 10 character long random string unless you specify the length after it: `AUTO_GENERATE_15` which generates a 15 character random string.
 

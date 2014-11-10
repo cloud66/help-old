@@ -39,44 +39,49 @@ or use your own value. Alternatively, you can simply hard-code values as you wis
 </div>
 
 **MySQL YML**
-{% highlight yaml %}
+
+<pre class="prettyprint">
 development:
     adapter: mysql2
     username: <%= ENV['MYSQL_USERNAME'] %>
     password: <%= ENV['MYSQL_PASSWORD'] %>
     database: <%= ENV['MYSQL_DATABASE'] %>
     host: <%= ENV['MYSQL_ADDRESS'] %>
-{% endhighlight %}
+</pre>
 
 The default encoding used is UTF8 - but you can also specify your own, as long as it conforms with the [supported MySQL encodings](https://dev.mysql.com/doc/refman/5.5/en/charset-charsets.html):
-{% highlight yaml %}
+
+<pre class="prettyprint">
 encoding: swe7
-{% endhighlight %}
+</pre>
 
 **PostgreSQL YML**
-{% highlight yaml %}
+
+<pre class="prettyprint">
 development:
     adapter: postgresql
     username: <%= ENV['POSTGRESQL_USERNAME'] %>
     password: <%= ENV['POSTGRESQL_PASSWORD'] %>
     database: <%= ENV['POSTGRESQL_DATABASE'] %>
     host: <%= ENV['POSTGRESQL_ADDRESS'] %>
-{% endhighlight %}
+</pre>
 
 The default encoding used is UTF8 - but you can also specify your own, as long as it conforms with the [supported PostgreSQL encodings](http://www.postgresql.org/docs/9.3/static/multibyte.html):
-{% highlight yaml %}
+
+<pre class="prettyprint">
 encoding: latin1
 template: template0
-{% endhighlight %}
+</pre>
 
 **Mongoid**
-{% highlight yaml %}
+
+<pre class="prettyprint">
 development:
   sessions:
     default:
       database: <%= ENV['MONGODB_DATABASE'] %>
       hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
-{% endhighlight %}
+</pre>
 
 <h2 id="example">Example application</h2>
 * <a href="https://app.cloud66.com/stacks/new?eduid=rails_mysql" target="_blank">Rails with MySQL</a>
