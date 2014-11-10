@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "- Logentries"
+title:  "Logentries"
 date:   2055-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true

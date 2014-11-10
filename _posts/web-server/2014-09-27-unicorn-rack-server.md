@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "- Unicorn rack server"
+title:  "Unicorn rack server"
 so_title: "unicorn"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true

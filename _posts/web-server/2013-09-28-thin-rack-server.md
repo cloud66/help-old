@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "- Thin rack server"
+title:  "Thin rack server"
 so_title: "thin"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true

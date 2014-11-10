@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "- Passenger Enterprise"
+title:  "Passenger Enterprise"
 so_title: "passenger"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true

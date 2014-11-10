@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "- Joyent cloud"
+title:  "Joyent cloud"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   2036-09-24 10:51:22

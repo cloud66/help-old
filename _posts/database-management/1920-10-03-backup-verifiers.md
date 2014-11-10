@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "- Backup verification"
+title:  "Backup verification"
 so_title: "verifier"
 date:   4000-10-03 14:17:13
 categories: database-management
