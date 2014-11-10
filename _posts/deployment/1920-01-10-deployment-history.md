@@ -11,7 +11,7 @@ lead: An overview of your stack deployments and rollbacks
 
 ## What is deployment history?
 Whether working in a team or by yourself, it's always useful to have an overview of your deployment history. This history includes
-information about who deployed, when they deployed, what code revision was deployed and how the deployment was triggered (web, [API](/api/basics/basics.html) or [redeployment hook](/deployment/redeployment-hook.html)). In addition to this, you can also revert
+information about who deployed, when they deployed, what code revision was deployed and how the deployment was triggered (web, [API](http://developers.cloud66.com) or [redeployment hook](/deployment/redeployment-hook.html)). In addition to this, you can also revert
 back to previous commits if need be.
 
 Reverting to a previous commit will only affect your code - you might still need to restore a <a href="/database-management/database-backup.html">database backup</a>. If you wish, you can [switch off your database migrations](/database-management/database-management.html), roll back your database and then roll back your code.

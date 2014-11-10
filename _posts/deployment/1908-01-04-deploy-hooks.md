@@ -125,6 +125,7 @@ There are three types of deploy hooks, and the fields available (and required) v
 	<TR class="header"><TD width="13%"><b>Snippets</b> <span>-</span><TD width="15%"><TD width="70%">
 	<TR><TD><TD width="13%">snippet <img src="http://cdn.cloud66.com/images/help/required.gif"><TD width="70%">Snippet to be used - run in <i>/tmp/deploy_hooks</i> by default
 	<TR><TD><TD>target <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
+	<TR><TD><TD>execute <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Set to true for the snippet to be executable.
 	<TR><TD><TD>apply_during<br> (all)<TD>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<TR><TD><TD>halt_on_error (true)<TD>Specify whether the execution should continue or halt in the event of an error.
 	<TR><TD><TD>run_on<br> (single server)<TD>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
@@ -134,6 +135,7 @@ There are three types of deploy hooks, and the fields available (and required) v
 	<TR class="header"><TD width="13%"><b>Commands</b> <span>-</span><TD><TD>
 	<TR><TD><TD width="13%">command <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Command to be used - run in <i>/tmp/deploy_hooks</i> by default
 	<TR><TD><TD>target <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
+	<TR><TD><TD>execute <img src="http://cdn.cloud66.com/images/help/required.gif"><TD>Set to true for the command to execute.
 	<TR><TD><TD>apply_during<br> (all)<TD>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<TR><TD><TD>halt_on_error (true)<TD>Specify whether the execution should continue or halt in the event of an error.
 	<TR><TD><TD>run_on<br> (single server)<TD>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
@@ -166,9 +168,9 @@ To make use of deploy hooks, a file called _deploy_hooks.yml_ should be present 
 Creating a deploy hook from scratch consists of a number of steps:
 
 1. Choose your environment - eg. example _production_, _development_, _staging_ and so on.
-2. Choose your [hook point](/stack-features/deploy-hooks.html#points) - eg. <i>first_thing</i>, <i>after_rails</i> and so on.
+2. Choose your hook point - eg. <i>first_thing</i>, <i>after_rails</i> and so on.
 3. Choose your deploy hook type - eg. <i>snippet</i>, <i>command</i> or <i>script</i>.
-4. Select any additional [hook fields](/stack-features/deploy-hooks.html#fields) you require
+4. Select any additional hook fields you require
 
 Automating deploy hooks can sometimes be tricky. To avoid issues, it's good practice to run each of your commands manually to see that they complete successfully. If a specific command doesn't show any output, you can use the <code>echo $?</code> command after issuing your command to see its exit code. If it returns a _zero_, your command was successful, whereas a _one_ means it has failed.
 
@@ -180,6 +182,7 @@ production: # Environment
     first_thing: # Hook point
       - snippet: cloud66/node # Hook type
         target: any # Hook fields
+        execute: true
 {% endhighlight %}
 
 See the available hook points and fields for more ways to customize this.
@@ -191,6 +194,7 @@ production: # Environment
     first_thing: # Hook point
       - command: apt-get install curl -y # Hook type
         target: any # Hook fields
+        execute: true
 {% endhighlight %}
 
 <div class="notice">
@@ -198,7 +202,7 @@ production: # Environment
     <p>When automating the installation of packages, remember to use the <i>-y</i> flag to answer yes to all prompts.</p>
 </div>
 
-The example below can be used to run custom rake tasks during server build. If you need to run it more than once, consider using the [rake task add-in](/add-ins/rake-task.html).
+The example below can be used to run custom rake tasks during server build. If you need to run it more than once, consider using the [rake task add-in](/stack-definition/rake-task.html).
 
 {% highlight yaml %}
 production: # Environment

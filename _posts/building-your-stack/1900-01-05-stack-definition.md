@@ -26,13 +26,13 @@ tags: ['']
 	        <li><a href="#db">Database servers (optional)</a></li>
 	        <li><a href="#os">Operating system</a></li>
 	        <li><a href="#cloud">Cloud vendor</a></li>
-        </ul>	
+        </ul>
 	<li>
 		<a href="#envs">Stack environments</a>
 	</li>
 	<li>
 		<a href="#stackscore">StackScore</a>
-	</li>	
+	</li>
 	<li>
 		<a href="#build">Build a stack</a>
 	</li>
@@ -44,7 +44,7 @@ tags: ['']
 	</li>
 	<li>
 		<a href="#delete">Delete a stack</a>
-	</li>	
+	</li>
 </ul>
 
 <h2 id="what">What is a stack?</h2>

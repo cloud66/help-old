@@ -49,7 +49,5 @@ These are the repositories that we currently support. Please contact us on [hell
 
 <a href="https://github.com/cloud66-samples/selfstarter" target="_blank">Selfstarter</a> ([EasyDeploy](https://app.cloud66.com/stacks/new?eduid=selfstarter))
 
-<a href="https://github.com/cloud66-samples/spree-store" target="_blank">Spree</a> ([EasyDeploy](https://app.cloud66.com/stacks/new?eduid=spree))
-
 Remember to check the repository documentation for possible login credentials and environment variables. If you forget to set environment
 variables during your first deploy, you can always set or change them at a later stage.

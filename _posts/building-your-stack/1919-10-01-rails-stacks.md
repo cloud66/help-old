@@ -14,10 +14,10 @@ tags: ['']
 ---
 
 <h2>Contents</h2>
-<ul class="page-toc">   
-  <li><a href="#connect">Connect to your database</a></li>         
-  <li><a href="#example">Example application</a></li>   
-</li>    
+<ul class="page-toc">
+  <li><a href="#connect">Connect to your database</a></li>
+  <li><a href="#example">Example application</a></li>
+</li>
 </ul>
 
 Cloud 66 supports stacks based on the [Rails framework](http://rubyonrails.org/), a web framework written in Ruby.

@@ -14,7 +14,7 @@ tags: ['']
 <h2>Contents</h2>
 <ul class="page-toc">
     <li><a href="#about">About receiving stack notifications</a></li>
-    <li><a href="#view">Viewing your stack notifications</a></li> 
+    <li><a href="#view">Viewing your stack notifications</a></li>
     <li><a href="#setup">Setting up your notification types</a></li>
         <ul style="margin-bottom:0em">
 	        <li><a href="#emails">Emails</a></li>
@@ -23,7 +23,7 @@ tags: ['']
 	        <li><a href="#slack">Slack</a></li>
 	        <li><a href="#webhooks">Webhooks</a></li>
         </ul>
-    </li>    
+    </li>
 </ul>
 
 <h2 id="about">About receiving stack notifications</h2>
@@ -39,7 +39,7 @@ Email notifications are enabled by default for all users. By default, you will g
 <h3 id="hipchat">Hipchat</h3>
 [Hipchat](http://hipchat.com/) is a hosted realtime chat service by Atlassian, and you can link your account to Cloud 66 to receive notifications on Hipchat.
 
-From the Hipchat _Account settings_ menu, click _API access_, and then the link for _API version 1_. Once on the API v1 page, create an API token. By selecting the Hipchat icon on the _Stack notifications_ page, you can add this token and select which room you would like your notifications to appear in. 
+From the Hipchat _Account settings_ menu, click _API access_, and then the link for _API version 1_. Once on the API v1 page, create an API token. By selecting the Hipchat icon on the _Stack notifications_ page, you can add this token and select which room you would like your notifications to appear in.
 
 <h3 id="ios">iOS</h3>
 Download the [Cloud 66 iOS application](https://itunes.apple.com/us/app/cloud-66/id642299804?mt=8&uo=4) to get iOS push notifications on your phone.

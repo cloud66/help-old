@@ -50,9 +50,11 @@ Having managed backups carries several benefits:
 - You can easily restore database backups
 - Stored in Cloud 66 storage
 
+The 100 most recent managed backups are kept by default.
+
 <h3 id="unmanaged">Unmanaged backups</h3>
 
-Unmanaged backups are stored on your local server and are available under `/var/cloud66/backups`.
+Unmanaged backups are stored on your local server and are available under `/var/cloud66/backups`. The 10 most recent unmanaged backups are kept by default.
 
 <h2 id="pricing">Pricing</h2>
 

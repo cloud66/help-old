@@ -14,11 +14,11 @@ tags: ['Deployment']
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li><a href="#intro">What are manifest files?</a></li>
-         
-    <li><a href="#composition">Composition of a manifest file</a></li>   
+
+    <li><a href="#composition">Composition of a manifest file</a></li>
         <li><ul>
             <li><a href="#sample">Sample manifest file</a></li>
-            <li><a href="#environments">Environments</a></li>   
+            <li><a href="#environments">Environments</a></li>
             <li><a href="#apps">Application types</a></li>
             <li><a href="#servers">Server configurations</a></li>
             <li>
@@ -29,18 +29,24 @@ tags: ['Deployment']
             </li>
     <li><a href="#app-specific">Application specific</a></li>
             <li><ul><li><a href="#elastic">ElasticSearch</a></li></ul></li>
-            <li><ul><li><a href="#haproxy">HAProxy</a></li></ul></li>
             <li><ul><li><a href="#memcached">Memcached</a></li></ul></li>
             <li><ul><li><a href="#mongo">MongoDB</a></li></ul></li>
             <li><ul><li><a href="#postgis">PostGIS</a></li></ul></li>
             <li><ul><li><a href="#postgresql">PostgreSQL</a></li></ul></li>
-            <li><ul><li><a href="#rabbit">RabbitMQ</a></li></ul></li>
             <li><ul><li><a href="#rails">Rails</a></li></ul></li>
             <li><ul><li><a href="#redis">Redis</a></li></ul>
+            <li><ul><li><a href="#sinatra">Sinatra</a></li></ul>
+        </li>
+    <li><a href="#loadbalancer">Load balancers</a></li>
+            <li><ul><li><a href="#aws_elb">AWS load balancer</a></li></ul></li>
+            <li><ul><li><a href="#gce_lb">GCE load balancer</a></li></ul></li>
+            <li><ul><li><a href="#haproxy">HAProxy</a></li></ul></li>
+            <li><ul><li><a href="#nodebalancer">Linode Nodebalancer</a></li></ul></li>
+            <li><ul><li><a href="#rs_loadbalancer">Rackspace load balancer</a></li></ul></li>
         </li>
     </ul>
-    <li><a href="#environment_variables">Environment variables in the manifest</a></li> 
-</li>    
+    <li><a href="#environment_variables">Environment variables in the manifest</a></li>
+</li>
 </ul>
 
 <h2 id="intro">What are manifest files?</h2>
@@ -106,18 +112,16 @@ Cloud 66 currently recognizes the following application types in your manifest f
 
 <ul class="page-toc">
 <li><a href="#elastic">ElasticSearch</a></li>
-<li><a href="#haproxy">HAProxy</a></li>
 <li><a href="#memcache">Memcached</a></li>
 <li><a href="#mongo">MongoDB</a></li>
 <li><a href="#postgis">PostGIS</a></li>
 <li><a href="#psql">PostgreSQL</a></li>
-<li><a href="#rabbit">RabbitMQ</a></li>
 <li><a href="#rails">Rails</a></li>
 <li><a href="#redis">Redis</a></li>
 </ul>
 
 <h3 id="servers">Server type</h3>
-Every application defined in the manifest file must be bound to a server. However, if you'd like configurations to apply to all servers in an application type, you don't need to specify a server type. Servers can be deployed specifically to host that application, [be shared between multiple applications](/stack-definition/manifest-files.html#shared) (eg. Rails and MySQL on the same server) or be an [external server](/stack-definition/manifest-files.html#external) (eg. using an external database).
+Every application defined in the manifest file must be bound to a server. However, if you'd like configurations to apply to all servers in an application type, you don't need to specify a server type. Servers can be deployed specifically to host that application, be shared between multiple applications (eg. Rails and MySQL on the same server) or be an external server (eg. using an external database).
 
 Here is an example of a server definition:
 {% highlight ruby %}
@@ -180,12 +184,12 @@ Cloud vendor to fire up the server on. Valid values:
 **region**
 (_Optional, BYOC Only_)
 
-[Data center region](/api/basics/instance-regions.html) to fire up the server in.
+[Data center region](http://developers.cloud66.com/#cloud-vendor-instance-regions) to fire up the server in.
 
 **size**
 (_Optional, BYOC Only_)
 
-[Size of the server instance](/api/basics/instance-names.html) created.
+[Size of the server instance](http://developers.cloud66.com/#cloud-provider-instance-names) created.
 
 **address**
 (_Optional, BYOS Only_)
@@ -260,39 +264,7 @@ Specify the version of ElasticSearch you want to install (does not apply to exte
 
 <hr>
 
-<h4 id="haproxy">HAProxy</h4>
-You can use the manifest file to make small configuration changes to the HAProxy load balancer deployed by Cloud 66 at any point. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/how-to/haproxy-customconfig.html).
-
-Currently they are limited to the following options:
-
-- **httpchk**<br/>
-The health-check configuration
-- **balance**<br/>
-The load balancing strategy
-- **errorfile&#95;\*** <br/>
-Location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer
-
-Note: To find out about the available options for each one of the values, please refer to [HAProxy manual](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt).
-
-<pre class="terminal">
-haproxy:
-    configuration:
-        httpchk: HEAD / HTTP/1.0 (default value)
-        balance: roundrobin (default value)
-        errorfile&#95;400: /etc/haproxy/errors/400.http
-        errorfile&#95;403: /etc/haproxy/errors/403.http
-        errorfile&#95;408: /etc/haproxy/errors/408.http
-        errorfile&#95;500: /etc/haproxy/errors/500.http
-        errorfile&#95;502: /etc/haproxy/errors/502.http
-        errorfile&#95;503: /etc/haproxy/errors/503.http
-        errorfile&#95;504: /etc/haproxy/errors/504.http
-</pre>
-
-<hr>
-
 <h4 id="memcached">Memcached</h4>
-
-We don't currently support dedicated Memcached servers, although we plan to support this in the near future. We do support standalone (and scaling) Redis, and considering the [performance differences](http://jamieonsoftware.com/post/59738699304/memcached-vs-redis), it may be worth switching.
 
 #### shared&#95;group:
 
@@ -374,21 +346,6 @@ production:
 
 <hr>
 
-<h4 id="rabbit">RabbitMQ</h4>
-
-- **version**<br/>
-Specify the version of RabbitMQ you want to install (does not apply to external servers types)
-
-<pre class="terminal">
-... rabbitmq:
-        servers:
-            server: ...
-       	configuration:
-           	version: 3.2.1
-</pre>
-
-<hr>
-
 <h4 id="rails">Rails</h4>
 A Rails application type in the manifest file gives you fine control over things like the Ruby version or the server the rails application is deployed on.
 
@@ -451,6 +408,155 @@ Specify the version of Redis you want to install (does not apply to external ser
 		    server: ...
 		configuration:
 			version: 2.6.10
+</pre>
+
+<hr>
+
+<h4 id="sinatra">Sinatra</h4>
+A Sinatra application type in the manifest file gives you fine control over things like the Ruby version or which server the application is deployed on.
+
+- <b>ruby&#95;version</b><br/>
+Specify the version of Ruby to use (overridden if present in Gemfile)
+- <b>do&#95;initial&#95;db&#95;schema&#95;load</b><br/>
+Specify whether to perform "rake db:schema:load" on new builds
+- <b>reserved&#95;server&#95;memory</b><br/>
+A value in MB that Cloud 66 will assume should be left available. This will affect any automatically calculated values, and will be taken into account during redeployment
+- <b>passenger&#95;process&#95;memory</b><br/>
+A value in MB that Cloud 66 will use for each passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment
+- <b>activeprotect</b><br/>
+Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration
+- <b>nginx</b><br/>
+Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
+
+<pre class="terminal">
+... sinatra:
+        servers:
+            server: ...
+        configuration:
+            ruby&#95;version: 1.9.3
+            do&#95;initial&#95;db&#95;schema&#95;load: false
+            reserved&#95;server&#95;memory: 0 (default value)
+            passenger&#95;process&#95;memory: 200 (default value)
+            activeprotect:
+                whitelist: 123.123.123.123,234.234.234.234
+            nginx:
+                cors: true
+                perfect&#95;forward&#95;secrecy: true
+</pre>
+
+#### CORS configuration
+
+If you want to, you can also specify the origin and methods for CORS.
+<pre class="terminal">
+... sinatra:
+        servers:
+            server: ...
+        configuration:
+            nginx:
+                cors:
+                    origin: '*'
+                    methods: 'GET, OPTION'
+</pre>
+
+<hr>
+
+<h3 id="loadbalancer">Load balancers</h3>
+
+<h4 id="aws_elb">AWS load balancer</h4>
+Use a manifest file to the AWS load balancer deployed by Cloud 66. These changes will only apply when you create a new load balancer.
+
+Available settings:
+
+- **httpchk**<br/>
+The URL visited to check your server health
+
+<pre class="terminal">
+... load_balancer:
+        configuration:
+            httpchk: /
+</pre>
+
+<hr>
+
+<h4 id="gce_lb">GCE load balancer</h4>
+Use a manifest file to the GCE load balancer deployed by Cloud 66. These changes will only apply when you create a new load balancer.
+
+Available settings (refer to the [GCE documentation](https://cloud.google.com/compute/docs/load-balancing/network/target-pools) for more information):
+
+- **httpchk**<br/>
+The URL visited to check your server health
+
+- **balance**<br/>
+The load balancing strategy. You can use these values: NONE, CLIENT_IP or CLIENT_IP_PROTO.
+
+<pre class="terminal">
+... load_balancer:
+        configuration:
+            httpchk: /
+            balance: CLIENT_IP_PROTO
+</pre>
+
+<hr>
+
+<h4 id="haproxy">HAProxy</h4>
+Use a manifest file to configure your HAProxy load balancer deployed by Cloud 66. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/load-balancing/haproxy.html).
+
+Available settings (refer to the [HAProxy documentation](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt) for more information):
+
+- **httpchk**<br/>
+The health-check configuration
+- **balance**<br/>
+The load balancing strategy
+- **errorfile&#95;\*** <br/>
+Location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer
+
+<pre class="terminal">
+... load_balancer:
+        configuration:
+            httpchk: HEAD / HTTP/1.0 (default value)
+            balance: roundrobin (default value)
+            errorfile&#95;400: /etc/haproxy/errors/400.http
+            errorfile&#95;403: /etc/haproxy/errors/403.http
+            errorfile&#95;408: /etc/haproxy/errors/408.http
+            errorfile&#95;500: /etc/haproxy/errors/500.http
+            errorfile&#95;502: /etc/haproxy/errors/502.http
+            errorfile&#95;503: /etc/haproxy/errors/503.http
+            errorfile&#95;504: /etc/haproxy/errors/504.https
+</pre>
+
+<hr>
+
+<h4 id="nodebalancer">Linode Nodebalancer</h4>
+Use a manifest file to the Linode Nodebalancer deployed by Cloud 66. These changes will only apply when you create a new load balancer.
+
+Available settings (refer to the [Linode documentation](https://www.linode.com/docs/platform/nodebalancer/nodebalancer-reference-guide) for more information):
+
+- **httpchk**<br/>
+The health-check configuration
+- **balance**<br/>
+The load balancing strategy. You can use these values : roundrobin, leastconn or source.
+
+<pre class="terminal">
+... load_balancer:
+        configuration:
+            httpchk: /
+            balance: leastconn
+</pre>
+
+<hr>
+
+<h4 id="rs_loadbalancer">Rackspace load balancer</h4>
+Use a manifest file to the Rackspace load balancer deployed by Cloud 66. These changes will only apply when you create a new load balancer.
+
+Available settings (refer to the [Rackspace documentation](http://docs.rackspace.com/loadbalancers/api/v1.0/clb-devguide/content/Algorithms-d1e4367.html) for more information):
+
+- **balance**<br/>
+The load balancing strategy. You can use these values : ROUND_ROBIN, RANDOM or LEAST_CONNECTIONS.
+
+<pre class="terminal">
+... load_balancer:
+        configuration:
+            balance: LEAST_CONNECTIONS
 </pre>
 
 <hr>

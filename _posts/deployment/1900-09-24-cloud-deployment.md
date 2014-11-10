@@ -24,7 +24,7 @@ tags: ['']
     </li>
     <li>
         <a href="#edit">Edit or delete cloud keys</a>
-    </li>       
+    </li>
 </ul>
 
 <h2 id="about">About deploying to the cloud</h2>
@@ -34,14 +34,13 @@ By providing Cloud 66 with your unique cloud provider API keys, Cloud 66 can con
 Cloud 66 currently supports the following cloud providers:
 
 <ul>
-    <li><a href="/deployment/cloud-aws.html" target="_blank">Amazon Web Services</a></li>
-    <li><a href="/deployment/cloud-do.html" target="_blank">Digital Ocean</a></li>
-    <li><a href="/deployment/cloud-gce.html" target="_blank">Google Compute Engine</a></li>
-    <li><a href="/deployment/cloud-joyent.html" target="_blank">Joyent</a></li>
-    <li><a href="/deployment/cloud-linode.html" target="_blank">Linode</a></li>
-    <li><a href="/deployment/cloud-rackspace.html" target="_blank">Rackspace</a></li>
-    <li><a href="/deployment/cloud-telefonica.html" target="_blank">Telefonica</a></li>
-    <li><a href="/deployment/cloud-vexxhost.html" target="_blank">Vexxhost</a></li>
+    <li><a href="/articles/digitalocean-cloud">Digital Ocean</a></li>
+    <li><a href="/articles/amazon-web-services-cloud">Amazon Web Services</a></li>
+    <li><a href="/articles/rackspace-cloud">Rackspace</a></li>
+    <li><a href="/articles/linode-cloud">Linode</a></li>
+    <li><a href="/articles/google-compute-engine-cloud">Google Compute Engine</a></li>
+    <li><a href="/articles/vexxhost-cloud">Vexxhost</a></li>
+    <li><a href="/articles/joyent-cloud">Joyent</a></li>
 </ul>
 
 <div class="notice notice-warning">

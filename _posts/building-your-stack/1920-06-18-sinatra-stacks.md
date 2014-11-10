@@ -13,11 +13,11 @@ tags: ['']
 ---
 
 <h2>Contents</h2>
-<ul class="page-toc">   
-  <li><a href="#custom">Custom commands</a></li>    
-  <li><a href="#connect">Connect to your database</a></li>         
-  <li><a href="#example">Example applications</a></li>   
-</li>    
+<ul class="page-toc">
+  <li><a href="#custom">Custom commands</a></li>
+  <li><a href="#connect">Connect to your database</a></li>
+  <li><a href="#example">Example applications</a></li>
+</li>
 </ul>
 
 Cloud 66 supports stacks based on the [Sinatra framework](http://www.sinatrarb.com/), a light-weight web framework written in Ruby.

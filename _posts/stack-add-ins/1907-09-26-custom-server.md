@@ -11,7 +11,7 @@ search-tags: ['custom server', 'manage own server']
 tags: ['Customization', 'Add in']
 ---
 
-## What is the custom server add-in? 
+## What is the custom server add-in?
 Adding a custom server to your stack allows you to manage your own services while still benefiting from the Cloud 66 ecosystem.
 
 A custom server will have the following Cloud 66 features enabled:

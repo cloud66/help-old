@@ -1,5 +1,35 @@
 [
 	{
+	"date": "2014-10-19T11:00:00Z",
+	"title": "Two new awesome features",
+	"summary": "Individual Linux Users and RabbitMQ AddOn.",
+	"link": "http://blog.cloud66.com/two-new-awesome-features/"
+	},
+	{
+	"date": "2014-10-01T11:00:00Z",
+	"title": "API v3 is here",
+	"summary": "Use the API directly from cURL with Personal Tokens",
+	"link": "http://blog.cloud66.com/cloud-66-api-v3-is-here/"
+	},
+	{
+	"date": "2014-09-25T11:00:00Z",
+	"title": "Announcing OS level security monitoring",
+	"summary": "We are now actively monitoring your servers for OS security issues",
+	"link": "http://blog.cloud66.com/announcing-os-level-security-monitoring/"
+	},
+	{
+	"date": "2014-09-18T11:00:00Z",
+	"title": "Ubuntu 14.04, VPC support and T2 instance types",
+	"summary": "Support for developer friendly T2 instances types are here, and more!",
+	"link": "http://blog.cloud66.com/ubuntu-14-04-vpc-support-and-t2-instance-types/"
+	},
+	{
+	"date": "2014-09-06T11:00:00Z",
+	"title": "Say hello to your new dashboard",
+	"summary": "Search, new navigation and many more improvements in the UI",
+	"link": "http://blog.cloud66.com/say-hello-to-your-new-dashboard/"
+	},
+	{
 	"date": "2014-07-28T11:00:00Z",
 	"title": "Introducing ElasticAddress",
 	"summary": "Build multi data center stacks in minutes",

@@ -37,18 +37,18 @@ tags: ['']
     </li>
 	<li>
 		<a href="#network">Using network redirects</a>
-	</li>    
+	</li>
 	<li>
         <ul>
         <li><a href="#maintenance">Maintenance mode</a></li>
         <li><a href="#https">Redirect HTTP to HTTPS</a></li>
         <li><a href="#www">WWW or non-WWW in your URL</a></li>
         </ul>
-    </li>    
+    </li>
 </ul>
 
 <h2 id="about">About Network Settings</h2>
-The _Network Settings_ page contains all things network-related, in four tabs: 
+The _Network Settings_ page contains all things network-related, in four tabs:
 
 - <b>ActiveProtect&trade;:</b> Protects against denial of service and brute-force attacks
 - <b>Firewall:</b> Restricts access to your servers

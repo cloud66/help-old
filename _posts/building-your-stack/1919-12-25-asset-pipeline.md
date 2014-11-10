@@ -31,7 +31,7 @@ tags: ['Deployment']
     </li>
     <li>
         <a href="#speeding">About speeding up Rails deployments</a>
-    </li>    
+    </li>
 </ul>
 
 <h2 id="onoff">Enable/disable asset pipeline compilation</h2>

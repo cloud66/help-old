@@ -39,11 +39,9 @@ For example, your environment variables would be set like this:
 <pre class="prettyprint">
 MYSQL_ADDRESS=&#123;&#123; STACK[xyz].MYSQL_ADDRESS_INT &#125;&#125;
 MYSQL_DATABASE=&#123;&#123; STACK[xyz].MYSQL_DATABASE &#125;&#125;
-MYSQL_USERNAME=&#123;&#123; STACK[xyz].MYSQL_USERNAME &#125;&#125;
-MYSQL_PASSWORD=&#123;&#123; STACK[xyz].MYSQL_PASSWORD &#125;&#125;
 </pre>
 
-And your database.yml would look something like this:
+Database credentials such as username and password are not available for cross-stack referencing for security reasons. Instead, copy and paste them across as environment variables. Your database.yml would look something like this:
 
 <pre class="prettyprint">
 username: <%= ENV['MYSQL_USERNAME'] %>

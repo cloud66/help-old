@@ -45,13 +45,13 @@ redirects:
   getting-started/team-accounts.html: your-account/team-accounts.html
   getting-started/support.html: your-account/support.html
   how-to/git-url.html: how-to/access-your-code.html
-  toolbelt/introduction.html: cloud-66-toolbelt/introduction.html
+  #toolbelt/introduction.html: cloud-66-toolbelt/introduction.html
   toolbelt/stack-links.html: cloud-66-toolbelt/shortcuts.html
   toolbelt/stack-alias.html: cloud-66-toolbelt/shortcuts.html
   toolbelt/deployment.html: cloud-66-toolbelt/deployment.html
   toolbelt/set.html: cloud-66-toolbelt/set.html
   toolbelt/lease.html: cloud-66-toolbelt/lease.html
-  toolbelt/ssh.html: cloud-66-toolbelt/ssh.html
+  #toolbelt/ssh.html: cloud-66-toolbelt/ssh.html
   toolbelt/restart.html: cloud-66-toolbelt/restart.html
   toolbelt/download-backup.html: cloud-66-toolbelt/backups.html
   stacks/rename-stack.html: stacks/stack-information.hml
@@ -63,12 +63,12 @@ redirects:
   how-to/database-customconfig.html: database/database-customconfig.html
   how-to/seeding-db.html: database/seeding-db.html
   how-to/sharing-db.html: database/sharing-db.html
-  #how-to/change-psql-directory.html: database/change-psql-directory.html
   how-to/manage-backups.html: database/manage-backups.html
   how-to/mongodb-replica-sets.html: database/mongodb-replica-sets.html
   how-to/postgis-installation.html: database/postgis-installation.html
   how-to/psql-failover.html: database/psql-failover.html
   how-to/replace-sqlite.html: database/replace-sqlite.html
+  stack-features/horizontal-scaling.html: "http://help.cloud66.com/deployment/scaling.html"
   how-to/uninstall-mysql.html: database/uninstall-mysql.html
   how-to/using-master-data-staging.html: database/using-master-data-staging.html
   how-to/scaling_with_redis.html: database/scaling_with_redis.html
@@ -77,227 +77,131 @@ redirects:
   how-to/integration-with-semaphore.html: partners/integration-with-semaphore.html
   stack-features/stack-security.html: stack-features/network-configuration.html
   stack-features/maintenance-mode.html: stack-features/network-configuration.html
-  ### pages moved from help to community (tutorials)
-  troubleshooting/unicorn-issues.html: http://community.cloud66.com/articles/unicorn-deployment-issues
-  troubleshooting/whenever-errors.html: http://community.cloud66.com/articles/whenever-cron-errors
-  troubleshooting/gem-dependencies.html: http://community.cloud66.com/articles/gem-dependency-errors
-  database/psql-failover.html: http://community.cloud66.com/articles/postgresql-failover-procedure
-  database/change-psql-directory.html: http://community.cloud66.com/articles/change-the-data-directory-for-postgresql
-  how-to/ssl-certificate.html: http://community.cloud66.com/articles/ssl-certificate
-  database/postgis-installation.html: http://community.cloud66.com/articles/postgis-installation
-  how-to/symlink-folders.html: http://community.cloud66.com/articles/create-symbolic-links-in-ubuntu
-  database/using-master-data-staging.html: http://community.cloud66.com/articles/using-production-data-on-your-staging-stack
-  how-to/github.html: http://community.cloud66.com/articles/use-github-with-cloud-66
-  how-to/out-of-memory-errors.html: http://community.cloud66.com/articles/out-of-memory-errors-during-deployment
-  troubleshooting/memory-usage-issues.html: http://community.cloud66.com/articles/memory-usage-issues
-  database/sharing-db.html: http://community.cloud66.com/articles/sharing-a-database-between-stacks
-  troubleshooting/application-not-serving.html: http://community.cloud66.com/articles/application-not-serving-content
-  troubleshooting/smtp-timeouts.html: http://community.cloud66.com/articles/smtp-timeouts-on-amazon-aws-ec2
-  how-to/migrate-from-heroku.html: http://community.cloud66.com/articles/migrate-from-heroku-to-cloud-66
-  how-to/rails-console.html: http://community.cloud66.com/articles/running-rails-console
-  web-server/nginx-auth.html: http://community.cloud66.com/articles/nginx-basic-authorization
-  database/manage-backups.html: http://community.cloud66.com/articles/managing-your-cloud-66-backups
-  how-to/implementing-faye.html: http://community.cloud66.com/articles/faye-on-cloud-66
-  troubleshooting/permission-denied-errors.html: http://community.cloud66.com/articles/permission-errors-during-deployment
-  how-to/nginx-modules.html: http://community.cloud66.com/articles/add-modules-to-nginx
-  web-server/nginx-deny.html: http://community.cloud66.com/articles/nginx-allow-and-deny-by-ip
-  how-to/haproxy-for-websocket.html: http://community.cloud66.com/articles/configuring-haproxy-for-websocket
-  how-to/migrate-across-dc.html: http://community.cloud66.com/articles/migrate-your-stacks-across-data-centers
-  database/uninstall-mysql.html: http://community.cloud66.com/articles/uninstalling-mysql
-  stack-features/whenever.html: http://community.cloud66.com/articles/whenever-gem
-  how-to/ssl-termination-on-load-balancers.html: http://community.cloud66.com/articles/add-a-ssl-certificate-on-a-load-balancer
-  how-to/access-your-code.html: http://community.cloud66.com/articles/accessing-your-git-repository
-  how-to/bluepill.html: http://community.cloud66.com/articles/managing-processes-with-bluepill
-  how-to/optimizing-performance.html: http://community.cloud66.com/articles/optimizing-for-server-load
-  database/connect-db-servers.html: http://community.cloud66.com/articles/connect-to-your-database-servers
-  troubleshooting/local-cached-copy-error.html: http://community.cloud66.com/articles/local-cached-copy-error
-  how-to/websocket-support.html: http://community.cloud66.com/articles/cloud-66-websocket-support
-  web-server/nginx-redirect.html: http://community.cloud66.com/articles/nginx-redirects
-  how-to/memcached.html: http://community.cloud66.com/articles/memcached
-  troubleshooting/libv8-gem-errors.html: http://community.cloud66.com/articles/errors-when-installing-gem-libv8
-  troubleshooting/smtp-installation.html: http://community.cloud66.com/articles/installing-smtp-on-your-server
-  troubleshooting/ssl-certificate-issues.html: http://community.cloud66.com/articles/ssl-certificate-issues
-  how-to/asset-pipeline.html: http://community.cloud66.com/articles/asset-pipeline-errors
-  database/replace-sqlite.html: http://community.cloud66.com/articles/replacing-sqlite-with-mysql-or-postgresql
-  troubleshooting/db-structure-dump-error.html: http://community.cloud66.com/articles/errors-during-deployment-around-database-dumping
-  database/seeding-db.html: http://community.cloud66.com/articles/seeding-your-database
-  troubleshooting/digitalocean-server-creation-errors.html: http://community.cloud66.com/articles/digitalocean-server-creation-errors
-  troubleshooting/db-config-test-group-errors.html: http://community.cloud66.com/articles/errors-due-to-different-group-configs-in-database-yml
-  how-to/running-rake-tasks.html: http://community.cloud66.com/articles/running-rake-tasks
-  ### redirects from old help pages to new help pages (commented articles have moved to tutorials)
-  /getting-started/introduction.html: /introduction-to-cloud-66/introduction.html
-  /getting-started/supported-clouds.html: /deployment/cloud-deployment.html
-  /getting-started/standalone-servers.html: /deployment/server-deployment.html
-  /getting-started/supported-frameworks.html: /tech-specs/versions.html
-  /getting-started/what-is-a-stack.html: /stack-definition/stack-definition.html
-  /getting-started/your-first-stack.html: /introduction-to-cloud-66/introduction.html
-  /getting-started/pre-deployment.html: http://help.cloud66.com
-  /getting-started/post-deployment.html: http://help.cloud66.com
-  /getting-started/security.html: /introduction-to-cloud-66/security.html
-  /getting-started/cloud66-status.html: /introduction-to-cloud-66/cloud66-status.html
-  /getting-started/faq.html: /introduction-to-cloud-66/faq.html
-  /stack-features/backup-verifiers.html: /database-management/backup-verifiers.html
-  /stack-features/custom-config.html: /stack-definition/custom-config.html
-  /stack-features/custom-environments.html: /stack-definition/stack-definition.html
-  /stack-features/database-import.html: /database-management/database-import.html
-  /stack-features/database-replication.html: /database-management/database-replication.html
-  /stack-features/database-replication-between-stacks.html: /database-management/database-replication.html
-  /stack-features/deploy-history.html: /deployment/deployment-history.html
-  /stack-features/deploy-hooks.html:/deployment/deploy-hooks.html
-  /stack-features/dns-service.html: /dns/server-ip-addresses.html
-  /stack-features/elastic-address.html: /dns/elastic-address.html
-  /stack-features/env-vars.html: /deployment/env-vars.html
-  /stack-features/logging.html: /stack-definition/logging.html
-  /stack-features/manifest-files.html: /stack-definition/manifest-files.html
-  /stack-features/notifications.html: /stack-definition/notifications.html
-  /stack-features/parallel-deployment.html: /deployment/parallel-deployment.html
-  /stack-features/redeployment-hook.html: /deployment/redeployment-hook.html
-  /stack-features/proc-files.html: /deployment/proc-files.html
-  /stack-features/horizontal-scaling.html: /deployment/scaling.html
-  /stack-features/vertical-scaling.html: /deployment/scaling.html
-  /stack-features/server-ip-addresses.html: /dns/server-ip-addresses.html
-  /stack-features/server-monitoring.html: /stack-definition/server-monitoring.html
-  /stack-features/stack-clone.html: /stack-definition/stack-definition.html
-  /stack-features/stack-envs.html: /stack-definition/stack-definition.html
-  /stack-features/network-configuration.html: /stack-definition/network-configuration.html
-  /stack-features/stackscore.html: /stack-definition/stack-definition.html
-  /stack-features/standalone-process-servers.html: /deployment/proc-files.html
-  #/stack-features/whenever.html
-  /add-ins/addins-intro.html: /stack-definition/addins-intro.html
-  /add-ins/custom-server.html: /stack-definition/custom-server.html
-  /add-ins/backups.html: /stack-definition/backups.html
-  /add-ins/elasticsearch.html: /stack-definition/elasticsearch.html
-  /add-ins/honeybadger.html: /stack-definition/honeybadger.html
-  /add-ins/load-balancer.html: /stack-definition/load-balancer.html
-  /add-ins/logentries.html: /stack-definition/logentries.html
-  /add-ins/rake-task.html: /stack-definition/rake-task.html
-  /add-ins/redis.html: /stack-definition/redis.html
-  /add-ins/shell.html: /stack-definition/shell.html
-  /add-ins/ssl.html: /stack-definition/ssl.html
-  /stacks/versions.html: /tech-specs/versions.html
-  /stacks/databases.html: /database-management/database-management.html
-  /stacks/easy-deploy-repos.html: /deployment/easy-deploy-repos.html
-  /stacks/multi-region-stack.html: http://community.cloud66.com/articles/multi-region-stacks
-  /stacks/operating-system-information.html: /deployment/server-deployment.html
-  /stacks/padrino-stacks.html: /stack-definition/padrino-stacks.html
-  /stacks/rails-stacks.html: /stack-definition/rails-stacks.html
-  /stacks/sinatra-stacks.html: /stack-definition/sinatra-stacks.html
-  /stacks/stack-information.html: /stack-definition/stack-definition.html
-  /web-server/custom-500-page.html: /web-server/nginx.html
-  /web-server/custom-webserver.html: /web-server/custom-webserver.html
-  #/web-server/nginx-auth.html
-  /web-server/nginx-config.html: /web-server/nginx.html
-  #/web-server/nginx-deny.html
-  #/web-server/nginx-redirect.html
-  /web-server/nginx-workers.html: /web-server/nginx.html
-  /web-server/passenger-enterprise.html: /web-server/passenger-enterprise.html
-  /web-server/puma-rack-server.html: /web-server/puma-rack-server.html
-  /web-server/thin-rack-server.html: /web-server/thin-rack-server.html
-  /web-server/unicorn-rack-server.html: /web-server/unicorn-rack-server.html
-  #/database/change-psql-directory.html
-  #/database/connect-db-servers.html
-  /database/control-db-migration.html: /database-management/database-management.html
-  /database/database-customconfig.html: /database-management/database-management.html
-  #/database/manage-backups.html
-  /database/mongodb-replica-sets.html: /database-management/mongodb-replica-sets.html
-  #/database/postgis-installation.html
-  #/database/psql-failover.html
-  #/database/replace-sqlite.html
-  /database/scaling_with_redis.html: /deployment/scaling.html
-  #/database/seeding-db.html
-  #/database/sharing-db.html
-  #/database/uninstall-mysql.html
-  #/database/using-master-data-staging.html
-  /your-account/delete-account.html: /account-management/account-management.html
-  /your-account/data-protection.html: /compliance-guides/data-protection.html
-  /your-account/pci-compliance.html: /compliance-guides/pci-compliance.html
-  /your-account/pricing.html: http://cloud66.com/pricing
-  /your-account/referral-program.html: /account-management/referral-program.html
-  /your-account/support.html: http://cloud66.com/pricing
-  /your-account/team-accounts.html: /account-management/team-accounts.html
-  /your-account/two-step-verification.html: /account-management/two-step-verification.html
-  /cloud-providers/cloud-aws.html: /deployment/cloud-aws.html
-  /cloud-providers/cloud-do.html: /deployment/cloud-do.html
-  /cloud-providers/cloud-gce.html: /deployment/cloud-gce.html
-  /cloud-providers/cloud-joyent.html: /deployment/cloud-joyent.html
-  /cloud-providers/cloud-linode.html: /deployment/cloud-linode.html
-  /cloud-providers/cloud-rackspace.html: /deployment/cloud-rackspace.html
-  /cloud-providers/cloud-telefonica.html: http://help.cloud66.com
-  /cloud-providers/cloud-vexxhost.html: /deployment/cloud-vexxhost.html
-  /how-to/introduction.html: http://community.cloud66.com
-  #/how-to/ssl-termination-on-load-balancers.html
-  /how-to/detailed-server-logs.html: /stack-definition/logging.html
-  #/how-to/access-your-code.html
-  #/how-to/nginx-modules.html
-  /how-to/aws-keys.html: http://community.cloud66.com
-  #/how-to/asset-pipeline.html
-  #/how-to/websocket-support.html
-  /how-to/configure-dns.html: /dns/configure-dns.html
-  /how-to/configuring-haproxy.html: /load-balancing/haproxy.html
-  #/how-to/haproxy-for-websocket.html
-  #/how-to/symlink-folders.html
-  /how-to/customconf-patch.html: /stack-definition/custom-config.html
-  /how-to/deploy-hook-cases.html: /deployment/deploy-hooks.html
-  #/how-to/implementing-faye.html
-  /how-to/haproxy-customconfig.html: /load-balancing/haproxy.html
-  #/how-to/smtp-installation.html
-  #/how-to/bluepill.html
-  #/how-to/memcached.html
-  #/how-to/migrate-from-heroku.html
-  #/how-to/migrate-across-dc.html
-  /how-to/monitoring-health.html: http://community.cloud66.com
-  /how-to/nginx-customconfig.html: /web-server/nginx.html
-  #/how-to/optimizing-performance.html
-  #/how-to/out-of-memory-errors.html
-  #/how-to/rails-console.html
-  #/how-to/running-rake-tasks.html
-  /how-to/ssh-keys.html: http://community.cloud66.com/articles/setting-up-ssh-keys
-  /how-to/speed-deploy.html: /stack-definition/asset-pipeline.html
-  #/how-to/ssl-certificate.html
-  /how-to/shell-to-your-servers.html: /stack-definition/ssh-to-server.html
-  /how-to/shell-from-windows.html: /stack-definition/ssh-to-server.html
-  /how-to/upgrade-packages.html: /stack-definition/applying-upgrades.html
-  /how-to/upgrade-ruby.html: /stack-definition/applying-upgrades.html
-  #/how-to/github.html
-  /how-to/zero-downtime-deploys.html: http://community.cloud66.com/articles/zero-downtime-deployments
-  #/troubleshooting/application-not-serving.html
-  /troubleshooting/asset-pipeline.html: http://community.cloud66.com/articles/asset-pipeline-errors
-  #/troubleshooting/digitalocean-server-creation-errors.html
-  #/troubleshooting/db-config-test-group-errors.html
-  #/troubleshooting/db-structure-dump-error.html
-  #/troubleshooting/libv8-gem-errors.html
-  #/troubleshooting/gem-dependencies.html
-  #/troubleshooting/local-cached-copy-error.html
-  #/troubleshooting/memory-usage-issues.html
-  #/troubleshooting/permission-denied-errors.html
-  #/troubleshooting/smtp-timeouts.html
-  #/troubleshooting/ssl-certificate-issues.html
-  #/troubleshooting/unicorn-issues.html
-  #/troubleshooting/whenever-errors.html
-  /cloud-66-toolbelt/introduction.html: /toolbelt/introduction.html
-  /cloud-66-toolbelt/backups.html: /toolbelt/backup-mgmt.html
-  /cloud-66-toolbelt/deployment.html: /toolbelt/stack-mgmt.html
-  /cloud-66-toolbelt/file-download.html: /toolbelt/file-mgmt.html
-  /cloud-66-toolbelt/file-upload.html: /toolbelt/file-mgmt.html
-  /cloud-66-toolbelt/ssh.html: /toolbelt/ssh.html
-  /cloud-66-toolbelt/env-vars.html: /toolbelt/env-vars.html
-  /cloud-66-toolbelt/restart.html: /toolbelt/stack-mgmt.html
-  /cloud-66-toolbelt/server-set.html: /toolbelt/server-setup.html
-  /cloud-66-toolbelt/set.html: /toolbelt/stack-mgmt.html
-  /cloud-66-toolbelt/tail-logs.html: /toolbelt/logging.html
-  /cloud-66-toolbelt/shortcuts.html: /toolbelt/introduction.html
-  /cloud-66-toolbelt/lease.html: /toolbelt/ssh.html
-  /partners/circle-ci-integration.html: /partner-integration/circle-ci-integration.html
-  /partners/travis-ci-integration.html: /partner-integration/travis-ci-integration.html
-  /partners/integration-with-semaphore.html: /partner-integration/semaphore-integration.html
-  /partners/integration_api.html: /partner-integration/partner-integration.html
-#   about.php: about.html
-#   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
-
-# routing_rules:
-#   - condition:
-#       key_prefix_equals: blog/some_path
-#     redirect:
-#       host_name: blog.example.com
-#       replace_key_prefix_with: some_new_path/
-#       http_redirect_code: 301
+  troubleshooting/unicorn-issues.html: "http://community.cloud66.com/articles/unicorn-deployment-issues"
+  troubleshooting/whenever-errors.html: "http://community.cloud66.com/articles/whenever-cron-errors"
+  troubleshooting/gem-dependencies.html: "http://community.cloud66.com/articles/gem-dependency-errors"
+  database/psql-failover.html: "http://community.cloud66.com/articles/postgresql-failover-procedure"
+  database/change-psql-directory.html: "http://community.cloud66.com/articles/change-the-data-directory-for-postgresql"
+  how-to/ssl-certificate.html: "http://community.cloud66.com/articles/ssl-certificate"
+  database/postgis-installation.html: "http://community.cloud66.com/articles/postgis-installation"
+  how-to/symlink-folders.html: "http://community.cloud66.com/articles/create-symbolic-links-in-ubuntu"
+  database/using-master-data-staging.html: "http://community.cloud66.com/articles/using-production-data-on-your-staging-stack"
+  how-to/github.html: "http://community.cloud66.com/articles/use-github-with-cloud-66"
+  how-to/out-of-memory-errors.html: "http://community.cloud66.com/articles/out-of-memory-errors-during-deployment"
+  troubleshooting/memory-usage-issues.html: "http://community.cloud66.com/articles/memory-usage-issues"
+  database/sharing-db.html: "http://community.cloud66.com/articles/sharing-a-database-between-stacks"
+  troubleshooting/application-not-serving.html: "http://community.cloud66.com/articles/application-not-serving-content"
+  troubleshooting/smtp-timeouts.html: "http://community.cloud66.com/articles/smtp-timeouts-on-amazon-aws-ec2"
+  how-to/migrate-from-heroku.html: "http://community.cloud66.com/articles/migrate-from-heroku-to-cloud-66"
+  how-to/rails-console.html: "http://community.cloud66.com/articles/running-rails-console"
+  web-server/nginx-auth.html: "http://community.cloud66.com/articles/nginx-basic-authorization"
+  database/manage-backups.html: "http://community.cloud66.com/articles/managing-your-cloud-66-backups"
+  how-to/implementing-faye.html: "http://community.cloud66.com/articles/faye-on-cloud-66"
+  troubleshooting/permission-denied-errors.html: "http://community.cloud66.com/articles/permission-errors-during-deployment"
+  how-to/nginx-modules.html: "http://community.cloud66.com/articles/add-modules-to-nginx"
+  web-server/nginx-deny.html: "http://community.cloud66.com/articles/nginx-allow-and-deny-by-ip"
+  how-to/haproxy-for-websocket.html: "http://community.cloud66.com/articles/configuring-haproxy-for-websocket"
+  how-to/migrate-across-dc.html: "http://community.cloud66.com/articles/migrate-your-stacks-across-data-centers"
+  database/uninstall-mysql.html: "http://community.cloud66.com/articles/uninstalling-mysql"
+  stack-features/whenever.html: "http://community.cloud66.com/articles/whenever-gem"
+  how-to/ssl-termination-on-load-balancers.html: "http://community.cloud66.com/articles/add-a-ssl-certificate-on-a-load-balancer"
+  how-to/access-your-code.html: "http://community.cloud66.com/articles/accessing-your-git-repository"
+  how-to/bluepill.html: "http://community.cloud66.com/articles/managing-processes-with-bluepill"
+  how-to/optimizing-performance.html: "http://community.cloud66.com/articles/optimizing-for-server-load"
+  database/connect-db-servers.html: "http://community.cloud66.com/articles/connect-to-your-database-servers"
+  troubleshooting/local-cached-copy-error.html: "http://community.cloud66.com/articles/local-cached-copy-error"
+  how-to/websocket-support.html: "http://community.cloud66.com/articles/cloud-66-websocket-support"
+  web-server/nginx-redirect.html: "http://community.cloud66.com/articles/nginx-redirects"
+  how-to/memcached.html: "http://community.cloud66.com/articles/memcached"
+  troubleshooting/libv8-gem-errors.html: "http://community.cloud66.com/articles/errors-when-installing-gem-libv8"
+  troubleshooting/smtp-installation.html: "http://community.cloud66.com/articles/installing-smtp-on-your-server"
+  troubleshooting/ssl-certificate-issues.html: "http://community.cloud66.com/articles/ssl-certificate-issues"
+  how-to/asset-pipeline.html: "http://community.cloud66.com/articles/asset-pipeline-errors"
+  database/replace-sqlite.html: "http://community.cloud66.com/articles/replacing-sqlite-with-mysql-or-postgresql"
+  troubleshooting/db-structure-dump-error.html: "http://community.cloud66.com/articles/errors-during-deployment-around-database-dumping"
+  database/seeding-db.html: "http://community.cloud66.com/articles/seeding-your-database"
+  troubleshooting/digitalocean-server-creation-errors.html: "http://community.cloud66.com/articles/digitalocean-server-creation-errors"
+  troubleshooting/db-config-test-group-errors.html: "http://community.cloud66.com/articles/errors-due-to-different-group-configs-in-database-yml"
+  how-to/running-rake-tasks.html: "http://community.cloud66.com/articles/running-rake-tasks"
+  getting-started/introduction.html: /introduction-to-cloud-66/introduction.html
+  getting-started/supported-clouds.html: /deployment/cloud-deployment.html
+  getting-started/standalone-servers.html: /deployment/server-deployment.html
+  getting-started/supported-frameworks.html: /tech-specs/versions.html
+  stacks/versions.html: /tech-specs/versions.html
+  getting-started/what-is-a-stack.html: /stack-definition/stack-definition.html
+  getting-started/your-first-stack.html: /introduction-to-cloud-66/introduction.html
+  getting-started/pre-deployment.html: "http://help.cloud66.com"
+  getting-started/post-deployment.html: "http://help.cloud66.com"
+  getting-started/security.html: /introduction-to-cloud-66/security.html
+  getting-started/cloud66-status.html: /introduction-to-cloud-66/cloud66-status.html
+  your-account/pci-compliance.html: /compliance-guides/pci-compliance.html
+  your-account/pricing.html: "http://cloud66.com/pricing"
+  your-account/referral-program.html: /account-management/referral-program.html
+  your-account/support.html: "http://cloud66.com/pricing"
+  your-account/team-accounts.html: /account-management/team-accounts.html
+  your-account/two-step-verification.html: /account-management/two-step-verification.html
+  cloud-providers/cloud-aws.html: /deployment/cloud-aws.html
+  cloud-providers/cloud-do.html: /deployment/cloud-do.html
+  cloud-providers/cloud-gce.html: /deployment/cloud-gce.html
+  cloud-providers/cloud-joyent.html: /deployment/cloud-joyent.html
+  cloud-providers/cloud-linode.html: /deployment/cloud-linode.html
+  cloud-providers/cloud-rackspace.html: /deployment/cloud-rackspace.html
+  cloud-providers/cloud-telefonica.html: "http://help.cloud66.com"
+  cloud-providers/cloud-vexxhost.html: /deployment/cloud-vexxhost.html
+  how-to/introduction.html: "http://community.cloud66.com"
+  your-account/pci-compliance.html: /compliance-guides/pci-compliance.html
+  your-account/pricing.html: "http://cloud66.com/pricing"
+  your-account/referral-program.html: /account-management/referral-program.html
+  your-account/support.html: "http://cloud66.com/pricing"
+  your-account/team-accounts.html: /account-management/team-accounts.html
+  your-account/pci-compliance.html: /compliance-guides/pci-compliance.html
+  your-account/pricing.html: "http://cloud66.com/pricing"
+  your-account/referral-program.html: /account-management/referral-program.html
+  your-account/pci-compliance.html: /compliance-guides/pci-compliance.html
+  your-account/referral-program.html: /account-management/referral-program.html
+  your-account/support.html: "http://cloud66.com/pricing"
+  your-account/team-accounts.html: /account-management/team-accounts.html
+  your-account/two-step-verification.html: /account-management/two-step-verification.html
+  cloud-providers/cloud-aws.html: /deployment/cloud-aws.html
+  cloud-providers/cloud-do.html: /deployment/cloud-do.html
+  cloud-providers/cloud-gce.html: /deployment/cloud-gce.html
+  cloud-providers/cloud-joyent.html: /deployment/cloud-joyent.html
+  cloud-providers/cloud-linode.html: /deployment/cloud-linode.html
+  cloud-providers/cloud-rackspace.html: /deployment/cloud-rackspace.html
+  cloud-providers/cloud-telefonica.html: "http://help.cloud66.com"
+  cloud-providers/cloud-vexxhost.html: /deployment/cloud-vexxhost.html
+  how-to/introduction.html: "http://community.cloud66.com"
+  how-to/detailed-server-logs.html: /stack-definition/logging.html
+  how-to/aws-keys.html: "http://community.cloud66.com"
+  how-to/configure-dns.html: /dns/configure-dns.html
+  how-to/configuring-haproxy.html: /load-balancing/haproxy.html
+  how-to/customconf-patch.html: /stack-definition/custom-config.html
+  how-to/deploy-hook-cases.html: /deployment/deploy-hooks.html
+  how-to/haproxy-customconfig.html: /load-balancing/haproxy.html
+  how-to/monitoring-health.html: "http://community.cloud66.com"
+  how-to/nginx-customconfig.html: /web-server/nginx.html
+  how-to/ssh-keys.html: "http://community.cloud66.com/articles/setting-up-ssh-keys"
+  how-to/speed-deploy.html: /stack-definition/asset-pipeline.html
+  how-to/shell-to-your-servers.html: /stack-definition/ssh-to-server.html
+  how-to/shell-from-windows.html: /stack-definition/ssh-to-server.html
+  how-to/upgrade-packages.html: /stack-definition/applying-upgrades.html
+  how-to/upgrade-ruby.html: /stack-definition/applying-upgrades.html
+  how-to/zero-downtime-deploys.html: "http://community.cloud66.com/articles/zero-downtime-deployments"
+  troubleshooting/asset-pipeline.html: "http://community.cloud66.com/articles/asset-pipeline-errors"
+  cloud-66-toolbelt/introduction.html: /toolbelt/introduction.html
+  cloud-66-toolbelt/backups.html: /toolbelt/backup-mgmt.html
+  cloud-66-toolbelt/deployment.html: /toolbelt/stack-mgmt.html
+  cloud-66-toolbelt/file-download.html: /toolbelt/file-mgmt.html
+  cloud-66-toolbelt/file-upload.html: /toolbelt/file-mgmt.html
+  cloud-66-toolbelt/ssh.html: /toolbelt/ssh.html
+  cloud-66-toolbelt/env-vars.html: /toolbelt/env-vars.html
+  cloud-66-toolbelt/restart.html: /toolbelt/stack-mgmt.html
+  cloud-66-toolbelt/server-set.html: /toolbelt/server-setup.html
+  cloud-66-toolbelt/set.html: /toolbelt/stack-mgmt.html
+  cloud-66-toolbelt/tail-logs.html: /toolbelt/logging.html
+  cloud-66-toolbelt/shortcuts.html: /toolbelt/introduction.html
+  cloud-66-toolbelt/lease.html: /toolbelt/ssh.html
+  partners/circle-ci-integration.html: /partner-integration/circle-ci-integration.html
+  partners/travis-ci-integration.html: /partner-integration/travis-ci-integration.html
+  partners/integration-with-semaphore.html: /partner-integration/semaphore-integration.html
+  partners/integration_api.html: /partner-integration/partner-integration.html
