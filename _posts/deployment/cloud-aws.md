@@ -65,6 +65,7 @@ Back in the _Users_ view, we now need to attach a user policy for this user. Cli
 <h2 id="add">Add AWS keys to a stack</h2>
 Visit the Cloud 66 Dashboard and select _Get started building a stack_. After connecting to your Git repository and analyzing your code, you will be asked to _Add your cloud platform_. From this menu, select _Amazon Web Services_ and provide your credentials.
 <br/>
+
 <div class="notice notice-warning">
     <h3>Notice</h3>
     <p>Should you wish to delete your stack on Cloud 66, your servers <b>will not</b> be deleted on your cloud provider.</p>

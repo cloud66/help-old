@@ -78,7 +78,7 @@ Without replica sets, you can connect to your MongoDB using environment variable
 
 `MONGODB_ADDRESS` contains the IP address of your MongoDB. In [Mongoid](http://mongoid.org/en/mongoid/index.html) for example it can be used in your mongoid.yml with `host` (mongoid < 3) or `hosts` (mongoid > 3).
 
-`MONGODB_ADDRESS_INT` and `MONGODB_ADDRESS_EXT` contain the internal and external network addresses for the same server. You usually want to connect to the internal address to avoid paying for traffic between your web servers and database servers. `MONGODB_ADDRESS` is configured with the internal address <code>\{\{MONGODB\_ADDRESS\_INT\}\}</code>, but you can [change that](/deployment/environment-variables) if you need.
+`MONGODB_ADDRESS_INT` and `MONGODB_ADDRESS_EXT` contain the internal and external network addresses for the same server. You usually want to connect to the internal address to avoid paying for traffic between your web servers and database servers. `MONGODB_ADDRESS` is configured with the internal address <code>{{MONGODB_ADDRESS_INT}}</code>, but you can [change that](/deployment/environment-variables) if you need.
 
 `MONGODO_URL_INT` contains a MongoDB client friendly URL to the server with its internal address. It usually looks like this:
 
@@ -88,7 +88,7 @@ Without replica sets, you can connect to your MongoDB using environment variable
 
 <pre class="terminal">mongodb://50.45.87.46:27017/my_database</pre>
 
-`MONGODB_URL` is pointing to <code>\{\{MONGODB\_URL\_INT}\}</code> by default.
+`MONGODB_URL` is pointing to <code>{{MONGODB_URL_INT}}</code> by default.
 
 Once replication is enabled, this environment variable is populated:
 

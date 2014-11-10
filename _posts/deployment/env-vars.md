@@ -58,7 +58,8 @@ For a list of environment variables available in your stack, visit the _Environm
 When you create a new stack, you are given the option to assign your own environment variables after code analysis. Once your code has been analyzed, click _Add environment variables before deployment_ in the _About your app_ field. This will allow you to view the environment variables that Cloud 66 sets for you, and set your own.
 
 You can set your own by either manually entering them, or uploading a file that contain the variables. This file should use the following format:
-<pre class="terminal">
+
+<pre class="prettyprint">
 KEY&#95;1=value&#95;1
 KEY&#95;2=value&#95;2
 </pre>
@@ -83,8 +84,13 @@ This is done using the <kbd>&#123;&#123; STACK[STACK_UID].ENV&#95;VAR &#125;&#12
 Referencing environment variables is done differently depending on your application settings, but these are some examples.
 
 - <b>Bash scripts</b>
-<pre class="terminal">$ENV_VAR</pre>
+
+<pre class="prettyprint">$ENV_VAR</pre>
+
 - <b>.YML files</b><br/>
-<pre class="terminal">username: &lt;%= ENV['DB&#95;USER'] %&gt;</pre>
+
+<pre class="prettyprint">username: &lt;%= ENV['DB&#95;USER'] %&gt;</pre>
+
 - <b>.RB files</b><br/>
-<pre class="terminal">working_directory "#{ENV['STACK_PATH']}"</pre>
+
+<pre class="prettyprint">working_directory "#{ENV['STACK_PATH']}"</pre>

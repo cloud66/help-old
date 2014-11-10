@@ -160,19 +160,22 @@ Default values (if the field is not explicitly specified) are shown in brackets.
 </font></CAPTION>
 
 <h1 id="how">How to use deploy hooks</h1>
-To make use of deploy hooks, a file called _deploy_hooks.yml_ should be present within a folder named _.cloud66_, which is in turn located in the root of your source code. This file should be YAML formatted, and you can use a service like <a href="http://yamllint.com/" target="_blank">YAMLlint</a> to validate it.
+To make use of deploy hooks, a file called _deploy_hooks.yml_ should be present within a folder named <i>.cloud66</i>, which is in turn located in the root of your source code. This file should be YAML formatted, and you can use a service like <a href="http://yamllint.com/" target="_blank">YAMLlint</a> to validate it.
+
 {% highlight bash %}
 /.cloud66/deploy_hooks.yml
 {% endhighlight %}
 
 Creating a deploy hook from scratch consists of a number of steps:
 
-1. Choose your environment - eg. example _production_, _development_, _staging_ and so on.
-2. Choose your hook point - eg. <i>first_thing</i>, <i>after_rails</i> and so on.
-3. Choose your deploy hook type - eg. <i>snippet</i>, <i>command</i> or <i>script</i>.
-4. Select any additional hook fields you require
+<ol>
+<li>Choose your environment - eg. example <i>production</i>, <i>development</i>, <i>staging</i> and so on.</li>
+<li>Choose your hook point - eg. <i>first_thing</i>, <i>after_rails</i> and so on.</li>
+<li>Choose your deploy hook type - eg. <i>snippet</i>, <i>command</i> or <i>script</i>.</li>
+<li>Select any additional hook fields you require</li>
+</ol>
 
-Automating deploy hooks can sometimes be tricky. To avoid issues, it's good practice to run each of your commands manually to see that they complete successfully. If a specific command doesn't show any output, you can use the <code>echo $?</code> command after issuing your command to see its exit code. If it returns a _zero_, your command was successful, whereas a _one_ means it has failed.
+Automating deploy hooks can sometimes be tricky. To avoid issues, it's good practice to run each of your commands manually to see that they complete successfully. If a specific command doesn't show any output, you can use the <code>echo $?</code> command after issuing your command to see its exit code. If it returns a <i>zero</i>, your command was successful, whereas a <i>one</i> means it has failed.
 
 <h2 id="snippets">Use a snippet deploy hook</h2>
 Below is a bare-bone example of using a snippet with the required fields - it will execute the <a href="https://raw.githubusercontent.com/cloud66/snippets/master/cloud66/node">Cloud 66 Node snippet</a> as the first thing on all production servers.
@@ -202,7 +205,7 @@ production: # Environment
     <p>When automating the installation of packages, remember to use the <i>-y</i> flag to answer yes to all prompts.</p>
 </div>
 
-The example below can be used to run custom rake tasks during server build. If you need to run it more than once, consider using the [rake task add-in](/stack-add-ins/rake-task).
+The example below can be used to run custom rake tasks during server build. If you need to run it more than once, consider using the <a href="/stack-add-ins/rake-task">rake task add-in</a>.
 
 {% highlight yaml %}
 production: # Environment
@@ -216,7 +219,7 @@ production: # Environment
 This will run our rake task on one Rails server and only during the initial build. We run this as a last_thing hook because if we ran it earlier the application wouldn't exist on the server and be usable.
 
 <h2 id="scripts">Use a script deploy hook</h2>
-The hook below will copy a file from your repository to your _tmp_ folder and execute it during build.
+The hook below will copy a file from your repository to your <i>tmp</i> folder and execute it during build.
 {% highlight yaml %}
 production: # Environment
     after_rails: # Hook point

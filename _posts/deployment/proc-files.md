@@ -40,7 +40,8 @@ For example, to limit specific processes to running only in your development env
 
 <h2 id="how">How to run background processes</h2>
 A typical Procfile may look something like this:
-<pre class="terminal">
+
+<pre class="prettyprint">
 worker: rake resque:work QUEUE=*
 scheduler: rake resque:scheduler
 </pre>
