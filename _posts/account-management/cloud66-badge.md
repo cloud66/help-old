@@ -21,19 +21,19 @@ All you have to do is copy and paste the appropriate code below into your HTML, 
 
 <a href="http://www.cloud66.com"><img src="https://d563vzkt1q0lu.cloudfront.net/images/powered-by-cloud66.png" title="Powered by Cloud 66"/></a>
 
-#### HTTP:
+<h4>HTTP:</h4>
 
-{% highlight html %}
-<a href="http://www.cloud66.com">
-    <img src="http://d563vzkt1q0lu.cloudfront.net/images/powered-by-cloud66.png" title="Powered by Cloud 66">
-</a>
-{% endhighlight %}
+<pre class="prettyprint">
+&lt;a href="http://www.cloud66.com"&gt;
+    &lt;img src="http://d563vzkt1q0lu.cloudfront.net/images/powered-by-cloud66.png" title="Powered by Cloud 66"&gt;
+&lt;/a&gt;
+</pre>
 
 
-#### HTTPS:
+<h4>HTTPS:</h4>
 
-{% highlight html %}
-<a href="http://www.cloud66.com">
-    <img src="https://d563vzkt1q0lu.cloudfront.net/images/powered-by-cloud66.png" title="Powered by Cloud 66"/>
-</a>
-{% endhighlight %}
+<pre class="prettyprint">
+&lt;a href="http://www.cloud66.com"&gt;
+    &lt;img src="https://d563vzkt1q0lu.cloudfront.net/images/powered-by-cloud66.png" title="Powered by Cloud 66"/&gt;
+&lt;/a&gt;
+</pre>

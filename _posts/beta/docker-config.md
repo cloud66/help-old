@@ -15,21 +15,18 @@ exclude_from_index: true
 
 <h2>Contents</h2>
 <ul class="page-toc">
-
-	<li><a href="#intro">How do I define a Docker stack?</a></li>
+	  <li><a href="#intro">How do I define a Docker stack?</a></li>
     <li><a href="#samples">Sample deployment configuration files</a></li>
     <li><a href="#composition">Composition of the docker_deployment.yml file</a></li>
-        <li>
-            <ul>
-            <li><a href="#environments">Environments</a></li>
+    <li>
+      <ul>
+        <li><a href="#environments">Environments</a></li>
 		   	<li><a href="#repositories">Repositories</a></li>
 		   	<li><a href="#services">Services</a></li>
 		   	<li><a href="#databases">Databases</a></li>
-            <li><a href="#env_vars">Environment Variables</a></li>
-            </ul>
-        </li>
-    </ul>
-</li>
+        <li><a href="#env_vars">Environment Variables</a></li>
+      </ul>
+    </li>
 </ul>
 
 <div class="notice">

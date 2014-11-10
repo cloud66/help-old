@@ -389,9 +389,9 @@ By default all containers are registered under the following path:
 
 Each container key will contain the following JSON serialized object:
 
-{% highlight json %}
+<pre class="prettyprint">
 { "public_ip" : SERVER_ADDRESS, "ports" : SERVICE_PORTS } # SERVICE_PORTS is a hash of port information
-{% endhighlight %}
+</pre>
 
 For example, you can get the list of the containers running in a stack for a specific service:
 
