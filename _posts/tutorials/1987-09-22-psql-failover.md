@@ -14,7 +14,7 @@ tutorial: true
 difficulty: 0
 ---
 
-When you use [database replication](http://help.cloud66.com/database-management/database-replication.html) with PostgreSQL, we configure [streaming replication](http://wiki.postgresql.org/wiki/Streaming_Replication) between your master and slave databases.
+When you use [database replication](http://help.cloud66.com/database-management/database-replication) with PostgreSQL, we configure [streaming replication](http://wiki.postgresql.org/wiki/Streaming_Replication) between your master and slave databases.
 The first server in the group will be the master server, and the others will be configured as slave servers.
 
 If the master server fails, you should begin failover procedures on your standby server:
@@ -22,7 +22,7 @@ If the master server fails, you should begin failover procedures on your standby
 <ol class="article-list">
 <li>Connect to one of your standby servers via <a href="http://help.cloud66.com/stack-definition/ssh-to-server.html">SSH</a>.</li>
 <li>Run <code>touch /tmp/postgresql.trigger</code> to turn the slave into a master.</li>
-<li>You now need to point your application to use this new master. Edit your <i>POSTGRESQL_ADDRESS</i> <a href="http://help.cloud66.com/deployment/env-vars.html">environment variable</a> to {{POSTGRESQL_SLAVE_ADDRESSES_INT}} - this format references the value of that variable.</li>
+<li>You now need to point your application to use this new master. Edit your <i>POSTGRESQL_ADDRESS</i> <a href="http://help.cloud66.com/deployment/environment-variables">environment variable</a> to {{POSTGRESQL_SLAVE_ADDRESSES_INT}} - this format references the value of that variable.</li>
 </ol>
 
 If and when the old primary restarts, it will no longer be the primary server and you must have a mechanism to stop it.

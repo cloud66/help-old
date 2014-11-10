@@ -21,7 +21,7 @@ Do you want to move your stack from one cloud vendor or region to another? Follo
 
 <li>Migrate your data across. Depending on your requirements (eg. you have a live app), you could do one of the following:</li>
 <ol type="a">
-	<li>Use our <a href="http://help.cloud66.com/database-management/database-replication.html">database replication between stacks</a> feature to setup your target stack as a database slave, which means that any changes to your source stack database will be replicated across to the target stack until you switch it off.</li>
+	<li>Use our <a href="http://help.cloud66.com/database-management/database-replication">database replication between stacks</a> feature to setup your target stack as a database slave, which means that any changes to your source stack database will be replicated across to the target stack until you switch it off.</li>
 	<li>Use our <a href="http://help.cloud66.com/database-management/database-import.html">one-time database import</a> feature to migrate your data across.</li>
 </ol>
 <li>When you're happy with this new stack, simply switch your DNS over to it. As the TTL is 5 minutes (set earlier), it should take effect quickly.</li>

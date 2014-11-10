@@ -80,11 +80,11 @@ Once you're ready to serve traffic from your Cloud 66 stack, you need to redirec
 <h2 id="pointers">Useful pointers</h2>
 
 <h3 id="webserver">Web server and Procfile</h3>
-By default, Cloud 66 will deploy your stack with Phusion Passenger, but you can also choose a [custom web server](http://help.cloud66.com/web-server/custom-webserver.html) like Unicorn. You may have a <code>web</code> entry in your Procfile to do this on Heroku. Cloud 66 ignores this entry to avoid compatability issues.
+By default, Cloud 66 will deploy your stack with Phusion Passenger, but you can also choose a [custom web server](http://help.cloud66.com/web-server/custom-web-servers) like Unicorn. You may have a <code>web</code> entry in your Procfile to do this on Heroku. Cloud 66 ignores this entry to avoid compatability issues.
 
 To run a custom web server, we require a <code>custom_web</code> entry. It is important to set this before analyzing your stack, to avoid building the stack with Passenger.
 
-You can also use the [Procfile](http://help.cloud66.com/deployment/proc-files.html) to define other background jobs.
+You can also use the [Procfile](http://help.cloud66.com/deployment/running-background-processes) to define other background jobs.
 
 <h3 id="cycle">Dyno recyling</h3>
 Heroku restarts all dynos at 24 hours of uptime, which may conceal possible memory leaks in your application. When you migrate to Cloud 66, these will become noticeable because we don't restart your workers (other than during a deployment), so the leak can grow to be bigger. A temporary solution is to re-create the Heroku restart behavior, for example with this script:
