@@ -103,7 +103,7 @@ To supply your own maintenance page, simply place your file in the following pat
 </pre>
 
 <h3 id="https">Redirect HTTP to HTTPS</h3>
-You can easily <a href="add your SSL certificates">/stack-add-ins/ssl-certificate</a> to your stacks and serve your traffic securely with HTTPS. To ensure that all your visitors use HTTPS instead of HTTP, you need to redirect anyone using HTTP to HTTPS.
+You can easily <a href="/stack-add-ins/ssl-certificate">add your SSL certificates</a> to your stacks and serve your traffic securely with HTTPS. To ensure that all your visitors use HTTPS instead of HTTP, you need to redirect anyone using HTTP to HTTPS.
 
 This works by reconfiguring your Nginx configuration, so any visitor that arrives at port 80 and HTTP will receive a permanent HTTP redirect (301) to the same address on HTTPS.
 
