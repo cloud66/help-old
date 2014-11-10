@@ -5,7 +5,7 @@ title:  "- Custom server"
 date:   2090-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
-categories: stack-definition
+categories: stack-add-ins
 lead: Custom servers within the Cloud 66 ecosystem
 search-tags: ['custom server', 'manage own server']
 tags: ['Customization', 'Add in']

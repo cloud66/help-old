@@ -5,7 +5,7 @@ title:  "Manifest files"
 so_title: "manifest"
 nav_sticky: false
 date:   2092-01-25 16:27:22
-categories: stack-definition
+categories: building-your-stack
 lead: You can be more explicit about your stack composition
 search-tags: []
 tags: ['Deployment']

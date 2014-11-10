@@ -5,7 +5,7 @@ title:  "Stack definition"
 nav: true
 cloud66_text: "Try Cloud 66 for free"
 date:   2038-01-25 16:27:22
-categories: stack-definition
+categories: building-your-stack
 lead: Everything you need to know about stacks
 search-tags: ['']
 tags: ['']

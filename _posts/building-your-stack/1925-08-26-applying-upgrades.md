@@ -6,7 +6,7 @@ so_title: "upgrade"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1561-01-01 15:33:13
-categories: stack-definition
+categories: building-your-stack
 lead: Best practices for applying upgrades to your stack
 search-tags: ['']
 tags: ['']

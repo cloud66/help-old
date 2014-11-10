@@ -4,7 +4,7 @@ template: one-col
 title:  "CustomConfig™"
 so_title: "custom config"
 date:   3999-01-28 10:51:22
-categories: stack-definition
+categories: building-your-stack
 lead: Customize deployed configuration files
 search-tags: []
 tags: ['Customization']

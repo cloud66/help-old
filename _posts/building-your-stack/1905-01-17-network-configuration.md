@@ -4,7 +4,7 @@ template: one-col
 title:  "Stack network settings"
 nav_sticky: false
 date:   2084-12-30 16:27:22
-categories: stack-definition
+categories: building-your-stack
 lead: Configure security and network settings
 search-tags: []
 tags: ['']

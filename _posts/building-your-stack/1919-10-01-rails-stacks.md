@@ -7,7 +7,7 @@ nav: true
 nav_prev: ""
 nav_next: ""
 date:   2016-11-18 16:27:22
-categories: stack-definition
+categories: building-your-stack
 lead: Cloud 66 makes it easy to deploy and maintain Rails apps
 search-tags: ['']
 tags: ['']

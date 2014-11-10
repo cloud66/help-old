@@ -1,36 +1,34 @@
 ---
 layout: post
 template: one-col
-title:  "Padrino stacks"
-so_title: "Padrino"
-nav_sticky: true
+title:  "Sinatra stacks"
+so_title: "Sinatra"
 nav: true
 nav_prev: ""
-nav_next: ""
-date:   2017-11-18 16:27:22
-categories: stack-definition
-lead: Cloud 66 makes it easy to deploy and maintain Padrino apps
+date:   2015-11-18 16:27:22
+categories: building-your-stack
+lead: Cloud 66 makes it easy to deploy and maintain Sinatra apps
 search-tags: ['']
 tags: ['']
 ---
 
 <h2>Contents</h2>
-<ul class="page-toc">
-  <li><a href="#custom">Custom commands</a></li>      
+<ul class="page-toc">   
+  <li><a href="#custom">Custom commands</a></li>    
   <li><a href="#connect">Connect to your database</a></li>         
-  <li><a href="#example">Example application</a></li>   
+  <li><a href="#example">Example applications</a></li>   
 </li>    
 </ul>
 
-Cloud 66 supports stacks based on the [Padrino framework](http://www.padrinorb.com/), a light-weight web framework built upon [Sinatra](/stacks/sinatra-stacks.html).
+Cloud 66 supports stacks based on the [Sinatra framework](http://www.sinatrarb.com/), a light-weight web framework written in Ruby.
 
 <h2 id="custom">Custom commands</h2>
-Given that Padrino applications can have different database frameworks, we allow you to specify custom commands which are run at specific points during deployment:
+Given that Sinatra applications can have different database frameworks, we allow you to specify custom commands which are run at specific points during deployment:
 
 <ul>
   <li>
     <p>
-    <strong>Custom build command</strong> &mdash; This command will run every time until the first build is successful. Example:
+      <strong>Custom build command</strong> &mdash; This command will run every time until the first build is successful. Example:
     </p>
     <p>
       <kbd>bundle exec rake db:seed</kbd>
@@ -38,7 +36,7 @@ Given that Padrino applications can have different database frameworks, we allow
   </li>
   <li>
     <p>
-      <strong>Custom deploy command</strong> &mdash; This command will run on every deployment (including initial build). Example:
+<strong>Custom deploy command</strong> &mdash; This command will run on every deployment (including initial build). Example:
     </p>
     <p>
       <kbd>bundle exec rake db:migrate</kbd>
@@ -46,27 +44,29 @@ Given that Padrino applications can have different database frameworks, we allow
   </li>
 </ul>
 
-These commands can be specified in the UI, but also in your manifest file:
+
+These commands can be specified in the UI, but also in your [manifest file](/stack-definition/manifest-files.html):
+
 
 {% highlight yaml %}
 development:
-    padrino:
+    sinatra:
         configuration:
             custom_build_command: rake db:seed
             custom_deploy_command: rake db:migrate
 {% endhighlight %}
 
 <h2 id="connect">Connect to your database</h2>
-If a database is detected, it will automatically be provisioned as required (including the database itself), and environment variables will be created. You will need to update your code with the environment variables you wish to use, for example `MYSQL_URL`.
+If a database is detected, they will automatically be provisioned as required (including the database itself), and environment variables will be created. You will need to update your code with the environment variables you wish to use, for example `MYSQL_URL`.
 
 Should you wish to change the database username/password after build, you will have to do this manually, which will involve recreating backup jobs to reflect the new values.
 
-<h3>Examples of connecting to your database</h3>
 <div class="notice">
     <h3>Note</h3>
   <p>You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.</p>
 </div>
 
+<h3>Examples of connecting to your database:</h3>
 <h3>Active Record</h3>
 
 **MySQL YML**
@@ -122,5 +122,10 @@ development:
       hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
 {% endhighlight %}
 
-<h2 id="example">Example application</h2>
-* <a href="https://app.cloud66.com/stacks/new?eduid=padrino_mysql" target="_blank">Padrino with MySQL</a>
+<h2 id="example">Example applications</h2>
+
+* <a href="https://app.cloud66.com/stacks/new?eduid=sinatra_mongodb" target="_blank">Sinatra and MongoDB</a>
+* <a href="https://app.cloud66.com/stacks/new?eduid=sinatra_mysql_ar" target="_blank">Sinatra and MySQL ActiveRecord</a>
+* <a href="https://app.cloud66.com/stacks/new?eduid=sinatra_psql_dm" target="_blank">Sinatra and PSQL DataMapper</a>
+* <a href="https://app.cloud66.com/stacks/new?eduid=sinatra_mysql_dm" target="blank">Sinatra and MySQL DataMapper</a>
+* <a href="https://app.cloud66.com/stacks/new?eduid=sinatra_redis" target="blank">Sinatra and Redis</a>
