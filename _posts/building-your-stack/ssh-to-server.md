@@ -13,7 +13,7 @@ tags: ['Deployment']
 We provide two different ways for you to SSH to your server - an automated way with the Cloud 66 toolbelt, or the manual way.
 
 ## Cloud 66 toolbelt
-You can use the [Cloud 66 toolbelt](/toolbelt/introduction.html) to easily SSH to your servers. Once initialized, the following command can be used:
+You can use the [Cloud 66 toolbelt](/toolbelt/toolbelt-introduction) to easily SSH to your servers. Once initialized, the following command can be used:
 
 ### Full
 
@@ -26,7 +26,7 @@ cx ssh [-s &lt;stack&gt;] &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&
 cx ssh -s "My Awesome App" web
 {% endhighlight %}
 
-See [toolbelt shortcuts](/toolbelt/introduction.html), for information on how you can make this even easier.
+See [toolbelt shortcuts](/toolbelt/toolbelt-introduction), for information on how you can make this even easier.
 
 ## Direct shell access
 You can always have terminal access to your servers from your own server - just follow the steps below if you're on a Linux-based operating system.

@@ -32,13 +32,13 @@ Depending on which cloud you deploy to, your servers will be deployed with <b>Ub
 Cloud 66 currently supports the following cloud providers:
 
 <ul>
-    <li><a href="/deployment/cloud-aws.html" target="_blank">Amazon Web Services</a></li>
-    <li><a href="/deployment/cloud-do.html" target="_blank">Digital Ocean</a></li>
-    <li><a href="/deployment/cloud-gce.html" target="_blank">Google Compute Engine</a></li>
-    <li><a href="/deployment/cloud-joyent.html" target="_blank">Joyent</a></li>
-    <li><a href="/deployment/cloud-linode.html" target="_blank">Linode</a></li>
-    <li><a href="/deployment/cloud-rackspace.html" target="_blank">Rackspace</a></li>
-    <li><a href="/deployment/cloud-vexxhost.html" target="_blank">Vexxhost</a></li>
+    <li><a href="/deployment/amazon-web-services-cloud" target="_blank">Amazon Web Services</a></li>
+    <li><a href="/deployment/digitalocean-cloud" target="_blank">Digital Ocean</a></li>
+    <li><a href="/deployment/google-compute-engine-cloud" target="_blank">Google Compute Engine</a></li>
+    <li><a href="/deployment/joyent-cloud" target="_blank">Joyent</a></li>
+    <li><a href="/deployment/linode-cloud" target="_blank">Linode</a></li>
+    <li><a href="/deployment/rackspace-cloud" target="_blank">Rackspace</a></li>
+    <li><a href="/deployment/vexxhost-cloud" target="_blank">Vexxhost</a></li>
 </ul>
 
 <h2 id="frameworks">Supported frameworks</h2>
@@ -53,7 +53,7 @@ We don't have fine-grain control over the version, and use the latest version av
 <h3 id="source">Components built from source</h3>
 Cloud 66 maintains an internal list of versions for most components built from source, which is updated periodically after testing.
 
-You are free to specify a version for a number of components in your [manifest file](/stack-definition/manifest-files.html).
+You are free to specify a version for a number of components in your [manifest file](/building-your-stack/manifest-files).
 
 <div class="notice notice-warning">
     <h3>Warning</h3>

@@ -6,7 +6,7 @@ so_title: false
 nav_sticky: true
 nav: true
 nav_prev: "/your-account/data-protection.html"
-nav_next: "/your-account/pricing.html"
+nav_next: "/account-management/pricing"
 date:   2039-09-24 10:51:22
 categories: compliance-guides
 lead: Answers to some questions about PCI DSS compliance when using Cloud 66

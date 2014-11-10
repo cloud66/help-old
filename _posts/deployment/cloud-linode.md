@@ -28,7 +28,7 @@ tags: ['']
 </ul>
 
 <h2 id="about">About using Linode cloud</h2>
-You can use Cloud 66 to provision and deploy your code to servers in any [Linode region](/api/basics/instance-regions.html#linode). Private networking is automatically enabled for all servers deployed by Cloud 66. This means that servers can communicate freely between each other on the same network without counting towards bandwidth costs.
+You can use Cloud 66 to provision and deploy your code to servers in any [Linode region](http://developers.cloud66.com/#cloud-vendor-instance-regions#linode). Private networking is automatically enabled for all servers deployed by Cloud 66. This means that servers can communicate freely between each other on the same network without counting towards bandwidth costs.
 
 <h2 id="gen">Generate a Linode API key</h2>
 You need to provide your Linode API keys in order for Cloud 66 to access your account. To generate one, access the _my profile_ page of your Linode account, and go to the _API Keys_ menu (you may be asked to provide your password again for security reasons). Once there, create a label for your new key, as well as an expiry date, and then hit _Create API Key_. Take note of the key provided.

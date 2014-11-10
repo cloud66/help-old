@@ -14,7 +14,7 @@ tutorial: true
 difficulty: 1
 ---
 
-In addition to protecting your application (or parts of it) using [HTTP basic authentication](/articles/nginx-basic-authorization), you can use Cloud 66 [CustomConfig](http://help.cloud66.com/stack-definition/custom-config.html) to block (or allow) access to your application based on IP addresses.
+In addition to protecting your application (or parts of it) using [HTTP basic authentication](/articles/nginx-basic-authorization), you can use Cloud 66 [CustomConfig](/building-your-stack/customconfig) to block (or allow) access to your application based on IP addresses.
 Follow the instructions below to accomplish this.
 
 <ol class="article-list">
@@ -28,7 +28,7 @@ Should you wish to only allow access to your IP address, do this:
 allow 1.2.3.4/24;<br>
 deny all;</code>
 <br>There are <a href="http://www.cyberciti.biz/faq/linux-unix-nginx-access-control-howto/">lots</a> of <a href="http://wiki.nginx.org/HttpAccessModule">resources</a> about this syntax on the Internet in case you need more guidance.
-<li>Now we can go ahead and customize the Nginx configuration, which you can see more about in our <a href="http://help.cloud66.com/web-server/nginx.html">Nginx CustomConfig documentation</a>.</li>
+<li>Now we can go ahead and customize the Nginx configuration, which you can see more about in our <a href="http://help.cloud66.com/web-server/nginx">Nginx CustomConfig documentation</a>.</li>
 
 <br/>You will want to add the following code within the <i>http</i> section of your configuration, for example on line 22.
 

@@ -20,7 +20,7 @@ Depending on the scale of your application, installing and maintaining a reliabl
 
 Postfix is a free and open-source mail transfer agent that routes and delivers electronic mail, and we'll use it to set up your SMTP server.
 
-Start by [SSHing to your server](http://help.cloud66.com/stack-definition/ssh-to-server.html) and installing it:
+Start by [SSHing to your server](/building-your-stack/ssh-to-your-server) and installing it:
 
 <pre class="prettyprint">
 $ sudo apt-get install postfix
@@ -40,7 +40,7 @@ In the _myhostname_ field, input your hostname:
 myhostname = example.com
 </pre>
 
-This one configuration is enough to have a functional SMTP server. Use [deploy hooks](/stack-features/deploy-hooks.html) to automate this procedure on any new servers you fire up through Cloud 66. You can go ahead and save and exit the configuration, and reload to put these changes into effect:
+This one configuration is enough to have a functional SMTP server. Use [deploy hooks](/deployment/deploy-hooks) to automate this procedure on any new servers you fire up through Cloud 66. You can go ahead and save and exit the configuration, and reload to put these changes into effect:
 
 <pre class="prettyprint">
 $ sudo /etc/init.d/postfix reload

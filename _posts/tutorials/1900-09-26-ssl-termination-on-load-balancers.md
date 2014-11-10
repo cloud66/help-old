@@ -31,7 +31,7 @@ SSL termination using your load balancer allows the load balancer to handle inco
 
 ![SSL termination](http://cdn.cloud66.com/images/help/ssl_termination.png)
 
-It's important to note that _you do not need SSL termination to enable SSL on your stack_ - you can simply <a href="http://help.cloud66.com/stack-definition/ssl.html">add your SSL certificate to your app servers</a> as an add-on.
+It's important to note that _you do not need SSL termination to enable SSL on your stack_ - you can simply <a href="http://help.cloud66.com/stack-add-ins/ssl-certificate">add your SSL certificate to your app servers</a> as an add-on.
 
 <h2 id="aws">Amazon Elastic Load Balancer</h2>
 
@@ -107,7 +107,7 @@ $ sudo apt-get install stunnel
 
 <ul class="article-list">
 <li>
-You can then use the Cloud 66 <a href="http://help.cloud66.com/stack-definition/custom-config.html">CustomConfig</a> to configure the HAProxy configuration file as shown below. If you're not using Cloud 66, you have to make these changes manually in your <i>/etc/haproxy/haproxy.cfg</i> file.
+You can then use the Cloud 66 <a href="http://help.cloud66.com/building-your-stack/customconfig">CustomConfig</a> to configure the HAProxy configuration file as shown below. If you're not using Cloud 66, you have to make these changes manually in your <i>/etc/haproxy/haproxy.cfg</i> file.
 </li>
 </ul>
 

@@ -31,7 +31,7 @@ Deploying in serial involves removing each server from your load balancer, deplo
 	<p>To run database migrations during deployment, it is advisable to deploy in serial.</p>
 </div>
 
-Although database migrations only occur on one server, depending on the changes, they could stop deployments on other servers from succeeding. Refer to our page on [controlling your database migrations](/database-management/database-management.html) for more information.
+Although database migrations only occur on one server, depending on the changes, they could stop deployments on other servers from succeeding. Refer to our page on [controlling your database migrations](/database-management/database-management) for more information.
 
 <h2 id="configure">Configure parallel deployment</h2>
 To activate parallel deployments, access your _Stack settings_ page and select _Redeploy in parallel_. Once set, any future deployments will be done in parallel. Should you wish to do a one-off deployment in serial, you can do so by clicking _Deploy_ -> _Deploy with options_ and selecting _Deploy in serial_. Similarly, if you have your stack set to deploy in serial, you can perform a one-off deploying in parallel through this menu.

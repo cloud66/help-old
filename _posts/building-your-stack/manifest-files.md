@@ -244,7 +244,7 @@ External server definitions specify that the application is hosted on a server e
 
 <div class="notice">
         <h3>Important</h3>
-        <p>You are <b>required</b> to specify a <a href="/stack-definition/manifest-files.html#servers">server</a> for application types, whereas configurations are <b>optional</b>.</p>
+        <p>You are <b>required</b> to specify a <a href="/building-your-stack/manifest-files#servers">server</a> for application types, whereas configurations are <b>optional</b>.</p>
 </div>
 
 <hr>
@@ -499,7 +499,7 @@ The load balancing strategy. You can use these values: NONE, CLIENT_IP or CLIENT
 <hr>
 
 <h4 id="haproxy">HAProxy</h4>
-Use a manifest file to configure your HAProxy load balancer deployed by Cloud 66. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/load-balancing/haproxy.html).
+Use a manifest file to configure your HAProxy load balancer deployed by Cloud 66. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/web-server/haproxy).
 
 Available settings (refer to the [HAProxy documentation](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt) for more information):
 

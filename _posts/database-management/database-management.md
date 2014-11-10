@@ -75,7 +75,7 @@ You can control your database migrations by accessing your stack detail page, th
 
 <h2 id="customize">Customize your database configuration</h2>
 
-You can customize the database configuration on your servers using [CustomConfig](/database-management/database-management.html#customize). CustomConfig is available for MySQL, PostgreSQL, Redis and MongoDB.
+You can customize the database configuration on your servers using [CustomConfig](/database-management/database-management#customize). CustomConfig is available for MySQL, PostgreSQL, Redis and MongoDB.
 
 Editing and committing your database CustomConfig will perform the following steps on every database server in your stack, one by one, sequentially:
 

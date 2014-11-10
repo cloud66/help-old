@@ -22,7 +22,7 @@ Having a failover stack can help you prevent unwanted downtime should your prima
 As with any migration, you will need to deal with moving your code, data and traffic. 
 
 <h3>1. Code</h3>
-[Clone your existing stack](http://help.cloud66.com/stack-definition/stack-definition.html#clone) to a different cloud vendor or data center, and set it into [maintenance mode](http://help.cloud66.com/building-your-stack/stack-network-settings#maintenance) to prevent it from serving content. We highly recommend that you build a stack with similar server specifications to your main stack to avoid issues during a switch. 
+[Clone your existing stack](http://help.cloud66.com/building-your-stack/stack-definition#stackscore#clone) to a different cloud vendor or data center, and set it into [maintenance mode](http://help.cloud66.com/building-your-stack/stack-network-settings#maintenance) to prevent it from serving content. We highly recommend that you build a stack with similar server specifications to your main stack to avoid issues during a switch. 
 
 <h3>2. Data</h3>
 Enable [database replication between your stacks](http://help.cloud66.com/database-management/database-replication) - this will setup a master/slave architecture between your stacks, whereby the slave is an exact replica of the master at all times. 

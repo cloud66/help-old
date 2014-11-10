@@ -5,7 +5,7 @@ title:  "Team accounts"
 nav_sticky: true
 nav: true
 nav_prev: "/account-management/support-plans"
-nav_next: "/your-account/recover-two-step-verification.html"
+nav_next: "http://swordfish.new-help.c66.me/account-management/two-step-verification"
 date:   2034-09-24 10:51:22
 categories: account-management
 lead: You can share your Cloud 66 account with your team

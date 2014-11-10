@@ -26,7 +26,7 @@ difficulty: 1
 
 <h2 id="cloud66">Installing with Cloud 66</h2>
 
-Installing through Cloud 66 is as simple as a manifest file entry. Refer to our [Manifest file](http://help.cloud66.com/stack-definition/manifest-files.html) documentation for more information.
+Installing through Cloud 66 is as simple as a manifest file entry. Refer to our [Manifest file](http://help.cloud66.com/building-your-stack/manifest-files) documentation for more information.
 
 In order for your manifest file to be picked up, you need a file called **manifest.yml** to be present within a folder named **.cloud66** that is in turn located in the root of your source code, and checked into your repository.
 

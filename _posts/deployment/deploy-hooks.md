@@ -151,7 +151,7 @@ There are three types of deploy hooks, and the fields available (and required) v
 	<TR><TD><TD>run_on<br> (single server)<TD>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
 	<TR><TD><TD>run_as<br> (server user)<TD>If you execute a file on your target server, specify which user you would like the file to be executed as. Note: you can't specify both this and <i>sudo</i>.
 	<TR><TD><TD>sudo (false)<TD>If you are executing the file on your target server, specify whether you want that execution to be sudo-ed? Note: you can't specify both this and <i>run_as</i>.
-	<TR><TD><TD>parse (true)<TD>Specifies whether the file being transferred should be parsed for <a href="/stack-features/env-vars.html">environment variables</a>. Using this you can embed <i><%= ENV['ENV_VAR'] %></i> for example in your source file, and have it resolved during the deploy hook action.
+	<TR><TD><TD>parse (true)<TD>Specifies whether the file being transferred should be parsed for <a href="/deployment/environment-variables">environment variables</a>. Using this you can embed <i><%= ENV['ENV_VAR'] %></i> for example in your source file, and have it resolved during the deploy hook action.
 	<TR><TD><TD>owner<br> (your server user)<TD>Ownership permissions for the file (and destination folder) on the target server. An example could be <i>user:group</i>.
 	<TR><TD><TD>execute (false)<TD>Do you want to execute the file after it has been copied to its destination on the target server?
 </TABLE>
@@ -202,7 +202,7 @@ production: # Environment
     <p>When automating the installation of packages, remember to use the <i>-y</i> flag to answer yes to all prompts.</p>
 </div>
 
-The example below can be used to run custom rake tasks during server build. If you need to run it more than once, consider using the [rake task add-in](/stack-definition/rake-task.html).
+The example below can be used to run custom rake tasks during server build. If you need to run it more than once, consider using the [rake task add-in](/stack-add-ins/rake-task).
 
 {% highlight yaml %}
 production: # Environment

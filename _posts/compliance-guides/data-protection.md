@@ -5,7 +5,7 @@ title:  "European data protection compliance"
 so_title: false
 nav_sticky: true
 nav: true
-nav_prev: "/your-account/delete-account.html"
+nav_prev: "/account-management/account-management"
 nav_next: "/compliance-guides/pci-dss-compliance-guide"
 date:   2040-09-24 10:51:22
 categories: compliance-guides

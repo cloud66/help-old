@@ -31,7 +31,7 @@ EasyDeploy makes it easy for you to simply provide the git URL of your desired p
 When you see the Cloud 66 EasyDeploy badge on a repository, you can:
 
 1. Sign into your <a href="https://app.cloud66.com/" target="_blank">Cloud 66</a> account
-2. <a href="http://help.cloud66.com/getting-started/your-first-stack.html" target="_blank">Create a new stack</a> with the git URL of the repository
+2. <a href="/introduction-to-cloud-66/introduction-to-cloud-66" target="_blank">Create a new stack</a> with the git URL of the repository
 3. Make yourself a coffee while the project deploys
 
 <h2 id="using">Using EasyDeploy repositories</h2>

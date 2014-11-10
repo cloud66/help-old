@@ -37,10 +37,10 @@ tags: ['Web server']
 <h2 id="about">About custom web servers</h2>
 By default, stacks deployed by Cloud 66 run on <a href="https://www.phusionpassenger.com/" target="_blank">Phusion Passenger</a> behind <a href="http://wiki.nginx.org/Main" target="_blank">Nginx</a>. You can also choose to use one of several servers:
 
-- [Passenger Enterprise](/web-server/passenger-enterprise.html)
-- [Puma](/web-server/puma-rack-server.html)
-- [Unicorn](/web-server/unicorn-rack-server.html)
-- [Thin](/web-server/thin-rack-server.html)
+- [Passenger Enterprise](/web-server/passenger-enterprise)
+- [Puma](/web-server/puma-rack-server)
+- [Unicorn](/web-server/unicorn-rack-server)
+- [Thin](/web-server/thin-rack-server)
 
 <div class="notice">
 	<h3>Important</h3>

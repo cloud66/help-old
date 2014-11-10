@@ -25,7 +25,7 @@ tags: ['']
 </ul>
 
 <h2 id="about">About using Joyent cloud</h2>
-You can use Cloud 66 to provision and deploy your code to servers in any [Joyent region](/api/basics/instance-regions.html#joyent). 
+You can use Cloud 66 to provision and deploy your code to servers in any [Joyent region](http://developers.cloud66.com/#cloud-vendor-instance-regions#joyent). 
 
 <h2 id="add">Add Joyent key to a stack</h2>
 You need to provide your Joyent login details in order for Cloud 66 to access your account. While most cloud providers have the ability to create API keys, you should use your login details to do this with Joyent.

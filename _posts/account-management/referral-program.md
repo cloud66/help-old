@@ -5,7 +5,7 @@ title:  "Referral program"
 so_title: false
 nav_sticky: true
 nav: true
-nav_prev: "/your-account/pricing.html"
+nav_prev: "/account-management/pricing"
 nav_next: "/account-management/support-plans"
 date:   2036-10-19 16:27:22
 categories: account-management

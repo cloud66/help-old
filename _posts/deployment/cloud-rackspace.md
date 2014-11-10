@@ -28,7 +28,7 @@ tags: ['']
 </ul>
 
 <h2 id="about">About using Rackspace cloud</h2>
-You can use Cloud 66 to provision and deploy your code to servers in any Rackspace [region](/api/basics/instance-regions.html#rackspace). Note that if you hold a Rackspace UK account, you will be limited to creating servers in the London region. The Rackspace US account is able to create servers in the remaining regions.
+You can use Cloud 66 to provision and deploy your code to servers in any Rackspace [region](http://developers.cloud66.com/#cloud-vendor-instance-regions#rackspace). Note that if you hold a Rackspace UK account, you will be limited to creating servers in the London region. The Rackspace US account is able to create servers in the remaining regions.
 
 <h2 id="gen">Generate a Rackspace API key</h2>
 You need to provide your Rackspace API key in order for Cloud 66 to access your account. To generate a key, access the _Account_ dropdown in the top right of your Rackspace account, and go to the _User Management_ page. Once there, click _Create a new user_, and fill in the necessary details for this new user. This user must be created with **Full Access** in order for servers to be created in your account.
