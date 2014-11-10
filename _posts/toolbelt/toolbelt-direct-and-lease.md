@@ -35,9 +35,10 @@ Allows direct SSH shell into your servers by opening the firewall temporarily fo
 Your server SSH key is downloaded to ~/.ssh and re-used in subsequent SSH connections via the toolbelt. You need to have shell to server rights over the stack to use this command.
 
 <h3 id="usage1">Usage</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx ssh [-s <stack>] <server name>|<server ip>|<server role>
-{% endhighlight %}
+</pre>
 
 <h3 id="params">Parameters</h3>
 
@@ -79,17 +80,19 @@ $ cx ssh [-s <stack>] <server name>|<server ip>|<server role>
 </table>
 
 <h3 id="example">Example</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx ssh -s "My Awesome App" Lion -e production
-{% endhighlight %}
+</pre>
 
 <h2 id="temp">Allow temporary SSH access</h2>
 Opens a port on your server firewall to temporarily allow access from a specified IP address.
 
 <h3 id="usage2">Usage</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx lease [-s <stack>] [-f <from IP>] [-t <time to open>] [-p <port>]
-{% endhighlight %}
+</pre>
 
 <h3 id="params2">Parameters</h3>
 <table class='table table-bordered table-striped table-small'>
@@ -130,8 +133,9 @@ $ cx lease [-s <stack>] [-f <from IP>] [-t <time to open>] [-p <port>]
 </table>
 
 <h3 id="example2">Example</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx lease -s "My Awesome App" -f 123.123.123.123 -t 30 -e production
-{% endhighlight %}
+</pre>
 
 For more fine grained access control, use the [Stack network settings](/building-your-stack/stack-network-settings) page.

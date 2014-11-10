@@ -13,9 +13,9 @@ Use this command to tail your $STACK_PATH logs.
 
 <h3 id="usage">Usage</h3>
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ cx tail [-s <stack>] <server name>|<server ip>|<server role> <log filename>
-{% endhighlight %}
+</pre>
 
 <h3 id="parameters">Parameters</h3>
 At least one of the optional parameters are necessary in order to identify which server to run the command on.
@@ -59,6 +59,6 @@ At least one of the optional parameters are necessary in order to identify which
 
 <h3 id="examples">Example</h3>
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ cx tail -s My_Awesome_App web nginx_error.log
-{% endhighlight %}
+</pre>

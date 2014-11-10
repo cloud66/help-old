@@ -49,9 +49,10 @@ tags: ['Toolbelt']
 Trigger the deployment of a stack from the command line, just like clicking on <i>redeploy</i> in the UI.
 
 <h3 id="usage-redeploy">Usage</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx redeploy [-s <stack>]
-{% endhighlight %}
+</pre>
 
 <h3 id="params-redeploy">Parameters</h3>
 <table class='table table-bordered table-striped table-small'>
@@ -74,9 +75,10 @@ $ cx redeploy [-s <stack>]
 </table>
 
 <h3 id="example-redeploy">Example</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx redeploy -s "My Awesome App" -e production
-{% endhighlight %}
+</pre>
 
 Deploying a stack that is already being deployed will enqueue your redeploy command and will run it immediately after the current deployment is finished.
 
@@ -84,9 +86,9 @@ Deploying a stack that is already being deployed will enqueue your redeploy comm
 
 Start off by listing the possible settings for a specific stack.
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ cx settings [-s <stack>]
-{% endhighlight %}
+</pre>
 
 These are the available settings:
 
@@ -128,9 +130,10 @@ These are the available settings:
 
 
 <h3 id="usage">Usage</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx set [-s <stack>] <setting> <value>
-{% endhighlight %}
+</pre>
 
 <h3 id="parameters">Parameters</h3>
 
@@ -163,17 +166,18 @@ $ cx set [-s <stack>] <setting> <value>
 
 <h3 id="example">Example</h3>
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ cx set -s "My Awesome App" git.repository git://github.com/cloud66-samples/rails-mysql.git -e production
-{% endhighlight %}
+</pre>
 
 <h2 id="restart">Restart Nginx</h2>
 Allows you to restart Nginx on your stack with one simple command.
 
 <h3 id="restart-usage">Usage</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx restart [-s <stack>]
-{% endhighlight %}
+</pre>
 
 <h3 id="restart-params">Parameters</h3>
 <table class='table table-bordered table-striped table-small'>
@@ -196,17 +200,19 @@ $ cx restart [-s <stack>]
 </table>
 
 <h3 id="restart-example">Example</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx restart -s "My Awesome App"
-{% endhighlight %}
+</pre>
 
 <h2 id="clear">Clear caches</h2>
 For improved performance, volatile code caches exist for your stack. It is possible for a those volatile caches to become invalid if you switch branches, change git repository URL, or rebase or force a commit. Since switching branch or changing git repository URL is done via the Cloud 66 interface, your volatile caches will automatically be purged. However, rebasing or forcing a commit doesn't have any association with Cloud 66, so this command can be used to purge the exising volatile caches.
 
 <h3 id="x-usage">Usage</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx clear-caches [-s <stack>]
-{% endhighlight %}
+</pre>
 
 <h3 id="x-params">Parameters</h3>
 <table class='table table-bordered table-striped table-small'>
@@ -225,15 +231,17 @@ $ cx clear-caches [-s <stack>]
 </table>
 
 <h3 id="x-example">Example</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx clear-caches -s "My Awesome App"
-{% endhighlight %}
+</pre>
 
 <h2 id="list">List your stack servers</h2>
 <h3 id="y-usage">Usage</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx servers [-s <stack>] [<names>]
-{% endhighlight %}
+</pre>
 
 <h3 id="y-params">Parameters</h3>
 <table class='table table-bordered table-striped table-small'>
@@ -256,16 +264,18 @@ $ cx servers [-s <stack>] [<names>]
 </table>
 
 <h3 id="y-example">Example</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx servers -s "My Awesome App"
-{% endhighlight %}
+</pre>
 
 
 <h2 id="open">Open your website</h2>
 <h3 id="z-usage">Usage</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx open [-s <stack>] [<server name>|<server ip>|<server role>]
-{% endhighlight %}
+</pre>
 
 <h3 id="z-params">Parameters</h3>
 <table class='table table-bordered table-striped table-small'>
@@ -299,6 +309,7 @@ $ cx open [-s <stack>] [<server name>|<server ip>|<server role>]
 </table>
 
 <h3 id="z-example">Example</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx open "My Awesome App"
-{% endhighlight %}
+</pre>

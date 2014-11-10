@@ -11,9 +11,9 @@ tags: ['Toolbelt']
 
 This command will execute a command directly on the remote server. It does this by first opening the firewall for SSH from your IP address temporaritly (20 minutes), downloads your SSH key if you don't have it, starts a SSH session, executes the command specified and returns its output.
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ cx run -s <stack> <server name>|<server ip>|<server role> '<command>'
-{% endhighlight %}
+</pre>
 
 <h3 id="parameters">Parameters</h3>
 
@@ -53,6 +53,6 @@ At least one of the optional parameters are necessary in order to identify which
 
 <h3 id="examples">Example</h3>
 
-{% highlight bash %}
+<pre class="prettyprint">
 $ cx run -s My_Awesome_App web 'pwd'
-{% endhighlight %}
+</pre>

@@ -53,9 +53,10 @@ These commands allow you to list and set various settings on your servers.
 This command lists the possible settings for a specific server.
 
 <h3 id="usage">Usage</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx server-settings [-s <stack>] <server name>|<server ip>|<server role>
-{% endhighlight %}
+</pre>
 
 <h3 id="params">Parameters</h3>
 <table class='table table-bordered table-striped table-small'>
@@ -91,17 +92,19 @@ $ cx server-settings [-s <stack>] <server name>|<server ip>|<server role>
 </table>
 
 <h3 id="example">Example</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx server-settings -s My_Awesome_App web
-{% endhighlight %}
+</pre>
 
 <h2 id="set">Set server settings</h2>
 Use this command to set server settings from the command line.
 
 <h3 id="usage2">Usage</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx server-set [-s <stack>] <server name>|<server ip>|<server role> <setting> <value>
-{% endhighlight %}
+</pre>
 
 <h3 id="params2">Parameters</h3>
 
@@ -148,6 +151,7 @@ $ cx server-set [-s <stack>] <server name>|<server ip>|<server role> <setting> <
 </table>
 
 <h3 id="example2">Examples</h3>
-{% highlight bash %}
+
+<pre class="prettyprint">
 $ cx server-set -s My_Awesome_App lion server.name tiger
-{% endhighlight %}
+</pre>
