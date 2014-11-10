@@ -193,6 +193,7 @@ See the available hook points and fields for more ways to customize this.
 
 <h2 id="commands">Use a command deploy hook</h2>
 The hook example below can be used to install anything from packages to fonts on your server.
+
 <pre class="prettyprint">
 production: # Environment
     first_thing: # Hook point
@@ -221,6 +222,7 @@ This will run our rake task on one Rails server and only during the initial buil
 
 <h2 id="scripts">Use a script deploy hook</h2>
 The hook below will copy a file from your repository to your <i>tmp</i> folder and execute it during build.
+
 <pre class="prettyprint">
 production: # Environment
     after_rails: # Hook point
