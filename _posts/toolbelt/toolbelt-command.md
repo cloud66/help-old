@@ -12,7 +12,7 @@ tags: ['Toolbelt']
 This command will execute a command directly on the remote server. It does this by first opening the firewall for SSH from your IP address temporaritly (20 minutes), downloads your SSH key if you don't have it, starts a SSH session, executes the command specified and returns its output.
 
 <pre class="prettyprint">
-$ cx run -s <stack> <server name>|<server ip>|<server role> '<command>'
+$ cx run -s &lt;stack&gt; &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt; '&lt;command&gt;'
 </pre>
 
 <h3 id="parameters">Parameters</h3>

@@ -37,7 +37,7 @@ Your server SSH key is downloaded to ~/.ssh and re-used in subsequent SSH connec
 <h3 id="usage1">Usage</h3>
 
 <pre class="prettyprint">
-$ cx ssh [-s <stack>] <server name>|<server ip>|<server role>
+$ cx ssh [-s &lt;stack&gt;] &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt;
 </pre>
 
 <h3 id="params">Parameters</h3>
@@ -91,7 +91,7 @@ Opens a port on your server firewall to temporarily allow access from a specifie
 <h3 id="usage2">Usage</h3>
 
 <pre class="prettyprint">
-$ cx lease [-s <stack>] [-f <from IP>] [-t <time to open>] [-p <port>]
+$ cx lease [-s &lt;stack&gt;] [-f &lt;from IP&gt;] [-t &lt;time to open&gt;] [-p &lt;port&gt;]
 </pre>
 
 <h3 id="params2">Parameters</h3>

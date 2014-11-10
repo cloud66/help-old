@@ -54,7 +54,7 @@ Use these commands to upload and download files to and from your servers.
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx upload [-s <stack>] <server name> [source file] [target directory]
+$ cx upload [-s &lt;stack&gt;] &lt;server name&gt; [source file] [target directory]
 </pre>
 
 If you don't specify a target directory, the file will be uploaded to /tmp on your remote server.
@@ -104,7 +104,7 @@ $ cx upload -s My_Awesome_App web /tmp/file.txt /tmp/file.txt
 <h3 id="usage2">Usage</h3>
 
 <pre class="prettyprint">
-$ cx download [-s <stack>] <server name> [source file] [target directory]
+$ cx download [-s &lt;stack&gt;] &lt;server name&gt; [source file] [target directory]
 </pre>
 
 If you don't specify a target directory, the file will be downloaded to your current local directory.

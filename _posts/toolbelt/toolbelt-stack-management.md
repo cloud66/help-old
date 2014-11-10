@@ -51,7 +51,7 @@ Trigger the deployment of a stack from the command line, just like clicking on <
 <h3 id="usage-redeploy">Usage</h3>
 
 <pre class="prettyprint">
-$ cx redeploy [-s <stack>]
+$ cx redeploy [-s &lt;stack&gt;]
 </pre>
 
 <h3 id="params-redeploy">Parameters</h3>
@@ -87,7 +87,7 @@ Deploying a stack that is already being deployed will enqueue your redeploy comm
 Start off by listing the possible settings for a specific stack.
 
 <pre class="prettyprint">
-$ cx settings [-s <stack>]
+$ cx settings [-s &lt;stack&gt;]
 </pre>
 
 These are the available settings:
@@ -132,7 +132,7 @@ These are the available settings:
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx set [-s <stack>] <setting> <value>
+$ cx set [-s &lt;stack&gt;] &lt;setting&gt; &lt;value&gt;
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -176,7 +176,7 @@ Allows you to restart Nginx on your stack with one simple command.
 <h3 id="restart-usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx restart [-s <stack>]
+$ cx restart [-s &lt;stack&gt;]
 </pre>
 
 <h3 id="restart-params">Parameters</h3>
@@ -211,7 +211,7 @@ For improved performance, volatile code caches exist for your stack. It is possi
 <h3 id="x-usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx clear-caches [-s <stack>]
+$ cx clear-caches [-s &lt;stack&gt;]
 </pre>
 
 <h3 id="x-params">Parameters</h3>
@@ -240,7 +240,7 @@ $ cx clear-caches -s "My Awesome App"
 <h3 id="y-usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx servers [-s <stack>] [<names>]
+$ cx servers [-s &lt;stack&gt;] [&lt;names&gt;]
 </pre>
 
 <h3 id="y-params">Parameters</h3>
@@ -274,7 +274,7 @@ $ cx servers -s "My Awesome App"
 <h3 id="z-usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx open [-s <stack>] [<server name>|<server ip>|<server role>]
+$ cx open [-s &lt;stack&gt;] [&lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt;]
 </pre>
 
 <h3 id="z-params">Parameters</h3>

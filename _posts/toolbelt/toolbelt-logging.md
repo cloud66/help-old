@@ -14,7 +14,7 @@ Use this command to tail your $STACK_PATH logs.
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx tail [-s <stack>] <server name>|<server ip>|<server role> <log filename>
+$ cx tail [-s &lt;stack&gt;] &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt; &lt;log filename&gt;
 </pre>
 
 <h3 id="parameters">Parameters</h3>
