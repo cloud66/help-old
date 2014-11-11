@@ -2,8 +2,12 @@
 layout: post
 title:  "Agent communication issue"
 date:   2040-09-24 10:51:22
-categories: account-management
+categories:
 lead: How to deal with agent communication issues
+tutorial: true
+difficulty: 1
+search-tags: ['Agent']
+tags: ['Troubleshooting']
 ---
 
 You will be notified in the case that Cloud 66 is unable to connect to your server for at least 20 minutes. This may happen for the following reasons:
