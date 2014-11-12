@@ -21,7 +21,7 @@ If you receive a notification about this, please see the following steps:
 
 <ol>
 <li>Is your web endpoint functioning? This could be a matter of visiting your server IP address through your browser.</li>
-<li>Can you <a href="/building-your-stack/ssh-to-your-server">connect to the server yourself via SSH</a>?</li>
+<li>Can you <a href="http://help.cloud66.com/building-your-stack/ssh-to-your-server">connect to the server yourself via SSH</a>?</li>
 <li>Is your cloud vendor experiencing any issues?</li>
 <ul>
 	<li>DigitalOcean (<a href="https://twitter.com/digitalocean">Twitter</a>, <a href="https://status.digitalocean.com/">Status page</a>)</li>
