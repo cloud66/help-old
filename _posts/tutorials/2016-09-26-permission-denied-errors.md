@@ -36,7 +36,7 @@ Many gems allow the use of a configuration file, or have initializers to configu
 
 <h3>Resolution 2: Deploy hook</h3>
 
-You can use a [deploy hook](http://help.cloud66.com/deployment/deploy-hooks.html) to execute a script after each deployment that will setup the permissions required:
+You can use a [deploy hook](/deployment/deploy-hooks) to execute a script after each deployment that will setup the permissions required:
 
 <pre class="prettyprint">
 production:

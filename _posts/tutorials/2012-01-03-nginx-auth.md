@@ -14,7 +14,7 @@ tutorial: true
 difficulty: 1
 ---
 
-You can use Cloud 66 [CustomConfig](/stack-features/custom-config.html) to protect your application or parts of it with a username and password based on HTTP basic authentication.
+You can use Cloud 66 [CustomConfig](/building-your-stack/customconfig) to protect your application or parts of it with a username and password based on HTTP basic authentication.
 Follow the instructions below to accomplish this.
 
 <ol class="article-list">
@@ -24,7 +24,7 @@ Follow the instructions below to accomplish this.
 <li>Once that is installed, we're ready to create your password file. We recommend that you create this file within your repository, which will be deployed to your servers. This command will prompt you to input a password.</li>
 <code>sudo htpasswd -c &#60;directory&#62;.htpasswd &#60;user_name&#62;</code><br>
 
-<li>Now we can go ahead and customize the Nginx configuration, which you can see more about in our <a href="http://help.cloud66.com/web-server/nginx.html">Nginx CustomConfig documentation</a>.</li><br/>
+<li>Now we can go ahead and customize the Nginx configuration, which you can see more about in our <a href="http://help.cloud66.com/web-server/nginx">Nginx CustomConfig documentation</a>.</li><br/>
 
 You will want to add the following code within the <i>server</i> section of your configuration. Where you put it will depend on which Rack server you are running, and whether or not you are using HTTPS traffic.
 

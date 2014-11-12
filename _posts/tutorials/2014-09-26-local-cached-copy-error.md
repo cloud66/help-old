@@ -19,7 +19,7 @@ However, if you change your Git URL or branch, or perform a Git action such as f
 
 When you change your Git URL or branch, Cloud 66 is involved and will automatically purge your old cached-copy from your web servers for you. However, if you force or rebase a commit, that happens outside of Cloud 66, and it is therefore not possible to automatically detect and purge your servers.
 
-In this case, the easiest thing to do is to use the [Cloud 66 toolbelt](http://help.cloud66.com/toolbelt/stack-mgmt.html) to clear your caches:
+In this case, the easiest thing to do is to use the [Cloud 66 toolbelt](http://help.cloud66.com/toolbelt/toolbelt-stack-management) to clear your caches:
 
 <pre class="prettyprint">
 $ cx clear-caches [-s stack]

@@ -22,21 +22,21 @@ Having a failover stack can help you prevent unwanted downtime should your prima
 As with any migration, you will need to deal with moving your code, data and traffic. 
 
 <h3>1. Code</h3>
-[Clone your existing stack](http://help.cloud66.com/stack-definition/stack-definition.html#clone) to a different cloud vendor or data center, and set it into [maintenance mode](http://help.cloud66.com/stack-definition/network-configuration.html#maintenance) to prevent it from serving content. We highly recommend that you build a stack with similar server specifications to your main stack to avoid issues during a switch. 
+[Clone your existing stack](http://help.cloud66.com/building-your-stack/stack-definition#stackscore#clone) to a different cloud vendor or data center, and set it into [maintenance mode](http://help.cloud66.com/building-your-stack/stack-network-settings#maintenance) to prevent it from serving content. We highly recommend that you build a stack with similar server specifications to your main stack to avoid issues during a switch. 
 
 <h3>2. Data</h3>
-Enable [database replication between your stacks](http://help.cloud66.com/database-management/database-replication.html) - this will setup a master/slave architecture between your stacks, whereby the slave is an exact replica of the master at all times. 
+Enable [database replication between your stacks](http://help.cloud66.com/database-management/database-replication) - this will setup a master/slave architecture between your stacks, whereby the slave is an exact replica of the master at all times. 
 
 <h3>3. Traffic</h3>
-Use [Elastic Address](http://help.cloud66.com/dns/elastic-address.html) to make it easy for you to switch between stacks. By pointing your domain at the Elastic Address, you will be able to switch your traffic between stacks at the click of a button.
+Use [Elastic Address](http://help.cloud66.com/network/elasticaddress) to make it easy for you to switch between stacks. By pointing your domain at the Elastic Address, you will be able to switch your traffic between stacks at the click of a button.
 
 <h2>How to use the failover stack</h2>
 If and when your main stack fails, you will need to switch to the failover stack.
 
 <ol class="article-list">
-<li>Set your main stack into <a href="http://help.cloud66.com/stack-definition/network-configuration.html#maintenance">maintenance mode</a>, to prevent new data being written to it.</li>
-<li>Turn off the <a href="http://help.cloud66.com/database-management/database-replication.html#disable">database replication</a>.</li>
+<li>Set your main stack into <a href="http://help.cloud66.com/building-your-stack/stack-network-settings#maintenance">maintenance mode</a>, to prevent new data being written to it.</li>
+<li>Turn off the <a href="http://help.cloud66.com/database-management/database-replication#disable">database replication</a>.</li>
 <li>Make your <a href="http://community.cloud66.com/articles/postgresql-failover-procedure">database slave a master</a> - this will allow data to be written to the database.</li>
-<li>Turn off <a href="http://help.cloud66.com/stack-definition/network-configuration.html#maintenance">maintenance mode</a> on your failover stack.</li>
-<li>Use your <a href="http://help.cloud66.com/dns/elastic-address.html">Elastic Address</a> menu to switch your traffic to the failover stack. The TTL on the Elastic Address is 5 minutes, so you should see your users on the new stack momentarily.</li>
+<li>Turn off <a href="http://help.cloud66.com/building-your-stack/stack-network-settings#maintenance">maintenance mode</a> on your failover stack.</li>
+<li>Use your <a href="http://help.cloud66.com/network/elasticaddress">Elastic Address</a> menu to switch your traffic to the failover stack. The TTL on the Elastic Address is 5 minutes, so you should see your users on the new stack momentarily.</li>
 </ol>

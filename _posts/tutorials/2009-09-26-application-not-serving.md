@@ -13,7 +13,7 @@ difficulty: 1
 
 There are a number of factors that can lead your application to stop serving content. Follow this guide to eliminate the most common issues.
 
-Start by checking if you can [SSH to your server](http://help.cloud66.com/stack-definition/ssh-to-server.html), remembering to open the firewall beforehand as described.
+Start by checking if you can [SSH to your server](/building-your-stack/ssh-to-your-server), remembering to open the firewall beforehand as described.
 
 If you're able to SSH to the server, follow the steps below. If not, we recommend that you use your cloud vendor dashboard to try to connect to the server.
 
@@ -36,7 +36,7 @@ This should determine whether or not Nginx is having issues starting or serving 
 $ $STACK_PATH/log/nginx_error.log
 </pre>
 
-It may be worth checking your <a href="http://help.cloud66.com/web-server/nginx.html">Nginx CustomConfig history</a> to see if any recent configuration changes are causing issues.
+It may be worth checking your <a href="http://help.cloud66.com/web-server/nginx">Nginx CustomConfig history</a> to see if any recent configuration changes are causing issues.
 <br/><br/>
 <li>You may be experiencing an issue with your web server - so first check your <i>Stack information</i> page to see which one you're running.</li>
 

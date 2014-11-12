@@ -322,9 +322,10 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | Linode 4096 | Linode 4096 |
 | Linode 8192 | Linode 8192 |
 | Linode 16384 | Linode 16384 |
-| Linode 24576 | Linode 24576 |
 | Linode 32768 | Linode 32768 |
-| Linode 40960 | Linode 40960 |
+| Linode 49152 | Linode 49152 |
+| Linode 65536 | Linode 65536 |
+| Linode 98304 | Linode 98304 |
 
 ### Rackspace
 | Instance size | Value |

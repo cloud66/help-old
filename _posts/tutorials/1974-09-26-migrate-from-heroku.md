@@ -56,7 +56,7 @@ Start by dumping your existing database. Refer to the [ClearDB documentation for
 $ mysqldump -u [username] -p[password] [dbname] > backup.sql 
 {% endhighlight %}
 
-Once you have a MySQL dump file, use the [Cloud 66 toolbelt](http://help.cloud66.com/toolbelt/file-mgmt.html) to upload the file to your stack database server. Remember to replace the fields below with your values.
+Once you have a MySQL dump file, use the [Cloud 66 toolbelt](/toolbelt/toolbelt-file-management) to upload the file to your stack database server. Remember to replace the fields below with your values.
 
 {% highlight bash %}
 $ cx upload -s "[stack_name]" [database_server_name] backup.sql /tmp/backup.sql
@@ -75,16 +75,16 @@ $ mysql -u [generated_user_name] -p [generated_password] "[database_name]" < /tm
 {% endhighlight %}
 
 <h3 id="traffic">3. Traffic</h3>
-Once you're ready to serve traffic from your Cloud 66 stack, you need to redirect your traffic to it. For more information, see [Configure your DNS](http://help.cloud66.com/dns/configure-dns.html).
+Once you're ready to serve traffic from your Cloud 66 stack, you need to redirect your traffic to it. For more information, see [Configure your DNS](/network/configure-your-dns).
 
 <h2 id="pointers">Useful pointers</h2>
 
 <h3 id="webserver">Web server and Procfile</h3>
-By default, Cloud 66 will deploy your stack with Phusion Passenger, but you can also choose a [custom web server](http://help.cloud66.com/web-server/custom-webserver.html) like Unicorn. You may have a <code>web</code> entry in your Procfile to do this on Heroku. Cloud 66 ignores this entry to avoid compatability issues.
+By default, Cloud 66 will deploy your stack with Phusion Passenger, but you can also choose a [custom web server](http://help.cloud66.com/web-server/custom-web-servers) like Unicorn. You may have a <code>web</code> entry in your Procfile to do this on Heroku. Cloud 66 ignores this entry to avoid compatability issues.
 
 To run a custom web server, we require a <code>custom_web</code> entry. It is important to set this before analyzing your stack, to avoid building the stack with Passenger.
 
-You can also use the [Procfile](http://help.cloud66.com/deployment/proc-files.html) to define other background jobs.
+You can also use the [Procfile](http://help.cloud66.com/deployment/running-background-processes) to define other background jobs.
 
 <h3 id="cycle">Dyno recyling</h3>
 Heroku restarts all dynos at 24 hours of uptime, which may conceal possible memory leaks in your application. When you migrate to Cloud 66, these will become noticeable because we don't restart your workers (other than during a deployment), so the leak can grow to be bigger. A temporary solution is to re-create the Heroku restart behavior, for example with this script:
@@ -93,10 +93,10 @@ Heroku restarts all dynos at 24 hours of uptime, which may conceal possible memo
 for OUTPUT in $(pgrep -f sidekiq); do kill -TERM $OUTPUT; done
 {% endhighlight %}
 
-This will send a TERM signal to any Sidekiq workers, giving them 10 seconds (by default) to finish gracefully. Any workers that don't finish within this time period are forcefully terminated and their messages are sent back to Redis for future processing. You can customize this script to fit your needs, and add it to your stack as a [shell add-in](/stack-definition/shell.html).
+This will send a TERM signal to any Sidekiq workers, giving them 10 seconds (by default) to finish gracefully. Any workers that don't finish within this time period are forcefully terminated and their messages are sent back to Redis for future processing. You can customize this script to fit your needs, and add it to your stack as a [shell add-in](/stack-add-ins/shell).
 
 Note that this is a temporary solution, and we recommend that you use a server monitoring solution to identify the source of your leak.
 
 <h3 id="apc">Asset Pipeline Compilation</h3>
 
-If you haven't compiled assets locally, Heroku will attempt to run the assets:precompile task during slug compilation. Cloud 66 allows you to [specify whether or not to run this](http://help.cloud66.com/stack-definition/asset-pipeline.html) during deployment.
+If you haven't compiled assets locally, Heroku will attempt to run the assets:precompile task during slug compilation. Cloud 66 allows you to [specify whether or not to run this](/building-your-stack/asset-pipeline-compilation) during deployment.

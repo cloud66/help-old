@@ -26,11 +26,11 @@
 .container {
     @include clearfix;
     margin: 0 auto;
-    max-width: $maxwidth + $gutter;
+    max-width: $maxwidth;
 }
 
 body.home .container {
-    max-width: 680px;
+    max-width: $maxwidth;
 }
 
 /*

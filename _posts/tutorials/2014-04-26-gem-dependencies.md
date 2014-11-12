@@ -36,6 +36,6 @@ end
 <p>Once this is done, run <code>bundle install</code>, commit to your Git and re-deploy.</p>
 <li><p>You may be running an old version of a gem while running a later version of Ruby - try running <code>bundle update debugger</code> to update the gem. Your other option is to downgrade your Ruby version.</p></li>
 
-<li><p>You could investigate what dependencies are required by running <code>gem install debugger</code> on the server, and taking note of the required packages. You could then use a <a href="http://help.cloud66.com/stack-definition/manifest-files.html">manifest file</a> or <a href="http://help.cloud66.com/deployment/deploy-hooks.html">deploy hooks</a> to automate the installation of these packages as you scale.</p></li>
+<li><p>You could investigate what dependencies are required by running <code>gem install debugger</code> on the server, and taking note of the required packages. You could then use a <a href="http://help.cloud66.com/building-your-stack/manifest-files">manifest file</a> or <a href="http://help.cloud66.com/deployment/deploy-hooks">deploy hooks</a> to automate the installation of these packages as you scale.</p></li>
 
 </ol>
