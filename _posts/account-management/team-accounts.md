@@ -9,7 +9,7 @@ nav_next: "http://swordfish.new-help.c66.me/account-management/two-step-verifica
 date:   2034-09-24 10:51:22
 categories: account-management
 lead: You can share your Cloud 66 account with your team
-search-tags: ['']
+search-tags: ['team']
 tags: ['Your account']
 ---
 
