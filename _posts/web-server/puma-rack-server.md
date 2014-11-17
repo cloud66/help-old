@@ -77,4 +77,5 @@ Take note that Puma is running in Daemon mode with the `-d` parameter.
 </div>
 
 To solve the issue of manual restarts with Puma, you can use an <i>after_rails</i> [deploy hook](/deployment/deploy-hooks) to manually run the following command in case you find that it is not responding to the SIGUSR2 that Cloud 66 issues.
+
 <pre class='terminal'>bundle exec pumactl -P /tmp/web_server.pid restart</pre>
