@@ -148,10 +148,9 @@ A unique name for this server.
 A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
-... server:
-        unique_name: frontend
-        extra_packages:
-                - chrony
+... configuration:
+      extra_packages:
+        - chrony
 </pre>
 
 **vendor**
