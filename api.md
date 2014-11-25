@@ -2807,6 +2807,7 @@ Get list of accounts that caller belongs to
         {
         	"response": [
         		{
+                    "id": 139,
         			"owner": "test@cloud66.com",
         			"created_at_iso": "2013-06-19T11:08:03Z",
         			"updated_at_iso": "2014-02-20T12:55:58Z",
@@ -2854,6 +2855,7 @@ Get information of an Account
 		{
 			"response":
 				{
+                    "id": 139,
         			"owner": "test@cloud66.com",
         			"created_at_iso": "2013-06-19T11:08:03Z",
         			"updated_at_iso": "2014-02-20T12:55:58Z",
