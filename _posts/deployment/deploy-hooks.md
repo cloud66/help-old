@@ -115,46 +115,384 @@ lead: Take action at various points during your deployment
 <li><b>Scripts:</b> use your own scripts for more comprehensive procedures.</li>
 </ol>
 
-<table id="fields" class="table table-bordered table-striped table-small fields">
-<thead valign="top">
-<tr>
-	<th>Hook type<br />
-	<th>Field
-	<th>Description
-<tbody>
-	<tr class="header"><td width="13%"><b>Snippets</b> <span>-</span><td width="15%"><td width="70%">
-	<tr><td><td width="13%">snippet <img src="http://cdn.cloud66.com/images/help/required.gif" /><td width="70%">Snippet to be used - run in <i>/tmp/deploy_hooks</i> by default
-	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
-	<tr><td><td>execute <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Set to true for the snippet to be executable.
-	<tr><td><td>apply_during<br /> (all)<td>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
-	<tr><td><td>halt_on_error (true)<td>Specify whether the execution should continue or halt in the event of an error.
-	<tr><td><td>run_on<br /> (single server)<td>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
-	<tr><td><td>run_as<br /> (server user)<td>If you execute a file on your target server, specify which user you would like the file to be executed as. Note: you can't specify both this and <i>sudo</i>.
-	<tr><td><td>sudo (false)<td>If you are executing the file on your target server, specify whether you want that execution to be sudo-ed? Note: you can't specify both this and <i>run_as</i>.
-<tbody>
-	<tr class="header"><td width="13%"><b>Commands</b> <span>-</span><td><td>
-	<tr><td><td width="13%">command <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Command to be used - run in <i>/tmp/deploy_hooks</i> by default
-	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
-	<tr><td><td>execute <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Set to true for the command to execute.
-	<tr><td><td>apply_during<br /> (all)<td>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
-	<tr><td><td>halt_on_error (true)<td>Specify whether the execution should continue or halt in the event of an error.
-	<tr><td><td>run_on<br /> (single server)<td>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
-	<tr><td><td>run_as<br /> (server user)<td>If you execute a file on your target server, specify which user you would like the file to be executed as. Note: you can't specify both this and <i>sudo</i>.
-	<tr><td><td>sudo (false)<td>If you are executing the file on your target server, specify whether you want that execution to be sudo-ed? Note: you can't specify both this and <i>run_as</i>.
-<tbody>
-	<tr class="header"><td width="13%"><b>Scripts</b> <span>-</span><td><td>
-	<tr><td><td width="13%">source <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>This specifies the source location of your deploy hook file within your repository.
-	<tr><td><td>destination <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>The destination path on your target server. You can also specify environment variables in your destination field, <i>&lt;%= ENV['STACK_PATH'] %&gt;</i> for example.
-	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
-	<tr><td><td>apply_during<br /> (all)<td>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
-	<tr><td><td>halt_on_error (true)<td>Specify whether the execution should continue or halt in the event of an error.
-	<tr><td><td>run_on<br /> (single server)<td>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
-	<tr><td><td>run_as<br /> (server user)<td>If you execute a file on your target server, specify which user you would like the file to be executed as. Note: you can't specify both this and <i>sudo</i>.
-	<tr><td><td>sudo (false)<td>If you are executing the file on your target server, specify whether you want that execution to be sudo-ed? Note: you can't specify both this and <i>run_as</i>.
-	<tr><td><td>parse (true)<td>Specifies whether the file being transferred should be parsed for <a href="/deployment/environment-variables">environment variables</a>. Using this you can embed <i>&lt;%= ENV['ENV_VAR'] %&gt;</i> for example in your source file, and have it resolved during the deploy hook action.
-	<tr><td><td>owner<br /> (your server user)<td>Ownership permissions for the file (and destination folder) on the target server. An example could be <i>user:group</i>.
-	<tr><td><td>execute (false)<td>Do you want to execute the file after it has been copied to its destination on the target server?
-</td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></tbody></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></tbody></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></td></td></td></tr></tbody></th></th></th></tr></thead></table>
+<table id="fields-table" class=
+"table table-bordered table-striped table-small fields">
+  <thead valign="top">
+    <tr>
+      <th>
+        Hook type<br />
+      </th>
+      <th>
+        Field
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="header">
+      <td width="13%">
+        <strong>Snippets</strong> <span>-</span>
+      </td>
+      <td width="15%"></td>
+      <td width="70%"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td width="13%">
+        snippet <img src=
+        "http://cdn.cloud66.com/images/help/required.gif" />
+      </td>
+      <td width="70%">
+        Snippet to be used - run in <em>/tmp/deploy_hooks</em> by
+        default
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        target <img src=
+        "http://cdn.cloud66.com/images/help/required.gif" />
+      </td>
+      <td>
+        Target server(s), with accepted values <em>any</em>,
+        <em>rails</em>, <em>mysql</em>, <em>postgresql</em>,
+        <em>mongodb</em>, <em>redis</em>, <em>sinatra</em>,
+        <em>padrino</em>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        execute <img src=
+        "http://cdn.cloud66.com/images/help/required.gif" />
+      </td>
+      <td>
+        Set to true for the snippet to be executable.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        apply_during<br />
+        (all)
+      </td>
+      <td>
+        Specify when you want the deploy hook action to take place.
+        Accepted values are <em>build_only</em>,
+        <em>deploy_only</em> or <em>all</em>. The <em>build</em>
+        step occurs the first time a stack is deployed, and will
+        re-occur until the stack has been successfully deployed at
+        least once. After this subsequent deployments are
+        <em>deploy</em> steps.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        halt_on_error (true)
+      </td>
+      <td>
+        Specify whether the execution should continue or halt in
+        the event of an error.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        run_on<br />
+        (single server)
+      </td>
+      <td>
+        If you have multiple servers in the same group (eg.
+        scaled-up Rails servers), you can specify whether you want
+        the deploy hook action to occur just once or once against
+        each server in that group. Valid values are:
+        <em>single_server</em> or <em>all_servers</em>. If you've
+        specified <em>target: any</em> above, this will apply to
+        all servers.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        run_as<br />
+        (server user)
+      </td>
+      <td>
+        If you execute a file on your target server, specify which
+        user you would like the file to be executed as. Note: you
+        can't specify both this and <em>sudo</em>.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        sudo (false)
+      </td>
+      <td>
+        If you are executing the file on your target server,
+        specify whether you want that execution to be sudo-ed?
+        Note: you can't specify both this and <em>run_as</em>.
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="header">
+      <td width="13%">
+        <strong>Commands</strong> <span>-</span>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td width="13%">
+        command <img src=
+        "http://cdn.cloud66.com/images/help/required.gif" />
+      </td>
+      <td>
+        Command to be used - run in <em>/tmp/deploy_hooks</em> by
+        default
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        target <img src=
+        "http://cdn.cloud66.com/images/help/required.gif" />
+      </td>
+      <td>
+        Target server(s), with accepted values <em>any</em>,
+        <em>rails</em>, <em>mysql</em>, <em>postgresql</em>,
+        <em>mongodb</em>, <em>redis</em>, <em>sinatra</em>,
+        <em>padrino</em>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        execute <img src=
+        "http://cdn.cloud66.com/images/help/required.gif" />
+      </td>
+      <td>
+        Set to true for the command to execute.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        apply_during<br />
+        (all)
+      </td>
+      <td>
+        Specify when you want the deploy hook action to take place.
+        Accepted values are <em>build_only</em>,
+        <em>deploy_only</em> or <em>all</em>. The <em>build</em>
+        step occurs the first time a stack is deployed, and will
+        re-occur until the stack has been successfully deployed at
+        least once. After this subsequent deployments are
+        <em>deploy</em> steps.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        halt_on_error (true)
+      </td>
+      <td>
+        Specify whether the execution should continue or halt in
+        the event of an error.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        run_on<br />
+        (single server)
+      </td>
+      <td>
+        If you have multiple servers in the same group (eg.
+        scaled-up Rails servers), you can specify whether you want
+        the deploy hook action to occur just once or once against
+        each server in that group. Valid values are:
+        <em>single_server</em> or <em>all_servers</em>. If you've
+        specified <em>target: any</em> above, this will apply to
+        all servers.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        run_as<br />
+        (server user)
+      </td>
+      <td>
+        If you execute a file on your target server, specify which
+        user you would like the file to be executed as. Note: you
+        can't specify both this and <em>sudo</em>.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        sudo (false)
+      </td>
+      <td>
+        If you are executing the file on your target server,
+        specify whether you want that execution to be sudo-ed?
+        Note: you can't specify both this and <em>run_as</em>.
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="header">
+      <td width="13%">
+        <strong>Scripts</strong> <span>-</span>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td width="13%">
+        source <img src=
+        "http://cdn.cloud66.com/images/help/required.gif" />
+      </td>
+      <td>
+        This specifies the source location of your deploy hook file
+        within your repository.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        destination <img src=
+        "http://cdn.cloud66.com/images/help/required.gif" />
+      </td>
+      <td>
+        The destination path on your target server. You can also
+        specify environment variables in your destination field,
+        <em>&lt;%= ENV['STACK_PATH'] %&gt;</em> for example.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        target <img src=
+        "http://cdn.cloud66.com/images/help/required.gif" />
+      </td>
+      <td>
+        Target server(s), with accepted values <em>any</em>,
+        <em>rails</em>, <em>mysql</em>, <em>postgresql</em>,
+        <em>mongodb</em>, <em>redis</em>, <em>sinatra</em>,
+        <em>padrino</em>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        apply_during<br />
+        (all)
+      </td>
+      <td>
+        Specify when you want the deploy hook action to take place.
+        Accepted values are <em>build_only</em>,
+        <em>deploy_only</em> or <em>all</em>. The <em>build</em>
+        step occurs the first time a stack is deployed, and will
+        re-occur until the stack has been successfully deployed at
+        least once. After this subsequent deployments are
+        <em>deploy</em> steps.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        halt_on_error (true)
+      </td>
+      <td>
+        Specify whether the execution should continue or halt in
+        the event of an error.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        run_on<br />
+        (single server)
+      </td>
+      <td>
+        If you have multiple servers in the same group (eg.
+        scaled-up Rails servers), you can specify whether you want
+        the deploy hook action to occur just once or once against
+        each server in that group. Valid values are:
+        <em>single_server</em> or <em>all_servers</em>. If you've
+        specified <em>target: any</em> above, this will apply to
+        all servers.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        run_as<br />
+        (server user)
+      </td>
+      <td>
+        If you execute a file on your target server, specify which
+        user you would like the file to be executed as. Note: you
+        can't specify both this and <em>sudo</em>.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        sudo (false)
+      </td>
+      <td>
+        If you are executing the file on your target server,
+        specify whether you want that execution to be sudo-ed?
+        Note: you can't specify both this and <em>run_as</em>.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        parse (true)
+      </td>
+      <td>
+        Specifies whether the file being transferred should be
+        parsed for <a href=
+        "/deployment/environment-variables">environment
+        variables</a>. Using this you can embed <em>&lt;%=
+        ENV['ENV_VAR'] %&gt;</em> for example in your source file,
+        and have it resolved during the deploy hook action.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        owner<br />
+        (your server user)
+      </td>
+      <td>
+        Ownership permissions for the file (and destination folder)
+        on the target server. An example could be
+        <em>user:group</em>.
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        execute (false)
+      </td>
+      <td>
+        Do you want to execute the file after it has been copied to
+        its destination on the target server?
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <caption align="bottom"><font size="2.0rem">
 Default values (if the field is not explicitly specified) are shown in brackets.
