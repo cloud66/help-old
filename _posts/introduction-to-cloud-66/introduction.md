@@ -124,10 +124,11 @@ If deploying to a cloud server, you must know the API key for your cloud provide
 <ol>
 <li>In the <i>Where are you deploying to</i> dialog box, select the deployment target to use.</li>
 <li>Perform one of the following actions, depending on your deployment configuration:</li>
-<ul style="margin-bottom:0em">
-<li>If deploying to a cloud, select the cloud provider, server region and server size.</li>
-<li>If deploying to a server, enter your username and IP address.</li>
-</ul>
+	<ul style="margin-bottom:0em">
+	<li>If deploying to a cloud, select the cloud provider, server region and server size.</li>
+	<li>If deploying to a server, enter your username and IP address.</li>
+	</ul>
+</ol>
 
 <li>In the <i>Deployment details</i> dialog box, select the database option to use.</li>
 <li>Click <i>Deploy</i>.</li>
