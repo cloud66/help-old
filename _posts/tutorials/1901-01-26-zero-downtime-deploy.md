@@ -20,7 +20,7 @@ Depending on your application and requirements, you can achieve zero-downtime de
 Using a web server like <a href="http://help.cloud66.com/web-server/unicorn-rack-server">Unicorn</a> or <a href="http://help.cloud66.com/web-server/passenger-enterprise">Passenger Enterprise</a> would allow you to achieve zero-downtime deployments even with a single application server.
 
 For example, with Unicorn, when you redeploy your stack, we send a USR2 signal to Unicorn which tells it to:<br/><br/>
-<ul>
+<ul class="list">
 <li>Fire up a new master in parallel</li>
 <li>Fire up new worker processes under the new master</li>
 <li>Quiet and shut down old worker processes</li>

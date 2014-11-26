@@ -31,7 +31,7 @@ Depending on which cloud you deploy to, your servers will be deployed with <b>Ub
 <h2 id="clouds">Supported cloud providers</h2>
 Cloud 66 currently supports the following cloud providers:
 
-<ul>
+<ul class="list">
     <li><a href="/deployment/amazon-web-services-cloud" target="_blank">Amazon Web Services</a></li>
     <li><a href="/deployment/digitalocean-cloud" target="_blank">Digital Ocean</a></li>
     <li><a href="/deployment/google-compute-engine-cloud" target="_blank">Google Compute Engine</a></li>

@@ -27,7 +27,7 @@ Cloud 66 supports stacks based on the [Padrino framework](http://www.padrinorb.c
 <h2 id="custom">Custom commands</h2>
 Given that Padrino applications can have different database frameworks, we allow you to specify custom commands which are run at specific points during deployment:
 
-<ul>
+<ul class="list">
   <li>
     <p>
     <strong>Custom build command</strong> &mdash; This command will run every time until the first build is successful. Example:

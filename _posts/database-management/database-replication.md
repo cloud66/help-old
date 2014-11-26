@@ -72,7 +72,7 @@ When you start replicating your database, the Cloud 66 will commence the followi
 
 <p>Similarly, when you disable replication, the following steps are initiated:</p>
 
-<ul>
+<ul class="list">
 	<li>We disable replication on your master database, and configure it to be a standalone database server</li>
 	<li>The secondary database server is removed as a slave from the master database server on the source</li>
 	<li>The source database server is configured as a standalone database server</li>

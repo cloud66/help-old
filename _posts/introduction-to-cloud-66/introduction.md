@@ -63,7 +63,7 @@ Before you get get started, you may want to look at our Technical specifications
 
 <h2 id="needed">What you’ll need</h2>
 
-<ul>
+<ul class="list">
 	<li><a href="https://app.cloud66.com/users/sign_up" target="_blank">Cloud 66 account</a></li>
 	<li><a href="http://community.cloud66.com/articles/accessing-your-git-repository">Git repository with your application code</a>
 		<ul>
