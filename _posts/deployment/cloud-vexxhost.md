@@ -45,6 +45,6 @@ Visit the Cloud 66 Dashboard and select _Get started building a stack_. After co
 </div>
 
 <h2 id="external">External links</h2>
-<ul>
+<ul class="list">
 	<li><a href="http://vexxhost.com/cloud_servers" target="_blank">Vexxhost CloudServers</a></li>
 </ul>

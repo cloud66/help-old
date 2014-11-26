@@ -1255,7 +1255,7 @@ Cloud 66 makes it easy for you to customize your Nginx configuration. From your 
 
 Editing and committing your Nginx CustomConfig will perform the following steps on **every web server in your stack**, one by one, sequentially:
 
-<ul>
+<ul class="list">
 	<li>Check your template for Liquid syntax errors</li>
 	<li>Determine the correct Passenger path (Passenger stacks only)</li>
 	<li>Check the version of your Passenger, and determine if Nginx needs to use a Ruby shell wrapper</li>
@@ -1503,7 +1503,7 @@ To ensure correct boolean condition checks within your template, always explicit
 
 Good syntax:
 
-<ul>
+<ul class="list">
 	<li>if passenger != true</li>
 	<li>if passenger != false</li>
 	<li>if passenger == true</li>
@@ -1512,7 +1512,7 @@ Good syntax:
 
 Bad syntax:
 
-<ul>
+<ul class="list">
 <li>Bad: if passenger</li>
 <li>Bad: if !passenger</li>
 </ul>

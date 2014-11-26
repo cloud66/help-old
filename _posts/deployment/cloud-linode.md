@@ -43,7 +43,7 @@ Visit the Cloud 66 Dashboard and select _Get started building a stack_. After co
 </div>
 
 <h2 id="external">External links</h2>
-<ul>
+<ul class="list">
 	<li><a href="https://www.linode.com/speedtest" target="_blank">Linode regions</a></li>
 	<li><a href="https://www.linode.com/pricing" target="_blank">Linode pricing</a></li>
 </ul>

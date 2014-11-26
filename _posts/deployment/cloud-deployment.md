@@ -33,7 +33,7 @@ By providing Cloud 66 with your unique cloud provider API keys, Cloud 66 can con
 <h2 id="cloud">Cloud providers</h2>
 Cloud 66 currently supports the following cloud providers:
 
-<ul>
+<ul class="list">
     <li><a href="/deployment/digitalocean-cloud">Digital Ocean</a></li>
     <li><a href="/deployment/amazon-web-services-cloud">Amazon Web Services</a></li>
     <li><a href="/deployment/rackspace-cloud">Rackspace</a></li>

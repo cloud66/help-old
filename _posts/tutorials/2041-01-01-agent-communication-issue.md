@@ -19,11 +19,11 @@ You will be notified in the case that Cloud 66 is unable to connect to your serv
 
 If you receive a notification about this, please see the following steps:
 
-<ol>
+<ol class="list">
 <li>Is your web endpoint functioning? This could be a matter of visiting your server IP address through your browser.</li>
 <li>Can you <a href="http://help.cloud66.com/building-your-stack/ssh-to-your-server">connect to the server yourself via SSH</a>?</li>
 <li>Is your cloud vendor experiencing any issues?</li>
-<ul>
+<ul class="list">
 	<li>DigitalOcean (<a href="https://twitter.com/digitalocean">Twitter</a>, <a href="https://status.digitalocean.com/">Status page</a>)</li>
 	<li>AWS (<a href="https://twitter.com/awscloud">Twitter</a>, <a href="http://status.aws.amazon.com/">Status page</a>)</li>	
 	<li>Rackspace (<a href="https://twitter.com/Rackspace">Twitter</a>, <a href="https://status.rackspace.com/">Status page</a>)</li>	

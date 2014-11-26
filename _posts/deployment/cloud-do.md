@@ -43,7 +43,7 @@ Visit the Cloud 66 Dashboard and select _Get started building a stack_. After co
 </div>
 
 <h2 id="external">External Links</h2>
-<ul>
+<ul class="list">
 	<li><a href="https://digitalocean.com/pricing" target="_blank">DO pricing</a></li>
 	<li><a href="https://digitalocean.com/features" target="_blank">DO features</a></li>
 </ul>

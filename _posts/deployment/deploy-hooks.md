@@ -169,7 +169,7 @@ To make use of deploy hooks, a file called _deploy_hooks.yml_ should be present 
 
 Creating a deploy hook from scratch consists of a number of steps:<br/>
 
-<ol>
+<ol class="list">
 <li>Choose your environment - eg. example <i>production</i>, <i>development</i>, <i>staging</i> and so on.</li>
 <li>Choose your hook point - eg. <i>first_thing</i>, <i>after_rails</i> and so on.</li>
 <li>Choose your deploy hook type - eg. <i>snippet</i>, <i>command</i> or <i>script</i>.</li>

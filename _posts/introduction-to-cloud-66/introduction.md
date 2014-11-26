@@ -66,13 +66,13 @@ Before you get get started, you may want to look at our Technical specifications
 <ul class="list">
 	<li><a href="https://app.cloud66.com/users/sign_up" target="_blank">Cloud 66 account</a></li>
 	<li><a href="http://community.cloud66.com/articles/accessing-your-git-repository">Git repository with your application code</a>
-		<ul>
+		<ul class="list">
 			<li>Public (<a href="http://community.cloud66.com/articles/accessing-your-git-repository#public">access a public repository</a>)</li>
 			<li>Private (<a href="http://community.cloud66.com/articles/accessing-your-git-repository#private">access a private repository</a>)</li>
 		</ul> 
 	</li>		
 	<li><a href="/deployment/deploy-to-your-cloud">Deployment credentials</a>
-		<ul>
+		<ul class="list">
 			<li>The API key for your cloud provider (<a href="/deployment/deploy-to-your-cloud">add a cloud platform</a>)</li>
 			<li>An SSH key and IP address for your server (<a href="/deployment/deploy-to-your-own-server">add a SSH key</a>)</li>
 		</ul> 
@@ -100,7 +100,7 @@ You must know the URL for your Git repository and the associated Git branch. For
 
 <ol class="list">
 	<li>In the <i>About your app</i> dialog box, do the following actions:
-		<ul>
+		<ul class="list">
 			<li>In the <i>Your Git Repo URL</i> box, enter the URL for your Git repository.</li>
 			<li>In the <i>Git branch</i> box, type the branch name. This field defaults to the "master" branch.</li>
 			<li>In the <i>Give your stack a name</i> box, type a name for your application stack.</li>
@@ -125,7 +125,7 @@ If deploying to a cloud server, you must know the API key for your cloud provide
 <ol class="list">
 	<li>In the <i>Where are you deploying to</i> dialog box, select the deployment target to use.</li>
 	<li>Perform one of the following actions, depending on your deployment configuration:
-		<ul>
+		<ul class="list">
 			<li>If deploying to a cloud, select the cloud provider, server region and server size.</li>
 			<li>If deploying to a server, enter your username and IP address.</li>
 		</ul>

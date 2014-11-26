@@ -72,7 +72,7 @@ Visit the Cloud 66 Dashboard and select _Get started building a stack_. After co
 </div>
 
 <h2 id="external">External links</h2>
-<ul>
+<ul class="list">
     <li><a href="http://aws.amazon.com/about-aws/globalinfrastructure/" target="_blank">AWS regions</a></li>
     <li><a href="http://aws.amazon.com/ec2/pricing/" target="_blank">AWS pricing</a></li>
 </ul>

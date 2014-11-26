@@ -45,7 +45,7 @@ Visit the Cloud 66 Dashboard and select _Get started building a stack_. After co
 </div>
 
 <h2 id="external">External links</h2>
-<ul>
+<ul class="list">
 	<li><a href="http://www.rackspace.com/knowledge_center/article/about-regions" target="_blank">Rackspace regions</a></li>
 	<li><a href="http://www.rackspace.com/cloud/public-pricing/" target="_blank">Rackspace pricing</a></li>
 </ul>

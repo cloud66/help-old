@@ -39,7 +39,7 @@ Visit the Cloud 66 Dashboard and select _Get started building a stack_. After co
 </div>
 
 <h2 id="external">External links</h2>
-<ul>
+<ul class="list">
 	<li><a href="http://joyent.com/products/joyent-cloud/data-centers" target="_blank">Joyent regions</a></li>
 	<li><a href="http://joyent.com/products/joyent-cloud/pricing" target="_blank">Joyent pricing</a></li>
 </ul>

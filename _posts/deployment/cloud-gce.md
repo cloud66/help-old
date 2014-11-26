@@ -53,7 +53,7 @@ Visit the Cloud 66 Dashboard and select _Get started building a stack_. After co
 </div>
 
 <h2 id="external">External links</h2>
-<ul>
+<ul class="list">
 	<li><a href="https://developers.google.com/compute/docs/zones#available" target="_blank">GCE regions</a></li>
 	<li><a href="https://cloud.google.com/products/compute-engine/#pricing" target="_blank">GCE pricing</a></li>
 </ul>
