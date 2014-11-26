@@ -117,10 +117,10 @@ For this example, we will use a simple Rails application with common requirement
 
 ### Assumptions
 
-<ul>
+<ul class="list">
 <li>Cloud 66 is used together with <a href="http://digitalocean.com">DigitalOcean</a> or <a href="http://vexxhost.com">Vexxhost</a>.</li>
 <li>The DIY solution is based on a developer salary of $60,000 per year.</li>
-<ul>
+<ul class="list">
 	<li>Business overhead (tax, insurance, benefits etc.) of 50% per year</li>
 	<li>Setup fee is based on 5 hours of DevOp work ($60/h to business)</li>
 	<li>This DevOp uses Chef, Puppet, Capistrano or similar solutions</li>
