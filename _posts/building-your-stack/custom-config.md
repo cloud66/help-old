@@ -54,7 +54,7 @@ When a patch is released, having customized configurations introduces complexiti
 If you do have changes you will need to download a patch file, which is an archive containing the current template and the patch file. Extract the contents of the archive and run the following command:
 
 <pre class="prettyprint">
-patch <current_template> -i <patch_file> -R -o <merged_template>
+patch &lt;current_template&gt; -i &lt;patch_file&gt; -R -o &lt;merged_template&gt;
 </pre>
 
 This will result in a merged_template file being created - please ensure that there are no merge errors at this point. Unfortunately we cannot deal with every single use case generically, so it is your responsibility to ensure that the new file conforms with your requirements.
