@@ -114,7 +114,7 @@ Here we have specified that we want to run two services (with a mysql database b
 
 The manifest file is divided into three broad sections:
 
-<ul>
+<ul class="list">
   <li>Repositories</li>
   <li>Services</li>
   <li>Databases</li>
