@@ -105,7 +105,7 @@ Allows you to download a database backup through the command line, concatenating
 <h3 id="download_usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx download-backup [-d &lt;download directory&gt;] &lt;backup id&gt;
+$ cx download-backup [-s &lt;stack&gt;] [-d &lt;download directory&gt;] &lt;backup id&gt;
 </pre>
 
 <h3 id="download_params">Parameters</h3>
@@ -119,6 +119,11 @@ $ cx download-backup [-d &lt;download directory&gt;] &lt;backup id&gt;
     </thead>
     <tbody>
         <tr>
+            <td><i>stack</i> </td>
+            <td><i>&mdash;</i></td>
+            <td>Name of your stack</td>
+        </tr>        
+        <tr>
             <td><i>d</i> (optional)</td>
             <td>~/cx_backups</td>
             <td>Directory to download backup to</td>
@@ -128,6 +133,7 @@ $ cx download-backup [-d &lt;download directory&gt;] &lt;backup id&gt;
             <td><i>&mdash;</i></td>
             <td>The ID of the backup you'd like to download</td>
         </tr>
+
     </tbody>
 </table>
 
