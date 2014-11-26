@@ -79,7 +79,7 @@ development:
 
 There is an hierarchical order to set up asset pipeline precompilation. The top one will override the others.
 
-<ol>
+<ol class="list">
     <li>In application.rb</li>
     <li>In the Cloud 66 manifest file</li>
     <li>In the Cloud 66 interface</li>

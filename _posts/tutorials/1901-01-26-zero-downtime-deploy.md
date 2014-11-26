@@ -15,7 +15,7 @@ difficulty: 1
 
 Depending on your application and requirements, you can achieve zero-downtime deployments in a number of ways.
 
-<ol>
+<ol class="list">
 <b><li>Using a web server that supports hot rollover</li></b>
 Using a web server like <a href="http://help.cloud66.com/web-server/unicorn-rack-server">Unicorn</a> or <a href="http://help.cloud66.com/web-server/passenger-enterprise">Passenger Enterprise</a> would allow you to achieve zero-downtime deployments even with a single application server.
 

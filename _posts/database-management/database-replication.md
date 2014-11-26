@@ -58,7 +58,7 @@ Note that <b>replication between stacks is not supported for MongoDB.</b>
 <h2 id="how">How it works</h2>
 When you start replicating your database, the Cloud 66 will commence the following process:
 
-<ol>
+<ol class="list">
 	<li>We take a full backup of the master database server in your source stack
 	    <ul style="margin-bottom:0em">
 	        <li>Single stack: we create a secondary database server in your cloud and restore your backup on it</li>

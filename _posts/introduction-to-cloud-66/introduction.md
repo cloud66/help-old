@@ -98,7 +98,7 @@ Complete the following steps to define the properties Cloud 66 uses to identify 
 <b>Prerequisites</b><br/>
 You must know the URL for your Git repository and the associated Git branch. For instructions on retrieving the Git repo URL and how to format it for this procedure, refer to <a href="http://community.cloud66.com/articles/accessing-your-git-repository#public">Access a public Git repository</a> or <a href="http://community.cloud66.com/articles/accessing-your-git-repository#private">Access a private Git repository</a>.
 
-<ol>
+<ol class="list">
 	<li>In the <i>About your app</i> dialog box, do the following actions:
 		<ul>
 			<li>In the <i>Your Git Repo URL</i> box, enter the URL for your Git repository.</li>
@@ -122,7 +122,7 @@ Complete the following steps to define the properties that determine how to depl
 <b>Prerequisites</b><br/>
 If deploying to a cloud server, you must know the API key for your cloud provider. If deploying to your server, you must have (or generate) a SSH key for the server. For instructions on generating an SSH key, refer to [Setting up SSH keys](http://community.cloud66.com/articles/setting-up-ssh-keys).
 
-<ol>
+<ol class="list">
 	<li>In the <i>Where are you deploying to</i> dialog box, select the deployment target to use.</li>
 	<li>Perform one of the following actions, depending on your deployment configuration:
 		<ul>

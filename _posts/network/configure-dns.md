@@ -62,7 +62,7 @@ The setup is similar for each provider - simply point the ALIAS or ANAME for you
 <h3 id="arecord">2. Use an A record</h3>
 This involves using an A record to point your root domain at your load balancer and then redirecting traffic to www in Nginx.
 
-<ol>
+<ol class="list">
 <li>Create a CNAME record for www pointing at the Cloud 66 hostname on your load balancer.</li>
 <li>Create an A record for your root domain (eg. example.com) pointing at your load balancer IP address.</li>
 <li>​Use <a href="/building-your-stack/stack-network-settings">network redirects</a> to permanently redirect all traffic from example.com to www.example.com.</li>

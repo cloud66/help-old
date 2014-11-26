@@ -109,7 +109,7 @@ lead: Take action at various points during your deployment
 <h1 id="fields">Hook fields</h1>
 <p>There are three types of deploy hooks, and the fields available (and required) vary by type:</p>
 
-<ol>
+<ol class="list">
 <li><b>Snippets:</b> use pre-existing scripts to install common packages. These snippets are <a href="https://github.com/cloud66/snippets">open source</a>, and are created by Cloud 66 or third parties.</li>
 <li><b>Commands:</b> run your own commands.</li>
 <li><b>Scripts:</b> use your own scripts for more comprehensive procedures.</li>
