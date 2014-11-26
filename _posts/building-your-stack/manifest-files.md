@@ -88,7 +88,7 @@ The above manifest is only scoped to *production* stacks. Here we have specified
 
 The manifest file is divided into four broad sections:
 
-<ul>
+<ul class="list">
 <li>Environments</li>
 <li>Application type</li>
 <li>Server configurations</li>

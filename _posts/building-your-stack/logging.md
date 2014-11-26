@@ -31,7 +31,7 @@ When Cloud 66 deploys your servers, we also configure the logging for various se
 <h3>Web logs</h3>
 Web logs are stored in <code>$STACK_PATH/log</code>:
 
-<ul>
+<ul class="list">
 <li>Web logger: <pre class="terminal">$STACK_PATH/log/&#60;environment&#62;.log</pre></li>
 <li>Nginx error log: <pre class="terminal">$STACK_PATH/log/nginx_error.log</pre></li>
 </ul>
@@ -42,14 +42,14 @@ If you are using a [custom web server](/web-server/custom-web-servers), such as 
 
 Logs for background processes can also be found in <code>$STACK_PATH/log</code>, and depend on the name of the process:
 
-<ul>
+<ul class="list">
 <li>Process log: <pre class="terminal">$STACK_PATH/log/user_&#60;name&#62;.log</pre></li>
 <li>Process bluepill log: <pre class="terminal">$STACK_PATH/log/user_&#60;name&#62;.pill</pre></li>
 </ul>
 
 <h3>Other</h3>
 
-<ul>
+<ul class="list">
 <li>Auth requests, Fail2Ban etc: <pre class="terminal">/var/log</pre></li>
 <li>Nginx access and errors: <pre class="terminal">/opt/nginx/logs</pre></li>
 </ul>
