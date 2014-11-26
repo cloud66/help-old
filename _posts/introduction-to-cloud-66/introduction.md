@@ -66,15 +66,15 @@ Before you get get started, you may want to look at our Technical specifications
 <ul>
 	<li><a href="https://app.cloud66.com/users/sign_up" target="_blank">Cloud 66 account</a></li>
 	<li><a href="http://community.cloud66.com/articles/accessing-your-git-repository">Git repository with your application code</a></li>
-	<ul style="margin-bottom:0em">
-		<li>Public (<a href="http://community.cloud66.com/articles/accessing-your-git-repository#public">access a public repository</a>)</li>
-		<li>Private (<a href="http://community.cloud66.com/articles/accessing-your-git-repository#private">access a private repository</a>)</li>
-	</ul> 
+		<ul style="margin-bottom:0em">
+			<li>Public (<a href="http://community.cloud66.com/articles/accessing-your-git-repository#public">access a public repository</a>)</li>
+			<li>Private (<a href="http://community.cloud66.com/articles/accessing-your-git-repository#private">access a private repository</a>)</li>
+		</ul> 
 	<li><a href="/deployment/deploy-to-your-cloud">Deployment credentials</a></li>
-	<ul style="margin-bottom:0em">
-		<li>The API key for your cloud provider (<a href="/deployment/deploy-to-your-cloud">add a cloud platform</a>)</li>
-		<li>An SSH key and IP address for your server (<a href="/deployment/deploy-to-your-own-server">add a SSH key</a>)</li>
-	</ul> 
+		<ul style="margin-bottom:0em">
+			<li>The API key for your cloud provider (<a href="/deployment/deploy-to-your-cloud">add a cloud platform</a>)</li>
+			<li>An SSH key and IP address for your server (<a href="/deployment/deploy-to-your-own-server">add a SSH key</a>)</li>
+		</ul> 
 </ul>
 
 <h2 id="1">Step 1. Build your stack</h2>
@@ -97,16 +97,14 @@ Complete the following steps to define the properties Cloud 66 uses to identify 
 You must know the URL for your Git repository and the associated Git branch. For instructions on retrieving the Git repo URL and how to format it for this procedure, refer to <a href="http://community.cloud66.com/articles/accessing-your-git-repository#public">Access a public Git repository</a> or <a href="http://community.cloud66.com/articles/accessing-your-git-repository#private">Access a private Git repository</a>.
 
 <ol>
-<li>In the <i>About your app</i> dialog box, do the following actions:</li>
-
-<ul type="a" style="margin-bottom:0em">
-<li>In the <i>Your Git Repo URL</i> box, enter the URL for your Git repository.</li>
-<li>In the <i>Git branch</i> box, type the branch name. This field defaults to the "master" branch.</li>
-<li>In the <i>Give your stack a name</i> box, type a name for your application stack.</li>
-<li>In the <i>Environment</i> list, select the environment to deploy.</li>
-</ul>
-
-<li>Click <i>Analyze</i>. Cloud 66 will analyze your application.</li>
+	<li>In the <i>About your app</i> dialog box, do the following actions:</li>
+		<ul type="a" style="margin-bottom:0em">
+			<li>In the <i>Your Git Repo URL</i> box, enter the URL for your Git repository.</li>
+			<li>In the <i>Git branch</i> box, type the branch name. This field defaults to the "master" branch.</li>
+			<li>In the <i>Give your stack a name</i> box, type a name for your application stack.</li>
+			<li>In the <i>Environment</i> list, select the environment to deploy.</li>
+		</ul>
+	<li>Click <i>Analyze</i>. Cloud 66 will analyze your application.</li>
 </ol>
 
 <h2 id="4">Step 4: Review your app configuration</h2>
@@ -122,16 +120,14 @@ Complete the following steps to define the properties that determine how to depl
 If deploying to a cloud server, you must know the API key for your cloud provider. If deploying to your server, you must have (or generate) a SSH key for the server. For instructions on generating an SSH key, refer to [Setting up SSH keys](http://community.cloud66.com/articles/setting-up-ssh-keys).
 
 <ol>
-<li>In the <i>Where are you deploying to</i> dialog box, select the deployment target to use.</li>
-<li>Perform one of the following actions, depending on your deployment configuration:</li>
-	<ul style="margin-bottom:0em">
-	<li>If deploying to a cloud, select the cloud provider, server region and server size.</li>
-	<li>If deploying to a server, enter your username and IP address.</li>
-	</ul>
-</ol>
-
-<li>In the <i>Deployment details</i> dialog box, select the database option to use.</li>
-<li>Click <i>Deploy</i>.</li>
+	<li>In the <i>Where are you deploying to</i> dialog box, select the deployment target to use.</li>
+	<li>Perform one of the following actions, depending on your deployment configuration:</li>
+		<ul style="margin-bottom:0em">
+			<li>If deploying to a cloud, select the cloud provider, server region and server size.</li>
+			<li>If deploying to a server, enter your username and IP address.</li>
+		</ul>
+	<li>In the <i>Deployment details</i> dialog box, select the database option to use.</li>
+	<li>Click <i>Deploy</i>.</li>
 </ol>
 
 <h2 id="6">Step 6: Review the deployment logs</h2>
