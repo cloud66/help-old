@@ -51,7 +51,7 @@ Trigger the deployment of a stack from the command line, just like clicking on <
 <h3 id="usage-redeploy">Usage</h3>
 
 <pre class="prettyprint">
-$ cx redeploy [-s &lt;stack&gt;]
+$ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;]
 </pre>
 
 <h3 id="params-redeploy">Parameters</h3>
@@ -71,13 +71,24 @@ $ cx redeploy [-s &lt;stack&gt;]
         	<td><i>e</i> (optional)</td>
         	<td>Your stack environment</td>
         </tr>
+        <tr>
+            <td><i>y</i> (optional)</td>
+            <td>Automatically answer yes to any prompts</td>
+        </tr>
+        <tr>
+            <td><i>git-ref</i> (optional)</td>
+            <td>Redeploy the specific git reference (branch, tag or hash)</td>
+        </tr>
     </tbody>
 </table>
 
-<h3 id="example-redeploy">Example</h3>
+<h3 id="example-redeploy">Examples</h3>
 
 <pre class="prettyprint">
 $ cx redeploy -s "My Awesome App" -e production
+</pre>
+<pre class="prettyprint">
+$ cx redeploy -s "My Awesome App" -e production -y --git-ref my_git_ref_value
 </pre>
 
 Deploying a stack that is already being deployed will enqueue your redeploy command and will run it immediately after the current deployment is finished.
