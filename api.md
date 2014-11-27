@@ -736,6 +736,12 @@ Retrieve the details of an asynchronous action performed for the the stack speci
 ## Run Stack action [/stacks/{stack_id}/actions]
 Perform an asynchronous action for the stack specified in the request. You can use this method to restart the stack, clear the stack's cache, or enable maintenance mode. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object).
 
+| Command | Comments | Extra Parameters |
+| ---------- | ---------- | ---------------- |
+| maintenance_mode | Enable to Disable maintenance mode for a stack. | value=1 for enable value=0 for disable |
+| clear_caches | Clear git caches for the stack | None |
+| restart | Restarts all stack components (nginx, db, etc.) | None |
+
 - Scope: _redeploy_
 
 + Parameters
