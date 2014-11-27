@@ -919,6 +919,7 @@ Redeploy a stack
 + Parameters
 
     + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
+    + git_ref (optional, string `a_git_tag_or_hash`) ... Git reference (branch, tag or hash)
 
 + Model (application/json)
 
@@ -953,7 +954,7 @@ Cancel a live stack deployment
 + Parameters
 
     + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
-    + id (required, integer, `112`) ... The deployment id
+    + id (required, integer, `112`) ... The deployment id    
 
 + Model (application/json)
 
