@@ -18,7 +18,7 @@ In addition to protecting your application (or parts of it) using [HTTP basic au
 Follow the instructions below to accomplish this.
 
 <ol class="article-list">
-<li>Create a file in the root of your repository called _blockips.conf_. This file will contain the IPs you wish to allow/deny.</li>
+<li>Create a file in the root of your repository called blockips.conf. This file will contain the IPs you wish to allow/deny.</li>
 <li>To deny a single IP address, you can use the following syntax:</li>
 <code>deny 1.2.3.4;</code><br>
 You can also deny an entire subnet as follows:
