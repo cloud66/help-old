@@ -46,7 +46,7 @@ tags: ['Deployment']
 
 <div class="notice notice-danger">
     <h3>Important</h3>
-    <p>Docker stacks are only currently available to users in the private beta &mdash; <a href="http://go.c66.me/c66beta">join the beta program</a></p>
+    <p>Docker stacks are currently running in beta.</p>
 </div>
 
 <h2 id="introduction">Introduction</h2>
