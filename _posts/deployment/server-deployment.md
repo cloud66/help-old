@@ -23,6 +23,7 @@ Given that we don't know anything about your local infrastructure (as we do with
 
 - Scaling your application
 - Load balancing
+- Managed Backups
 
 For the best experience possible, we strongly recommend that you deploy to your cloud.
 

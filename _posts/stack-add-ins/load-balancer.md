@@ -27,10 +27,8 @@ Depending on which cloud provider you use, this load balancer will be set up dif
 - **Amazon AWS**: [Elastic Load Balancing](http://aws.amazon.com/elasticloadbalancing/)
 - **DigitalOcean**: [HAProxy](http://haproxy.1wt.eu/)
 - **Google Cloud Engine**: [Forwarding rules, target pools & health checks](https://developers.google.com/compute/docs/load-balancing/)
-- **Joyent**: [HAProxy](http://haproxy.1wt.eu/)
 - **Linode**: [NodeBalancer](https://www.linode.com/nodebalancers/)
 - **Rackspace**: [Rackspace Load Balancing](http://www.rackspace.com/cloud/load-balancing/)
-- **Telefonica**: [HAProxy](http://haproxy.1wt.eu/)
 - **Vexxhost**: [HAProxy](http://haproxy.1wt.eu/)
 
 The time required to set up your load balancer will depend on which cloud provider you use. Once your load balancer is set up, it will be ready to distribute the load between your web servers. <strong>All your existing web servers</strong> will automatically be added to the load balancer.

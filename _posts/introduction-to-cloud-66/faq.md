@@ -111,7 +111,7 @@ You can change your Git repository by using the Cloud 66 Toolbelt, <strong>Setti
 <hr>
 
 <h2 id="f10">Which Clouds are supported?</h2>
-Currently we support Amazon Web Services, Digital Ocean, Google Compute Engine, Joyent, Linode, Rackspace, Telefonica and Vexxhost clouds.
+Currently we support Amazon Web Services, Digital Ocean, Google Compute Engine, Linode, Rackspace and Vexxhost clouds.
 
 <hr>
 
