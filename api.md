@@ -5,11 +5,8 @@ HOST: https://app.cloud66.com/api/3
 [Cloud 66](http://www.cloud66.com) is DevOps as a Service. It allows you to build, provision, configure and manage your servers to run [Rack](http://rack.github.io/) backed web applications on any server.
 You can find more information on Cloud 66 on [our help site](http://help.cloud66.com/).
 
-## About the Cloud 66 API
-The Cloud 66 API is organised around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer).
-
 ### Resource model
-Our API is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors.
+The Cloud 66 API is organised around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer). It is designed to have predictable, resource-oriented URLs and to use HTTP response codes to indicate API errors.
 
 We use built-in HTTP features, like HTTP authentication and HTTP verbs, which can be understood by off-the-shelf HTTP clients.
 
@@ -20,7 +17,7 @@ Cloud 66 uses [OAuth2](http://oauth.net/2/) to authenticate users and grant acce
 
 To authenticate your requests with OAuth you need to send a bearer authorization header with your request. This is the preferred method of authenticating because it completes the authorization request in the header portion, away from the actual request.
 
-Usually, you use a language binding (like a [Ruby gem](https://rubygems.org/) or [go package](http://golang.org/pkg/)) to deal with the OAuth authentication. Alternatively, you can include the OAuth authentication token in the header of each request:
+Usually, you use a language binding (like a [Ruby gem](https://rubygems.org/) or [Go package](http://golang.org/pkg/)) to deal with the OAuth authentication. Alternatively, you can include the OAuth authentication token in the header of each request:
 
 ```http
 Authorization: bearer 5262d64b892e8d4341000001
@@ -96,7 +93,7 @@ https://app.cloud66.com/oauth/authorize?client_id=...&scope=public+redeploy
 ````
 
 ### Ruby example
-This example shows how to get the first token using the Application (Client) ID and Secret. This is using **urn:ietf:wg:oauth:2.0:oob** for commandline tools.
+This example shows how to get the first token using the Application (Client) ID and Secret. This is using `urn:ietf:wg:oauth:2.0:oob` for commandline tools.
 
 Once you have the code, you can apply for a token. Tokens issued by the API server do not expire and are valid until the user revokes their access. You can see how to store and retrieve the token for future use in this example.
 
@@ -138,62 +135,57 @@ response = token.get("#{api_url}/stacks/#{stack_uid}/servers.json")
 puts JSON.parse(response.body)['response']
 ````
 
-### curl Example 
+### cURL Example 
 
-You can use **Personal Access Token** to call api with curl. You must pass **Personal Access Token** as a header.
+You can use your **personal access token** to call the API with cURL - it just needs to be passed in as a header.
 
-
-As an example you can get lists of stacks with this command :  
+For example, you can get lists of stacks with this command:
 
 ```http
-curl -X GET "https://app.cloud66.com/api/3/stacks.json"  -H "Authorization: Bearer YOUR_PERSONAL_ACCESS_TOKEN"
+curl -X GET "https://app.cloud66.com/api/3/stacks.json"  -H "Authorization: Bearer PERSONAL_ACCESS_TOKEN"
 ```
 
-Find **Personal Access Tokens**  in dashboard under account/settings/authorized applications.
+You can find your **personal access token** in your Cloud 66 Accounts page, under _Authorized Applications_.
 
-
-
-Assume that your personal_access_token is : 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477 
-These are some examples for using curl :
+Assuming that your personal access token is `4c9c9b1111`, these are some examples for using cURL:
 
 #### Simple GET
-Get list of stacks : 
+Get list of stacks: 
 
 ```http
-curl -X GET "https://app.cloud66.com/api/3/stacks.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"
+curl -X GET "https://app.cloud66.com/api/3/stacks.json" -H "Authorization: Bearer 4c9c9b1111"
 ```
 
 #### GET with some params
-Get list of all 'mysql' backups in '1345' backup group :  
+Get list of all `mysql` backups in `1345` backup group:
 
 ```http
-curl -X GET "https://app.cloud66.com/api/3/stacks/f196c5b41758cb7977620d49eb1492ef/backups.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477" -d group=1345 -d db_type=mysql
+curl -X GET "https://app.cloud66.com/api/3/stacks/f196c5b41758cb7977620d49eb1492ef/backups.json" -H "Authorization: Bearer 4c9c9b1111" -d group=1345 -d db_type=mysql
 ```
 #### POST 
-Add a new iphone to user's 18 devices with 'wertqy' as a token : 
+Add a new iPhone application to user ID 18 with 'wertqy' as a token: 
 
 ```http
-curl -X POST "https://app.cloud66.com/api/3/users/18/devices.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"  -d token=wertqy  -d device_type=1 -d sub_type=1
+curl -X POST "https://app.cloud66.com/api/3/users/18/devices.json" -H "Authorization: Bearer 4c9c9b1111" -d token=wertqy -d device_type=1 -d sub_type=1
 ```
 
 #### PUT 
-Update the type of device with token 'wertqy' to ipad :
+Update the type of device with token 'wertqy' to iPad:
 
 ```http
-curl -X PUT "https://app.cloud66.com/api/3/users/18/devices/wertqy.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"  -d device_type=1 -d sub_type=2
+curl -X PUT "https://app.cloud66.com/api/3/users/18/devices/wertqy.json" -H "Authorization: Bearer 4c9c9b1111" -d device_type=1 -d sub_type=2
 ```
 
-
 #### DELETE 
-Delete device with token 'wertqy' :
+Delete device with token 'wertqy':
 
 ```http
-curl -X DELETE "https://app.cloud66.com/api/3/users/18/devices/wertqy.json"  -H "Authorization: Bearer 4c9c9b1111a911053088678c8dd586cfd0e3b1c20e18cc86f02bf8683640d477"
+curl -X DELETE "https://app.cloud66.com/api/3/users/18/devices/wertqy.json" -H "Authorization: Bearer 4c9c9b1111"
 ```
 
 ### go Example
 
-You can use this repository if you want to use go : https://github.com/cloud66/cloud66 
+You can use the [Cloud 66 Go library repository](https://github.com/cloud66/cloud66) if you want to use Go.
 
 ### Synchronous vs. asynchronous requests
 The Cloud 66 API uses both synchronous and asynchronous methods. Asynchronous methods are specified in the documentation for the associated calls; all others are generally considered synchronous.
@@ -206,7 +198,7 @@ The Cloud 66 API uses both synchronous and asynchronous methods. Asynchronous me
 Cloud 66 accepts and returns date values according to the ISO 8601 standard. Combined date and time values appear in UTC including local time zone offsets. For example: `2014-06-15T14:13:18+00:00`
 
 ### Rate limiting
-The Cloud 66 API can receive a maximum of 3000 requests per user per hour. When the request level reaches the maximum rate, subsequent requests will return a `503: throttled` HTTP status message and the user must retry the request in the next hourly interval.
+The Cloud 66 API can receive a maximum of 3,000 requests per user per hour. When the request level reaches the maximum rate, subsequent requests will return a `503: throttled` HTTP status message and the user must retry the request in the next hourly interval.
 
 ### Standard HTTP response statuses
 Requests made using the Cloud 66 API can return any of the following response status codes.
@@ -225,7 +217,7 @@ Requests made using the Cloud 66 API can return any of the following response st
 | 503 | throttled | The user has reached or exceeded the maximum rate limit and must wait until the next hourly interval to retry the request. |
 
 ## Stack UID retrieval
-Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric string that uniquely identifies your stack. You can retrieve this value by accessing the Stack information page from the right sidebar of your stack page or by submitting an API request to list all stacks. The Stack UID appears in the response body for each stack you maintain.
+Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric string that uniquely identifies your stack. You can retrieve this value by accessing the _Stack information_ page from the right sidebar of your stack page or by submitting an API request to list all stacks. The Stack UID appears in the response body for each stack you maintain.
 
 ## Cloud provider instance names
 ### Amazon Web Services
@@ -301,19 +293,6 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | n1-standard-8 | n1-standard-8 |
 | n1-standard-8-d | n1-standard-8-d |
 
-### Joyent
-| Instance size | Value |
-| ---------- | ---------- |
-| Extra Small 512 MB | Extra Small 512 MB |
-| Small 1GB | Small 1GB |
-| Medium 2GB | Medium 2GB |
-| Medium 4GB | Medium 4GB |
-| Large 16GB | Large 16GB |
-| Large 8GB | Large 8GB |
-| XL 32GB | XL 32GB |
-| XXL 48GB | XXL 48GB |
-| XXXL 64GB | XXXL 64GB |
-
 ### Linode
 | Instance size | Value |
 | ---------- | ---------- |
@@ -346,17 +325,6 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | 60 GB Performance | 60 GB Performance |
 | 90 GB Performance | 90 GB Performance |
 | 120 GB Performance | 120 GB Performance |
-
-### Telefonica Cloud
-| Instance size | Value |
-| ---------- | ---------- |
-| 1 CPU, 512MB | g1_standard_1cpu_512mb |
-| 1 CPU, 1GB | g1_standard_1cpu_1024mb |
-| 1 CPU, 1.5GB | g1_standard_1cpu_1536mb |
-| 1 CPU, 2GB | g1_standard_1cpu_2048mb |
-| 1 CPU, 4GB | g1_standard_1cpu_4096mb |
-| 2 CPU, 8GB | g1_standard_2cpu_8192mb |
-| 3 CPU, 16GB | g1_standard_3cpu_16384mb |
 
 ### Vexxhost Cloud
 | Instance size | Value |
@@ -408,14 +376,6 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | asia-east1-a | asia-east1-a |
 | asia-east1-b | asia-east1-b |
 
-### Joyent 
-| Region | Value |
-| ---------- | ---------- |
-| US East (Northern Virginia) | us-east-1 |
-| US West (Northern California) | us-west-1 |
-| US South West (Nevada) | us-sw-1 |
-| Europe (Amsterdam) | eu-ams-1 |
-
 ### Linode
 | Region | Value |
 | ---------- | ---------- |
@@ -435,12 +395,6 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | London | london |
 | Northern Virginia | northern_virginia |
 | Sydney | sydney |
-
-### Telefonica Cloud
-| Region | Value |
-| ---------- | ---------- |
-| Europe (Madrid) | eu-mad-1 |
-| Europe (London) | eu-lon-1 |
 
 ### Vexxhost Cloud
 | Region | Value |
@@ -637,6 +591,87 @@ Retrieve the details of the stack specified in the request.
 
     [Stack][]
 
+## Stack Servers [/stacks/{id}/servers.json]
+Retrieve the details of servers in the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack object](#The stack object).
+
+- Scope: _public_
+
++ Parameters
+
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack.
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+        {
+            "response":
+                {
+                    "uid": "c6a983be9c51a6eac9795af9e002bda9",
+                    "vendor_uid": "3369489",
+                    "name": "Scorpion",
+                    "address": "104.131.119.80",
+                    "distro": "ubuntu",
+                    "distro_version": "14.04",
+                    "dns_record": "scorpion.pk.c66.me",
+                    "server_type": "Cloud (DigitalOcean) ",
+                    "server_roles":
+                        [
+                            "rails",
+                            "postgresql",
+                            "web",
+                            "app",
+                            "db"
+                        ],
+                    "server_group_id": 29694,
+                    "stack_uid": "307ff5ea8f91649e90e8e98b3ce0bbc0",
+                    "has_agent": true,                
+                    "params":
+                        {
+                            "availability_zone": "8",
+                            "size": "62",
+                            "region": "8",
+                            "ips":
+                                [
+                                    "104.131.119.80",
+                                    "10.132.253.21"
+                                ],
+                            "was_baselined": false,
+                            "cached_cores": 2,
+                            "cached_memory": 2104533975,
+                            "passenger_version": "4.0.53",
+                            "passenger_enterprise": false,
+                            "supports_nginx_realip": true,
+                            "passenger_pool_max": 10,
+                            "replication_primary": {},
+                            "replication_servers": {}
+                        },
+                    "created_at": "2014-12-03T15:28:50Z",
+                    "updated_at": "2014-12-04T11:56:38Z",
+                    "region": "8",
+                    "availability_zone": "8",
+                    "ext_ipv4": "104.131.119.80",
+                    "health_state": 3,
+                    "user_name": "philip",
+                    "personal_key": true,
+                    "int_ipv4": "10.132.253.21",
+                    "int_ipv6": null,
+                    "ext_ipv6": null
+              }
+        }
+
+
+### View servers in a stack [GET]
+Retrieve the details of servers in the stack specified in the request.
+
++ Response 200
+
+    [Stack Servers][]
+
 ## Stack Action list [/stacks/{id}/actions]
 Retrieve a paged list of all asynchronous actions performed for the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object).
 
@@ -655,7 +690,8 @@ Retrieve a paged list of all asynchronous actions performed for the stack specif
 
     + Body
 		{
-			"response":[
+			"response":
+            [
 				{
 					"id":10,
 					"user":"test@cloud66.com",
@@ -724,7 +760,6 @@ Retrieve the details of an asynchronous action performed for the the stack speci
 				}
 		}
 
-
 ### View a stack action [GET]
 Retrieve the details of an asynchronous action performed for the the stack specified in the request based on the supplied action ID.
 
@@ -738,7 +773,7 @@ Perform an asynchronous action for the stack specified in the request. You can u
 
 | Command | Comments | Extra Parameters |
 | ---------- | ---------- | ---------------- |
-| maintenance_mode | Enable to Disable maintenance mode for a stack. | value=1 for enable value=0 for disable |
+| maintenance_mode | Enable to Disable maintenance mode for a stack. | value=1 for enable, value=0 for disable |
 | clear_caches | Clear git caches for the stack | None |
 | restart | Restarts all stack components (nginx, db, etc.) | None |
 
@@ -1005,7 +1040,7 @@ Cancel a live stack deployment
 
 <div class="notice">
 <h3>Notice</h3>
-<p>The Services API endpoints are currently only available to <a href='http://go.c66.me/c66beta'>beta program members</a> with Docker-based stacks.</p>
+<p>The Services API endpoints run against the Cloud 66 beta program, with Docker-based stacks.</p>
 </div>
 
 ## Services list [/stacks/{id}/services]
@@ -1982,8 +2017,8 @@ Update channel/params of a notification
 
     + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     + id (required, integer, `4153`) ... The notification id
-    + channels (optional, string, `[email,ios]`) ... Channels of notification , Valid channels are : email,ios,hipchat,webhook,slack
-	+ params (optional, string, `{'hipchat_room' : 'test'}`) ... parameters of notification channel . It must be a valid json string. Valid keys are : hipchat_token, hipchat_room, slack_url, slack_channel, webhook_url
+    + channels (optional, string, `[email,ios]`) ... Notification channels (valid channels are: email, ios, hipchat, webhook, slack)
+	+ params (optional, string, `{'hipchat_room' : 'test'}`) ... Notification channel parameters (as JSON string with valid keys: hipchat_token, hipchat_room, slack_url, slack_channel, webhook_url)
 
 + Model (application/json)
 
@@ -2557,9 +2592,9 @@ Get list of all backups of stack.
 
 + Parameters
 
-    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
-    + group (optional, integer, `15`) ... The backup group id
-    + db_type (optional, string, `mysql`) ... Database type of backup . Valid options or : mysql, postgresql, redis, mongodb
+    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Stack UID
+    + group (optional, integer, `15`) ... Backup group ID
+    + db_type (optional, string, `mysql`) ... Backup database type (valid options are: mysql, postgresql, redis, mongodb)
 
 + Model (application/json)
 
@@ -2621,21 +2656,21 @@ Get list of all backups of stack.
 		}
 
 ### Backups list [GET]
-Get list of all backups of stack.
+Get a list of all backups in a stack.
 
 + Response 200
 
     [Backups list][]
 
 ## Backup [/stacks/{stack_id}/backups/{id}]
-Get information of a single backup
+Get information about a single backup.
 
 - Scope: _public_
 
 + Parameters
 
-    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
-    + id (required, integer, `4153`) ... The backup id
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Stack UID
+    + id (required, integer, `4153`) ... Backup id
 
 + Model (application/json)
 
@@ -2670,7 +2705,7 @@ Get information of a single backup
 
 
 ### Backup [GET]
-Get information of a single backup
+Get information about a single backup.
 
 + Response 200
 
@@ -2684,10 +2719,10 @@ Import an external backup.
 
 + Parameters
 
-    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
-    + group (required, integer, `5`) ... The group id of backups that imported backup must be place in
-    + db_type (required, string, `mysql`) ... Database type of backup . Valid options or : mysql, postgresql, redis, mongodb
-    + remote_url (required, string, `https://s3.amazonaws.com/c66-managed-backup-non-prod/2aad2bb5a70e621ecf251fbd85af6927/backups/09a7dec0efdaa19b44148fccbf6128ec/redis/redis_23/2014.07.01.07.00.46/redis_23.tar`) ... A valid url to backup file that is going to be imported
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Stack UID
+    + group (required, integer, `5`) ... The group id of backups that imported backup must restored in
+    + db_type (required, string, `mysql`) ... Backup database type (valid options: mysql, postgresql, redis, mongodb)
+    + remote_url (required, string, `https://s3.amazonaws.com/c66-managed-backup-non-prod/2aad2bb5a70e621ecf251fbd85af6927/backups/09a7dec0efdaa19b44148fccbf6128ec/redis/redis_23/2014.07.01.07.00.46/redis_23.tar`) ... A URL to backup file to be imported
 
 + Model (application/json)
 
@@ -2707,7 +2742,7 @@ Import an external backup.
     	}
 
 ### Import Backup [POST]
-Add a new environment variable
+Import an external backup.
 
 + Response 200
 
@@ -2715,14 +2750,14 @@ Add a new environment variable
 
 
 ## Backup files [/stacks/{stack_id}/backups/{backup_id}/files]
-Get list of all files of a backup
+Get list of all backup files.
 
 - Scope: _public_
 
 + Parameters
 
-    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
-    + backup_id (required, integer, `4153`) ... The backup id
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Stack UID
+    + backup_id (required, integer, `4153`) ... Backup ID
 
 + Model (application/json)
 
@@ -2754,7 +2789,7 @@ Get list of all files of a backup
 
 
 ### Backup files [GET]
-Get list of all files of a backup
+Get list of all backup files.
 
 + Response 200
 
@@ -2762,15 +2797,15 @@ Get list of all files of a backup
 
 
 ## Backup file [/stacks/{stack_id}/backups/{backup_id}/files/{id}]
-Get public url to a backup file
+Get the public URL to a backup file.
 
 - Scope: _public_
 
 + Parameters
 
-    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
-    + backup_id (required, integer, `4153`) ... The backup id
-    + id (required, string, `tar-aa`) ... The file id
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Stack UID
+    + backup_id (required, integer, `4153`) ... Backup ID
+    + id (required, string, `tar-aa`) ... The file ID
 
 + Model (application/json)
 
@@ -2789,7 +2824,7 @@ Get public url to a backup file
 		}
 
 ### Backup file [GET]
-Get public url to a backup file
+Get the public URL to a backup file.
 
 + Response 200
 
@@ -2798,7 +2833,7 @@ Get public url to a backup file
 # Group Accounts
 
 ## Account List [/accounts]
-Get list of accounts that caller belongs to
+Get list of accounts that caller belongs to.
 
 - Scope: _users_
 
@@ -2842,7 +2877,7 @@ Get a list of accounts that caller belongs to.
 
 
 ## Account [/accounts/{id}]
-Get information of an Account
+Get information about an account.
 
 - Scope: _users_
 
@@ -2872,7 +2907,7 @@ Get information of an Account
 		}
 
 ### Get Account [GET]
-Get a single account.
+Get information about an account.
 
 + Response 200
 
@@ -2966,14 +3001,14 @@ Get list of users that caller has access to.
         }
 
 ### User List [GET]
-Get list of users that caller has access to
+Get list of users that caller has access to.
 
 + Response 200
 
     [User List][]
 
 ## User [/users/{id}]
-Get detail information about a user
+Get detailed information about a user.
 
 - Scope: _users_
 
@@ -3044,20 +3079,20 @@ Get detail information about a user
 		}
 
 ### Get User [GET]
-Get information of a user.
+Get detailed information about a user.
 
 + Response 200
 
     [User][]
 
 ## Add Device [/users/{id}/devices]
-Add a new device for user
+Add a new device for the user.
 
 - Scope: _users_
 
 + Parameters
 
-    + id (required, integer, `1`) ... The user ID
+    + id (required, integer, `1`) ... User ID
     + device_type (required, integer, `1`) ... Device type 1 = IOS, 2 = Android
     + sub_type (required, integer, `1`) ... 1 = IPHONE, 2 = IPAD, 3 = IPOD
     + token (required, string, `htyukjbnnmshthkr`) ... token of device
@@ -3086,7 +3121,7 @@ Add a new device for user
 		}
 
 ### Add Device [POST]
-Add a new environment variable
+Add a new device for the user.
 
 + Response 200
 
