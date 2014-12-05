@@ -7,7 +7,7 @@ nav_sticky: false
 date:   2092-01-25 16:27:22
 categories: beta
 lead: Deploy docker stacks through Cloud 66
-search-tags: ['docker', 'docker_deployment.yml', 'docker deployment', 'deployment']
+search-tags: ['docker', '.cloud66/services.yml', 'docker deployment', 'deployment']
 tags: ['Deployment', 'Docker']
 exclude_from_search: true
 exclude_from_index: true
@@ -17,7 +17,7 @@ exclude_from_index: true
 <ul class="page-toc">
 	  <li><a href="#intro">How do I define a Docker stack?</a></li>
     <li><a href="#samples">Sample deployment configuration files</a></li>
-    <li><a href="#composition">Composition of the docker_deployment.yml file</a></li>
+    <li><a href="#composition">Composition of the .cloud66/services.yml file</a></li>
     <li>
       <ul>
         <li><a href="#environments">Environments</a></li>
@@ -41,20 +41,20 @@ exclude_from_index: true
     <p>Docker stacks are only currently available to users in the private beta &mdash; <a href="http://go.c66.me/c66beta">join the beta program</a></p>
 </div>
 
-Cloud 66 uses the presence of a `docker_deployment.yml` file to determine that your stack will be docker based, and figure out exactly what your docker stack architecture should be.
+Cloud 66 uses the presence of a `.cloud66/services.yml` file to determine that your stack will be docker based, and figure out exactly what your docker stack architecture should be.
 
 You can use this file to specify repositories for images, services that you would like to run as containers, and supporting services that you would like to run outside of containers (ie. databases)
-In order for this file to be detected, it must be present in the root of your source repository with the name `docker_deployment.yml`
+In order for this file to be detected, it must be present in the root of your source repository with the name `.cloud66/services.yml`
 
 <pre class="terminal">
-[source&#95;repo]/docker_deployment.yml
+[source&#95;repo]/.cloud66/services.yml
 </pre>
 
-The docker_deployment.yml file is **YAML** formatted and is split by environment just like database.yml or mongoid.yml. This allows for different configurations per environment within one file. YAML files are very particular about formatting, and an extra space or tab somewhere can render the file unreadable. You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.
+The .cloud66/services.yml file is **YAML** formatted and is split by environment just like database.yml or mongoid.yml. This allows for different configurations per environment within one file. YAML files are very particular about formatting, and an extra space or tab somewhere can render the file unreadable. You can use <a href="http://yamllint.com/" target="_blank">Yamllint.com</a> to check your YAML syntax before committing.
 
-<h3 id="samples">Sample docker_deployment.yml files</h3>
+<h3 id="samples">Sample .cloud66/services.yml files</h3>
 
-A simple example of a **docker_deployment.yml** files is as follows:
+A simple example of a **.cloud66/services.yml** files is as follows:
 
 {% highlight yaml %}
 production:                                 # Environment type
@@ -73,7 +73,7 @@ production:                                 # Environment type
 The above deployment configuration is only scoped to *production* stacks.
 Here we have specified that we want to run a single service (with a mysql database backend)
 
-A more powerful example of **docker_deployment.yml** is:
+A more powerful example of **.cloud66/services.yml** is:
 
 {% highlight yaml %}
 production:                                 # Environment type
@@ -110,7 +110,7 @@ Here we have specified that we want to run two services (with a mysql database b
   <p>Services can be scaled up one or many times on single servers or across multiple servers, as desired.</p>
 </div>
 
-<h2 id="composition">Composition of the docker_deployment.yml file</h2>
+<h2 id="composition">Composition of the .cloud66/services.yml file</h2>
 
 The manifest file is divided into three broad sections:
 

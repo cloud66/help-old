@@ -75,7 +75,7 @@ Docker based stacks enjoy the same benefits as other Cloud 66 stacks, including:
 - API and command line
 
 <h2 id="building-your-first-stack">Building your first Docker backed stack on Cloud 66</h2>
-The base of a Docker backed stack is a single file called `docker_deployment.yml`. This file contains the desired setup for your Docker containers on production and how to manage them.
+The base of a Docker backed stack is a single file called `.cloud66/services.yml`. This file contains the desired setup for your Docker containers on production and how to manage them.
 
 Let’s start with a simple example:
 
@@ -94,7 +94,7 @@ At this point Cloud 66 gets to work. Here is what’s happening:
 Once the stack is deployed you can visit the app by clicking on “Browse Site” link on the stack card on the dashboard and see a sample Rails app running.
 
 <h3 id="lets-look-at-our-sample-configuration">Let’s look at our sample configuration</h3>
-Let’s look at `docker_deployment.yml` we used for this stack:
+Let’s look at `.cloud66/services.yml` we used for this stack:
 
 {% highlight yaml %}
 production:
@@ -133,7 +133,7 @@ During scaling any containers running this service will get traffic distributed 
 
 <h2 id="adding-databases">Adding databases</h2>
 
-Let's add a database to the mix. If your app uses databases you can simply add them to the `databases` section of `docker_deployment.yml` file. Here is an example:
+Let's add a database to the mix. If your app uses databases you can simply add them to the `databases` section of `.cloud66/services.yml` file. Here is an example:
 
 {% highlight yaml %}
 production:
@@ -213,7 +213,7 @@ production:
 
 The `url` is the same as the one you would use when calling `docker pull` directly. For example, if you are using _Quay.io_ as your private repository, you will use `docker pull quay.io/namespace/image_name` to pull the image from that repository. In this case the `url` is `quay.io`.  For the official [Docker Hub](https://registry.hub.docker.com/), use `index.docker.io`.
 
-One convention here is using `_env:` before an environment variable. This can be used anywhere in `docker_deployment.yml` to avoid checking in passwords and other sensitive information. You can use <a href="/deployment/environment-variables">environment variable management</a> in the console or toolbelt to add your environment variables.
+One convention here is using `_env:` before an environment variable. This can be used anywhere in `.cloud66/services.yml` to avoid checking in passwords and other sensitive information. You can use <a href="/deployment/environment-variables">environment variable management</a> in the console or toolbelt to add your environment variables.
 
 <h2 id="container-lifecycle-management">Container lifecycle management</h2>
 
@@ -265,7 +265,7 @@ Now it's time to take down the old containers. This happens by sending `TERM` an
 
 <h2 id="multiple-services">Multiple services</h2>
 
-You can define as many services as you like in `docker_deployment.yml`. The first time you build your stack, all those services will be started on the first server you build but you can use the UI, toolbelt or the API to move them around.
+You can define as many services as you like in `.cloud66/services.yml`. The first time you build your stack, all those services will be started on the first server you build but you can use the UI, toolbelt or the API to move them around.
 
 Here is an example of a multi-service configuration:
 
