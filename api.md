@@ -1,7 +1,7 @@
 FORMAT: 1A
 HOST: https://app.cloud66.com/api/3
 
-# Introduction
+# Group Introduction
 [Cloud 66](http://www.cloud66.com) is DevOps as a Service. It allows you to build, provision, configure and manage your servers to run [Rack](http://rack.github.io/) backed web applications on any server.
 You can find more information on Cloud 66 on [our help site](http://help.cloud66.com/).
 
@@ -183,7 +183,7 @@ Delete device with token 'wertqy':
 curl -X DELETE "https://app.cloud66.com/api/3/users/18/devices/wertqy.json" -H "Authorization: Bearer 4c9c9b1111"
 ```
 
-### go Example
+### Go Example
 
 You can use the [Cloud 66 Go library repository](https://github.com/cloud66/cloud66) if you want to use Go.
 
@@ -216,10 +216,10 @@ Requests made using the Cloud 66 API can return any of the following response st
 | 503 | not_implemented | This resource is not actively implemented in this version of the Cloud 66 API. |
 | 503 | throttled | The user has reached or exceeded the maximum rate limit and must wait until the next hourly interval to retry the request. |
 
-## Stack UID retrieval
+### Stack UID retrieval
 Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric string that uniquely identifies your stack. You can retrieve this value by accessing the _Stack information_ page from the right sidebar of your stack page or by submitting an API request to list all stacks. The Stack UID appears in the response body for each stack you maintain.
 
-## Cloud provider instance names
+## Cloud vendor instance names [/]
 ### Amazon Web Services
 | Instance size | Value |
 | ------------- | ------------ |
@@ -340,7 +340,7 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | 48GB | nb.48G 
 | 64GB | nb.64G |
 
-## Cloud vendor instance regions
+## Cloud vendor instance regions [/]
 ### Amazon Web Services
 | Region | Value |
 | ---------- | ---------- |
@@ -590,87 +590,6 @@ Retrieve the details of the stack specified in the request.
 + Response 200
 
     [Stack][]
-
-## Stack Servers [/stacks/{id}/servers.json]
-Retrieve the details of servers in the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack object](#The stack object).
-
-- Scope: _public_
-
-+ Parameters
-
-    + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Unique identifier of the stack.
-
-+ Model (application/json)
-
-    + Headers
-
-            X-RateLimit-Limit: 3600
-            X-RateLimit-Remaining: 3597
-
-    + Body
-        {
-            "response":
-                {
-                    "uid": "c6a983be9c51a6eac9795af9e002bda9",
-                    "vendor_uid": "3369489",
-                    "name": "Scorpion",
-                    "address": "104.131.119.80",
-                    "distro": "ubuntu",
-                    "distro_version": "14.04",
-                    "dns_record": "scorpion.pk.c66.me",
-                    "server_type": "Cloud (DigitalOcean) ",
-                    "server_roles":
-                        [
-                            "rails",
-                            "postgresql",
-                            "web",
-                            "app",
-                            "db"
-                        ],
-                    "server_group_id": 29694,
-                    "stack_uid": "307ff5ea8f91649e90e8e98b3ce0bbc0",
-                    "has_agent": true,                
-                    "params":
-                        {
-                            "availability_zone": "8",
-                            "size": "62",
-                            "region": "8",
-                            "ips":
-                                [
-                                    "104.131.119.80",
-                                    "10.132.253.21"
-                                ],
-                            "was_baselined": false,
-                            "cached_cores": 2,
-                            "cached_memory": 2104533975,
-                            "passenger_version": "4.0.53",
-                            "passenger_enterprise": false,
-                            "supports_nginx_realip": true,
-                            "passenger_pool_max": 10,
-                            "replication_primary": {},
-                            "replication_servers": {}
-                        },
-                    "created_at": "2014-12-03T15:28:50Z",
-                    "updated_at": "2014-12-04T11:56:38Z",
-                    "region": "8",
-                    "availability_zone": "8",
-                    "ext_ipv4": "104.131.119.80",
-                    "health_state": 3,
-                    "user_name": "philip",
-                    "personal_key": true,
-                    "int_ipv4": "10.132.253.21",
-                    "int_ipv6": null,
-                    "ext_ipv6": null
-              }
-        }
-
-
-### View servers in a stack [GET]
-Retrieve the details of servers in the stack specified in the request.
-
-+ Response 200
-
-    [Stack Servers][]
 
 ## Stack Action list [/stacks/{id}/actions]
 Retrieve a paged list of all asynchronous actions performed for the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object).
