@@ -35,7 +35,6 @@ Cloud 66 currently supports the following cloud providers:
     <li><a href="/deployment/amazon-web-services-cloud" target="_blank">Amazon Web Services</a></li>
     <li><a href="/deployment/digitalocean-cloud" target="_blank">Digital Ocean</a></li>
     <li><a href="/deployment/google-compute-engine-cloud" target="_blank">Google Compute Engine</a></li>
-    <li><a href="/deployment/joyent-cloud" target="_blank">Joyent</a></li>
     <li><a href="/deployment/linode-cloud" target="_blank">Linode</a></li>
     <li><a href="/deployment/rackspace-cloud" target="_blank">Rackspace</a></li>
     <li><a href="/deployment/vexxhost-cloud" target="_blank">Vexxhost</a></li>

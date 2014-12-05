@@ -161,9 +161,7 @@ Cloud vendor to fire up the server on. Valid values:
 - aws
 - rackspace
 - digitalocean
-- joyent
 - linode
-- telefonica
 - vexxhost
 - googlecloud
 

@@ -38,7 +38,7 @@ exclude_from_index: true
 
 <div class="notice notice-danger">
 	<h3>Important</h3>
-    <p>Docker stacks are only currently available to users in the private beta &mdash; <a href="http://go.c66.me/c66beta">join the beta program</a></p>
+    <p>Docker stacks are currently running in beta.</p>
 </div>
 
 Cloud 66 uses the presence of a `.cloud66/services.yml` file to determine that your stack will be docker based, and figure out exactly what your docker stack architecture should be.

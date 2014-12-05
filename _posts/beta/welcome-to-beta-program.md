@@ -13,13 +13,11 @@ tags: ['Deployment']
 
 # Hello!
 
-Welcome to Cloud 66 Beta Program. Here you will find resources and documents on latest Cloud 66 features, only available to Cloud 66 Beta Program members. If you're not a member you can [apply now](http://go.c66.me/c66beta). It might take a while before you get your access so please accept our appologies in advance for the delay.
+Welcome to Cloud 66 Beta Program - here you will find resources and documents on latest Cloud 66 features.
 
-## Private Beta Features
+## Docker Backed Stacks
 
-### Docker Backed Stacks
-
-The first feature to be exclusively available to private Beta Program members is support for Docker backed stacks. You can find out more about <a href="/beta/docker-deployments">Cloud 66 Docker backed stacks</a> and try deploying stacks that are not limited to Ruby and one stack per server. Roll out all your services from different source repositories on any number of servers on any cloud provider or your own servers.
+The first feature to be exclusively available to beta program members is support for Docker backed stacks. You can find out more about <a href="/beta/docker-deployments">Cloud 66 Docker backed stacks</a> and try deploying stacks that are not limited to Ruby and one stack per application. Roll out all your services from different source repositories on any number of servers on any cloud provider or your own servers.
 
 ## Contact us
 
