@@ -30,6 +30,7 @@ If you receive a notification about this, please see the following steps:
 	<li>Google Cloud (<a href="https://twitter.com/googlecloud">Twitter</a>)</li>	
 	<li>Linode (<a href="https://twitter.com/StatusLinode">Twitter</a>, <a href="http://status.linode.com/">Status page</a>)</li>	
 	<li>Vexxhost (<a href="https://twitter.com/vexxhost">Twitter</a>, <a href="">Status page</a>)</li>	
+	<li>Microsoft Azure (<a href="https://twitter.com/azure">Twitter</a>, <a href="http://azure.microsoft.com/en-us/status/">Status page</a>)</li>	
 </ul>
 <li>Is Cloud 66 experiencing issues? See the <a href="https://twitter.com/cloud66status">Twitter</a> and <a href="http://status.cloud66.com/">Status page</a>.</li>
 <li>Try rebooting the server from your cloud vendor dashboard - this would help if it's under heavy load</li>

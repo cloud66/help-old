@@ -40,6 +40,7 @@ Cloud 66 currently supports the following cloud providers:
     <li><a href="/deployment/linode-cloud">Linode</a></li>
     <li><a href="/deployment/google-compute-engine-cloud">Google Compute Engine</a></li>
     <li><a href="/deployment/vexxhost-cloud">Vexxhost</a></li>
+    <li><a href="/deployment/microsoft-azure-cloud">Microsoft Azure</a></li>
 </ul>
 
 <div class="notice notice-warning">

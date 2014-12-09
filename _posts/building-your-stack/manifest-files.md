@@ -164,6 +164,7 @@ Cloud vendor to fire up the server on. Valid values:
 - linode
 - vexxhost
 - googlecloud
+- azure
 
 <pre class="prettyprint">
 ... server:
