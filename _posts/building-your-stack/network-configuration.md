@@ -68,6 +68,11 @@ By default, Cloud 66 gateway servers (eg. 54.84.166.97) are the only servers all
 <h3 id="add-firewall">Add a firewall rule</h3>
 To add your own rules, click <i>Add a new firewall rule</i>. You can input single IP addresses or ranges, and the dropdown allows you to choose servers by name (eg. <i>Rails servers</i>).
 
+<div class="notice notice-warning">
+    <h3>Notice</h3>
+    <p>If you want to open a custom port to you server in Microsoft Azure, you must add an endpoint for that VM in your azure management portal after you added the rule in Cloud66 dashboard </p>
+</div>
+
 <h2 id="configure">Configure network traffic</h2>
 By default, all traffic is allowed to visit your web servers on ports 80, 443, 8080 and 8443. The <i>Traffic</i> tab allows you to control this, and has two sections: <i>allowed</i> traffic sources and <i>denied</i> traffic sources.
 
