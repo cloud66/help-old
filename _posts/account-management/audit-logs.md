@@ -14,14 +14,23 @@ tags: ['']
 
 ## An Audit log for all account activities
 
-Audti Logs records every activity performed by any of your team members in your account. Each records contains the exact date and time, displayed in your timezone alongside the team member's email address, IP address and some details about the task performed. 
+Audit Logs records every activity performed by any of your team members in your account. Each records contains the exact date and time, displayed in your timezone alongside the team member's email address, IP address and some details about the task performed. 
 
-![Cloud 66 Audit Logs](http://help.cloud66.com.s3.amazonaws.com/images/audit_logs.png)
+Here is what's recorded for each activity:
 
-To make it easier for you to scan the records for unusual activity, we also show you the country and city of the IP address.
+- Activity name (ie. Signin, Redeployment, Download SSH Key,...)
+- Date and time of the activity, shown in your timezone
+- IP address of the browser or API client
+- Country, Region or State and City of the IP address
+- User's email address and Gravatar
+- Extra information about the activity, if applicable
+
+Any activity whether from the web UI or the API client (like the Toolbelt) is recorded. Also, any activity by Cloud 66 Support agents performed as part of helping you with an issue is also recorded and shown in the activity log.
 
 ## Search Audit Log
 
-You can search the audit logs using the actitive name, the date range of the events or both. Search is case insensitive.
+You can search the audit logs using the activity name, the date range of the events or both. Search is case insensitive.
 
-![Cloud 66 Audit Log Search](http://help.cloud66.com.s3.amazonaws.com/images/audit_log_search.png)
+## Accessing Audit Logs
+
+You can see your account's Audit Logs under your Account menu. Only account owner can view Audit Logs.
