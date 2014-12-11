@@ -51,12 +51,12 @@ When a patch is released, having customized configurations introduces complexiti
     <p>Failure to apply configuration updates may lead to unexpected behaviour.</p>
 </div>
 
-If you do have changes you will need to download a patch file, which is an archive containing the current template and the patch file. Extract the contents of the archive and run the following command:
+If we cannot automatically apply the patch, you will be notified and provided with a patch archive. It contains two files - the updated configuration and a patch file. Extract the contents of the archive and download your current configuration from the Cloud 66 UI. With these files ready, run the following command:
 
 <pre class="prettyprint">
-patch &lt;current_template&gt; -i &lt;patch_file&gt; -R -o &lt;merged_template&gt;
+patch &lt;current_configuration&gt; -i &lt;patch_file&gt; -R -o merged_configuration
 </pre>
 
-This will result in a merged_template file being created - please ensure that there are no merge errors at this point. Unfortunately we cannot deal with every single use case generically, so it is your responsibility to ensure that the new file conforms with your requirements.
+This will result in a merged_configuration file being created - please ensure that there are no merge errors at this point. Unfortunately we cannot deal with every single use case generically, so it is your responsibility to ensure that the new file conforms with your requirements.
 
 In the absence of merge errors, copy and paste the contents of the merged_template into your CustomConfig form and commit it.
