@@ -987,177 +987,6 @@ The following table specifies the number of workers configured for your Nginx ba
   <tbody>
     <tr class="header">
       <td width="25%">
-        <strong>Rackspace</strong> <span>-</span>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td width="40%">
-        512MB Standard Instance
-      </td>
-      <td>
-        1
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        1GB Standard Instance
-      </td>
-      <td>
-        2
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        2GB Standard Instance
-      </td>
-      <td>
-        4
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        4GB Standard Instance
-      </td>
-      <td>
-        4
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        8GB Standard Instance
-      </td>
-      <td>
-        8
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        15GB Standard Instance
-      </td>
-      <td>
-        8
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        30GB Standard Instance
-      </td>
-      <td>
-        8
-      </td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr class="header">
-      <td width="25%">
-        <strong>Vexxhost</strong> <span>-</span>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td width="40%">
-        512 MB
-      </td>
-      <td>
-        2
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        1 GB
-      </td>
-      <td>
-        4
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        2 GB
-      </td>
-      <td>
-        4
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        4 GB
-      </td>
-      <td>
-        4
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        8 GB
-      </td>
-      <td>
-        8
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        16 GB
-      </td>
-      <td>
-        8
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        24 GB
-      </td>
-      <td>
-        8
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        32 GB
-      </td>
-      <td>
-        16
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        48 GB
-      </td>
-      <td>
-        16
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        64 GB
-      </td>
-      <td>
-        16
-      </td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr class="header">
-      <td width="25%">
         <strong>Microsoft Azure</strong> <span>-</span>
       </td>
       <td></td>
@@ -1320,6 +1149,177 @@ The following table specifies the number of workers configured for your Nginx ba
       <td></td>
       <td>
         STANDARD_D14
+      </td>
+      <td>
+        16
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="header">
+      <td width="25%">
+        <strong>Rackspace</strong> <span>-</span>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td width="40%">
+        512MB Standard Instance
+      </td>
+      <td>
+        1
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        1GB Standard Instance
+      </td>
+      <td>
+        2
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        2GB Standard Instance
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        4GB Standard Instance
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        8GB Standard Instance
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        15GB Standard Instance
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        30GB Standard Instance
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="header">
+      <td width="25%">
+        <strong>Vexxhost</strong> <span>-</span>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td width="40%">
+        512 MB
+      </td>
+      <td>
+        2
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        1 GB
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        2 GB
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        4 GB
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        8 GB
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        16 GB
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        24 GB
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        32 GB
+      </td>
+      <td>
+        16
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        48 GB
+      </td>
+      <td>
+        16
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        64 GB
       </td>
       <td>
         16

@@ -253,6 +253,28 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | GPU instances | cg1.4xlarge |
 | GPU instances | g2.2xlarge |
 
+### Azure
+| Instance size | Value |
+| ---------- | ---------- |
+| A0 | ExtraSmall |
+| A1 | Small |
+| A2 | Medium |
+| A3 | Large |
+| A4 | ExtraLarge |
+| A5 | A5 |
+| A6 | A6 |
+| A7 | A7 |
+| A8 | A8 |
+| A9 | A9 |
+| D1 | STANDARD_D1 |
+| D2 | STANDARD_D2 |
+| D3 | STANDARD_D3 |
+| D4 | STANDARD_D4 |
+| D11 | STANDARD_D11 |
+| D12 | STANDARD_D12 |
+| D13 | STANDARD_D13 |
+| D14 | STANDARD_D14 |
+
 ### Digital Ocean
 | Instance size | Value |
 | --------- | --------- |
@@ -340,28 +362,6 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | 48GB | nb.48G 
 | 64GB | nb.64G |
 
-### Azure
-| Instance size | Value |
-| ---------- | ---------- |
-| A0 | ExtraSmall |
-| A1 | Small |
-| A2 | Medium |
-| A3 | Large |
-| A4 | ExtraLarge |
-| A5 | A5 |
-| A6 | A6 |
-| A7 | A7 |
-| A8 | A8 |
-| A9 | A9 |
-| D1 | STANDARD_D1 |
-| D2 | STANDARD_D2 |
-| D3 | STANDARD_D3 |
-| D4 | STANDARD_D4 |
-| D11 | STANDARD_D11 |
-| D12 | STANDARD_D12 |
-| D13 | STANDARD_D13 |
-| D14 | STANDARD_D14 |
-
 ## Cloud vendor instance regions [/]
 ### Amazon Web Services
 | Region | Value |
@@ -374,6 +374,25 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | Asia Pacific (Singapore) | ap-southeast-1 |
 | Asia Pacific (Tokyo) | ap-northeast-1 |
 | Asia Pacific (Sydney) | ap-southeast-2 |
+
+### Azure
+| Region | Value |
+| ---------- | ---------- |
+| Central US | Central US |
+| East US | East US |
+| East US 2 | East US 2 |
+| North Central US | North Central US |
+| South Central US | South Central US |
+| West US | West US |
+| North Europe | North Europe |
+| West Europe | West Europe |
+| East Asia | East Asia |
+| Southeast Asia | Southeast Asia |
+| Japan East | Japan East |
+| Japan West | Japan West |
+| Brazil South | Brazil South |
+| Australia East | Australia East |
+| Australia Southeast | Australia Southeast |
 
 ### Digital Ocean
 | Region | Value |
@@ -422,25 +441,6 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | Region | Value |
 | ---------- | ---------- |
 | Montreal | default |
-
-### Azure
-| Region | Value |
-| ---------- | ---------- |
-| Central US | Central US |
-| East US | East US |
-| East US 2 | East US 2 |
-| North Central US | North Central US |
-| South Central US | South Central US |
-| West US | West US |
-| North Europe | North Europe |
-| West Europe | West Europe |
-| East Asia | East Asia |
-| Southeast Asia | Southeast Asia |
-| Japan East | Japan East |
-| Japan West | Japan West |
-| Brazil South | Brazil South |
-| Australia East | Australia East |
-| Australia Southeast | Australia Southeast |
 
 # Stacks
 Most interactions with the Cloud 66 API are performed at the stack level. Using the Stacks resource, you can list stacks and view stack details, but you can only create, update, or delete stacks using the UI dashboard.

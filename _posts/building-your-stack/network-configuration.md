@@ -69,8 +69,8 @@ By default, Cloud 66 gateway servers (eg. 54.84.166.97) are the only servers all
 To add your own rules, click <i>Add a new firewall rule</i>. You can input single IP addresses or ranges, and the dropdown allows you to choose servers by name (eg. <i>Rails servers</i>).
 
 <div class="notice notice-warning">
-    <h3>Notice</h3>
-    <p>If you want to open a custom port to you server in Microsoft Azure, you must add an endpoint for that VM in your azure management portal after you added the rule in Cloud66 dashboard </p>
+    <h3>Microsoft Azure notice</h3>
+    <p>If you want to open a custom port to you server in Microsoft Azure, you must add an endpoint for that VM in your Azure management portal after adding the rule in your Cloud 66 dashboard.</p>
 </div>
 
 <h2 id="configure">Configure network traffic</h2>

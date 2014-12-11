@@ -28,9 +28,9 @@ Depending on which cloud provider you use, this load balancer will be set up dif
 - **DigitalOcean**: [HAProxy](http://haproxy.1wt.eu/)
 - **Google Cloud Engine**: [Forwarding rules, target pools & health checks](https://developers.google.com/compute/docs/load-balancing/)
 - **Linode**: [NodeBalancer](https://www.linode.com/nodebalancers/)
+- **Microsoft Azure**: [TrafficManager](http://msdn.microsoft.com/en-us/library/azure/hh744833.aspx)
 - **Rackspace**: [Rackspace Load Balancing](http://www.rackspace.com/cloud/load-balancing/)
 - **Vexxhost**: [HAProxy](http://haproxy.1wt.eu/)
-- **Microsoft Azure**: [TrafficManager](http://msdn.microsoft.com/en-us/library/azure/hh744833.aspx)
 
 The time required to set up your load balancer will depend on which cloud provider you use. Once your load balancer is set up, it will be ready to distribute the load between your web servers. <strong>All your existing web servers</strong> will automatically be added to the load balancer.
 

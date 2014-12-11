@@ -159,12 +159,12 @@ A list of extra apt packages to be installed on the server, before deploying the
 Cloud vendor to fire up the server on. Valid values:
 
 - aws
+- azure
 - rackspace
 - digitalocean
 - linode
 - vexxhost
 - googlecloud
-- azure
 
 <pre class="prettyprint">
 ... server:
