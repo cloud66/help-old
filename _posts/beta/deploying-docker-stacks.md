@@ -21,6 +21,7 @@ tags: ['Deployment']
             </ul>
         </li>
     <li><a href="#adding-databases">Adding databases</a></li>
+    <li><a href="#networking">Networking</a></li>
     <li><a href="#logging">Logging</a></li>
     <li><a href="#volumes">Mounting Volumes</a></li>
     <li><a href="#using-private-repositories">Using Private Repositories</li></a>
@@ -151,6 +152,16 @@ production:
 Here we just added MySQL and Redis to our stack. Those databases will be deployed and configured automatically and their addresses and access credentials will be made available to the containers across the stack via environment variables.
 
 These are standard Cloud 66 database setups with unmanaged, managed or verified backups and replication. The suported database types are MySQL, PostgreSQL, Redis and MongoDB. You can also use `databases` section to install ElasticSearch and RabbitMQ.
+
+<h2 id="networking">Networking</h2>
+
+We automatically provision a weave-based networking layer for you docker servers. That means that every docker host and container created via Cloud 66 will automatically be subscribed to a private network (each ip address assigned will be in the range 25.0.0.x).
+
+Containers can communicate with each other using the private address (on any port); this is regardless of the physical server the other container resides on. ie. they can communicate if they are on the same server, or separate servers. The weave networking layer transparently maps between the two.
+
+If you have backend services that you need to connect to, then you can use ENV vars to specify their endpoint, and once you've got the service container running on the desired server, you can update the ENV var to be the containers private address so other services can connect to it.
+
+Note: that in the case above you should make sure that your backend service is declared as a dependency of your other services to ensure that they are started first (see <a href="#service-dependencies">Service dependencies</a> below)
 
 <h2 id="logging">Logging</h2>
 
