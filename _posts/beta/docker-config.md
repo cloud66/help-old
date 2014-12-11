@@ -31,7 +31,7 @@ exclude_from_index: true
 
 <div class="notice">
   <h3>Before your start</h3>
-    <p>You might want to also read a <a href="/beta/docker-deployments">step by step guide to building your first Docker backed stack</a>.</p>
+    <p>You might want to also read a <a href="/beta/step-by-step-guide-to-your-first-docker-stack">step by step guide to building your first Docker backed stack</a>.</p>
 </div>
 
 <h2 id="intro">How do I define a Docker stack?</h2>
