@@ -54,7 +54,7 @@ When a patch is released, having customized configurations introduces complexiti
 If we cannot automatically apply the patch, you will be notified and provided with a patch archive. It contains two files - the updated configuration and a patch file. Extract the contents of the archive and download your current configuration from the Cloud 66 UI. With these files ready, run the following command:
 
 <pre class="prettyprint">
-patch &lt;current_configuration&gt; -i &lt;patch_file&gt; -R -o merged_configuration
+patch &lt;current_configuration&gt; -i &lt;patch_file&gt; -o merged_configuration
 </pre>
 
 This will result in a merged_configuration file being created - please ensure that there are no merge errors at this point. Unfortunately we cannot deal with every single use case generically, so it is your responsibility to ensure that the new file conforms with your requirements.
