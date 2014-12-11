@@ -17,39 +17,41 @@ tags: ['']
 		<a href="#about">About using Microsoft Azure cloud</a>
 	</li>
 	<li>
-		<a href="#gen">Generate Management certificate</a>
+		<a href="#gen">Generating a management certificate</a>
 	</li>
 	<li>
-		<a href="#add">Add Management certificate</a>
+		<a href="#add">Using your management certificate</a>
 	</li>
 </ul>
 
 <h2 id="about">About using Microsoft Azure cloud</h2>
 You can use Cloud 66 to provision and deploy your code to servers in any [Azure region](http://developers.cloud66.com/#introduction-cloud-vendor-instance-regions).
 
-<h2 id="gen">Generate Management certificate</h2>
-A Azure management certificate is an X.509 v3 certificate used to authenticate an agent, such as Visual Studio Tools for Windows Azure or a client application (ie Cloud66) that uses the Service Management API, acting on behalf of the subscription owner to manage subscription resources. Azure management certificates are uploaded to Azure and stored at the subscription level. These certificates are used to authenticate your Windows Azure deployment and they are independent of any cloud service or deployment.
+<h2 id="gen">Generating a management certificate</h2>
+The Azure management certificate is a certificate used to authenticate an agent, such as Cloud 66, to your Azure account. These certificates are uploaded to Azure and stored at the subscription level.
 
-To generate management certificate you can use OpenSSL: 
+To generate a management certificate you can use OpenSSL: 
 
-1. Run this command on console:
+<ol>
+<li>Run the following command in your console:</li>
+
 <pre class="prettyprint">
 $ openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout azure.pem -out azure.pem
 </pre>
 
+<li>Now use the created <code>azure.pem</code> file and run the following command:</li>
 
-
-2. Use azure.pem created in previous step and run this command in console:
 <pre class="prettyprint">
 $ openssl x509 -inform pem -in azure.pem -outform der -out azure.cer
 </pre>
 
-you will need 'azure.pem' and 'azure.cer' to use cloud66 with your azure account
+You will need <code>azure.pem</code> and <code>azure.cer</code> to use Cloud 66 with your Azure account.
+</ol>
 
-<h2 id="add">Add Management certificate</h2>
-Access _Management portal_ of your Azure account. Go to _Settings_ menu. You will need _Subscription ID_ that is listed in _SUBSCRIPTIONS_ tab. Choose _MANAGEMENT CERTIFICATE_ tab. Use _Upload_ button to upload 'azure.cer' file that created in previous step.
+<h2 id="add">Using your management certificate</h2>
+Access _Management portal_ of your Azure account and go to the _Settings_ menu. You will need the _Subscription ID_ which is listed in _Subscriptions_ tab. Select the _Management certificate_ tab and click the _Upload_ button to upload <code>azure.cer</code>.
 
-Visit the Cloud 66 Dashboard and select _Get started building a stack_. After connecting to your Git repository and analyzing your code, you will be asked to _Add your cloud platform_. From this menu, select _Microsoft Azure_ and provide your _Subscription ID_ and upload your 'azure.pem'.
+Now visit your Cloud 66 dashboard and [build your first stack](http://help.cloud66.com/introduction-to-cloud-66/introduction-to-cloud-66)!
 <br/>
 
 <div class="notice notice-warning">
