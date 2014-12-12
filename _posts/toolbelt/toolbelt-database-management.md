@@ -13,37 +13,7 @@ tags: ['Toolbelt']
 <ul class="page-toc">
     <li><a href="#about">Database management</a></li>
     <li><a href="#promote">Slave promotion to standalone master</a></li>
-    <li>
-        <ul>
-            <li>Usage</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Parameters</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Example</li>
-        </ul>
-    </li>
     <li><a href="#resync">Slave re-synchronise with master</a></li>
-    <li>
-        <ul>
-            <li>Usage</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Parameters</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Example</li>
-        </ul>
-    </li>
 </ul>
 
 <h2 id="about">Database management</h2>

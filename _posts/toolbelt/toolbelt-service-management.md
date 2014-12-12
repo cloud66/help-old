@@ -13,117 +13,12 @@ tags: ['Toolbelt']
 <ul class="page-toc">
     <li><a href="#about">Services management</a></li>
     <li><a href="#service-list">Service listing</a></li>
-    <li>
-        <ul>
-            <li>Usage</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Parameters</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Example</li>
-        </ul>
-    </li>
     <li><a href="#service-scale">Service scaling</a></li>
-    <li>
-        <ul>
-            <li>Usage</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Parameters</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Example</li>
-        </ul>
-    </li>
     <li><a href="#service-stop">Service stopping</a></li>
-    <li>
-        <ul>
-            <li>Usage</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Parameters</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Example</li>
-        </ul>
-    </li>
     <li><a href="#service-restart">Service restarting</a></li>
-    <li>
-        <ul>
-            <li>Usage</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Parameters</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Example</li>
-        </ul>
-    </li>
     <li><a href="#container-list">Container listing</a></li>
-    <li>
-        <ul>
-            <li>Usage</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Parameters</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Example</li>
-        </ul>
-    </li>
     <li><a href="#container-stop">Container stopping</a></li>
-    <li>
-        <ul>
-            <li>Usage</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Parameters</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Example</li>
-        </ul>
-    </li>
     <li><a href="#container-restart">Container restarting</a></li>
-    <li>
-        <ul>
-            <li>Usage</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Parameters</li>
-        </ul>
-    </li>
-    <li>
-        <ul>
-            <li>Example</li>
-        </ul>
-    </li>
 </ul>
 
 <h2 id="about">Services management</h2>
