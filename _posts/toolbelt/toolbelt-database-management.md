@@ -12,7 +12,7 @@ tags: ['Toolbelt']
 <h2>Contents</h2>
 <ul class="page-toc">
     <li><a href="#about">Database management</a></li>
-    <li><a href="#upload">Slave promotion to standalone master</a></li>
+    <li><a href="#promote">Slave promotion to standalone master</a></li>
             <li>
                 <ul>
                 <li><a href="#usage">Usage</a></li>
@@ -28,7 +28,7 @@ tags: ['Toolbelt']
                 <li><a href="#example">Example</a></li>
                 </ul>
             </li>
-    <li><a href="#download">Slave re-synchronise with master</a></li>
+    <li><a href="#resync">Slave re-synchronise with master</a></li>
             <li>
                 <ul>
                 <li><a href="#usage2">Usage</a></li>
@@ -49,14 +49,12 @@ tags: ['Toolbelt']
 <h2 id="about">Database management</h2>
 Use these commands to configure your replication slave database servers.
 
-<h2 id="upload">Slave promotion to standalone master</h2>
+<h2 id="promote">Slave promotion to standalone master</h2>
 
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx slave-promote [-s &lt;stack&gt;] &lt;slave server name&gt;
 $ cx slave-promote [-s &lt;stack&gt;] [--db-type &lt;database type&gt;] &lt;slave server name&gt;
-
 </pre>
 
 The server provided must have already been configured as a replication slave via the Cloud 66 UI.
@@ -105,12 +103,11 @@ $ cx slave-promote -s My_Awesome_App my_slave_server_name
 $ cx slave-promote -s My_Awesome_App --db-type postgresql my_slave_server_name
 </pre>
 
-<h2 id="upload">Slave re-synchronise with master</h2>
+<h2 id="promote">Slave re-synchronise with master</h2>
 
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx slave-resync [-s &lt;stack&gt;] &lt;slave server name&gt;
 $ cx slave-resync [-s &lt;stack&gt;] [--db-type &lt;database type&gt;] &lt;slave server name&gt;
 </pre>
 
