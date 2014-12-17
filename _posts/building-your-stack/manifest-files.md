@@ -219,6 +219,11 @@ Username for the server. This is only applicable to Bring Your Own Server setups
 
 Name of the SSH key used to access the server. You can add this SSH key via Cloud 66 web UI.
 
+**root_disk_size**
+(_Optional, AWS EC2 and GCE Only_)
+
+Size of root disk. Default value is 20.
+ 
 <h4 id="shared">Shared Servers</h4>
 
 You can share a server between two applications. This could be in cases like using the same server for both your Rails app and the MySQL server behind it.
