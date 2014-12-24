@@ -37,9 +37,11 @@ Next, in the same menu, click _Credentials_ and then _Create new Client ID_. Sel
 
 We need three credentials to connect with your account:
 
-1. Email address - this is now available on the _APIs & auth_ -> _Credentials_ page
+1. Email address - this is available on the _APIs & auth_ -> _Credentials_ page under Service Accounts. 
 2. P12 key - the file that was automatically downloaded for you
 3. Project ID - this is available at the top of the _Overview_ page
+
+Please remember to enable Google Compute in the API list under _API & auth_ under APIs for the integration to work.
 
 You may also have to enable billing for your account through the _Billing and settings_ menu.
 
