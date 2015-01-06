@@ -17,10 +17,7 @@ tags: ['']
 		<a href="#about">About using DigitalOcean cloud</a>
 	</li>
 	<li>
-		<a href="#gen">Generate DigitalOcean access keys</a>
-	</li>
-	<li>
-		<a href="#add">Add DigitalOcean keys to a stack</a>
+		<a href="#add">Authorise Cloud66 app</a>
 	</li>
 	<li>
 		<a href="#external">External links</a>
@@ -30,11 +27,8 @@ tags: ['']
 <h2 id="about">About using DigitalOcean cloud</h2>
 You can use Cloud 66 to provision and deploy your code to servers in any [DigitalOcean region](http://developers.cloud66.com/#cloud-vendor-instance-regions). Private networking is enabled for all data centers that support it. This means that servers can communicate freely between each other on the same network without counting towards bandwidth costs.
 
-<h2 id="gen">Generate DigitalOcean access keys</h2>
-You need to provide your DigitalOcean access keys in order for Cloud 66 to access your account. To generate these, click the _Apps & API_ link in the left menu of your DigitalOcean account. You will want to use **API v1**, so click the link at the top of the page. Next, click _Generate new key_ in the top right corner, and then confirm by clicking _Create_. Take note of your _Client ID_ and _API key_.
-
-<h2 id="add">Add DigitalOcean keys to a stack</h2>
-Visit the Cloud 66 Dashboard and select _Get started building a stack_. After connecting to your Git repository and analyzing your code, you will be asked to _Add your cloud platform_. From this menu, select _DigitalOcean_ and provide your credentials.
+<h2 id="add">Authorise Cloud66 App</h2>
+Cloud66 supports DigitalOcean Api V2. DigitalOcean Api V2 use OAuth to authenticate requests.  Visit the Cloud 66 Dashboard and select _Get started building a stack_. After connecting to your Git repository and analyzing your code, you will be asked to _Add your cloud platform_. From this menu, select _DigitalOcean_ . Now if you choose _Authorize_ button, you will be redirected to DigitalOcean website to allow Cloud66 App use your account. You will be redirected back to cloud66 dashboard after confirmation and now will be able to deploy your stack into DigitalOcean
 <br/>
 
 <div class="notice notice-warning">
