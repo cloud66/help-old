@@ -112,10 +112,10 @@ Cloud 66 currently recognizes the following application types in your manifest f
 
 <ul class="page-toc">
 <li><a href="#elastic">ElasticSearch</a></li>
-<li><a href="#memcache">Memcached</a></li>
+<li><a href="#memcached">Memcached</a></li>
 <li><a href="#mongo">MongoDB</a></li>
 <li><a href="#postgis">PostGIS</a></li>
-<li><a href="#psql">PostgreSQL</a></li>
+<li><a href="#postgresql">PostgreSQL</a></li>
 <li><a href="#rails">Rails</a></li>
 <li><a href="#redis">Redis</a></li>
 </ul>
@@ -183,12 +183,12 @@ Cloud vendor to fire up the server on. Valid values:
 **region**
 (_Optional, BYOC Only_)
 
-[Data center region](http://developers.cloud66.com/#cloud-vendor-instance-regions) to fire up the server in.
+[Data center region](http://developers.cloud66.com/#introduction-cloud-vendor-instance-regions) to fire up the server in.
 
 **size**
 (_Optional, BYOC Only_)
 
-[Size of the server instance](http://developers.cloud66.com/#cloud-provider-instance-names) created.
+[Size of the server instance](http://developers.cloud66.com/#introduction-cloud-vendor-instance-names) created.
 
 **address**
 (_Optional, BYOS Only_)
