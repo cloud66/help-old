@@ -224,6 +224,21 @@ Name of the SSH key used to access the server. You can add this SSH key via Clou
 
 Size of root disk. Default value is 20.
  
+**vpc_id**
+(_Optional, AWS EC2 Only_)
+ID of AWS VPC that you want your server fired in.
+
+**subnet_id**
+(_Optional, AWS EC2 Only_)
+ID of AWS Subnet that you want your server fired in.
+
+<div class="notice notice-danger">
+        <h3>Important</h3>
+        <p>In order to use subnet_id you must provide vpc_id as well.</p>
+        <p>If you provide vpc_id without subnet_id, first subnet of VPC will be used.</p>
+</div>
+
+ 
 <h4 id="shared">Shared Servers</h4>
 
 You can share a server between two applications. This could be in cases like using the same server for both your Rails app and the MySQL server behind it.
