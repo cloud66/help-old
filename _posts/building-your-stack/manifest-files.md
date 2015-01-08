@@ -226,6 +226,7 @@ Size of root disk. Default value is 20.
  
 **subnet_id**
 (_Optional, AWS EC2 Only_)
+
 ID of the AWS subnet in which you would like to create your servers.
 
 <h4 id="shared">Shared Servers</h4>
@@ -374,6 +375,11 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
 - <b>vpc&#95;id</b> (_Optional, AWS EC2 Only_) <br/>
 ID of the AWS VPC in which you would like to create your servers.
 
+<div class="notice notice-danger">
+        <h3>Important</h3>
+        <p>In order to use vpc_id, you must provide subnet_id for all servers in your stack.</p>
+</div>
+
 <pre class="prettyprint">
 ... rails:
         servers:
@@ -391,11 +397,6 @@ ID of the AWS VPC in which you would like to create your servers.
                 perfect&#95;forward&#95;secrecy: true
             vpc_id: vpc-64872001
 </pre>
-
-<div class="notice notice-danger">
-        <h3>Important</h3>
-        <p>In order to use vpc_id, you must provide subnet_id for all servers in your stack.</p>
-</div>
 
 #### CORS configuration
 
@@ -447,6 +448,11 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
 - <b>vpc&#95;id</b> (_Optional, AWS EC2 Only_) <br/>
 ID of the AWS VPC in which you would like to create your servers.
 
+<div class="notice notice-danger">
+        <h3>Important</h3>
+        <p>In order to use a vpc_id, you must provide subnet_id for all servers in your stack.</p>
+</div>
+
 <pre class="prettyprint">
 ... sinatra:
         servers:
@@ -463,11 +469,6 @@ ID of the AWS VPC in which you would like to create your servers.
                 perfect&#95;forward&#95;secrecy: true
             vpc_id: vpc-64872001
 </pre>
-
-<div class="notice notice-danger">
-        <h3>Important</h3>
-        <p>In order to use a vpc_id, you must provide subnet_id for all servers in your stack.</p>
-</div>
 
 #### CORS configuration
 
