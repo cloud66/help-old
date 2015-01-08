@@ -226,7 +226,7 @@ Size of root disk. Default value is 20.
  
 **subnet_id**
 (_Optional, AWS EC2 Only_)
-ID of AWS Subnet that you want your server fired in.
+ID of the AWS subnet in which you would like to create your servers.
 
 <h4 id="shared">Shared Servers</h4>
 
@@ -371,24 +371,25 @@ A value in MB that Cloud 66 will use for each passenger process when calculating
 Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration
 - <b>nginx</b><br/>
 Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
-- <b>vpc&#95;id</b><br/>
-Specify ID of AWS VPC that you want your servers fired in.
+- <b>vpc&#95;id</b> (_Optional, AWS EC2 Only_) <br/>
+ID of the AWS VPC in which you would like to create your servers.
 
 <pre class="prettyprint">
 ... rails:
-		servers:
-			server: ...
-		configuration:
-			ruby&#95;version: 1.9.3
-			asset&#95;pipeline&#95;precompile: true
-			do&#95;initial&#95;db&#95;schema&#95;load: false
-			reserved&#95;server&#95;memory: 0 (default value)
-			passenger&#95;process&#95;memory: 200 (default value)
-			activeprotect:
+        servers:
+            server: ...
+        configuration:
+            ruby&#95;version: 1.9.3
+            asset&#95;pipeline&#95;precompile: true
+            do&#95;initial&#95;db&#95;schema&#95;load: false
+            reserved&#95;server&#95;memory: 0 (default value)
+            passenger&#95;process&#95;memory: 200 (default value)
+            activeprotect:
                 whitelist: 123.123.123.123,234.234.234.234
-			nginx:
-				cors: true
-				perfect&#95;forward&#95;secrecy: true
+            nginx:
+                cors: true
+                perfect&#95;forward&#95;secrecy: true
+            vpc_id: vpc-64872001
 </pre>
 
 <div class="notice notice-danger">
@@ -443,8 +444,8 @@ A value in MB that Cloud 66 will use for each passenger process when calculating
 Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration
 - <b>nginx</b><br/>
 Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
-- <b>vpc&#95;id</b><br/>
-Specify ID of AWS VPC that you want your servers fired in.
+- <b>vpc&#95;id</b> (_Optional, AWS EC2 Only_) <br/>
+ID of the AWS VPC in which you would like to create your servers.
 
 <pre class="prettyprint">
 ... sinatra:
@@ -460,11 +461,12 @@ Specify ID of AWS VPC that you want your servers fired in.
             nginx:
                 cors: true
                 perfect&#95;forward&#95;secrecy: true
+            vpc_id: vpc-64872001
 </pre>
 
 <div class="notice notice-danger">
         <h3>Important</h3>
-        <p>In order to use vpc_id, you must provide subnet_id for all servers in your stack.</p>
+        <p>In order to use a vpc_id, you must provide subnet_id for all servers in your stack.</p>
 </div>
 
 #### CORS configuration

@@ -17,7 +17,7 @@ tags: ['']
 		<a href="#about">About using DigitalOcean cloud</a>
 	</li>
 	<li>
-		<a href="#add">Authorise Cloud66 app</a>
+		<a href="#add">Authorise Cloud 66 to your DigitalOcean</a>
 	</li>
 	<li>
 		<a href="#external">External links</a>
@@ -27,9 +27,15 @@ tags: ['']
 <h2 id="about">About using DigitalOcean cloud</h2>
 You can use Cloud 66 to provision and deploy your code to servers in any [DigitalOcean region](http://developers.cloud66.com/#cloud-vendor-instance-regions). Private networking is enabled for all data centers that support it. This means that servers can communicate freely between each other on the same network without counting towards bandwidth costs.
 
-<h2 id="add">Authorise Cloud66 App</h2>
-Cloud66 supports DigitalOcean Api V2. DigitalOcean Api V2 use OAuth to authenticate requests.  Visit the Cloud 66 Dashboard and select _Get started building a stack_. After connecting to your Git repository and analyzing your code, you will be asked to _Add your cloud platform_. From this menu, select _DigitalOcean_ . Now if you choose _Authorize_ button, you will be redirected to DigitalOcean website to allow Cloud66 App use your account. You will be redirected back to cloud66 dashboard after confirmation and now will be able to deploy your stack into DigitalOcean
-<br/>
+<h2 id="add">Authorise Cloud 66 to your DigitalOcean</h2>
+Cloud 66 supports DigitalOcean API v2, which uses OAuth to authenticate requests. To authorize Cloud 66 to access your DigitalOcean account, visit the Cloud 66 dashboard and select _Get started building a stack_. After connecting to your Git repository and analyzing your code, you will be asked to _Add your cloud platform_. From this menu, select _DigitalOcean_. 
+
+Upon clicking the _Authorize_ button, you will be redirected to DigitalOcean to allow Cloud 66 to use your account. Once confirmed you will be redirected back to Cloud 66, where you can deploy your stack into DigitalOcean.
+
+<div class="notice notice-danger">
+    <h3>Notice</h3>
+    <p>If you are upgrading your keys from API v1 to v2, visit your <i>Account</i> <a href="https://app.cloud66.com/clouds"><i>Cloud keys</i></a> page and edit your existing cloud key to authorize it with DigitalOcean. You need to be the account owner in order to update these credentials.</p>
+</div>
 
 <div class="notice notice-warning">
     <h3>Notice</h3>
