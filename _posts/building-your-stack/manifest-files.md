@@ -224,21 +224,10 @@ Name of the SSH key used to access the server. You can add this SSH key via Clou
 
 Size of root disk. Default value is 20.
  
-**vpc_id**
-(_Optional, AWS EC2 Only_)
-ID of AWS VPC that you want your server fired in.
-
 **subnet_id**
 (_Optional, AWS EC2 Only_)
 ID of AWS Subnet that you want your server fired in.
 
-<div class="notice notice-danger">
-        <h3>Important</h3>
-        <p>In order to use subnet_id you must provide vpc_id as well.</p>
-        <p>If you provide vpc_id without subnet_id, first subnet of VPC will be used.</p>
-</div>
-
- 
 <h4 id="shared">Shared Servers</h4>
 
 You can share a server between two applications. This could be in cases like using the same server for both your Rails app and the MySQL server behind it.
@@ -382,6 +371,8 @@ A value in MB that Cloud 66 will use for each passenger process when calculating
 Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration
 - <b>nginx</b><br/>
 Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
+- <b>vpc&#95;id</b><br/>
+Specify ID of AWS VPC that you want your servers fired in.
 
 <pre class="prettyprint">
 ... rails:
@@ -399,6 +390,11 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
 				cors: true
 				perfect&#95;forward&#95;secrecy: true
 </pre>
+
+<div class="notice notice-danger">
+        <h3>Important</h3>
+        <p>In order to use vpc_id, you must provide subnet_id for all servers in your stack.</p>
+</div>
 
 #### CORS configuration
 
@@ -447,6 +443,8 @@ A value in MB that Cloud 66 will use for each passenger process when calculating
 Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration
 - <b>nginx</b><br/>
 Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
+- <b>vpc&#95;id</b><br/>
+Specify ID of AWS VPC that you want your servers fired in.
 
 <pre class="prettyprint">
 ... sinatra:
@@ -463,6 +461,11 @@ Specify configurations for Nginx, eg. CORS and [Perfect Forward Secrecy](http://
                 cors: true
                 perfect&#95;forward&#95;secrecy: true
 </pre>
+
+<div class="notice notice-danger">
+        <h3>Important</h3>
+        <p>In order to use vpc_id, you must provide subnet_id for all servers in your stack.</p>
+</div>
 
 #### CORS configuration
 
