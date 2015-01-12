@@ -98,7 +98,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>Ruby</td>
-            <td>2.1.3</td>
+            <td>2.2.0</td>
         </tr>
     </tbody>
 </table>
