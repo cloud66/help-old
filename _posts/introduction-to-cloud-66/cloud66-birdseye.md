@@ -119,6 +119,28 @@ With CURL:
 $ curl https://birdseye.cloud66.com/incidents/2382.json
 ```
 
+### Filtering by status
+
+By default there is no filter on status of returned incidents. If you want to filter them by status, you can add the `status` parameter to the call URL. Use the following values:
+
+- pending : returns all pending incidents
+- investigating : returns all incidents being investigated
+- resolved : returns all resolved incidents
+
+For example:
+
+```
+$ curl https://birdseye.cloud66.com/incidents.json?status=pending
+```
+
+You can mix status for incidents returns, you can use a comma separated list:
+
+```
+$ curl https://birdseye.cloud66.com/incidents.json?status=pending,investigating
+```
+
+This will only return non-resolved incidents.
+
 ## Can I report incidents?
 Thank you for your offer of help and support. You can report incidents to [birdseye@cloud66.com](mailto:birdseye@cloud66.com)
 
