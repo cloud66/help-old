@@ -1,0 +1,11 @@
+{
+    "folders":
+    [
+        {
+            "path": "/Users/khash/work/help",
+            "folder_exclude_patterns": [".idea", ".sass-cache", "_site", "node_modules"],
+            "file_exclude_patterns" : ["*.sublime-workspace", ".gitignore", "*.sublime-project"]
+
+        }
+    ]
+}
