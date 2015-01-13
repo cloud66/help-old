@@ -1,7 +1,6 @@
 /_site/
 /.sass-cache/
 /.versions.conf
-
 .versions.conf*
-
 .idea/
+help.sublime-workspace
