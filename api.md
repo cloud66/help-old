@@ -278,16 +278,15 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 ### Digital Ocean
 | Instance size | Value |
 | --------- | --------- |
-| 512MB - 1 CPU | 66 |
-| 1GB - 1 CPU | 63 |
-| 2GB - 2 CPU | 62 |
-| 4GB - 2 CPU | 64 |
-| 8GB - 4 CPU | 65 |
-| 16GB - 8 CPU | 61 |
-| 32GB - 12 CPU | 60 |
-| 48GB - 16 CPU | 70 |
-| 64GB - 20 CPU | 69 |
-| 96GB - 24 CPU | 68 |
+| 512MB - 1 CPU | 512mb |
+| 1GB - 1 CPU | 1gb |
+| 2GB - 2 CPU | 2gb |
+| 4GB - 2 CPU | 4gb |
+| 8GB - 4 CPU | 8gb |
+| 16GB - 8 CPU | 16gb |
+| 32GB - 12 CPU | 32gb |
+| 48GB - 16 CPU | 48gb |
+| 64GB - 20 CPU | 64gb |
 
 ### Google Compute Engine
 | Instance size | Value |
@@ -397,15 +396,15 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 ### Digital Ocean
 | Region | Value |
 | ---------- | ---------- |
-| Amsterdam, Netherlands| 2 |
-| Amsterdam, Netherlands (2nd Data Center) | 5 |
-| Amsterdam, Netherlands (3rd Data Center) | 9 |
-| New York, US | 1 |
-| New York 2, US | 4 |
-| New York 3, US | 8 |
-| San Francisco, US | 3 |
-| Singapore | 6 |
-| London | 7 |
+| Amsterdam, Netherlands| ams1 |
+| Amsterdam, Netherlands (2nd Data Center) | ams2 |
+| Amsterdam, Netherlands (3rd Data Center) | ams3 |
+| New York, US | nyc1 |
+| New York 2, US | nyc2 |
+| New York 3, US | nyc3 |
+| San Francisco, US | sfo1 |
+| Singapore | sgp1 |
+| London | lon1 |
 
 ### Google Compute Engine
 | Zone | Value |
