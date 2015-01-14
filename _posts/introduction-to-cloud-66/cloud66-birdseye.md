@@ -95,7 +95,7 @@ Status is an integer number with the following mapping:
 You can filter the result for the incidents with the following filters:
 
 - `vendor` Cloud provider's name. Valid options are `digitalocean`, `linode`, `aws`, `rackspace`, `gce`
-- `dc` Cloud vendor data centre. This is case-insensitive name of the data centre where the incident is related to. For example: `ams1` or `us-east-1`.
+- `dc` Cloud vendor data centre. This is case-insensitive name of the data centre where the incident is related to. For example: `ams1` or `us-east-1`. You can also use multiple data centres in a comma seperated list.
 - `status` Incident status. Valid options are `pending`, `investigating`, `resolved`
 - `from_date` Incident starting date filter. The valid format for the date is `YYYY-MM-DD-HH:MM:SS`
 - `to_date` Incident end date filter. The valid format for the date is `YYYY-MM-DD-HH:MM:SS`
