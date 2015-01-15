@@ -30,7 +30,7 @@ tags: ['Database']
 A backup verifier is a great way to ensure that your backups actually contain the data you expect. You simply provide a query that you expect to return a specific result, and we verify that your backup actually returns this value. This feature supports both MySQL and PostgreSQL databases, and requires the use of managed backups. Backup verification runs once every 6 hours for each stack, and you will be notified in the case of a failured verification.
 
 <h2 id="usage">Set up a backup verifier</h2>
-Create a file in the `.cloud66` folder in the root of your repository. Name the file `backup_verifier_mysql.sql` to verify a MySQL database backup, or `backup_verifier_pg.sql` for a PostgreSQL database backup.
+Create a file in the `.cloud66` folder in the root of your repository. Name the file `backup_verifier_mysql.sql` to verify a MySQL database backup, or `backup_verifier_pg.sql` for a PostgreSQL database backup. If you add these scripts, they will apply to all of your environments. You can also add the name of environment at the end of file name to specify environment that you need backup verifiers run in i.e   `backup_verifier_mysql_production.sql`,  `backup_verifier_pg_staging.sql` , ...   
 
 <div class="notice notice-standalone">
 		<h3>Important</h3>
