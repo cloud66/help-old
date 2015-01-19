@@ -135,6 +135,10 @@ These are the available settings:
             <td><i>stack.name</i></td>
             <td>Change your stack name</td>
         </tr>
+        <tr>
+            <td><i>maintenance.mode</i></td>
+            <td>Enable/disable Maintenance mode for stack. You can use 1|true|on|enable to enable or 0|false|off|disable  to disable maintenance mode</td>
+        </tr>
     </tbody>
 </table>
 
