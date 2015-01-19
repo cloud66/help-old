@@ -53,7 +53,7 @@ We don't have fine-grain control over the version, and use the latest version av
 <h3 id="source">Components built from source</h3>
 Cloud 66 maintains an internal list of versions for most components built from source, which is updated periodically after testing.
 
-You are free to specify a version for a number of components in your [manifest file](/building-your-stack/manifest-files).
+You are free to specify a version for a number of components in your [manifest file](/building-your-stack/getting-started-with-manifest-files).
 
 <div class="notice notice-warning">
     <h3>Warning</h3>

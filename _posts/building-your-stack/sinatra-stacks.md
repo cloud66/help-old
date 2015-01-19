@@ -45,7 +45,7 @@ Given that Sinatra applications can have different database frameworks, we allow
 </ul>
 
 
-These commands can be specified in the UI, but also in your [manifest file](/building-your-stack/manifest-files):
+These commands can be specified in the UI, but also in your [manifest file](/building-your-stack/getting-started-with-manifest-files):
 
 <pre class="prettyprint">
 development:
