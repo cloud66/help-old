@@ -2053,7 +2053,15 @@ Get list of all settings of stack
 					"key":"stack.name",
 					"value":"test-elastic-1",
 					"readonly":true,
-					"warning_text":"Warning! Changing this value will also modify your Cloud 66 *.c66.me DNS values"}
+					"warning_text":"Warning! Changing this value will also modify your Cloud 66 *.c66.me DNS values"},
+				{
+					"id":"maintenance-mode",
+                                        "key":"maintenance.mode",
+					"value":false,
+                                        "readonly":false,
+                                        "warning_text":""
+					
+				}
 			],
 			"count":5,
 			"pagination":
