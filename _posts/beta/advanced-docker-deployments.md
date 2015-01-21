@@ -24,7 +24,7 @@ tags: ['Deployment']
         </li>
     <li><a href="#service-configs">Service configurations</a></li>
     <li><a href="#database-configs">Database configurations</a></li>
-    <li><a href="#env_vars">Environment Variables</a></li>
+    <li><a href="#env_vars">Environment variables</a></li>
 </li>
 </ul>
 
@@ -47,14 +47,14 @@ In this example, we'll be running a service called _web_, which is pulled from a
 {% highlight yaml %}
 services:                                 # container services
   web:                                    # arbitrary name for your service
-    image: quay.io/cloud66/sample-rails   # source of your service's image
-    command: rackup -p 3000               # command to start your container
-    build_command: rake db:migrate        # migrate database (during build)
-    deploy_command: rake db:migrate       # migrate database (during deploy)
-    log_folder: /usr/src/app/log          # the container log folder
-    ports: ["3000:80:443"]                # ports definitions for your container service            
+    image: quay.io/cloud66/sample-rails  
+    command: rackup -p 3000             
+    build_command: rake db:migrate
+    deploy_command: rake db:migrate
+    log_folder: /usr/src/app/log
+    ports: ["3000:80:443"]        
 databases:                                # system services
-  - "mysql"                               # install MySQL
+  - "mysql"                              
 {% endhighlight %}
 
 As you can see above, the _web_ service is based on a Quay image and requires the _rackup -p 3000_ startup command. It has both a build and a deploy command and specifies a logging folder. Finally, the container is set to listen on port 3000, and uses external ports 80 and 443.
@@ -224,7 +224,7 @@ databases:
   - "elasticsearch"
 {% endhighlight %}
 
-<h2 id="env_vars">Environment Variables</h2>
+<h2 id="env_vars">Environment variables</h2>
 Any environment variable defined in your stack will be made available within your service container. You can reference environment variables in your service configuration using the following syntax:
 
 {% highlight yaml %}
