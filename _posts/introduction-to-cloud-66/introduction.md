@@ -87,6 +87,7 @@ Before you can deploy your applications to a server with Cloud 66, you must buil
 <ol class="list">
 <li>Sign in to Cloud 66.</li>
 <li>On the Cloud 66 dashboard, click <i>Get started building a stack</i>.</li>
+</ol>
 
 <h2 id="2">Step 2. Access your Git repository</h2>
 If you have a private Git repository, complete the following steps to generate the keys needed to access your repository. If you have a public Git repository, skip to Step 3.
