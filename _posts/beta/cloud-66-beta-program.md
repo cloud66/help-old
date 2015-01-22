@@ -27,7 +27,7 @@ The first feature available to the Cloud 66 beta program is support for Docker-b
 
 - **Deploy anything!**: As long as you can put it in a container, you can deploy it to any cloud with Cloud 66. You will still benefit from the many features previously only available to Ruby stacks, as well as numerous features built specifically for Docker deployments.
 
-You can find out more about <a href="/beta/docker-deployments">Cloud 66 Docker-backed stacks</a> and try deploying stacks that are not limited to Ruby and one stack per application. Roll out all your services from different source repositories on any number of servers on any cloud provider or your own servers.
+You can find out more about <a href="/beta/introduction-to-cloud-66-docker">Cloud 66 Docker-backed stacks</a> and try deploying stacks that are not limited to Ruby and one stack per application. Roll out all your services from different source repositories on any number of servers on any cloud provider or your own servers.
 
 ## Contact us
 

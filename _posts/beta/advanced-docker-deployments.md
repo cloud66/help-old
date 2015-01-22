@@ -82,7 +82,7 @@ databases:                                # system services
   - "redis"                               
 {% endhighlight %}
 
-As you can see above...
+As you can see above, we are running a _web_ and _api_ service with different configurations. They are running on MySQL and Redis databases.
 
 <h2 id="service-configs">Service configurations</h2>
 Below is a table of the available configurations for a given service with a brief description. For more detailed information about an option, click the link provided.
