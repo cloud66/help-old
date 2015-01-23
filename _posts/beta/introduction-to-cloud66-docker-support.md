@@ -19,7 +19,7 @@ tags: ['Deployment', 'Docker']
       <ul>
         <li><a href="#lifecycle">Container lifecycle management</a></li>
         <li><a href="#network">Networking layer</a></li>
-        <li><a href="#discoverability">Discoverability</a></li>
+        <li><a href="#dns">DNS</a></li>
         <li><a href="#buildgrid">BuildGrid</a></li>
         <li><a href="#registry">Registry</a></li>
       </ul>
@@ -72,12 +72,8 @@ Server 3 (25.0.0.6) has Container 1 (25.0.0.7) and Container 2 (25.0.0.8)
 
 Containers can communicate with each other using the private address (on any port), regardless of the physical server the other container resides on. In other words, containers can communicate as if they were on the same server. The networking layer transparently maps between the two.
 
-<h3 id="discoverability">Discovery</h3>
-A cluster of high availability servers for automatic registration and de-registration of containers, accessible to your servers. Docker is the perfect solution to build micro-services that run different parts of an application. Those services need to communicate with each other. 
-
-By default, every container started on a server is registered with a central service discovery service hosted by Cloud 66. This services, called **Discovery**, is available to all Docker stacks at `https://discovery.cloud66.com` and is compatible with [etcd](https://github.com/coreos/etcd). You can use available `etcd` client libraries to connect to it. 
-
-Unlike standard etcd, Discovery has only 1 endpoint (`discovery.cloud66.com`) and therefore there is no need for automatic "leader discovery" on the client side. Calls to Discovery are authenticated using stack API keys.
+<h3 id="dns">DNS</h3>
+An internal DNS service which assigns a DNS record to each of your Docker services and servers. For example, you can connect to your MySQL instance on `mysql.cloud66.local`, and this record will update automatically in case you switch your server. Services can be found at `service_name.cloud66.local`, and will use round-robin if you have more than one container for a service.
 
 <h3 id="buildgrid">BuildGrid</h3>
 When building your Docker stack, you can either provide us with your own image, or let us create them for you with our powerful cluster of servers called BuildGrid. Your image is created based on your source code and a Dockerfile, which specifies how you want it to be created. 
