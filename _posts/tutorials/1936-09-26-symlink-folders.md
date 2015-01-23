@@ -29,7 +29,7 @@ and your files get served directly by Nginx without security.
 
 ### Symbolic link
 
-Alternatively, you can use [deploy hooks](/deployment/deploy-hooks) to create the symbolic link. Also, you can use _$STACK_BASE_ for your stack base path (eg. _$STACK_BASE/shared/uploads_) for your deploy hook script.
+Alternatively, you can use [deploy hooks](http://help.cloud66.com/deployment/deploy-hooks) to create the symbolic link. Also, you can use _$STACK_BASE_ for your stack base path (eg. _$STACK_BASE/shared/uploads_) for your deploy hook script.
 
 To create the symbolic link, your deploy hook script could contain this:
 

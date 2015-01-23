@@ -23,7 +23,7 @@ Read more about the [rake task add-in](http://help.cloud66.com/stack-add-ins/rak
 
 ### Deployment hooks
 
-You can use [deploy hooks](/deployment/deploy-hooks) to execute your rake task at any point of your deployment.
+You can use [deploy hooks](http://help.cloud66.com/deployment/deploy-hooks) to execute your rake task at any point of your deployment.
 
 Simply add a bash script to your stack that contains the rake task: for example, create the file `/.cloud66/scripts/rake_task.sh` as below:
 

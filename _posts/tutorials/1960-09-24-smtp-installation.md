@@ -40,7 +40,7 @@ In the _myhostname_ field, input your hostname:
 myhostname = example.com
 </pre>
 
-This one configuration is enough to have a functional SMTP server. Use [deploy hooks](/deployment/deploy-hooks) to automate this procedure on any new servers you fire up through Cloud 66. You can go ahead and save and exit the configuration, and reload to put these changes into effect:
+This one configuration is enough to have a functional SMTP server. Use [deploy hooks](http://help.cloud66.com/deployment/deploy-hooks) to automate this procedure on any new servers you fire up through Cloud 66. You can go ahead and save and exit the configuration, and reload to put these changes into effect:
 
 <pre class="prettyprint">
 $ sudo /etc/init.d/postfix reload
