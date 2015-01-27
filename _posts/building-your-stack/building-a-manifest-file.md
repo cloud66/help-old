@@ -409,6 +409,7 @@ production:
 
 - **region** (_Optional, BYOC Only_): [Data center region](http://developers.cloud66.com/#introduction-cloud-vendor-instance-regions) to create the server in.
 - **size** (_Optional, BYOC Only_): [Size of the server instance](http://developers.cloud66.com/#introduction-cloud-vendor-instance-names) created.
+- **availability_zone** (_Optional, AWS EC2 Only_): Availability zone of the server instance in AWS EC2 region.
 - **address** (_Optional, BYOS Only_): Address of the server. For BYOS servers, <i>address</i>, <i>username</i> and <i>ssh_key_name</i> can be defined:
 
 <pre class="prettyprint">
