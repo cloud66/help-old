@@ -80,6 +80,7 @@ Next, select which application you would like to specify settings for. You can c
 
 - **docker_version**: Specify the version of Docker you want to install.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk for servers in stack. Default value is 20.
 
 <pre class="prettyprint">   
 docker:
@@ -198,6 +199,7 @@ A Rails application type in the manifest file gives you fine control over things
 - **passenger&#95;process&#95;memory**: A value in MB that Cloud 66 will use for each Passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment.
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk for servers in stack. Default value is 20.
 
 <div class="notice notice-danger">
         <h3>Important</h3>
@@ -242,6 +244,7 @@ A Sinatra application type in the manifest file gives you fine control over thin
 - **passenger&#95;process&#95;memory**: A value in MB that Cloud 66 will use for each Passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment.
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk for servers in stack. Default value is 20.
 
 <div class="notice notice-danger">
         <h3>Important</h3>
