@@ -80,13 +80,14 @@ Next, select which application you would like to specify settings for. You can c
 
 - **docker_version**: Specify the version of Docker you want to install.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
-- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk for servers in stack. Default value is 20.
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 
 <pre class="prettyprint">   
 docker:
     configuration:
         version: 1.4.1
         vpc_id: vpc-64872001
+        root_disk_size: 100
 </pre>
 
 <hr>
@@ -199,7 +200,7 @@ A Rails application type in the manifest file gives you fine control over things
 - **passenger&#95;process&#95;memory**: A value in MB that Cloud 66 will use for each Passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment.
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
-- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk for servers in stack. Default value is 20.
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 
 <div class="notice notice-danger">
         <h3>Important</h3>
@@ -218,6 +219,7 @@ production:
             activeprotect:
                 whitelist: 123.123.123.123,234.234.234.234
             vpc_id: vpc-64872001
+            root_disk_size: 100
 </pre>
 
 <hr>
@@ -244,7 +246,7 @@ A Sinatra application type in the manifest file gives you fine control over thin
 - **passenger&#95;process&#95;memory**: A value in MB that Cloud 66 will use for each Passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment.
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
-- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk for servers in stack. Default value is 20.
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 
 <div class="notice notice-danger">
         <h3>Important</h3>
@@ -262,6 +264,7 @@ production:
             activeprotect:
                 whitelist: 123.123.123.123,234.234.234.234
             vpc_id: vpc-64872001
+            root_disk_size: 100
 </pre>
 
 <hr>
@@ -379,17 +382,17 @@ These are the parameters that the <i>server</i> section can take:
 
 - **unique_name** (_Required if you are specifying a server type_): A unique name for this server.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
-
-<pre class="prettyprint">
-production:    
-    rails:
-        server:
-            unique_name: app
-            extra_packages:
-                - chrony
-</pre>
-
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **subnet_id** (_Optional, AWS EC2 Only_): ID of the AWS subnet in which you would like to create your servers.
 - **vendor** (_Optional, BYOC Only_): Cloud vendor to fire up the server on. Valid values: aws, azure, digitalocean, googlecloud, linode, rackspace, vexxhost
+- **region** (_Optional, BYOC Only_): [Data center region](http://developers.cloud66.com/#introduction-cloud-vendor-instance-regions) to create the server in.
+- **size** (_Optional, BYOC Only_): [Size of the server instance](http://developers.cloud66.com/#introduction-cloud-vendor-instance-names) created.
+- **availability_zone** (_Optional, AWS EC2 Only_): Availability zone of the server instance in AWS EC2 region.
+
+<div class="notice notice-danger">
+    <h3>Important</h3>
+    <p>Only a single cloud vendor and region is supported for servers in a stack.</p>
+</div>
 
 <pre class="prettyprint">
 production:
@@ -399,18 +402,18 @@ production:
             vendor: aws
             region: us-east-1
             size: m3.medium
+            root_disk_size: 100
+            subnet_id: subnet-40000000
+            extra_packages:
+                - chrony            
 </pre>
 
-<div class="notice notice-danger">
-    <h3>Important</h3>
-    <p>Only a single cloud vendor and region is supported for servers in a stack.</p>
-</div>
 
+<h4>Deploy to your own server</h4>
 
-- **region** (_Optional, BYOC Only_): [Data center region](http://developers.cloud66.com/#introduction-cloud-vendor-instance-regions) to create the server in.
-- **size** (_Optional, BYOC Only_): [Size of the server instance](http://developers.cloud66.com/#introduction-cloud-vendor-instance-names) created.
-- **availability_zone** (_Optional, AWS EC2 Only_): Availability zone of the server instance in AWS EC2 region.
-- **address** (_Optional, BYOS Only_): Address of the server. For BYOS servers, <i>address</i>, <i>username</i> and <i>ssh_key_name</i> can be defined:
+- **address** (_Optional, BYOS Only_): Address of the server. For BYOS servers, <i>address</i>, <i>username</i> and <i>ssh_key_name</i> can be defined.
+- **username** (_Optional, BYOS Only_): Username for the server. This is only applicable to Bring Your Own Server setups, and you need to be a sudoer root user on the box.
+- **ssh_key_name** (_Optional, BYOS Only_): Name of the SSH key used to access the server. You can add this SSH key via Cloud 66 web UI.
 
 <pre class="prettyprint">
 production:
@@ -426,11 +429,6 @@ production:
         <h3>Important</h3>
         <p>In order to use your chosen ssh_key_name for BYOS mode, your SSH key must already be associated with your Cloud 66 account. Only one username and ssh key is currently supported amongst servers in a stack.</p>
 </div>
-
-- **username** (_Optional, BYOS Only_): Username for the server. This is only applicable to Bring Your Own Server setups, and you need to be a sudoer root user on the box.
-- **ssh_key_name** (_Optional, BYOS Only_): Name of the SSH key used to access the server. You can add this SSH key via Cloud 66 web UI.
-- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Size of root disk. Default value is 20.
-- **subnet_id** (_Optional, AWS EC2 Only_): ID of the AWS subnet in which you would like to create your servers.
 
 <h4 id="shared">Shared Servers</h4>
 
