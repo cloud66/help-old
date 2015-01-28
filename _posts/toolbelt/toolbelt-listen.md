@@ -9,10 +9,14 @@ search-tags: ['tail','deployment','logs']
 tags: ['Toolbelt']
 ---
 
-<h2 id="list">Tail deployment logs of your stack from your terminal</h2>
-If you use the Toolbelt for your deployments you probably want to follow the deployment of the stack in the commandline as well. 
+If you use the toolbelt for your deployments you probably want to follow the deployment of the stack in the command line as well. 
 
 <h3 id="list_usage">Usage</h3>
+
+Listen uses `nsq` to handle its realtime messaging, so you'll need to install it before using the command. 
+
+- On OS X, use brew to install it with `brew install nsq`. 
+- On Ubuntu, you can [download and unzip the tarball](https://s3.amazonaws.com/bitly-downloads/nsq/nsq-0.3.0.linux-amd64.go1.3.3.tar.gz). See their [documentation](http://nsq.io/deployment/installing.html) for more information.
 
 <pre class="prettyprint">
 $ cx listen [-s &lt;stack&gt;]
