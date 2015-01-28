@@ -172,13 +172,11 @@ ports: ["3000:80:443", "4000::8443", "5000"]
 
 In this example, the application is listening on port 3000 in the container, and that port is exposed via HTTP on port 80, and HTTPS on port 443. Port 4000 inside the container is also available on port 8443 externally, and port 5000 in the container is available locally on the server. These HTTP/HTTPS ports are available from outside the server, and any traffic to these ports will be redirected to any containers running this service. During scaling, any containers running this service will get traffic distributed to them in a round robin fashion. 
 
-<h3 id="traffic_matches">Traffic Matches (traffic_matches)</h3>
-The `traffic_matches` option allows you to specify an array of string server name matches for your service. These are automatically configured in your reverse proxy service (Nginx).
-In the following example, if traffic comes in on "app.your_awesome_domain.com" or "*.anotherdomain.com" on this service port, then traffic will automatically get routed to it.
-This option also allows you to have multiple services listening on the same port (port 80 for example) as long as they have different rules for matching server names.
+<h3 id="traffic_matches">Traffic matches</h3>
+The `traffic_matches` option allows you to specify an array of string server name matches for your service. These are automatically configured in your reverse proxy service (Nginx). In the following example, if traffic comes in on `app.your_domain.com` or `*.anotherdomain.com` on this service port, then traffic will automatically get routed to it. This option also allows you to have multiple services listening on the same port (port 80 for example) as long as they have different rules for matching server names.
 
 {% highlight yaml %}
-traffic_matches: ["app.your_awesome_domain.com", "*.anotherdomain.com"]
+traffic_matches: ["app.your_domain.com", "*.anotherdomain.com"]
 {% endhighlight %}
 
 <h3 id="requires">Requires</h3>
