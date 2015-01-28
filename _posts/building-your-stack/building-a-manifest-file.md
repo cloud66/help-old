@@ -404,6 +404,7 @@ production:
             size: m3.medium
             root_disk_size: 100
             subnet_id: subnet-40000000
+            availability_zone: us-east-1c
             extra_packages:
                 - chrony            
 </pre>
