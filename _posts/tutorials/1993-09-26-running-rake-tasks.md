@@ -48,7 +48,7 @@ production:
 </pre>
 
 ## Manually
-This is done by starting a [terminal connection to your server](/building-your-stack/ssh-to-your-server) and executing your rake task.
+This is done by starting a [terminal connection to your server](http://help.cloud66.com/building-your-stack/ssh-to-your-server) and executing your rake task.
 
 <pre class="prettyprint">
 $ cd $STACK&#95;PATH

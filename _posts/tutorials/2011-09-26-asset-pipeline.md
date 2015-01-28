@@ -14,7 +14,7 @@ difficulty: 0
 
 If you're experiencing deployment failures to do with your asset pipeline manifest configurations, this could be due to issues with old assets.
 
-You can clear up old assets on the server manually by [starting a terminal connection to your server](/building-your-stack/ssh-to-your-server) and following these steps:
+You can clear up old assets on the server manually by [starting a terminal connection to your server](http://help.cloud66.com/building-your-stack/ssh-to-your-server) and following these steps:
 
 <ol class="article-list">
 <li>Remove all the contents from your <code>$STACK_BASE/shared/assets</code> folder</li>

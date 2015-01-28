@@ -63,7 +63,7 @@ When you _Deploy with options_ and select _Apply Ruby upgrades_, in addition to 
 </div>
 
 #### Scaling up
-As an alternative to in-place upgrades, you can specify your new Ruby version in a [manifest file](/building-your-stack/manifest-files). Once you've pushed this change and deployed, scale up a new web server, which will use this version of Ruby. The previous server would remain on the old version of Ruby.
+As an alternative to in-place upgrades, you can specify your new Ruby version in a [manifest file](/building-your-stack/getting-started-with-manifest-files). Once you've pushed this change and deployed, scale up a new web server, which will use this version of Ruby. The previous server would remain on the old version of Ruby.
 
 There are a couple of small caveats to be aware of though - after you've done this process, you'll have servers in your stack on different Ruby versions. If you were to enforce a Ruby version in your Gemfile, this would mean that your application would stop working on either one of the servers (depending on which version you chose in your Gemfile).
 

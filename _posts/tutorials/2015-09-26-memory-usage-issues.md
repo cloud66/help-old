@@ -14,7 +14,7 @@ difficulty: 0
 
 If you're experiencing memory usage issues, such as high memory usage, use the following steps to troubleshoot.
 
-[SSH into your server](/building-your-stack/ssh-to-your-server) and install htop:
+[SSH into your server](http://help.cloud66.com/building-your-stack/ssh-to-your-server) and install htop:
 
 <pre class="prettyprint">
 $ sudo apt-get install htop

@@ -18,7 +18,7 @@ Optimizing for server load gives you an idea of your stack performance, and help
 
 To ensure that your application performs well under pressure, you may find load testing services like [Blitz.io](http://blitz.io) or [Load Impact](http://loadimpact.com/) useful. There are also open source tools like [Siege](http://www.joedog.org/siege-home/), [AB](http://httpd.apache.org/docs/2.2/programs/ab.html) or [Minnows with Machine Guns](https://github.com/rozap/minnowswithmachineguns) to load test your applications.
 
-We use [Fail2Ban](http://www.fail2ban.org/wiki/index.php/Main_Page) to protect your servers from malicious activity, and load testing servers often trigger security blocks. As such, before you start load testing, please [SSH to your servers](/building-your-stack/ssh-to-your-server) and disable Fail2Ban temporarily by issuing `fail2ban-client stop`. Once your testing is done, you can start it again with `fail2ban-client start`.
+We use [Fail2Ban](http://www.fail2ban.org/wiki/index.php/Main_Page) to protect your servers from malicious activity, and load testing servers often trigger security blocks. As such, before you start load testing, please [SSH to your servers](http://help.cloud66.com/building-your-stack/ssh-to-your-server) and disable Fail2Ban temporarily by issuing `fail2ban-client stop`. Once your testing is done, you can start it again with `fail2ban-client start`.
 
 Your application performance is dependant on many factors, such as code efficiency, server performance, networking and so on. Answering these two questions helps us gauge your requirements and recommend a custom solution:
 

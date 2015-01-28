@@ -18,7 +18,7 @@ tags: ['Add in']
 To add Memcached to your stack, access the add-ins menu, click _Memcached_ and confirm the installation.
 
 ## Customize Memcached
-To customize Memcached, use the following syntax in your [manifest file](/building-your-stack/manifest-files):
+To customize Memcached, use the following syntax in your [manifest file](/building-your-stack/getting-started-with-manifest-files):
 
 <pre class="terminal">
 production:
