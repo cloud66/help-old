@@ -72,6 +72,7 @@ services:                                 # container services
     log_folder: /usr/src/app/log          
     ports: ["3000:80:443", "4000"]        
     volumes: ["/tmp:/tmp/mnt_folder"]     
+    health: default                       # use the default health check for this service
   api:                                    # another arbitrary name
     image: quay.io/john/node              
     command: node test.js                 
@@ -123,6 +124,10 @@ Below is a table of the available configurations for a given service with a brie
 <tr>
     <td><a href="#traffic_matches">traffic_matches</a></td>
     <td>The automatically configured traffic names in your Nginx config that will route traffic to these containers based on request DNS name. Allows microservices on the same port routes by subdomain for instance.</td>
+</tr>
+<tr>
+    <td><a href="#health">health</a></td>
+    <td>One of the values: 'default', 'none' or 'notify'; or a hash containing at least one of 'endpoint:', 'protocol:', 'accept:' or 'timeout:'</td>
 </tr>
 <tr>
     <td><a href="#requires">requires</a></td>
@@ -178,6 +183,31 @@ The `traffic_matches` option allows you to specify an array of string server nam
 {% highlight yaml %}
 traffic_matches: ["app.your_domain.com", "*.anotherdomain.com"]
 {% endhighlight %}
+
+<h3 id="health">Health</h3>
+The health option is useful to provide a mechanism for tested zero down-time deployments. Old containers are not removed until new ones are validated as healthy, and the new containers are automatically "warmed" up.
+
+The `health` option allows you to specify some rules for automatically determining if your newly created containers are healthy or not. When a new container is started during deployment, if the health option is specified on the service we will automatically attempt to get a response from the container on the specified endpoints. If we don't get the specified HTTP response code back within the "timeout" time we will assume the deploy has failed and roll back the container deployments.
+
+For services that don't expose an endpoint (ie. workers). It is possible to notify Cloud 66 that that container is healthy (from within the container). To this end, an ENV var "CONTAINER_NOTIFY_URL" is automatically created and injected into your container. When you app within the container starts you can POST to the url in that ENV var with the json payload {"ready":true}. In the case of your app detecting its own failures, you can instead POST to the url with the json payload {"ready":false, "reason":"error message"}. Notifying of a failure will immediately mark the deployment as failed and roll back the created container. If you specify type: "notify_only" we won't try and check health automatically, but will wait until "timeout" time for user notification to come in.
+
+Note: You don't need to specify all the options for health. Any options you leave out will get their default values.
+
+{% highlight yaml %}
+health:
+  type: normal                        # normal or notify_only. default: normal 
+  endpoint: "/imhealthy"              # endpoint to try and access. default: / 
+  protocol: "http"                    # http or https. default: http  
+  timeout: "45s"                      # maximum time to wait for container to start. default: 30s        
+  accept: ["200", "300-399"]          # HTTP response code to accept. default: 200, 300-399. 
+  
+OR
+health: default                       # use default health check values
+
+OR 
+health: none                          # explicit disable health checking (same as leaving 'health' out)
+{% endhighlight %}
+
 
 <h3 id="requires">Requires</h3>
 
