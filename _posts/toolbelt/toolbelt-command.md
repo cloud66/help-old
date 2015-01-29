@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Toolbelt run command"
+title:  "Toolbelt command"
 date:   2038-01-25 01:01:01
 categories: toolbelt
 lead: Execute a command directly on your server
