@@ -127,7 +127,7 @@ Below is a table of the available configurations for a given service with a brie
 </tr>
 <tr>
     <td><a href="#health">health</a></td>
-    <td>One of the values: 'default', 'none' or 'notify'; or a hash containing at least one of 'endpoint:', 'protocol:', 'accept:' or 'timeout:'</td>
+    <td>One of the values: 'default', 'none' or a hash containing at least one of 'type:', endpoint:', 'protocol:', 'accept:' or 'timeout:'</td>
 </tr>
 <tr>
     <td><a href="#requires">requires</a></td>
@@ -189,7 +189,7 @@ The health option is useful to provide a mechanism for tested zero down-time dep
 
 The `health` option allows you to specify some rules for automatically determining if your newly created containers are healthy or not. When a new container is started during deployment, if the health option is specified on the service we will automatically attempt to get a response from the container on the specified endpoints. If we don't get the specified HTTP response code back within the "timeout" time we will assume the deploy has failed and roll back the container deployments.
 
-For services that don't expose an endpoint (ie. workers). It is possible to notify Cloud 66 that that container is healthy (from within the container). To this end, an ENV var "CONTAINER_NOTIFY_URL" is automatically created and injected into your container. When you app within the container starts you can POST to the url in that ENV var with the json payload {"ready":true}. In the case of your app detecting its own failures, you can instead POST to the url with the json payload {"ready":false, "reason":"error message"}. Notifying of a failure will immediately mark the deployment as failed and roll back the created container. If you specify type: "notify_only" we won't try and check health automatically, but will wait until "timeout" time for user notification to come in.
+For services that don't expose an endpoint (ie. workers), it is possible to notify Cloud 66 that that container is healthy (from within the container). To this end, an ENV var "CONTAINER_NOTIFY_URL" is automatically created and injected into your container. When you app within the container starts you can POST to the url in that ENV var with the json payload <code>{"ready":true}</code>. In the case of your app detecting its own failures, you can instead POST to the url with the json payload <code>{"ready":false, "reason":"error message"}</code>. Notifying of a failure will immediately mark the deployment as failed and roll back the created container. If you specify type: "notify_only" we won't try and check health automatically, but will wait until "timeout" time for user notification to come in.
 
 Note: You don't need to specify all the options for health. Any options you leave out will get their default values.
 
