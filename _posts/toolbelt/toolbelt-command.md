@@ -1,7 +1,7 @@
 ---
 layout: post
 template: two-col
-title:  "Toolbelt command"
+title:  "Toolbelt run command"
 date:   2038-01-25 01:01:01
 categories: toolbelt
 lead: Execute a command directly on your server
@@ -17,7 +17,7 @@ $ cx run -s &lt;stack&gt; &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&
 
 <h3 id="parameters">Parameters</h3>
 
-At least one of the optional parameters are necessary in order to identify which server to run the command on.
+At least one of the optional server parameters are necessary in order to identify which server to run the command on.
 
 <table class='table table-bordered table-striped table-small'>
     <thead>
@@ -32,6 +32,11 @@ At least one of the optional parameters are necessary in order to identify which
             <td><i>stack</i></td>
             <td>&mdash;</td>
             <td>Name of the stack</td>
+        </tr>
+        <tr>
+            <td><i>service</i> (optional)</td>
+            <td>&mdash;</td>
+            <td>The service in which to run the command (docker stacks only)</td>
         </tr>
         <tr>
             <td><i>server name</i> (optional)</td>
@@ -54,5 +59,15 @@ At least one of the optional parameters are necessary in order to identify which
 <h3 id="examples">Example</h3>
 
 <pre class="prettyprint">
-$ cx run -s My_Awesome_App web 'pwd'
+$ cx run -s My_Awesome_App web1 'pwd'
 </pre>
+
+The service parameter applies to docker stacks and allows you to enter a docker container with your command (based on the latest image of that service). Some examples of that are:
+
+<pre class="prettyprint">
+$ cx run -s My_Awesome_App --service my_api_service web1 /bin/bash
+</pre>
+<pre class="prettyprint">
+$ cx run -s My_Awesome_App --service my_api_service web1 'bundle exec rails c'
+</pre>
+
