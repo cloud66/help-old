@@ -137,7 +137,7 @@ These are the available settings:
         </tr>
         <tr>
             <td><i>maintenance.mode</i></td>
-            <td>Enable or disable maintenance mode on the stack. To enable, you can use the values <i>1</i>, <i>true</i>, <i>on</i> or <i>enable</i>, and to disable you can use the values <i>0<i/>, <i>false</i>, <i>off</i> or <i>disable</i></td>
+            <td>Enable or disable maintenance mode on the stack. To enable, you can use the values <i>1</i>, <i>true</i>, <i>on</i> or <i>enable</i>, and to disable you can use the values <i>0</i>, <i>false</i>, <i>off</i> or <i>disable</i></td>
         </tr>
     </tbody>
 </table>
