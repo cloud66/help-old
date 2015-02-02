@@ -51,7 +51,7 @@ To generate a key and certificate signing request, follow the steps below.
 <li>Generate private <i>key</i> on your server, without specifying a passphrase:</li>
 
 <pre class="prettyprint">
-$ openssl genrsa -des3 -out private&#95;key.key 2048
+$ openssl genrsa -out private&#95;key.key 2048
 </pre>
 
 <li>Create a certificate signing request and enter your information as requested:</li>
