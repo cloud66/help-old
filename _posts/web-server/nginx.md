@@ -1326,6 +1326,132 @@ The following table specifies the number of workers configured for your Nginx ba
       </td>
     </tr>
   </tbody>
+  <tbody>
+    <tr class="header">
+      <td width="25%">
+        <strong>CloudA</strong> <span>-</span>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td width="40%">
+        512 MB
+      </td>
+      <td>
+        1
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        1 GB
+      </td>
+      <td>
+        1
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        2 GB
+      </td>
+      <td>
+        1
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        4 GB
+      </td>
+      <td>
+        2
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        8 GB
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        16 GB
+      </td>
+      <td>
+        6
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        32 GB
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        8 GB - HM
+      </td>
+      <td>
+        2
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        16 GB - HM
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        32 GB - HM
+      </td>
+      <td>
+        6
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        4 GB - HC
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        8 GB - HC
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        16 GB - HC
+      </td>
+      <td>
+        12
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 <h2 id="error">Custom Nginx error page</h2>

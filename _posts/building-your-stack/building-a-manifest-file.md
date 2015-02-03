@@ -366,6 +366,20 @@ production:
 
 <hr>
 
+<h4 id="rs_loadbalancer">CloudA load balancer</h4>
+Use a manifest file to customize the CloudA load balancer deployed by Cloud 66. These changes will only apply when you create a new load balancer.
+
+- **balance**: The load balancing strategy. You can use these values : ROUND_ROBIN, SOURCE_IP or LEAST_CONNECTIONS.
+
+<pre class="prettyprint">
+production:
+    load_balancer:
+        configuration:
+            balance: ROUND_ROBIN
+</pre>
+
+<hr>
+
 <h3 id="servers">Which server?</h3>
 Every application defined in the manifest file must be bound to a server. However, if you'd like configurations to apply to all servers in an application type, you don't need to specify a server type. Servers can be deployed specifically to host that application, be shared between multiple applications (eg. Rails and MySQL on the same server) or be an external server (eg. using an external database).
 
@@ -384,7 +398,7 @@ These are the parameters that the <i>server</i> section can take:
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **subnet_id** (_Optional, AWS EC2 Only_): ID of the AWS subnet in which you would like to create your servers.
-- **vendor** (_Optional, BYOC Only_): Cloud vendor to fire up the server on. Valid values: aws, azure, digitalocean, googlecloud, linode, rackspace, vexxhost
+- **vendor** (_Optional, BYOC Only_): Cloud vendor to fire up the server on. Valid values: aws, azure, digitalocean, googlecloud, linode, rackspace, vexxhost and clouda
 - **region** (_Optional, BYOC Only_): [Data center region](http://developers.cloud66.com/#introduction-cloud-vendor-instance-regions) to create the server in.
 - **size** (_Optional, BYOC Only_): [Size of the server instance](http://developers.cloud66.com/#introduction-cloud-vendor-instance-names) created.
 - **availability_zone** (_Optional, AWS EC2 Only_): Availability zone of the server instance in AWS EC2 region.
