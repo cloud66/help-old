@@ -59,7 +59,7 @@ This will list all the managed backups of a stack grouped by their database type
 <h3 id="list_usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx backups [-s &lt;stack&gt;] [-l] [&lt;db type&gt;]
+$ cx backups list [-s &lt;stack&gt;] [-l] [&lt;db type&gt;]
 </pre>
 
 <h3 id="list_params">Parameters</h3>
@@ -93,7 +93,7 @@ $ cx backups [-s &lt;stack&gt;] [-l] [&lt;db type&gt;]
 <h3 id="list_example">Example</h3>
 
 <pre class="prettyprint">
-$ cx backups -s "My Awesome App" -e production
+$ cx backups list -s "My Awesome App" -e production
 </pre>
 
 {% include toolbelt_footer.html %}
@@ -105,7 +105,7 @@ Allows you to download a database backup through the command line, concatenating
 <h3 id="download_usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx download-backup [-s &lt;stack&gt;] [-d &lt;download directory&gt;] &lt;backup id&gt;
+$ cx backups download [-s &lt;stack&gt;] [-d &lt;download directory&gt;] &lt;backup id&gt;
 </pre>
 
 <h3 id="download_params">Parameters</h3>
@@ -140,5 +140,5 @@ $ cx download-backup [-s &lt;stack&gt;] [-d &lt;download directory&gt;] &lt;back
 <h3 id="download_example">Example</h3>
 
 <pre class="prettyprint">
-$ cx download-backup 15
+$ cx backups download -s "My Awesome App" 15
 </pre>

@@ -24,7 +24,7 @@ Use these commands to configure your replication slave database servers.
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx slave-promote [-s &lt;stack&gt;] [--db-type &lt;database type&gt;] &lt;slave server name&gt;
+$ cx databases promote-slave [-s &lt;stack&gt;] [--db-type &lt;database type&gt;] &lt;slave server name&gt;
 </pre>
 
 The server provided must have already been configured as a replication slave via the Cloud 66 UI.
@@ -72,8 +72,8 @@ Providing the database type is optional and is only necessary for shared servers
 <h3 id="example">Example</h3>
 
 <pre class="prettyprint">
-$ cx slave-promote -s My_Awesome_App my_slave_server_name
-$ cx slave-promote -s My_Awesome_App --db-type postgresql my_slave_server_name
+$ cx databases promote-slave -s "My Awesome App" my_slave_server_name
+$ cx databases promote-slave -s "My Awesome App" --db-type postgresql my_slave_server_name
 </pre>
 
 <h2 id="promote">Slave re-synchronise with master</h2>
@@ -81,12 +81,12 @@ $ cx slave-promote -s My_Awesome_App --db-type postgresql my_slave_server_name
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx slave-resync [-s &lt;stack&gt;] [--db-type &lt;database type&gt;] &lt;slave server name&gt;
+$ cx databases resync-slave [-s &lt;stack&gt;] &lt;slave server name&gt;
 </pre>
 
 Re-syncs the specified slave database server with its master database server.
 
-From time-to-time your slave db server might go out of sync with its master. This action attempts to re-sync your specified slave server. This can happen depending on many factors (such as DB size, frequency of change, networking between servers etc)
+From time-to-time your slave database may go out of sync with its master. This action attempts to re-sync your specified slave server. This can happen depending on many factors (such as DB size, frequency of change, networking between servers etc).
 
 The server provided must have already been configured as a replication slave via the Cloud 66 UI.
 Providing the database type is optional and is only necessary for shared servers where we can't automatically determine the target database type.
@@ -124,6 +124,6 @@ Providing the database type is optional and is only necessary for shared servers
 <h3 id="example">Example</h3>
 
 <pre class="prettyprint">
-$ cx slave-resync -s My_Awesome_App my_slave_server_name
-$ cx slave-resync -s My_Awesome_App --db-type postgresql my_slave_server_name
+$ cx databases resync-slave -s My_Awesome_App my_slave_server_name
+$ cx databases resync-slave -s My_Awesome_App --db-type postgresql my_slave_server_name
 </pre>
