@@ -361,6 +361,23 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | 48GB | nb.48G 
 | 64GB | nb.64G |
 
+### CloudA Cloud
+| Instance size | Value |
+| ---------- | ---------- |
+| 512 MB - General Purpose | 512 MB |
+| 1 GB - General Purpose | 1 GB |
+| 2 GB - General Purpose | 2 GB |
+| 4 GB - General Purpose | 4 GB |
+| 8 GB - General Purpose | 8 GB |
+| 16 GB - General Purpose | 16 GB |
+| 32 GB - General Purpose | 32 GB |
+| 8 GB - High Memory | 8 GB - HM |
+| 16 GB - High Memory | 16 GB - HM |
+| 32 GB - High Memory | 32 GB - HM |
+| 4 GB - High Compute | 4 GB - HC |
+| 8 GB - High Compute | 8 GB - HC |
+| 16 GB - High Compute | 16 GB - HC |
+
 ## Cloud vendor instance regions [/]
 ### Amazon Web Services
 | Region | Value |
@@ -440,6 +457,12 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | Region | Value |
 | ---------- | ---------- |
 | Montreal | default |
+
+### CloudA Cloud
+| Region | Value |
+| ---------- | ---------- |
+| default | default |
+
 
 # Stacks
 Most interactions with the Cloud 66 API are performed at the stack level. Using the Stacks resource, you can list stacks and view stack details, but you can only create, update, or delete stacks using the UI dashboard.
