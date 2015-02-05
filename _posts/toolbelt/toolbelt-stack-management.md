@@ -51,7 +51,7 @@ Trigger the deployment of a stack from the command line, just like clicking on <
 <h3 id="usage-redeploy">Usage</h3>
 
 <pre class="prettyprint">
-$ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;]
+$ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;] [--services &lt;services&gt;]
 </pre>
 
 <h3 id="params-redeploy">Parameters</h3>
@@ -76,8 +76,12 @@ $ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;]
             <td>Automatically answer yes to any prompts</td>
         </tr>
         <tr>
-            <td><i>git-ref</i> (optional)</td>
-            <td>Redeploy the specific git reference (branch, tag or hash)</td>
+            <td><i>git-ref</i> (optional - non-docker)</td>
+            <td>Redeploy the specific git reference (branch, tag or hash). Non-docker stacks only</td>
+        </tr>
+        <tr>
+            <td><i>services</i> (optional - docker)</td>
+            <td>Will deploy the specified services from your stack only. This should be a comma separated list of service names. Docker stacks only</td>
         </tr>
     </tbody>
 </table>
