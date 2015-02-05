@@ -942,7 +942,8 @@ Redeploy a stack
 + Parameters
 
     + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
-    + git_ref (optional, string `a_git_tag_or_hash`) ... Git reference (branch, tag or hash)
+    + git_ref (optional, string `a_git_tag_or_hash`) ... Git reference (branch, tag or hash). Non-docker only.
+    + services_filter (optional, string `service1,service2`) ... Services from your stack to deploy only. Docker only.
 
 + Model (application/json)
 
