@@ -326,5 +326,5 @@ $ cx open [-s &lt;stack&gt;] [&lt;server name&gt;|&lt;server ip&gt;|&lt;server r
 <h3 id="z-example">Example</h3>
 
 <pre class="prettyprint">
-$ cx open "My Awesome App"
+$ cx open -s "My Awesome App"
 </pre>
