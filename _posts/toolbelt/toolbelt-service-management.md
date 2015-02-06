@@ -19,6 +19,7 @@ tags: ['Toolbelt']
     <li><a href="#container-list">Container listing</a></li>
     <li><a href="#container-stop">Container stopping</a></li>
     <li><a href="#container-restart">Container restarting</a></li>
+    <li><a href="#container-attach">Container attach</a></li>
 </ul>
 
 <h2 id="about">Services management</h2>
@@ -308,5 +309,42 @@ Restarts a particular container on the given stack based on container Id.
 <h3>Example</h3>
 <pre class="prettyprint">
 $ cx containers restart -s mystack 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c
+</pre>
+
+<h2 id="container-attach">Attaching to containers</h2>
+<h3>Usage</h3>
+<pre class="prettyprint">
+$ cx containers attach [-s &lt;stack&gt;] &lt;container id&gt;
+</pre>
+
+Attaches to the running container and forwards output from the container to the console.
+Note: Does not forward signals and does not allow input.
+
+<h3>Parameters</h3>
+<table class='table table-bordered table-striped table-small'>
+    <thead>
+    <tr>
+        <th align="center">Parameter</th>
+        <th align="center">Default</th>
+        <th align="center">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><i>stack</i></td>
+        <td>&mdash;</td>
+        <td>Name of the stack</td>
+    </tr>
+    <tr>
+        <td><i>container ID</i></td>
+        <td>&mdash;</td>
+        <td>The container ID</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Example</h3>
+<pre class="prettyprint">
+$ cx containers attach -s mystack 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c
 </pre>
 
