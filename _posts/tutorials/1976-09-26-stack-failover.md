@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "How to deal with a failover stack"
+title:  "How to deal with a failover group"
 so_title: "migrate"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
@@ -9,16 +9,16 @@ date:   1913-09-26 15:33:13
 categories: 
 lead: Migrating your stacks is easy with Cloud 66
 search-tags: ['']
-tags: ['Stack failover']
+tags: ['Failover Group']
 tutorial: true
 difficulty: 2
 ---
 
-Having a failover stack can help you prevent unwanted downtime should your primary stack become unresponsive, for anything from hardware to networking issues. Follow this guide to setup your failover stack, and how to use it if necessary.
+Having a failover group can help you prevent unwanted downtime should your primary stack become unresponsive, for anything from hardware to networking issues. Follow this guide to setup your failover stack, and how to use it if necessary.
 
 <b>This is a complex procedure, and we recommend that you test it in a staging environment to reduce any potential downtime.</b>
 
-<h2>Setup the failover stack</h2>
+<h2>Setup the failover group</h2>
 As with any migration, you will need to deal with moving your code, data and traffic. 
 
 <h3>1. Code</h3>
@@ -28,7 +28,7 @@ As with any migration, you will need to deal with moving your code, data and tra
 Enable [database replication between your stacks](http://help.cloud66.com/database-management/database-replication) - this will setup a master/slave architecture between your stacks, whereby the slave is an exact replica of the master at all times. 
 
 <h3>3. Traffic</h3>
-Use [Elastic Address](http://help.cloud66.com/network/elasticaddress) to make it easy for you to switch between stacks. By pointing your domain at the Elastic Address, you will be able to switch your traffic between stacks at the click of a button.
+Use [Elastic Address](http://help.cloud66.com/network/failover-groups) to make it easy for you to switch between stacks. By pointing your domain at the Elastic Address, you will be able to switch your traffic between stacks at the click of a button.
 
 <h2>How to use the failover stack</h2>
 If and when your main stack fails, you will need to switch to the failover stack.

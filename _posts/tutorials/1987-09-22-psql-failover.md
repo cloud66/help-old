@@ -9,7 +9,7 @@ date:   1897-09-24 10:51:22
 categories: 
 lead: How to deal with a primary server failure
 search-tags: ['']
-tags: ['Database', 'Stack failover']
+tags: ['Database', 'Failover Group']
 tutorial: true
 difficulty: 0
 ---
