@@ -28,7 +28,7 @@ As with any migration, you will need to deal with moving your code, data and tra
 Enable [database replication between your stacks](http://help.cloud66.com/database-management/database-replication) - this will setup a master/slave architecture between your stacks, whereby the slave is an exact replica of the master at all times. 
 
 <h3>3. Traffic</h3>
-Use [Elastic Address](http://help.cloud66.com/network/failover-groups) to make it easy for you to switch between stacks. By pointing your domain at the Elastic Address, you will be able to switch your traffic between stacks at the click of a button.
+Use [Failover Groups](http://help.cloud66.com/network/failover-groups) to make it easy for you to switch between stacks. By pointing your domain at the Elastic Address, you will be able to switch your traffic between stacks at the click of a button.
 
 <h2>How to use the failover stack</h2>
 If and when your main stack fails, you will need to switch to the failover stack.
