@@ -21,7 +21,7 @@ Cloud 66 makes it easy for you to run and restore your [database backups](http:/
 You can retrieve your backup in one of three ways:
 
 ### 1. Cloud 66 toolbelt
-The best way to retrieve your database backup is by using the [toolbelt backup management](/toolbelt/toolbelt-backup-management). Your backup may be bigger than 250 MB, in which case it will be divided into several files. By using the toolbelt, the files are downloaded and concatenated automatically for you.
+The best way to retrieve your database backup is by using the [toolbelt backup management](http://help.cloud66.com/toolbelt/toolbelt-backup-management). Your backup may be bigger than 250 MB, in which case it will be divided into several files. By using the toolbelt, the files are downloaded and concatenated automatically for you.
 
 ### 2. Cloud 66 web UI
 Access your stack detail page, and click the link for your database backup add-in. This page lists your available database backups, and allows you to download and restore each one. Click the download icon to view the available downloads, and either download through your browser or with the command line (option 3 below).

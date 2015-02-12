@@ -60,5 +60,5 @@ At least one of the optional parameters are necessary in order to identify which
 <h3 id="examples">Example</h3>
 
 <pre class="prettyprint">
-$ cx tail -s My_Awesome_App web nginx_error.log
+$ cx tail -s "My Awesome App" web nginx_error.log
 </pre>

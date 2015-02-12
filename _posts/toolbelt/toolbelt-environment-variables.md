@@ -53,7 +53,7 @@ These commands allow you to list and set environment variables on your stack.
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx env-vars [-s &lt;stack&gt;] [environment_variables]
+$ cx env-vars list [-s &lt;stack&gt;] [environment_variables]
 </pre>
 
 <h3 id="params">Parameters</h3>
@@ -83,14 +83,14 @@ $ cx env-vars [-s &lt;stack&gt;] [environment_variables]
 <h3 id="example">Example</h3>
 
 <pre class="prettyprint">
-$ cx env-vars -s My_Awesome_App
+$ cx env-vars list -s My_Awesome_App
 </pre>
 
 <h2 id="set">Set environment variables</h2>
 <h3 id="usage2">Usage</h3>
 
 <pre class="prettyprint">
-$ cx env-vars-set [-s &lt;stack&gt;] &lt;setting&gt; &lt;value&gt;
+$ cx env-vars set [-s &lt;stack&gt;] &lt;setting&gt; &lt;value&gt;
 </pre>
 
 <h3 id="params2">Parameters</h3>
@@ -125,5 +125,5 @@ $ cx env-vars-set [-s &lt;stack&gt;] &lt;setting&gt; &lt;value&gt;
 <h3 id="example2">Example</h3>
 
 <pre class="prettyprint">
-$ cx env-var-set -s My_Awesome_App FIRST_VAR 123
+$ cx env-vars set My_Awesome_App FIRST_VAR 123
 </pre>

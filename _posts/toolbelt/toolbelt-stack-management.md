@@ -51,7 +51,7 @@ Trigger the deployment of a stack from the command line, just like clicking on <
 <h3 id="usage-redeploy">Usage</h3>
 
 <pre class="prettyprint">
-$ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;]
+$ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;] [--services &lt;services&gt;]
 </pre>
 
 <h3 id="params-redeploy">Parameters</h3>
@@ -76,8 +76,12 @@ $ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;]
             <td>Automatically answer yes to any prompts</td>
         </tr>
         <tr>
-            <td><i>git-ref</i> (optional)</td>
-            <td>Redeploy the specific git reference (branch, tag or hash)</td>
+            <td><i>git-ref</i> (optional - non-docker)</td>
+            <td>Redeploy the specific git reference (branch, tag or hash). Non-docker stacks only</td>
+        </tr>
+        <tr>
+            <td><i>services</i> (optional - docker)</td>
+            <td>Will deploy the specified services from your stack only. This should be a comma separated list of service names. Docker stacks only</td>
         </tr>
     </tbody>
 </table>
@@ -90,6 +94,9 @@ $ cx redeploy -s "My Awesome App" -e production
 <pre class="prettyprint">
 $ cx redeploy -s "My Awesome App" -e production -y --git-ref my_git_ref_value
 </pre>
+<pre class="prettyprint">
+$ cx redeploy -s "My Awesome Docker App" --services web,api
+</pre>
 
 Deploying a stack that is already being deployed will enqueue your redeploy command and will run it immediately after the current deployment is finished.
 
@@ -98,7 +105,7 @@ Deploying a stack that is already being deployed will enqueue your redeploy comm
 Start off by listing the possible settings for a specific stack.
 
 <pre class="prettyprint">
-$ cx settings [-s &lt;stack&gt;]
+$ cx settings list [-s &lt;stack&gt;]
 </pre>
 
 These are the available settings:
@@ -112,6 +119,14 @@ These are the available settings:
     </thead>
     <tbody>
         <tr>
+            <td><i>allowed.web.source</i></td>
+            <td>IP addresses that are allowed to access a stacks web servers (with IP addresses in the command or a CSV file with IP addresses as input)</td>
+        </tr>
+        <tr>
+            <td><i>asset.prefix</i></td>
+            <td>If you change your default Rails assets folder, you can set it here</td>
+        </tr>                
+        <tr>
             <td><i>git.branch</i></td>
             <td>Change the Git branch of the stack repository</td>
         </tr>
@@ -120,24 +135,16 @@ These are the available settings:
             <td>Change the Git repository URL</td>
         </tr>
         <tr>
+            <td><i>maintenance.mode</i></td>
+            <td>Enable or disable maintenance mode on the stack. To enable, you can use the values <i>1</i>, <i>true</i>, <i>on</i> or <i>enable</i>, and to disable you can use the values <i>0</i>, <i>false</i>, <i>off</i> or <i>disable</i></td>
+        </tr>        
+        <tr>
             <td><i>reconfigure.nginx</i></td>
             <td>If set to true, it will regenerate Nginx configuration and restart it (only on the next deployment)</td>
         </tr>
         <tr>
-            <td><i>allowed.web.source</i></td>
-            <td>IP addresses that are allowed to access a stacks web servers (with IP addresses in the command or a CSV file with IP addresses as input)</td>
-        </tr>
-        <tr>
-            <td><i>asset.prefix</i></td>
-            <td>If you change your default Rails assets folder, you can set it here</td>
-        </tr>
-        <tr>
             <td><i>stack.name</i></td>
-            <td>Change your stack name</td>
-        </tr>
-        <tr>
-            <td><i>maintenance.mode</i></td>
-            <td>Enable or disable maintenance mode on the stack. To enable, you can use the values <i>1</i>, <i>true</i>, <i>on</i> or <i>enable</i>, and to disable you can use the values <i>0</i>, <i>false</i>, <i>off</i> or <i>disable</i></td>
+            <td>View your stack name</td>
         </tr>
     </tbody>
 </table>
@@ -147,7 +154,7 @@ These are the available settings:
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx set [-s &lt;stack&gt;] &lt;setting&gt; &lt;value&gt;
+$ cx settings set [-s &lt;stack&gt;] &lt;setting_name&gt; &lt;value&gt;
 </pre>
 
 <h3 id="parameters">Parameters</h3>
@@ -182,7 +189,7 @@ $ cx set [-s &lt;stack&gt;] &lt;setting&gt; &lt;value&gt;
 <h3 id="example">Example</h3>
 
 <pre class="prettyprint">
-$ cx set -s "My Awesome App" git.repository git://github.com/cloud66-samples/rails-mysql.git -e production
+$ cx settings set -s "My Awesome App" git.repository git://github.com/cloud66-samples/rails-mysql.git -e production
 </pre>
 
 <h2 id="restart">Restart Nginx</h2>
@@ -191,7 +198,7 @@ Allows you to restart Nginx on your stack with one simple command.
 <h3 id="restart-usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx restart [-s &lt;stack&gt;]
+$ cx stacks restart [-s &lt;stack&gt;]
 </pre>
 
 <h3 id="restart-params">Parameters</h3>
@@ -217,7 +224,7 @@ $ cx restart [-s &lt;stack&gt;]
 <h3 id="restart-example">Example</h3>
 
 <pre class="prettyprint">
-$ cx restart -s "My Awesome App"
+$ cx stacks restart -s "My Awesome App"
 </pre>
 
 <h2 id="clear">Clear caches</h2>
@@ -226,7 +233,7 @@ For improved performance, volatile code caches exist for your stack. It is possi
 <h3 id="x-usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx clear-caches [-s &lt;stack&gt;]
+$ cx stacks clear-caches [-s &lt;stack&gt;]
 </pre>
 
 <h3 id="x-params">Parameters</h3>
@@ -248,14 +255,14 @@ $ cx clear-caches [-s &lt;stack&gt;]
 <h3 id="x-example">Example</h3>
 
 <pre class="prettyprint">
-$ cx clear-caches -s "My Awesome App"
+$ cx stacks clear-caches -s "My Awesome App"
 </pre>
 
 <h2 id="list">List your stack servers</h2>
 <h3 id="y-usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx servers [-s &lt;stack&gt;] [&lt;names&gt;]
+$ cx servers list [-s &lt;stack&gt;] [&lt;names&gt;]
 </pre>
 
 <h3 id="y-params">Parameters</h3>
@@ -281,7 +288,7 @@ $ cx servers [-s &lt;stack&gt;] [&lt;names&gt;]
 <h3 id="y-example">Example</h3>
 
 <pre class="prettyprint">
-$ cx servers -s "My Awesome App"
+$ cx servers list -s "My Awesome App"
 </pre>
 
 
@@ -307,17 +314,14 @@ $ cx open [-s &lt;stack&gt;] [&lt;server name&gt;|&lt;server ip&gt;|&lt;server r
         </tr>
         <tr>
             <td><i>server name</i> (optional)</td>
-            <td>&mdash;</td>
             <td>Name of the server to access</td>
         </tr>
         <tr>
             <td><i>server ip</i> (optional)</td>
-            <td>&mdash;</td>
             <td>IP of the server to access</td>
         </tr>
         <tr>
             <td><i>server role</i> (optional)</td>
-            <td>&mdash;</td>
             <td>Role of the server to access (eg. web)</td>
         </tr>
     </tbody>
@@ -326,5 +330,5 @@ $ cx open [-s &lt;stack&gt;] [&lt;server name&gt;|&lt;server ip&gt;|&lt;server r
 <h3 id="z-example">Example</h3>
 
 <pre class="prettyprint">
-$ cx open "My Awesome App"
+$ cx open -s "My Awesome App"
 </pre>

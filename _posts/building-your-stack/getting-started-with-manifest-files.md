@@ -132,7 +132,7 @@ Now that your `manifest.yml` file is in place under your `.cloud66` folder, you 
 Although redeploying your stack will set the configuration settings for the stack, it will not automatically push down all the changes to your Nginx servers. To force Nginx configuration changes to be pushed to your servers, we can use a stack setting in the [Cloud 66 toolbelt] called `reconfigure.nginx`. Simply use the following command to push the change (replacing `my_stack` with your stack name):
 
 <pre class="prettyprint">
-$ cx set -s my_stack reconfigure.nginx true
+$ cx settings set -s my_stack reconfigure.nginx true
 </pre>
 
 This will force your Nginx configuration to be rebuilt during the next redeployment. Once you redeploy, the CORS settings will be updated on your web servers.

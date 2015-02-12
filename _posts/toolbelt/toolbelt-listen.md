@@ -19,7 +19,7 @@ Listen uses `nsq` to handle its realtime messaging, so you'll need to install it
 - On Ubuntu, you can [download and unzip the tarball](https://s3.amazonaws.com/bitly-downloads/nsq/nsq-0.3.0.linux-amd64.go1.3.3.tar.gz). See their [documentation](http://nsq.io/deployment/installing.html) for more information.
 
 <pre class="prettyprint">
-$ cx listen [-s &lt;stack&gt;]
+$ cx stacks listen [-s &lt;stack&gt;]
 </pre>
 
 <h3 id="list_params">Parameters</h3>
@@ -41,7 +41,7 @@ $ cx listen [-s &lt;stack&gt;]
 <h3 id="list_example">Example</h3>
 
 <pre class="prettyprint">
-$ cx listen -s "My Awesome App" -e production
+$ cx stacks listen -s "My Awesome App" -e production
 </pre>
 
 You can leave the command by pressing `Ctrl-C` at any time.

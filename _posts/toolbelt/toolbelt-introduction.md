@@ -63,9 +63,9 @@ Once authorized, you will be presented with an authorization code to paste into 
 <h2 id="quick">View toolbelt information</h2>
 - `cx help` lists available commands
 - `cx info` shows information about your toolbelt
-- `cx version` outputs your toolbelt version
-- `cx stacks` lists available stacks
-- `cx servers` lists available servers
+- `cx --version` outputs your toolbelt version
+- `cx stacks list` lists available stacks
+- `cx servers list` lists available servers
 - `cx open` opens your web browser to visit the app server in your stack
 
 Refer to the right sidebar for more available commands and how to use them.

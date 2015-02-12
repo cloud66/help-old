@@ -19,6 +19,7 @@ tags: ['Toolbelt']
     <li><a href="#container-list">Container listing</a></li>
     <li><a href="#container-stop">Container stopping</a></li>
     <li><a href="#container-restart">Container restarting</a></li>
+    <li><a href="#container-attach">Container attach</a></li>
 </ul>
 
 <h2 id="about">Services management</h2>
@@ -27,7 +28,7 @@ Use these commands to manage your docker stack services and containers.
 <h2 id="service-list">Listing services</h2>
 <h3>Usage</h3>
 <pre class="prettyprint">
-$ cx services [-s &lt;stack&gt;] [--server &lt;slave server name&gt;|&lt;slave server ip&gt;]
+$ cx services list [-s &lt;stack&gt;] [--server &lt;slave server name&gt;|&lt;slave server ip&gt;]
 </pre>
 
 Lists all the services and their numbers of running container on the given stack.
@@ -58,14 +59,14 @@ Optionally provide the server to list only the services running on that server.
 
 <h3>Example</h3>
 <pre class="prettyprint">
-$ cx services -s My_Awesome_App
-$ cx services -s My_Awesome_App --server my_selected_server
+$ cx services list -s My_Awesome_App
+$ cx services list -s My_Awesome_App --server my_selected_server
 </pre>
 
 <h2 id="service-scale">Scaling services</h2>
 <h3>Usage</h3>
 <pre class="prettyprint">
-$ cx service-scale [-s &lt;stack&gt;] &lt;service name&gt; [--server &lt;server name&gt;|&lt;server ip&gt;] &lt;count&gt;
+$ cx services scale [-s &lt;stack&gt;] &lt;service name&gt; [--server &lt;server name&gt;|&lt;server ip&gt;] &lt;count&gt;
 </pre>
 
 Scales up/down &lt;count&gt; containers for the given service. If you specify +X or -X for the count, then that number of containers will be added/removed.
@@ -107,15 +108,15 @@ Optionally provide the server to act only on that server.
 
 <h3>Example</h3>
 <pre class="prettyprint">
-$ cx service-scale -s mystack my_web_service 1
-$ cx service-scale -s mystack a_backend_service --server backend +5
-$ cx service-scale -s mystack a_backend_service -2
+$ cx services scale -s mystack my_web_service 1
+$ cx services scale -s mystack a_backend_service --server backend +5
+$ cx services scale -s mystack a_backend_service -2
 </pre>
 
 <h2 id="service-stop">Stopping services</h2>
 <h3>Usage</h3>
 <pre class="prettyprint">
-$ cx service-stop [-s &lt;stack&gt;] &lt;service name&gt; [--server &lt;server name&gt;|&lt;server ip&gt;]
+$ cx services stop [-s &lt;stack&gt;] &lt;service name&gt; [--server &lt;server name&gt;|&lt;server ip&gt;]
 </pre>
 
 Stops all the containers of the given service.
@@ -151,15 +152,15 @@ Optionally provide the server to act only on that server.
 
 <h3>Example</h3>
 <pre class="prettyprint">
-$ cx service-stop -s mystack my_web_service
-$ cx service-stop -s mystack a_backend_service
-$ cx service-stop -s mystack --server my_server my_web_service
+$ cx services stop -s mystack my_web_service
+$ cx services stop -s mystack a_backend_service
+$ cx services stop -s mystack --server my_server my_web_service
 </pre>
 
 <h2 id="service-restart">Restarting services</h2>
 <h3>Usage</h3>
 <pre class="prettyprint">
-$ cx service-restart [-s &lt;stack&gt;] &lt;service name&gt; [--server &lt;server name&gt;|&lt;server ip&gt;]
+$ cx services restart [-s &lt;stack&gt;] &lt;service name&gt; [--server &lt;server name&gt;|&lt;server ip&gt;]
 </pre>
 
 Restarts all the containers of the given service.
@@ -195,15 +196,15 @@ Optionally provide the server to act only on that server.
 
 <h3>Example</h3>
 <pre class="prettyprint">
-$ cx service-restart -s mystack my_web_service
-$ cx service-restart -s mystack a_backend_service
-$ cx service-restart -s mystack --server my_server my_web_service
+$ cx services restart -s mystack my_web_service
+$ cx services restart -s mystack a_backend_service
+$ cx services restart -s mystack --server my_server my_web_service
 </pre>
 
 <h2 id="container-list">Listing containers</h2>
 <h3>Usage</h3>
 <pre class="prettyprint">
-$ cx containers [-s &lt;stack&gt;] [--server &lt;slave server name&gt;|&lt;slave server ip&gt;]
+$ cx containers list [-s &lt;stack&gt;] [--server &lt;slave server name&gt;|&lt;slave server ip&gt;]
 </pre>
 
 Lists all the containers on the given stack.
@@ -234,14 +235,14 @@ Optionally provide the server to list only the containers running on that server
 
 <h3>Example</h3>
 <pre class="prettyprint">
-$ cx containers -s My_Awesome_App
-$ cx containers -s My_Awesome_App --server my_selected_server
+$ cx containers list -s My_Awesome_App
+$ cx containers list -s My_Awesome_App --server my_selected_server
 </pre>
 
 <h2 id="container-stop">Stopping containers</h2>
 <h3>Usage</h3>
 <pre class="prettyprint">
-$ cx container-stop [-s &lt;stack&gt;] &lt;container id&gt;
+$ cx containers stop [-s &lt;stack&gt;] &lt;container id&gt;
 </pre>
 
 Stops a particular container on the given stack based on container Id.
@@ -271,13 +272,13 @@ Stops a particular container on the given stack based on container Id.
 
 <h3>Example</h3>
 <pre class="prettyprint">
-$ cx container-stop -s mystack 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c
+$ cx containers stop -s mystack 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c
 </pre>
 
 <h2 id="container-restart">Restarting containers</h2>
 <h3>Usage</h3>
 <pre class="prettyprint">
-$ cx container-restart [-s &lt;stack&gt;] &lt;container id&gt;
+$ cx containers restart [-s &lt;stack&gt;] &lt;container id&gt;
 </pre>
 
 Restarts a particular container on the given stack based on container Id.
@@ -298,15 +299,52 @@ Restarts a particular container on the given stack based on container Id.
         <td>Name of the stack</td>
     </tr>
     <tr>
-        <td><i>container Id</i></td>
+        <td><i>container ID</i></td>
         <td>&mdash;</td>
-        <td>The container Id</td>
+        <td>The container ID</td>
     </tr>
     </tbody>
 </table>
 
 <h3>Example</h3>
 <pre class="prettyprint">
-$ cx container-restart -s mystack 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c
+$ cx containers restart -s mystack 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c
+</pre>
+
+<h2 id="container-attach">Attaching to containers</h2>
+<h3>Usage</h3>
+<pre class="prettyprint">
+$ cx containers attach [-s &lt;stack&gt;] &lt;container id&gt;
+</pre>
+
+Attaches to the running container and forwards output from the container to the console.
+Note: Does not forward signals and does not allow input.
+
+<h3>Parameters</h3>
+<table class='table table-bordered table-striped table-small'>
+    <thead>
+    <tr>
+        <th align="center">Parameter</th>
+        <th align="center">Default</th>
+        <th align="center">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><i>stack</i></td>
+        <td>&mdash;</td>
+        <td>Name of the stack</td>
+    </tr>
+    <tr>
+        <td><i>container ID</i></td>
+        <td>&mdash;</td>
+        <td>The container ID</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Example</h3>
+<pre class="prettyprint">
+$ cx containers attach -s mystack 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c
 </pre>
 

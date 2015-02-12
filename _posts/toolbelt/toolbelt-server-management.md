@@ -55,7 +55,7 @@ This command lists the possible settings for a specific server.
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx server-settings [-s &lt;stack&gt;] &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt;
+$ cx servers settings list [-s &lt;stack&gt;] --server &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt;
 </pre>
 
 <h3 id="params">Parameters</h3>
@@ -94,7 +94,7 @@ $ cx server-settings [-s &lt;stack&gt;] &lt;server name&gt;|&lt;server ip&gt;|&l
 <h3 id="example">Example</h3>
 
 <pre class="prettyprint">
-$ cx server-settings -s My_Awesome_App web
+$ cx servers settings list -s My_Awesome_App --server web
 </pre>
 
 <h2 id="set">Set server settings</h2>
@@ -103,7 +103,7 @@ Use this command to set server settings from the command line.
 <h3 id="usage2">Usage</h3>
 
 <pre class="prettyprint">
-$ cx server-set [-s &lt;stack&gt;] &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt; &lt;setting&gt; &lt;value&gt;
+$ cx servers settings set [-s &lt;stack&gt;] --server &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt; &lt;setting&gt;=&lt;value&gt;
 </pre>
 
 <h3 id="params2">Parameters</h3>
@@ -153,5 +153,5 @@ $ cx server-set [-s &lt;stack&gt;] &lt;server name&gt;|&lt;server ip&gt;|&lt;ser
 <h3 id="example2">Examples</h3>
 
 <pre class="prettyprint">
-$ cx server-set -s My_Awesome_App lion server.name tiger
+$ cx servers settings set -s "My Awesome App" --server lion server.name=liger
 </pre>

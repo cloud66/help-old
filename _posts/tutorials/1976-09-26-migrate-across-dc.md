@@ -9,7 +9,7 @@ date:   1913-09-26 15:33:13
 categories: 
 lead: Migrating your stacks is easy with Cloud 66
 search-tags: ['']
-tags: ['Stack failover']
+tags: ['Failover Group']
 tutorial: true
 difficulty: 0
 ---
