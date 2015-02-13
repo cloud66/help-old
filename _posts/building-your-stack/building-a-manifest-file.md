@@ -158,7 +158,7 @@ production:
             nginx:
                 cors:
                     origin: '*'
-                    methods: 'GET, OPTION'
+                    methods: 'GET, OPTIONS'
 </pre>
 
 <hr>
