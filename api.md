@@ -294,25 +294,16 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | f1-micro | f1-micro |
 | g1-small | g1-small |
 | n1-highcpu-2 | n1-highcpu-2 |
-| n1-highcpu-2-d | n1-highcpu-2-d |
 | n1-highcpu-4 | n1-highcpu-4 |
-| n1-highcpu-4-d | n1-highcpu-4-d |
 | n1-highcpu-8 | n1-highcpu-8 |
-| n1-highcpu-8-d | n1-highcpu-8-d |
 | n1-highmem-2 | n1-highmem-2 |
-| n1-highmem-2-d | n1-highmem-2-d |
 | n1-highmem-4 | n1-highmem-4 |
-| n1-highmem-4-d | n1-highmem-4-d |
 | n1-highmem-8 | n1-highmem-8 |
-| n1-highmem-8-d | n1-highmem-8-d |
 | n1-standard-1 | n1-standard-1 |
-| n1-standard-1-d | n1-standard-1-d |
 | n1-standard-2 | n1-standard-2 |
-| n1-standard-2-d | n1-standard-2-d |
 | n1-standard-4 | n1-standard-4 |
-| n1-standard-4-d | n1-standard-4-d |
 | n1-standard-8 | n1-standard-8 |
-| n1-standard-8-d | n1-standard-8-d |
+| n1-standard-16 | n1-standard-16 |
 
 ### Linode
 | Instance size | Value |
