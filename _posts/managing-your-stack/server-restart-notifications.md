@@ -15,12 +15,18 @@ tags: ['']
 <ul class="page-toc">
     <li>
         <a href="#about">What is the server restart notification?</a>
-    </li>
+    </li>    
     <li>
         <a href="#importance">Is this important? Do I need immediate action?</a>
     </li>
     <li>
         <a href="#how-to">How do I actually restart my servers?</a>
+    </li>
+    <li>
+        <a href="#how-does-it-work">How does Cloud 66 determine my server needs a restart?</a>
+    </li>
+    <li>
+        <a href="#notification-delay">I've restarted, but I still see the notification</a>
     </li>
     <li>
         <a href="#additional-information">Additional information</a>
@@ -56,6 +62,16 @@ sudo shutdown -r now
     <h3>Important</h3>
     <p>Depending on your cloud provider, if you instead choose to shut your server down, then start it again via the cloud provider dashboard, you may have new IP addresses assigned to your server. That can take a little while to propagate to Cloud 66 and your DNS provider, meaning you may have some unnecessary downtime should you choose this restart method.</p>
 </div>
+
+<h2 id="how-does-it-work">How does Cloud 66 determine my server needs a restart?</h2>
+The unattended-upgrades package signals to the operating system that a restart is required by creating a file <i>/var/run/reboot-required</i>. Cloud 66 will check periodically if this file is present and bring that forward into the UI. 
+
+<h2 id="notification-delay">I've restarted, but I still see the notification</h2>
+Due to the periodic checking of your server (as stated above) it can take up to 12 hours for your notifications to be cleared. Deploying your stack will cause an immediate refresh of your restart notification state (after deployment completes). You can also manually check your restart required status on your server by running the command:
+
+<pre class="terminal">
+sudo bash -c "if [ -f /var/run/reboot-required ]; then echo 'Server is requesting restart'; fi"
+</pre>
 
 <h2 id="additional-information">Additional information</h2>
 Visit the <a href="https://help.ubuntu.com/community/AutomaticSecurityUpdates">Ubuntu documentation on automatic security updates</a> for additional information about Ubuntu unattended-upgrades.
