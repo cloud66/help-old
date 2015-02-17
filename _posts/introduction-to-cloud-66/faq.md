@@ -76,12 +76,12 @@ Cloud 66 is hosted in the cloud and is available as a service. You don't need to
 
 <h2 id="f3">How can I use Cloud 66?</h2>
 
-[Sign up](http://app.cloud66.com/users/sign_up) for an account and start by building your first stack. Point your stack to your Git repository and click on the _Analyze_ button. A few seconds later you can configure your app deployment and point your stack to the servers you would like to run your app on.
+[Sign up](http://app.cloud66.com/users/sign_up) for an account and start by building your first stack. Specify a Git repository that contains a Dockerfile, or provide your own Docker image(s) to base your stack on. A few seconds later you can configure your app deployment and point your stack to the servers you would like to run your app on.
 
 <hr>
 
 <h2 id="f4">What is a stack?</h2>
-A Cloud 66 stack is an application environment. So your stack could consist of one or many individual servers, all working together to serve a particular environment (ie. production). Cloud 66 currently supports Ruby applications (with various database backends) - so your checked in source code should contain all the necessary files required to run a valid Ruby application.
+A Cloud 66 stack is an application environment. Your stack could consist of one or many individual servers, all working together to serve a particular environment, for example production. Cloud 66 supports end-to-end Docker deployments with various database backends.
 
 <hr>
 
@@ -91,21 +91,21 @@ Yes! Cloud 66 configures and deploys your code to your servers in the cloud or y
 <hr>
 
 <h2 id="f6">Why do you need my server SSH key?</h2>
-Cloud 66 uses remote SSH keys to set up an SSH tunnel to your server and execute remote bash scripts. For additional security we only use remote SSH keys to connect to your server, never username/password access.
+Cloud 66 uses remote SSH keys to set up an SSH tunnel to your server and execute remote bash scripts. For additional security we only use remote SSH keys to connect to your server, never username and password access.
 
 <hr>
 
 <h2 id="f7">Are their any requirements for the user on my servers?</h2>
-Yes. As Cloud 66 will be provisioning services on your servers from scratch, the user provided must have sudoer permissions. Additionally, for compatibility, the sudoer permissions should be passwordless.
+Yes. As Cloud 66 will be provisioning services on your servers from scratch, the server must meet a number of requirements outlined in the [Deploy to your own server](/deployment/deploy-to-your-own-server) documentation.
 
 <hr>
 
 <h2 id="f8">Can I deploy multiple apps on a single server?</h2>
-At this point, Cloud 66 only allows a single app per server. This is primarily due to configuration complexities that would be required to host multiple applications (all of which could be very different). That said, Cloud 66 may introduce support for this in the future.
+Yes - you can have any number of Docker services running on a single server at any point in time.
 
 <hr>
 
-<h2 id="f9">How can I change my Git repository ?</h2>
+<h2 id="f9">How can I change my Git repository?</h2>
 You can change your Git repository by using the Cloud 66 Toolbelt, <strong>Settings</strong> section.
 
 <hr>
@@ -116,7 +116,7 @@ Currently we support Amazon Web Services, Digital Ocean, Google Compute Engine, 
 <hr>
 
 <h2 id="f11">Which distributions of Linux are supported?</h2>
-We currently only support Ubuntu. Our officially supported version is 14.04, although there shouldn't be major problems running on other versions.
+We currently only support Ubuntu - the officially supported version is 14.04.
 
 <hr>
 

@@ -5,7 +5,7 @@ title:  "Logging"
 so_title: "logs"
 nav_sticky: false
 date:   2093-02-25 16:27:22
-categories: building-your-stack
+categories: managing-your-stack
 lead: Cloud 66 makes it easy to handle your stack logs
 search-tags: []
 tags: ['Logs']

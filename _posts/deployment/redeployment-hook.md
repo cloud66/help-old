@@ -28,7 +28,7 @@ tags: ['Deployment']
 </ul>
 
 <h2 id="what">What are redeployment hooks?</h2>
-Redeployment hooks allow you to deploy your stack when you push code to your Git repository, to achieve continuous deployment. The process of adding the hook differs by Git host, so we will guide you through doing this with GitHub and Bitbucket.
+Redeployment hooks allow you to deploy your stack when you push a change to your Git repository or Docker image, to achieve continuous deployment. The process of adding the hook differs by Git host, so we will guide you through doing this with GitHub and Bitbucket.
 
 Only pushing code to the same branch as your stack Git branch will redeploy your stack. If you push code to another branch, nothing happens. This allows you to push code on your development branch without an automatic redeploy on your production stack.
 

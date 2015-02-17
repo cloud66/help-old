@@ -59,100 +59,89 @@ Because Cloud 66 is provided as a service, you don't need to install anything on
 <li><b>Monitoring</b> your servers</li>
 </ul>
 
-To get started, you just have to provide us with a Git URL to your repository. We'll then analyze your code and build a stack based on it.
+To get started, you just have to provide us with a Git URL to your repository or your own Docker image(s). We'll then build a stack based on it.
 
-Before you get get started, you may want to look at our Technical specifications to determine if you're ready for Cloud 66.
+Before you get get started, you may want to look at our [Technical specifications](/introduction-to-cloud-66/technical-specifications) to determine if you're ready for Cloud 66.
 
 <h2 id="needed">What you’ll need</h2>
 
 <ul class="list">
-	<li><a href="https://app.cloud66.com/users/sign_up" target="_blank">Cloud 66 account</a></li>
-	<li><a href="http://community.cloud66.com/articles/accessing-your-git-repository">Git repository with your application code</a>
-		<ul class="list">
-			<li>Public (<a href="http://community.cloud66.com/articles/accessing-your-git-repository#public">access a public repository</a>)</li>
-			<li>Private (<a href="http://community.cloud66.com/articles/accessing-your-git-repository#private">access a private repository</a>)</li>
-		</ul> 
-	</li>		
-	<li><a href="/deployment/deploy-to-your-cloud">Deployment credentials</a>
-		<ul class="list">
-			<li>The API key for your cloud provider (<a href="/deployment/deploy-to-your-cloud">add a cloud platform</a>)</li>
-			<li>An SSH key and IP address for your server (<a href="/deployment/deploy-to-your-own-server">add a SSH key</a>)</li>
-		</ul> 
-	</li>
+  <li><a href="https://app.cloud66.com/users/sign_up" target="_blank">Cloud 66 account</a></li>
+  <li>A source for your service(s)
+    <ul class="list" style="margin-bottom=0px">
+      <li>Pull your code from Git (with a <a href="https://docs.docker.com/reference/builder/">Dockerfile</a>)</li>
+      <li>Provide an existing Docker image</li>
+    </ul>   
+  </li>  
+  <li>Deployment credentials
+    <ul class="list">
+      <li>The API key for your cloud provider (<a href="/deployment/deploy-to-your-cloud">Deploy to your cloud</a>)</li>
+      <li>An SSH key and IP address for your server (<a href="/deployment/deploy-to-your-own-server">Deploy to your own server</a>)</li>
+    </ul> 
+  </li>
 </ul>
 
-<h2 id="1">Step 1. Build your stack</h2>
-Before you can deploy your applications to a server with Cloud 66, you must build a stack of the web applications components your application needs to run. To build your first stack, complete the following steps.
+<h3 id="1">Step 1: Build your stack</h3>
+Before you can deploy your applications to a server with Cloud 66, you must build a stack of the components your application needs to run. To build your first stack, complete the following steps.
 
 <ol class="list">
 <li>Sign in to Cloud 66.</li>
-<li>On the Cloud 66 dashboard, click <i>Get started building a stack</i>.</li>
+<li>On the Cloud 66 dashboard, click <i>Build a Docker stack</i>.</li>
 </ol>
 
-<h2 id="2">Step 2. Access your Git repository</h2>
-If you have a private Git repository, complete the following steps to generate the keys needed to access your repository. If you have a public Git repository, skip to Step 3.
+<h3 id="2">Step 2: Services configuration</h3>
+Now provide a stack name, and the environment you would like to deploy in. Next up is configuring your Docker services - for example _web_, _api_, _worker_ and so on. You can add as many services to your stack as you need. These are the available fields:
 
 <ol class="list">
-<li>In the <i>Accessing Git</i> dialog box, copy the SSH key, select your Git provider from the list, and click the associated <i>Go</i> button.</li>
-<li>Add the copied key to your Git provider.</li>
-<li>Return to Cloud 66.</li>
+<li>What's the service name?</li>
+<li>How shall we build this service?</li>
+    <ul class="list">
+      <li><b>Pull code from Git:</b> Cloud 66 builds your Docker images for you using BuildGrid, which requires that you place a Dockerfile in your repository.</li>
+      <li><b>Build from Docker image:</b> Specify your own Docker image repository for us to pull your image from.</li>
+    </ul> 
+<li>Is the service accessible from the Internet? If so, specify which port your container runs on.</li>  
+<li>Which database(s) do you need?</li>  
 </ol>
 
-<h2 id="3">Step 3: Define your application properties</h2>
-Complete the following steps to define the properties Cloud 66 uses to identify your application.
+This page has _basic_ and _advanced_ configurations, designated by the tabs at the top of the form. Switching between the tabs will retain any previous information provided. The advanced tab allows you to input more detailed settings, which you can learn about in [Advanced Docker deployments](/beta/advanced-docker-deployments).
 
-<b>Prerequisites</b><br/>
-You must know the URL for your Git repository and the associated Git branch. For instructions on retrieving the Git repo URL and how to format it for this procedure, refer to <a href="http://community.cloud66.com/articles/accessing-your-git-repository#public">Access a public Git repository</a> or <a href="http://community.cloud66.com/articles/accessing-your-git-repository#private">Access a private Git repository</a>.
-
-<ol class="list">
-	<li>In the <i>About your app</i> dialog box, do the following actions:
-		<ul class="list">
-			<li>In the <i>Your Git Repo URL</i> box, enter the URL for your Git repository.</li>
-			<li>In the <i>Git branch</i> box, type the branch name. This field defaults to the "master" branch.</li>
-			<li>In the <i>Give your stack a name</i> box, type a name for your application stack.</li>
-			<li>In the <i>Environment</i> list, select the environment to deploy.</li>
-		</ul>
-	</li>		
-	<li>Click <i>Analyze</i>. Cloud 66 will analyze your application.</li>
-</ol>
-
-<h2 id="4">Step 4: Review your app configuration</h2>
-Cloud 66 analyzes your application and returns the configuration details it detects. Complete the following procedure to verify the application configuration is correct.
-
-<ol class="list">
-<li>In the <i>About your app</i> dialog box, verify the returned information. If it is incorrect, make the necessary changes and click <i>Re-analyze my code</i>.</li>
-<li>In the <i>App configuration</i> dialog box, verify the version information and select the <i>Framework info</i> option you want to use.</li>
-</ol>
-
-<h2 id="5">Step 5: Define deployment properties</h2>
+<h3 id="3">Step 3: Define deployment properties</h3>
 Complete the following steps to define the properties that determine how to deploy your application.
 
 <b>Prerequisites</b><br/>
 If deploying to a cloud server, you must know the API key for your cloud provider. If deploying to your server, you must have (or generate) a SSH key for the server. For instructions on generating an SSH key, refer to [Setting up SSH keys](http://community.cloud66.com/articles/setting-up-ssh-keys).
 
 <ol class="list">
-	<li>In the <i>Where are you deploying to</i> dialog box, select the deployment target to use.</li>
-	<li>Perform one of the following actions, depending on your deployment configuration:
-		<ul class="list">
-			<li>If deploying to a cloud, select the cloud provider, server region and server size.</li>
-			<li>If deploying to a server, enter your username and IP address.</li>
-		</ul>
-	</li>		
-	<li>In the <i>Deployment details</i> dialog box, select the database option to use.</li>
-	<li>Click <i>Deploy</i>.</li>
+  <li>In the <i>Where are you deploying to</i> dialog box, select the deployment target to use.</li>
+  <li>Perform one of the following actions, depending on your deployment configuration:
+    <ul class="list">
+      <li>If deploying to a cloud, select the cloud provider, server region and server size.</li>
+      <li>If deploying to a server, enter your username and IP address.</li>
+    </ul>
+  </li>   
+  <li>In the <i>Deployment details</i> dialog box, select the database option to use.</li>
+  <li>Click <i>Deploy</i>.</li>
 </ol>
 
-<h2 id="6">Step 6: Review the deployment logs</h2>
-After your application builds successfully, you can view the log generated by the deployment.
+This page has also has _basic_ and _advanced_ configurations, designated by the tabs at the top of the form. Switching between the tabs will retain any previous information provided. The advanced tab allows you to input more detailed settings, which you can learn about in [Getting started with manifest files](/building-your-stack/getting-started-with-manifest-files).
 
-![Working](http://cdn.cloud66.com/images/help/first_stack_preparing.png)
+<h3 id="4">Step 4: Review the deployment logs</h3>
+After your stack builds successfully, you can view the log generated by the deployment.
 
-<h2 id="next">What's next?</h2>
-Your stack is up and running, and you can start customizing by: 
+<h3 id="5">What's next?</h3>
+Your stack is up and running - you now have:
+
+- Docker servers with automated deployment and lifecycle management
+- Networking and DNS layer across your stack
+- Database layer
+- Load balancing layer
+- All other Cloud 66 features, such as security, managed Nginx, team management and so on.
+
+You can now start customizing by: 
 
 <ul class="list">
-<li><a href="/stack-add-ins/database-backups">Define a backup</a></li>
-<li><a href="/deployment/scaling">Scale your web server</a></li>
-<li><a href="/building-your-stack/stack-network-settings">Configure security</a></li>
-<li><a href="/stack-add-ins/add-in-implementation">Configure an add-in</a></li>
+<li><a href="/stack-add-ins/database-backups">Defining a backup</a></li>
+<li><a href="/deployment/scaling">Scaling your servers</a></li>
+<li><a href="/building-your-stack/stack-network-settings">Configuring security</a></li>
+<li><a href="/stack-add-ins/add-in-implementation">Configuring an add-in</a></li>
 </ul>

@@ -65,7 +65,7 @@ A load balancer is used to distribute traffic across your web servers, and offer
 The type of [load balancer deployed in your stack](/web-server/load-balancing) is dependent on your cloud provider.
 
 <h3 id="web">Web servers</h3>
-By default, your applications are served with Nginx and Phusion Passenger, and you are also free to [customize this selection](/web-server/custom-web-servers). You can [scale your web server](/deployment/scaling) with the click of a button.
+By default, your applications are served with Nginx, and you are also free to [customize this selection](/web-server/custom-web-servers) for Rack-based stacks. You can [scale your web server](/deployment/scaling) with the click of a button.
 
 <h3 id="background">Background workers (optional)</h3>
 To relieve pressure from your application, we recommend that you use background workers to run memory-intensive processes. Cloud 66 makes it easy for you to [control and monitor these processes](/deployment/running-background-processes), as well as [scale them](/deployment/scaling) at the click of a button.
@@ -81,7 +81,7 @@ You can choose between any of four supported databases:
 Cloud 66 makes it easy for you to [backup your database](/database-management/database-backup), [verify the backup](/database-management/backup-verification) and [replicate your databases](/database-management/database-replication).
 
 <h3 id="os">Operating system</h3>
-Depending on which cloud you deploy to, your servers will be deployed with <b>Ubuntu 14.04 LTS</b> or <b>Debian 7.0 Wheezy</b>. On the operating system level, you can [monitor disk, CPU and memory](/building-your-stack/server-monitoring) from the dashboard.
+Your servers will be deployed with <b>Ubuntu 14.04 LTS</b>. On the operating system level, you can [monitor disk, CPU and memory](/building-your-stack/server-monitoring) from the dashboard.
 
 <h3 id="cloud">Cloud vendor</h3>
 You can either [deploy to your cloud](/deployment/deploy-to-your-cloud) or [deploy to your own server](/deployment/deploy-to-your-own-server).
@@ -96,7 +96,7 @@ To reflect the different stages of your software, you can deploy your stacks in 
 * **QA**: Used for quality assurance
 * **Staging**: Mirrors the production environment but is only used for testing
 
-In addition to these environments, you can define your own environments from the _Account_ page, in the _Setting_ -> _Custom environment_ menu. Once the new environment is added, you will be able to see it in the list of supported environments when creating a new stack. Custom environments don't influence anything on the stack. They will result in the relevant environment variables like `RAILS_ENV` and `RACK_ENV` having the correct values. The usage of those custom values is up to your application.
+In addition to these environments, you can define your own environments from the _Account_ page, in the _Setting_ -> _Custom environment_ menu. Once the new environment is added, you will be able to see it in the list of supported environments when creating a new stack. Custom environments don't influence anything on the stack. They will result in the relevant environment variables like `RAILS_ENV` and `RACK_ENV` (for Rack-based stacks) having the correct values. The usage of those custom values is up to your application.
 
 Depending on your configuration, your application will act differently in each environment. For example, a Ruby on Rails application
 has a directory in `config/environments` that contains settings for each environment.
@@ -127,21 +127,21 @@ Cloud 66 constantly seeks to update and improve the StackScore algorithm to cons
 <hr>
 
 <h2 id="build">Build a stack</h2>
-To build your first stack, see our [Introduction to Cloud 66](/introduction-to-cloud-66/introduction-to-cloud-66). If you have existing stack(s), simply click _New Stack_ from your Cloud 66 Dashboard.
+To build your first stack, see our [Introduction to Cloud 66](/introduction-to-cloud-66/introduction-to-cloud-66). If you have existing stack(s), simply click _New Docker Stack_ from your Cloud 66 Dashboard.
 
 <hr>
 
 <h2 id="edit">Edit stack properties</h2>
 You can access your _Stack information_ page from the right sidebar of your stack page. This page shows you general information about your stack, the different servers it consists of and information about your application.
 
-It also allows you to edit your stack name, Git repository and branch by clicking the _Edit_ button next to each field. Editing your stack name has an important implication.
+It also allows you to edit your stack name, and you can edit your Docker service configuration under the _Service configurations_ menu on the stack details page. For Rack-based stacks, you can edit your Git repository and branch by clicking the _Edit_ button next to each field on the _Stack information_ page. Editing your stack name has an important implication.
 
 <div class="notice notice-danger notice-standalone">
 		<h3>Important</h3>
 		<p>Internal c66 domain names (*.c66.me) are based on your stack name, and will change if you rename the stack.</p>
 </div>
 
-Unless you use [Elastic Address](/network/elasticaddress), you will have to update your DNS to point at the new address to keep your application accessible. By using Elastic Address, this will be updated automatically for you.
+Unless you use [Failover groups](/network/failover-groups), you will have to update your DNS to point at the new address to keep your application accessible. By using Failover groups, this will be updated automatically for you.
 
 <hr>
 

@@ -18,7 +18,7 @@ tags: ['Deployment']
     <li><a href="#examples">Manifest file examples</a></li>
         <li>
         <ul>
-            <li><a href="#example1">Example 1: Specifying a Ruby version</a></li>
+            <li><a href="#example1">Example 1: Specifying a Docker version</a></li>
             <li><a href="#example2">Example 2: Change CORS settings</a></li>
         </ul>
         </li>    
@@ -52,25 +52,25 @@ To use a manifest file, simply create a file called `manifest.yml` under a folde
 
 <h2 id="examples">Manifest file examples</h2>
 
-<h3 id="example1">Example 1: Specifying a Ruby version</h3>
-In this example, we'll set the version of Ruby on your stack to 2.1.1. The top level node is the stack environment - the example below will therefore apply to the production environment.
+<h3 id="example1">Example 1: Specifying a Docker version</h3>
+In this example, we'll set the version of Docker on your stack to 1.4.1. The top level node is the stack environment - the example below will therefore apply to the production environment.
 
 <pre class="prettyprint">
 production:
-    rails:
+    docker:
         configuration:
-            ruby_version: 2.1.1    
+            version: 1.4.1
 </pre>
 
 This is how it works:
 
 **production** The top node is the stack environment node. 
 
-**rails** The second level is the *application type* to apply the settings to.
+**docker** The second level is the *application type* to apply the settings to.
 
 **configuration** As part of the application type, set configuration variables.
 
-**ruby_version** Lastly, the configuration variable you wish to specify.
+**version** Lastly, the configuration variable you wish to specify.
 
 <div class="notice notice-warning">
     <h3>Is my yaml valid?</h3>
@@ -103,19 +103,19 @@ To get started, open up your `manifest.yml` file in a text editor and enter the 
 
 <pre class="prettyprint">
 production:
-    rails:
+    docker:
         configuration:
             nginx:
                 cors:
                     origin: '*'
-                    methods: 'GET, OPTION'
+                    methods: 'GET, OPTIONS'
 </pre>
 
 This is how it works:
 
 **production** The top node is the stack environment node. 
 
-**rails** The second level is the *application type* to apply the settings to.
+**docker** The second level is the *application type* to apply the settings to.
 
 **configuration** As part of the application type, set configuration variables.
 
@@ -157,10 +157,12 @@ You can also use your own custom environment names in your manifest file.
 
 Application type determines which part of the stack is affected by this section. Available options are:
 
+- docker
 - elasticsearch
 - load_balancer
 - memcached
 - mongodb
+- nginx
 - postgis
 - postgresql
 - rails
@@ -171,7 +173,7 @@ The names above suggest which part of the stack the settings apply to. You can f
 
 <h3 id="thirdone">Third Level (1): Configurations</h3>
 
-The third level of the manifest file determines the specific settings for the application type we want to change. As seen in **example 2**, changing CORS settings goes under the **rails** application type and the **configuration** node. 
+The third level of the manifest file determines the specific settings for the application type we want to change. As seen in **example 2**, changing CORS settings goes under the **docker** application type and the **configuration** node. 
 
 For example, this is how to set the version of ElasticSearch to `0.90.7`:
 
@@ -184,11 +186,11 @@ production:
 
 <h3 id="thirdtwo">Third Level (2): Servers</h3>
 
-As well as stack level configurations, manifest files can have settings per server as well. The **servers** section is where those settings are specified. Here is an example to specify the cloud vendor, region, server size and server name for one of your Rails servers:
+As well as stack level configurations, manifest files can have settings per server as well. The **servers** section is where those settings are specified. Here is an example to specify the cloud vendor, region, server size and server name for one of your Docker servers:
 
 <pre class="prettyprint">
 production:
-    rails:
+    docker:
         servers:
             server:
                 unique_name: app

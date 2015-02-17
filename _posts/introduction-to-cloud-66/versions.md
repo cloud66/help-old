@@ -26,7 +26,7 @@ tags: ['Maintenance']
 </ul>
 
 <h2 id="os">Operating system</h2>
-Depending on which cloud you deploy to, your servers will be deployed with <b>Ubuntu 14.04 LTS</b> or <b>Debian 7.0 Wheezy</b>.
+Your servers are deployed with <b>Ubuntu 14.04 LTS</b>.
 
 <h2 id="clouds">Supported cloud providers</h2>
 Cloud 66 currently supports the following cloud providers:
@@ -43,7 +43,7 @@ Cloud 66 currently supports the following cloud providers:
 </ul>
 
 <h2 id="frameworks">Supported frameworks</h2>
-We currently support Rack-based applications - Ruby on Rails, Sinatra and Padrino. Join our [beta program](https://cloud66.typeform.com/to/wnHfN8) to gain access to our newest features.
+We support end-to-end Docker deployments, meaning that we support any type of application. You can either let us build your Docker image (with a Dockerfile), or provide your own.
 
 <h2 id="versions">Component versions</h2>
 Cloud 66 servers have two types of components with differing policies on versioning.
@@ -69,6 +69,10 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>Docker</td>
+            <td>1.4.1</td>
+        </tr>
         <tr>
             <td>ElasticSearch</td>
             <td>1.3.2</td>

@@ -4,7 +4,7 @@ template: one-col
 title:  "Server monitoring"
 so_title: "monitoring"
 date:   2085-09-24 10:51:22
-categories: building-your-stack
+categories: managing-your-stack
 lead: We help you monitor your CPU, memory and disk space
 search-tags: []
 tags: ['']

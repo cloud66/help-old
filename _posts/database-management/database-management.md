@@ -29,7 +29,7 @@ tags: ['']
         <a href="#upgrade">Upgrading your database</a>
     </li>
     <li>
-        <a href="#migrations">Control your database migrations</a>
+        <a href="#migrations">Control your Rails database migrations</a>
     </li> 
     <li>
         <a href="#customize">Customize your database configuration</a>
@@ -47,9 +47,11 @@ We currently support the following databases, with no need for additional config
 * PostgreSQL
 * MongoDB
 * Redis
+* Elasticsearch
+* RabbitMQ
 * SQLite (only in development environments)
 
-During analysis, Cloud 66 automatically detects whether your application relies on a database or not. This is based on a combination of your Gemfile and your database.yml or mongoid.yml files.
+When creating a Docker stack, you can add as many databases as you need during the stack build. For Rack-based stacks, Cloud 66 automatically detects whether your application relies on a database or not during your code analysis. This is based on a combination of your Gemfile and your database.yml or mongoid.yml files.
 
 After you have analyzed your code, ensure that your desired database type is displayed in the _About your app_ section of the analysis results. If you haven't specified a username and password for your database, Cloud 66 will automatically generate these credentials for you. They will be available as environment variables and your application will be configured to use them.
 
@@ -70,8 +72,8 @@ Cloud 66 will not do in-place database upgrades, because this process may cause 
 
 Once the new stack is created, you can migrate data from your old stack to your new stack.
 
-<h2 id="migrations">Control your database migrations</h2>
-You can control your database migrations by accessing your stack detail page, then clicking _Stack settings_ in the right sidebar. This page gives you the option of running migrations or not. When you have disabled database migrations in _Stack settings_ page, you still have the option to run migrations on a one-off deployment by clicking _Deploy_ -> _Deploy with options_ and selecting _Run database migrations_.
+<h2 id="migrations">Control your Rails database migrations</h2>
+You can control your Rails database migrations by accessing your stack detail page, then clicking _Stack settings_ in the right sidebar. This page gives you the option of running migrations or not. When you have disabled database migrations in _Stack settings_ page, you still have the option to run migrations on a one-off deployment by clicking _Deploy_ -> _Deploy with options_ and selecting _Run database migrations_.
 
 <h2 id="customize">Customize your database configuration</h2>
 

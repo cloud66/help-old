@@ -36,4 +36,4 @@ Although database migrations only occur on one server, depending on the changes,
 <h2 id="configure">Configure parallel deployment</h2>
 To activate parallel deployments, access your _Stack settings_ page and select _Redeploy in parallel_. Once set, any future deployments will be done in parallel. Should you wish to do a one-off deployment in serial, you can do so by clicking _Deploy_ -> _Deploy with options_ and selecting _Deploy in serial_. Similarly, if you have your stack set to deploy in serial, you can perform a one-off deploying in parallel through this menu.
 
-Parallel deployments are activated by default for [stacks with a custom web server](/web-server/custom-web-servers) (eg. Unicorn as it supports zero downtime restarts), but not for stacks based on Passenger.
+Parallel deployments are activated by default for [Rack-based stacks with a custom web server](/web-server/custom-web-servers) (eg. Unicorn as it supports zero downtime restarts), but not for stacks based on Passenger.

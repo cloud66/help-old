@@ -82,7 +82,7 @@ Next, select which application you would like to specify settings for. You can c
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 
-<pre class="prettyprint">   
+<pre class="prettyprint">
 docker:
     configuration:
         version: 1.4.1
@@ -269,7 +269,7 @@ production:
 
 <hr>
 
-<h3 id="loadbalancer">Load balancers</h3>
+<h3 id="load_balancer">Load balancers</h3>
 
 <h4 id="aws_elb">AWS load balancer</h4>
 Use a manifest file to customize the AWS load balancer deployed by Cloud 66. These changes will only apply when you create a new load balancer.

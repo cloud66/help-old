@@ -1,11 +1,11 @@
 ---
 layout: post
 template: one-col
-title:  "Introduction to Cloud 66 Docker support"
+title:  "Getting started with Cloud 66 Docker support"
 so_title: "Docker"
 nav_sticky: false
 date:   2092-01-25 16:27:22
-categories: beta
+categories: building-your-stack
 lead: Deploy Docker stacks through Cloud 66
 search-tags: ['docker', '.cloud66/services.yml', 'docker deployment', 'deployment']
 tags: ['Deployment', 'Docker']

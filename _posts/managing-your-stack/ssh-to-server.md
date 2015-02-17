@@ -4,7 +4,7 @@ template: one-col
 title:  "SSH to your server"
 nav: true
 date:   1700-09-26 15:33:13
-categories: building-your-stack
+categories: managing-your-stack
 lead: Connect directly to your servers for full control 
 search-tags: ['']
 tags: ['Deployment']

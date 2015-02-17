@@ -5,7 +5,7 @@ title:  "Advanced Docker deployments"
 so_title: "docker"
 nav_sticky: false
 date:   2090-01-26 16:27:22
-categories: beta
+categories: building-your-stack
 lead: Advanced features around Docker deployments
 search-tags: []
 tags: ['Deployment']
@@ -65,7 +65,8 @@ In this example, we'll be running two services - one for _web_ and the other for
 {% highlight yaml %}
 services:                                 # container services
   web:                                    # arbitrary name for your service
-    image: quay.io/cloud66/sample-rails   
+    git: git@github.com:pkallberg/node-js-app.git
+    git_branch: test   
     command: rackup -p 3000               
     build_command: rake db:migrate        
     deploy_command: rake db:migrate       
@@ -96,6 +97,14 @@ Below is a table of the available configurations for a given service with a brie
 <tr>
     <td><a href="#image">image</a></td>
     <td>The image you would typically run <code>docker pull</code> from.</td>
+</tr>
+<tr>
+    <td><a href="#git">git</a></td>
+    <td>The Git repository URL your Docker image will be built with.</td>
+</tr>
+<tr>
+    <td><a href="#git-branch">git_branch</a></td>
+    <td>The Git repository branch your Docker image will be based on.</td>
 </tr>
 <tr>
     <td>command</td>
@@ -153,6 +162,12 @@ Below is a table of the available configurations for a given service with a brie
 
 <h3 id="image">Image</h3>
 The source of your Docker image, which can optionally come from a private repository provided that the credentials are provided. If you are using _Quay.io_ as your repository, you will use `quay.io/namespace/image_name`, and for [Docker Hub](https://registry.hub.docker.com/), use `https://index.docker.io/v1/`.
+
+<h3 id="git">Git</h3>
+The Git repository URL your Docker image will be built with. Your image will be built with [Cloud 66 BuildGrid](/beta/introduction-to-cloud-66-docker-support#buildgrid), a cluster of powerful servers that build and version your Docker images. Simply place a Dockerfile in your repository to instruct us how the image should be built.
+
+<h3 id="git-branch">Git branch</h3>
+The Git repository branch your Docker image will be based on.
 
 <h3 id="log_folder">Log folder</h3>
 The `log_folder` option allows you to persist container logs on your server, so that they don't disappear when the container stops. By default, any folder specified with `log_folder` will be available on the host under `/var/log/containers/service`. `service` here will be replaced with your service name. For example: 

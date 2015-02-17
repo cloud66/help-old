@@ -38,19 +38,19 @@ The support packages below are set up with a simple flat fee monthly rolling con
         </tr>
         <tr>
             <td>Response time</td>
-            <td>&mdash;</td>
-            <td>Within 4 hours</td>
-            <td>Within 2 hours</td>
-            <td>Within 1 hour</td>
+            <td>Best effort</td>
+            <td>Priority</td>
+            <td>Priority</td>
+            <td>2 hours</td>
         </tr>
         <tr>
             <td>Availability</td>
             <td>&mdash;</td>
-            <td>08:00 &mdash; 18:00 <br/>Monday &mdash; Friday</td>
-            <td>08:00 &mdash; 18:00 <br/>Monday &mdash; Friday</td>
-            <td>Any time <br/>Monday &mdash; Sunday</td>
+            <td>08:00 &mdash; 18:00 <br/>Monday &mdash; Friday GMT</td>
+            <td>08:00 &mdash; 18:00 <br/>Monday &mdash; Friday GMT</td>
+            <td>Any time</td>
         </tr>
     </tbody>
 </table>
 
-In addition to these packages, we also offer application-specific support at an hourly rate. Please <a href="mailto:hello@cloud66.com">let us know</a> if you require these services.
+In addition to these packages, we also offer consulting services at an hourly rate. Please <a href="mailto:hello@cloud66.com">let us know</a> if you require these services.

@@ -11,7 +11,7 @@ tags: ['']
 ---
 
 ## About deploying to your own server
-Cloud 66 supports deploying to your own server - it just needs to be accessible to our service and meet our operating system requirements. We officially support <strong>Ubuntu 14.04</strong> and <strong>Debian 7.0 Wheezy</strong>, and you will have to configure either of these on your server. 
+Cloud 66 supports deploying to your own server - it just needs to be accessible to our service and meet our operating system requirements. We officially support <strong>Ubuntu 14.04</strong>, and you will have to configure either of these on your server. 
 
 We also have a number of other requirements:
 

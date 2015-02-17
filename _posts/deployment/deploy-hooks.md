@@ -44,6 +44,11 @@ lead: Take action at various points during your deployment
 <h1 id="what">What are deploy hooks?</h1>
 <p>Deploy hooks are scripts that allow you to take action at various points during the deployment process. This helps you customize the deployment of your application to meet your particular needs.</p>
 
+<div class="notice">
+    <h3>Important</h3>
+    <p>Deploy hooks currently only apply to Rack-based stacks, not Docker stacks.</p>
+</div>
+
 <hr />
 
 <h1 id="points">Hook points</h1>

@@ -5,7 +5,7 @@ title:  "Stack notifications"
 so_title: "notifications"
 nav_sticky: false
 date:   2091-03-29 16:27:22
-categories: building-your-stack
+categories: managing-your-stack
 lead: Email, iOS, Hipchat, Slack and Webhook notifications
 search-tags: []
 tags: ['']
