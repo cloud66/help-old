@@ -9,7 +9,7 @@ nav_prev: "/getting-started/what-is-a-stack.html"
 nav_next: "/getting-started/pre-deployment.html"
 date:   2137-12-24 10:51:22
 categories: introduction-to-cloud-66
-lead: Six steps to get started with Cloud 66
+lead: Four steps to get started with Cloud 66
 search-tags: ['how to start', 'first stack', 'first', 'beginner', 'how to', 'build a stack', 'access code']
 tags: ['Getting started']
 ---
@@ -25,22 +25,16 @@ tags: ['Getting started']
 		<a href="#1">Step 1: Build your stack</a>
 	</li>
 	<li>
-		<a href="#2">Step 2: Access your Git repository</a>
+		<a href="#2">Step 2: Service configurations</a>
 	</li>
 	<li>
-		<a href="#3">Step 3: Define your application properties</a>
+		<a href="#3">Step 3: Define deployment properties</a>
 	</li>
 	<li>
-		<a href="#4">Step 4: Review your app configuration</a>
+		<a href="#4">Step 4: Review the deployment logs</a>
 	</li>
 	<li>
-		<a href="#5">Step 5: Define your deployment properties</a>
-	</li>
-	<li>
-		<a href="#6">Step 6: Review the deployment logs</a>
-	</li>
-	<li>
-		<a href="#next">What's next?</a>
+		<a href="#5">What's next?</a>
 	</li>
 </ul>
 
@@ -89,7 +83,7 @@ Before you can deploy your applications to a server with Cloud 66, you must buil
 <li>On the Cloud 66 dashboard, click <i>Build a Docker stack</i>.</li>
 </ol>
 
-<h3 id="2">Step 2: Services configuration</h3>
+<h3 id="2">Step 2: Service configuration</h3>
 Now provide a stack name, and the environment you would like to deploy in. Next up is configuring your Docker services - for example _web_, _api_, _worker_ and so on. You can add as many services to your stack as you need. These are the available fields:
 
 <ol class="list">
