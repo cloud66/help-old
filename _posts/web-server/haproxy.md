@@ -54,11 +54,11 @@ You can also specify your own test interval if you like - this is done in the _s
 
 To change the test interval to every 30 seconds (instead of the default 2 seconds), the template should look like this:
 
-<pre class="terminal">server          web&#123;&#123; forloop.index &#125;&#125; &#123;&#123; server.ext_ipv4 &#125;&#125;:80 cookie "LSW_WEB&#123;&#123; forloop.index &#125;&#125;" check inter 30000</pre>
+<pre class="terminal">server web&#123;&#123; forloop.index &#125;&#125; &#123;&#123; server.ext_ipv4 &#125;&#125;:80 cookie "LSW_WEB&#123;&#123; forloop.index &#125;&#125;" check inter 30000</pre>
 
 Please note the `inter 3000` at the end - this defines the test interval as 3000 milliseconds. Once this template is applied, it looks like this:
 
-<pre class="terminal">server          web1 107.170.99.39:80 cookie "LSW_WEB1" check inter 30000</pre>
+<pre class="terminal">server web 107.170.99.39:80 cookie "LSW_WEB1" check inter 30000</pre>
 
 <h2 id="endpoint">Change the HAProxy endpoint</h2>
 By default, HAProxy will visit the _/_ endpoint on your application every 2 seconds to determine its state. This endpoint may need to change if that endpoint isn't available to the load balancer.
