@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "Introduction to Cloud 66 Docker deployments"
+title:  "Introduction to Docker deployments"
 so_title: "Docker"
 nav_sticky: false
 date:   2092-01-25 16:27:22
