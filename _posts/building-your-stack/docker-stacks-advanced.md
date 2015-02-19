@@ -277,7 +277,7 @@ services:
           accept: ["200"]
 {% endhighlight %}  
 
-You can also use the default health rules with `health: default`, or explicitely disable health checking by leaving the `health` option out or specifying `health: none`.
+You can also use the default health rules with `health: default`, or explicitly disable health checking by leaving the `health` option out or specifying `health: none`.
 
 <hr>
 
