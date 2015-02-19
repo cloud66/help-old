@@ -45,15 +45,15 @@ While you're building your stack, service configurations are available on the _A
 In this example, we'll be running a service called _web_, which is pulled from a Quay repository and requires a MySQL database.
 
 {% highlight yaml %}
-services:                                 # container services
-  web:                                    # arbitrary name for your service
+services:
+  web:
     image: quay.io/cloud66/sample-rails  
     command: rackup -p 3000             
     build_command: rake db:migrate
     deploy_command: rake db:migrate
     log_folder: /usr/src/app/log
     ports: ["3000:80:443"]        
-databases:                                # system services
+databases:
   - "mysql"                              
 {% endhighlight %}
 
@@ -63,9 +63,9 @@ As you can see above, the _web_ service is based on a Quay image and requires th
 In this example, we'll be running two services - one for _web_ and the other for an _api_, as well as MySQL and Redis databases. You can define as many services as you need. The first time you build your stack, those services will be started on the first server you build but you can use the UI, toolbelt or the API to move them around.
 
 {% highlight yaml %}
-services:                                 # container services
-  web:                                    # arbitrary name for your service
-    git: git@github.com:pkallberg/node-js-app.git
+services:
+  web:
+    git_url: git@github.com:pkallberg/node-js-app.git
     git_branch: test   
     command: rackup -p 3000               
     build_command: rake db:migrate        
@@ -73,13 +73,13 @@ services:                                 # container services
     log_folder: /usr/src/app/log          
     ports: ["3000:80:443", "4000"]        
     volumes: ["/tmp:/tmp/mnt_folder"]     
-    health: default                       # use the default health check for this service
-  api:                                    # another arbitrary name
+    health: default
+  api:
     image: quay.io/john/node              
     command: node test.js                 
     ports: ["1337:8080"]                  
     requires: ["web"]                     
-databases:                                # system services
+databases:
   - "mysql"                               
   - "redis"                               
 {% endhighlight %}
@@ -99,7 +99,7 @@ Below is a table of the available configurations for a given service with a brie
     <td>The image you would typically run <code>docker pull</code> from.</td>
 </tr>
 <tr>
-    <td><a href="#git">git</a></td>
+    <td><a href="#git">git_url</a></td>
     <td>The Git repository URL your Docker image will be built with.</td>
 </tr>
 <tr>
@@ -160,69 +160,126 @@ Below is a table of the available configurations for a given service with a brie
 </tr>
 </table>
 
-<h3 id="image">Image</h3>
-The source of your Docker image, which can optionally come from a private repository provided that the credentials are provided. If you are using _Quay.io_ as your repository, you will use `quay.io/namespace/image_name`, and for [Docker Hub](https://registry.hub.docker.com/), use `https://index.docker.io/v1/`.
+<hr>
 
-<h3 id="git">Git</h3>
-The Git repository URL your Docker image will be built with. Your image will be built with [Cloud 66 BuildGrid](/beta/introduction-to-cloud-66-docker-support#buildgrid), a cluster of powerful servers that build and version your Docker images. Simply place a Dockerfile in your repository to instruct us how the image should be built.
+<h3 id="image">Image</h3>
+The source of your Docker image, which can come from a private repository provided that the credentials are provided. For [Docker Hub](https://registry.hub.docker.com/) images, use the following URL format:
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        image: https://index.docker.io/v1/&lt;namespace&gt;/&lt;image_name&gt;
+</pre>
+
+If you are using [Quay.io](https://quay.io/) for your image repository, you will use the following URL format:
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        image: quay.io/&lt;namespace&gt;/&lt;image_name&gt;
+</pre>
+
+<hr>
+
+<h3 id="git">Git URL</h3>
+The Git repository URL your Docker image will be built with. Your image will be built with [Cloud 66 BuildGrid](/building-your-stack/introduction-to-docker-deployments#buildgrid), a cluster of powerful servers that build and version your Docker images. Simply place a Dockerfile in your repository to instruct us how the image should be built. The Git URL you use to [allow us access to your repository](http://community.cloud66.com/articles/accessing-your-git-repository) will differ for public and private repositories.
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        git_url: git@github.com:pkallberg/node-js-app.git
+</pre>
+
+<hr>
 
 <h3 id="git-branch">Git branch</h3>
-The Git repository branch your Docker image will be based on.
+The Git repository branch your Docker image will be based on, for example `master`.
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        git_branch: master
+</pre>
+
+<hr>
 
 <h3 id="log_folder">Log folder</h3>
-The `log_folder` option allows you to persist container logs on your server, so that they don't disappear when the container stops. By default, any folder specified with `log_folder` will be available on the host under `/var/log/containers/service`. `service` here will be replaced with your service name. For example: 
+The `log_folder` option allows you to persist container logs on your server, so that they don't disappear when the container stops. By default, any folder specified with `log_folder` will be available on the host under `/var/log/containers/<service_name>`, for example:
 
 {% highlight yaml %}
-log_folder: /var/deploy/app/log
+services:
+    &#60;service_name&#62;:
+        log_folder: /var/deploy/app/log
 {% endhighlight %}
+
+<hr>
 
 <h3 id="volumes">Volumes</h3>
 You can use the `volumes` option to mount custom host folders inside your container. This is useful if you're looking to run a database service for instance, as data written to the local filesystem of your container will not be persisted between container instances. The volumes option is a list of `HOST_FOLDER:CONTAINER_FOLDER`. You can optionally specify `ro` or `rw` on the end to specify that the the container can read/write to the host folder (the default is read/write if not specified)
 
 {% highlight yaml %}
-volumes: ["/tmp:/tmp_host", "/readonly/folder:/mnted_readony:ro"]
+services:
+    &#60;service_name&#62;:
+        volumes: ["/tmp:/tmp_host", "/readonly/folder:/mnted_readony:ro"]
 {% endhighlight %}
 
+<hr>
+
 <h3 id="ports">Ports</h3>
-The `ports` option allows you to specify ports definitions for your service. The format of the ports definition is a list of CONTAINER_PORT:HTTP_PORT:HTTPS_PORT. Note that the HTTP and HTTPS are optional, and you can have HTTPS without HTTP if you wish and vica versa by including the colons, but leaving that corresponding port number blank. You can define multiple port definition triplets for a single service using the above format, for example:
+The `ports` option allows you to specify ports definitions for your service. The format of the ports definition is a list of `CONTAINER_PORT:HTTP_PORT:HTTPS_PORT`. Note that the `HTTP_PORT` and `HTTPS_PORT` fields are optional, and you can have HTTPS without HTTP if you wish and vica-versa by including the colons, but leaving that corresponding port number blank. You can define multiple port definition triplets for a single service using the above format, for example:
 
 {% highlight yaml %}
-ports: ["3000:80:443", "4000::8443", "5000"]
+services:
+    &#60;service_name&#62;:
+        ports: ["3000:80:443", "4000::8443", "5000"]
 {% endhighlight %}
 
 In this example, the application is listening on port 3000 in the container, and that port is exposed via HTTP on port 80, and HTTPS on port 443. Port 4000 inside the container is also available on port 8443 externally, and port 5000 in the container is available locally on the server. These HTTP/HTTPS ports are available from outside the server, and any traffic to these ports will be redirected to any containers running this service. During scaling, any containers running this service will get traffic distributed to them in a round robin fashion. 
+
+<hr>
 
 <h3 id="traffic_matches">Traffic matches</h3>
 The `traffic_matches` option allows you to specify an array of string server name matches for your service. These are automatically configured in your reverse proxy service (Nginx). In the following example, if traffic comes in on `app.your_domain.com` or `*.anotherdomain.com` on this service port, then traffic will automatically get routed to it. This option also allows you to have multiple services listening on the same port (port 80 for example) as long as they have different rules for matching server names.
 
 {% highlight yaml %}
-traffic_matches: ["app.your_domain.com", "*.anotherdomain.com"]
+services:
+    &#60;service_name&#62;:
+        traffic_matches: ["app.your_domain.com", "*.anotherdomain.com"]
 {% endhighlight %}
+
+<hr>
 
 <h3 id="health">Health</h3>
-The health option is useful to provide a mechanism for tested zero down-time deployments. Old containers are not removed until new ones are validated as healthy, and the new containers are automatically "warmed" up.
+The `health` option allows you to specify rules to automatically determine if your newly started containers are healthy before killing old containers. This effectively provides zero down-time deployments. There are two types of health checks - `inbound` and `outbound`:
 
-The `health` option allows you to specify some rules for automatically determining if your newly created containers are healthy or not. When a new container is started during deployment, if the health option is specified on the service we will automatically attempt to get a response from the container on the specified endpoints. If we don't get the specified HTTP response code back within the "timeout" time we will assume the deploy has failed and roll back the container deployments.
+<b>Inbound health checks</b> use Cloud 66 to determine the health of your containers based on rules that you provide - when a new container is started during deployment, we will automatically attempt to get a response from the container on the specified endpoints. If we don't get the specified HTTP response code back within the "timeout" period we will assume the deploy has failed and roll back the container deployments.
 
-For services that don't expose an endpoint (ie. workers), it is possible to notify Cloud 66 that that container is healthy (from within the container). To this end, an ENV var "CONTAINER_NOTIFY_URL" is automatically created and injected into your container. When you app within the container starts you can POST to the url in that ENV var with the json payload <code>{"ready":true}</code>. In the case of your app detecting its own failures, you can instead POST to the url with the json payload <code>{"ready":false, "reason":"error message"}</code>. Notifying of a failure will immediately mark the deployment as failed and roll back the created container. If you specify type: "notify_only" we won't try and check health automatically, but will wait until "timeout" time for user notification to come in.
+<b>Outbound health checks</b> on the other hand allows your container to notify us of its health state, which is useful for services that don't expose an endpoint. The environment variable `CONTAINER_NOTIFY_URL` is automatically created and injected into your container, which accepts a POST request with two different JSON payloads depending on the health state.
 
-Note: You don't need to specify all the options for health. Any options you leave out will get their default values.
+A healthy container would be expected to POST `{"ready":true}` as its payload, while an unhealthy container can POST `{"ready":false, "reason":"error message"}`.
+
+The rules below are available to health checks - note that you aren't required to specify all options. Any options not used will use their default values.
+
+- **type**: Accepted values are `inbound` or `outbound`.
+- **endpoint**: The endpoint tested for status (_defaults to `/`_).
+- **protocol**: Accepted values are `HTTP` or `HTTPS` (_defaults to HTTP_).
+- **timeout**: Maximum time to wait for a container to start, in seconds (_defaults to 30s_).
+- **accept**: HTTP response codes to accept (_defaults to 200 and 300-399_).
 
 {% highlight yaml %}
-health:
-  type: normal                        # normal or notify_only. default: normal 
-  endpoint: "/imhealthy"              # endpoint to try and access. default: / 
-  protocol: "http"                    # http or https. default: http  
-  timeout: "45s"                      # maximum time to wait for container to start. default: 30s        
-  accept: ["200", "300-399"]          # HTTP response code to accept. default: 200, 300-399. 
-  
-OR
-health: default                       # use default health check values
+services:
+    &#60;service_name&#62;:
+        health:
+          type: inbound
+          endpoint: "/healthy"
+          protocol: "http"
+          timeout: "45s"
+          accept: ["200"]
+{% endhighlight %}  
 
-OR 
-health: none                          # explicit disable health checking (same as leaving 'health' out)
-{% endhighlight %}
+You can also use the default health rules with `health: default`, or explicitely disable health checking by leaving the `health` option out or specifying `health: none`.
 
+<hr>
 
 <h3 id="requires">Requires</h3>
 
@@ -230,29 +287,29 @@ In some cases, you may want to make sure that a service is only started if anoth
 
 {% highlight yaml %}
 services:
-  web:
-    image: cloud66/sample-rails
-    requires:
-      - "my_api"    
+    &#60;service_name&#62;:
+        image: cloud66/sample-rails
+        requires:
+          - "my_api"    
 {% endhighlight %}
+
+<hr>
 
 <h3 id="pre_start">Pre-start signal</h3>
 This is a signal that is sent to the existing containers of the service before the new containers are started during deployment. An example could be <code>USR1</code> - but it depends on what your container is running as to which signals make sense.
+
+<hr>
 
 <h3 id="pre_stop">Pre-stop sequence</h3>
 This is a stop sequence that is executed on your running containers before they are shut down. It is a sequence of wait times and signals to send to the process. If the sequence completes and the container is still running, a force kill will be sent. For example:
 
 {% highlight yaml %}
-pre_stop_signal: 1m:USR2:30s:USR1:50s
+services:
+    &#60;service_name&#62;:
+        pre_stop_sequence: 1m:USR2:30s:USR1:50s
 {% endhighlight %}
 
-These are some examples of duration values that `stop_grace` and `pre_stop_sequence` can use:
-
-{% highlight yaml %}
-1m  # 1 minute
-30s # 30 seconds
-1h  # 1 hour
-{% endhighlight %}
+These are some examples of duration values that `stop_grace` and `pre_stop_sequence` can use - `1m` (1 minute), `30s` (30 seconds) and `1h` (1 hour).
 
 Valid time values are `s` for seconds, `m` for minutes and `h` for hours. Valid signal values for a signal are (without the quotes):
 
@@ -263,26 +320,21 @@ Valid time values are `s` for seconds, `m` for minutes and `h` for hours. Valid 
 <h2 id="database-configs">Database configurations</h2>
 You can also specify any required databases in the service configuration. As databases are fairly static components that rarely change without a migration, they aren't run in containers. This avoids the complexity and overhead of running databases in a container, and allows Cloud 66 to perform replication and backups as normal. These databases will be deployed and configured automatically, and their addresses and access credentials will be made available to the containers across the stack with environment variables.
 
-The allowed database values are:
-
-- postgresql
-- mysql
-- redis
-- mongodb
-- elasticsearch
-- rabbitmq
-
-For example:
+The allowed database values are: `postgresql`, `mysql`, `redis`, `mongodb`, `elasticsearch` and `rabbitmq`. For example:
 
 {% highlight yaml %}
-databases:
-  - "mysql"
-  - "elasticsearch"
+services:
+    &#60;service_name&#62;:
+        databases:
+          - "mysql"
+          - "elasticsearch"
 {% endhighlight %}
 
 <h2 id="env_vars">Environment variables</h2>
 Any environment variable defined in your stack will be made available within your service container. You can reference environment variables in your service configuration using the following syntax:
 
 {% highlight yaml %}
-value: _env:MY_ENV_VAR
+services:
+    &#60;service_name&#62;:
+        value: _env:&#60;your environment variable&#62;
 {% endhighlight %}
