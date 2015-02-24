@@ -1223,7 +1223,7 @@ Get list of all containers of the stack
 + Parameters
 
     + id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
-    + server_uid (optional, string `1239b763474b0eafa5fafb64bff0ba80`) ... Server UID
+    + server_uid (optional, string `c6014897b8c8e9f2fc204a3a9efdae05`) ... Server UID
 
 + Model (application/json)
 
@@ -1235,32 +1235,43 @@ Get list of all containers of the stack
     + Body
 
         {
-          "response": [
-            {
-              "uid": "12344cd3c84eb64591598312c9f12e5c3ed64454545f987016916f64ff25e363",
-              "server_uid": "1239b763474b0eafa5fafb64bff0ba80",
-              "server_name": "Cormorant",
-              "service_name": "web",
-              "image": "quay.io/cloud66/sample-rails",
-              "port_list": "[\"5293:3000\"]",
-              "command": "rackup -p 3000",
-              "started_at": "2014-09-30T11:42:51Z",
-              "web_ports": "80:443",
-              "capture_output": true,
-              "created_at": "2014-09-30T11:42:51Z",
-              "updated_at": "2014-09-30T11:42:53Z"
-            }
-          ],
-          "count": 1,
-          "pagination": {
-            "previous": null,
-            "next": null,
-            "current": 1,
-            "per_page": 30,
-            "count": 1,
-            "pages": 1
-          }
-        }
+           "response":[
+              {
+                 "uid":"cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc",
+                 "server_uid":"c6014897b8c8e9f2fc204a3a9efdae05",
+                 "server_name":"Gazelle",
+                 "service_name":"web",
+                 "image":"quay.io/cloud66/sample-rails",
+                 "command":"bundle exec rackup -p 3000",
+                 "started_at":"2015-02-10T17:41:31Z",
+                 "ports":[
+                    {
+                       "container":3000,
+                       "http":80,
+                       "https":443
+                    }
+                 ],
+                 "private_ip":"25.0.0.2",
+                 "docker_ip":null,
+                 "health_state":1,
+                 "health_message":null,
+                 "health_source":"system",
+                 "capture_output":true,
+                 "restart_on_deploy":true,
+                 "created_at":"2015-02-10T17:41:37Z",
+                 "updated_at":"2015-02-17T14:40:17Z"
+              }
+           ],
+           "count":1,
+           "pagination":{
+              "previous":null,
+              "next":null,
+              "current":1,
+              "per_page":30,
+              "count":1,
+              "pages":1
+           }
+        }        
 
 ### Containers list [GET]
 Get list of all containers of the stack
@@ -1277,7 +1288,7 @@ Get container of the stack (includes container runtime information
 + Parameters
 
     + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
-    + id (required, string, `12344cd3c84eb64591598312c9f12e5c3ed64454545f987016916f64ff25e363`) ... The container UID
+    + id (required, string, `cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc`) ... The container UID
 
 + Model (application/json)
 
@@ -1289,136 +1300,188 @@ Get container of the stack (includes container runtime information
     + Body
 
         {
-          "response": {
-            "uid": "12344cd3c84eb64591598312c9f12e5c3ed64454545f987016916f64ff25e363",
-            "server_uid": "1239b763474b0eafa5fafb64bff0ba80",
-            "server_name": "Cormorant",
-            "service_name": "web",
-            "image": "quay.io/cloud66/sample-rails",
-            "port_list": "[\"5293:3000\"]",
-            "command": "rackup -p 3000",
-            "started_at": "2014-09-30T11:42:51Z",
-            "web_ports": "80:443",
-            "capture_output": true,
-            "created_at": "2014-09-30T11:42:51Z",
-            "updated_at": "2014-09-30T11:42:53Z",
-            "runtime": {
-              "Args": [
-                "-p",
-                "3000"
+           "response":{
+              "uid":"cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc",
+              "server_uid":"c6014897b8c8e9f2fc204a3a9efdae05",
+              "server_name":"Gazelle",
+              "service_name":"web",
+              "image":"quay.io/cloud66/sample-rails",
+              "command":"bundle exec rackup -p 3000",
+              "started_at":"2015-02-10T17:41:31Z",
+              "ports":[
+                 {
+                    "container":3000,
+                    "http":80,
+                    "https":443
+                 }
               ],
-              "Config": {
-                "AttachStderr": false,
-                "AttachStdin": false,
-                "AttachStdout": false,
-                "Cmd": [
-                  "rackup",
-                  "-p",
-                  "3000"
-                ],
-                "CpuShares": 0,
-                "Cpuset": "",
-                "Domainname": "",
-                "Entrypoint": null,
-                "Env": [
-                  ...
-                ],
-                "ExposedPorts": {
-                  "3000/tcp": {
-                  }
-                },
-                "Hostname": "...",
-                "Image": "quay.io/cloud66/sample-rails",
-                "Memory": 0,
-                "MemorySwap": 0,
-                "NetworkDisabled": false,
-                "OnBuild": null,
-                "OpenStdin": false,
-                "PortSpecs": null,
-                "StdinOnce": false,
-                "Tty": false,
-                "User": "",
-                "Volumes": null,
-                "WorkingDir": "/usr/src/app"
-              },
-              "Created": "2014-09-30T11:42:51.267660159Z",
-              "Driver": "aufs",
-              "ExecDriver": "native-0.2",
-              "HostConfig": {
-                "Binds": [
-                  "/var/log/containers:/usr/src/app/log"
-                ],
-                "CapAdd": null,
-                "CapDrop": null,
-                "ContainerIDFile": "",
-                "Devices": [
-        
-                ],
-                "Dns": null,
-                "DnsSearch": null,
-                "Links": null,
-                "LxcConf": [
-        
-                ],
-                "NetworkMode": "bridge",
-                "PortBindings": {
-                  "3000/tcp": [
-                    {
-                      "HostIp": "",
-                      "HostPort": "5293"
+              "private_ip":"25.0.0.2",
+              "docker_ip":"172.0.2.12",
+              "health_state":1,
+              "health_message":null,
+              "health_source":"system",
+              "capture_output":true,
+              "restart_on_deploy":true,
+              "created_at":"2015-02-10T17:41:37Z",
+              "updated_at":"2015-02-17T14:40:17Z",
+              "runtime":{
+                 "AppArmorProfile":"",
+                 "Args":[
+                    "bundle",
+                    "exec",
+                    "rackup",
+                    "-p",
+                    "3000"
+                 ],
+                 "Config":{
+                    "AttachStderr":true,
+                    "AttachStdin":false,
+                    "AttachStdout":true,
+                    "Cmd":[
+                       "bundle",
+                       "exec",
+                       "rackup",
+                       "-p",
+                       "3000"
+                    ],
+                    "CpuShares":0,
+                    "Cpuset":"",
+                    "Domainname":"",
+                    "Entrypoint":[
+                       "/etc/cloud66/tools/docker_network.sh"
+                    ],
+                    "Env":[
+                       "STACK_GIT_BRANCH=",
+                       "STACK_PATH=/var/deploy/lv_dev_service_download/web_head/current",
+                       "STACK_BASE=/var/deploy/lv_dev_service_download/web_head",
+                       "SECRET_KEY_BASE=f30c0e5da0cb4467e4cae0f315a664d023b1782f791e682dbe2dc100d3b010cd6b3d899c01138470c10892cf31732b7bb83a31b4907296ad985e8f55663629c1",
+                       "WEB_ADDRESS_INT=10.132.130.135",
+                       "WEB_ADDRESS_EXT=104.236.242.128",
+                       "WEB_ADDRESSES_INT=10.132.130.135",
+                       "WEB_ADDRESSES_EXT=104.236.242.128",
+                       "MYSQL_USERNAME=uacru9",
+                       "MYSQL_PASSWORD=FBfgULSTlfjruP3",
+                       "MYSQL_DATABASE=lv_dev_service_download_production",
+                       "MYSQL_ADDRESS_INT=10.132.130.135",
+                       "MYSQL_ADDRESS_EXT=104.236.242.128",
+                       "MYSQL_URL_INT=mysql://uacru9:FBfgULSTlfjruP3@10.132.130.135:3306/lv_dev_service_download_production",
+                       "MYSQL_URL_EXT=mysql://uacru9:FBfgULSTlfjruP3@104.236.242.128:3306/lv_dev_service_download_production",
+                       "MYSQL_SLAVE_ADDRESSES_INT=",
+                       "MYSQL_SLAVE_ADDRESSES_EXT=",
+                       "WEB_ADDRESS=10.132.130.135",
+                       "WEB_ADDRESSES=10.132.130.135",
+                       "MYSQL_ADDRESS=10.132.130.135",
+                       "MYSQL_URL=mysql://uacru9:FBfgULSTlfjruP3@10.132.130.135:3306/lv_dev_service_download_production",
+                       "MYSQL_SLAVE_ADDRESSES=",
+                       "SERVER_NAME=Gazelle",
+                       "PRIMARY=true",
+                       "CONTAINER_NOTIFY_URL=http://vic.local.cldblx.com/stacks/87bc318604208618a01817bf4442befb/servers/c6014897b8c8e9f2fc204a3a9efdae05/services/web/notification/4911055bcf0b5d7a31ebfbdff4043c31",
+                       "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                       "RUBY_MAJOR=2.1",
+                       "RUBY_VERSION=2.1.3"
+                    ],
+                    "ExposedPorts":{
+                       "3000/tcp":{
+
+                       }
+                    },
+                    "Hostname":"cba44fa6b6ac",
+                    "Image":"quay.io/cloud66/sample-rails",
+                    "MacAddress":"",
+                    "Memory":0,
+                    "MemorySwap":0,
+                    "NetworkDisabled":false,
+                    "OnBuild":null,
+                    "OpenStdin":false,
+                    "PortSpecs":null,
+                    "StdinOnce":false,
+                    "Tty":false,
+                    "User":"",
+                    "Volumes":null,
+                    "WorkingDir":"/usr/src/app"
+                 },
+                 "Created":"2015-02-10T17:41:36.988310784Z",
+                 "Driver":"aufs",
+                 "ExecDriver":"native-0.2",
+                 "HostConfig":{
+                    "Binds":[
+                       "/etc/cloud66/tools:/etc/cloud66/tools",
+                       "/var/log/containers:/usr/src/app/log",
+                       "/tmp:/tmp_host:rw"
+                    ],
+                    "CapAdd":null,
+                    "CapDrop":null,
+                    "ContainerIDFile":"",
+                    "Devices":[
+
+                    ],
+                    "Dns":[
+                       "172.17.42.1"
+                    ],
+                    "DnsSearch":null,
+                    "ExtraHosts":null,
+                    "IpcMode":"",
+                    "Links":null,
+                    "LxcConf":[
+
+                    ],
+                    "NetworkMode":"bridge",
+                    "PortBindings":{
+
+                    },
+                    "Privileged":false,
+                    "PublishAllPorts":false,
+                    "RestartPolicy":{
+                       "MaximumRetryCount":0,
+                       "Name":""
+                    },
+                    "SecurityOpt":null,
+                    "VolumesFrom":null
+                 },
+                 "HostnamePath":"/var/lib/docker/containers/cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc/hostname",
+                 "HostsPath":"/var/lib/docker/containers/cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc/hosts",
+                 "Id":"cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc",
+                 "Image":"f3443abc9c9e1595d1e039bf0c060f259d318e57910a80efee2e34895b10e749",
+                 "MountLabel":"",
+                 "Name":"/stoic_nobel",
+                 "NetworkSettings":{
+                    "Bridge":"docker0",
+                    "Gateway":"172.17.42.1",
+                    "IPAddress":"172.17.0.4",
+                    "IPPrefixLen":16,
+                    "MacAddress":"02:42:ac:11:00:04",
+                    "PortMapping":null,
+                    "Ports":{
+                       "3000/tcp":null
                     }
-                  ]
-                },
-                "Privileged": false,
-                "PublishAllPorts": false,
-                "RestartPolicy": {
-                  "MaximumRetryCount": 0,
-                  "Name": "always"
-                },
-                "VolumesFrom": null
-              },
-              "HostnamePath": "...",
-              "HostsPath": "...",
-              "Id": "...",
-              "Image": "...",
-              "MountLabel": "",
-              "Name": "/lonely_yonath",
-              "NetworkSettings": {
-                "Bridge": "docker0",
-                "Gateway": "172.17.42.1",
-                "IPAddress": "172.17.0.7",
-                "IPPrefixLen": 16,
-                "PortMapping": null,
-                "Ports": {
-                  "3000/tcp": [
-                    {
-                      "HostIp": "0.0.0.0",
-                      "HostPort": "5293"
-                    }
-                  ]
-                }
-              },
-              "Path": "rackup",
-              "ProcessLabel": "",
-              "ResolvConfPath": "...",
-              "State": {
-                "ExitCode": 0,
-                "FinishedAt": "0001-01-01T00:00:00Z",
-                "Paused": false,
-                "Pid": 30152,
-                "Restarting": false,
-                "Running": true,
-                "StartedAt": "2014-09-30T11:42:51.396771169Z"
-              },
-              "Volumes": {
-                "/usr/src/app/log": "/var/log/containers"
-              },
-              "VolumesRW": {
-                "/usr/src/app/log": true
+                 },
+                 "Path":"/etc/cloud66/tools/docker_network.sh",
+                 "ProcessLabel":"",
+                 "ResolvConfPath":"/var/lib/docker/containers/cba44fa6b6acf57fb0ef6c2ce385f6a129867df544dae7181d2410e9f9cc32bc/resolv.conf",
+                 "State":{
+                    "Error":"",
+                    "ExitCode":0,
+                    "FinishedAt":"0001-01-01T00:00:00Z",
+                    "OOMKilled":false,
+                    "Paused":false,
+                    "Pid":25739,
+                    "Restarting":false,
+                    "Running":true,
+                    "StartedAt":"2015-02-10T17:41:37.915288589Z"
+                 },
+                 "Volumes":{
+                    "/etc/cloud66/tools":"/etc/cloud66/tools",
+                    "/tmp_host":"/tmp",
+                    "/usr/src/app/log":"/var/log/containers"
+                 },
+                 "VolumesRW":{
+                    "/etc/cloud66/tools":true,
+                    "/tmp_host":true,
+                    "/usr/src/app/log":true
+                 }
               }
-            }
-          }
-        }
+           }
+        }        
 
 ### Container show [GET]
 Get container of the stack (includes container runtime information
