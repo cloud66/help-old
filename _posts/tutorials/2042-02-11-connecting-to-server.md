@@ -18,7 +18,7 @@ difficulty: 0
 
 There are many reasons that could cause a down time of your server or application.
 
-Check the following things which can help you identify the issue is with the server or the application.
+Check the following things which can help you identify weather the issue is with the server or the application.
 <ol>
 
 <li> The initial step would be to see if the web server is responding to the http request :</li>
