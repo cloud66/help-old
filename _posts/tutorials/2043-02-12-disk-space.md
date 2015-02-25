@@ -14,7 +14,6 @@ difficulty: 0
 
 **Inorder to be aware and maintain the disk space of your server you can do the following precaution.**
 <ol>
-
 <li>Check for current space used by the server :</li>
 <p>You can perform the following command on to your server to check the avaiable disk.</p>
 <pre class= "prettyprint">
