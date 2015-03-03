@@ -21,7 +21,7 @@ If you receive a notification about this, please see the following steps:
 
 <ol class="list">
 <li>Is your web endpoint functioning? This could be a matter of visiting your server IP address through your browser.</li>
-<li>Can you <a href="http://help.cloud66.com/building-your-stack/ssh-to-your-server">connect to the server yourself via SSH</a>?</li>
+<li>Can you <a href="http://help.cloud66.com/managing-your-stack/ssh-to-your-server">connect to the server yourself via SSH</a>?</li>
 <li>Is your cloud vendor experiencing any issues?</li>
 <ul class="list">
 	

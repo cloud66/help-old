@@ -26,7 +26,7 @@ difficulty: 1
 
 If you only want to serve HTTPS traffic through your application, you may also want to redirect HTTP users to HTTPS.
 
-Simply add this code to the _server_ section of your Nginx configuration using [CustomConfig](/building-your-stack/customconfig), for example on line 81. This will work even if you're not using Cloud 66.
+Simply add this code to the _server_ section of your Nginx configuration using [CustomConfig](http://help.cloud66.com/managing-your-stack/customconfig), for example on line 81. This will work even if you're not using Cloud 66.
 
 <pre class="prettyprint">
 return 301 https://$host$request_uri;

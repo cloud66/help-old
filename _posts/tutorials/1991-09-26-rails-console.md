@@ -13,7 +13,7 @@ tags: ['Customization']
 tutorial: true
 difficulty: 0
 ---
-Start by [SSHing to your server](http://help.cloud66.com/building-your-stack/ssh-to-your-server). Then go to your `STACK_PATH` (eg. `cd $STACK_PATH`) and run the following command:
+Start by [SSHing to your server](http://help.cloud66.com/managing-your-stack/ssh-to-your-server). Then go to your `STACK_PATH` (eg. `cd $STACK_PATH`) and run the following command:
 
 <pre class="prettyprint">
 $ bundle exec rails c &lt;environment&gt;
