@@ -97,7 +97,7 @@ Now provide a stack name, and the environment you would like to deploy in. Next 
 <li>Which database(s) do you need?</li>  
 </ol>
 
-This page has _basic_ and _advanced_ configurations, designated by the tabs at the top of the form. Switching between the tabs will retain any previous information provided. The advanced tab allows you to input more detailed settings, which you can learn about in [Advanced Docker deployments](/beta/advanced-docker-deployments).
+This page has _basic_ and _advanced_ configurations, designated by the tabs at the top of the form. Switching between the tabs will retain any previous information provided. The advanced tab allows you to input more detailed settings, which you can learn about in [Advanced Docker deployments](/building-your-stack/advanced-docker-deployments).
 
 <h3 id="3">Step 3: Define deployment properties</h3>
 Complete the following steps to define the properties that determine how to deploy your application.
@@ -136,6 +136,6 @@ You can now start customizing by:
 <ul class="list">
 <li><a href="/stack-add-ins/database-backups">Defining a backup</a></li>
 <li><a href="/deployment/scaling">Scaling your servers</a></li>
-<li><a href="/building-your-stack/stack-network-settings">Configuring security</a></li>
+<li><a href="/managing-your-stack/stack-network-settings">Configuring security</a></li>
 <li><a href="/stack-add-ins/add-in-implementation">Configuring an add-in</a></li>
 </ul>

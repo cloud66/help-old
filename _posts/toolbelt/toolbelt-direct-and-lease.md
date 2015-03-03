@@ -138,4 +138,4 @@ $ cx lease [-s &lt;stack&gt;] [-f &lt;from IP&gt;] [-t &lt;time to open&gt;] [-p
 $ cx lease -s "My Awesome App" -f 123.123.123.123 -t 30 -e production
 </pre>
 
-For more fine grained access control, use the [Stack network settings](/building-your-stack/stack-network-settings) page.
+For more fine grained access control, use the [Stack network settings](/managing-your-stack/stack-network-settings) page.
