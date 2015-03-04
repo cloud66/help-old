@@ -1458,7 +1458,7 @@ The following table specifies the number of workers configured for your Nginx ba
 To create a custom Nginx 50X error page, create a file called _50X.html_ in <code>$STACK&#95;PATH/public/</code>.
 
 <h2 id="customize">Customize your Nginx configuration</h2>
-Cloud 66 makes it easy for you to customize your Nginx configuration. From your stack detail page, access your web server group page (eg. _Rails server_) and click _Customize Nginx_ in the right sidebar. Follow the [CustomConfig instructions](/building-your-stack/customconfig) to customize the configuration.
+Cloud 66 makes it easy for you to customize your Nginx configuration. From your stack detail page, access your web server group page (eg. _Rails server_) and click _Customize Nginx_ in the right sidebar. Follow the [CustomConfig instructions](/managing-your-stack/customconfig) to customize the configuration.
 
 Editing and committing your Nginx CustomConfig will perform the following steps on **every web server in your stack**, one by one, sequentially:
 

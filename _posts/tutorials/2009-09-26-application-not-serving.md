@@ -13,7 +13,7 @@ difficulty: 1
 
 There are a number of factors that can lead your application to stop serving content. Follow this guide to eliminate the most common issues.
 
-Start by checking if you can [SSH to your server](http://help.cloud66.com/building-your-stack/ssh-to-your-server), remembering to open the firewall beforehand as described.
+Start by checking if you can [SSH to your server](http://help.cloud66.com/managing-your-stack/ssh-to-your-server), remembering to open the firewall beforehand as described.
 
 If you're able to SSH to the server, follow the steps below. If not, we recommend that you use your cloud vendor dashboard to try to connect to the server.
 

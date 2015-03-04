@@ -20,7 +20,7 @@ The first server in the group will be the master server, and the others will be 
 If the master server fails, you should begin failover procedures on your standby server:
 
 <ol class="article-list">
-<li>Connect to one of your standby servers via <a href="http://help.cloud66.com/building-your-stack/ssh-to-your-server">SSH</a>.</li>
+<li>Connect to one of your standby servers via <a href="http://help.cloud66.com/managing-your-stack/ssh-to-your-server">SSH</a>.</li>
 <li>Run <code>touch /tmp/postgresql.trigger</code> to turn the slave into a master.</li>
 <li>You now need to point your application to use this new master. Edit your <i>POSTGRESQL_ADDRESS</i> <a href="http://help.cloud66.com/deployment/environment-variables">environment variable</a> to {{POSTGRESQL_SLAVE_ADDRESSES_INT}} - this format references the value of that variable.</li>
 </ol>

@@ -68,7 +68,7 @@ config.assets.enabled = false
 
 <h3 id="manifest">Manifest.yml</h3>
 
-Use our [Cloud 66 manifest file](/building-your-stack/manifest-files) to enable/disable asset pipeline pre-compilation using the following parameter with a true or false, find <td>an example</td> below:
+Use our [Cloud 66 manifest file](/building-your-stack/getting-started-with-manifest-files) to enable/disable asset pipeline pre-compilation using the following parameter with a true or false, find <td>an example</td> below:
 
 <pre class="terminal">
 development:

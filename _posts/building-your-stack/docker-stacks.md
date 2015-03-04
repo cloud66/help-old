@@ -79,7 +79,7 @@ Docker-based stacks enjoy the same benefits as other Cloud 66 stacks, including:
 - Nginx and load balancing
 - Firewall management and brute force protection for web and SSH
 - Team and organisations (ACL)
-- Fast response 100% SLA DNS layer (ElasticAddress) for quick traffic switch overs
+- Fast response 100% SLA DNS layer (Failover groups) for quick traffic switch overs
 - Server vital sign metrics
 - Intuitive UI
 - API and command line
