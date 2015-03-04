@@ -32,10 +32,9 @@ ncdu /
 <p>Changing the logrotation frequency is not recommended as its default is prefered for the best result.</p>
 <p>The best option for this would be to scale the server to a bigger size of disk space. Some cloud proider allows their customer to chages the size of the server from cloud dashboard this can help users to scale to ba bigger disk space. This is currently supported by (Amazon and Google cloud).</p>
 
-<li>Are you running an older server? Newer servers we create have bigger disks?</li>
-<p>Its better to know whether you are deploying the stack on a loarger disk space. As this will reduce the chance of getting out of space in the near future. 
+<li>Are you running an older server ? Newer servers we create have bigger disks ?</li>
+<p>Its better to know whether you are deploying the stack on a larger disk space. As this will reduce the chance of getting out of space in the near future. 
 </p>
-<p> To verify that size of the disk you can run the following command <code>df -H</code> on your server. This will give the details of your disk resources. If your stack is old the deafult disk size will depend on the cloud provider. But if you are a new user we set the size to 20GB as default for any new stack deployment.</p>
-<p> In order to take advantage of the space you can <a href="http://help.cloud66.com/building-your-stack/stack-definition#stackscore#clone">clone </a>your stack.</p>
+<p> To verify that size of the disk you can run the following command <code>df -H</code> on your server. This will give the details of your disk resources. If your stack is old the deafult disk size will depend on the cloud provider. But if you are a new user we automatically set the size to 20GB as default for any new stack deployments.</p>
 <ol>
 

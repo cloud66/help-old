@@ -20,7 +20,7 @@ This sometimes cause issue while loading thier environment varaibles. To be able
 sudo su 
 source /var/.cloud66_env 
 </pre>
-<p>First you will need to elivate the user to the root user by this command "sudo su". And after that you need to load the variable execute the following command <br>"source /var/.cloud66_env" </p>
+<p>First you will need to elivate the user to the root user by this command <code>"sudo su"</code>. And after that you need to load the variable by executing the following command <br><code>"source /var/.cloud66_env" </code></p>
 
 <li>To run the assets as the nginx user : </li>
 

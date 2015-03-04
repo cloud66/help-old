@@ -19,12 +19,13 @@ Inorder to solve this issue follow the below steps.
 <ol><li> Use the following command on tmp directory :</li> 
 <p>This will probably give the information about the size of the directories on your server.</p>
 <pre class="prettyprint"> df -h</pre>
-<p>Your application will be deployted on the following directory : <code>dev/xvda1 </code></p>
+
 <li> Unmount the tmp directory : </li>
 <pre class="prettyprint">
 umount -l /tmp
 </pre>	
-<li> If you want to permanently disable this shadow feature, run below command on your server : </li>
+<p> This will detaches the file system mentioned from the file hierarchy and cleanup all references to the filesystem as soon as it is not busy anymore.</p>
+<li> If you want to permanently disable this shadow feature on your server, run below command on your server : </li>
 <pre class="prettyprint">
 echo 'MINTMPKB=0' > /etc/default/mountoverflowtmp
 </pre>

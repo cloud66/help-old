@@ -39,7 +39,7 @@ Checking the following things which could help you identify whether the issue is
 <li>You can also verify with the cloud dashboard : </li>
 <p>You also need to look for servers on the cloud dashbord in order to be sure that the instances are running on your cloud provider. Cloud66 always creates your server instances with the following format c66-stack name on your cloud provider dashboard so it can be easy to distinguish with other instances</p>
 
-<p>If the concerned instance is not present in the cloud dashbord that means the server has been deleted/removed from your cloud account so it won't be aaccessible anymore.</p>
+<p>If the concerned instance is not present in the cloud dashbord that means the server has been deleted/removed from your cloud account so it won't be accessible anymore.</p>
 <li>Have you tried doing SSH to the server :</li>
 <p>Using the cx command will simplfy your access to the server created with the help of Cloud66. You need to have <a href="http://help.cloud66.com/managing-your-stack/ssh-to-your-server">shell to server</a> rights over the stack to use this command. You can follow the below example to gain access to the server.
 </p>
@@ -47,6 +47,10 @@ Checking the following things which could help you identify whether the issue is
 $ cx ssh [-s &lt;stack&gt;] &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt;
 </pre>
 
+**Example**
+<pre class="prettyprint">
+$cx ssh -s "My Awesome App" web
+</pre>
 <li>Have you tried accessing your server manually from the cloud dashboard (Linode/Digital Ocean) :</li>
 <p>Variety of cloud provider allows user to interact with the server instaces through thier UI. This can help verify if the server instance are alive or not.</p>
 <p> * In Digital Ocean you can VNC to the server and check whether all the componets are running not. You can check the graphs of the server for monitoring the activity on the server.
