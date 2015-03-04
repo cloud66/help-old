@@ -18,7 +18,8 @@ difficulty: 0
 Inorder to solve this issue follow the below steps.
 <ol><li> Use the following command on tmp directory :</li> 
 <p>This will probably give the information about the size of the directories on your server.</p>
-<pre class="prettyprint">/tmp df -h</pre>
+<pre class="prettyprint"> df -h</pre>
+<p>Your application will be deployted on the following directory : <code>dev/xvda1 </code></p>
 <li> Unmount the tmp directory : </li>
 <pre class="prettyprint">
 umount -l /tmp
@@ -27,4 +28,5 @@ umount -l /tmp
 <pre class="prettyprint">
 echo 'MINTMPKB=0' > /etc/default/mountoverflowtmp
 </pre>
+
 </ol>

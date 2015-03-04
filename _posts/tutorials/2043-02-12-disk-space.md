@@ -25,9 +25,13 @@ ncdu /
 </pre>
 <p>This will return the detailed usage of folders on to your server. Being aware of this information can avoid the situation of your server getting out of disk space.</p>
 <li>You can change your logging level/log rotation frequency :</li>
- <p>You can configure logrotate to manage log rotation on the servers. You can find the config file under this location and change the frequecy of the logs that are generated. By doing this it would reduce the size consumed by the logs.</p>
+ <p>You can configure logrotate to manage log rotation on the servers. You can find the config file under this location and change the frequency of the logs that are generated. By doing this it would reduce the size consumed by the logs.</p>
 <pre class= "prettyprint">
 /etc/cloud66/logrotate/default.conf
 </pre>
+<p>Changing the logrotation frequency is not recommended as its default is prefered for the best result.</p>
+<p>The best option for this would be to scale the server to a bigger size of disk space. Some cloud proider allows their customer to chages the size of the server from cloud dashboard this can help users to scale to ba bigger disk space. This is currently supported by (Amazon and Google cloud).</p>
+
+
 <ol>
 
