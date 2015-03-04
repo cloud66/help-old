@@ -139,6 +139,10 @@ Below is a table of the available configurations for a given service with a brie
     <td>One of the values: 'default', 'none' or a hash containing at least one of 'type:', endpoint:', 'protocol:', 'accept:' or 'timeout:'</td>
 </tr>
 <tr>
+    <td>privileged <i>(default: false)</i></td>
+    <td>Boolean value to indicate whether the container should be <a href="https://docs.docker.com/reference/run/#runtime-privilege-linux-capabilities-and-lxc-configuration">run with extended privileges</a></td>
+</tr>
+<tr>
     <td><a href="#requires">requires</a></td>
     <td>Array of other defined service names that should be started before this service during build and deployment.</td>
 </tr>

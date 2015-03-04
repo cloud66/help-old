@@ -20,7 +20,7 @@ Depending on the scale of your application, installing and maintaining a reliabl
 
 Postfix is a free and open-source mail transfer agent that routes and delivers electronic mail, and we'll use it to set up your SMTP server.
 
-Start by [SSHing to your server](http://help.cloud66.com/building-your-stack/ssh-to-your-server) and installing it:
+Start by [SSHing to your server](http://help.cloud66.com/managing-your-stack/ssh-to-your-server) and installing it:
 
 <pre class="prettyprint">
 $ sudo apt-get install postfix

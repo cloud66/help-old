@@ -14,7 +14,7 @@ tutorial: true
 difficulty: 1
 ---
 
-In addition to protecting your application (or parts of it) using [HTTP basic authentication](/articles/nginx-basic-authorization), you can use Cloud 66 [CustomConfig](/building-your-stack/customconfig) to block (or allow) access to your application based on IP addresses.
+In addition to protecting your application (or parts of it) using [HTTP basic authentication](/articles/nginx-basic-authorization), you can use Cloud 66 [CustomConfig](http://help.cloud66.com/managing-your-stack/customconfig) to block (or allow) access to your application based on IP addresses.
 Follow the instructions below to accomplish this.
 
 <ol class="article-list">

@@ -35,7 +35,7 @@ It's important to note that _you do not need SSL termination to enable SSL on yo
 
 <h2 id="aws">Amazon Elastic Load Balancer</h2>
 
-To register an SSL certificate with Amazon Elastic Load Balancer, please refer to our [blog post](http://blog.cloud66.com/post/30990317011/registering-ssl-certificate-with-amazon-elastic-load).
+To register an SSL certificate with Amazon Elastic Load Balancer, please refer to our [blog post](http://blog.cloud66.com/registering-ssl-certificate-with-amazon-elastic-load/).
 
 Thanks to the AWS dashboard or the command line interface, you can easily upload your SSL certificates to relevant load balancers.
 
@@ -107,7 +107,7 @@ $ sudo apt-get install stunnel
 
 <ul class="article-list">
 <li>
-You can then use the Cloud 66 <a href="http://help.cloud66.com/building-your-stack/customconfig">CustomConfig</a> to configure the HAProxy configuration file as shown below. If you're not using Cloud 66, you have to make these changes manually in your <i>/etc/haproxy/haproxy.cfg</i> file.
+You can then use the Cloud 66 <a href="http://help.cloud66.com/managing-your-stack/customconfig">CustomConfig</a> to configure the HAProxy configuration file as shown below. If you're not using Cloud 66, you have to make these changes manually in your <i>/etc/haproxy/haproxy.cfg</i> file.
 </li>
 </ul>
 

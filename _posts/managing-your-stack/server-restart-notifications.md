@@ -46,9 +46,9 @@ Unfortunately there is no generic way to answer that question. The answer is tha
 For this reason, Cloud 66 will promote restart notifications for any server with ports exposed to "anywhere" externally, although all restart notifications are visible on the server detail page. If the restart has not taken place for a long time then eventually it will be promoted up in your stack details page too. However, the urgency is very much application dependant.
 
 <h2 id="how-to">How do I actually restart my servers?</h2>
-In order to minimise down-time, you can restart one server at a time (assuming you have a [load balancer](/web-server/load-balancing) in place). Selecting an out-of-hours time is recommended to minimise disruption. You can also use the [maintenance page](/building-your-stack/stack-network-settings#maintenance) to temporarily notify your users that you are performing maintenance.
+In order to minimise down-time, you can restart one server at a time (assuming you have a [load balancer](/web-server/load-balancing) in place). Selecting an out-of-hours time is recommended to minimise disruption. You can also use the [maintenance page](/managing-your-stack/stack-network-settings#maintenance) to temporarily notify your users that you are performing maintenance.
 
-To restart your server, it is recommended that you <a href="/building-your-stack/ssh-to-your-server">SSH to your server</a> and run either of the following terminal commands:
+To restart your server, it is recommended that you <a href="/managing-your-stack/ssh-to-your-server">SSH to your server</a> and run either of the following terminal commands:
 
 <pre class="terminal">
 sudo reboot 
