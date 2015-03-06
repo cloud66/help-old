@@ -48,7 +48,7 @@ You can use the following command to determine which files and folders are using
 sudo ncdu /
 </pre>
 
-This will scan through your disk and return a detailed breakdown of disk usage by folders and files on your server. You can use the arrow keys to move between folders to determine exactly where the most disk space is being used, and if this is actually necessary. This will help guide you as to where to remove unecessary files.<br/><br/>
+This will scan through your disk and return a detailed breakdown of disk usage by folders and files on your server. You can use the arrow keys to move between folders to determine exactly where the most disk space is being used, and if this is actually necessary. This will help guide you as to where to remove unnecessary files.<br/><br/>
 
 <b><li>Are your log files using the most disk space?</li></b>
 

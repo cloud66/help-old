@@ -25,6 +25,9 @@ tags: ['Toolbelt']
 		<a href="#quick">View toolbelt information</a>
 	</li>
 	<li>
+		<a href="#update">Toolbelt Update</a>
+	</li>
+	<li>
 		<a href="#shortcuts">Toolbelt shortcuts</a>
 	</li>
 	<li>
@@ -89,3 +92,37 @@ Follow our [instructions](https://github.com/cloud66/cx/wiki/Setting-up-Auto-com
 
 <h2 id="contrib">Contributing</h2>
 Fork our [repository](https://github.com/cloud66/cx), create a feature branch (and commit/push your changes) and then create a pull request.
+
+<h2 id="update">Toolbelt Update</h2>
+<ul>
+<p>We rollout update for our Toolbelt periodically to allow users to have more features accessible through the command line.</p>
+<p>We always try to keep our customers updated to the latest version of the toolbelt. Whenever a user executes <code>cx</code> command it will verify with the latest version, and if you are using the older version it will automatically do a silent update to the latest version.</p>
+<li>You can check the toolbelt version with the following command :</li>
+<pre class="prettyprint">
+$ cx -v
+</pre>
+For example:
+<pre class="prettyprint">
+$ cx -v
+0.1.20
+</pre>
+
+<li>How to update the latest version of Toolbelt?</li>
+<p>Having the latest version will allow you to manage your servers with the features released with the latest Toolbelt version. You can update the latest version with the following command.</p>
+<pre class="prettyprint">
+$ cx update 
+</pre>
+<li>Do a user needs sudo command to update the Toolbelt?</li>
+<p>Basically you don't need to use the sudo commnad to update the Toolbelt. There are many case, where the toolbelt is installed in the shared folder and so the toolbelt will not get automatically updated to the latest version. To be able to update the toolbelt you can elevate your permissions to SuperUser and execute the <code>cx update </code>command.</p>
+<p><code>sudo su</code> - will put you into a root environment but it will ask you for your user password and than you can update the Toolbelt.
+<p>You can have alook at the example below :</p>
+<pre class="prettyprint">
+$ sudo su
+Password:
+# cx update
+# cx -v
+0.1.20
+# exit
+$ cx info
+</pre>
+<p>Once you have updated the Toolbelt in root environment. You can check the detail of toolbelt with the following command <code>cx info</code></p></ul>
