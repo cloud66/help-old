@@ -61,9 +61,9 @@ If the previous two steps have been unfruitful, there may be a more systemic iss
 
 <b><li>Can you SSH to the server yourself?</li></b>
 
-You can try to SSH to the server yourself by using either the <a href="http://help.cloud66.com/managing-your-stack/ssh-to-your-server">Cloud 66 toolbelt or manually</a>. If you cannot SSH to the server yourself, move onto the next step.<br/>
+You can try to SSH to the server yourself by using either the <a href="http://help.cloud66.com/managing-your-stack/ssh-to-your-server">Cloud 66 toolbelt or manually</a>. If you are unable to SSH to the server in question, follow the <a href="/managing-your-stack/ssh-to-your-server">troubleshooting steps</a> before moving onto the next step.<br/>
 
-If you can SSH to the server, then the likely issue is with your web server. Run <code>sudo service nginx restart</code> to restart the web server, and see if it returns an error message.<br/><br/>
+If you can SSH to the server, then the likely issue is with your web server. Run <code>sudo service nginx restart</code> on the server to restart the web server, and see if it returns an error message.<br/><br/>
 
 <b><li>Can you reboot the server through your cloud provider dashboard?</li></b>
 

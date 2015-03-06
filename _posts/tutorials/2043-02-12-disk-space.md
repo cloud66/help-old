@@ -38,7 +38,9 @@ none            100M     0  100M   0% /run/user
 /dev/xvdb        30G   45M   28G   1% /mnt
 </pre>
 
-The first filesystem is the main one - it is mounted at <code>/</code>. As you can see, this filesystem is currently at 45% usage. You may want to address this issue if this percentage is higher.<br/><br/>
+The first filesystem is the main one - it is mounted at <code>/</code>. As you can see, this filesystem is currently at 45% usage. You may want to address this issue if this percentage is higher.
+
+If your server is on AWS and has a 7.8 GB primary filesystem, you are likely running on an old server (created with the default AWS settings). Any new AWS servers are created with a minimum of a 20 GB disk. To upgrade, see the <i>Do you need more disk space?</i> point below.<br/><br/>
 
 <b><li>Which files are taking most disk space?</li></b>
 
