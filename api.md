@@ -2756,6 +2756,47 @@ Get information about a single backup.
 
     [Backup][]
 
+## New Backup [/stacks/{stack_id}/backups]
+Create a new backup task.
+
+- Scope: _admin_
+
++ Parameters
+
+    + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... Stack UID
+    + db_type (optional, string, `mysql,redis`) ... Comma separated list of Database types which need backup tasks (valid options: all,mysql, postgresql, redis, mongodb)
+    + frequency (optional, string, `0 */1 * * *`) ... Frequency of backup task in cron schedule format.
+    + keep_count (optional, integer, `10`) ... Number of previous backups to keep.
+    + gzip (optional, boolean, `false`) ... Compress your backups with gzip.
+    + excluded_tables (optional, string, `my_log_table`) ... Tables that must be excluded from the backup.
+    + run_on_replica_server (optional, boolean, `false`) ... Run backup task on replica server if available.
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+    	{
+    		"response":
+    			{
+    				"ok":true,
+    				"message":"queued for creation"
+    			}
+    	}
+
+### New Backup [POST]
+Create a new backup task.
+
++ Response 200
+
+    [New Backup][]
+
+
+
 
 ## Import Backup [/stacks/{stack_id}/backups]
 Import an external backup.

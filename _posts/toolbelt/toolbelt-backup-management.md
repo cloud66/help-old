@@ -50,6 +50,25 @@ tags: ['Toolbelt']
                 <li><a href="#download_example">Example</a></li>
                 </ul>
             </li>
+	<li>
+		<a href="#new">Create backup</a>
+	</li>
+	        <li>
+                <ul>
+                <li><a href="#new_usage">Usage</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#new_params">Parameters</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#new_example">Example</a></li>
+                </ul>
+            </li>
+            
 </ul>
 
 
@@ -142,3 +161,72 @@ $ cx backups download [-s &lt;stack&gt;] [-d &lt;download directory&gt;] &lt;bac
 <pre class="prettyprint">
 $ cx backups download -s "My Awesome App" 15
 </pre>
+
+<h2 id="new">Create backup</h2>
+
+Allows you to create a new backup task through the command line.
+
+<h3 id="new_usage">Usage</h3>
+
+<pre class="prettyprint">
+$ cx backups download [-s &lt;stack&gt;] [-d &lt;download directory&gt;] &lt;backup id&gt;
+$ cx backups new [-s &lt;stack&gt;]	[--dbtypes &lt;DB types&gt;] [--frequency &lt;Frequency&gt;] [--gzip &lt;Gzip&gt;] [exclude-tables &lt;Exclude tables&gt;] [--run-on-replica &lt;Run on replica&gt;]
+
+</pre>
+
+<h3 id="new_params">Parameters</h3>
+<table class='table table-bordered table-striped table-small'>
+    <thead>
+        <tr>
+            <th align="center">Parameter</th>
+            <th align="center">Default</th>
+            <th align="center">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><i>stack</i> </td>
+            <td><i>&mdash;</i></td>
+            <td>Name of your stack</td>
+        </tr>        
+        <tr>
+            <td><i>dbtypes</i> (optional)</td>
+            <td>all</td>
+            <td>Comma separated list of Database types which need backup tasks</td>
+        </tr>
+        <tr>
+            <td><i>frequency</i>(optional)</td>
+            <td>0 */1 * * *</td>
+            <td>Frequency of backup task in cron schedule format</td>
+        </tr>
+        <tr>
+            <td><i>keep</i>(optional)</td>
+            <td>100</td>
+            <td>Number of previous backups to keep</td>
+        </tr>
+        <tr>
+            <td><i>gzip</i>(optional)</td>
+            <td>true</td>
+            <td>Compress your backups with gzip</td>
+        </tr>
+        <tr>
+            <td><i>exclude-tables</i>(optional)</td>
+            <td><i>&mdash;</i></td>
+            <td>Tables that must be excluded from the backup</td>
+        </tr>
+        <tr>
+            <td><i>run-on-replica</i>(optional)</td>
+            <td>true</td>
+            <td>Run backup task on replica server if available</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<h3 id="new_example">Example</h3>
+
+<pre class="prettyprint">
+$ cx backups new -s mystack	--dbtypes=postgresql --frequency="0 */1 * * *" --gzip=true exclude-tables=my_log_table --run-on-replica=false
+</pre>
+
+
