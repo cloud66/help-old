@@ -645,6 +645,53 @@ Retrieve the details of the stack specified in the request.
 
     [Stack][]
 
+## Stack Create [/stacks]
+Create and build a new docker stack. Either manifest definition, or cloud, region, size and buildtype must be passed as params.
+
+- Scope: _redeploy_
+
++ Parameters
+
+    + name (required, string, `new_stack_name`) ... New stack name
+    + environment (required, string, `production`) ... New stack environment
+    + service_yaml (required, string, `service_yaml_serialised`) ...  The services definition of the new docker stack
+    + manifest_yaml (optional, string, `manifest_yaml_serialised`) ...  The manifest definition of the new docker stack
+    + cloud (optional, string, `aws`) ...  Cloud provider to create servers in
+    + region (optional, string, `us-east-1`) ...  Region within the cloud to create servers in
+    + build_type (optional, string, `multi`) ...  Deploy all services to "single" or "multi" servers
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+        { "response":
+            {
+                "id":10,
+                "user":"test@cloud66.com",
+                "resource_type":"stack",
+                "action":"stack_create",
+                "resource_id":"283",
+                "started_via":"api",
+                "started_at":"2015-09-01T19:08:05Z",
+                "finished_at":null,
+                "finished_success":null,
+                "finished_message":null
+            }
+        }
+
+### Stack Create [POST]
+Create and build a new docker stack. Either manifest definition, or cloud, region, size and buildtype must be passed as params.
+
++ Response 200
+
+    [Stack Create][]
+
+
 ## Stack Action list [/stacks/{id}/actions]
 Retrieve a paged list of all asynchronous actions performed for the stack specified in the request. For more information about the object properties returned in the response, refer to [the stack action object](#The stack action object).
 
@@ -2627,6 +2674,441 @@ Update value of a server setting item
 
     [Update Server Setting][]
 
+
+# Group Clouds
+
+## Cloud List [/clouds]
+Get list of all clouds of account
+
+- Scope: _redeploy_
+
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+        {
+            "response":[
+               {
+                  "name":"aws",
+                  "display_name":"AWS",
+                  "regions":[
+                     {
+                        "id":"us-east-1",
+                        "name":"US East (Northern Virginia)"
+                     },
+                     {
+                        "id":"us-west-1",
+                        "name":"US West (Northern California)"
+                     },
+                     {
+                        "id":"us-west-2",
+                        "name":"US West (Oregon)"
+                     },
+                     {
+                        "id":"sa-east-1",
+                        "name":"South America (Sao Paulo, Brazil)"
+                     },
+                     {
+                        "id":"eu-central-1",
+                        "name":"Europe (Frankfurt, Germany)"
+                     },
+                     {
+                        "id":"eu-west-1",
+                        "name":"Europe (Dublin, Ireland)"
+                     },
+                     {
+                        "id":"ap-southeast-1",
+                        "name":"Asia Pacific (Singapore)"
+                     },
+                     {
+                        "id":"ap-northeast-1",
+                        "name":"Asia Pacific (Tokyo)"
+                     },
+                     {
+                        "id":"ap-southeast-2",
+                        "name":"Asia Pacific (Sydney)"
+                     }
+                  ],
+                  "server_sizes":[
+                     {
+                        "id":"t1.micro",
+                        "name":"Micro instance (t1.micro)"
+                     },
+                     {
+                        "id":"t2.micro",
+                        "name":"General purpose (t2.micro)"
+                     },
+                     {
+                        "id":"t2.small",
+                        "name":"General purpose (t2.small)"
+                     },
+                     {
+                        "id":"t2.medium",
+                        "name":"General purpose (t2.medium)"
+                     },
+                     {
+                        "id":"m1.small",
+                        "name":"General purpose (m1.small)"
+                     },
+                     {
+                        "id":"m1.medium",
+                        "name":"General purpose (m1.medium)"
+                     },
+                     {
+                        "id":"m1.large",
+                        "name":"General purpose (m1.large)"
+                     },
+                     {
+                        "id":"m1.xlarge",
+                        "name":"General purpose (m1.xlarge)"
+                     },
+                     {
+                        "id":"m3.medium",
+                        "name":"General purpose (m3.medium)"
+                     },
+                     {
+                        "id":"m3.large",
+                        "name":"General purpose (m3.large)"
+                     },
+                     {
+                        "id":"m3.xlarge",
+                        "name":"General purpose (m3.xlarge)"
+                     },
+                     {
+                        "id":"m3.2xlarge ",
+                        "name":"General purpose (m3.2xlarge )"
+                     },
+                     {
+                        "id":"c1.medium",
+                        "name":"Compute optimized (c1.medium)"
+                     },
+                     {
+                        "id":"c1.xlarge",
+                        "name":"Compute optimized (c1.xlarge)"
+                     },
+                     {
+                        "id":"c3.large",
+                        "name":"Compute optimized (c3.large)"
+                     },
+                     {
+                        "id":"c3.xlarge",
+                        "name":"Compute optimized (c3.xlarge)"
+                     },
+                     {
+                        "id":"c3.2xlarge",
+                        "name":"Compute optimized (c3.2xlarge)"
+                     },
+                     {
+                        "id":"c3.4xlarge",
+                        "name":"Compute optimized (c3.4xlarge)"
+                     },
+                     {
+                        "id":"c3.8xlarge",
+                        "name":"Compute optimized (c3.8xlarge)"
+                     },
+                     {
+                        "id":"cc2.8xlarge",
+                        "name":"Compute optimized (cc2.8xlarge)"
+                     },
+                     {
+                        "id":"m2.xlarge",
+                        "name":"Memory optimized (m2.xlarge)"
+                     },
+                     {
+                        "id":"m2.2xlarge",
+                        "name":"Memory optimized (m2.2xlarge)"
+                     },
+                     {
+                        "id":"m2.4xlarge",
+                        "name":"Memory optimized (m2.4xlarge)"
+                     },
+                     {
+                        "id":"cr1.8xlarge",
+                        "name":"Memory optimized (cr1.8xlarge)"
+                     },
+                     {
+                        "id":"hi1.4xlarge",
+                        "name":"Storage optimized (hi1.4xlarge)"
+                     },
+                     {
+                        "id":"hs1.8xlarge",
+                        "name":"Storage optimized (hs1.8xlarge)"
+                     },
+                     {
+                        "id":"cg1.4xlarge",
+                        "name":"GPU instances (cg1.4xlarge)"
+                     },
+                     {
+                        "id":"g2.2xlarge",
+                        "name":"GPU instances (g2.2xlarge)"
+                     },
+                     {
+                        "id":"i2.xlarge",
+                        "name":"Storage optimized (i2.xlarge)"
+                     },
+                     {
+                        "id":"i2.2xlarge",
+                        "name":"Storage optimized (i2.2xlarge)"
+                     },
+                     {
+                        "id":"i2.4xlarge",
+                        "name":"Storage optimized (i2.4xlarge)"
+                     },
+                     {
+                        "id":"i2.8xlarge",
+                        "name":"Storage optimized (i2.8xlarge)"
+                     },
+                     {
+                        "id":"r3.large",
+                        "name":"Memory optimized (r3.large)"
+                     },
+                     {
+                        "id":"r3.xlarge",
+                        "name":"Memory optimized (r3.xlarge)"
+                     },
+                     {
+                        "id":"r3.2xlarge",
+                        "name":"Memory optimized (r3.2xlarge)"
+                     },
+                     {
+                        "id":"r3.4xlarge",
+                        "name":"Memory optimized (r3.4xlarge)"
+                     },
+                     {
+                        "id":"r3.8xlarge",
+                        "name":"Memory optimized (r3.8xlarge)"
+                     }
+                  ]
+               },
+               {
+                  "name":"digitalocean",
+                  "display_name":"DigitalOcean",
+                  "regions":[
+                     {
+                        "id":"ams1",
+                        "name":"Amsterdam, Netherlands",
+                        "old_id":"2"
+                     },
+                     {
+                        "id":"ams2",
+                        "name":"Amsterdam 2, Netherlands",
+                        "old_id":"5"
+                     },
+                     {
+                        "id":"ams3",
+                        "name":"Amsterdam 3, Netherlands",
+                        "old_id":"9"
+                     },
+                     {
+                        "id":"nyc1",
+                        "name":"New York, US",
+                        "old_id":"1"
+                     },
+                     {
+                        "id":"nyc2",
+                        "name":"New York 2, US",
+                        "old_id":"4"
+                     },
+                     {
+                        "id":"nyc3",
+                        "name":"New York 3, US",
+                        "old_id":"8"
+                     },
+                     {
+                        "id":"sfo1",
+                        "name":"San Francisco, US",
+                        "old_id":"3"
+                     },
+                     {
+                        "id":"sgp1",
+                        "name":"Singapore",
+                        "old_id":"6"
+                     },
+                     {
+                        "id":"lon1",
+                        "name":"London, UK",
+                        "old_id":"7"
+                     }
+                  ],
+                  "server_sizes":[
+                     {
+                        "id":"512mb",
+                        "name":"512MB - 1 CPU"
+                     },
+                     {
+                        "id":"1gb",
+                        "name":"1GB - 1 CPU"
+                     },
+                     {
+                        "id":"2gb",
+                        "name":"2GB - 2 CPU"
+                     },
+                     {
+                        "id":"4gb",
+                        "name":"4GB - 2 CPU"
+                     },
+                     {
+                        "id":"8gb",
+                        "name":"8GB - 4 CPU"
+                     },
+                     {
+                        "id":"16gb",
+                        "name":"16GB - 8 CPU"
+                     },
+                     {
+                        "id":"32gb",
+                        "name":"32GB - 12 CPU"
+                     },
+                     {
+                        "id":"48gb",
+                        "name":"48GB - 16 CPU"
+                     },
+                     {
+                        "id":"64gb",
+                        "name":"64GB - 20 CPU"
+                     }
+                  ]
+               }
+            ],
+            "count":2,
+            "pagination":{
+               "previous":null,
+               "next":null,
+               "current":1,
+               "per_page":30,
+               "count":2,
+               "pages":1
+            }
+        }
+
+### Cloud List [GET]
+Get list of all clouds of account
+
++ Response 200
+
+    [Cloud List][]
+
+## Cloud [/clouds/{cloud_id}]
+Get information about a single cloud of an account
+
+- Scope: _redeploy_
+
++ Parameters
+
+    + cloud_id (required, string, `digitalocean`) ... The cloud id (name)
+    
++ Model (application/json)
+
+    + Headers
+
+            X-RateLimit-Limit: 3600
+            X-RateLimit-Remaining: 3597
+
+    + Body
+
+        "response":
+           {
+              "name":"digitalocean",
+              "display_name":"DigitalOcean",
+              "regions":[
+                 {
+                    "id":"ams1",
+                    "name":"Amsterdam, Netherlands",
+                    "old_id":"2"
+                 },
+                 {
+                    "id":"ams2",
+                    "name":"Amsterdam 2, Netherlands",
+                    "old_id":"5"
+                 },
+                 {
+                    "id":"ams3",
+                    "name":"Amsterdam 3, Netherlands",
+                    "old_id":"9"
+                 },
+                 {
+                    "id":"nyc1",
+                    "name":"New York, US",
+                    "old_id":"1"
+                 },
+                 {
+                    "id":"nyc2",
+                    "name":"New York 2, US",
+                    "old_id":"4"
+                 },
+                 {
+                    "id":"nyc3",
+                    "name":"New York 3, US",
+                    "old_id":"8"
+                 },
+                 {
+                    "id":"sfo1",
+                    "name":"San Francisco, US",
+                    "old_id":"3"
+                 },
+                 {
+                    "id":"sgp1",
+                    "name":"Singapore",
+                    "old_id":"6"
+                 },
+                 {
+                    "id":"lon1",
+                    "name":"London, UK",
+                    "old_id":"7"
+                 }
+              ],
+              "server_sizes":[
+                 {
+                    "id":"512mb",
+                    "name":"512MB - 1 CPU"
+                 },
+                 {
+                    "id":"1gb",
+                    "name":"1GB - 1 CPU"
+                 },
+                 {
+                    "id":"2gb",
+                    "name":"2GB - 2 CPU"
+                 },
+                 {
+                    "id":"4gb",
+                    "name":"4GB - 2 CPU"
+                 },
+                 {
+                    "id":"8gb",
+                    "name":"8GB - 4 CPU"
+                 },
+                 {
+                    "id":"16gb",
+                    "name":"16GB - 8 CPU"
+                 },
+                 {
+                    "id":"32gb",
+                    "name":"32GB - 12 CPU"
+                 },
+                 {
+                    "id":"48gb",
+                    "name":"48GB - 16 CPU"
+                 },
+                 {
+                    "id":"64gb",
+                    "name":"64GB - 20 CPU"
+                 }
+              ]
+           }
+        }
+
+### Cloud [GET]
+Get information of a single cloud
+
++ Response 200
+
+    [Cloud][]
 
 # Group Backups
 
