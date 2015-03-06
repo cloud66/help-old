@@ -45,7 +45,7 @@ The first filesystem is the main one - it is mounted at <code>/</code>. As you c
 You can use the following command to determine which files and folders are using the most disk space:
 
 <pre class= "prettyprint">
-ncdu /
+sudo ncdu /
 </pre>
 
 This will scan through your disk and return a detailed breakdown of disk usage by folders and files on your server. You can use the arrow keys to move between folders to determine exactly where the most disk space is being used, and if this is actually necessary. This will help guide you as to where to remove unecessary files.<br/><br/>
@@ -54,7 +54,7 @@ This will scan through your disk and return a detailed breakdown of disk usage b
 
 The result of the previous investigation may indicate that your logs are taking most of the available disk space. If so, you can either change the level of logging that your application outputs or increase the speed of log rotation on the server. Log rotation moves, compresses and deletes old log files according to a schedule you can determine.
 
-The log rotation settings can be customized in <code>/etc/cloud66/logrotate/default.conf</code>. If your logs aren't to blame for your low disk space, move onto the next step.<br/><br/>
+The log rotation settings can be customized in <code>/etc/cloud66/logrotate/*.conf</code>. If your logs aren't to blame for your low disk space, move onto the next step.<br/><br/>
 
 <b><li>Do you need more disk space?</li></b>
 
