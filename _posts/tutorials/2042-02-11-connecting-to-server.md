@@ -69,6 +69,9 @@ If you can SSH to the server, then the likely issue is with your web server. Run
 
 If you login to your cloud provider account, you should be able to do a hard-reboot of the server in question. This helps in the case that its memory consumption prevents the server from receiving or responding to any incoming connections.<br/><br/>
 
+<b><li>Can you connect to the server from your cloud provider dashboard?</li></b>
+Some cloud providers allow you to connect to a server manually from their dashboard. For example, on the DigitalOcean server page, you can click <i>Access</i> and then <i>Console Access</i> to open a connection to your droplet.
+
 <b><li>Is the server running in your cloud provider dashboard?</li></b>
 
 If you login to your cloud provider account, you should be able to verify if the server in question is running or not. For example, AWS will have a green, yellow and red icon for the server to indicate its status. You can either identify the server by its IP address or server name. If your cloud provider is showing an issue with the server, it is likely best to contact them directly to determine the cause.
