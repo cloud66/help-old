@@ -14,7 +14,12 @@ tags: ['Toolbelt']
     <li><a href="#x">Stack management</a></li>
             <li>
                 <ul>
-                <li><a href="#redeploy">Redeploy your stack</a></li>
+                <li><a href="#build">Create a new docker stack</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#redeploy">Redeploy your existing stack</a></li>
                 </ul>
             </li>
             <li>
@@ -44,7 +49,54 @@ tags: ['Toolbelt']
             </li>                                                                               
 </ul>
 
-<h2 id="redeploy">Redeploy your stack</h2>
+<h2 id="redeploy">Create a new docker stack</h2>
+
+Build a new docker stack based on your desired service definition.
+
+<h3 id="usage-redeploy">Usage</h3>
+
+<pre class="prettyprint">
+$ cx stacks create --name &lt;stack_name&gt; --environment &lt;environment&gt; --service_yaml &lt;service_yaml_path&gt; [--manifest_yaml &lt;manifest_yaml_path&gt;]
+</pre>
+
+<h3 id="params-redeploy">Parameters</h3>
+<table class='table table-bordered table-striped table-small'>
+    <thead>
+        <tr>
+            <th align="center">Parameter</th>
+            <th align="center">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><i>name</i></td>
+            <td>Name of your new stack</td>
+        </tr>
+        <tr>
+            <td><i>environment</i></td>
+            <td>Environment of your new stack</td>
+        </tr>
+        <tr>
+            <td><i>service_yaml</i></td>
+            <td>Path to your service.yml file</td>
+        </tr>
+        <tr>
+            <td><i>manifest_yaml</i> (optional)</td>
+            <td>Path to your manifest.yml file</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="example-redeploy">Examples</h3>
+
+<pre class="prettyprint">
+$ cx stacks create --name my_stack --environment production --service_yaml ~/service.yaml --manifest_yaml ~/manifest.yaml
+</pre>
+<pre class="prettyprint">
+$ cx stacks create --name my_stack --environment production --service_yaml ~/service.yaml 
+</pre>
+
+<h2 id="redeploy">Redeploy your existing stack</h2>
 
 Trigger the deployment of a stack from the command line, just like clicking on <i>redeploy</i> in the UI.
 
