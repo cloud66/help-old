@@ -81,13 +81,17 @@ Next, select which application you would like to specify settings for. You can c
 - **docker_version**: Specify the version of Docker you want to install.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
-docker:
-    configuration:
-        version: 1.4.1
-        vpc_id: vpc-64872001
-        root_disk_size: 100
+production:
+    docker:
+        configuration:
+            version: 1.4.1
+            vpc_id: vpc-64872001
+            root_disk_size: 100
+            extra_packages:
+                - chrony            
 </pre>
 
 <hr>
@@ -95,12 +99,15 @@ docker:
 <h3 id="elastic">ElasticSearch</h3>
 
 - **version**: Specify the version of ElasticSearch you want to install.
+- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:    
     elasticsearch:
         configuration:
             version: 0.90.7
+            extra_packages:
+                - chrony            
 </pre>
 <hr>
 <h3 id="memcached">Memcached</h3>
@@ -108,6 +115,7 @@ production:
 - **memory**: Specify maximum memory (in MB) that can be used (default value is 64).
 - **port**: Specify connection port (default value is 11211).
 - **listen&#95;ip**: Specify which IP address to listen on (default value is 0.0.0.0).
+- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:    
@@ -116,6 +124,8 @@ production:
             memory: 1024
             port: 11211
             listen&#95;ip: 127.0.0.1
+            extra_packages:
+                - chrony            
 </pre>
 
 <hr>
@@ -123,12 +133,15 @@ production:
 <h3 id="mongo">MongoDB</h3>
 
 - **version**: Specify the version of MongoDB you want to install (can only be set during stack build).
+- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:    
     mongodb:
         configuration:
             version: 2.4.8
+            extra_packages:
+                - chrony            
 </pre>
 
 <hr>
@@ -137,6 +150,7 @@ production:
 
 - **cors**: Enable [Cross Origin Resource Sharing](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) - this will be taken into account when your Nginx configuration is reloaded.
 - **perfect_forward_secrecy**: Enable [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
+- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:    
@@ -145,6 +159,8 @@ production:
             nginx:
                 cors: true
                 perfect&#95;forward&#95;secrecy: true
+            extra_packages:
+                - chrony                
 </pre>
 
 #### CORS configuration
@@ -167,6 +183,7 @@ production:
 
 - **version**: Specify the version of PostgreSQL you want to install (can only be set during stack build).
 - **postgis**: Specify whether to include PostGIS (can be added after initial stack build).
+- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:    
@@ -174,18 +191,23 @@ production:
         configuration:
             version: 9.3.4
             postgis: true
+            extra_packages:
+                - chrony            
 </pre>
 <hr>
 <h3 id="postgis">PostGIS</h3>
 
 - **version**: Specify the version of PostGIS you want to install.
+- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:
    postgresql:
        configuration:
-           postgis:
-               version: 2.1.1
+            postgis:
+                version: 2.1.1
+            extra_packages:
+                - chrony               
 </pre>
 
 <hr>
@@ -201,6 +223,7 @@ A Rails application type in the manifest file gives you fine control over things
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <div class="notice notice-danger">
         <h3>Important</h3>
@@ -220,6 +243,8 @@ production:
                 whitelist: 123.123.123.123,234.234.234.234
             vpc_id: vpc-64872001
             root_disk_size: 100
+            extra_packages:
+                - chrony            
 </pre>
 
 <hr>
@@ -227,12 +252,15 @@ production:
 <h3 id="redis">Redis</h3>
 
 - **version**: Specify the version of Redis you want to install.
+- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:    
     redis:
         configuration:
             version: 2.6.10
+            extra_packages:
+                - chrony            
 </pre>
 
 <hr>
@@ -247,6 +275,7 @@ A Sinatra application type in the manifest file gives you fine control over thin
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <div class="notice notice-danger">
         <h3>Important</h3>
@@ -265,6 +294,8 @@ production:
                 whitelist: 123.123.123.123,234.234.234.234
             vpc_id: vpc-64872001
             root_disk_size: 100
+            extra_packages:
+                - chrony            
 </pre>
 
 <hr>
@@ -395,7 +426,6 @@ production:
 These are the parameters that the <i>server</i> section can take:
 
 - **unique_name** (_Required if you are specifying a server type_): A unique name for this server.
-- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **subnet_id** (_Optional, AWS EC2 Only_): ID of the AWS subnet in which you would like to create your servers.
 - **vendor** (_Optional, BYOC Only_): Cloud vendor to fire up the server on. Valid values: aws, azure, digitalocean, googlecloud, linode, rackspace, vexxhost and clouda
@@ -419,8 +449,6 @@ production:
             root_disk_size: 100
             subnet_id: subnet-40000000
             availability_zone: us-east-1c
-            extra_packages:
-                - chrony            
 </pre>
 
 
