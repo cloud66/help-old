@@ -28,7 +28,7 @@ $ curl -I http://www.site.com
 
 The output of this command provides you with lots of useful information, for example response codes, redirects and more. Additionally, an <i>immediate bounce</i> of this command indicates that there is no server listening, whereas a more <i>lengthy response</i> could indicate a firewall issue.
 <br/><br/>
-<li>Try restarting Nginx by issuing <code>service nginx restart</code> on the server.</li> 
+<li>Try restarting Nginx by issuing <code>sudo service nginx restart</code> on the server.</li> 
 
 This should determine whether or not Nginx is having issues starting or serving content. For more detailed error logs, you can check:
 
