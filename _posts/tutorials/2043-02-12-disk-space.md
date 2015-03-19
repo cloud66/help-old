@@ -17,13 +17,13 @@ Depending on your server and disk size, you may run out of disk space - the foll
 <ol class="article-list">
 <b><li>How much disk space is your server using?</li></b>
 
-Use the following command to check the current disk space used by your server:
+<p>Use the following command to check the current disk space used by your server:</p>
 
 <pre class= "prettyprint">
 df -h
 </pre>
 
-The output of this command may look like the following:
+<p>The output of this command may look like the following:</p>
 
 <pre class= "prettyprint">
 $ df -h
@@ -38,27 +38,27 @@ none            100M     0  100M   0% /run/user
 /dev/xvdb        30G   45M   28G   1% /mnt
 </pre>
 
-The first filesystem is the main one - it is mounted at <code>/</code>. As you can see, this filesystem is currently at 45% usage. You may want to address this issue if this percentage is higher.
+<p>The first filesystem is the main one - it is mounted at <code>/</code>. As you can see, this filesystem is currently at 45% usage. You may want to address this issue if this percentage is higher.</p>
 
-If your server is on AWS and has a 7.8 GB primary filesystem, you are likely running on an old server (created with the default AWS settings). Any new AWS servers are created with a minimum of a 20 GB disk. To upgrade, see the <i>Do you need more disk space?</i> point below.<br/><br/>
+<p>If your server is on AWS and has a 7.8 GB primary filesystem, you are likely running on an old server (created with the default AWS settings). Any new AWS servers are created with a minimum of a 20 GB disk. To upgrade, see the <i>Do you need more disk space?</i> point below.</p>
 
 <b><li>Which files are taking most disk space?</li></b>
 
-You can use the following command to determine which files and folders are using the most disk space:
+<p>You can use the following command to determine which files and folders are using the most disk space:</p>
 
 <pre class= "prettyprint">
 sudo ncdu /
 </pre>
 
-This will scan through your disk and return a detailed breakdown of disk usage by folders and files on your server. You can use the arrow keys to move between folders to determine exactly where the most disk space is being used, and if this is actually necessary. This will help guide you as to where to remove unnecessary files.<br/><br/>
+<p>This will scan through your disk and return a detailed breakdown of disk usage by folders and files on your server. You can use the arrow keys to move between folders to determine exactly where the most disk space is being used, and if this is actually necessary. This will help guide you as to where to remove unnecessary files.</p>
 
 <b><li>Are your log files using the most disk space?</li></b>
 
-The result of the previous investigation may indicate that your logs are taking most of the available disk space. If so, you can either change the level of logging that your application outputs or increase the speed of log rotation on the server. Log rotation moves, compresses and deletes old log files according to a schedule you can determine.
+<p>The result of the previous investigation may indicate that your logs are taking most of the available disk space. If so, you can either change the level of logging that your application outputs or increase the speed of log rotation on the server. Log rotation moves, compresses and deletes old log files according to a schedule you can determine.</p>
 
-The log rotation settings can be customized in <code>/etc/cloud66/logrotate/*.conf</code>. If your logs aren't to blame for your low disk space, move onto the next step.<br/><br/>
+<p>The log rotation settings can be customized in <code>/etc/cloud66/logrotate/*.conf</code>. If your logs aren't to blame for your low disk space, move onto the next step.</p>
 
 <b><li>Do you need more disk space?</li></b>
 
-Depending on the size of the server and disk as well as the requirements of your application, you may need to use a bigger server, or if possible attach a larger disk. Some cloud providers allow you to change the disk size from their cloud dashboard. You can also scale up a new server and specify a <code>root_disk_size</code> value in your <a href="http://help.cloud66.com/building-your-stack/building-your-manifest-file#servers">manifest file</a>. Once the scale up is complete, you can remove the old server.
+<p>Depending on the size of the server and disk as well as the requirements of your application, you may need to use a bigger server, or if possible attach a larger disk. Some cloud providers allow you to change the disk size from their cloud dashboard. You can also scale up a new server and specify a <code>root_disk_size</code> value in your <a href="http://help.cloud66.com/building-your-stack/building-your-manifest-file#servers">manifest file</a>. Once the scale up is complete, you can remove the old server.</p>
 </ol>

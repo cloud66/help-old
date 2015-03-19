@@ -18,12 +18,13 @@ difficulty: 0
 <ul class="page-toc">
 	<li><a href="#about">About migrating from Heroku</a></li>	
 	<li><a href="#server">What server size do I need?</a></li>
-	<li><a href="#migrating">Migrating</a></li>
-            <ul style="margin-bottom:0em; margin-top:0em">
+	<li><a href="#migrating">Migrating</a>
+            <ul>
                 <li><a href="#code">1. Code</a></li>
                 <li><a href="#data">2. Data</a></li>
                 <li><a href="#traffic">3. Traffic</a></li>
             </ul>
+    </li>
 	<li><a href="#pointers">Useful pointers</a></li>
             <ul style="margin-top:0em">
                 <li><a href="#webserver">Web server and Procfile</a></li>
