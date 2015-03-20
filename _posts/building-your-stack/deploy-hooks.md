@@ -129,7 +129,7 @@ lead: Take action at various points during your deployment
 <tbody>
 	<tr class="header"><td width="13%"><b>Snippets</b> <span>-</span><td width="15%"><td width="70%">
 	<tr><td><td width="13%">snippet <img src="http://cdn.cloud66.com/images/help/required.gif" /><td width="70%">Snippet to be used - run in <i>/tmp/deploy_hooks</i> by default
-	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
+	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>, <i>custom</i>
 	<tr><td><td>execute <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Set to true for the snippet to be executable.
 	<tr><td><td>apply_during<br /> (all)<td>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<tr><td><td>halt_on_error (true)<td>Specify whether the execution should continue or halt in the event of an error.
@@ -139,7 +139,7 @@ lead: Take action at various points during your deployment
 <tbody>
 	<tr class="header"><td width="13%"><b>Commands</b> <span>-</span><td><td>
 	<tr><td><td width="13%">command <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Command to be used - run in <i>/tmp/deploy_hooks</i> by default
-	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
+	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>, <i>custom</i>
 	<tr><td><td>execute <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Set to true for the command to execute.
 	<tr><td><td>apply_during<br /> (all)<td>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<tr><td><td>halt_on_error (true)<td>Specify whether the execution should continue or halt in the event of an error.
@@ -150,7 +150,7 @@ lead: Take action at various points during your deployment
 	<tr class="header"><td width="13%"><b>Scripts</b> <span>-</span><td><td>
 	<tr><td><td width="13%">source <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>This specifies the source location of your deploy hook file within your repository.
 	<tr><td><td>destination <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>The destination path on your target server. You can also specify environment variables in your destination field, <i>&lt;%= ENV['STACK_PATH'] %&gt;</i> for example.
-	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>
+	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>, <i>custom</i>
 	<tr><td><td>apply_during<br /> (all)<td>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<tr><td><td>halt_on_error (true)<td>Specify whether the execution should continue or halt in the event of an error.
 	<tr><td><td>run_on<br /> (single server)<td>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
