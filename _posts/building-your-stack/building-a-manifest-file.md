@@ -47,7 +47,9 @@ tags: ['Deployment']
 
 A manifest file allows you to be more explicit about your stack composition and control settings that are not usually available through the user interface or Cloud 66 toolbelt. The file describes the setup of the components that run your stack. See [Getting started with manifest files](/building-your-stack/getting-started-with-manifest-files) for an introduction.
 
-To use this functionality, you need to place a file called `manifest.yml` in a folder named `.cloud66`, that is in turn located in the root of your source code and checked into your repository.
+To use this functionality :
+- `Classic Stacks` you need to place a file called `manifest.yml` in a folder named `.cloud66`, that is in turn located in the root of your source code and checked into your repository.
+- `Docker Stacks` you can provide manifest contents after stack analyzed before it deployed in `advanced` page. You can also use `Configure manifest` in stack page sidebar to change some items after stack deployment`.
 
 Once you're ready, start by going through each section below to build your manifest file.
 

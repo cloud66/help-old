@@ -48,7 +48,9 @@ These are just some examples of the settings you can control with a manifest fil
 
 <h2 id="how">How can I use a manifest file?</h2>
 
-To use a manifest file, simply create a file called `manifest.yml` under a folder named `.cloud66` in the root of your source code, and check it into your repository. Cloud 66 looks for this file when you build a new stack or deploy an existing one. Having a `manifest.yml` file in your source code disables the UI settings for the parts of the stack that are defined in the file.
+To use a manifest file :
+- In `Classic Stacks` , simply create a file called `manifest.yml` under a folder named `.cloud66` in the root of your source code, and check it into your repository. Cloud 66 looks for this file when you build a new stack or deploy an existing one. Having a `manifest.yml` file in your source code disables the UI settings for the parts of the stack that are defined in the file.
+- In `Docker Stacks` you can provide manifest contents after stack analyzed before deployement, in `Advanced` page. You can also use `Configure manifest` in stack sidebar to change some items after stack deployment finished`.
 
 <h2 id="examples">Manifest file examples</h2>
 
@@ -82,7 +84,8 @@ This is how it works:
     </p>
 </div>
 
-Now that your `manifest.yml` file is in place under your `.cloud66` folder, you can commit this file to your Git and deploy a new stack with it.
+If you want to deploy a `Classic stack`, now that your `manifest.yml` file is in place under your `.cloud66` folder, you can commit this file to your Git and deploy a new stack with it.
+If you want to deploy a `Docker stack`, start a new stack and use `Advanced` tab after analyse stage finished to provide manifest content.
 
 <div class="notice">
     <h3>Need Help Building your first stack?</h3>
@@ -141,7 +144,7 @@ This will force your Nginx configuration to be rebuilt during the next redeploym
 
 As evidenced in the examples above, manifest file settings can be applied during the build of a new stack or an existing stack depending on the type of setting. They can also change a wide range of settings and configurations on your stack. Now let's learn about the structure of a manifest file.
 
-The manifest file is called `manifest.yml` and is `YAML` formatted. This file should be placed in the `.cloud66` folder of your Git repository.
+The manifest file is called `manifest.yml` and is `YAML` formatted. This file should be placed in the `.cloud66` folder of your Git repository if you are using a `Classic Stack`.
 
 <h3 id="first">First level: Environment</h3>
 
