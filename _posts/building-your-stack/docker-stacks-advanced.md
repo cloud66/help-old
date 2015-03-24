@@ -175,6 +175,14 @@ services:
         image: https://index.docker.io/v1/&lt;namespace&gt;/&lt;image_name&gt;
 </pre>
 
+If you are pulling a public image from Docker Hub, use the following format:
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        image: &lt;namespace&gt;/&lt;image_name&gt;
+</pre>
+
 If you are using [Quay.io](https://quay.io/) for your image repository, you will use the following URL format:
 
 <pre class="prettyprint">
