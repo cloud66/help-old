@@ -71,11 +71,11 @@ You are free to specify a version for a number of components in your [manifest f
     <tbody>
         <tr>
             <td>Docker</td>
-            <td>1.4.1</td>
+            <td>1.5.0</td>
         </tr>
         <tr>
             <td>ElasticSearch</td>
-            <td>1.3.2</td>
+            <td>1.4.4</td>
         </tr>
         <tr>
             <td>LibYAML</td>
@@ -83,28 +83,32 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>MongoDB</td>
-            <td>2.4.10</td>
+            <td>2.6.7</td>
         </tr>
         <tr>
             <td>Phusion Passenger</td>
-            <td>4.0.50</td>
+            <td>4.0.59</td>
         </tr>
         <tr>
             <td>PostGIS</td>
-            <td>2.1.3</td>
+            <td>2.1.5</td>
         </tr>
         <tr>
             <td>PostgreSQL</td>
-            <td>9.3.5</td>
+            <td>9.4.1</td>
         </tr>
         <tr>
             <td>Redis</td>
-            <td>2.8.13</td>
+            <td>2.8.19</td>
         </tr>
         <tr>
             <td>Ruby</td>
-            <td>2.2.0</td>
+            <td>1.9.3 - 2.2.1</td>
         </tr>
+        <tr>
+            <td>Weave</td>
+            <td>0.9.0</td>
+        </tr>        
     </tbody>
 </table>
 
