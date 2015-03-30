@@ -100,6 +100,7 @@ production:
 <h3 id="elastic">ElasticSearch</h3>
 
 - **version**: Specify the version of ElasticSearch you want to install.
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
@@ -107,6 +108,7 @@ production:
     elasticsearch:
         configuration:
             version: 0.90.7
+            root_disk_size: 100
             extra_packages:
                 - chrony            
 </pre>
@@ -134,6 +136,7 @@ production:
 <h3 id="mongo">MongoDB</h3>
 
 - **version**: Specify the version of MongoDB you want to install (can only be set during stack build).
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
@@ -141,6 +144,7 @@ production:
     mongodb:
         configuration:
             version: 2.4.8
+            root_disk_size: 100            
             extra_packages:
                 - chrony            
 </pre>
@@ -184,6 +188,7 @@ production:
 
 - **version**: Specify the version of PostgreSQL you want to install (can only be set during stack build).
 - **postgis**: Specify whether to include PostGIS (can be added after initial stack build).
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
@@ -192,6 +197,7 @@ production:
         configuration:
             version: 9.3.4
             postgis: true
+            root_disk_size: 100            
             extra_packages:
                 - chrony            
 </pre>
@@ -253,6 +259,7 @@ production:
 <h3 id="redis">Redis</h3>
 
 - **version**: Specify the version of Redis you want to install.
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
@@ -260,6 +267,7 @@ production:
     redis:
         configuration:
             version: 2.6.10
+            root_disk_size: 100
             extra_packages:
                 - chrony            
 </pre>
