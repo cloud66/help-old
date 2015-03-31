@@ -419,10 +419,12 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | ---------- | ---------- |
 | us-central1-a | us-central1-a |
 | us-central1-b | us-central1-b |
-| europe-west1-a | europe-west1-a |
+| us-central1-f | us-central1-f |
 | europe-west1-b | europe-west1-b |
+| europe-west1-c | europe-west1-c |
 | asia-east1-a | asia-east1-a |
 | asia-east1-b | asia-east1-b |
+| asia-east1-c | asia-east1-c |
 
 ### Linode
 | Region | Value |
