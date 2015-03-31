@@ -85,6 +85,7 @@ Next, select which application you would like to specify settings for. You can c
 - **docker_version**: Specify the version of Docker you want to install.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **image_keep_count** (_Optional, defaults to 5_): Set the number of old images to save on your servers (besides the running image).
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
@@ -94,6 +95,7 @@ production:
             version: 1.4.1
             vpc_id: vpc-64872001
             root_disk_size: 100
+            image_keep_count: 5
             extra_packages:
                 - chrony            
 </pre>
