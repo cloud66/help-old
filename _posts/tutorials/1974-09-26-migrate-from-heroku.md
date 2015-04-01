@@ -60,7 +60,7 @@ $ mysqldump -u [username] -p[password] [dbname] > backup.sql
 Once you have a MySQL dump file, use the [Cloud 66 toolbelt](http://help.cloud66.com/toolbelt/toolbelt-file-management) to upload the file to your stack database server. Remember to replace the fields below with your values.
 
 {% highlight bash %}
-$ cx upload -s "[stack_name]" [database_server_name] backup.sql /tmp/backup.sql
+$ cx upload -s "[stack_name]" --server [database_server_name] backup.sql /tmp/backup.sql
 {% endhighlight %}
 
 Next, use the toolbelt to SSH to your server.
