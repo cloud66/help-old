@@ -95,8 +95,16 @@ Below is a table of the available configurations for a given service with a brie
     <td><b>Description</b></td>
 </tr>
 <tr>
-    <td><a href="#image">image</a></td>
-    <td>The image you would typically run <code>docker pull</code> from.</td>
+    <td>build_command</td>
+    <td>Specifies the command you would like to run during stack build.</td>
+</tr>
+<tr>
+    <td>command</td>
+    <td>Specifies the command used to start your container.</td>
+</tr>
+<tr>
+    <td>deploy_command</td>
+    <td>Specifies the command you would like to run during stack deploy (runs once per service).</td>
 </tr>
 <tr>
     <td><a href="#git">git_url</a></td>
@@ -107,48 +115,24 @@ Below is a table of the available configurations for a given service with a brie
     <td>The Git repository branch your Docker image will be based on.</td>
 </tr>
 <tr>
-    <td>command</td>
-    <td>Specifies the command used to start your container.</td>
+    <td><a href="#health">health</a></td>
+    <td>One of the values: 'default', 'none' or a hash containing at least one of 'type:', endpoint:', 'protocol:', 'accept:' or 'timeout:'</td>
 </tr>
 <tr>
-    <td>build_command</td>
-    <td>Specifies the command you would like to run during stack build.</td>
-</tr>
-<tr>
-    <td>deploy_command</td>
-    <td>Specifies the command you would like to run during stack deploy.</td>
+    <td><a href="#image">image</a></td>
+    <td>The image you would typically run <code>docker pull</code> from.</td>
 </tr>
 <tr>
     <td><a href="#log_folder">log_folder</a></td>
     <td>Folder your services logs to, mounted to <code>/var/log/containers/service</code> on the host filesystem.</td>
 </tr>
 <tr>
-    <td><a href="#volumes">volumes</a></td>
-    <td>The volumes that are mounted from your host into your container.</td>
-</tr>
-<tr>
     <td><a href="#ports">ports</a></td>
     <td>The ports that are running within the container, as well as their corresponding external ports.</td>
 </tr>
 <tr>
-    <td><a href="#traffic_matches">traffic_matches</a></td>
-    <td>The automatically configured traffic names in your Nginx config that will route traffic to these containers based on request DNS name. Allows microservices on the same port routes by subdomain for instance.</td>
-</tr>
-<tr>
-    <td><a href="#health">health</a></td>
-    <td>One of the values: 'default', 'none' or a hash containing at least one of 'type:', endpoint:', 'protocol:', 'accept:' or 'timeout:'</td>
-</tr>
-<tr>
     <td>privileged <i>(default: false)</i></td>
-    <td>Boolean value to indicate whether the container should be <a href="https://docs.docker.com/reference/run/#runtime-privilege-linux-capabilities-and-lxc-configuration">run with extended privileges</a></td>
-</tr>
-<tr>
-    <td><a href="#requires">requires</a></td>
-    <td>Array of other defined service names that should be started before this service during build and deployment.</td>
-</tr>
-<tr>
-    <td>restart_on_deploy <i>(default: true)</i></td>
-    <td>Boolean value to indicate whether the containers of this service should be restarted during deployment.</td>
+    <td>Boolean value to indicate whether the container should be <a href="https://docs.docker.com/reference/run/#runtime-privilege-linux-capabilities-and-lxc-configuration">run with extended privileges</a>.</td>
 </tr>
 <tr>
     <td><a href="#pre_start">pre_start_signal</a></td>
@@ -159,10 +143,86 @@ Below is a table of the available configurations for a given service with a brie
     <td>This is a stop sequence that is executed on your running containers before they are shut down.</td>
 </tr>
 <tr>
+    <td><a href="#requires">requires</a></td>
+    <td>Array of other defined service names that should be started before this service during build and deployment.</td>
+</tr>
+<tr>
+    <td>restart_on_deploy <i>(default: true)</i></td>
+    <td>Boolean value to indicate whether the containers of this service should be restarted during deployment.</td>
+</tr>
+
+<tr>
     <td>stop_grace</td>
     <td>Duration between the Docker <code>TERM</code> and <code>KILL</code> signals when Docker stop is run and a container is stopped.</td>
 </tr>
+<tr>
+    <td><a href="#traffic_matches">traffic_matches</a></td>
+    <td>The automatically configured traffic names in your Nginx config that will route traffic to these containers based on request DNS name. Allows microservices on the same port routes by subdomain for instance.</td>
+</tr>
+<tr>
+    <td><a href="#volumes">volumes</a></td>
+    <td>The volumes that are mounted from your host into your container.</td>
+</tr>
+<tr>
+    <td>work_dir</td>
+    <td>Specifies the <a href="https://docs.docker.com/reference/builder/#workdir">working directory</a> in your image for any command to be run.</td>
+</tr>
+
 </table>
+
+<hr>
+
+<h3 id="git">Git URL</h3>
+The Git repository URL your Docker image will be built with. Your image will be built with [Cloud 66 BuildGrid](/building-your-stack/introduction-to-docker-deployments#buildgrid), a cluster of powerful servers that build and version your Docker images. Simply place a Dockerfile in your repository to instruct us how the image should be built. The Git URL you use to [allow us access to your repository](http://community.cloud66.com/articles/accessing-your-git-repository) will differ for public and private repositories.
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        git_url: git@github.com:pkallberg/node-js-app.git
+</pre>
+
+<hr>
+
+<h3 id="git-branch">Git branch</h3>
+The Git repository branch your Docker image will be based on, for example `master`.
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        git_branch: master
+</pre>
+
+<hr>
+
+<h3 id="health">Health</h3>
+The `health` option allows you to specify rules to automatically determine if your newly started containers are healthy before killing old containers. This effectively provides zero down-time deployments. There are two types of health checks - `inbound` and `outbound`:
+
+<b>Inbound health checks</b> use Cloud 66 to determine the health of your containers based on rules that you provide - when a new container is started during deployment, we will automatically attempt to get a response from the container on the specified endpoints. If we don't get the specified HTTP response code back within the "timeout" period we will assume the deploy has failed and roll back the container deployments.
+
+<b>Outbound health checks</b> on the other hand allows your container to notify us of its health state, which is useful for services that don't expose an endpoint. The environment variable `CONTAINER_NOTIFY_URL` is automatically created and injected into your container, which accepts a POST request with two different JSON payloads depending on the health state.
+
+A healthy container would be expected to POST `{"ready":true}` as its payload, while an unhealthy container can POST `{"ready":false, "reason":"error message"}`.
+
+The rules below are available to health checks - note that you aren't required to specify all options. Any options not used will use their default values.
+
+- **type** (_defaults to inbound_): Accepted values are `inbound` or `outbound`.
+- **endpoint** (_defaults to `/`_): The endpoint tested for status.
+- **protocol** (_defaults to HTTP_): Accepted values are `HTTP` or `HTTPS`.
+- **timeout** (_defaults to 30s_): Maximum time to wait for a container to start, in seconds.
+- **accept** (_defaults to 200 and 300-399_): HTTP response codes to accept.
+
+{% highlight yaml %}
+services:
+    &#60;service_name&#62;:
+        health:
+          type: inbound
+          endpoint: "/healthy"
+          protocol: "http"
+          timeout: "45s"
+          accept: ["200"]
+{% endhighlight %}  
+
+You can also use the default health rules with `health: default`, or explicitly disable health checking by leaving the `health` option out or specifying `health: none`.
 
 <hr>
 
@@ -193,28 +253,6 @@ services:
 
 <hr>
 
-<h3 id="git">Git URL</h3>
-The Git repository URL your Docker image will be built with. Your image will be built with [Cloud 66 BuildGrid](/building-your-stack/introduction-to-docker-deployments#buildgrid), a cluster of powerful servers that build and version your Docker images. Simply place a Dockerfile in your repository to instruct us how the image should be built. The Git URL you use to [allow us access to your repository](http://community.cloud66.com/articles/accessing-your-git-repository) will differ for public and private repositories.
-
-<pre class="prettyprint">
-services:
-    &#60;service_name&#62;:
-        git_url: git@github.com:pkallberg/node-js-app.git
-</pre>
-
-<hr>
-
-<h3 id="git-branch">Git branch</h3>
-The Git repository branch your Docker image will be based on, for example `master`.
-
-<pre class="prettyprint">
-services:
-    &#60;service_name&#62;:
-        git_branch: master
-</pre>
-
-<hr>
-
 <h3 id="log_folder">Log folder</h3>
 The `log_folder` option allows you to persist container logs on your server, so that they don't disappear when the container stops. By default, any folder specified with `log_folder` will be available on the host under `/var/log/containers/<service_name>`, for example:
 
@@ -222,17 +260,6 @@ The `log_folder` option allows you to persist container logs on your server, so 
 services:
     &#60;service_name&#62;:
         log_folder: /var/deploy/app/log
-{% endhighlight %}
-
-<hr>
-
-<h3 id="volumes">Volumes</h3>
-You can use the `volumes` option to mount custom host folders inside your container. This is useful if you're looking to run a database service for instance, as data written to the local filesystem of your container will not be persisted between container instances. The volumes option is a list of `HOST_FOLDER:CONTAINER_FOLDER`. You can optionally specify `ro` or `rw` on the end to specify that the the container can read/write to the host folder (the default is read/write if not specified)
-
-{% highlight yaml %}
-services:
-    &#60;service_name&#62;:
-        volumes: ["/tmp:/tmp_host", "/readonly/folder:/mnted_readony:ro"]
 {% endhighlight %}
 
 <hr>
@@ -250,63 +277,6 @@ In this example, the application is listening on port 3000 in the container, and
 
 <hr>
 
-<h3 id="traffic_matches">Traffic matches</h3>
-The `traffic_matches` option allows you to specify an array of string server name matches for your service. These are automatically configured in your reverse proxy service (Nginx). In the following example, if traffic comes in on `app.your_domain.com` or `*.anotherdomain.com` on this service port, then traffic will automatically get routed to it. This option also allows you to have multiple services listening on the same port (port 80 for example) as long as they have different rules for matching server names.
-
-{% highlight yaml %}
-services:
-    &#60;service_name&#62;:
-        traffic_matches: ["app.your_domain.com", "*.anotherdomain.com"]
-{% endhighlight %}
-
-<hr>
-
-<h3 id="health">Health</h3>
-The `health` option allows you to specify rules to automatically determine if your newly started containers are healthy before killing old containers. This effectively provides zero down-time deployments. There are two types of health checks - `inbound` and `outbound`:
-
-<b>Inbound health checks</b> use Cloud 66 to determine the health of your containers based on rules that you provide - when a new container is started during deployment, we will automatically attempt to get a response from the container on the specified endpoints. If we don't get the specified HTTP response code back within the "timeout" period we will assume the deploy has failed and roll back the container deployments.
-
-<b>Outbound health checks</b> on the other hand allows your container to notify us of its health state, which is useful for services that don't expose an endpoint. The environment variable `CONTAINER_NOTIFY_URL` is automatically created and injected into your container, which accepts a POST request with two different JSON payloads depending on the health state.
-
-A healthy container would be expected to POST `{"ready":true}` as its payload, while an unhealthy container can POST `{"ready":false, "reason":"error message"}`.
-
-The rules below are available to health checks - note that you aren't required to specify all options. Any options not used will use their default values.
-
-- **type**: Accepted values are `inbound` or `outbound`.
-- **endpoint**: The endpoint tested for status (_defaults to `/`_).
-- **protocol**: Accepted values are `HTTP` or `HTTPS` (_defaults to HTTP_).
-- **timeout**: Maximum time to wait for a container to start, in seconds (_defaults to 30s_).
-- **accept**: HTTP response codes to accept (_defaults to 200 and 300-399_).
-
-{% highlight yaml %}
-services:
-    &#60;service_name&#62;:
-        health:
-          type: inbound
-          endpoint: "/healthy"
-          protocol: "http"
-          timeout: "45s"
-          accept: ["200"]
-{% endhighlight %}  
-
-You can also use the default health rules with `health: default`, or explicitly disable health checking by leaving the `health` option out or specifying `health: none`.
-
-<hr>
-
-<h3 id="requires">Requires</h3>
-
-In some cases, you may want to make sure that a service is only started if another service is started. The `requires` option allows you to set such dependencies. For example:
-
-{% highlight yaml %}
-services:
-    &#60;service_name&#62;:
-        image: cloud66/sample-rails
-        requires:
-          - "my_api"    
-{% endhighlight %}
-
-<hr>
-
 <h3 id="pre_start">Pre-start signal</h3>
 This is a signal that is sent to the existing containers of the service before the new containers are started during deployment. An example could be <code>USR1</code> - but it depends on what your container is running as to which signals make sense.
 
@@ -321,13 +291,49 @@ services:
         pre_stop_sequence: 1m:USR2:30s:USR1:50s
 {% endhighlight %}
 
-These are some examples of duration values that `stop_grace` and `pre_stop_sequence` can use - `1m` (1 minute), `30s` (30 seconds) and `1h` (1 hour).
+The example above, we'll wait 1 minute before sending the USR2 signal, then wait 30 seconds before sending the USR1 signal, and then wait 50 seconds before we force a kill. These are some examples of duration values that `stop_grace` and `pre_stop_sequence` can use - `1m` (1 minute), `30s` (30 seconds) and `1h` (1 hour).
 
 Valid time values are `s` for seconds, `m` for minutes and `h` for hours. Valid signal values for a signal are (without the quotes):
 
 {% highlight ruby %}
 'ABRT', 'ALRM', 'BUS', 'CHLD', 'CONT', 'FPE', 'HUP', 'ILL', 'INT', 'IO', 'IOT', 'KILL', 'PIPE', 'PROF', 'QUIT', 'SEGV', 'STOP', 'SYS', 'TERM', 'TRAP', 'TSTP', 'TTIN', 'TTOU', 'URG', 'USR1', 'USR2', 'VTALRM', 'WINCH', 'XCPU', 'XFSZ'
 {% endhighlight %}
+
+<h3 id="requires">Requires</h3>
+
+In some cases, you may want to make sure that a service is only started if another service is started. The `requires` option allows you to set such dependencies. For example:
+
+{% highlight yaml %}
+services:
+    &#60;service_name&#62;:
+        image: cloud66/sample-rails
+        requires:
+          - "my_api"    
+{% endhighlight %}
+
+<h3 id="traffic_matches">Traffic matches</h3>
+The `traffic_matches` option allows you to specify an array of string server name matches for your service. These are automatically configured in your reverse proxy service (Nginx). In the following example, if traffic comes in on `app.your_domain.com` or `*.anotherdomain.com` on this service port, then traffic will automatically get routed to it. This option also allows you to have multiple services listening on the same port (port 80 for example) as long as they have different rules for matching server names.
+
+{% highlight yaml %}
+services:
+    &#60;service_name&#62;:
+        traffic_matches: ["app.your_domain.com", "*.anotherdomain.com"]
+{% endhighlight %}
+
+<hr>
+
+<h3 id="volumes">Volumes</h3>
+You can use the `volumes` option to mount custom host folders inside your container. This is useful if you're looking to run a database service for instance, as data written to the local filesystem of your container will not be persisted between container instances. The volumes option is a list of `HOST_FOLDER:CONTAINER_FOLDER`. You can optionally specify `ro` or `rw` on the end to specify that the the container can read/write to the host folder (the default is read/write if not specified)
+
+{% highlight yaml %}
+services:
+    &#60;service_name&#62;:
+        volumes: ["/tmp:/tmp_host", "/readonly/folder:/mnted_readony:ro"]
+{% endhighlight %}
+
+<hr>
+
+<hr>
 
 <h2 id="database-configs">Database configurations</h2>
 You can also specify any required databases in the service configuration. As databases are fairly static components that rarely change without a migration, they aren't run in containers. This avoids the complexity and overhead of running databases in a container, and allows Cloud 66 to perform replication and backups as normal. These databases will be deployed and configured automatically, and their addresses and access credentials will be made available to the containers across the stack with environment variables.
