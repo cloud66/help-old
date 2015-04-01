@@ -1,34 +1,35 @@
 ---
 layout: post
 template: two-col
-title:  "Streaming replication between two different postgresql version"
+title:  "Issues replicating data between two versions of PostgreSQL"
 so_title: "postgresql streaming replication"
 date:   1900-11-01 15:33:13
 categories: 
-lead: Replication two different version of postgresql
-search-tags: ['Postgresql', 'Replication','Version']
+lead: Upgrading PSQL version with replication may cause issues 
+search-tags: ['']
 tags: ['Troubleshooting']
 tutorial: true
-difficulty: 0
+difficulty: 2
 ---
 
-In cloud66 we are using [streaming replication](https://wiki.postgresql.org/wiki/Streaming_Replication) to establish replication between master and slave postgresql servers. Streaming Replication is based on [log shipping](http://www.postgresql.org/docs/9.4/static/warm-standby.html) between servers.
-In general, log shipping between servers running different major PostgreSQL release levels is not possible so we can not establish streaming replication between two different major release (i.e 8.4 and 9.3). Also it is the policy of the PostgreSQL Global Development Group not to make changes to disk formats during minor release upgrades, so it is likely that running different minor release levels on primary and slave servers will work successfully but in some cases replication between two servers with minor different will break as well.
+When you initiate replication between two PostgreSQL databases on Cloud 66, we setup [streaming replication](https://wiki.postgresql.org/wiki/Streaming_Replication) between the master and slave servers. Streaming replication is based on [log shipping](http://www.postgresql.org/docs/9.4/static/warm-standby.html) between servers, which generally isn't possible between two servers running vastly different versions of PostgreSQL.
 
-As an example if you try to have streaming replication between a Master(9.3) and ac slave(9.4), you will see this error on slave server :
+As such, we cannot establish replication between servers running different major release levels (eg. 8.4 and 9.3). Though running replication between different minor release levels (eg. 9.3 and 9.4) should work (because PostgreSQL has a policy not to make changes to disk formats between minor releases), there are also cases where this won't work.
+
+For example, if you setup replication between a master (on 9.3) and a slave (9.4), you may see this error on the slave server:
 
 <pre class= "prettyprint">
 FATAL:  database files are incompatible with server
 DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not compatible with this version 9.4.1.
 </pre>
 
-In this case you need to upgrade data and libraries of the master server(9.3) with [pg_upgrade](http://www.postgresql.org/docs/9.4/static/pgupgrade.html) before starting the replication.
+In this case, you need to upgrade the data and libraries of the master server (9.3) with [pg_upgrade](http://www.postgresql.org/docs/9.4/static/pgupgrade.html) before starting the replication.
 
-Remember that if you are using cloud66 you can set the version of postgresql you need to install on your stack in manifest file
+Remember that you can see the version of PostgreSQL to install on your stack by using a [manifest file](http://help.cloud66.com/building-your-stack/getting-started-with-manifest-files), like so:
 
 <pre class= "prettyprint">
-...
+production:
     postgresql:
         configuration:
-            version: 9.3.4
+            version: 9.4.1
 </pre>
