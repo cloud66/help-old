@@ -103,7 +103,7 @@ Trigger the deployment of a stack from the command line, just like clicking on <
 <h3 id="usage-redeploy">Usage</h3>
 
 <pre class="prettyprint">
-$ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;] [--services &lt;services&gt;]
+$ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;] [--service &lt;service&gt;] [--service &lt;service&gt;] [--service &lt;service&gt;]
 </pre>
 
 <h3 id="params-redeploy">Parameters</h3>
@@ -132,8 +132,12 @@ $ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;] [--services &l
             <td>Redeploy the specific git reference (branch, tag or hash). Non-docker stacks only</td>
         </tr>
         <tr>
-            <td><i>services</i> (optional - docker)</td>
-            <td>Will deploy the specified services from your stack only. This should be a comma separated list of service names. Docker stacks only</td>
+            <td><i>service</i> (optional, repeatable - docker)</td>
+            <td>Will deploy the specified services from your stack only. Each service can have an optional colon-separated reference. For image based services the reference is taken as an image tag, for git based services the reference is taken as a git reference. Docker stacks only</td>
+        </tr>
+        <tr>
+            <td><i>listen</i> (optional)</td>
+            <td>Will follow the deployment and log progress output</td>
         </tr>
     </tbody>
 </table>
@@ -147,7 +151,7 @@ $ cx redeploy -s "My Awesome App" -e production
 $ cx redeploy -s "My Awesome App" -e production -y --git-ref my_git_ref_value
 </pre>
 <pre class="prettyprint">
-$ cx redeploy -s "My Awesome Docker App" --services web,api
+$ cx redeploy -s "My Awesome Docker App" --service web --service api:latest
 </pre>
 
 Deploying a stack that is already being deployed will enqueue your redeploy command and will run it immediately after the current deployment is finished.

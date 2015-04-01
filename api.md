@@ -1182,7 +1182,8 @@ Scale the given service over the stack
     + stack_id (required, string, `5999b763474b0eafa5fafb64bff0ba80`) ... The stack UID
     
     + service_name (required, string, `web`) ... The service name    
-    + server_count (required, string, `{"123123cfcb7d3d2b54614b19e2a6c673":2}`) ... A hash of server uid to count of containers desired on that server
+    + server_count (optional, string, `{"123123cfcb7d3d2b54614b19e2a6c673":2}`) ... A hash of server uid to count of containers desired on that server
+    + server_group_count (optional, string, `{"web":4}`) ... A hash of server_group to count of containers accross the servers of that group
 
 + Model (application/json)
 
