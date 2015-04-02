@@ -20,7 +20,7 @@ For example, if you setup replication between a master (on 9.3) and a slave (9.4
 
 <pre class= "prettyprint">
 FATAL:  database files are incompatible with server
-DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not compatible with this version 9.4.1.
+DETAIL:  The data directory was initialized by PostgreSQL version 9.3, which is not compatible with this version 9.4.x.
 </pre>
 
 In this case, you need to upgrade the data and libraries of the master server (9.3) with [pg_upgrade](http://www.postgresql.org/docs/9.4/static/pgupgrade.html) before starting the replication.
@@ -31,5 +31,5 @@ Remember that you can see the version of PostgreSQL to install on your stack by 
 production:
     postgresql:
         configuration:
-            version: 9.4.1
+            version: 9.3.6
 </pre>
