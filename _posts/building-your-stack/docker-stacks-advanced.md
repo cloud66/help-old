@@ -349,10 +349,21 @@ services:
 {% endhighlight %}
 
 <h2 id="env_vars">Environment variables</h2>
-Any environment variable defined in your stack will be made available within your service container. You can reference environment variables in your service configuration using the following syntax:
+Any environment variable defined in your stack will be made available within your service container. You can also define new environment variable for a service or reference an environment variable in other stacks or services using the following syntax:
 
 {% highlight yaml %}
 services:
     &#60;service_name&#62;:
-        value: _env:&#60;your environment variable&#62;
+        env_vars:
+            ENV_NAME1: VALUE
+            ENV_NAME2: _env:STACK_ENV_VAR_NAME
+            ENV_NAME3: _env:STACK_ENV_VAR_NAME:Default
+            ENV_NAME4: _env:SERVICE[SERVICE_NAME].ENV_VAR_NAME
+            ENV_NAME5: _env:SERVICE[SERVICE_NAME].ENV_VAR_NAME:Default
+            ENV_NAME6: _env:STACK[STACK_UID].ENV_VAR_NAME
+            ENV_NAME7: _env:STACK[STACK_UID].ENV_VAR_NAME:Default
+            ENV_NAME8: _env:STACK[STACK_UID].SERVICE[SERVICE_NAME].ENV_VAR_NAME
+            ENV_NAME9: _env:STACK[STACK_UID].SERVICE[SERVICE_NAME].ENV_VAR_NAME:Default
 {% endhighlight %}
+
+In above example all defined environment variables except ENV_NAME1 are reference to other environment variables. As you see you can specify a default value for referenced environment variables that will be set if there is no suitable link value.
