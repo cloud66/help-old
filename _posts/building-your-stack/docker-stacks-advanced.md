@@ -355,15 +355,32 @@ Any environment variable defined in your stack will be made available within you
 services:
     &#60;service_name&#62;:
         env_vars:
+            # Setting an environment variable
             ENV_NAME1: VALUE
+
+            # Referencing a stack-wide variable
             ENV_NAME2: _env:STACK_ENV_VAR_NAME
-            ENV_NAME3: _env:STACK_ENV_VAR_NAME:Default
-            ENV_NAME4: _env:SERVICE[SERVICE_NAME].ENV_VAR_NAME
-            ENV_NAME5: _env:SERVICE[SERVICE_NAME].ENV_VAR_NAME:Default
-            ENV_NAME6: _env:STACK[STACK_UID].ENV_VAR_NAME
-            ENV_NAME7: _env:STACK[STACK_UID].ENV_VAR_NAME:Default
-            ENV_NAME8: _env:STACK[STACK_UID].SERVICE[SERVICE_NAME].ENV_VAR_NAME
-            ENV_NAME9: _env:STACK[STACK_UID].SERVICE[SERVICE_NAME].ENV_VAR_NAME:Default
+
+            # Referencing a stack-wide variable (with default fall-back)
+            ENV_NAME3: _env:STACK_ENV_VAR_NAME:Default 
+
+            # Referencing a service's variable
+            ENV_NAME4: _env:SERVICE[SERVICE_NAME].ENV_VAR_NAME 
+
+            # Referencing a service's variable (with default fall-back)
+            ENV_NAME5: _env:SERVICE[SERVICE_NAME].ENV_VAR_NAME:Default 
+
+            # Referencing another stack's variable
+            ENV_NAME6: _env:STACK[STACK_UID].ENV_VAR_NAME 
+
+            # Referencing another stack's variable (with default fall-back)
+            ENV_NAME7: _env:STACK[STACK_UID].ENV_VAR_NAME:Default 
+
+            # Referencing another stacks' service variable
+            ENV_NAME8: _env:STACK[STACK_UID].SERVICE[SERVICE_NAME].ENV_VAR_NAME 
+
+            # Referencing another stacks' service variable (with default fall-back)
+            ENV_NAME9: _env:STACK[STACK_UID].SERVICE[SERVICE_NAME].ENV_VAR_NAME:Default         
 {% endhighlight %}
 
-In above example all defined environment variables except ENV_NAME1 are reference to other environment variables. As you see you can specify a default value for referenced environment variables that will be set if there is no suitable link value.
+In above example, all defined environment variables except `ENV_NAME1` are referenced to other environment variables. You can specify a default value for referenced environment variables that will be set if there is no suitable link value (such as `ENV_NAME3`).
