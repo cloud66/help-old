@@ -44,9 +44,9 @@ none            100M     0  100M   0% /run/user
 
 <b><li>Is your /tmp mount full?</li></b>
 
-Some process require writing to your /tmp mount, which can become full depending on your processes. This is done as a protection against low disk space, whereby some daemons automatically shadow the /tmp directory with a RAM disk if the root partition runs out of disk space. 
+<p>Some process require writing to your /tmp mount, which can become full depending on your processes. This is done as a protection against low disk space, whereby some daemons automatically shadow the /tmp directory with a RAM disk if the root partition runs out of disk space.</p>
 
-To identify this, simply run the `df -h` command from above, and the output would look something like this:
+<p>To identify this, simply run the <code>df -h</code> command from above, and the output would look something like this:</p>
 
 <pre class= "prettyprint">
 $ df -h
@@ -56,13 +56,13 @@ Filesystem      Size  Used Avail Use% Mounted on
 overflow        1.0M  1.0M     0 100% /tmp
 </pre>
 
-To remove /tmp mount, simply run:
+<p>To remove /tmp mount, simply run:</p>
 
 <pre class= "prettyprint">
 sudo umount -l /tmp/
 </pre>
 
-You can also permanently disable this feature by running:
+<p>You can also permanently disable this feature by running:</p>
 
 <pre class= "prettyprint">
 echo 'MINTMPKB=0' > /etc/default/mountoverflowtmp
