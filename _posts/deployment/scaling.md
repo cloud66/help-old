@@ -67,7 +67,7 @@ Follow these steps to scale your server vertically:
 
 1. Shut down the server through your cloud dashboard
 2. Change the server size and start it up
-3. Wait 5 to 10 minutes for Cloud 66 to identify the change, at which point you will be asked to redeploy
+3. Wait 10 minutes for Cloud 66 to identify the change, and then redeploy the stack
 
 Note that if you have a load balancer and are using AWS as your cloud vendor, this is slightly more complex. AWS load balancers use a unique identifier
 for each server, which is updated when you change the size of the server.
