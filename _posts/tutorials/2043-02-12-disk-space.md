@@ -42,6 +42,32 @@ none            100M     0  100M   0% /run/user
 
 <p>If your server is on AWS and has a 7.8 GB primary filesystem, you are likely running on an old server (created with the default AWS settings). Any new AWS servers are created with a minimum of a 20 GB disk. To upgrade, see the <i>Do you need more disk space?</i> point below.</p>
 
+<b><li>Is your /tmp mount full?</li></b>
+
+Some process require writing to your /tmp mount, which can become full depending on your processes. This is done as a protection against low disk space, whereby some daemons automatically shadow the /tmp directory with a RAM disk if the root partition runs out of disk space. 
+
+To identify this, simply run the `df -h` command from above, and the output would look something like this:
+
+<pre class= "prettyprint">
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda1       20G  6.4G   13G  34% /
+/dev/xvdb        15G   39M   15G   1% /mnt
+overflow        1.0M  1.0M     0 100% /tmp
+</pre>
+
+To remove /tmp mount, simply run:
+
+<pre class= "prettyprint">
+sudo umount -l /tmp/
+</pre>
+
+You can also permanently disable this feature by running:
+
+<pre class= "prettyprint">
+echo 'MINTMPKB=0' > /etc/default/mountoverflowtmp
+</pre>
+
 <b><li>Which files are taking most disk space?</li></b>
 
 <p>You can use the following command to determine which files and folders are using the most disk space:</p>
