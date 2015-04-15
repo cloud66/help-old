@@ -86,6 +86,10 @@ You are free to specify a version for a number of components in your [manifest f
             <td>2.6.7</td>
         </tr>
         <tr>
+            <td>MySQL</td>
+            <td>5.6.19</td>
+        </tr>
+        <tr>
             <td>Phusion Passenger</td>
             <td>4.0.59</td>
         </tr>
