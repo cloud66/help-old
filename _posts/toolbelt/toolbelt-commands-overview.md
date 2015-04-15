@@ -1,11 +1,11 @@
 ---
 layout: post
 template: two-col
-title:  "Toolbelt introduction"
+title:  "Toolbelt commands directory"
 date:   2050-01-30 01:01:01
 nav_sticky: true
 categories: toolbelt
-lead: Toolbelt is a command line tool to interact with Cloud 66
+lead: A directory of different toolbelt commands
 search-tags: ['toolbelt','commandline']
 tags: ['Toolbelt']
 ---

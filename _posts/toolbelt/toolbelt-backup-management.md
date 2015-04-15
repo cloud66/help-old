@@ -195,27 +195,27 @@ $ cx backups new [-s &lt;stack&gt;]	[--dbtypes &lt;DB types&gt;] [--frequency &l
             <td>Comma separated list of Database types which need backup tasks</td>
         </tr>
         <tr>
-            <td><i>frequency</i>(optional)</td>
+            <td><i>frequency</i> (optional)</td>
             <td>0 */1 * * *</td>
             <td>Frequency of backup task in cron schedule format</td>
         </tr>
         <tr>
-            <td><i>keep</i>(optional)</td>
+            <td><i>keep</i> (optional)</td>
             <td>100</td>
             <td>Number of previous backups to keep</td>
         </tr>
         <tr>
-            <td><i>gzip</i>(optional)</td>
+            <td><i>gzip</i> (optional)</td>
             <td>true</td>
             <td>Compress your backups with gzip</td>
         </tr>
         <tr>
-            <td><i>exclude-tables</i>(optional)</td>
+            <td><i>exclude-tables</i> (optional)</td>
             <td><i>&mdash;</i></td>
             <td>Tables that must be excluded from the backup</td>
         </tr>
         <tr>
-            <td><i>run-on-replica</i>(optional)</td>
+            <td><i>run-on-replica</i> (optional)</td>
             <td>true</td>
             <td>Run backup task on replica server if available</td>
         </tr>
@@ -226,7 +226,7 @@ $ cx backups new [-s &lt;stack&gt;]	[--dbtypes &lt;DB types&gt;] [--frequency &l
 <h3 id="new_example">Example</h3>
 
 <pre class="prettyprint">
-$ cx backups new -s mystack	--dbtypes=postgresql --frequency="0 */1 * * *" --gzip=true exclude-tables=my_log_table --run-on-replica=false
+$ cx backups new -s mystack --dbtypes=postgresql --frequency="0 */1 * * *" --gzip=true exclude-tables=my_log_table --run-on-replica=false
 </pre>
 
 
