@@ -23,6 +23,7 @@ tags: ['Deployment']
             <li><a href="#load_balancer">Load balancers</a></li>
             <li><a href="#memcached">Memcached</a></li>
             <li><a href="#mongo">MongoDB</a></li>
+            <li><a href="#mysql">MySQL</a></li>
             <li><a href="#nginx">Nginx</a></li>
             <li><a href="#postgis">PostGIS</a></li>
             <li><a href="#postgresql">PostgreSQL</a></li>
@@ -72,6 +73,7 @@ Next, select which application you would like to specify settings for. You can c
 <li><a href="#load_balancer">Load balancers</a></li>
 <li><a href="#memcached">Memcached</a></li>
 <li><a href="#mongo">MongoDB</a></li>
+<li><a href="#mysql">MySQL</a></li>
 <li><a href="#nginx">Nginx</a></li>
 <li><a href="#postgis">PostGIS</a></li>
 <li><a href="#postgresql">PostgreSQL</a></li>
@@ -152,6 +154,19 @@ production:
             root_disk_size: 100            
             extra_packages:
                 - chrony            
+</pre>
+
+<hr>
+
+<h3 id="mysql">MySQL</h3>
+
+- **version**: Specify the version of MySQL you want to install. Valid values are 5.5 and 5.6 (can only be set during stack build).
+
+<pre class="prettyprint">
+production:
+    mysql:
+        configuration:
+            version: 5.5
 </pre>
 
 <hr>

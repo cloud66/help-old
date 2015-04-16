@@ -167,6 +167,7 @@ Application type determines which part of the stack is affected by this section.
 - load_balancer
 - memcached
 - mongodb
+- mysql
 - nginx
 - postgis
 - postgresql
