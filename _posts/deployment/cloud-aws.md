@@ -60,36 +60,62 @@ After selecting the _Security Credentials_ option, select the _Access Keys_ opti
 <h3 id="iam">IAM</h3>
 After selecting the _IAM_ option, click _Create new users_ in the top left corner. Enter a descriptive username in the field provided, such as _cloud66_, and click _Create_. Now, click _Show user security credentials_ and take note of your _access key ID_ and _secrete access key_. Alternatively, you can download these credentials. 
 
-Back in the _Users_ view, we now need to attach a user policy for this user. Click the username, and then select _Attach user policy_. Although you could grant _Administrator access_ to the account, you may wish to grant more fine-grained controls. In that case, your selection will depend on whether or not you are using VPC or EC2. In the former case, you would select _Amazon VPC full access_, and in the latter, select _Amazon EC2 full access_. You can also set more fine-grained permissions, and these are the permissions required:
+Back in the _Users_ view, we now need to attach a user policy for this user. Click the username, and then select _Attach user policy_. Although you could grant _Administrator access_ to the account, you may wish to grant more fine-grained controls. In that case, your selection will depend on whether or not you are using VPC or EC2. In the former case, you would select _Amazon VPC full access_, and in the latter, select _Amazon EC2 full access_. 
+
+You can also set more fine-grained permissions with the following JSON template for your IAM policy (you can adjust the resource name to limit access):
 
 <pre class="prettyprint">
-ec2:CreateKeyPair
-ec2:CreateSecurityGroup
-ec2:CreateSubnet
-ec2:CreateVolume
-ec2:DeleteKeyPair
-ec2:DeleteSecurityGroup
-ec2:DeleteVolume
-ec2:DescribeInstanceAttribute
-ec2:DescribeInstanceStatus
-ec2:DescribeInstances
-ec2:DescribeKeyPairs
-ec2:DescribeNetworkInterfaces
-ec2:DescribeRegions
-ec2:DescribeReservedInstances
-ec2:DescribeReservedInstancesListings
-ec2:DescribeSecurityGroups
-ec2:DescribeSubnets
-ec2:DescribeVolumeAttribute
-ec2:DescribeVolumeStatus
-ec2:DescribeVolumes
-ec2:DescribeVpcs
-ec2:ModifyInstanceAttribute
-ec2:RebootInstances
-ec2:RunInstances
-ec2:StartInstances
-ec2:StopInstances
-ec2:TerminateInstances
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ResourceLevelActions",
+            "Action": [
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DeleteVolume",
+                "ec2:RebootInstances",
+                "ec2:RunInstances",
+                "ec2:StartInstances",
+                "ec2:StopInstances",
+                "ec2:TerminateInstance"
+            ],
+            "Resource": [
+                "*"
+            ],
+            "Effect": "Allow"
+        },
+        {
+            "Sid": "NonResourceLevelActions",
+            "Action": [
+                "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeInstanceAttribute",
+                "ec2:DescribeInstanceStatus",
+                "ec2:DescribeInstances",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribeRegions",
+                "ec2:DescribeReservedInstances",
+                "ec2:DescribeReservedInstancesListings",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVolumeAttribute",
+                "ec2:DescribeVolumeStatus",
+                "ec2:DescribeVolumes",
+                "ec2:DescribeVpcs",
+                "ec2:CreateKeyPair",
+                "ec2:CreateSecurityGroup",
+                "ec2:CreateSubnet",
+                "ec2:CreateVolume",
+                "ec2:DeleteKeyPair",
+                "ec2:ModifyInstanceAttribute",
+                "ec2:CreateTags"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        }
+    ]
+}
 </pre>
 
 <h2 id="add">Add AWS keys to a stack</h2>
