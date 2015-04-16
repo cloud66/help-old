@@ -76,9 +76,9 @@ However, they are always wrapped in double quotes (eg. <kbd>"ENV_VAR"</kbd>) so 
 - <b>Some environment variables cannot be modified</b><br/>
 For example, environment variables for your server IP addresses cannot be changed because they are automatically set and updated based on reported IP addresses.
 - <b>You can reference other environment variables on the same stack</b><br/>
-This can be done using the <kbd>&#123;&#123; ENV&#95;VAR &#125;&#125;</kbd> syntax, and is useful when referencing an environment variable which you don't control such as a server IP address.
+This can be done using the <kbd>&#123;&#123; ENV&#95;VAR &#125;&#125;</kbd> or <kbd>#95;env:ENV&#95;VAR </kbd> syntax, and is useful when referencing an environment variable which you don't control such as a server IP address.
 - <b>You can reference environment variables available on other stacks</b><br/>
-This is done using the <kbd>&#123;&#123; STACK[STACK_UID].ENV&#95;VAR &#125;&#125;</kbd> syntax. Your stack UID is available on the stack setting page. You need administrative privileges on the target stack to reference environment variables on it. You cannot use intra-stack environment variables to gain access to database credentials, only database addresses.
+This is done using the <kbd>&#123;&#123; STACK[STACK_UID].ENV&#95;VAR &#125;&#125;</kbd> or <kbd>#95;env:STACK[STACK_UID].ENV&#95;VAR </kbd> syntax. Your stack UID is available on the stack setting page. You need administrative privileges on the target stack to reference environment variables on it. You cannot use intra-stack environment variables to gain access to database credentials, only database addresses.
 
 <h2 id="reference">Reference environment variables</h2>
 Referencing environment variables is done differently depending on your application settings, but these are some examples.
