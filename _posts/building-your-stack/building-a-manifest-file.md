@@ -474,6 +474,7 @@ production:
         server:
             unique_name: app
             vendor: aws
+            key_name: Default
             region: us-east-1
             size: m3.medium
             root_disk_size: 100
