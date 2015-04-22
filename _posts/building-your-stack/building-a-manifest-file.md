@@ -457,7 +457,8 @@ These are the parameters that the <i>server</i> section can take:
 - **unique_name** (_Required if you are specifying a server type_): A unique name for this server.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **subnet_id** (_Optional, AWS EC2 Only_): ID of the AWS subnet in which you would like to create your servers.
-- **vendor** (_Optional, BYOC Only_): Cloud vendor to fire up the server on. Valid values: aws, azure, digitalocean, googlecloud, linode, rackspace, vexxhost and clouda
+- **vendor** (_Optional, BYOC Only_): Cloud vendor to fire the server up on. Valid values: aws, azure, digitalocean, googlecloud, linode, rackspace, vexxhost and clouda
+- **key_name** (_Optional, BYOC Only_): Key name of the cloud vendor to fire the server up on. This is used when the account has multiple keys for a given cloud vendor. The default value is `Default` when omitted.
 - **region** (_Optional, BYOC Only_): [Data center region](http://developers.cloud66.com/#introduction-cloud-vendor-instance-regions) to create the server in.
 - **size** (_Optional, BYOC Only_): [Size of the server instance](http://developers.cloud66.com/#introduction-cloud-vendor-instance-names) created.
 - **availability_zone** (_Optional, AWS EC2 Only_): Availability zone of the server instance in AWS EC2 region.
