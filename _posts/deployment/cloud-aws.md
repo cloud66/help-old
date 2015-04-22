@@ -109,7 +109,22 @@ You can also set more fine-grained permissions with the following JSON template 
                 "ec2:CreateVolume",
                 "ec2:DeleteKeyPair",
                 "ec2:ModifyInstanceAttribute",
-                "ec2:CreateTags"
+                "ec2:CreateTags",
+                "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
+                "elasticloadbalancing:ConfigureHealthCheck",
+                "elasticloadbalancing:CreateLBCookieStickinessPolicy",
+                "elasticloadbalancing:CreateLoadBalancer",
+                "elasticloadbalancing:CreateLoadBalancerListeners",
+                "elasticloadbalancing:CreateLoadBalancerPolicy",
+                "elasticloadbalancing:DeleteLoadBalancer",
+                "elasticloadbalancing:DeleteLoadBalancerListeners",
+                "elasticloadbalancing:DeleteLoadBalancerPolicy",
+                "elasticloadbalancing:DeregisterInstancesFromLoadBalancer",
+                "elasticloadbalancing:DescribeLoadBalancers",
+                "elasticloadbalancing:DescribeTags",
+                "elasticloadbalancing:EnableAvailabilityZonesForLoadBalancer",
+                "elasticloadbalancing:ModifyLoadBalancerAttributes",
+                "elasticloadbalancing:RegisterInstancesWithLoadBalancer"
             ],
             "Resource": "*",
             "Effect": "Allow"
