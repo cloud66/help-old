@@ -7,7 +7,7 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: stack-add-ins
 lead: Schedule automated tasks against a docker service
-search-tags: ['docker', ''task', 'shell', 'shell task', 'shell command']
+search-tags: ['']
 tags: ['Add in']
 ---
 
