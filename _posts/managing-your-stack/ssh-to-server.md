@@ -76,6 +76,22 @@ CXDEBUG=1 cx ssh -s "My Awesome App" web
 
 This will show at which point the command fails, and if you run this manually, you should see more error details.<br/><br/>
 
+<b><li>Toolbelt exit status 255</li></b>
+You may see this output from the bottom of the previous command:
+
+{% highlight bash %}
+Running Command /usr/bin/ssh with ([<username>@<ip_address> -i /Users/<username>/.ssh/cx_<id>_pkey -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no -o LogLevel=QUIET -o IdentitiesOnly=yes -A -p 22])
+2015/04/23 17:41:12 error: exit status 255
+{% endhighlight %}
+
+In this case, there has likely been an issue running the SSH command, though no logs are output from it (given the _LogLevel=QUIET_ directive). We'll want to run that command directly (and switch the _LogLevel_ to _VERBOSE_):
+
+{% highlight bash %}
+ssh <username>@<ip_address> -i /Users/<username>/.ssh/cx_<id>_pkey -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no -o LogLevel=VERBOSE -o IdentitiesOnly=yes -A -p 22
+{% endhighlight %}
+
+The output from that command should help you understand what the root cause of the issue is.<br/><br/>
+
 <b><li>SSH timeout</li></b>
 SSH connection time-outs typically happen when the firewall connection isn't open. The toolbelt opens the firewall to your current IP address automatically, but your external IP address may change between this request and the actual connection. To verify this, try the manual connection method and see if you can connect.
 </ol>
