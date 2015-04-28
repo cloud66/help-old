@@ -407,6 +407,7 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | Amsterdam, Netherlands| ams1 |
 | Amsterdam, Netherlands (2nd Data Center) | ams2 |
 | Amsterdam, Netherlands (3rd Data Center) | ams3 |
+| Frankfurt, Germany | fra1 |
 | New York, US | nyc1 |
 | New York 2, US | nyc2 |
 | New York 3, US | nyc3 |

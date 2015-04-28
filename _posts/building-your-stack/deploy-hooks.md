@@ -180,7 +180,7 @@ Creating a deploy hook from scratch consists of a number of steps:<br/>
 Automating deploy hooks can sometimes be tricky. To avoid issues, it's good practice to run each of your commands manually to see that they complete successfully. If a specific command doesn't show any output, you can use the <code>echo $?</code> command after issuing your command to see its exit code. If it returns a <i>zero</i>, your command was successful, whereas a <i>one</i> means it has failed.
 
 <h2 id="snippets">Use a snippet deploy hook</h2>
-Below is a bare-bone example of using a snippet with the required fields - it will execute the <a href="https://raw.githubusercontent.com/cloud66/snippets/master/cloud66/node">Cloud 66 Node snippet</a> as the first thing on all production servers.
+Below is a bare-bone example of using a snippet with the required fields - it will execute the <a href="https://raw.githubusercontent.com/cloud66/snippets/master/cloud66/node">Cloud 66 Node snippet</a> as the first thing on all production servers. 
 
 <pre class="prettyprint">
 production: # Environment
@@ -190,10 +190,23 @@ production: # Environment
         execute: true
 </pre>
 
+You can also run several snippets at the same hook point like follows:
+
+<pre class="prettyprint">
+production: # Environment
+    first_thing: # Hook point
+      - snippet: cloud66/node # Hook type
+        target: any # Hook fields
+        execute: true
+      - snippet: cloud66/bower
+        target: any
+        execute: true
+</pre>
+
 See the available hook points and fields for more ways to customize this.
 
 <h2 id="commands">Use a command deploy hook</h2>
-The hook example below can be used to install anything from packages to fonts on your server.
+The hook example below can be used to install anything from packages to fonts on your server, and you can nest different hooks for the same hook point like follows:
 
 <pre class="prettyprint">
 production: # Environment
@@ -201,6 +214,9 @@ production: # Environment
       - command: apt-get install curl -y # Hook type
         target: any # Hook fields
         execute: true
+      - command: apt-get install ncdu -y # Hook type
+        target: any # Hook fields
+        execute: true  
 </pre>
 
 <div class="notice">

@@ -87,7 +87,7 @@ Running Command /usr/bin/ssh with ([&lt;username&gt;@&lt;ip_address&gt; -i /User
 In this case, there has likely been an issue running the SSH command, though no logs are output from it (given the <i>LogLevel=QUIET</i> directive). We'll want to run that command directly (and switch the <i>LogLevel</i> to <i>VERBOSE</i>):
 
 <pre class="prettyprint">
-ssh &lt;username&tt;@&lt;ip_address&gt; -i /Users/&lt;username&gt;/.ssh/cx_&lt;id&gt;_pkey -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no -o LogLevel=VERBOSE -o IdentitiesOnly=yes -A -p 22
+ssh &lt;username&gt;@&lt;ip_address&gt; -i /Users/&lt;username&gt;/.ssh/cx_&lt;id&gt;_pkey -o UserKnownHostsFile=/dev/null -o CheckHostIP=no -o StrictHostKeyChecking=no -o LogLevel=VERBOSE -o IdentitiesOnly=yes -A -p 22
 </pre>
 
 The output from that command should help you understand what the root cause of the issue is.<br/><br/>

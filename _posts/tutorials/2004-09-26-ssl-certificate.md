@@ -47,8 +47,7 @@ Once you have your certificate, key and possibly intermediate certificate, paste
 To generate a key and certificate signing request, follow the steps below.
 
 <ol class="article-list">
-<li><a href="http://help.cloud66.com/managing-your-stack/ssh-to-your-server">SSH into your server</a>.</li>
-<li>Generate private <i>key</i> on your server, without specifying a passphrase:</li>
+<li>Generate a private <i>key</i> through your command line, without specifying a passphrase:</li>
 
 <pre class="prettyprint">
 $ openssl genrsa -out private&#95;key.key 2048

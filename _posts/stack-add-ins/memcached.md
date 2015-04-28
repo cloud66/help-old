@@ -15,7 +15,7 @@ tags: ['Add in']
 [Memcached](http://memcached.org/) is an open source, high-performance, distributed memory object caching system, and it's easy to add to your stack as an add-in.
 
 ## Add Memcached
-To add Memcached to your stack, access the add-ins menu, click _Memcached_ and confirm the installation.
+To add Memcached to your stack, access the add-ins menu, click _Memcached_ and confirm the installation. This will install Memcache on your servers for use with your application - you just need to ensure that your app is configured accordingly.
 
 ## Customize Memcached
 To customize Memcached, use the following syntax in your [manifest file](/building-your-stack/getting-started-with-manifest-files):
