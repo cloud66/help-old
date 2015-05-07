@@ -103,6 +103,10 @@ Below is a table of the available configurations for a given service with a brie
     <td>Specifies the command used to start your container.</td>
 </tr>
 <tr>
+    <td><a href="#constraints">constraints</a></td>
+    <td>Specifies constraints for a service across the cluster.</td>
+</tr>
+<tr>
     <td>deploy_command</td>
     <td>Specifies the command you would like to run during stack deploy (runs once per service).</td>
 </tr>
@@ -169,6 +173,18 @@ Below is a table of the available configurations for a given service with a brie
 </tr>
 
 </table>
+
+<hr>
+
+<h3 id="constraints">Constraints</h3>
+This option specifies constraints for a service across the cluster, which currently includes `max_count`, or the max number of containers for a service across the cluster. This doesn't affect deploys, but comes into account when scaling up/down on server or cluster.
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        constraints:
+            max_count: 2
+</pre>
 
 <hr>
 
