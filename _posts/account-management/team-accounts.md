@@ -39,11 +39,11 @@ tags: ['Your account']
 Adding new users to your Cloud 66 account is a great way to work in a team, and access rights can be fine-tuned per stack. They range from no privileges on a stack to full administrative privileges.
 
 <h2 id="permissions">Account user roles and permissions</h2>
-The account administrator is the only user who can invite other members and change access rights for these members (unless this latter privilege is granted to another user).
+The account administrator is the only user who can invite other members and change access rights for these members (unless this latter privilege is granted to another user). There are two types of users - _Finance users_ and _Stack users_.
 
-Finance user is a user who has access to _Payment_ page, can change billing information and will receive payment notifications. Finance user has no access right to stacks. Also we don’t charge for finance users.
+Finance users only have access to your _Payment_ page, and can change billing information. They will receive payment notifications (successful and unsuccessful payments), but have no access rights to stacks. We do not charge for Finance users.
 
-Stack user is a user which you can specify the exact access rights you would like to grant to per stack. The available access rights for stack users are:
+Stack users have access rights to stacks, and you can specify the exact access rights you would like to grant to per stack. The available access rights for stack users are:
 
 - No access
 - View stack
@@ -62,7 +62,7 @@ To invite your team members, access your <i>Account</i> page and select the <i>O
 
 You need to give your team a name before inviting other members. This is the same as your _Company name_ on the _Payments_ page. If you already have entered a company name, you will skip this part.
 
-Next, click into the _Team_ tab, and click the <i>+</i> button in the top right corner. This will allow you to choosee a user type (Stack user or Finance User , input an email address and set the user permissions.
+Next, click into the _Team_ tab, and click the <i>+</i> button in the top right corner. This will allow you to choose a user type (Stack or Finance user), input an email address and set the user permissions.
 
 Upon confirmation, an email will be sent to the email address specified, giving this user the option to sign up for Cloud 66 with their specified email address. If the invited email already has a Cloud 66 account, they will be notified of the pending invitation. By accepting the invitation, they will join your team.
 
