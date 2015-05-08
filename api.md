@@ -1612,7 +1612,8 @@ Get list of all environment variables of stack
     				"created_at": "2014-08-29T17:21:25Z",
     				"updated_at": "2014-08-29T17:21:25Z",
     				"is_password":false,
-    				"is_generated": true
+    				"is_generated": true,
+                    "history" : [{ "key" : 1, "value" : "develop", "created_at" : "2015-05-08T15:09:50Z", "updated_at" : "2015-05-08T15:09:50Z" }]
     			},
     			{
     				"id": 4153,
@@ -1622,7 +1623,8 @@ Get list of all environment variables of stack
     				"created_at": "2014-08-29T17:21:25Z",
     				"updated_at": "2014-08-29T17:21:25Z",
     				"is_password": false,
-    				"is_generated": true
+    				"is_generated": true,
+                    "history" : [{ "key" : 2, "value" : "/var/deploy/test-elastic-1/web_head/somethingold", "created_at" : "2015-05-08T14:01:50Z", "updated_at" : "2015-05-08T14:01:50Z" }]                    
     			},
     			{
     				"id": 4167,
@@ -1632,7 +1634,8 @@ Get list of all environment variables of stack
     				"created_at": "2014-08-29T17:21:26Z",
     				"updated_at":"2014-08-29T17:21:26Z",
     				"is_password":false,
-    				"is_generated":true
+    				"is_generated":true,
+                    "history" : [{ "key" : 5, "value" : "xyz", "created_at" : "2015-05-08T14:01:50Z", "updated_at" : "2015-05-08T14:01:50Z" }, { "key" : 6, "value" : "123", "created_at" : "2015-05-08T14:02:50Z", "updated_at" : "2015-05-08T14:02:50Z" }]
     			},
     			{
     				"id":4168,
@@ -1642,7 +1645,8 @@ Get list of all environment variables of stack
     				"created_at":"2014-08-29T17:21:26Z",
     				"updated_at":"2014-08-29T17:21:26Z",
     				"is_password":true,
-    				"is_generated":true
+    				"is_generated":true,
+                    "history" : []
     			}
     		],
     		"count":30,
@@ -1695,7 +1699,8 @@ Get information of a single environment variable
 					"created_at":"2014-08-29T17:21:25Z",
 					"updated_at":"2014-08-29T17:21:25Z",
 					"is_password":false,
-					"is_generated":true
+					"is_generated":true,
+                    "history" : [{ "key" : 5, "value" : "xyz", "created_at" : "2015-05-08T14:01:50Z", "updated_at" : "2015-05-08T14:01:50Z" }, { "key" : 6, "value" : "123", "created_at" : "2015-05-08T14:02:50Z", "updated_at" : "2015-05-08T14:02:50Z" }]
 				}
 			}
 
