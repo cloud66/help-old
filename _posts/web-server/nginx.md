@@ -22,7 +22,10 @@ tags: ['Web server']
         <a href="#workers">Nginx worker configuration</a>
     </li>
     <li>
-        <a href="#error">Custom Nginx error page</a>
+        <a href="#default-error">Default 66 Nginx error page</a>
+    </li>       
+    <li>
+        <a href="#custom-error">Custom Nginx error page</a>
     </li>       
     <li>
         <a href="#customize">Customize your Nginx configuration</a>
@@ -1454,8 +1457,38 @@ The following table specifies the number of workers configured for your Nginx ba
   </tbody>
 </table>
 
-<h2 id="error">Custom Nginx error page</h2>
-To create a custom Nginx 50X error page, create a file called _50X.html_ in <code>$STACK&#95;PATH/public/</code>.
+<h2 id="default-error">Default Nginx error page</h2>
+By default when there is a problem with upstream server, requests will be passed to Cloud 66 default error page. From there admins can go to the problematic server page in Cloud 66 dashboard. 
+
+<h2 id="custom-error">Custom Nginx error page</h2>
+There is two way you can create a custom Nginx 50X error page, 
+
+1 - Using static page on you own server
+<ul class="list">
+	<li>Create a file called _50X.html_ in <code>$STACK&#95;PATH/public/</code>.</li>
+	<li>Customize your Ngnix configuration and replace _50X.html_ location block with following code. (See <a href="#customize">Customize your Nginx configuration</a>)</li>
+</ul>
+ 
+<pre>
+location = /50x.html
+{
+	root html;
+}
+</pre>
+
+2 - Using external static page  
+<ul class="list">
+	<li>Upload your file to a server (The page should accessible from your server)</li>
+	<li>Customize your Ngnix configuration and replace _50X.html_ location block with following code. (See <a href="#customize">Customize your Nginx configuration</a>)</li>
+</ul>
+ 
+<pre>
+location = /50x.html
+{
+	proxy_pass {url-of-your-custom-page};
+}
+</pre>
+
 
 <h2 id="customize">Customize your Nginx configuration</h2>
 Cloud 66 makes it easy for you to customize your Nginx configuration. From your stack detail page, access your web server group page (eg. _Rails server_) and click _Customize Nginx_ in the right sidebar. Follow the [CustomConfig instructions](/managing-your-stack/customconfig) to customize the configuration.
