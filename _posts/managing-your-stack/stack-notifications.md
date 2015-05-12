@@ -98,5 +98,6 @@ The following event types are available:
 		<tr><td>app.deauth</td><td>App deauthorized from accessing the account</td></tr>
 		<tr><td>stack.redeploy.hook.fail</td><td>Stack redeployment hook failed</td></tr>
 		<tr><td>stack.deploy.started</td><td>Stack deployment started</td></tr>
+		<tr><td>container.down</td><td>Container is down</td></tr>
 	</tbody>
 </table>

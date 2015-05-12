@@ -63,9 +63,7 @@ curl -X POST -d "" [your redeployment hook URL]
 </pre>
 
 <h2 id="git-ref">Support for deployment from Git refs</h2>
-Redeployment hooks support custom <a href="http://git-scm.com/book/en/v2/Git-Internals-Git-References">Git refs</a>.
-
-Using deployments from Git refs you can use any valid git ref, like a commit SHA hash, git tag or branch to tell Cloud 66 what code you would like to deploy to your servers. You can do this in cURL like follows:
+Redeployment hooks support custom <a href="http://git-scm.com/book/en/v2/Git-Internals-Git-References">Git refs</a>. Using deployments from Git refs you can use any valid git ref, like a commit SHA hash, git tag or branch to tell Cloud 66 what code you would like to deploy to your servers. You can do this in cURL like follows:
 
 <pre class="terminal">
 curl -X POST -d "git_ref=[tag]" [your redeployment hook URL]
