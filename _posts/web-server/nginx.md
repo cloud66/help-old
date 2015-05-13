@@ -1467,14 +1467,14 @@ There are two ways for you to create a custom Nginx 50X error page:
 <li>Using a static page on you own server</li>
 
 <ul class="list">
-	<li>For Docker stacks, make your custom error page (for example <code>errors.html</code>) available in your container (for example in <code>/usr/app</code>), and simply mount this folder to the host (for example with <code>/var/containers:/usr/app</code>). The path used in the next step would then be <code>/var/containers/errors.html</code></li>
+	<li>For Docker stacks, make your custom error page (for example <code>50x.html</code>) available in your container (for example in <code>/usr/app</code>), and simply mount this folder to the host (for example with <code>/var/containers:/usr/app</code>). The path used in the next step would then be <code>/var/containers/50x.html</code></li>
 	<li><a href="#customize">Customize your Nginx configuration</a> and replace the _50X.html_ location block with following:</li>
 </ul>
  
 <pre>
 location = /50x.html
 {
-	root /var/containers/errors.html;
+	root /var/containers/;
 }
 </pre>
 
