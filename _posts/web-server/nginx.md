@@ -1458,28 +1458,31 @@ The following table specifies the number of workers configured for your Nginx ba
 </table>
 
 <h2 id="default-error">Default Nginx error page</h2>
-By default when there is a problem with upstream server, requests will be passed to Cloud 66 default error page. From there admins can go to the problematic server page in Cloud 66 dashboard. 
+When there is a problem with your upstream server (ie. a container), requests will be passed to the default Cloud 66 error page. From there, you can visit the problematic server page in Cloud 66 dashboard to troubleshoot. 
 
 <h2 id="custom-error">Custom Nginx error page</h2>
-There is two way you can create a custom Nginx 50X error page, 
+There are two ways for you to create a custom Nginx 50X error page:
 
-1 - Using static page on you own server
+<ol class="list">
+<li>Using a static page on you own server</li>
+
 <ul class="list">
-	<li>Create a file called _50X.html_ in <code>$STACK&#95;PATH/public/</code>.</li>
-	<li>Customize your Ngnix configuration and replace _50X.html_ location block with following code. (See <a href="#customize">Customize your Nginx configuration</a>)</li>
+	<li>For Docker stacks, make your custom error page (for example <code>errors.html</code>) available in your container (for example in <code>/usr/app</code>), and simply mount this folder to the host (for example with <code>/var/containers:/usr/app</code>). The path used in the next step would then be <code>/var/containers/errors.html</code></li>
+	<li><a href="#customize">Customize your Nginx configuration</a> and replace the _50X.html_ location block with following:</li>
 </ul>
  
 <pre>
 location = /50x.html
 {
-	root html;
+	root /var/containers/errors.html;
 }
 </pre>
 
-2 - Using external static page  
+<li>Using external static page</li>
+
 <ul class="list">
-	<li>Upload your file to a server (The page should accessible from your server)</li>
-	<li>Customize your Ngnix configuration and replace _50X.html_ location block with following code. (See <a href="#customize">Customize your Nginx configuration</a>)</li>
+	<li>Upload your file to a server which is accessible from your server</li>
+	<li><a href="#customize">Customize your Nginx configuration</a> and replace the _50X.html_ location block with following:</li>
 </ul>
  
 <pre>
@@ -1488,7 +1491,7 @@ location = /50x.html
 	proxy_pass {url-of-your-custom-page};
 }
 </pre>
-
+</ol>
 
 <h2 id="customize">Customize your Nginx configuration</h2>
 Cloud 66 makes it easy for you to customize your Nginx configuration. From your stack detail page, access your web server group page (eg. _Rails server_) and click _Customize Nginx_ in the right sidebar. Follow the [CustomConfig instructions](/managing-your-stack/customconfig) to customize the configuration.
