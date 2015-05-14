@@ -22,7 +22,7 @@ tags: ['Web server']
         <a href="#workers">Nginx worker configuration</a>
     </li>
     <li>
-        <a href="#default-error">Default 66 Nginx error page</a>
+        <a href="#default-error">Default Cloud 66 Nginx error page</a>
     </li>       
     <li>
         <a href="#custom-error">Custom Nginx error page</a>
@@ -1457,7 +1457,7 @@ The following table specifies the number of workers configured for your Nginx ba
   </tbody>
 </table>
 
-<h2 id="default-error">Default Nginx error page</h2>
+<h2 id="default-error">Default Cloud 66 Nginx error page</h2>
 When there is a problem with your upstream server (ie. a container), requests will be passed to the default Cloud 66 error page. From there, you can visit the problematic server page in Cloud 66 dashboard to troubleshoot. 
 
 <h2 id="custom-error">Custom Nginx error page</h2>
@@ -1468,7 +1468,7 @@ There are two ways for you to create a custom Nginx 50X error page:
 
 <ul class="list">
 	<li>For Docker stacks, make your custom error page (for example <code>50x.html</code>) available in your container (for example in <code>/usr/app</code>), and simply mount this folder to the host (for example with <code>/var/containers:/usr/app</code>). The path used in the next step would then be <code>/var/containers/50x.html</code></li>
-	<li><a href="#customize">Customize your Nginx configuration</a> and replace the _50X.html_ location block with following:</li>
+	<li><a href="#customize">Customize your Nginx configuration</a> and replace the <i>50X.html</i> location block with following:</li>
 </ul>
  
 <pre>
