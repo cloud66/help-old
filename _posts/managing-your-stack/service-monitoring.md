@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "Container monitoring"
+title:  "Service monitoring"
 so_title: "monitoring"
 date:   2085-09-24 10:51:22
 categories: managing-your-stack
