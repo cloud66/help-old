@@ -95,7 +95,7 @@ Below is a table of the available configurations for a given service with a brie
     <td><b>Description</b></td>
 </tr>
 <tr>
-    <td><a href="building-your-stack/building-your-docker-service#build_command">build_command</a></td>
+    <td><a href="/building-your-stack/building-your-docker-service#build_command">build_command</a></td>
     <td>Specifies the command you would like to run during stack build.</td>
 </tr>
 <tr>
@@ -120,7 +120,7 @@ Below is a table of the available configurations for a given service with a brie
 </tr>
 <tr>
     <td><a href="/managing-your-stack/service-life-cycle-management#health">health</a></td>
-    <td>One of the values: 'default', 'none' or a hash containing at least one of 'type:', endpoint:', 'protocol:', 'accept:' or 'timeout:'</td>
+    <td>One of the values: <i>default</i>, <i>none</i> or a hash containing at least one of <i>type</i>, <i>endpoint</i>, <i>protocol</i>, <i>accept</i> or <i>timeout</i>.</td>
 </tr>
 <tr>
     <td><a href="/building-your-stack/building-your-docker-service#image">image</a></td>
@@ -156,7 +156,7 @@ Below is a table of the available configurations for a given service with a brie
 </tr>
 
 <tr>
-    <td><a href="http://localhost:3000/managing-your-stack/service-life-cycle-management#stop_grace">stop_grace</a></td>
+    <td><a href="/managing-your-stack/service-life-cycle-management#stop_grace">stop_grace</a></td>
     <td>Duration between the Docker <code>TERM</code> and <code>KILL</code> signals when Docker stop is run and a container is stopped.</td>
 </tr>
 <tr>
@@ -177,7 +177,7 @@ Below is a table of the available configurations for a given service with a brie
 <hr>
 
 <h2 id="database-configs">Database configurations</h2>
-You can also specify any required databases in the service configuration. As databases are fairly static components that rarely change without a migration, they aren't run in containers. This avoids the complexity and overhead of running databases in a container, and allows Cloud 66 to perform replication and backups as normal. These databases will be deployed and configured automatically, and their addresses and access credentials will be made available to the containers across the stack with environment variables.
+You can specify any required databases in the service configuration. As databases are fairly static components that rarely change without a migration, they aren't run in containers. This avoids the complexity and overhead of running databases in a container, and allows Cloud 66 to perform replication and backups as normal. These databases will be deployed and configured automatically, and their addresses and access credentials will be made available to the containers across the stack with environment variables.
 
 The allowed database values are: `postgresql`, `mysql`, `redis`, `mongodb`, `elasticsearch` and `rabbitmq`. For example:
 
