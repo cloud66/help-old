@@ -17,7 +17,10 @@ tags: ['Logs']
         <a href="#about">About logging with Cloud 66</a>
     </li>
     <li>
-        <a href="#locations">Ruby stacks</a>
+        <a href="#docker">Docker stacks</a>
+    </li>
+    <li>
+        <a href="#ruby">Ruby stacks</a>
     </li>
     <li>
         <a href="#rotation">Log rotation</a>

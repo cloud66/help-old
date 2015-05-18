@@ -4,7 +4,7 @@ template: one-col
 title:  "Building your Docker service"
 nav_sticky: false
 date:   2084-12-30 16:27:22
-categories: network
+categories: building-your-stack
 lead: Different ways to build your Docker service
 search-tags: []
 tags: ['']
@@ -23,6 +23,9 @@ tags: ['']
 	</li>
         <li>
             <ul>
+            <li><a href="#build_command">Build command</a></li>
+            <li><a href="#command">Command</a></li>
+            <li><a href="#deploy_command">Deploy command</a></li>
             <li><a href="#git_url">Git URL</a></li>
             <li><a href="#git_branch">Git branch</a></li>
             <li><a href="#image">Image</a></li>
@@ -44,9 +47,45 @@ If you prefer to build your own images, simply provide the location of this imag
 
 There are a number of directives you can set in your service configuration to customize your service network settings:
 
+- [build_command](#build_command)
+- [command](#command)
+- [deploy_command](#deploy_command)
 - [git_url](#git_url)
 - [git_branch](#git-branch)
 - [image](#image)
+
+<h3 id="build_command">Build command</h3>
+Specifies the command you would like to run during stack build (runs on your Docker host).
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        build_command: bundle exec rake db:schema:load
+</pre>
+
+<hr>
+
+<h3 id="command">Command</h3>
+Specifies the command used to start your container(s) (runs on your Docker host).
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        command: bundle exec rails s
+</pre>
+
+<hr>
+
+<h3 id="deploy_command">Deploy command</h3>
+Specifies the command you would like to run during stack deploy (runs once per service, on your Docker host).
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        deploy_command: bundle exec rake db:migrate
+</pre>
+
+<hr>
 
 <h3 id="git_url">Git URL</h3>
 The Git repository URL your Docker image will be built with. The Git URL you use to [allow us access to your repository](http://community.cloud66.com/articles/accessing-your-git-repository) will differ for public and private repositories.

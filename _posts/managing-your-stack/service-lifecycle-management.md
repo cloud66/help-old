@@ -27,7 +27,7 @@ tags: ['']
             <li><a href="#pre_start">Pre-start signal</a></li>
             <li><a href="#pre_stop">Pre-stop signal</a></li>
             <li><a href="#requires">Requires</a></li>
-            <li><a href="#restart">Restart</a></li>
+            <li><a href="#restart">Restart on deploy</a></li>
             <li><a href="#stop_grace">Stop grace</a></li>
             </ul>
         </li>   

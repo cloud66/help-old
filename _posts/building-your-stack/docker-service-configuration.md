@@ -29,7 +29,7 @@ tags: ['Deployment']
 </ul>
 
 <h2 id="introduction">What is service configuration?</h2>
-Service configurations allow you to be more explicit about your Docker services and control settings that are not usually available through the user interface or Cloud 66 toolbelt. These settings describe the setup of your services, and these are just some examples of the service configurations you can make:
+Service configuration allows you to be more explicit about your Docker services and control settings that are not usually available through the user interface or Cloud 66 toolbelt. These settings describe the setup of your services, and these are just some examples of the service configurations you can make:
 
 - Defining build and deploy commands
 - Specifying a central logging folder
@@ -95,43 +95,43 @@ Below is a table of the available configurations for a given service with a brie
     <td><b>Description</b></td>
 </tr>
 <tr>
-    <td>build_command</td>
+    <td><a href="building-your-stack/building-your-docker-service#build_command">build_command</a></td>
     <td>Specifies the command you would like to run during stack build.</td>
 </tr>
 <tr>
-    <td>command</td>
+    <td><a href="/building-your-stack/building-your-docker-service#command">command</a></td>
     <td>Specifies the command used to start your container.</td>
 </tr>
 <tr>
-    <td><a href="#constraints">constraints</a></td>
+    <td><a href="/managing-your-stack/scaling#services">constraints</a></td>
     <td>Specifies constraints for a service across the cluster.</td>
 </tr>
 <tr>
-    <td>deploy_command</td>
+    <td><a href="/building-your-stack/building-your-docker-service#deploy_command">deploy_command</a></td>
     <td>Specifies the command you would like to run during stack deploy (runs once per service).</td>
 </tr>
 <tr>
-    <td><a href="#git">git_url</a></td>
+    <td><a href="/building-your-stack/building-your-docker-service#git_url">git_url</a></td>
     <td>The Git repository URL your Docker image will be built with.</td>
 </tr>
 <tr>
-    <td><a href="#git-branch">git_branch</a></td>
+    <td><a href="/building-your-stack/building-your-docker-service#git-branch">git_branch</a></td>
     <td>The Git repository branch your Docker image will be based on.</td>
 </tr>
 <tr>
-    <td><a href="#health">health</a></td>
+    <td><a href="/managing-your-stack/service-life-cycle-management#health">health</a></td>
     <td>One of the values: 'default', 'none' or a hash containing at least one of 'type:', endpoint:', 'protocol:', 'accept:' or 'timeout:'</td>
 </tr>
 <tr>
-    <td><a href="#image">image</a></td>
+    <td><a href="/building-your-stack/building-your-docker-service#image">image</a></td>
     <td>The image you would typically run <code>docker pull</code> from.</td>
 </tr>
 <tr>
-    <td><a href="#log_folder">log_folder</a></td>
+    <td><a href="/managing-your-stack/logging#docker">log_folder</a></td>
     <td>Folder your services logs to, mounted to <code>/var/log/containers/service</code> on the host filesystem.</td>
 </tr>
 <tr>
-    <td><a href="#ports">ports</a></td>
+    <td><a href="/network/service-network-settings#ports">ports</a></td>
     <td>The ports that are running within the container, as well as their corresponding external ports.</td>
 </tr>
 <tr>
@@ -139,32 +139,32 @@ Below is a table of the available configurations for a given service with a brie
     <td>Boolean value to indicate whether the container should be <a href="https://docs.docker.com/reference/run/#runtime-privilege-linux-capabilities-and-lxc-configuration">run with extended privileges</a>.</td>
 </tr>
 <tr>
-    <td><a href="#pre_start">pre_start_signal</a></td>
+    <td><a href="/managing-your-stack/service-life-cycle-management#pre_start">pre_start_signal</a></td>
     <td>This is a signal that is sent to the existing running containers of the service before the new service containers are started during deployment.</td>
 </tr>
 <tr>
-    <td><a href="#pre_stop">pre_stop_sequence</a></td>
+    <td><a href="/managing-your-stack/service-life-cycle-management#pre_stop">pre_stop_sequence</a></td>
     <td>This is a stop sequence that is executed on your running containers before they are shut down.</td>
 </tr>
 <tr>
-    <td><a href="#requires">requires</a></td>
+    <td><a href="/managing-your-stack/service-life-cycle-management#requires">requires</a></td>
     <td>Array of other defined service names that should be started before this service during build and deployment.</td>
 </tr>
 <tr>
-    <td>restart_on_deploy <i>(default: true)</i></td>
+    <td><a href="/managing-your-stack/service-life-cycle-management#restart">restart_on_deploy</a> <i>(default: true)</i></td>
     <td>Boolean value to indicate whether the containers of this service should be restarted during deployment.</td>
 </tr>
 
 <tr>
-    <td>stop_grace</td>
+    <td><a href="http://localhost:3000/managing-your-stack/service-life-cycle-management#stop_grace">stop_grace</a></td>
     <td>Duration between the Docker <code>TERM</code> and <code>KILL</code> signals when Docker stop is run and a container is stopped.</td>
 </tr>
 <tr>
-    <td><a href="#traffic_matches">traffic_matches</a></td>
+    <td><a href="/network/service-network-settings#traffic_matches">traffic_matches</a></td>
     <td>The automatically configured traffic names in your Nginx config that will route traffic to these containers based on request DNS name. Allows microservices on the same port routes by subdomain for instance.</td>
 </tr>
 <tr>
-    <td><a href="#volumes">volumes</a></td>
+    <td><a href="/managing-your-stack/service-storage">volumes</a></td>
     <td>The volumes that are mounted from your host into your container.</td>
 </tr>
 <tr>
