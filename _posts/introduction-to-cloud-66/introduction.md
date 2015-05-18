@@ -84,7 +84,7 @@ Before you can deploy your applications to a server with Cloud 66, you must buil
 </ol>
 
 <h3 id="2">Step 2: Service configuration</h3>
-Now provide a stack name, and the environment you would like to deploy in. Next up is configuring your Docker services - for example _web_, _api_, _worker_ and so on. You can add as many services to your stack as you need. These are the available fields:
+Now provide a stack name, and the environment you would like to deploy in. Next up is configuring your Docker services - for example _web_, _api_, _worker_ and so on. You can add as many services to your stack as you need. These are the available fields (for the _basic_ tab):
 
 <ol class="list">
 <li>What's the service name?</li>
@@ -97,7 +97,7 @@ Now provide a stack name, and the environment you would like to deploy in. Next 
 <li>Which database(s) do you need?</li>  
 </ol>
 
-This page has _basic_ and _advanced_ configurations, designated by the tabs at the top of the form. Switching between the tabs will retain any previous information provided. The advanced tab allows you to input more detailed settings, which you can learn about in [Advanced Docker deployments](/building-your-stack/advanced-docker-deployments).
+This page has _basic_ and _advanced_ configurations, designated by the tabs at the top of the form. Switching between the tabs will retain any previous information provided. The advanced tab allows you to input more detailed settings, which you can learn about in [Docker service configuration](/building-your-stack/docker-service-configuration).
 
 <h3 id="3">Step 3: Define deployment properties</h3>
 Complete the following steps to define the properties that determine how to deploy your application.
