@@ -225,3 +225,5 @@ services:
 {% endhighlight %}
 
 In above example, all defined environment variables except `ENV_NAME1` are referenced to other environment variables. You can specify a default value for referenced environment variables that will be set if there is no suitable link value (such as `ENV_NAME3`).
+
+In addition to this, you can pass environment variables into your Dockerfile during your build process (if using BuildGrid) with the `$VARIABLE` syntax, which will be populated with environment variable(s) set on the stack.
