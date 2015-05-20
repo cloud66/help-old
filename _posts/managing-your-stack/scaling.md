@@ -4,7 +4,7 @@ template: one-col
 title:  "Scaling"
 nav_sticky: false
 date:   2088-01-25 16:27:22
-categories: managing-your-stack
+categories: deployment
 lead: Scaling your servers is easy with Cloud 66
 search-tags: []
 tags: ['Scaling']
@@ -34,11 +34,6 @@ tags: ['Scaling']
                 <li><a href="#db">Database servers</a></li>
                 </ul>
             </li>	
-            <li>
-                <ul>
-                <li><a href="#services">Docker services</a></li>
-                </ul>
-            </li>               
 	<li>
 		<a href="#vertical">Vertical scaling</a>
 	</li>
@@ -64,18 +59,6 @@ Once the server is ready, you can move your processes from the web server to the
 
 <h3 id="db">Database servers</h3>
 You can scale your database servers through database replication. See our [database management section](/database-management/database-management) for more information.
-
-<h3 id="services">Docker services</h3>
-You can scale your Docker services horizontally across your Docker cluster by clicking the _Docker cluster_ server group from your stack page, and using the <i>+</i> and <i>-</i> buttons to increase or decrease the number of running containers on each server.
-
-In your service configuration, you can also specify constraints for a service across the cluster, which currently includes `max_count`, or the max number of containers for a service across the cluster. This doesn't affect deploys, but comes into account when scaling up/down on server or cluster.
-
-<pre class="prettyprint">
-services:
-    &#60;service_name&#62;:
-        constraints:
-            max_count: 2
-</pre>
 
 <h2 id="vertical">Vertical scaling</h2>
 A number of cloud vendors allow you to increase and/or decrease the size of an existing server via their dashboard, allowing you to change the memory and CPU for existing servers. Vertical scaling works the same way for all server types.

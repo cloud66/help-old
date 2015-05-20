@@ -65,7 +65,7 @@ tags: ['Getting started']
 
 
 <h2 id="f1">What is Cloud 66?</h2>
-Cloud 66 is an application provisioning and management tool. It builds the servers needed to run your full stack, deploys your application to your servers and manages them for you. You can use it to deploy your app in your cloud or your own servers.
+Cloud 66 provides container management as a service - it builds the servers needed to run your full stack, deploys your application to your servers and manages them for you. You can use it to deploy your app in your cloud or your own servers.
 
 <hr>
 
@@ -106,7 +106,7 @@ Yes - you can have any number of Docker services running on a single server at a
 <hr>
 
 <h2 id="f9">How can I change my Git repository?</h2>
-You can change your Git repository by using the Cloud 66 Toolbelt, <strong>Settings</strong> section.
+You can change your Git repository through the user interface or by using the Cloud 66 Toolbelt, <strong>Stack settings</strong> section.
 
 <hr>
 

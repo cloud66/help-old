@@ -51,7 +51,7 @@ We currently support the following databases, with no need for additional config
 * RabbitMQ
 * SQLite (only in development environments)
 
-When creating a Docker stack, you can add as many databases as you need during the stack build. For Rack-based stacks, Cloud 66 automatically detects whether your application relies on a database or not during your code analysis. This is based on a combination of your Gemfile and your database.yml or mongoid.yml files.
+When creating a Docker stack, you can [add as many databases as you need in your service configuration during the stack build](/building-your-stack/docker-service-configuration#database-configs). For Rack-based stacks, Cloud 66 automatically detects whether your application relies on a database or not during your code analysis. This is based on a combination of your Gemfile and your database.yml or mongoid.yml files.
 
 After you have analyzed your code, ensure that your desired database type is displayed in the _About your app_ section of the analysis results. If you haven't specified a username and password for your database, Cloud 66 will automatically generate these credentials for you. They will be available as environment variables and your application will be configured to use them.
 

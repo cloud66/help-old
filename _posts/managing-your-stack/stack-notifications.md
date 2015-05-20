@@ -17,6 +17,7 @@ tags: ['']
     <li><a href="#view">Viewing your stack notifications</a></li>
     <li><a href="#setup">Setting up your notification types</a></li>
         <ul style="margin-bottom:0em">
+	        <li><a href="#browser">Browser notifications</a></li>
 	        <li><a href="#emails">Emails</a></li>
 	        <li><a href="#hipchat">Hipchat</a></li>
 	        <li><a href="#ios">iOS</a></li>
@@ -33,6 +34,9 @@ You can control when and how you would like to receive notifications from Cloud 
 _Stack notifications_ can be accessed from the right sidebar of your stack page, and feature notifications for events such as failed backups or jobs, stack deployments and many more.
 
 <h2 id="setup">Setting up your notification types</h2>
+<h3 id="browser">Browser notifications</h3>
+Browser notifications use HTML5 to notify you of your selected events directly in supported browsers. Once enabled, your browser will ask your permission for these notifications to be shown.
+
 <h3 id="emails">Emails</h3>
 Email notifications are enabled by default for all users. By default, you will get an email for a number of events, with the exception of <i>deployment start</i> notifications. You can easily turn email notifications _on_ or _off_ for each type by clicking on the email icon.
 
