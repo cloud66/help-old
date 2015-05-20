@@ -266,14 +266,14 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | A7 | A7 |
 | A8 | A8 |
 | A9 | A9 |
-| D1 | STANDARD_D1 |
-| D2 | STANDARD_D2 |
-| D3 | STANDARD_D3 |
-| D4 | STANDARD_D4 |
-| D11 | STANDARD_D11 |
-| D12 | STANDARD_D12 |
-| D13 | STANDARD_D13 |
-| D14 | STANDARD_D14 |
+| D1 | Standard_D1 |
+| D2 | Standard_D2 |
+| D3 | Standard_D3 |
+| D4 | Standard_D4 |
+| D11 | Standard_D11 |
+| D12 | Standard_D12 |
+| D13 | Standard_D13 |
+| D14 | Standard_D14 |
 
 ### Digital Ocean
 | Instance size | Value |
