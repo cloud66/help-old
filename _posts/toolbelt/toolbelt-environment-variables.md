@@ -53,7 +53,7 @@ These commands allow you to list and set environment variables on your stack.
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx env-vars list [-s &lt;stack&gt;] [environment_variables]
+$ cx env-vars list [-s &lt;stack&gt;] [--history] [environment_variables] 
 </pre>
 
 <h3 id="params">Parameters</h3>
@@ -71,6 +71,11 @@ $ cx env-vars list [-s &lt;stack&gt;] [environment_variables]
             <td><i>stack</i></td>
             <td>&mdash;</td>
             <td>Name of the stack</td>
+        </tr>
+        <tr>
+            <td><i>history</i></td>
+            <td>false</td>
+            <td>Show the history of changed variables with the date of the change to the new value</td>
         </tr>
         <tr>
             <td><i>environment variables</i> (optional)</td>
