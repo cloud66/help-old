@@ -65,10 +65,10 @@ A load balancer is used to distribute traffic across your web servers, and offer
 The type of [load balancer deployed in your stack](/web-server/load-balancing) is dependent on your cloud provider.
 
 <h3 id="web">Web servers</h3>
-By default, your applications are served with Nginx, and you are also free to [customize this selection](/web-server/custom-web-servers) for Rack-based stacks. You can [scale your web server](/deployment/scaling) with the click of a button.
+By default, your applications are served with Nginx, and you are also free to [customize this selection](/web-server/custom-web-servers) for Rack-based stacks. You can [scale your web server](/managing-your-stack/scaling) with the click of a button.
 
 <h3 id="background">Background workers (optional)</h3>
-To relieve pressure from your application, we recommend that you use background workers to run memory-intensive processes. Cloud 66 makes it easy for you to [control and monitor these processes](/deployment/running-background-processes), as well as [scale them](/deployment/scaling) at the click of a button.
+To relieve pressure from your application, we recommend that you use background workers to run memory-intensive processes. Cloud 66 makes it easy for you to [control and monitor these processes](/deployment/running-background-processes), as well as [scale them](/managing-your-stack/scaling) at the click of a button.
 
 <h3 id="db">Database servers (optional)</h3>
 You can choose between any of four supported databases:

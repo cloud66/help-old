@@ -67,4 +67,4 @@ This integer should be unique across processes, so that multiple processes won't
 <h2 id="scale">Scaling background processes</h2>
 You can scale your background processes up and down on the process server page. On your stack detail page, click the link to your _Process server_ group on your stack detail page. Use the <i>+</i> and <i>-</i> buttons to scale your processes up and down.
 
-You can also scale up a [standalone process server](/deployment/scaling#process) for more resources.
+You can also scale up a [standalone process server](/managing-your-stack/scaling#process) for more resources.

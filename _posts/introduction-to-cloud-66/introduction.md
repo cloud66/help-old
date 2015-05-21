@@ -135,7 +135,7 @@ You can now start customizing by:
 
 <ul class="list">
 <li><a href="/stack-add-ins/database-backups">Defining a backup</a></li>
-<li><a href="/deployment/scaling">Scaling your servers</a></li>
+<li><a href="/managing-your-stack/scaling">Scaling your servers</a></li>
 <li><a href="/managing-your-stack/stack-network-settings">Configuring security</a></li>
 <li><a href="/stack-add-ins/add-in-implementation">Configuring an add-in</a></li>
 </ul>

@@ -34,7 +34,7 @@ You can also use a [manifest file](http://help.cloud66.com/building-your-stack/g
 <ol class="article-list">
 <li>Compile the assets on your own box and disable asset pipeline compilation on the stack going forward.</li>
 <li>Configure your code not to use asset pipeline pre-compilation and use live compilation (on-demand). <a href="http://help.cloud66.com/building-your-stack/asset-pipeline-compilation">More information on Asset Pipeline compilation</a>.</li>
-<li>Resize your box to a bigger box either via a new stack, or <a href="http://help.cloud66.com/deployment/scaling">vertical scaling</a> if available.</li>
+<li>Resize your box to a bigger box either via a new stack, or <a href="http://help.cloud66.com/managing-your-stack/scaling">vertical scaling</a> if available.</li>
 <li><a href="https://www.digitalocean.com/community/articles/how-to-add-swap-on-ubuntu-12-04">Setup swap files on your server</a>. This is automatically done for 512MB and 1GB DigitalOcean servers.</li>
 <li>Manually reduce memory usage on your server before deployments (ie. manually stop your webserver).</li>
 <li>Reduce memory usage on your server by limiting Passenger memory usage (using a <a href="http://help.cloud66.com/building-your-stack/getting-started-with-manifest-files">manifest file</a> to specify a value for reserved&#95;server&#95;memory).</li>

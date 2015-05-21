@@ -88,7 +88,7 @@ PostgreSQL database replication is configured with [streaming replication](http:
 <h3 id="mongodb">MongoDB</h3>
 MongoDB database replication is configured with a [replica set](http://docs.mongodb.org/manual/replication/). This requires an odd number of servers, so if you have one MongoDB server, it will fire up an additional two to run your replica set on a total of three servers. The next scale up will create another two servers and run your cluster on five servers. This also applies to scaling down - deleting one server from a five-server cluster will result in two servers being removed from it to get the total down to three servers.
 
-See our documentation on <a href="#">MongoDB replica sets</a> for best practices.
+See our documentation on <a href="/database-management/mongodb-replica-sets">MongoDB replica sets</a> for best practices.
 
 <h3 id="redis">Redis</h3>
 Redis database replication is configured as per the [Redis manual](http://redis.io/topics/replication). There is one master and all other servers are setup as replicas.

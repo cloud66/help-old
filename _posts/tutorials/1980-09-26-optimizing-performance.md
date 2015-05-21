@@ -37,6 +37,6 @@ There are a number of steps you can take when expecting an increase in server lo
 
 <ol class="article-list">
 <li><a href="http://help.cloud66.com/web-server/load-balancing">Add a load balancer to your stack</a>, and point your DNS to it. It will distribute traffic across your web servers, and offers benefits such as maximizing throughoutput, minimizing response times and avoiding overload on any single server.</li>
-<li><a href="http://help.cloud66.com/deployment/scaling">Scale your application servers horizontally</a> to the extent that you require.</li>
+<li><a href="http://help.cloud66.com/managing-your-stack/scaling">Scale your application servers horizontally</a> to the extent that you require.</li>
 <li><a href="http://help.cloud66.com/managing-your-stack/server-monitoring">Monitor your servers</a> to ensure that they are able to serve your users.</li>
 </ol>
