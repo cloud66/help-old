@@ -174,7 +174,7 @@ production:
 <h3 id="nginx">Nginx</h3>
 
 - **cors**: Enable [Cross Origin Resource Sharing](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) - this will be taken into account when your Nginx configuration is reloaded.
-- **perfect_forward_secrecy**: Enable [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
+- **perfect_forward_secrecy** (_deprecated_): Enable [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
@@ -183,7 +183,7 @@ production:
         configuration:            
             nginx:
                 cors: true
-                perfect&#95;forward&#95;secrecy: true
+                perfect&#95;forward&#95;secrecy: true # deprecated
             extra_packages:
                 - chrony                
 </pre>
