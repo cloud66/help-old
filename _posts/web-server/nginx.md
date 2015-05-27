@@ -1517,7 +1517,7 @@ Reloading Nginx does not interrupt the serving of traffic. This process will be 
 
 <h3 id="custom-vars">Nginx CustomConfig variables</h3>
 
-The following variables are available for use in your Nginx CustomConfig.
+The following variables are available for use in your <b>Docker stack</b> Nginx CustomConfig.
 
 <table class='table table-bordered table-striped'>
   <colgroup>
@@ -1527,217 +1527,251 @@ The following variables are available for use in your Nginx CustomConfig.
   </colgroup>
   <thead>
     <tr>
-      <th>
-        Variable Name
-      </th>
-      <th>
-        Type
-      </th>
-      <th>
-        Description
-      </th>
+      <th>Variable Name</th>
+      <th>Type</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>
-        passenger
-      </td>
-      <td>
-        boolean
-      </td>
-      <td>
-        Is nginx running Passenger or a custom web server?
-      </td>
+      <td>user_name</td>
+      <td>string</td>
+      <td>User name running the application process</td>
     </tr>
     <tr>
-      <td>
-        user_name
-      </td>
-      <td>
-        string
-      </td>
-      <td>
-        User name running the application process
-      </td>
+      <td>environment</td>
+      <td>string</td>
+      <td>Stack environment name (lowercase)</td>
     </tr>
     <tr>
-      <td>
-        environment
-      </td>
-      <td>
-        string
-      </td>
-      <td>
-        Stack environment name (lowercase)
-      </td>
+      <td>server_address</td>
+      <td>string</td>
+      <td>Server address (IP or fqdn)</td>
     </tr>
     <tr>
-      <td>
-        server_address
-      </td>
-      <td>
-        string
-      </td>
-      <td>
-        Server address (IP or fqdn)
-      </td>
+      <td>workers</td>
+      <td>integer</td>
+      <td>Number of CPU cores on the server</td>
     </tr>
     <tr>
-      <td>
-        workers
-      </td>
-      <td>
-        integer
-      </td>
-      <td>
-        Number of CPU cores on the server
-      </td>
+      <td>app_name</td>
+      <td>string</td>
+      <td>Stack name (lowercase)</td>
     </tr>
     <tr>
-      <td>
-        passenger_pool_max
-      </td>
-      <td>
-        integer
-      </td>
-      <td>
-        Size of the passenger pool (Passenger Only)
-      </td>
+      <td>envars</td>
+      <td>hash</td>
+      <td>Hash of all environment variables on the stack</td>
     </tr>
     <tr>
-      <td>
-        use_ruby_shell
-      </td>
-      <td>
-        boolean
-      </td>
-      <td>
-        Used internally
-      </td>
+      <td>allow_ssl</td>
+      <td>boolean</td>
+      <td>Is an SSL Certificate configured on the stack?</td>
     </tr>
     <tr>
-      <td>
-        ruby_shell
-      </td>
-      <td>
-        string
-      </td>
-      <td>
-        /var/deploy/ruby_shell
-      </td>
+      <td>perfect_forward_secrecy</td>
+      <td>boolean</td>
+      <td>Is perfect forward secrecy enabled on the stack?</td>
     </tr>
     <tr>
-      <td>
-        app_name
-      </td>
-      <td>
-        string
-      </td>
-      <td>
-        Stack name (lowercase)
-      </td>
+      <td>cors_enabled</td>
+      <td>boolean</td>
+      <td>Is CORS enabled on the stack?</td>
     </tr>
     <tr>
-      <td>
-        deploy_to
-      </td>
-      <td>
-        string
-      </td>
-      <td>
-        Stack path on the server
-      </td>
+      <td>cors_origin</td>
+      <td>string</td>
+      <td>CORS Origins</td>
     </tr>
     <tr>
-      <td>
-        envars
-      </td>
-      <td>
-        hash
-      </td>
-      <td>
-        Hash of all environment variables on the stack
-      </td>
+      <td>cors_methods</td>
+      <td>string</td>
+      <td>CORS Methods</td>
     </tr>
     <tr>
-      <td>
-        envars
-      </td>
-      <td>
-        hash
-      </td>
-      <td>
-        Hash of all environment variables on the stack
-      </td>
-    </tr>
+      <td>upstreams</td>
+      <td>array</td>
+      <td>Array containing service name, private IPs, traffic matches and port</td>
+    </tr> 
     <tr>
-      <td>
-        passenger_location
-      </td>
-      <td>
-        string
-      </td>
-      <td>
-        Passenger location (Passenger only)
-      </td>
-    </tr>
+      <td>has_ha_proxy_load_balancer</td>
+      <td>boolean</td>
+      <td>Are you using a HAProxy load balancer?</td>
+    </tr> 
     <tr>
-      <td>
-        allow_ssl
-      </td>
-      <td>
-        boolean
-      </td>
-      <td>
-        Is an SSL Certificate configured on the stack?
-      </td>
-    </tr>
+      <td>load_balancer_address</td>
+      <td>string</td>
+      <td>Address of your load balancer</td>
+    </tr> 
     <tr>
-      <td>
-        perfect_forward_secrecy
-      </td>
-      <td>
-        boolean
-      </td>
-      <td>
-        Is perfect forward secrecy enabled on the stack?
-      </td>
-    </tr>
+      <td>red_http_to_https</td>
+      <td>boolean</td>
+      <td>Are you redirecting HTTP to HTTPS?</td>
+    </tr>  
     <tr>
-      <td>
-        cors_enabled
-      </td>
-      <td>
-        boolean
-      </td>
-      <td>
-        Is CORS enabled on the stack?
-      </td>
-    </tr>
+      <td>red_www</td>
+      <td>boolean</td>
+      <td>Are you redirecting traffic to www?</td>
+    </tr>  
     <tr>
-      <td>
-        cors_origin
-      </td>
-      <td>
-        string
-      </td>
-      <td>
-        CORS Origins
-      </td>
-    </tr>
+      <td>blacklist</td>
+      <td>hash</td>
+      <td>List of IPs you are blacklisting</td>
+    </tr>  
     <tr>
-      <td>
-        cors_methods
-      </td>
-      <td>
-        string
-      </td>
-      <td>
-        CORS Methods
-      </td>
-    </tr>
+      <td>supports_realip_module</td>
+      <td>boolean</td>
+      <td>Does your Nginx instance use the Real IP module?</td>
+    </tr>  
+    <tr>
+      <td>has_load_balancer</td>
+      <td>boolean</td>
+      <td>Are you using a load balancer?</td>
+    </tr>                      
   </tbody>
+</table>
+
+The following variables are available for use in your <b>Ruby stack</b> Nginx CustomConfig.
+
+<table class='table table-bordered table-striped'>
+  <colgroup>
+    <col width="20%" />
+    <col width="20%" />
+    <col width="60%" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Variable Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>passenger</td>
+      <td>boolean</td>
+      <td>Is nginx running Passenger or a custom web server?</td>
+    </tr>
+    <tr>
+      <td>user_name</td>
+      <td>string</td>
+      <td>User name running the application process</td>
+    </tr>
+    <tr>
+      <td>environment</td>
+      <td>string</td>
+      <td>Stack environment name (lowercase)</td>
+    </tr>
+    <tr>
+      <td>server_address</td>
+      <td>string</td>
+      <td>Server address (IP or fqdn)</td>
+    </tr>
+    <tr>
+      <td>workers</td>
+      <td>integer</td>
+      <td>Number of CPU cores on the server</td>
+    </tr>
+    <tr>
+      <td>passenger_pool_max</td>
+      <td>integer</td>
+      <td>Size of the passenger pool (Passenger Only)</td>
+    </tr>
+    <tr>
+      <td>use_ruby_shell</td>
+      <td>boolean</td>
+      <td>Used internally</td>
+    </tr>
+    <tr>
+      <td>ruby_shell</td>
+      <td>string</td>
+      <td>/var/deploy/ruby_shell</td>
+    </tr>
+    <tr>
+      <td>app_name</td>
+      <td>string</td>
+      <td>Stack name (lowercase)</td>
+    </tr>
+    <tr>
+      <td>deploy_to</td>
+      <td>string</td>
+      <td>Stack path on the server</td>
+    </tr>
+    <tr>
+      <td>envars</td>
+      <td>hash</td>
+      <td>Hash of all environment variables on the stack</td>
+    </tr>
+    <tr>
+      <td>envars</td>
+      <td>hash</td>
+      <td>Hash of all environment variables on the stack</td>
+    </tr>
+    <tr>
+      <td>passenger_location</td>
+      <td>string</td>
+      <td>Passenger location (Passenger only)</td>
+    </tr>
+    <tr>
+      <td>allow_ssl</td>
+      <td>boolean</td>
+      <td>Is an SSL Certificate configured on the stack?</td>
+    </tr>
+    <tr>
+      <td>perfect_forward_secrecy</td>
+      <td>boolean</td>
+      <td>Is perfect forward secrecy enabled on the stack?</td>
+    </tr>
+    <tr>
+      <td>cors_enabled</td>
+      <td>boolean</td>
+      <td>Is CORS enabled on the stack?</td>
+    </tr>
+    <tr>
+      <td>cors_origin</td>
+      <td>string</td>
+      <td>CORS Origins</td>
+    </tr>
+    <tr>
+      <td>cors_methods</td>
+      <td>string</td>
+      <td>CORS Methods</td>
+    </tr>
+    <tr>
+      <td>has_ha_proxy_load_balancer</td>
+      <td>boolean</td>
+      <td>Are you using a HAProxy load balancer?</td>
+    </tr> 
+    <tr>
+      <td>load_balancer_address</td>
+      <td>string</td>
+      <td>Address of your load balancer</td>
+    </tr> 
+    <tr>
+      <td>red_http_to_https</td>
+      <td>boolean</td>
+      <td>Are you redirecting HTTP to HTTPS?</td>
+    </tr>  
+    <tr>
+      <td>red_www</td>
+      <td>boolean</td>
+      <td>Are you redirecting traffic to www?</td>
+    </tr>  
+    <tr>
+      <td>blacklist</td>
+      <td>hash</td>
+      <td>List of IPs you are blacklisting</td>
+    </tr>  
+    <tr>
+      <td>supports_realip_module</td>
+      <td>boolean</td>
+      <td>Does your Nginx instance use the Real IP module?</td>
+    </tr>  
+    <tr>
+      <td>has_load_balancer</td>
+      <td>boolean</td>
+      <td>Are you using a load balancer?</td>
+    </tr> 
 </table>
 
 <h3 id="boolean">Boolean variables</h3>

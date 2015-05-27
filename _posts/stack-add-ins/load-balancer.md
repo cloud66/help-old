@@ -16,7 +16,7 @@ A load balancer is used to distribute traffic across your web servers, and offer
 
 <div class="notice">
 	<h3>Note</h3>
-	<p>This feature is only available if you have deployed using a cloud vendor.</p>
+	<p>This feature is only available if you have deployed using a cloud vendor, and for non-development stacks.</p>
 </div>
 
 ## Add a load balancer

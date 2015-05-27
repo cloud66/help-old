@@ -36,4 +36,9 @@ Depending on which cloud provider you use, this load balancer will be set up dif
 The time required to set up your load balancer will depend on which cloud provider you use. Once your load balancer is set up, it will be ready to distribute the load between your web servers. <strong>All your existing web servers</strong> will automatically be added to the load balancer.
 
 <h2 id="add">Add a load balancer</h2>
+<div class="notice">
+	<h3>Note</h3>
+	<p>This feature is only available if you have deployed using a cloud vendor, and for non-development stacks.</p>
+</div>
+
 To add a load balancer to your stack, start by visiting your stack detail page. Next, navigate to the add-ins page by clicking _Install add-ins_ in the right sidebar. On the next page, clicking _Load balancer_ will display a brief summary of what will happen next. Click _Install load balancer_ to add a load balancer.
