@@ -1181,7 +1181,7 @@ The following table specifies the number of workers configured for your Nginx ba
         1GB Standard Instance
       </td>
       <td>
-        2
+        1
       </td>
     </tr>
     <tr>
@@ -1190,7 +1190,7 @@ The following table specifies the number of workers configured for your Nginx ba
         2GB Standard Instance
       </td>
       <td>
-        4
+        2
       </td>
     </tr>
     <tr>
@@ -1199,7 +1199,7 @@ The following table specifies the number of workers configured for your Nginx ba
         4GB Standard Instance
       </td>
       <td>
-        4
+        2
       </td>
     </tr>
     <tr>
@@ -1208,7 +1208,7 @@ The following table specifies the number of workers configured for your Nginx ba
         8GB Standard Instance
       </td>
       <td>
-        8
+        4
       </td>
     </tr>
     <tr>
@@ -1217,7 +1217,7 @@ The following table specifies the number of workers configured for your Nginx ba
         15GB Standard Instance
       </td>
       <td>
-        8
+        6
       </td>
     </tr>
     <tr>
@@ -1227,6 +1227,258 @@ The following table specifies the number of workers configured for your Nginx ba
       </td>
       <td>
         8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        3.75 GB Compute v1
+      </td>
+      <td>
+        2
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        7.5 GB Compute v1
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        15 GB Compute v1
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        30 GB Compute v1
+      </td>
+      <td>
+        16
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        60 GB Compute v1
+      </td>
+      <td>
+        32
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        1 GB General Purpose v1
+      </td>
+      <td>
+        1
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        2 GB General Purpose v1
+      </td>
+      <td>
+        2
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        4 GB General Purpose v1
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        8 GB General Purpose v1
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        15 GB I/O v1
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        30 GB I/O v1
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        60 GB I/O v1
+      </td>
+      <td>
+        16
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        90 GB I/O v1
+      </td>
+      <td>
+        24
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        120 GB I/O v1
+      </td>
+      <td>
+        32
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        15 GB Memory v1
+      </td>
+      <td>
+        2
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        30 GB Memory v1
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        60 GB Memory v1
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        120 GB Memory v1
+      </td>
+      <td>
+        16
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        240 GB Memory v1
+      </td>
+      <td>
+        32
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        1 GB Performance
+      </td>
+      <td>
+        2
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        2 GB Performance
+      </td>
+      <td>
+        2
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        4 GB Performance
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        8 GB Performance
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        15 GB Performance
+      </td>
+      <td>
+        4
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        30 GB Performance
+      </td>
+      <td>
+        8
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        60 GB Performance
+      </td>
+      <td>
+        16
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        90 GB Performance
+      </td>
+      <td>
+        24
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        120 GB Performance
+      </td>
+      <td>
+        32
       </td>
     </tr>
   </tbody>

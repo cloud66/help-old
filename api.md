@@ -328,6 +328,25 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | 8GB Standard Instance | 8GB Standard Instance |
 | 15GB Standard Instance | 15GB Standard Instance |
 | 30GB Standard Instance | 30GB Standard Instance |
+| 3.75 GB Compute v1 | 3.75 GB Compute v1 |
+| 7.5 GB Compute v1 | 7.5 GB Compute v1 |
+| 15 GB Compute v1 | 15 GB Compute v1 |
+| 30 GB Compute v1 | 30 GB Compute v1 |
+| 60 GB Compute v1 | 60 GB Compute v1 |
+| 1 GB General Purpose v1 | 1 GB General Purpose v1 |
+| 2 GB General Purpose v1 | 2 GB General Purpose v1 |
+| 4 GB General Purpose v1 | 4 GB General Purpose v1 |
+| 8 GB General Purpose v1 | 8 GB General Purpose v1 |
+| 15 GB I/O v1 | 15 GB I/O v1 |
+| 30 GB I/O v1 | 30 GB I/O v1 |
+| 60 GB I/O v1 | 60 GB I/O v1 |
+| 90 GB I/O v1 | 90 GB I/O v1 |
+| 120 GB I/O v1 | 120 GB I/O v1 |
+| 15 GB Memory v1 | 15 GB Memory v1 |
+| 30 GB Memory v1 | 30 GB Memory v1 |
+| 60 GB Memory v1 | 60 GB Memory v1 |
+| 120 GB Memory v1 | 120 GB Memory v1 |
+| 240 GB Memory v1 | 240 GB Memory v1 |
 | 1 GB Performance | 1 GB Performance |
 | 2 GB Performance | 2 GB Performance |
 | 4 GB Performance | 4 GB Performance |
