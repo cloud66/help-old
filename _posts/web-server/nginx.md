@@ -1841,11 +1841,6 @@ The following variables are available for use in your <b>Docker stack</b> Nginx 
       <td>CORS Methods</td>
     </tr>
     <tr>
-      <td>upstreams</td>
-      <td>array</td>
-      <td>Array containing service name, private IPs, traffic matches and port</td>
-    </tr> 
-    <tr>
       <td>has_ha_proxy_load_balancer</td>
       <td>boolean</td>
       <td>Are you using a HAProxy load balancer?</td>
@@ -1879,7 +1874,22 @@ The following variables are available for use in your <b>Docker stack</b> Nginx 
       <td>has_load_balancer</td>
       <td>boolean</td>
       <td>Are you using a load balancer?</td>
-    </tr>                      
+    </tr>      
+    <tr>
+      <td>service_containers</td>
+      <td>array</td>
+      <td>Contains all services (with <i>service_name</i> and <i>upstreams</i> information)</td>
+    </tr>     
+    <tr>
+      <td>service_name</td>
+      <td>string</td>
+      <td>Part of the <i>service_containers</i> hiearchy, containing the name of a specific service</td>
+    </tr>            
+    <tr>
+      <td>upstreams</td>
+      <td>array</td>
+      <td>Part of the <i>service_containers</i> hiearchy, containing an upstream name, private IPs, traffic matches and port</td>
+    </tr>                     
   </tbody>
 </table>
 
@@ -1904,6 +1914,16 @@ The following variables are available for use in your <b>Ruby stack</b> Nginx Cu
       <td>boolean</td>
       <td>Is nginx running Passenger or a custom web server?</td>
     </tr>
+    <tr>
+      <td>passenger_supports_cgi_param</td>
+      <td>boolean</td>
+      <td>Does the current Passenger version support CGI param?</td>
+    </tr>   
+    <tr>
+      <td>passenger_enterprise</td>
+      <td>boolean</td>
+      <td>Are you using Passenger enterprise?</td>
+    </tr>      
     <tr>
       <td>user_name</td>
       <td>string</td>
