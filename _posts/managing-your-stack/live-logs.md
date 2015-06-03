@@ -12,6 +12,8 @@ tags: ['Management']
 
 Live logs allow you to stream logs from your server, including Docker services and host logs. When you check one of the live log sources, we will automatically start listening to that source, and stream the output to your view. By default, the maximum logging window is 10 minutes.
 
+These logs are ephemeral, meaning that they will disappear from the UI once you navigate to a different page or refresh.
+
 <div class="notice">
 		<h3>Important</h3>
 		<p>
