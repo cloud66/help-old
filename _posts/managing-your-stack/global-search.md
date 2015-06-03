@@ -21,6 +21,7 @@ You can type and word or phrase in the search bar at the top of each page to sta
 - Services
 - Containers
 - Firewall Rules
+- Environment Variables
 
 All queries can be a full or partial string. So both `awesome` and `awes` will find all entities with `awesome` somewhere.
 
@@ -64,20 +65,21 @@ Firewalls can be search only by their tags.
 
 - `service` Search containers by service name
 - `id` Search container by Docker UID
-- `state` Search containers by running state. Valid values are `running`, `stopped`
 - `address` Search by Docker or ContainerNet container IP addresses
 - `image` Search by the image name used by the container
 - `server` Search by the name of the server running containers
 
-## Complex queries
+### Environment Variables
 
+- `key` Search environment variables by their key
+
+## Complex queries
+ 
 You can always combine queries to narrow your search donw. Some examples are below:
 
 
-`type:server type:stack`
-
-`env:production tag:active`
-
-`type:firewall type:service name:bigcustomer`
-
+- `type:server type:stack` returns all servers and stack under your currently selected account
+- `env:production tag:active` returns all production stacks with a tag called `active`
+- `lion type:firewall type:server name:bigcustomer` returns everything within servers and firewall rules of any entity with a name of `bigcustomer` that has `lion` in it.
+- `143.32.71.233 type:firewall` returns any firewall rules with the given IP address in it
 
