@@ -22,6 +22,7 @@ You can type and word or phrase in the search bar at the top of each page to sta
 - Containers
 - Firewall Rules
 - Environment Variables
+- Deployments
 
 All queries can be a full or partial string. So both `awesome` and `awes` will find all entities with `awesome` somewhere.
 
@@ -37,14 +38,14 @@ type:server
 Global search supports thse generic search directives:
 
 - `tag` Search the tags
-- `type` Search by type. Valid values are `stack`, `server`, `service`, `container`, `firewall`
+- `type` Search by type. Valid values are `stack`, `server`, `service`, `container`, `firewall`, 'environment' and 'deployment'
 
 Each specific type might have some specific directives.
 
 ### Stack directives
 
-- `env` Search the stack environment
 - `name` Search the stack name
+- `env` Search the stack environment
 
 ### Server directives
 
@@ -55,7 +56,6 @@ Each specific type might have some specific directives.
 ### Service directives
 
 - `name` Search the service name
-- `image` Search by the image name (applicable only to services built from an image)
 
 ### Firewall directives
 
@@ -72,6 +72,12 @@ Firewalls can be search only by their tags.
 ### Environment Variables
 
 - `key` Search environment variables by their key
+
+### Deployment Variables
+
+- `deployed_by` Name of the person triggering this deployment
+- `git_hash` Git hash used in this deployment
+- `git_ref` Git ref used in this deployment
 
 ## Complex queries
  
