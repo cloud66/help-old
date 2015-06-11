@@ -247,7 +247,7 @@ A Rails application type in the manifest file gives you fine control over things
 - **do&#95;initial&#95;db&#95;schema&#95;load**: Specify whether to perform "rake db:schema:load" on a new stack build.
 - **reserved&#95;server&#95;memory**: A value in MB that Cloud 66 will assume should be left available. This will affect any automatically calculated values, and will be taken into account during redeployment.
 - **passenger&#95;process&#95;memory**: A value in MB that Cloud 66 will use for each Passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment.
-- **locked&#95;passenger&#95;version**: Force the version of passenger to use. Note: this only applies during server build.
+- **locked&#95;passenger&#95;version**: Force the version of passenger to use. Note: this only applies during server build and is not supported on passenger enterprise stacks.
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
@@ -303,6 +303,7 @@ A Sinatra application type in the manifest file gives you fine control over thin
 - **do&#95;initial&#95;db&#95;schema&#95;load**: Specify whether to perform "rake db:schema:load" on new stack build.
 - **reserved&#95;server&#95;memory**: A value in MB that Cloud 66 will assume should be left available. This will affect any automatically calculated values, and will be taken into account during redeployment.
 - **passenger&#95;process&#95;memory**: A value in MB that Cloud 66 will use for each Passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment.
+- **locked&#95;passenger&#95;version**: Force the version of passenger to use. Note: this only applies during server build and is not supported on passenger enterprise stacks.
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
@@ -321,6 +322,7 @@ production:
             do&#95;initial&#95;db&#95;schema&#95;load: false
             reserved&#95;server&#95;memory: 0 (default value)
             passenger&#95;process&#95;memory: 200 (default value)
+            locked&#95;passenger&#95;version: 4.0.59
             activeprotect:
                 whitelist: 123.123.123.123,234.234.234.234
             vpc_id: vpc-64872001
