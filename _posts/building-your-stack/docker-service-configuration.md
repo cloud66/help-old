@@ -111,6 +111,10 @@ Below is a table of the available configurations for a given service with a brie
     <td>Specifies the command you would like to run during stack deploy (runs once per service).</td>
 </tr>
 <tr>
+    <td><a href="/building-your-stack/building-your-docker-service#dns_behaviour">dns_behaviour</a></td>
+    <td>Specifies the dns behaviour for this service. One of the values: <i>versioned</i>, <i>non-versioned</i> . Default value is  <i>versioned</i> </td>
+</tr>
+<tr>
     <td><a href="/building-your-stack/building-your-docker-service#git_url">git_url</a></td>
     <td>The Git repository URL your Docker image will be built with.</td>
 </tr>
@@ -125,6 +129,10 @@ Below is a table of the available configurations for a given service with a brie
 <tr>
     <td><a href="/building-your-stack/building-your-docker-service#image">image</a></td>
     <td>The image you would typically run <code>docker pull</code> from.</td>
+</tr>
+<tr>
+    <td><a href="/building-your-stack/building-your-docker-service#load_balancing">load_balancing</a></td>
+    <td>Specifies the load balancing method for this service. One of the values: <i>roundrobin</i>, <i>sticky</i>, <i>closest</i> . Default value is  <i>roundrobin</i> </td>
 </tr>
 <tr>
     <td><a href="/managing-your-stack/logging#docker">log_folder</a></td>

@@ -26,6 +26,8 @@ tags: ['']
 	</li>	
         <li>
             <ul>
+            <li><a href="#dns_behaviour">dns_behaviour</a></li>
+            <li><a href="#load_balancing">load_balancing</a></li>
             <li><a href="#ports">Ports</a></li>
             <li><a href="#traffic_matches">Traffic matches</a></li>
             </ul>
@@ -52,8 +54,16 @@ ElasticDNS is clever enough to know which version of the app is running in a con
 
 There are a number of directives you can set in your service configuration to customize your service network settings:
 
+- [dns_behaviour](#dns_behaviour)
+- [load_balancing](#load_balancing)
 - [ports](#ports)
 - [traffic_matches](#traffic_matches)
+
+<h3 id="dns_behaviour">DNS Behaviour</h3>
+The `dns_behaviour` option allows you to change the default behaviour of returned address of different versions. As describe before ElasticDNS always try to return the version of the container that has the same version of the caller. You can change this behaviour by setting `dns_behaviour` value to `non-versioned`, In this case ElasticDNS always try to return the address of containers with latest version.
+
+<h3 id="load_balancing">Load Balancing</h3>
+You can change the load balancing method of ElasticDNS by setting load_balancing options. Accepted values are `roundrobin` , `sticky` and `closest`.  Default value is `roundrobin` which return the list of container's ip for requested service in round robin. If you choose the `sticky` , you will get the last ip you got (if you request after 1 minute you may get a new ip). If you choose `closest`, you will get the list of container's ip that exist on caller server(it will return all available ips if there is no container of the requested service on caller server).
 
 <h3 id="ports">Ports</h3>
 The `ports` option allows you to specify ports definitions for your service. The format of the ports definition is a list of `CONTAINER_PORT:HTTP_PORT:HTTPS_PORT`. Note that the `HTTP_PORT` and `HTTPS_PORT` fields are optional, and you can have HTTPS without HTTP if you wish and vica-versa by including the colons, but leaving that corresponding port number blank. You can define multiple port definition triplets for a single service using the above format, for example:
