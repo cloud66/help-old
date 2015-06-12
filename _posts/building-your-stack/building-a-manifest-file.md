@@ -569,7 +569,7 @@ Each application type supports the additional partial configuration to add custo
 </pre>
 
 
-For more information about LiveLogs and additional examples, please see the [LiveLogs help page](http://help.cloud66.com/managing-your-stack/live-logs).
+For more information about <b>LiveLogs</b> and additional examples, please see the <a href="http://help.cloud66.com/managing-your-stack/live-logs">LiveLogs help page</a>.
 
 <h2 id="experiments">Test experimental features</h2>
 You can use some features that are still in beta by adding them to <i>experiments</i> section of your manifest file, for example:
