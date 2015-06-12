@@ -15,7 +15,7 @@ tags: ['Management']
 	<li><a href="#what">What is LiveLogs?</a></li>
 	<li><a href="#how">How does LiveLogs work?</a></li>
 	<li><a href="#how-do">How do I use LiveLogs?</a></li>
-	<li><a href="#how-custom">How do I add custom logs to LiveLogs?</a></li>
+	<li><a href="#how-custom">How do I add additional logs to LiveLogs?</a></li>
 </ul>
 
 <h2 id="what">What is LiveLogs?</h2>
