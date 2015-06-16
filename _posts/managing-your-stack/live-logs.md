@@ -15,18 +15,12 @@ tags: ['Management']
 	<li><a href="#what">What is LiveLogs?</a></li>
 	<li><a href="#how">How does LiveLogs work?</a></li>
 	<li><a href="#how-do">How do I use LiveLogs?</a></li>
+	<li><a href="#how-custom">How do I add additional logs to LiveLogs?</a></li>
 </ul>
 
 <h2 id="what">What is LiveLogs?</h2>
 
 Live logs allow you to stream logs from your server, including Docker services and host logs.  You can add log sources from the right hand side menu, via the groups or individual checkboxes, and for Docker stacks you can select these based on service too. This feature is intended as a live monitoring and debugging tool - to view historic logs you would still need to look at your servers manually or use a traditional logging provider.
-
-<div class="notice">
-		<h3>Important</h3>
-		<p>
-			This feature is currently in beta, so please let us know if you have any issues with it.
-		</p>
-</div>
 
 <h2 id="how">How does LiveLogs work?</h2>
 When you check one of the live log sources, we will automatically start listening to that source, and stream the output to your view. By default, the logs will be populated with the last 100 lines of the log (approximately). When you click on a log source, it sends logs for up to 10 minutes and then will automatically stop. The logs are ephemeral, meaning that they will disappear from the UI once you navigate to a different page or refresh.
@@ -39,3 +33,48 @@ Note that log sources that are not checked will not have any log sources streame
 In terms of the filtering, this occurs dynamically over your logs, and you can filter the results down to only those that match your search term, or clear the filter at any time. Logs will still be streamed, but you'll only see new logs matching your filter until it's cleared.
 
 If you have a lot of log volume coming in, you can autoscroll to remain on the tail of your logs, alternatively you can temporarily pause your log sources by clicking on the <i>pause</i> button. You can additionally clear existing logs from the UI with the <i>clear logs</i> button.
+
+<h2 id="how-custom">How do I add additional logs to LiveLogs?</h2>
+By default LiveLogs will look for logs in the following paths: 
+
+<ul class="list">
+ 	<li>/var/log/containers/*.log</li>
+ 	<li>/var/log/containers/**/*.log</li>
+ 	<li>/tmp/web_server_bluepill.log</li>
+ 	<li>$STACK_BASE/shared/log/*.log</li>
+ </ul>
+
+You can add your own custom paths to this by using a [manifest files](/building-your-stack/building-your-manifest-file) and adding the key `***/configuration/custom_log_files`. 
+
+See the example below to add custom log files to all Rails servers: 
+
+<pre class="prettyprint">
+production:    
+    rails:
+        configuration:
+            custom_log_files: ["/my_special_logs/my_log_file"]                        
+</pre>
+
+You can also have multiple custom log files defined for different server roles; for instance see the example below to add custom log files to all Docker servers with different custom log files for all MySQL servers (on the same stack)
+
+<pre class="prettyprint">
+production:    
+    docker:
+        configuration:
+            custom_log_files: ["/tmp/dockerlogs/*/*.log"]
+    mysql:                     
+        configuration:
+            custom_log_files: 
+            - "/another_mysql_dump_log/*.log"
+            - "/var/log/mysql/error.log"
+</pre>
+
+
+<div class="notice">
+    <h3>Note</h3>
+	<p>Server log file paths changes are calculated after each deployment, so if you change your logs in your manifest, be sure to redeploy in order to see them on the LiveLogs page.</p>
+</div>
+
+
+
+
