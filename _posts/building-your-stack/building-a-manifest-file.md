@@ -40,7 +40,7 @@ tags: ['Deployment']
         </ul>
         </li>       
     <li><a href="#environment_variables">Specify environment variables</a></li>
-    <li><a href="#live_logs">Specify additional LiveLog files</li>
+    <li><a href="#live_logs">Specify additional LiveLog files</a></li>
     <li><a href="#experiments">Test experimental features</a></li>
 </li>
 </ul>
