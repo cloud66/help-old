@@ -87,6 +87,7 @@ Next, select which application you would like to specify settings for. You can c
 - **docker_version**: Specify the version of Docker you want to install.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **root_disk_type** (_Optional, AWS EC2 only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **image_keep_count** (_Optional, defaults to 5_): Set the number of old images to save on your servers (besides the running image).
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
@@ -97,6 +98,7 @@ production:
             version: 1.4.1
             vpc_id: vpc-64872001
             root_disk_size: 100
+            root_disk_type: ssd
             image_keep_count: 5
             extra_packages:
                 - chrony            
@@ -108,6 +110,7 @@ production:
 
 - **version**: Specify the version of ElasticSearch you want to install.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **root_disk_type** (_Optional, AWS EC2 only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
@@ -116,6 +119,7 @@ production:
         configuration:
             version: 0.90.7
             root_disk_size: 100
+            root_disk_type: ssd
             extra_packages:
                 - chrony            
 </pre>
@@ -144,6 +148,7 @@ production:
 
 - **version**: Specify the version of MongoDB you want to install (can only be set during stack build).
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **root_disk_type** (_Optional, AWS EC2 only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
@@ -151,7 +156,8 @@ production:
     mongodb:
         configuration:
             version: 2.4.8
-            root_disk_size: 100            
+            root_disk_size: 100   
+            root_disk_type: ssd         
             extra_packages:
                 - chrony            
 </pre>
@@ -209,6 +215,7 @@ production:
 - **version**: Specify the version of PostgreSQL you want to install (can only be set during stack build).
 - **postgis**: Specify whether to include PostGIS (can be added after initial stack build).
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **root_disk_type** (_Optional, AWS EC2 only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
@@ -218,6 +225,7 @@ production:
             version: 9.3.4
             postgis: true
             root_disk_size: 100            
+            root_disk_type: ssd
             extra_packages:
                 - chrony            
 </pre>
@@ -250,6 +258,7 @@ A Rails application type in the manifest file gives you fine control over things
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **root_disk_type** (_Optional, AWS EC2 only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <div class="notice notice-danger">
@@ -270,6 +279,7 @@ production:
                 whitelist: 123.123.123.123,234.234.234.234
             vpc_id: vpc-64872001
             root_disk_size: 100
+            root_disk_type: ssd
             extra_packages:
                 - chrony            
 </pre>
@@ -280,6 +290,7 @@ production:
 
 - **version**: Specify the version of Redis you want to install.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **root_disk_type** (_Optional, AWS EC2 only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
@@ -288,6 +299,7 @@ production:
         configuration:
             version: 2.6.10
             root_disk_size: 100
+            root_disk_type: ssd
             extra_packages:
                 - chrony            
 </pre>
@@ -304,6 +316,7 @@ A Sinatra application type in the manifest file gives you fine control over thin
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **root_disk_type** (_Optional, AWS EC2 only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <div class="notice notice-danger">
@@ -323,6 +336,7 @@ production:
                 whitelist: 123.123.123.123,234.234.234.234
             vpc_id: vpc-64872001
             root_disk_size: 100
+            root_disk_type: ssd
             extra_packages:
                 - chrony            
 </pre>
@@ -456,6 +470,7 @@ These are the parameters that the <i>server</i> section can take:
 
 - **unique_name** (_Required if you are specifying a server type_): A unique name for this server.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **root_disk_type** (_Optional, AWS EC2 only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **subnet_id** (_Optional, AWS EC2 Only_): ID of the AWS subnet in which you would like to create your servers.
 - **vendor** (_Optional, BYOC Only_): Cloud vendor to fire the server up on. Valid values: aws, azure, digitalocean, googlecloud, linode, rackspace, vexxhost and clouda
 - **key_name** (_Optional, BYOC Only_): Key name of the cloud vendor to fire the server up on. This is used when the account has multiple keys for a given cloud vendor. The default value is `Default` when omitted.
@@ -478,6 +493,7 @@ production:
             region: us-east-1
             size: m3.medium
             root_disk_size: 100
+            root_disk_type: ssd
             subnet_id: subnet-40000000
             availability_zone: us-east-1c
 </pre>
