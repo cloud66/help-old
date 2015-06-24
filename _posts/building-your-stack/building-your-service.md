@@ -26,6 +26,7 @@ tags: ['']
             <li><a href="#build_command">Build command</a></li>
             <li><a href="#command">Command</a></li>
             <li><a href="#deploy_command">Deploy command</a></li>
+            <li><a href="#dockerfile_path">Dockerfile path</a></li>
             <li><a href="#git_url">Git URL</a></li>
             <li><a href="#git_branch">Git branch</a></li>
             <li><a href="#image">Image</a></li>
@@ -85,6 +86,18 @@ Specifies the command you would like to run during stack deploy (runs once per s
 services:
     &#60;service_name&#62;:
         deploy_command: bundle exec rake db:migrate
+</pre>
+
+<hr>
+
+<h3 id="dockerfile_path">Dockerfile path</h3>
+
+Specifies the location of the Dockerfile to be used for building this service. For example, if you have a subfolder in the root of your repository called <i>docker</i> where your Dockerfile lives, you can specify this as follows:
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        dockerfile_path: docker/Dockerfile
 </pre>
 
 <hr>

@@ -115,6 +115,10 @@ Below is a table of the available configurations for a given service with a brie
     <td>Specifies the dns behaviour for this service. One of the values: <i>versioned</i>, <i>non-versioned</i>. Default value is <i>versioned</i></td>
 </tr>
 <tr>
+    <td><a href="/building-your-stack/building-your-docker-service#dockerfile_path">dockerfile_path</a></td>
+    <td>Specifies the location of the Dockerfile to be used for building this service, eg. <i>docker/Dockerfile</i>.</td>
+</tr>
+<tr>
     <td><a href="/building-your-stack/building-your-docker-service#git_url">git_url</a></td>
     <td>The Git repository URL your Docker image will be built with.</td>
 </tr>
