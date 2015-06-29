@@ -2,11 +2,9 @@
 layout: post
 template: two-col
 title:  "Toolbelt stack management"
-date:   2015-01-27 01:01:01
+date:   2040-01-18 01:01:01
 categories: toolbelt
-lead: Deploy your stacks from the command line
-search-tags: ['deployment','toolbelt','commandline']
-tags: ['Toolbelt']
+lead: Manage your stacks with the toolbelt
 ---
 
 <h2>Contents</h2>
@@ -14,42 +12,85 @@ tags: ['Toolbelt']
     <li><a href="#">Stack management</a></li>
             <li>
                 <ul>
-                <li><a href="#build">Create a new Docker stack</a></li>
+                <li><a href="#list">List your stacks</a></li>
                 </ul>
-            </li>
+            </li>     
             <li>
                 <ul>
-                <li><a href="#redeploy">Redeploy your existing stack</a></li>
+                <li><a href="#create">Create a new Docker stack</a></li>
                 </ul>
-            </li>
+            </li>     
             <li>
                 <ul>
-                <li><a href="#list-set">List and set stack settings</a></li>
+                <li><a href="#redeploy">Redeploy your stack</a></li>
                 </ul>
-            </li>
+            </li>         
             <li>
                 <ul>
-                <li><a href="#restart">Restart Nginx</a></li>
+                <li><a href="#restart">Restart your stack</a></li>
                 </ul>
-            </li> 
+            </li>     
             <li>
                 <ul>
                 <li><a href="#clear">Clear caches</a></li>
                 </ul>
-            </li>
+            </li>       
             <li>
                 <ul>
-                <li><a href="#list">List your stack servers</a></li>
+                <li><a href="#listen">Listen to your deployment logs</a></li>
                 </ul>
-            </li>              
+            </li>    
             <li>
                 <ul>
-                <li><a href="#open">Open your website</a></li>
+                <li><a href="#configure">Manage your configuration files</a></li>
                 </ul>
-            </li>                                                                               
+            </li>   
+            <li>
+                <ul>
+                <li><a href="#help">Show help pages for a command</a></li>
+                </ul>
+            </li>                                                                                                      
 </ul>
 
-<h2 id="build">Create a new Docker stack</h2>
+<h2 id="list">List your stacks</h2>
+
+Lists all the stacks available to your account.
+
+<h3 id="usage-build">Usage</h3>
+
+<pre class="prettyprint">
+$ cx stacks list [-e &lt;environment&gt;]
+</pre>
+
+<h3 id="params-build">Parameters</h3>
+<table class='table table-bordered table-striped table-small'>
+    <thead>
+        <tr>
+            <th align="center">Parameter</th>
+            <th align="center">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><i>e</i> (optional)</td>
+            <td>Full or partial environment name</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="example-build">Examples</h3>
+
+<pre class="prettyprint">
+$ cx stacks list
+</pre>
+
+<pre class="prettyprint">
+$ cx stacks list -e staging
+</pre>
+
+<hr>
+
+<h2 id="create">Create a new Docker stack</h2>
 
 Build a new Docker stack based on your desired service definition.
 
@@ -92,18 +133,21 @@ $ cx stacks create --name &lt;stack_name&gt; --environment &lt;environment&gt; -
 <pre class="prettyprint">
 $ cx stacks create --name my_stack --environment production --service_yaml ~/service.yaml --manifest_yaml ~/manifest.yaml
 </pre>
+
 <pre class="prettyprint">
 $ cx stacks create --name my_stack --environment production --service_yaml ~/service.yaml 
 </pre>
 
-<h2 id="redeploy">Redeploy your existing stack</h2>
+<hr>
+
+<h2 id="redeploy">Redeploy your stack</h2>
 
 Trigger the deployment of a stack from the command line, just like clicking on <i>redeploy</i> in the UI.
 
 <h3 id="usage-redeploy">Usage</h3>
 
 <pre class="prettyprint">
-$ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;] [--service &lt;service&gt;] [--service &lt;service&gt;] [--service &lt;service&gt;]
+$ cx stacks redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;] [--service &lt;service&gt;] [--service &lt;service&gt;] [--service &lt;service&gt;]
 </pre>
 
 <h3 id="params-redeploy">Parameters</h3>
@@ -128,8 +172,8 @@ $ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;] [--service &lt
             <td>Automatically answer yes to any prompts</td>
         </tr>
         <tr>
-            <td><i>git-ref</i> (optional - non-docker)</td>
-            <td>Redeploy the specific git reference (branch, tag or hash). Non-docker stacks only</td>
+            <td><i>git-ref</i> (optional, non-Docker)</td>
+            <td>Redeploy the specific git reference (branch, tag or hash). Non-Docker stacks only.</td>
         </tr>
         <tr>
             <td><i>service</i> (optional, repeatable - docker)</td>
@@ -145,110 +189,20 @@ $ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;] [--service &lt
 <h3 id="example-redeploy">Examples</h3>
 
 <pre class="prettyprint">
-$ cx redeploy -s "My Awesome App" -e production
+$ cx stacks redeploy -s "My Awesome App" -e production
 </pre>
 <pre class="prettyprint">
-$ cx redeploy -s "My Awesome App" -e production -y --git-ref my_git_ref_value
+$ cx stacks redeploy -s "My Awesome App" -e production -y --git-ref my_git_ref_value
 </pre>
 <pre class="prettyprint">
-$ cx redeploy -s "My Awesome Docker App" --service web --service api:latest
+$ cx stacks redeploy -s "My Awesome Docker App" --service web --service api:latest
 </pre>
 
 Deploying a stack that is already being deployed will enqueue your redeploy command and will run it immediately after the current deployment is finished.
 
-<h2 id="list-set">List and set stack settings</h2>
+<hr>
 
-Start off by listing the possible settings for a specific stack.
-
-<pre class="prettyprint">
-$ cx settings list [-s &lt;stack&gt;]
-</pre>
-
-These are the available settings:
-
-<table class='table table-bordered table-striped table-small'>
-    <thead>
-        <tr>
-            <th align="center">Setting</th>
-            <th align="center">Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><i>allowed.web.source</i></td>
-            <td>IP addresses that are allowed to access a stacks web servers (with IP addresses in the command or a CSV file with IP addresses as input)</td>
-        </tr>
-        <tr>
-            <td><i>asset.prefix</i></td>
-            <td>If you change your default Rails assets folder, you can set it here</td>
-        </tr>                
-        <tr>
-            <td><i>git.branch</i></td>
-            <td>Change the Git branch of the stack repository</td>
-        </tr>
-        <tr>
-            <td><i>git.repository</i></td>
-            <td>Change the Git repository URL</td>
-        </tr>
-        <tr>
-            <td><i>maintenance.mode</i></td>
-            <td>Enable or disable maintenance mode on the stack. To enable, you can use the values <i>1</i>, <i>true</i>, <i>on</i> or <i>enable</i>, and to disable you can use the values <i>0</i>, <i>false</i>, <i>off</i> or <i>disable</i></td>
-        </tr>        
-        <tr>
-            <td><i>reconfigure.nginx</i></td>
-            <td>If set to true, it will regenerate Nginx configuration and restart it (only on the next deployment)</td>
-        </tr>
-        <tr>
-            <td><i>stack.name</i></td>
-            <td>View your stack name</td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-<h3 id="usage">Usage</h3>
-
-<pre class="prettyprint">
-$ cx settings set [-s &lt;stack&gt;] &lt;setting_name&gt; &lt;value&gt;
-</pre>
-
-<h3 id="parameters">Parameters</h3>
-
-<table class='table table-bordered table-striped table-small'>
-    <thead>
-        <tr>
-            <th align="center">Parameter</th>
-            <th align="center">Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><i>stack</i></td>
-            <td>Name of your stack</td>
-        </tr>
-        <tr>
-            <td><i>setting_name</i></td>
-            <td>A valid setting from the list above</td>
-        </tr>
-        <tr>
-            <td><i>value</i></td>
-            <td>A valid value for the setting</td>
-        </tr>
-        <tr>
-            <td><i>e</i> (optional)</td>
-            <td>Your stack environment</td>
-        </tr>
-    </tbody>
-</table>
-
-<h3 id="example">Example</h3>
-
-<pre class="prettyprint">
-$ cx settings set -s "My Awesome App" git.repository git://github.com/cloud66-samples/rails-mysql.git -e production
-</pre>
-
-<h2 id="restart">Restart Nginx</h2>
+<h2 id="restart">Restart your stack</h2>
 Allows you to restart Nginx on your stack with one simple command.
 
 <h3 id="restart-usage">Usage</h3>
@@ -283,6 +237,8 @@ $ cx stacks restart [-s &lt;stack&gt;]
 $ cx stacks restart -s "My Awesome App"
 </pre>
 
+<hr>
+
 <h2 id="clear">Clear caches</h2>
 For improved performance, volatile code caches exist for your stack. It is possible for a those volatile caches to become invalid if you switch branches, change git repository URL, or rebase or force a commit. Since switching branch or changing git repository URL is done via the Cloud 66 interface, your volatile caches will automatically be purged. However, rebasing or forcing a commit doesn't have any association with Cloud 66, so this command can be used to purge the exising volatile caches.
 
@@ -314,14 +270,16 @@ $ cx stacks clear-caches [-s &lt;stack&gt;]
 $ cx stacks clear-caches -s "My Awesome App"
 </pre>
 
-<h2 id="list">List your stack servers</h2>
-<h3 id="y-usage">Usage</h3>
+<hr>
+
+<h2 id="listen">Listen to your deployment logs</h2>
+<h3 id="list_usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx servers list [-s &lt;stack&gt;] [&lt;names&gt;]
+$ cx stacks listen [-s &lt;stack&gt;]
 </pre>
 
-<h3 id="y-params">Parameters</h3>
+<h3 id="list_params">Parameters</h3>
 <table class='table table-bordered table-striped table-small'>
     <thead>
         <tr>
@@ -334,28 +292,29 @@ $ cx servers list [-s &lt;stack&gt;] [&lt;names&gt;]
             <td><i>stack</i></td>
             <td>Name of your stack</td>
         </tr>
-        <tr>
-            <td><i>names</i> (optional)</td>
-            <td>A list of server names entered as separate parameters.</td>
-        </tr>
     </tbody>
 </table>
 
-<h3 id="y-example">Example</h3>
+<h3 id="list_example">Example</h3>
 
 <pre class="prettyprint">
-$ cx servers list -s "My Awesome App"
+$ cx stacks listen -s "My Awesome App" -e production
 </pre>
 
+You can leave the command by pressing `Ctrl-C` at any time.
 
-<h2 id="open">Open your website</h2>
-<h3 id="z-usage">Usage</h3>
+<hr>
+
+<h2 id="configure">Manage your configuration files</h2>
+List, download and upload of configuration files such as a <i>service.yml</i> or <i>manifest.yml</i>.
+
+<h3 id="configure_usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx open [-s &lt;stack&gt;] [&lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt;]
+$ cx stacks configure list [-s &lt;stack&gt;]
 </pre>
 
-<h3 id="z-params">Parameters</h3>
+<h3 id="configure_params">Parameters</h3>
 <table class='table table-bordered table-striped table-small'>
     <thead>
         <tr>
@@ -365,26 +324,55 @@ $ cx open [-s &lt;stack&gt;] [&lt;server name&gt;|&lt;server ip&gt;|&lt;server r
     </thead>
     <tbody>
         <tr>
-            <td><i>stack</i></td>
-            <td>Name of your stack</td>
-        </tr>
+            <td><i>list</i></td>
+            <td>List of all versions of a configuration file</td>
+        </tr>    
         <tr>
-            <td><i>server name</i> (optional)</td>
-            <td>Name of the server to access</td>
-        </tr>
+            <td><i>download</i></td>
+            <td>Download a configuration file</td>
+        </tr>               
         <tr>
-            <td><i>server ip</i> (optional)</td>
-            <td>IP of the server to access</td>
-        </tr>
+            <td><i>upload</i></td>
+            <td>Upload a new version of configuration file</td>
+        </tr>                       
         <tr>
-            <td><i>server role</i> (optional)</td>
-            <td>Role of the server to access (eg. web)</td>
-        </tr>
+            <td><i>stack</i> (optional)</td>
+            <td>Name of your stack, this can be omitted if the current directory is a stack directory</td>
+        </tr>        
+        <tr>
+            <td><i>f (file)</i> (optional)</td>
+            <td>File name, accepted values are <i>service.yml</i> and <i>manifest.yml</i></td>
+        </tr>           
+        <tr>
+            <td><i>e (environment)</i> (optional)</td>
+            <td>Full or partial environment name</td>
+        </tr>                             
     </tbody>
 </table>
 
-<h3 id="z-example">Example</h3>
+<hr>
+
+<h2 id="help">Show help pages for a command</h2>
+Shows a list of commands or help for one command.
+
+<h3 id="configure_usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx open -s "My Awesome App"
+$ cx stacks help [&lt;command&gt;]
 </pre>
+
+<h3 id="configure_params">Parameters</h3>
+<table class='table table-bordered table-striped table-small'>
+    <thead>
+        <tr>
+            <th align="center">Parameter</th>
+            <th align="center">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><i>command</i></td>
+            <td>The command you wish to see help pages for</td>
+        </tr>                          
+    </tbody>
+</table>

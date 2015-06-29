@@ -1,15 +1,13 @@
 ---
 layout: post
 template: two-col
-title:  "Toolbelt logging"
-date:   2025-01-25 01:01:01
+title:  "Toolbelt tail command"
+date:   2040-01-18 01:01:01
 categories: toolbelt
-lead: Tail your logs for easy debugging
-search-tags: ['']
-tags: ['Toolbelt']
+lead: Tail your logs with the toolbelt
 ---
 
-Use this command to tail your $STACK_PATH logs.
+This will run a Linux tail command on the specified server and given logfile. Logs are read from your stacks log folder `$STACK_PATH/log` and should be the full logfile name including the extension.
 
 <h3 id="usage">Usage</h3>
 

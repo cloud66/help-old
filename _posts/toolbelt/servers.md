@@ -1,19 +1,17 @@
 ---
 layout: post
 template: two-col
-title:  "Toolbelt environment variables"
-date:   2037-01-01 01:01:01
+title:  "Toolbelt server management"
+date:   2040-01-18 01:01:01
 categories: toolbelt
-lead: List and set environment variables
-search-tags: ['environment variables','toolbelt','commandline']
-tags: ['Toolbelt']
+lead: Manage your servers with the toolbelt
 ---
 
 <h2>Contents</h2>
 <ul class="page-toc">
-    <li><a href="#about">Environment variable setup</a></li>
-	<li><a href="#list">List environment variables</a></li>
-	        <li>
+    <li><a href="#about">Server management</a></li>
+    <li><a href="#list">List server settings</a></li>
+            <li>
                 <ul>
                 <li><a href="#usage">Usage</a></li>
                 </ul>
@@ -28,8 +26,8 @@ tags: ['Toolbelt']
                 <li><a href="#example">Example</a></li>
                 </ul>
             </li>
-	<li><a href="#set">Set environment variables</a></li>
-	        <li>
+    <li><a href="#set">Set server settings</a></li>
+            <li>
                 <ul>
                 <li><a href="#usage2">Usage</a></li>
                 </ul>
@@ -46,18 +44,19 @@ tags: ['Toolbelt']
             </li>
 </ul>
 
-<h2 id="about">Environment variable setup</h2>
-These commands allow you to list and set environment variables on your stack.
+<h2 id="about">Server management</h2>
+These commands allow you to list and set various settings on your servers.
 
-<h2 id="list">List environment variables</h2>
+<h2 id="list">List server settings</h2>
+This command lists the possible settings for a specific server.
+
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx env-vars list [-s &lt;stack&gt;] [--history] [environment_variables] 
+$ cx servers settings list [-s &lt;stack&gt;] --server &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt;
 </pre>
 
 <h3 id="params">Parameters</h3>
-
 <table class='table table-bordered table-striped table-small'>
     <thead>
         <tr>
@@ -73,14 +72,19 @@ $ cx env-vars list [-s &lt;stack&gt;] [--history] [environment_variables]
             <td>Name of the stack</td>
         </tr>
         <tr>
-            <td><i>history</i></td>
-            <td>false</td>
-            <td>Show the history of changed variables with the date of the change to the new value</td>
+            <td><i>server name</i> (optional)</td>
+            <td>&mdash;</td>
+            <td>Name of the server to access</td>
         </tr>
         <tr>
-            <td><i>environment variables</i> (optional)</td>
+            <td><i>server ip</i> (optional)</td>
             <td>&mdash;</td>
-            <td>List of multiple environment variables as separate parameters</td>
+            <td>IP of the server to access</td>
+        </tr>
+        <tr>
+            <td><i>server role</i> (optional)</td>
+            <td>&mdash;</td>
+            <td>Role of the server to access (eg. web)</td>
         </tr>
     </tbody>
 </table>
@@ -88,14 +92,16 @@ $ cx env-vars list [-s &lt;stack&gt;] [--history] [environment_variables]
 <h3 id="example">Example</h3>
 
 <pre class="prettyprint">
-$ cx env-vars list -s My_Awesome_App
+$ cx servers settings list -s My_Awesome_App --server web
 </pre>
 
-<h2 id="set">Set environment variables</h2>
+<h2 id="set">Set server settings</h2>
+Use this command to set server settings from the command line.
+
 <h3 id="usage2">Usage</h3>
 
 <pre class="prettyprint">
-$ cx env-vars set [-s &lt;stack&gt;] &lt;setting&gt; &lt;value&gt;
+$ cx servers settings set [-s &lt;stack&gt;] --server &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt; &lt;setting&gt;=&lt;value&gt;
 </pre>
 
 <h3 id="params2">Parameters</h3>
@@ -115,20 +121,35 @@ $ cx env-vars set [-s &lt;stack&gt;] &lt;setting&gt; &lt;value&gt;
             <td>Name of the stack</td>
         </tr>
         <tr>
-            <td><i>setting</i></td>
+            <td><i>server name</i> (optional)</td>
             <td>&mdash;</td>
-            <td>Name of environment variable</td>
+            <td>Name of the server to access</td>
         </tr>
         <tr>
+            <td><i>server ip</i> (optional)</td>
+            <td>&mdash;</td>
+            <td>IP of the server to access</td>
+        </tr>
+        <tr>
+            <td><i>server role</i> (optional)</td>
+            <td>&mdash;</td>
+            <td>Role of the server to access (eg. web)</td>
+        </tr>
+       <tr>
+            <td><i>setting</i></td>
+            <td>&mdash;</td>
+            <td>The setting you would like to change</td>
+        </tr>
+       <tr>
             <td><i>value</i></td>
             <td>&mdash;</td>
-            <td>Value for environment variable</td>
-        </tr>
+            <td>The value for the setting</td>
+        </tr>        
     </tbody>
 </table>
 
-<h3 id="example2">Example</h3>
+<h3 id="example2">Examples</h3>
 
 <pre class="prettyprint">
-$ cx env-vars set My_Awesome_App FIRST_VAR 123
+$ cx servers settings set -s "My Awesome App" --server lion server.name=liger
 </pre>

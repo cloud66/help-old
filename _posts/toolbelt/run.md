@@ -1,21 +1,35 @@
 ---
 layout: post
 template: two-col
-title:  "Toolbelt command"
-date:   2038-01-25 01:01:01
+title:  "Toolbelt run command"
+date:   2040-01-18 01:01:01
 categories: toolbelt
-lead: Execute a command directly on your server
-search-tags: ['']
-tags: ['Toolbelt']
+lead: Run commands with the toolbelt
 ---
 
+<h2>Contents</h2>
+<ul class="page-toc">
+<li><a href="#run">Run command</a></li>
+    <li>
+        <ul>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#params">Parameters</a></li>            
+            <li><a href="#examples">Examples</a></li>
+        </ul>
+    </li>   
+</ul>
+
+<h2 id="run">Run command</h2>
+
 This command will execute a command directly on the remote server. It does this by first opening the firewall for SSH from your IP address temporaritly (20 minutes), downloads your SSH key if you don't have it, starts a SSH session, executes the command specified and returns its output.
+
+<h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
 $ cx run -s &lt;stack&gt; --server &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt; --service '&lt;command&gt;'
 </pre>
 
-<h3 id="parameters">Parameters</h3>
+<h3 id="params">Parameters</h3>
 
 At least one of the optional server parameters are necessary in order to identify which server to run the command on.
 
@@ -61,7 +75,7 @@ At least one of the optional server parameters are necessary in order to identif
     </tbody>    
 </table>
 
-<h3 id="examples">Example</h3>
+<h3 id="examples">Examples</h3>
 
 <pre class="prettyprint">
 $ cx run -s "My Awesome App" --server web1 'pwd'
@@ -75,4 +89,3 @@ $ cx run -s My_Awesome_App --server web1 --service my_api_service '/bin/bash'
 <pre class="prettyprint">
 $ cx run -s My_Awesome_App --server web1 --service my_api_service 'bundle exec rails c'
 </pre>
-

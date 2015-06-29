@@ -4,15 +4,13 @@ template: two-col
 title:  "Toolbelt backup management"
 date:   2040-01-18 01:01:01
 categories: toolbelt
-lead: List and download your backups through the command line
-search-tags: ['backups','toolbelt','commandline','database']
-tags: ['Toolbelt']
+lead: Manage your backups from the toolbelt
 ---
 
 <h2>Contents</h2>
 <ul class="page-toc">
     <li>
-        <a href="#list">About backup management</a>
+        <a href="#about">About backup management</a>
     </li>
 	<li>
 		<a href="#list">List your backups</a>
@@ -71,6 +69,8 @@ tags: ['Toolbelt']
             
 </ul>
 
+<h2 id="about">About backup management</h2>
+The following commands help you manage your backups, such as listing, downloading and initiating backups on your stacks.
 
 <h2 id="list">List your backups</h2>
 This will list all the managed backups of a stack grouped by their database type and/or backup schedule.
@@ -228,5 +228,3 @@ $ cx backups new [-s &lt;stack&gt;]	[--dbtypes &lt;DB types&gt;] [--frequency &l
 <pre class="prettyprint">
 $ cx backups new -s mystack --dbtypes=postgresql --frequency="0 */1 * * *" --gzip=true exclude-tables=my_log_table --run-on-replica=false
 </pre>
-
-
