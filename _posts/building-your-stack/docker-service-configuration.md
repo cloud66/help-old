@@ -111,7 +111,7 @@ Below is a table of the available configurations for a given service with a brie
     <td>Specifies the command you would like to run during stack deploy (runs once per service).</td>
 </tr>
 <tr>
-    <td><a href="/network/service-network-configuration#dns_behaviour">dns_behaviour</a></td>
+    <td><a href="/network/service-network-settings#dns_behaviour">dns_behaviour</a></td>
     <td>Specifies the dns behaviour for this service. One of the values: <i>versioned</i>, <i>non-versioned</i>. Default value is <i>versioned</i></td>
 </tr>
 <tr>
@@ -135,7 +135,7 @@ Below is a table of the available configurations for a given service with a brie
     <td>The image you would typically run <code>docker pull</code> from.</td>
 </tr>
 <tr>
-    <td><a href="/network/service-network-configuration#load_balancing">load_balancing</a></td>
+    <td><a href="/network/service-network-settings#load_balancing">load_balancing</a></td>
     <td>Specifies the load balancing method for this service. Accepted values are: <i>roundrobin</i>, <i>sticky</i>, <i>closest</i>. Default value is <i>roundrobin</i></td>
 </tr>
 <tr>
