@@ -12,6 +12,7 @@ lead: Manage your containers from the toolbelt
     <li><a href="#container-list">Listing containers</a></li>
     <li><a href="#container-stop">Stopping container</a></li>
     <li><a href="#container-restart">Restarting container</a></li>
+    <li><a href="#container-exec">Executing a container</a></li>
     <li><a href="#container-attach">Attaching to a container</a></li>
 </ul>
 
@@ -125,14 +126,56 @@ Restarts a particular container on the given stack based on container Id.
 $ cx containers restart -s mystack 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c
 </pre>
 
+<h2 id="container-exec">Executing a container</h2>
+This command executes your command within the context of a running container. The default docker-flags are for an interactive shell though they can be specified with the command.
+
+<h3>Usage</h3>
+<pre class="prettyprint">
+$ cx containers exec [-s &lt;stack&gt;] &lt;container id&gt;
+</pre>
+
+<h3>Parameters</h3>
+<table class='table table-bordered table-striped table-small'>
+    <thead>
+    <tr>
+        <th align="center">Parameter</th>
+        <th align="center">Default</th>
+        <th align="center">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><i>stack</i></td>
+        <td>&mdash;</td>
+        <td>Name of the stack</td>
+    </tr>
+    <tr>
+        <td><i>docker-flags</i></td>
+        <td>&mdash;</td>
+        <td>Any Docker flags you wish to run with, eg. <i>"--interactive=true --tty=true --detach=false"</i></td>
+    </tr>
+    <tr>
+        <td><i>environment</i></td>
+        <td>&mdash;</td>
+        <td>Full or partial environment name</td>
+    </tr>    
+    </tbody>
+</table>
+
+<h3>Example</h3>
+<pre class="prettyprint">
+$ cx containers exec -s mystack 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c /bin/bash
+$ cx containers exec -s mystack --docker-flags="--interactive=true --tty=true --detach=false" 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c /bin/bash
+$ cx containers exec -s mystack --docker-flags="--interactive=false --tty=false --detach=true" 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c /tmp/my_background_command
+</pre>
+
 <h2 id="container-attach">Attaching to a container</h2>
+Attaches to the running container and forwards output from the container to the console. Note: Does not forward signals and does not allow input.
+
 <h3>Usage</h3>
 <pre class="prettyprint">
 $ cx containers attach [-s &lt;stack&gt;] &lt;container id&gt;
 </pre>
-
-Attaches to the running container and forwards output from the container to the console.
-Note: Does not forward signals and does not allow input.
 
 <h3>Parameters</h3>
 <table class='table table-bordered table-striped table-small'>
