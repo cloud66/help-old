@@ -2,11 +2,9 @@
 layout: post
 template: two-col
 title:  "Toolbelt database management"
-date:   2038-01-25 01:01:01
+date:   2040-01-18 01:01:01
 categories: toolbelt
-lead: Configure your database slaves
-search-tags: ['replication', 'slave', 'master', 'standalone']
-tags: ['Toolbelt']
+lead: Manage your databases from the toolbelt
 ---
 
 <h2>Contents</h2>
@@ -76,7 +74,7 @@ $ cx databases promote-slave -s "My Awesome App" my_slave_server_name
 $ cx databases promote-slave -s "My Awesome App" --db-type postgresql my_slave_server_name
 </pre>
 
-<h2 id="promote">Slave re-synchronise with master</h2>
+<h2 id="resync">Slave re-synchronise with master</h2>
 
 <h3 id="usage">Usage</h3>
 

@@ -1,13 +1,10 @@
 ---
 layout: post
 template: two-col
-title:  "Toolbelt commands directory"
-date:   2050-01-30 01:01:01
-nav_sticky: true
+title:  "Toolbelt introduction"
+date:   2040-01-18 01:01:01
 categories: toolbelt
-lead: A directory of different toolbelt commands
-search-tags: ['toolbelt','commandline']
-tags: ['Toolbelt']
+lead: Introduction to the Cloud 66 toolbelt
 ---
 
 <h2>Contents</h2>

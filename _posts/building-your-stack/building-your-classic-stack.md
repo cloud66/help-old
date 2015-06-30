@@ -127,7 +127,7 @@ Your stack is up and running, and you can start customizing by:
 
 <ul class="list">
 <li><a href="/stack-add-ins/database-backups">Define a backup</a></li>
-<li><a href="/deployment/scaling">Scale your web server</a></li>
-<li><a href="/building-your-stack/stack-network-settings">Configure security</a></li>
+<li><a href="/managing-your-stack/scaling">Scale your web server</a></li>
+<li><a href="/managing-your-stack/stack-network-settings">Configure security</a></li>
 <li><a href="/stack-add-ins/add-in-implementation">Configure an add-in</a></li>
 </ul>

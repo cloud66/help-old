@@ -43,7 +43,7 @@ If your container has started, but isn't outputting the expected results, you ca
 
 1. Identify the container in question by running `docker ps`, and then run <code>docker logs &#60;container-id&#62;</code> to see any log output from that container.
 
-2. It may be that the server inside your container is experiencing issues - to troubleshoot this, we'll [attach to the container with the toolbelt](http://help.cloud66.com/toolbelt/toolbelt-service-management#container-attach) and see what's happening:
+2. It may be that the server inside your container is experiencing issues - to troubleshoot this, we'll [attach to the container with the toolbelt](http://help.cloud66.com/toolbelt/toolbelt-container-management#container-attach) and see what's happening:
 
 <pre class="prettyprint">
 cx containers attach -s &#60;stack&#62; &#60;container id&#62;
