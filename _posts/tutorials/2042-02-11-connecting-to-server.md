@@ -61,7 +61,7 @@ Set-Cookie: LSW_WEB="LSW_WEB1"; path=/
 
 <b><li>Can you SSH to the server yourself?</li></b>
 
-<p>You can try to SSH to the server yourself by using either the <a href="http://help.cloud66.com/managing-your-stack/ssh-to-your-server">Cloud 66 toolbelt or manually</a>. If you are unable to SSH to the server in question, follow the <a href="/managing-your-stack/ssh-to-your-server">troubleshooting steps</a> before moving onto the next step.</p>
+<p>You can try to SSH to the server yourself by using either the <a href="http://help.cloud66.com/managing-your-stack/ssh-to-your-server">Cloud 66 toolbelt or manually</a>. If you are unable to SSH to the server in question, follow the <a href="http://help.cloud66.com/managing-your-stack/ssh-to-your-server">troubleshooting steps</a> before moving onto the next step.</p>
 
 <p>If you can SSH to the server, then the likely issue is with your web server. Run <code>sudo service nginx restart</code> on the server to restart the web server, and see if it returns an error message.</p>
 
