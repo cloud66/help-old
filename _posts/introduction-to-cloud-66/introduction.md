@@ -76,7 +76,7 @@ Before you get get started, you may want to look at our [Technical specification
 </ul>
 
 <h3 id="1">Step 1: Build your stack</h3>
-Before you can deploy your applications to a server with Cloud 66, you must build a stack of the components your application needs to run. To build your first stack, complete the following steps.
+Before you can deploy your applications to a server with Cloud 66, you must build a stack of the components your application needs to run. To build your first stack, complete steps below.
 
 <ol class="list">
 <li>Sign in to Cloud 66.</li>
