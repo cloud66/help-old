@@ -99,6 +99,10 @@ Below is a table of the available configurations for a given service with a brie
     <td>Specifies the command you would like to run during stack build.</td>
 </tr>
 <tr>
+    <td><a href="/building-your-stack/building-your-docker-service#build_root">build_root</a></td>
+    <td>Specifies the directory of your repository in which you wish to run your Docker build.</td>
+</tr>
+<tr>
     <td><a href="/building-your-stack/building-your-docker-service#command">command</a></td>
     <td>Specifies the command used to start your container.</td>
 </tr>

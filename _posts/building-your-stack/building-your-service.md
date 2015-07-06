@@ -24,6 +24,7 @@ tags: ['']
         <li>
             <ul>
             <li><a href="#build_command">Build command</a></li>
+            <li><a href="#build_root">Build root</a></li>
             <li><a href="#command">Command</a></li>
             <li><a href="#deploy_command">Deploy command</a></li>
             <li><a href="#dockerfile_path">Dockerfile path</a></li>
@@ -51,6 +52,7 @@ If you prefer to build your own images, simply provide the location of this imag
 There are a number of directives you can set in your service configuration to customize your service network settings:
 
 - [build_command](#build_command)
+- [build_root](#build_root)
 - [command](#command)
 - [deploy_command](#deploy_command)
 - [git_url](#git_url)
@@ -65,6 +67,20 @@ services:
     &#60;service_name&#62;:
         build_command: bundle exec rake db:schema:load
 </pre>
+
+<hr>
+
+<h3 id="build_root">Build root</h3>
+
+Specifies the directory of your repository in which you wish to run your Docker build. You can also specify a [Dockerfile path](/building-your-stack/building-your-docker-service#dockerfile_path), which will be the Dockerfile used when building your service.
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        build_root: build
+</pre>
+
+This will default to the root of your repository if not specified.
 
 <hr>
 
@@ -92,13 +108,15 @@ services:
 
 <h3 id="dockerfile_path">Dockerfile path</h3>
 
-Specifies the location of the Dockerfile to be used for building this service. For example, if you have a subfolder in the root of your repository called <i>docker</i> where your Dockerfile lives, you can specify this as follows:
+Specifies a relative path for your Dockerfile (from your <i>build_root</i>) to be used for building this service. For example, if you have a subfolder in the root of your repository called <i>docker</i> where your Dockerfile lives, you can specify this as follows:
 
 <pre class="prettyprint">
 services:
     &#60;service_name&#62;:
         dockerfile_path: docker/Dockerfile
 </pre>
+
+This will default to the root of your repository if not specified.
 
 <hr>
 
