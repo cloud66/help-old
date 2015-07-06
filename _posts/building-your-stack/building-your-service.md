@@ -72,15 +72,15 @@ services:
 
 <h3 id="build_root">Build root</h3>
 
-Specifies the directory of your repository in which you wish to run your Docker build. You can also specify a [Dockerfile path](/building-your-stack/building-your-docker-service#dockerfile_path), which will be the Dockerfile used when building your service.
+Specifies the directory of your repository in which you wish to run your Docker build. You can also specify a [Dockerfile path](/building-your-stack/building-your-docker-service#dockerfile_path), which will be the Dockerfile used when building your service which is a relative value to this one.
 
 <pre class="prettyprint">
 services:
     &#60;service_name&#62;:
-        build_root: build
+        build_root: my_app_subfolder
 </pre>
 
-This will default to the root of your repository if not specified.
+This will default to the <i>root folder</i> of your repository if not specified.
 
 <hr>
 
@@ -116,7 +116,7 @@ services:
         dockerfile_path: docker/Dockerfile
 </pre>
 
-This will default to the root of your repository if not specified.
+This will default to the value of <i>build_root</i>/Dockerfile if not specified.
 
 <hr>
 
