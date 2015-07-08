@@ -12,7 +12,7 @@ lead: Manage your containers from the toolbelt
     <li><a href="#container-list">Listing containers</a></li>
     <li><a href="#container-stop">Stopping container</a></li>
     <li><a href="#container-restart">Restarting container</a></li>
-    <li><a href="#container-exec">Executing a container</a></li>
+    <li><a href="#container-exec">Executing a command under an existing container</a></li>
     <li><a href="#container-attach">Attaching to a container</a></li>
 </ul>
 
@@ -126,12 +126,12 @@ Restarts a particular container on the given stack based on container Id.
 $ cx containers restart -s mystack 2844142cbfc064123777b6be765b3914e43a9e083afce4e4348b5979127c220c
 </pre>
 
-<h2 id="container-exec">Executing a container</h2>
+<h2 id="container-exec">Executing a command under an existing container</h2>
 This command executes your command within the context of a running container. The default docker-flags are for an interactive shell though they can be specified with the command.
 
 <h3>Usage</h3>
 <pre class="prettyprint">
-$ cx containers exec [-s &lt;stack&gt;] &lt;container id&gt;
+$ cx containers exec [-s &lt;stack&gt;] &lt;container id&gt; &lt;command&gt;
 </pre>
 
 <h3>Parameters</h3>
@@ -149,6 +149,16 @@ $ cx containers exec [-s &lt;stack&gt;] &lt;container id&gt;
         <td>&mdash;</td>
         <td>Name of the stack</td>
     </tr>
+    <tr>
+        <td><i>container id</i></td>
+        <td>&mdash;</td>
+        <td>The ID of the container you wish to exec</td>
+    </tr>    
+    <tr>
+        <td><i>command</i></td>
+        <td>&mdash;</td>
+        <td>The command you wish to run</td>
+    </tr>    
     <tr>
         <td><i>docker-flags</i></td>
         <td>&mdash;</td>
