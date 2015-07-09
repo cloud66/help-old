@@ -16,7 +16,7 @@ Depending on your requirements, you may need to have access to additional log fi
 
 <pre class="prettyprint">
 production:   
-    dockers:
+    docker:
         configuration:
             custom_log_files: ["/my_special_logs/my_log_file"]                       
 </pre>
