@@ -76,16 +76,16 @@ services:
 
 In this example, the application is listening on port 3000 in the container, and that port is exposed via HTTP on port 80, and HTTPS on port 443. Port 4000 inside the container is also available on port 8443 externally, and port 5000 in the container is available locally on the server. These HTTP/HTTPS ports are available from outside the server, and any traffic to these ports will be redirected to any containers running this service. During scaling, any containers running this service will get traffic distributed to them in a round robin fashion. 
 
-<b>Advanced ports</b>
+<h4>Advanced ports</h4>
 
 You can also specify ports declaratively, and assign tcp/udp mappings directly to the host. This will mean that containers are mapped directly to the corresponding tcp/udp port on the host. Please note that if you use tcp/udp port mappings then you can only have a single container of that service running per server (can not map multiple containers to the same host port). Note that each port specification is optional. Http/Https ports will be mapped via Nginx automatically. For example:
 
 {% highlight yaml %}
 services:
     &#60;service_name&#62;:
-  		ports:
-    	  - container: 3000
-      		http: 80
+        ports:
+          - container: 3000
+            http: 80
             https: 443
             tcp: 25
             udp: 111
