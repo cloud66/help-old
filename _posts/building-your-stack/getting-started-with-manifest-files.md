@@ -164,6 +164,7 @@ Application type determines which part of the stack is affected by this section.
 
 - docker
 - elasticsearch
+- glusterfs
 - load_balancer
 - memcached
 - mongodb

@@ -78,6 +78,10 @@ You are free to specify a version for a number of components in your [manifest f
             <td>1.5.2</td>
         </tr>
         <tr>
+            <td>GlusterFS</td>
+            <td>3.7.2</td>
+        </tr>
+        <tr>
             <td>LibYAML</td>
             <td>0.1.6</td>
         </tr>
