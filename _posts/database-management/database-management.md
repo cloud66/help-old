@@ -50,6 +50,7 @@ We currently support the following databases, with no need for additional config
 * Elasticsearch
 * RabbitMQ
 * SQLite (only in development environments)
+* GlusterFS
 
 When creating a Docker stack, you can [add as many databases as you need in your service configuration during the stack build](/building-your-stack/docker-service-configuration#database-configs). For Rack-based stacks, Cloud 66 automatically detects whether your application relies on a database or not during your code analysis. This is based on a combination of your Gemfile and your database.yml or mongoid.yml files.
 
