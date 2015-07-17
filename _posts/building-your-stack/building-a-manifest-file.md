@@ -146,6 +146,17 @@ After you change the volume list, you need to redeploy your stack for new config
 
 <div class="notice notice-danger">
 	<h3>Note</h3>
+	<p>You can not change replica_count after GlusterFS added to your stack.</p>
+</div>
+
+<div class="notice notice-danger">
+	<h3>Note</h3>
+	<p>You can not use glusterfs group or any of its servers in mount_targets.</p>
+</div>
+
+
+<div class="notice notice-danger">
+	<h3>Note</h3>
 	<p>Renaming a volume will delete volume and create a new one.</p>
 </div>
 
