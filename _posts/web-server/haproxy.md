@@ -72,7 +72,7 @@ In this case, you could replace the _httpchk_ section with this:
 `httpchk HEAD /check.html HTTP/1.0`.
 
 <h2 id="customconf">About configuring HAProxy with CustomConfig</h2>
-You can customize the HAProxy configuration on your HAProxy server using CustomConfig (below). For example, you can follow these instructions to [allow for SSL termination](http://community.cloud66.com/articles/add-a-ssl-certificate-on-a-load-balancer) with your HAProxy setup.
+You can customize the HAProxy configuration on your HAProxy server using CustomConfig (below).
 
 CustomConfig uses the [Liquid templating language](http://liquidmarkup.org/). You can find many incredible guides and tutorials into the Liquid syntax around the web, but the syntax is easy enough to pick up in minutes.
 

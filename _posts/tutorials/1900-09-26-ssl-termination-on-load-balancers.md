@@ -15,7 +15,7 @@ difficulty: 2
 ---
 <div class="notice">
     <h3>Cloud 66 now supports automatic SSL termination</h3>
-    <p>You can activate SSL termination on _HAProxy_ and _Amazon Elastic Load Balancer_ through SSL certificate add-in</p>[check here for more information](http://help.cloud66.com//stack-add-ins/ssl-certificate)
+    <p>You can activate SSL termination on <strong>HAProxy 1.5.x or higher</strong> and <strong>Amazon Elastic Load Balancer</strong> through SSL certificate add-in</p><a href="http://help.cloud66.com//stack-add-ins/ssl-certificate">check here for more information</a>
 </div>
 
 

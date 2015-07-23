@@ -104,7 +104,7 @@ redirects:
   how-to/migrate-across-dc.html: "http://community.cloud66.com/articles/migrate-your-stacks-across-data-centers"
   database/uninstall-mysql.html: "http://community.cloud66.com/articles/uninstalling-mysql"
   stack-features/whenever.html: "http://community.cloud66.com/articles/whenever-gem"
-  how-to/ssl-termination-on-load-balancers.html: "http://community.cloud66.com/articles/add-a-ssl-certificate-on-a-load-balancer"
+  how-to/ssl-termination-on-load-balancers.html: "http://community.cloud66.com/articles/manually-add-an-ssl-certificate-to-a-load-balancer"
   how-to/access-your-code.html: "http://community.cloud66.com/articles/accessing-your-git-repository"
   how-to/bluepill.html: "http://community.cloud66.com/articles/managing-processes-with-bluepill"
   how-to/optimizing-performance.html: "http://community.cloud66.com/articles/optimizing-for-server-load"
