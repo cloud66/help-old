@@ -41,7 +41,13 @@ Only pushing code to the same branch as your stack Git branch will redeploy your
 <h2 id="github-event">Use continuous deployment on GitHub</h2>
 This option is available for GitHub users that have enough access to create and edit deployement events for stacks on GitHub.
 
-On your _Stack settings_ modal, turn on _Continuous deployment on Github_. This will create a new webhook for your repository on GitHub or simply modify and existing one to let Cloud66 recieve _deployment_ events as well.
+To activate continuous deployment on GitHub, access your [Stack settings](/toolbelt/toolbelt-settings-command) via [Toolbelt](/toolbelt/toolbelt-introduction) and set `continuous.deploy` to `true`.
+
+<pre class="prettyprint">
+$ cx settings set -s my_stack continuous.deploy true
+</pre>
+
+This will create a new webhook for your repository on GitHub or simply modify and existing one to let Cloud66 recieve _deployment_ events as well.
 
 With this feature enabled, whenever you push new commit, Cloud 66 will automatically generate a new _deployment event_ based on recieving the _push event_ from GitHub. We will also send _deployment status events_ on different deployment statuses, such as started, cancelled, succeeded and failed.
 
