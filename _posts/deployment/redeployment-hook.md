@@ -58,7 +58,7 @@ If the commit hook payload does not include Git information, then we will automa
 </i>
 <li>
 If you use the <b>services</b> modifier to specify which specific services you want to deploy when the commit hook is invoked, then the same logic applies as in 1) and 2) above, the only difference being that we will always deploy the services you have specified if deployment will occur.
-</i>
+</li>
 </ol>
 
 An example redeployment hook <b>without a services modifier</b> is:
