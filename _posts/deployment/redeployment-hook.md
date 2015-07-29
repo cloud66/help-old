@@ -107,7 +107,7 @@ The process of adding the hook differs by your Git host, so we will guide you th
 <h3 id="github">GitHub Setup</h3>
 On your stack detail page, click <i>Stack information</i> in the right sidebar and copy the URL provided in the <i>Redeployment hook</i> field. Next, visit your GitHub repository, click <i>Settings</i> in the right sidebar, and then <i>Webhooks & Services</i> in the left sidebar.
 
-In the <i>Webhooks</i> window, click <i>Add webhook</i> and paste the redeployment hook URL into the <i>Payload URL</i> field. When you confirm by clicking <i>Add webhook</i>, GitHub will automatically test your hook with a <i>Ping<i> and you should get a green HTTP200 reponse.
+In the <i>Webhooks</i> window, click <i>Add webhook</i> and paste the redeployment hook URL into the <i>Payload URL</i> field. When you confirm by clicking <i>Add webhook</i>, GitHub will automatically test your hook with a <i>Ping</i> and you should get a green HTTP200 reponse.
 
 <h3 id="bitbucket">Bitbucket Setup</h3>
 On your stack detail page, click <i>Stack information</i> in the right sidebar and copy the URL provided in the <i>Redeployment hook</i> field. Next, visit your Bitbucket repository, click <i>Settings</i> in the left sidebar, and then <i>Hooks</i> in the settings menu that appears. In the <i>Select a hook</i> field, select a <i>POST</i> hook, click <i>Add hook</i> and paste your redeployment hook URL into the field provided. Click <i>Save</i> to confirm.
