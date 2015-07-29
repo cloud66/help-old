@@ -74,7 +74,13 @@ Cloud 66 will not do in-place database upgrades, because this process may cause 
 Once the new stack is created, you can migrate data from your old stack to your new stack.
 
 <h2 id="migrations">Control your Rails database migrations</h2>
-You can control your Rails database migrations by accessing your stack detail page, then clicking _Stack settings_ in the right sidebar. This page gives you the option of running migrations or not. When you have disabled database migrations in _Stack settings_ page, you still have the option to run migrations on a one-off deployment by clicking _Deploy_ -> _Deploy with options_ and selecting _Run database migrations_.
+You can control your Rails database migrations by setting `run.deploy.command` option through [Stack settings](/toolbelt/toolbelt-settings-command) via [Toolbelt](/toolbelt/toolbelt-introduction) which gives you the option of running migrations or not. 
+
+<pre class="prettyprint">
+$ cx settings set -s my_stack run.deploy.command true
+</pre>
+
+When you have disabled `run.deploy.command` in [Stack settings](/toolbelt/toolbelt-settings-command) , you still have the option to run migrations on a one-off deployment by clicking _Deploy_ -> _Deploy with options_ and selecting _Run database migrations_.
 
 <h2 id="customize">Customize your database configuration</h2>
 

@@ -45,7 +45,15 @@ Given that Sinatra applications can have different database frameworks, we allow
 </ul>
 
 
-These commands can be specified in the UI, but also in your [manifest file](/building-your-stack/getting-started-with-manifest-files):
+These commands can be set via [Toolbelt](/toolbelt/toolbelt-settings-command),
+
+<pre class="prettyprint">
+$ cx settings set -s my_stack custom.build.command "rake db:seed"
+
+$ cx settings set -s my_stack custom.deploy.command "rake db:migrate"
+</pre>
+
+But also in your [manifest file](/building-your-stack/getting-started-with-manifest-files).
 
 <pre class="prettyprint">
 development:

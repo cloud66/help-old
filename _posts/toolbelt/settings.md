@@ -75,6 +75,22 @@ These are the available settings:
             <td>If you change your default Rails assets folder, you can set it here</td>
         </tr>                
         <tr>
+            <td><i>continuous.deploy</i></td>
+            <td>Enable or disable <a href="/deployment/redeployment-hooks#github-event">continuous deployment on Github</a>. To enable, you can use the values <i>1</i>, <i>true</i>, <i>on</i> or <i>enable</i>, and to disable you can use the values <i>0</i>, <i>false</i>, <i>off</i> or <i>disable</i></td>
+        </tr>
+        <tr>
+            <td><i>custom.build.command</i></td>
+            <td>Set custom build command. <i>Only applies to <a href="/building-your-stack/sinatra-stacks#custom">Sinatra</a> or <a href="/building-your-stack/padrino-stacks#custom">Padrino</a> stacks</i></td>
+        </tr>
+        <tr>
+            <td><i>custom.deploy.command</i></td>
+            <td>Set custom deploy command. <i>Only applies to <a href="/building-your-stack/sinatra-stacks#custom">Sinatra</a> or <a href="/building-your-stack/padrino-stacks#custom">Padrino</a> stacks</i></td>
+        </tr>
+        <tr>
+            <td><i>deploy.parallel</i></td>
+            <td>Enable or disable <a href="/deployment/parallel-deployments">parallel deployments</a> on the stack. To enable, you can use the values <i>1</i>, <i>true</i>, <i>on</i> or <i>enable</i>, and to disable you can use the values <i>0</i>, <i>false</i>, <i>off</i> or <i>disable</i></td>
+        </tr>
+        <tr>
             <td><i>git.branch</i></td>
             <td>Change the Git branch of the stack repository</td>
         </tr>
@@ -89,6 +105,10 @@ These are the available settings:
         <tr>
             <td><i>reconfigure.nginx</i></td>
             <td>If set to true, it will regenerate Nginx configuration and restart it (only on the next deployment)</td>
+        </tr>
+        <tr>
+            <td><i>run.deploy.command</i></td>
+            <td>Enable or disable option run <a href="/building-your-stack/building-your-docker-service">deploy command</a> on every deployment (<a href="/database-management/database-management#migrations">database migrations</a> for Rails stacks).  To enable, you can use the values <i>1</i>, <i>true</i>, <i>on</i> or <i>enable</i>, and to disable you can use the values <i>0</i>, <i>false</i>, <i>off</i> or <i>disable</i></td>
         </tr>
         <tr>
             <td><i>stack.name</i></td>
@@ -137,4 +157,6 @@ $ cx settings set [-s &lt;stack&gt;] &lt;setting_name&gt; &lt;value&gt;
 
 <pre class="prettyprint">
 $ cx settings set -s "My Awesome App" git.repository git://github.com/cloud66-samples/rails-mysql.git -e production
+
+$ cx settings set -s my_stack deploy.parallel true
 </pre>
