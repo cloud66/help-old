@@ -64,19 +64,19 @@ If you use the <b>services</b> modifier to specify which specific services you w
 An example redeployment hook <b>without a services modifier</b> is:
 
 <pre class="terminal">
-https://hooks.cloud66.com/stacks/redeploy/b176cdb705fca90f38fd93d2680be026/51c16aa60f52a59dc936526cc5af857e
+https://hooks.cloud66.com/stacks/redeploy/xxxx/yyyy
 </pre>
 
 An example redeployment <b>hook with a single services modifier</b> is:
 
 <pre class="terminal">
-https://hooks.cloud66.com/stacks/redeploy/b176cdb705fca90f38fd93d2680be026/51c16aa60f52a59dc936526cc5af857e?services=web
+https://hooks.cloud66.com/stacks/redeploy/xxxx/yyyy?services=web
 </pre>
 
 An example redeployment <b>hook with a many-service modifier</b> is:
 
 <pre class="terminal">
-https://hooks.cloud66.com/stacks/redeploy/b176cdb705fca90f38fd93d2680be026/51c16aa60f52a59dc936526cc5af857e?services=web,app
+https://hooks.cloud66.com/stacks/redeploy/xxxx/yyyy?services=web,app
 </pre>
 
 <h3 id="classic">For Classic Stacks</h3>
@@ -88,15 +88,15 @@ All Classic Stacks are based on a Git repository and branch. Pushing code to the
 </div>
 
 <h4 id="github_events">Github Integration</h4>
-Users who have signed in through Github (and who have enough access to create and edit deployement events for their stacks on GitHub) can activate continuous deployments on GitHub. To do this: access your [Stack settings](/toolbelt/toolbelt-settings-command) via [Toolbelt](/toolbelt/toolbelt-introduction) and set `continuous.deploy` to `true`.
+Users who have signed in through Github (and who have enough access to create and edit deployement events for their stacks on GitHub) can activate continuous deployments on GitHub. To do this: access your <a href="/toolbelt/toolbelt-settings-command">Stack settings</a> via the <a href="/toolbelt/toolbelt-introduction">toolbelt<a/> and set <b>continuous.deploy</b> to <i>true</i>.
 
 <pre class="prettyprint">
 $ cx settings set -s my_stack continuous.deploy true
 </pre>
 
-This will create a new webhook for your repository on GitHub or simply modify and existing one to let Cloud66 recieve _deployment_ events as well.
+This will create a new webhook for your repository on GitHub or simply modify and existing one to let Cloud66 recieve <i>deployment</i> events as well.
 
-With this feature enabled, whenever you push new commit, Cloud 66 will automatically generate a new _deployment event_ based on recieving the _push event_ from GitHub. We will also send _deployment status events_ on different deployment statuses, such as started, cancelled, succeeded and failed.
+With this feature enabled, whenever you push new commit, Cloud 66 will automatically generate a new <i>deployment event</i> based on recieving the <i>push event</i> from GitHub. We will also send <i>deployment status events</i> on different deployment statuses, such as started, cancelled, succeeded and failed.
 
 For more information please refer to the <a href="https://developer.github.com/v3/repos/deployments/">Github Deployment API</a>.
 
@@ -105,18 +105,18 @@ For more information please refer to the <a href="https://developer.github.com/v
 The process of adding the hook differs by your Git host, so we will guide you through doing this with GitHub, Bitbucket and a generic solution.
 
 <h3 id="github">GitHub Setup</h3>
-On your stack detail page, click _Stack information_ in the right sidebar and copy the URL provided in the _Redeployment hook_ field. Next, visit your GitHub repository, click _Settings_ in the right sidebar, and then _Webhooks & Services_ in the left sidebar.
+On your stack detail page, click <i>Stack information</i> in the right sidebar and copy the URL provided in the <i>Redeployment hook</i> field. Next, visit your GitHub repository, click <i>Settings</i> in the right sidebar, and then <i>Webhooks & Services</i> in the left sidebar.
 
-In the _Webhooks_ window, click _Add webhook_ and paste the redeployment hook URL into the _Payload URL_ field. When you confirm by clicking _Add webhook_, GitHub will automatically test your hook, so your stack should deploy automatically.
+In the <i>Webhooks</i> window, click <i>Add webhook</i> and paste the redeployment hook URL into the <i>Payload URL</i> field. When you confirm by clicking <i>Add webhook</i>, GitHub will automatically test your hook with a <i>Ping<i> and you should get a green HTTP200 reponse.
 
 <h3 id="bitbucket">Bitbucket Setup</h3>
-On your stack detail page, click _Stack information_ in the right sidebar and copy the URL provided in the _Redeployment hook_ field. Next, visit your Bitbucket repository, click _Settings_ in the left sidebar, and then _Hooks_ in the settings menu that appears. In the _Select a hook_ field, select a _POST_ hook, click _Add hook_ and paste your redeployment hook URL into the field provided. Click _Save_ to confirm.
+On your stack detail page, click <i>Stack information</i> in the right sidebar and copy the URL provided in the <i>Redeployment hook</i> field. Next, visit your Bitbucket repository, click <i>Settings</i> in the left sidebar, and then <i>Hooks</i> in the settings menu that appears. In the <i>Select a hook</i> field, select a <i>POST</i> hook, click <i>Add hook</i> and paste your redeployment hook URL into the field provided. Click <i>Save</i> to confirm.
 
 <h3 id="generic">Generic Setup</h3>
-Most Git providers have a commit hook mechanism that you can use to post to the Cloud 66 redeployment hook URL. Please check your Git provider documentation for this information. If your Git provider has a non-conforming payload format (not compatible with Github or BitBucket formats) then please get in touch and we can extend our support.
+Most Git providers have a commit hook mechanism that you can use to post to the Cloud 66 redeployment hook URL. Please check your Git provider documentation for this information. If your Git provider has a non-conforming payload format (not compatible with Github or BitBucket formats) then please get in touch and we can extend our payload support!
 
 <h3 id="manual">Use a redeployment hook manually</h3>
-To use the redeployment hook, you can POST an HTTP request to your redeployment hook URL. You can do this in curl like this:
+To invoke the redeployment hook manually, you can POST an HTTP request to your redeployment hook URL. You can do this in curl like this:
 
 <pre class="terminal">
 curl -X POST [your redeployment hook URL]
@@ -124,5 +124,5 @@ curl -X POST [your redeployment hook URL]
 
 <div class="notice">
   <h3>Note</h3>
-  <p>If you are manually invoking redeployments you should consider rather using the <a href="http://help.cloud66.com/toolbelt/toolbelt-redeploy-command">Cloud 66 CommandLine Tool</a> as it has additional features</p>
+  <p>If you are manually invoking redeployments you should consider using the <a href="http://help.cloud66.com/toolbelt/toolbelt-redeploy-command">Cloud 66 CommandLine Tool</a> instead, as it has additional features!</p>
 </div>
