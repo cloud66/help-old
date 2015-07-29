@@ -37,6 +37,11 @@ tags: ['commit hook','git push','redeployment hook','git hook','redeployment']
 <h2 id="about">About redeployment hooks</h2>
 Redeployment hooks allow you to achieve continuous deployment by deploying your stack when you push a change to your Git repository or have a CI push success. Redeployment hooks differ slightly for Classic and Docker Stacks see sections below.
 
+<div class="notice">
+  <h3>Note</h3>
+  <p>Your redeployment hook URL is automatically generated for each of your stacks. You can found your unique redeployment hook URL on your stack information page (available via the <b>stack information</b> link on the main stack page's right hand navigation menu)</p>
+</div>
+
 <h3 id="docker">For Docker Stacks</h3>
 Docker Stacks can have multiple services which can rely on a combination of either Image or Git sources. Furthermore, the Git sources can be the same or different branches, or even completely different repositories. To handle this, we have introduced and addition <i>services modifier</i> that can be appended to the redeployment hook tp specify which services to redeploy (the <i>services modifier</i> is a querystring parameter).
 
@@ -53,19 +58,20 @@ When a redeployment hook is invoked:
   </li>
 </ol>
 
-An example redeployment hook <b>without a services modifier</b> is:
+Some examples below will illustrate how to add a <b>services modifier</b>. Note that the xxxx/yyyy in the examples is for illustrative purposes only and should be replaced with your redeployment URL on your stack information page.
+An example redeployment hook <b>without a services modifier:</b>
 
 <pre class="prettyprint">
 https://hooks.cloud66.com/stacks/redeploy/xxxx/yyyy
 </pre>
 
-An example redeployment <b>hook with a single services modifier</b> is:
+An example redeployment <b>hook with a single services modifier:</b>
 
 <pre class="prettyprint">
 https://hooks.cloud66.com/stacks/redeploy/xxxx/yyyy?services=web
 </pre>
 
-An example redeployment <b>hook with a many-service modifier</b> is:
+An example redeployment <b>hook with a many-service modifier:</b>
 
 <pre class="prettyprint">
 https://hooks.cloud66.com/stacks/redeploy/xxxx/yyyy?services=web,app
