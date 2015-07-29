@@ -16,6 +16,7 @@ tags: ['commit hook','git push','redeployment hook','git hook','redeployment']
 	<li>
 		<a href="#about">About redeployment hooks</a>
 		<ul>
+			<li><a href="#where">Where to find your redeployment hook?</a></li>
       <li><a href="#docker">For Docker Stacks</a></li>
       <li><a href="#classic">For Classic Stacks</a>
 	      <ul>
@@ -38,7 +39,7 @@ tags: ['commit hook','git push','redeployment hook','git hook','redeployment']
 Redeployment hooks allow you to achieve continuous deployment by deploying your stack when you push a change to your Git repository or have a CI push success. Redeployment hooks differ slightly for Classic and Docker Stacks see sections below.
 
 <div class="notice">
-  <h3>Where to find your redeployment hook?</h3>
+  <h3 id="where">Where to find your redeployment hook?</h3>
   <p>Your redeployment hook URL is automatically generated for each of your stacks. You can found your unique redeployment hook URL on your stack information page (available via the <b>stack information</b> link on the main stack page's right hand navigation menu)</p>
 </div>
 
