@@ -15,31 +15,23 @@ tags: ['commit hook','git push','redeployment hook','git hook','redeployment']
 <ul class="page-toc">
 	<li>
 		<a href="#about">About redeployment hooks</a>
-<ul>
-<li><a href="#docker">For Docker Stacks</a></li>
-<li><a href="#classic">For Classic Stacks</a>
-	<ul>
-		<li><a href="#github_events">Github Integration</a></li>
-	</ul>
-</li>
-</ul>
-</li>
-<li><a href="#configuring">Adding Redeployment Hooks</a></li>
-	<ul>
-	<li>
-		<a href="#github">GitHub Setup</a>
-	</li>
-	<li>
-		<a href="#bitbucket">Bitbucket Setup</a>
-	</li>
-	<li>
-		<a href="#generic">Generic Setup</a>
-	</li>
-</ul>
-</li>
-	<li>
-		<a href="#manual">Invoking your redeployment hook manually</a>
-	</li>
+		<ul>
+      <li><a href="#docker">For Docker Stacks</a></li>
+      <li><a href="#classic">For Classic Stacks</a>
+	      <ul>
+		      <li><a href="#github_events">Github Integration</a></li>
+	      </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#configuring">Adding Redeployment Hooks</a>
+	  <ul>
+	    <li><a href="#github">GitHub Setup</a></li>
+   	  <li><a href="#bitbucket">Bitbucket Setup</a></li>
+	    <li><a href="#generic">Generic Setup</a></li>
+    </ul>
+  </li>
+	<li><a href="#manual">Invoking your redeployment hook manually</a></li>
 </ul>
 
 <h2 id="about">About redeployment hooks</h2>
@@ -50,15 +42,15 @@ Docker Stacks can have multiple services which can rely on a combination of eith
 
 When a redeployment hook is invoked:
 <ol>
-<li>
-If the commit hook payload includes Git information (Git source, branch and/or reference) then we will attempty to find a matching service on your stack that corresponds to the above information. If there is a match then we will deploy <i>only</i> the services that have a Git type (<i>not</i> the Image based services). Note that the matching service will also build based on the Git ref that is present in the payload.
-</li>
-<li>
-If the commit hook payload does not include Git information, then we will automatically redeploy <i>all</i> services defined on your stack.
-</i>
-<li>
-If you use the <b>services</b> modifier to specify which specific services you want to deploy when the commit hook is invoked, then the same logic applies as in 1) and 2) above, the only difference being that we will always deploy the services you have specified if deployment will occur.
-</li>
+  <li>
+    If the commit hook payload includes Git information (Git source, branch and/or reference) then we will attempty to find a matching service on your stack that corresponds to the above information. If there is a match then we will deploy <i>only</i> the services that have a Git type (<i>not</i> the Image based services). Note that the matching service will also build based on the Git ref that is present in the payload.
+  </li>
+  <li>
+    If the commit hook payload does not include Git information, then we will automatically redeploy <i>all</i> services defined on your stack.
+  </li>
+  <li>
+    If you use the <b>services</b> modifier to specify which specific services you want to deploy when the commit hook is invoked, then the same logic applies as in 1) and 2) above, the only difference being that we will always deploy the services you have specified if deployment will occur.
+  </li>
 </ol>
 
 An example redeployment hook <b>without a services modifier</b> is:
