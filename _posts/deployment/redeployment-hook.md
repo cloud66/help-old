@@ -38,7 +38,7 @@ tags: ['commit hook','git push','redeployment hook','git hook','redeployment']
 Redeployment hooks allow you to achieve continuous deployment by deploying your stack when you push a change to your Git repository or have a CI push success. Redeployment hooks differ slightly for Classic and Docker Stacks see sections below.
 
 <div class="notice">
-  <h3>Note</h3>
+  <h3>Where to find your redeployment hook?</h3>
   <p>Your redeployment hook URL is automatically generated for each of your stacks. You can found your unique redeployment hook URL on your stack information page (available via the <b>stack information</b> link on the main stack page's right hand navigation menu)</p>
 </div>
 
@@ -113,7 +113,7 @@ On your stack detail page, click <i>Stack information</i> in the right sidebar a
 <h3 id="generic">Generic Setup</h3>
 Most Git providers have a commit hook mechanism that you can use to post to the Cloud 66 redeployment hook URL. Please check your Git provider documentation for this information. If your Git provider has a non-conforming payload format (not compatible with Github or BitBucket formats) then please get in touch and we can extend our payload support!
 
-<h3 id="manual">Use a redeployment hook manually</h3>
+<h3 id="manual">Invoking your redeployment hook manually</h3>
 To invoke the redeployment hook manually, you can POST an HTTP request to your redeployment hook URL. You can do this in curl like this:
 
 <pre class="prettyprint">
