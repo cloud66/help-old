@@ -63,19 +63,19 @@ If you use the <b>services</b> modifier to specify which specific services you w
 
 An example redeployment hook <b>without a services modifier</b> is:
 
-<pre class="terminal">
+<pre class="prettyprint">
 https://hooks.cloud66.com/stacks/redeploy/xxxx/yyyy
 </pre>
 
 An example redeployment <b>hook with a single services modifier</b> is:
 
-<pre class="terminal">
+<pre class="prettyprint">
 https://hooks.cloud66.com/stacks/redeploy/xxxx/yyyy?services=web
 </pre>
 
 An example redeployment <b>hook with a many-service modifier</b> is:
 
-<pre class="terminal">
+<pre class="prettyprint">
 https://hooks.cloud66.com/stacks/redeploy/xxxx/yyyy?services=web,app
 </pre>
 
@@ -118,7 +118,7 @@ Most Git providers have a commit hook mechanism that you can use to post to the 
 <h3 id="manual">Use a redeployment hook manually</h3>
 To invoke the redeployment hook manually, you can POST an HTTP request to your redeployment hook URL. You can do this in curl like this:
 
-<pre class="terminal">
+<pre class="prettyprint">
 curl -X POST [your redeployment hook URL]
 </pre>
 
