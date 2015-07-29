@@ -27,7 +27,7 @@ tags: ['Deployment']
 	</li>
 	<li>
 		<a href="#manual">Use a redeployment hook manually</a>
-	</li>		
+	</li>
 	<li>
 		<a href="#git-ref">Support for deployment from Git refs</a>
 	</li>
