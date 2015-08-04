@@ -18,6 +18,11 @@ tags: ['']
 	<li>
 		<a href="#containernet">ContainerNet</a>
 	</li>
+         <li>
+            <ul>
+            <li><a href="#Encryption">Encryption</a></li>
+            </ul>
+        </li>       
 	<li>
 		<a href="#elasticdns">ElasticDNS</a>
 	</li>	
@@ -39,6 +44,9 @@ The external traffic to your server(s) is distributed by a Nginx reverse proxy f
 
 <h2 id="containernet">ContainerNet</h2>
 ContainerNet is a private and secure network (based on [Weave](http://weave.works/)) between all containers across all the servers and components in your stack, including databases. This network provides an internal IP address to each container, automatically updating with DHCP and DNS and is fully integrated with the [life-cycle management of your services](/managing-your-stack/service-life-cycle-management).
+
+<h3 id="Encryption">Encryption</h3>
+Weave includes a secure, performant authenticated [encryption mechanism](http://blog.weave.works/2015/06/16/weave-net-cryptography-faq/) which we automatically configure on your behalf, so you don’t have to take any custom encryption actions yourself.
 
 <h2 id="elasticdns">ElasticDNS</h2>
 
