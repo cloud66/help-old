@@ -24,26 +24,26 @@ tags: ['']
             <li><a href="#no">No database (external)</a></li>
             <li><a href="#local">Local database</a></li>
             <li><a href="#ded">Dedicated database</a></li>
-        </ul>       
+        </ul>
     <li>
         <a href="#upgrade">Upgrading your database</a>
     </li>
     <li>
         <a href="#migrations">Control your Rails database migrations</a>
-    </li> 
+    </li>
     <li>
         <a href="#customize">Customize your database configuration</a>
-    </li>                         
+    </li>
         <ul style="margin-bottom:0em">
             <li><a href="#variables">Database customization variables</a></li>
-        </ul>    
+        </ul>
 </ul>
 
 <h2 id="about">About deploying databases</h2>
 
 We currently support the following databases, with no need for additional configuration after deployment.
 
-* MySQL
+* MySQL (or Percona if [configured via Manifest](http://help.cloud66.com/building-your-stack/building-your-manifest-file#mysql))
 * PostgreSQL
 * MongoDB
 * Redis
@@ -74,7 +74,7 @@ Cloud 66 will not do in-place database upgrades, because this process may cause 
 Once the new stack is created, you can migrate data from your old stack to your new stack.
 
 <h2 id="migrations">Control your Rails database migrations</h2>
-You can control your Rails database migrations by setting `run.deploy.command` option through [Stack settings](/toolbelt/toolbelt-settings-command) via [Toolbelt](/toolbelt/toolbelt-introduction) which gives you the option of running migrations or not. 
+You can control your Rails database migrations by setting `run.deploy.command` option through [Stack settings](/toolbelt/toolbelt-settings-command) via [Toolbelt](/toolbelt/toolbelt-introduction) which gives you the option of running migrations or not.
 
 <pre class="prettyprint">
 $ cx settings set -s my_stack run.deploy.command true

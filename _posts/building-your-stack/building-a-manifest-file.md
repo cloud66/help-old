@@ -32,14 +32,14 @@ tags: ['Deployment']
             <li><a href="#redis">Redis</a></li>
             <li><a href="#sinatra">Sinatra</a></li>
         </ul>
-        </li>    
+        </li>
     <li><a href="#servers">Which server?</a></li>
         <li>
         <ul>
             <li><a href="#shared">Shared servers</a></li>
-            <li><a href="#external">External</a></li>         
+            <li><a href="#external">External</a></li>
         </ul>
-        </li>       
+        </li>
     <li><a href="#environment_variables">Specify environment variables</a></li>
     <li><a href="#live_logs">Specify additional LiveLog files</a></li>
     <li><a href="#experiments">Test experimental features</a></li>
@@ -104,7 +104,7 @@ production:
             root_disk_type: ssd
             image_keep_count: 5
             extra_packages:
-                - chrony            
+                - chrony
 </pre>
 
 <hr>
@@ -117,14 +117,14 @@ production:
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
-production:    
+production:
     elasticsearch:
         configuration:
             version: 0.90.7
             root_disk_size: 100
             root_disk_type: ssd
             extra_packages:
-                - chrony            
+                - chrony
 </pre>
 <hr>
 <h3 id="gluster">GlusterFS</h3>
@@ -195,14 +195,14 @@ production:
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
-production:    
+production:
     memcached:
         configuration:
             memory: 1024
             port: 11211
             listen&#95;ip: 127.0.0.1
             extra_packages:
-                - chrony            
+                - chrony
 </pre>
 
 <hr>
@@ -215,14 +215,14 @@ production:
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
-production:    
+production:
     mongodb:
         configuration:
             version: 2.4.8
-            root_disk_size: 100   
-            root_disk_type: ssd         
+            root_disk_size: 100
+            root_disk_type: ssd
             extra_packages:
-                - chrony            
+                - chrony
 </pre>
 
 <hr>
@@ -230,12 +230,14 @@ production:
 <h3 id="mysql">MySQL</h3>
 
 - **version**: Specify the version of MySQL you want to install. Valid values are 5.5 and 5.6 (can only be set during stack build).
+- **engine**: Specify the MySQL engine you want to install. Valid values are 'mysql' and 'percona' (can only be set during stack build).
 
 <pre class="prettyprint">
 production:
     mysql:
         configuration:
             version: 5.5
+            engine: percona
 </pre>
 
 <hr>
@@ -247,14 +249,14 @@ production:
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
-production:    
+production:
     rails:
-        configuration:            
+        configuration:
             nginx:
                 cors: true
                 perfect&#95;forward&#95;secrecy: true # deprecated
             extra_packages:
-                - chrony                
+                - chrony
 </pre>
 
 #### CORS configuration
@@ -262,7 +264,7 @@ production:
 If required, you can also specify the origin and methods for CORS.
 
 <pre class="prettyprint">
-production:    
+production:
     rails:
         configuration:
             nginx:
@@ -282,15 +284,15 @@ production:
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
-production:    
+production:
     postgresql:
         configuration:
             version: 9.3.4
             postgis: true
-            root_disk_size: 100            
+            root_disk_size: 100
             root_disk_type: ssd
             extra_packages:
-                - chrony            
+                - chrony
 </pre>
 <hr>
 <h3 id="postgis">PostGIS</h3>
@@ -305,7 +307,7 @@ production:
             postgis:
                 version: 2.1.1
             extra_packages:
-                - chrony               
+                - chrony
 </pre>
 
 <hr>
@@ -331,7 +333,7 @@ A Rails application type in the manifest file gives you fine control over things
 </div>
 
 <pre class="prettyprint">
-production:    
+production:
     rails:
         configuration:
             ruby&#95;version: 2.2.0
@@ -346,7 +348,7 @@ production:
             root_disk_size: 100
             root_disk_type: ssd
             extra_packages:
-                - chrony            
+                - chrony
 </pre>
 
 <hr>
@@ -359,14 +361,14 @@ production:
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
-production:    
+production:
     redis:
         configuration:
             version: 2.6.10
             root_disk_size: 100
             root_disk_type: ssd
             extra_packages:
-                - chrony            
+                - chrony
 </pre>
 
 <hr>
@@ -405,7 +407,7 @@ production:
             root_disk_size: 100
             root_disk_type: ssd
             extra_packages:
-                - chrony            
+                - chrony
 </pre>
 
 <hr>
@@ -438,7 +440,7 @@ Available settings (refer to the [GCE documentation](https://cloud.google.com/co
 - **balance**: The load balancing strategy. You can use these values: NONE, CLIENT_IP or CLIENT_IP_PROTO.
 
 <pre class="prettyprint">
-production:    
+production:
     load_balancer:
         configuration:
             httpchk: /
@@ -482,7 +484,7 @@ Available settings (refer to the [Linode documentation](https://www.linode.com/d
 - **balance**: The load balancing strategy. You can use these values : roundrobin, leastconn or source.
 
 <pre class="prettyprint">
-production:    
+production:
     load_balancer:
         configuration:
             httpchk: /
@@ -638,13 +640,13 @@ Environment variables set in your manifest file will only apply during the initi
 Any environment variable that is generated by the result of the code analysis (like database addresses) will override any value specified in the manifest file. In other words, you cannot specify a value like `MYSQL_ADDRESS` in your manifest file as it will be ignored.
 
 <h2 id="live_logs">Specify additional LiveLog files</h2>
-Each application type supports the additional partial configuration to add custom live log files for that application type: 
-  
+Each application type supports the additional partial configuration to add custom live log files for that application type:
+
 <pre class="prettyprint">
 production:
     docker:
         configuration:
-            custom_log_files: ["/tmp/mylog/*/*.log"]     
+            custom_log_files: ["/tmp/mylog/*/*.log"]
 </pre>
 
 
