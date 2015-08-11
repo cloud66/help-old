@@ -86,7 +86,7 @@ Stops a particular container on the given stack based on container Id or contain
     <tr>
         <td><i>container</i></td>
         <td>&mdash;</td>
-        <td>The container ID or container name (short version supported)</td>
+        <td>The container Id or container name (short version supported)</td>
     </tr>
     </tbody>
 </table>
@@ -125,7 +125,7 @@ Restarts a particular container on the given stack based on container Id or cont
     <tr>
         <td><i>container</i></td>
         <td>&mdash;</td>
-        <td>The container ID or container name (short version supported)</td>
+        <td>The container Id or container name (short version supported)</td>
     </tr>
     </tbody>
 </table>
@@ -164,7 +164,7 @@ $ cx containers exec [-s &lt;stack&gt;] &lt;container&gt; &lt;command&gt;
     <tr>
         <td><i>container</i></td>
         <td>&mdash;</td>
-        <td>The ID or name of the container you wish to exec</td>
+        <td>The Id or name of the container you wish to exec</td>
     </tr>    
     <tr>
         <td><i>command</i></td>
@@ -218,7 +218,7 @@ $ cx containers attach [-s &lt;stack&gt;] &lt;container&gt;
     <tr>
         <td><i>container</i></td>
         <td>&mdash;</td>
-        <td>The container ID or container name (short version supported)</td>
+        <td>The container Id or container name (short version supported)</td>
     </tr>
     </tbody>
 </table>
