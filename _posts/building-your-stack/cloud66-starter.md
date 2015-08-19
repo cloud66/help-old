@@ -19,7 +19,7 @@ Starter works in the same way as BuildPacks do, but only generates the above men
 
 ## Get Started
 
-To get started download the executable and run it on your development machine.
+To get started [download the executable](http://www.cloud66.com/starter) and run it on your development machine.
 
 <pre class="prettyprint">
 $ cd /my/project
