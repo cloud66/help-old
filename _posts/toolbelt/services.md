@@ -13,6 +13,7 @@ lead: Manage your services with the toolbelt
     <li><a href="#service-scale">Scaling services</a></li>
     <li><a href="#service-stop">Stopping services</a></li>
     <li><a href="#service-restart">Restarting services</a></li>
+    <li><a href="#service-info">Getting service information</a></li>
 </ul>
 
 <h2 id="service-list">Listing services</h2>
@@ -196,3 +197,61 @@ $ cx services restart -s mystack my_web_service
 $ cx services restart -s mystack a_backend_service
 $ cx services restart -s mystack --server my_server my_web_service
 </pre>
+
+<h2 id="service-info">Getting service information</h2>
+<h3>Usage</h3>
+<pre class="prettyprint">
+$ cx services info [-s &lt;stack&gt;] &lt;service name&gt; [--server &lt;server name&gt;|&lt;server ip&gt;]
+</pre>
+
+Gets information about the given service such as `service name, source type`, `git-ref`, `image info`, `container count`  and `docker commands`.
+Optionally provide the server to act only on that server.
+
+<h3>Parameters</h3>
+<table class='table table-bordered table-striped table-small'>
+    <thead>
+    <tr>
+        <th align="center">Parameter</th>
+        <th align="center">Default</th>
+        <th align="center">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><i>stack</i></td>
+        <td>&mdash;</td>
+        <td>Name of the stack</td>
+    </tr>
+    <tr>
+        <td><i>service name</i></td>
+        <td>&mdash;</td>
+        <td>Name of the target service</td>
+    </tr>
+    <tr>
+        <td><i>server name</i> (optional)</td>
+        <td>&mdash;</td>
+        <td>Name of the target server</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Example</h3>
+<pre class="prettyprint">
+$ cx services info -s mystack my_web_service
+$ cx services info -s mystack a_backend_service
+$ cx services info -s mystack --server my_server my_web_service
+</pre>
+
+<h3>Result</h3>
+<pre class="prettyprint">
+NAME             VALUE
+name             web
+source type      git
+git-ref          d33e491e5a33
+container count  1
+image name       web
+image uid
+image hash
+command          bundle exec rails s production
+build command    bundle exec rake db:schema:load
+deploy command</pre>
