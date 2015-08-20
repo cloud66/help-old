@@ -200,9 +200,9 @@ The allowed database values are: `postgresql`, `mysql`, `redis`, `mongodb`, `ela
 {% highlight yaml %}
 services:
     &#60;service_name&#62;:
-        databases:
-          - "mysql"
-          - "elasticsearch"
+databases:
+    - mysql
+    - elasticsearch
 {% endhighlight %}
 
 <h2 id="env_vars">Environment variables</h2>
