@@ -36,6 +36,9 @@ tags: ['Scaling']
 	<li>
 		<a href="#commit">Commit HAProxy CustomConfig</a>
 	</li>
+	<li>
+		<a href="#maintenance">Configuring HAProxy for maintenance mode</a>
+	</li>
 </ul>
 
 <h2 id="about">About configuring HAProxy</h2>
@@ -153,3 +156,21 @@ This process will be stopped if an error is encountered.
 	<h3>Warning</h3>
 	<p>A bad HAProxy configuration might stop your HAProxy server from working. Take extra care to make sure the configuration is correct.</p>
 </div>
+
+<h2 href="#maintenance">Configuring HAProxy for maintenance mode</h2>
+For <strong>Docker stacks</strong> you can set your HAproxy to show a maintenance page when it cannot connect to the container.
+
+<ul class="list">
+  <li>Create custom maintenance page</li>
+  <li>Upload to haproxy server using the toolbelt</li>
+  <pre class="prettyprint">
+cx upload -s stack_name --server haproxy_server_name maintenance.html
+</pre>
+
+  <li>Move the file haproxy directory</li>
+  <pre class="prettyprint">
+sudo mv /tmp/maintenance.html /etc/haproxy/maintenance.html
+</pre>
+  <li>Configure haproxy to show the maintenance file by adding the below line to the end of the default section</li>
+   <pre class="terminal">errorfile 503 /etc/haproxy/maintenance.html</pre>
+</ul>
