@@ -18,7 +18,6 @@ There are various reasons for cloning an existing stack - for example, you may w
 
 <li>The scenario is to migrate stack `A` to a new stack called `B`</li>
 
-<ol class="article-list">
 <h3>1. Set a failover group </h3>
 
 - On your dashboard click on "Failover Groups"
@@ -71,4 +70,3 @@ Go to the failover group and switch to `B`.
 
 <h3>11. Switch your DNS record to the new stack</h3>
 You can now point your DNS to stack `B` and wait till it propagates (24 hours)
-</ol>
