@@ -81,8 +81,11 @@ lead: Take action at various points during your deployment
 </tr>
 <tr>
 	<td>after&#95;bundle</td>
-	<td>This hook will run after bundle but before other rake tasks, such as database migrations. Happens during the code deployment of your application.</td>
-</tr>
+	<td>This hook will run after bundle but before other rake tasks, such as database migrations. Happens during the code deployment of your application.
+	<div class="notice notice-warning">
+	<strong> Note:</strong> Set for this if you need to run deploy hooks that are invoked before the symlink is updated on the release path.
+	</div>	
+</td></tr>
 <tr>
 	<td>after&#95;symlink</td>
 	<td>Runs after the symbolic link to your current code folder has been created. <br /><br />Happens during the code deployment of your application.</td>
