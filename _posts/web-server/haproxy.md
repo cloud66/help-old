@@ -23,7 +23,7 @@ tags: ['Scaling']
 	</li>
 	<li>
 		<a href="#specify">Specify an HAProxy test interval</a>
-	</li>	
+	</li>
 	<li>
 		<a href="#endpoint">Change the HAProxy endpoint</a>
 	</li>
@@ -32,7 +32,7 @@ tags: ['Scaling']
 	</li>
         <ul style="margin-bottom:0em">
 	        <li><a href="#variables">Config variables</a></li>
-        </ul>		
+        </ul>
 	<li>
 		<a href="#commit">Commit HAProxy CustomConfig</a>
 	</li>
@@ -61,7 +61,7 @@ To change the test interval to every 30 seconds (instead of the default 2 second
 
 Please note the `inter 3000` at the end - this defines the test interval as 3000 milliseconds. Once this template is applied, it looks like this:
 
-<pre class="terminal">server web 107.170.99.39:80 cookie "LSW_WEB1" check inter 30000</pre>
+<pre class="terminal">server web1 107.170.99.39:80 cookie "LSW_WEB1" check inter 30000</pre>
 
 <h2 id="endpoint">Change the HAProxy endpoint</h2>
 By default, HAProxy will visit the _/_ endpoint on your application every 2 seconds to determine its state. This endpoint may need to change if that endpoint isn't available to the load balancer.
