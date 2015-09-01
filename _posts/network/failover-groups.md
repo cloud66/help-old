@@ -33,3 +33,9 @@ You are then be able to select a _Primary_ and a _Backup_ stack for your failove
 - Having a _backup_ stack is not mandatory.
 - You can only delete a failover group when it isn't pointing at any stacks.
 - Once you delete a failover group, the DNS record for it is permanently deleted and you won't be able to get the same address back.
+
+## Environment variables
+
+There is an environment variable called `FAILOVER_STATUS` with three different values: `online`, `offline` and `none` which means the traffic goes to this stack, does not go to this stack or this stack is not part of any failover groups, respectively.
+
+You may have some jobs configured on both like sending an email, but you need them to be run only on the online one you can use this environment variable to prevent duplication.
