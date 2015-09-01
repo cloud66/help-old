@@ -36,6 +36,10 @@ tags: ['Database', 'Database replication']
 	<li>
 		<a href="#disable">Disable database replication</a>
 	</li>
+	<li>
+		<a href="#Slave">Create slave database</a>
+	</li>
+
 </ul>
 
 <h2 id="about">About database replication</h2>
@@ -166,3 +170,14 @@ To enable replication between stacks, ensure that you have a secondary stack dep
 
 <h2 id="disable">Disable database replication</h2>
 To disable replication between stacks, visit your stack detail page, click on the database server group (eg. _MySQL server_) click into your main database server page. Next, click _Configure data replication_ in the right sidebar, and select _Disable replication_. Confirm to commence the replication process.
+
+<h2 id="Slave">Create slave database</h2>
+
+To add a slave database server you need to follow the below steps. To add multiple you need to scale up one by one.
+
+1. If you don't have a managed backup you will need to set up one by using add-ins.
+2. Go on your stack page, database servers page (For instance PostgreSQL Servers)
+3. On the right sidebar click on `SCALEUP DATABASE` (this won't be shown if you have not set up database backup)
+
+
+
