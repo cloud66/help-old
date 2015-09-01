@@ -65,8 +65,11 @@ to add stack B as a backup to failover group, edit the related failover group an
 
 Do the step 6 but this time in the drop-down menu choose "No data source" (this makes `B`'s db, master)
 
-<h3>10. swithch to the new stack</h3> 
+<h3>10. Switch to the new stack</h3> 
 Go to the failover group and switch to `B`.
 
-<h3>11. Switch your DNS record to the new stack</h3>
-You can now point your DNS to stack `B` and wait till it propagates (24 hours)
+<h3>11. [OPTIONAL]Switch your DNS record to the new stack</h3>
+<div class="notice">
+   <p>We recommend to keep it on a failover group to make this task easy and quick for the future.</p>
+</div>
+You can now point your DNS to stack `B`.
