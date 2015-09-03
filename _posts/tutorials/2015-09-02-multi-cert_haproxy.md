@@ -14,34 +14,39 @@ tutorial: true
 difficulty: 2
 ---
 
-The idea is to add multiple SSL termination to your HAproxy
+This article is for adding multiple SSL terminations to your HAproxy when you serve both websites on the same backend servers.
 
-1. Add the following environment variables to your stack
+<h3>1. Add the following environment variables to your stack</h3>
+<pre class="prettyprint">
+<l>WEBSITE_1  web_site1_name (full wesite name, like example1.com)</l>
+<l>WEBSITE_2  web_site2_name (full wesite name, like example2.com)</l>
+</pre>
 
-WEBSITE_1  web_site1_name (full wesite name, like example1.com)
-WEBSITE_2  web_site2_name (full wesite name, like example2.com)
+<h3>2. Concatanate each certification's files to one file</h3>
+<pre class="prettyprint">
+<l>cat CERT1.CRT_PATH [CERT1_MID.crt_path] PRIVATE1.key_PATH > websitename1.pem</l>
+<l>cat CERT2.CRT_PATH [CERT2_MID.crt_PATH] PRIVATE2.key_PATH > websitename2.pem</l>
+</pre>
 
-2. Concatanate each certification's files to one file
-
-cat CERT1.CRT_PATH [CERT1_MID.crt_path] PRIVATE1.key_PATH > websitename1.pem
-cat CERT2.CRT_PATH [CERT2_MID.crt_PATH] PRIVATE2.key_PATH > websitename2.pem
-
-3. Upload them to /tmp of your server
-
+<h3>3. Upload them to /tmp of your server</h3>
+<pre class="prettyprint">
 cx upload -s stack_name --server haproxy_server_name websitename1.pem_PATH websitename1.pem
 cx upload -s stack_name --server haproxy_server_name websitename2.pem_PATH websitename2.pem
+</pre>
 
+<h3>4. Login to your HAproxy server</h3>
 
-4. Login to your HAproxy server
-
+<pre class="prettyprint">
 cx ssh -s stack_name haproxy_server_name
+</pre>
 
-5. Copy the files to certification files from /tmp to their directory
-
+<h3>5. Copy the files to certification files from /tmp to their directory</h3>
+<pre class="prettyprint">
 sudo cp /tmp/websitename1.pem /etc/ssl/private/$WEBSITE_1.pem
 sudo cp /tmp/websitename2.pem /etc/ssl/private/$WEBSITE_2.pem
+</pre>
 
-6. Change the settings in your HAproxy config
+<h3>6. Change the settings in your HAproxy config</h3>
 
 In th UI Find the following line in your HAproxy config page
 
