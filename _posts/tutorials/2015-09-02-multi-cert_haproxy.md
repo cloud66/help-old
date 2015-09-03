@@ -24,7 +24,7 @@ $ cx env-vars set [-s &lt;stack&gt;] WEBSITE2 &lt;value like example2.com&gt;
 </pre>
 
 <h3>2. Concatanate each certification's files to one file</h3>
-<li>Run the followings on your local computer</li>
+<p>Run the followings on your local computer</p>
 <pre class="prettyprint">
 <l>cat CERT1.CRT_PATH [CERT1_MID.crt_path] PRIVATE1.key_PATH > websitename1.pem</l>
 <l>cat CERT2.CRT_PATH [CERT2_MID.crt_PATH] PRIVATE2.key_PATH > websitename2.pem</l>
