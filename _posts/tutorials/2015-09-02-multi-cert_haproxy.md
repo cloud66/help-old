@@ -18,10 +18,13 @@ This article is for adding multiple SSL terminations to your HAproxy when you se
 
 <h3>1. Add the following environment variables to your stack</h3>
 
-<l>WEBSITE_1  web_site1_name (full wesite name, like example1.com)</l>
-<l>WEBSITE_2  web_site2_name (full wesite name, like example2.com)</l>
+<pre class="prettyprint">
+$ cx env-vars set [-s &lt;stack&gt;] WEBSITE1 &lt;value like example1.com&gt;
+$ cx env-vars set [-s &lt;stack&gt;] WEBSITE2 &lt;value like example2.com&gt;
+</pre>
 
 <h3>2. Concatanate each certification's files to one file</h3>
+Run the followings on your local computer
 <pre class="prettyprint">
 <l>cat CERT1.CRT_PATH [CERT1_MID.crt_path] PRIVATE1.key_PATH > websitename1.pem</l>
 <l>cat CERT2.CRT_PATH [CERT2_MID.crt_PATH] PRIVATE2.key_PATH > websitename2.pem</l>
@@ -51,7 +54,7 @@ In th UI Find the following line in your HAproxy config page
 
 `bind 0.0.0.0:{{port[0]}} ssl crt` 
 
-and chenge the whole line to:
+and chenge it to:
 
 `bind 0.0.0.0:{{port[0]}} ssl crt ${WEBSITE_1}.pem crt ${WEBSITE_2}.pem`
 
