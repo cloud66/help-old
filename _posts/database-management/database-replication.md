@@ -40,7 +40,7 @@ tags: ['Database', 'Database replication']
 		<a href="#Slave">Create slave database</a>
 	</li>
 	<li>
-	    <a href="Re-synch">Re-synchronizing slave with master</a>
+	    <a href="#Re-synch">Re-synchronizing slave with master</a>
 	</li>
 
 </ul>
