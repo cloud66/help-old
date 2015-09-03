@@ -39,6 +39,9 @@ tags: ['Database', 'Database replication']
 	<li>
 		<a href="#Slave">Create slave database</a>
 	</li>
+	<li>
+	    <a href="Re-synch">Re-synchronizing slave with master</a>
+	</li>
 
 </ul>
 
@@ -163,21 +166,25 @@ The process of enabling database replication varies slightly for a single stack 
 </div>
 
 <h3>Single stack</h3>
-To enable replication on a single stack, visit your stack detail page, click on the database server group (eg. _MySQL server_) and click <i>Scale Up</i> in the top right corner. This will allow you to choose your new server size. Your new server should contain at least two times more disk space than the size of your database backup, and we recommend that it is comparable to your master server (in terms of memory).
+To enable replication on a single stack, visit your stack detail page, click on the database server group (eg. _PostgreSQL server_) and click <i>Scale Up</i> in the top right corner. This will allow you to choose your new server size. Your new server should contain at least two times more disk space than the size of your database backup, and we recommend that it is comparable to your master server (in terms of memory).
 
 <h3>Between stacks</h3>
-To enable replication between stacks, ensure that you have a secondary stack deployed, and that its database server contains at least two times more disk space than the size of your database backup. Visit your stack detail page, click on the database server group (eg. _MySQL server_) click into your main database server page. Next, click _Configure data replication_ in the right sidebar, and select a source stack. Confirm to commence the replication process.
+To enable replication between stacks, ensure that you have a secondary stack deployed, and that its database server contains at least two times more disk space than the size of your database backup. Visit your stack detail page, click on the database server group (eg. _PostgreSQL server_) click into your main database server page. Next, click _Configure data replication_ in the right sidebar, and select a source stack. Confirm to commence the replication process.
 
 <h2 id="disable">Disable database replication</h2>
-To disable replication between stacks, visit your stack detail page, click on the database server group (eg. _MySQL server_) click into your main database server page. Next, click _Configure data replication_ in the right sidebar, and select _Disable replication_. Confirm to commence the replication process.
+To disable replication between stacks, visit your stack detail page, click on the database server group (eg. _PostgreSQL server_) click into your main database server page. Next, click _Configure data replication_ in the right sidebar, and select _Disable replication_. Confirm to commence the replication process.
 
 <h2 id="Slave">Create slave database</h2>
 
 To add a slave database server you need to follow the below steps. To add multiple you need to scale up one by one.
+<ol>
+<li> Set up a managed backup via <a href="/toolbelt//stack-add-ins/add-in-implementation"> add-ins</a> if you don't have any.</li>
+<li> Go on your stack page, database servers page (eg. _PostgreSQL Servers_)</li>
+<li> On the right sidebar click on <em>SCALEUP DATABASE</em> (the button will not be shown if you have not set up database backups)</li>
+</ol>
+<h2 id="Re-synch">Re-synchronizing slave with master</h2>
 
-1. If you don't have a managed backup you will need to set up one by using add-ins.
-2. Go on your stack page, database servers page (For instance PostgreSQL Servers)
-3. On the right sidebar click on `SCALEUP DATABASE` (this won't be shown if you have not set up database backup)
+From time-to-time your slave database may go out of sync with its master. You can use our toolbelt to re-synchronize them.
 
-
+To re-synch them, have a look at our documentation on <a href="/toolbelt/toolbelt-database-management">Toolbelt database management</a>.
 
