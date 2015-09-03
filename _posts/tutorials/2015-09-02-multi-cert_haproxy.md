@@ -17,10 +17,9 @@ difficulty: 2
 This article is for adding multiple SSL terminations to your HAproxy when you serve both websites on the same backend servers.
 
 <h3>1. Add the following environment variables to your stack</h3>
-<pre class="prettyprint">
+
 <l>WEBSITE_1  web_site1_name (full wesite name, like example1.com)</l>
 <l>WEBSITE_2  web_site2_name (full wesite name, like example2.com)</l>
-</pre>
 
 <h3>2. Concatanate each certification's files to one file</h3>
 <pre class="prettyprint">
