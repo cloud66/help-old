@@ -80,6 +80,10 @@ lead: Take action at various points during your deployment
 	<td>This hook will run before Rails is installed on your server.</td>
 </tr>
 <tr>
+	<td>custom&#95;server</td>
+	<td>This hook will run on your custom servers.</td>
+</tr>
+<tr>
 	<td>after&#95;bundle</td>
 	<td>This hook will run after bundle but before other rake tasks, such as database migrations. Happens during the code deployment of your application.
 	<div class="notice notice-warning">
