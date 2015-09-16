@@ -24,7 +24,7 @@ It is a Git repository for Customconfig files managed by Cloud 66 that enables y
 
 You can push changes of CustomConfig files into this repository which will update CustomConfig of the stack and will be ready to be pushed to real servers with next release.
 
-If you change CustomConfigs through dashboard, the changes will be pushed to _Custom Git Repository_ as well, so you can see and the changes in your git client too.
+If you change CustomConfigs through dashboard, the changes will be pushed to _Custom Git Repository_ as well, so you can see the changes in your git client too.
 
 <h2 id="access">Access to Custom Git Repository</h2>
 
