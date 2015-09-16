@@ -469,11 +469,11 @@ production:
     load_balancer:
         servers:
          - server:
-         unique_name: bananana
-         size: 1gb
-         region: ams2
-         vendor: digitalocean
-         key_name: Default
+           unique_name: bananana
+           size: 1gb
+           region: ams2
+           vendor: digitalocean
+           key_name: Default
         configuration:
             httpchk: HEAD / HTTP/1.0 (default value)
             balance: roundrobin (default value)
