@@ -25,7 +25,7 @@ CustomConfig allows you to edit and modify component configuration templates use
 CustomConfig uses the [Liquid templating language](http://www.liquidmarkup.org/) developed by [Shopify](http://www.shopify.com/) and used by many websites. There are many good resources on the web on how to use the Liquid syntax.
 
 <h2 id="preview">Preview a template</h2>
-To use Nginx as an example, go to your Web Servers group detail page and click _Nginx CustomConfig_ in the right sidebar. This page will show you the template used to build the Nginx configuration when Nginx is deployed during your stack built or reconfigured. Once you're done with editing your template, you can preview the results by clicking on the <i>Preview</i> button.
+To use Nginx as an example, go to your Web Servers group detail page and click _CONFIGURE NGINX_ in the right sidebar. This page will show you the template used to build the Nginx configuration when Nginx is deployed during your stack built or reconfigured. Once you're done with editing your template, you can preview the results by clicking on the <i>Preview</i> button.
 
 See our documentation for more details about CustomConfig for [Nginx](/web-server/nginx), [HAProxy](/web-server/haproxy) and [databases](/database-management/database-management).
 
@@ -38,7 +38,9 @@ See our documentation for more details about CustomConfig for [Nginx](/web-serve
 
 When you are happy with the results, enter a commit message and press the <i>Commit to Server</i> button. This will compile the configuration with real data and push it to all applicable servers in your stack. It also performs any post commit steps necessary like reloading Nginx with the new configuration file, putting your changes into effect.
 
-This process takes place in the background and might take some time to complete depending on the number of servers in a stack and the nature of the configuration.You can subsequently see the history of your configuration changes with simple colored diff views alongside dates and comments.
+This process takes place in the background and might take some time to complete depending on the number of servers in a stack and the nature of the configuration. Also, during the process cloud66 will update contents of [Custom git repository](/managing-your-stack/custom-git-repository) so after fetching the latest version you can see the history of configuration changes in your own git client tool
+
+You can subsequently see the history of your configuration changes with simple colored diff views alongside dates and comments.
 
 <h2 id="update">About updating configuration files and patches</h2>
 
