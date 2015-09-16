@@ -450,10 +450,16 @@ production:
 <hr>
 
 <h4 id="haproxy">HAProxy</h4>
-Use a manifest file to configure your HAProxy load balancer deployed by Cloud 66. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/web-server/haproxy).
+Use a manifest file to configure and define your HAProxy load balancer deployed by Cloud 66. These changes will be either be applied when you redeploy a stack with more than one server, rebuild HAProxy or edit [HAProxy CustomConfig](/web-server/haproxy).
 
 Available settings (refer to the [HAProxy documentation](http://haproxy.1wt.eu/download/1.3/doc/configuration.txt) for more information):
-
+Server definitions
+unique_name: Name of the instance
+size: The size of the instance (Mandatory)
+region: Digital Ocean's region (Mandatory)
+vendor: digitalocean (Mandatory)
+key_name: Default (Mandatory)
+Configuration:
 - **httpchk**: The health-check configuration.
 - **balance**: The load balancing strategy.
 - **errorfile&#95;\***: Location of your own custom error page content to serve in the case of receiving a HTTP error code on the load balancer.
@@ -461,6 +467,13 @@ Available settings (refer to the [HAProxy documentation](http://haproxy.1wt.eu/d
 <pre class="prettyprint">
 production:
     load_balancer:
+        servers:
+         - server:
+         unique_name: bananana
+         size: 1gb
+         region: ams3
+         vendor: digitalocean
+         key_name: Default
         configuration:
             httpchk: HEAD / HTTP/1.0 (default value)
             balance: roundrobin (default value)
