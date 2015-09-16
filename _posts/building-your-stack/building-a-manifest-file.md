@@ -471,7 +471,7 @@ production:
          - server:
          unique_name: bananana
          size: 1gb
-         region: ams3
+         region: ams2
          vendor: digitalocean
          key_name: Default
         configuration:
