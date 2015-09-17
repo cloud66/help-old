@@ -20,7 +20,7 @@ tags: ['Customization']
 
 <h2 id="custom">What is Custom Git Repository?</h2>
 
-It is a Git repository for Customconfig files managed by Cloud 66 that enables you to manage your customconfigs using git commands or dashboard. Each change will be pushed to the servers after redeployment either updated via dashboard or updated using a git client tool.
+It is a Git repository for Customconfig files managed by Cloud 66 that enables you to manage your customconfigs using git commands or dashboard.
 
 You can push changes of CustomConfig files into this repository which will update CustomConfig of the stack and will be ready to be pushed to real servers with next release.
 
