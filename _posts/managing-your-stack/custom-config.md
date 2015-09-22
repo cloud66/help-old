@@ -13,6 +13,7 @@ tags: ['Customization']
 <h2>Contents</h2>
 <ul class="page-toc">
 	<li><a href="#custom">What is CustomConfig?</a></li>
+	<li><a href="#access-methods">Accessing CustomConfig</a></li>
 	<li><a href="#preview">Preview a template</a></li>
 	<li><a href="#submit">Submit template changes</a></li>
 	<li><a href="#update">About updating configuration files and patches</a></li>
@@ -23,6 +24,17 @@ tags: ['Customization']
 CustomConfig allows you to edit and modify component configuration templates used by Cloud 66 to configure your servers. This is currently available for Nginx, HAProxy and database configurations, and more configuration templates are forthcoming.
 
 CustomConfig uses the [Liquid templating language](http://www.liquidmarkup.org/) developed by [Shopify](http://www.shopify.com/) and used by many websites. There are many good resources on the web on how to use the Liquid syntax.
+
+<h2 id="access-methods">Accessing CustomConfig</h2>
+
+You can access and modify CustomConfig files in two different ways:
+
+1. Using the web based UI
+2. Using CustomConfig git repository
+
+Using the web based UI is very easy. Everything you need to use the web based UI is on this page.
+
+**CustomConfig git** is a private git repository that allows you make changes to CustomConfig files using the well known git tooling. You can find more information about [CustomConfig git repository here](/managing-your-stack/customconfig-git).
 
 <h2 id="preview">Preview a template</h2>
 To use Nginx as an example, go to your Web Servers group detail page and click _CONFIGURE NGINX_ in the right sidebar. This page will show you the template used to build the Nginx configuration when Nginx is deployed during your stack built or reconfigured. Once you're done with editing your template, you can preview the results by clicking on the <i>Preview</i> button.
