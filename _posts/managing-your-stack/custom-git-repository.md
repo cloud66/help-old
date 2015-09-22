@@ -1,56 +1,80 @@
 ---
 layout: post
 template: one-col
-title:  "Custom Git Repository"
-so_title: "custom git repository"
+title:  "CustomConfig git"
+so_title: "customconfig git"
 date:   3999-02-28 10:51:22
 categories: managing-your-stack
-lead: Customize deployed configuration files with git
+lead: Customize deployed configuration files using CustomConfig and git
 search-tags: []
 tags: ['Customization']
 ---
 
 <h2>Contents</h2>
 <ul class="page-toc">
-	<li><a href="#custom">What is Custom Git Repository?</a></li>
-	<li><a href="#Access">Access to Custom Git Repository</a></li>
-	<li><a href="#submit_ui">Submit changes through dashboard</a></li>
-	<li><a href="#submit_git">Submit changes through Git</a></li>
+	<li><a href="#what-is-customconfig-git">What is CustomConfig git?</a></li>
+	<li><a href="#getting-started">Getting Started with CustomConfig git</a></li>
+	<li><a href="#workflow">CustomConfig git workflow</a></li>
+	<li><a href="#automatic-updates">Automatic updates</a></li>
 </ul>
 
-<h2 id="custom">What is Custom Git Repository?</h2>
+<h2 id="what-is-customconfig-git">What is CustomConfig git?</h2>
 
-It is a Git repository for Customconfig files managed by Cloud 66 that enables you to manage your customconfigs using git commands or dashboard.
+CustomConfig git is a private git repository available on every stack in your Cloud 66 account. This git repository is hosted by Cloud 66 and allows you to modify [CustomConfig](/managing-your-stack/customconfig) files for your stack using familiar git commands.
 
-You can push changes of CustomConfig files into this repository which will update CustomConfig of the stack and will be ready to be pushed to real servers with next release.
+If you are familiar with [CustomConfig](/managing-your-stack/customconfig) you know how it can be a powerful tool to customise configuration for [nginx](/web-server/nginx) or [HAProxy](/web-server/haproxy). The easiest way to modify CustomConfig files is through the UI. However if you would like to edit CustomConfig files in your favourite editor or enjoy git merge and flow control features you can use CustomConfig git.
 
-If you change CustomConfigs through dashboard, the changes will be pushed to _Custom Git Repository_ as well, so you can see the changes in your git client too.
+<h2 id="getting-started">Getting Started with CustomConfig git</h2>
 
-<h2 id="access">Access to Custom Git Repository</h2>
+Each stack on Cloud 66 has its own private CustomConfig git repository. You can find the URL of this repository under stack's information page (right hand side menu). There you will find a URL like this for CustomConfig git:
 
-To access to the _Custom Git Repository_ you'd need to upload the content of your public personal key to your cloud66 account. You can find _public key_ under the _Account/Keys_ in dashboard.
+```
+git@git1.cloud66.com:warmhearted-wondrous-tiger-9262.git
+```
 
-You should find your public personal key `id_rsa.pub` in `~/.ssh` directory of your local machine. Otherwise you'd need to generate a public/private ssh keys first and upload the contents of the public one on to your cloud66 account.
+#### Uploading your SSH public key
 
-After you upload your public personal key, you can clone the _Custom Git Repository_ of the stack and start managing your CustomConfigs by pushing your changes in it. You can find the address of _Custom Git Repository_ in `Stack Information` page.
+Like any other git repository, CustomConfig git requires a public SSH key for authentication. If you are not familiar with how git SSH key authentication works or how to generate your own SSH keys, you can read this great guide by Github: [Git SSH key setup(https://help.github.com/articles/generating-ssh-keys/).
 
-<div class="notice">
-    <h3>Important</h3>
-    <p>You can use any public/private ssh key to access to <b>Custom Git Repository</b> but the personal key should be loaded into <b>ssh-agent</b> of the local machine you are using for configuration. If you are using <b>~/.ssh/id_rsa.pub</b> of local machine as personal public key, it should be loaded by default. You can use <b>ssh-add</b> command to list/add keys in <b>ssh-agent</b>.</p>
-</div>
+You can upload your public SSH key at **Account / Keys / Public Key** when logged into your Cloud 66 account.
 
-<h2 id="submit_ui">Submit changes through dashboard</h2>
+### Making changes to CustomConfig files
 
-When you push your changes to a CustomConfig through dashboard, Cloud66 will merge and push your changes into _Custom Git Repository_.
+To make a change to a CustomConfig file you need to first clone the stack's CustomConfig git repository locally. Using git commandline this is possible with something like this:
 
-If there are no merge conflicts, your changes will be applied directly to your servers.
+<pre class="prettyprint">
+$ git clone git@git1.cloud66.com:warmhearted-wondrous-tiger-9262.git
+</pre>
 
-If there are some merge conflict, cloud66 will raise a warning and the changes will cached on local to go to real servers on next deploy so you have this option to solve the conflict before deployment.
+This will clone the CustomConfig git repository for the first time to your disk under a folder called `warmhearted-wondrous-tiger-9262`.
 
-<h2 id="submit_git">Submit changes through Git</h2>
+Now you can `cd` to this folder and see the list of files available to edit. By default, CustomConfig git repository contains all the CustomConfig files that are relevant to your stack. For example, if you are using HAProxy as load balancer, you will see `haproxy.conf` as one of the files there. You might also see `nginx.conf` since you will always have web servers on your stack.
 
-When you push your changes for a CustomConfig to _Custom Git Repository_, Cloud66 will push and merge your changes into stack local cache to go to real servers with next deploy.
+Now open the file you want to change in your favourite text editor. Once done, save the file and commit your changes like any normal git workflow:
 
-If there are no merge conflicts there will be a warning message on your stack page showing `Redeploy (Config changes)`.
+<pre class="prettyprint">
+$ git commit -m "increate nginx pool size"
+$ git push origin master
+</pre>
 
-If there are merge conflicts, your changes will not be applied into stack local cache, so your next deployment will go with old configs. You'd have to solve the merge conflicts and push again in order to update your CustomConfigs.
+Done!
+
+<h2 id="workflow">CustomConfig git workflow</h2>
+
+It's important to know when your changes are going to be pushed to your servers.
+
+### Changes made in CustomConfig UI
+
+Any changes made to CustomConfig files in the UI will be applied to CustomConfig git repository as well.
+
+Changing a CustomConfig file in the UI will be pushed to your servers immediately unless there is a merge conflict with what's in the repository.
+
+### Changes made through CustomConfig git
+
+Changes made to CustomConfig git files will NOT be pushed to your servers until the next stack deployment. This is prevent unwanted changes go live during a normal gil workflow.
+
+<h2 id="automatic-updates">Automatic updates</h2>
+
+One of the most powerful features of CustomConfig is the automatic updates that are applied to your stacks. For example if there is an improvement in the way nginx is configured or a securiry patch is released to HAProxy which requires configuration change, Cloud 66 will automatically make those changes to your CustomConfig files.
+
+This is done by committing the changes to the CustomConfig git repository by Cloud 66. Those changes are visible on your git history and are performed by `git@cloud66.com` user.
