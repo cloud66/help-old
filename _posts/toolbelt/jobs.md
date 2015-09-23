@@ -113,7 +113,7 @@ Use this command to run a job from the command line.
 <h3 id="usage2">Usage</h3>
 
 <pre class="prettyprint">
-$ cx job list [-s &lt;stack&gt;] --args &lt;job parameters&gt; &lt;job name&gt;
+$ cx job list [-s &lt;stack&gt;] --arg &lt;arg&gt; &lt;job name&gt;
 </pre>
 
 <h3 id="params2">Parameters</h3>
@@ -138,7 +138,7 @@ $ cx job list [-s &lt;stack&gt;] --args &lt;job parameters&gt; &lt;job name&gt;
             <td>Name of the job to run</td>
         </tr>
         <tr>
-            <td><i>args</i> (optional)</td>
+            <td><i>arg</i> (optional)</td>
             <td>&mdash;</td>
             <td>Parameters you would like to pass job ( <a href="/stack-add-ins/jobs#params">more info</a> )</td>
         </tr>        
@@ -149,5 +149,5 @@ $ cx job list [-s &lt;stack&gt;] --args &lt;job parameters&gt; &lt;job name&gt;
 
 <pre class="prettyprint">
 $ cx job run -s "My Awesome App" my_job
-$ cx job run -s "My Awesome App" -args "arg1 arg2" my_job
+$ cx job run -s "My Awesome App" --arg "arg1" --arg "arg2" my_job
 </pre>

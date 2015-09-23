@@ -74,9 +74,10 @@ cp $1 ${2:-/tmp}
 
 Since job is using positional parameters pass you arguments in order, eg: if you pass `arg1` `arg2`, `$1` would contain `arg1` and `$2` would contain `arg2`
 
-You can also quote your argument if there is a space in the value. Also don't forget to use quotes if you are using toolbelt and you wants to pass more than one arguments.
+You can also quote your argument if there is a space in the value.
 
 <pre class="prettyprint">
 job command: cp $1 ${2:-/tmp}
-passing arguments: "log*.txt" tmp/logs
+passing arguments in dashboard: "log*.txt" tmp/logs
+passing arguments in toolbelt: --arg "log*.txt" -- arg tmp/logs
 </pre>
