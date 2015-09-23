@@ -140,7 +140,7 @@ $ cx job list [-s &lt;stack&gt;] --args &lt;job parameters&gt; &lt;job name&gt;
         <tr>
             <td><i>args</i> (optional)</td>
             <td>&mdash;</td>
-            <td>Parameters you would like to pass job</td>
+            <td>Parameters you would like to pass job ( <a href="/stack-add-ins/jobs#params">more info</a> )</td>
         </tr>        
     </tbody>
 </table>
