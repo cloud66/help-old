@@ -113,7 +113,7 @@ Use this command to run a job from the command line.
 <h3 id="usage2">Usage</h3>
 
 <pre class="prettyprint">
-$ cx jobs list [-s &lt;stack&gt;] --args &lt;job parameters&gt; &lt;job name&gt;
+$ cx job list [-s &lt;stack&gt;] --args &lt;job parameters&gt; &lt;job name&gt;
 </pre>
 
 <h3 id="params2">Parameters</h3>
