@@ -85,5 +85,9 @@ This page provides an overview of the commands available through the toolbelt.
 	        <td><a href="/toolbelt/toolbelt-database-management">databases</a></td>
 	        <td>Commands to work with databases</td>
 	    </tr>
+	    <tr>
+	        <td><a href="/toolbelt/toolbelt-job-management">jobs</a></td>
+	        <td>Commands to work with jobs</td>
+	    </tr>
     </tbody>
 </table>
