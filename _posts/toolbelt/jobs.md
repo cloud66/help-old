@@ -26,7 +26,7 @@ lead: Manage your jobs with the toolbelt
                 <li><a href="#example">Example</a></li>
                 </ul>
             </li>
-    <li><a href="#set">Run a job immediately</a></li>
+    <li><a href="#set">Run a job on demand</a></li>
             <li>
                 <ul>
                 <li><a href="#usage2">Usage</a></li>
@@ -107,7 +107,7 @@ $ cx jobs list -s My_Awesome_App --server dingo
 $ cx jobs list -s My_Awesome_App --server web -e production
 </pre>
 
-<h2 id="set">Run a job immediately</h2>
+<h2 id="set">Run a job on demand</h2>
 Use this command to run a job from the command line.
 
 <h3 id="usage2">Usage</h3>
