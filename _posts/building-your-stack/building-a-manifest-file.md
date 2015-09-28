@@ -87,7 +87,8 @@ Next, select which application you would like to specify settings for. You can c
 
 <h3 id="docker">Docker</h3>
 
-- **docker_version**: Specify the version of Docker you want to install.
+- **version**: Specify the version of Docker you want to install.
+- **weave_version** (_Optional_): Specify the version of Weave you want to install.
 - **vpc&#95;id** (_Optional, AWS EC2 Only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
@@ -99,6 +100,7 @@ production:
     docker:
         configuration:
             version: 1.4.1
+            weave_version: 1.0.3
             vpc_id: vpc-64872001
             root_disk_size: 100
             root_disk_type: ssd
