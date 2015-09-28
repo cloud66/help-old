@@ -99,7 +99,7 @@ Next, select which application you would like to specify settings for. You can c
 production:
     docker:
         configuration:
-            version: 1.4.1
+            version: 1.7.0
             weave_version: 1.0.3
             vpc_id: vpc-64872001
             root_disk_size: 100
