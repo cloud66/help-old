@@ -71,23 +71,19 @@ You are free to specify a version for a number of components in your [manifest f
     <tbody>
         <tr>
             <td>Docker</td>
-            <td>1.5.0</td>
+            <td>1.8.2</td>
         </tr>
         <tr>
             <td>ElasticSearch</td>
-            <td>1.5.2</td>
+            <td>1.7.2</td>
         </tr>
         <tr>
             <td>GlusterFS</td>
             <td>3.7.2</td>
         </tr>
         <tr>
-            <td>LibYAML</td>
-            <td>0.1.6</td>
-        </tr>
-        <tr>
             <td>MongoDB</td>
-            <td>2.6.9</td>
+            <td>2.6.11</td>
         </tr>
         <tr>
             <td>MySQL</td>
@@ -95,7 +91,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>Phusion Passenger</td>
-            <td>5.0.7</td>
+            <td>5.0.20</td>
         </tr>
         <tr>
             <td>PostGIS</td>
@@ -103,19 +99,19 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>PostgreSQL</td>
-            <td>9.4.1</td>
+            <td>9.4.4</td>
         </tr>
         <tr>
             <td>Redis</td>
-            <td>3.0.1</td>
+            <td>3.0.4</td>
         </tr>
         <tr>
             <td>Ruby</td>
-            <td>1.9.3 - 2.2.2</td>
+            <td>1.9.3 - 2.2.3</td>
         </tr>
         <tr>
             <td>Weave</td>
-            <td>0.10.0</td>
+            <td>1.0.3</td>
         </tr>        
     </tbody>
 </table>
