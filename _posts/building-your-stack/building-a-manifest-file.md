@@ -341,8 +341,8 @@ production:
             ruby&#95;version: 2.2.0
             asset&#95;pipeline&#95;precompile: true
             do&#95;initial&#95;db&#95;schema&#95;load: false
-            reserved&#95;server&#95;memory: 0 (default value)
-            passenger&#95;process&#95;memory: 200 (default value)
+            reserved&#95;server&#95;memory: 0 #default value
+            passenger&#95;process&#95;memory: 200 #default value
             locked&#95;passenger&#95;version: 4.0.59
             activeprotect:
                 whitelist: 123.123.123.123,234.234.234.234
@@ -400,8 +400,8 @@ production:
         configuration:
             ruby&#95;version: 1.9.3
             do&#95;initial&#95;db&#95;schema&#95;load: false
-            reserved&#95;server&#95;memory: 0 (default value)
-            passenger&#95;process&#95;memory: 200 (default value)
+            reserved&#95;server&#95;memory: 0 #default value
+            passenger&#95;process&#95;memory: 200 #default value
             locked&#95;passenger&#95;version: 4.0.59
             activeprotect:
                 whitelist: 123.123.123.123,234.234.234.234
@@ -477,8 +477,8 @@ production:
            vendor: digitalocean
            key_name: Default
         configuration:
-            httpchk: HEAD / HTTP/1.0 (default value)
-            balance: roundrobin (default value)
+            httpchk: HEAD / HTTP/1.0 #default value
+            balance: roundrobin #default value
             errorfile&#95;400: /etc/haproxy/errors/400.http
             errorfile&#95;403: /etc/haproxy/errors/403.http
             errorfile&#95;408: /etc/haproxy/errors/408.http
