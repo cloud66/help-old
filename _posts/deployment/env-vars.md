@@ -31,6 +31,10 @@ tags: ['Deployment']
 	<li>
 		<a href="#usage">Using environment variables</a>
 	</li>
+	<li>
+		<a href="#defined">Pre-defined environment variables</a>
+	</li>
+
 </ul>
 
 <h2 id="about">About environment variables</h2>
@@ -79,7 +83,7 @@ However, they are always wrapped in double quotes (eg. <kbd>"ENV_VAR"</kbd>) so 
 - <b>Some environment variables cannot be modified</b><br/>
 For example, environment variables for your server IP addresses cannot be changed because they are automatically set and updated based on reported IP addresses.
 
-<h2 id="build">Define referenced environment variable</h2>
+<h2 id="reference">Define referenced environment variable</h2>
 You can define a new environment variable and reference it to an existing environment variable.
 
 - <b>You can reference other environment variables on the same stack</b><br/>
@@ -105,7 +109,7 @@ MY&#95;KEY&#95;1=&#95;env&#58;WEB&#95;ADDRESS&#95;EXT&#58;DEFAULT&#95;VALUE
 </pre>
 
 
-<h2 id="reference">Using environment variables</h2>
+<h2 id="usage">Using environment variables</h2>
 Using environment variables is done differently depending on your application settings, but these are some examples.
 
 - <b>Bash scripts</b>
@@ -119,3 +123,16 @@ Using environment variables is done differently depending on your application se
 - <b>.RB files</b><br/>
 
 <pre class="prettyprint">working_directory "#{ENV['STACK_PATH']}"</pre>
+
+<h2 id="defined">Pre-defined environment variables</h2>
+
+
+
+**DOCKER&#95;HOST&#95;IP**: Is injected to each container and is only available inside containers
+**SERVER&#95;NAME**: Is on each server and is only available inside the server
+
+
+
+
+
+
