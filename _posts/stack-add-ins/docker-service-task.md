@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "Service task"
+title:  "Docker Service task"
 date:   2040-09-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
