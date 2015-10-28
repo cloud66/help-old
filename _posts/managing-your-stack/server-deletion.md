@@ -14,45 +14,45 @@ By default cloud66 will not delete servers and other cloud objects created in yo
 
 You need to go to the stack information page and select `Remove physical servers when a cloud66 server is deleted?`.  After that if you delete a server, load balancer, or even a whole stack, related objects in cloud will be deleted as well.
 
-Cloud66 create different objects depending on which cloud provider your use, so the delete process will clean different objects too. On the other hand (for some clouds) cloud66 configures couple of items at account level (as an example cloud66 create a key at account level for _packet_ cloud). These items will not be deleted after stack deletion and you should clear them manually if you don't need them for other stacks anymore.
+Cloud66 creates different objects depending on which cloud provider your use, most of which will be deleted process. Additionally, for some clouds, cloud66 configures some items at the account level, such as the SSH key for the _Packet_ cloud. These items will not be deleted after stack deletion and you should clear them manually if you don't need them for other stacks anymore.
 
-Here is the list of items(Deleting/Not Deleting) based on clouds :
+Here is the list of items(Deleted/Not Deleted) depending on the cloud:
 
 ###AWS
-`Deleting :` Instances, Load Balancers, Security Groups, Key Pairs
+`Deleted:` Instances, Load Balancers, Security Groups, Key Pairs
 
 ###Rackspace
-`Deleting:`  Servers, Load Balancers, Block storage volumes
+`Deleted:`  Servers, Load Balancers, Block storage volumes
 
 ###Digitalocean
-`Deleting:` Servers, SSH Keys
+`Deleted:` Servers, SSH Keys
 
 ###GCE
-`Deleting:` VM Instances, Disks, Forwarding Rules, Target Pools
+`Deleted:` VM Instances, Disks, Forwarding Rules, Target Pools
 
-`Not Deleting:` Firewall Rules
+`Not Deleted:` Firewall Rules
 
 ###Linode
-`Deleting:` Servers, NodeBalancers
+`Deleted:` Servers, NodeBalancers
 
 
 ###Vexxhost
-`Deleting:` Servers, Security Groups, Keypaires
+`Deleted:` Servers, Security Groups, Keypaires
 
-`Not Deleting:` Networks, Subnets, Routers
+`Not Deleted:` Networks, Subnets, Routers
 
 
 ###CloudA
-`Deleting:` Servers, Load Balancers, Security Groups, Keypaires, Public IPs
+`Deleted:` Servers, Load Balancers, Security Groups, Keypaires, Public IPs
 
-`Not Deleting:` Networks, Subnets, Routers
+`Not Deleted:` Networks, Subnets, Routers
 
 ###Azure
-`Deleting:` Virtual Machines, Cloud Services, Storage, Traffic Manager
+`Deleted:` Virtual Machines, Cloud Services, Storage, Traffic Manager
 
-`Not Deleting:` Networks
+`Not Deleted:` Networks
 
 ###Packet
-`Deleting:` Devices, Projects
+`Deleted:` Devices, Projects
 
-`Not Deleting:` SSH Keys
+`Not Deleted:` SSH Keys
