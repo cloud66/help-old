@@ -31,10 +31,10 @@ tags: ['Your account']
 		<a href="#leave">Leave a team</a>
 	</li>
 	<li>
-		<a href="#pricing">Pricing</a>
+		<a href="#role">Add a role</a>
 	</li>
 	<li>
-		<a href="#role">Add a role</a>
+		<a href="#pricing">Pricing</a>
 	</li>
 </ul>
 
@@ -77,6 +77,13 @@ To leave a team, visit the _Account_ page, then click _Organizations & Team_. Ne
 
 You cannot leave your primary organization (the one you own).
 
+<h2 id="role">Add a role</h2>
+To add a role, access your <i>Account</i> page and select the <i>Organizations & Team</i> menu.
+
+You need to give your team a name before inviting other members. This is the same as your _Company name_ on the _Payments_ page. If you already have entered a company name, you will skip this part.
+
+Next, click the <i>+</i> button in the top right corner of _Roles_ section. This will allow you to choose a role name. Then you click on the permission tab chosse the role you just made and set the permissions by ticking the check boxes to give permissions.
+
 <h2 id="pricing">Pricing</h2>
 
 <table class='table table-bordered table-striped table-small'>
@@ -96,10 +103,3 @@ You cannot leave your primary organization (the one you own).
     </tbody>
 </table>
 <h5>* For each additional user.</h5>
-
-<h2 id="role">Add a role</h2>
-To add a role, access your <i>Account</i> page and select the <i>Organizations & Team</i> menu.
-
-You need to give your team a name before inviting other members. This is the same as your _Company name_ on the _Payments_ page. If you already have entered a company name, you will skip this part.
-
-Next, click the <i>+</i> button in the top right corner of _Roles_ section. This will allow you to choose a role name. Then you click on the permission tab chosse the role you just made and set the permissions by ticking the check boxes to give permissions.
