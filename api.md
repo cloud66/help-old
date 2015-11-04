@@ -223,6 +223,9 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | Instance size | Value |
 | ------------- | ------------ |
 | Micro instance | t1.micro |
+| General purpose | t2.micro |
+| General purpose | t2.small |
+| General purpose | t2.medium |
 | General purpose | m1.small |
 | General purpose | m1.medium |
 | General purpose | m1.large |
@@ -231,6 +234,11 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | General purpose | m3.large |
 | General purpose | m3.xlarge |
 | General purpose | m3.2xlarge |
+| General purpose | m4.large |
+| General purpose | m4.xlarge |
+| General purpose | m4.2xlarge |
+| General purpose | m4.4xlarge |
+| General purpose | m4.10xlarge |
 | Compute optimized | c1.medium |
 | Compute optimized | c1.xlarge |
 | Compute optimized | c3.large |
@@ -239,16 +247,26 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | Compute optimized | c3.4xlarge |
 | Compute optimized | c3.8xlarge |
 | Compute optimized | cc2.8xlarge |
+| Compute optimized | c4.large |
+| Compute optimized | c4.xlarge |
+| Compute optimized | c4.2xlarge |
+| Compute optimized | c4.4xlarge |
+| Compute optimized | c4.8xlarge |
 | Memory optimized | m2.xlarge |
 | Memory optimized | m2.2xlarge |
 | Memory optimized | m2.4xlarge |
+| Memory optimized | cr1.8xlarge |
+| Memory optimized | r3.large |
+| Memory optimized | r3.xlarge |
+| Memory optimized | r3.2xlarge |
+| Memory optimized | r3.4xlarge |
+| Memory optimized | r3.8xlarge |
+| Storage optimized | hi1.4xlarge |
+| Storage optimized | hs1.8xlarge |
 | Storage optimized | i2.xlarge |
 | Storage optimized | i2.2xlarge |
 | Storage optimized | i2.4xlarge |
 | Storage optimized | i2.8xlarge |
-| Memory optimized | cr1.8xlarge |
-| Storage optimized | hi1.4xlarge |
-| Storage optimized | hs1.8xlarge |
 | GPU instances | cg1.4xlarge |
 | GPU instances | g2.2xlarge |
 
