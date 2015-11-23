@@ -92,6 +92,9 @@ $ cat COMODORSAExtendedValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddT
 </pre>
 
 <h2 id="separate">Separate domains with different certificates</h2>
+<pre class="prettyprint">
+If this doesn't work make sure that your certificates don't need password.
+</pre>
 You may need to serve different parts of your application on separate domains, each with its own SSL certificate. You can use [Nginx CustomConfig](http://help.cloud66.com/web-server/nginx) to set this up - you will basically have two server blocks listening on different domains, and serving different certificates (located on the server):
 
 <pre class="prettyprint">
