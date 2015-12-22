@@ -78,7 +78,7 @@ You can also set more fine-grained permissions with the following JSON template 
                 "ec2:RunInstances",
                 "ec2:StartInstances",
                 "ec2:StopInstances",
-                "ec2:TerminateInstance"
+                "ec2:TerminateInstances"
             ],
             "Resource": [
                 "*"
