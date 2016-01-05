@@ -232,6 +232,8 @@ production:
 <h3 id="mysql">MySQL</h3>
 
 - **version**: Specify the version of MySQL you want to install. Valid values are 5.5 and 5.6 (can only be set during stack build).
+- **root_disk_size** (_Optional, AWS EC2 and GCE Only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
+- **root_disk_type** (_Optional, AWS EC2 only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **engine**: Specify the MySQL engine you want to install. Valid values are 'mysql' and 'percona' (can only be set during stack build).
 
 <pre class="prettyprint">
@@ -239,6 +241,8 @@ production:
     mysql:
         configuration:
             version: 5.5
+            root_disk_size: 100
+            root_disk_type: ssd
             engine: percona
 </pre>
 
