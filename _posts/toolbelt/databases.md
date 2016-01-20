@@ -123,5 +123,5 @@ Providing the database type is optional and is only necessary for shared servers
 
 <pre class="prettyprint">
 $ cx databases resync-slave -s My_Awesome_App my_slave_server_name
-$ cx databases resync-slave -s My_Awesome_App --db-type postgresql my_slave_server_name
+$ cx databases resync-slave -s My_Awesome_App --dbtype postgresql my_slave_server_name
 </pre>
