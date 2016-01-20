@@ -16,7 +16,7 @@ tags: ['']
 		<a href="#git">Pull code from Git</a>
 	</li>
 	<li>
-		<a href="#image">Provide a Docker image</a>
+		<a href="#provide_image">Provide a Docker image</a>
 	</li>
 	<li>
 		<a href="#configuration">Configuration</a>
@@ -44,7 +44,7 @@ For BuildGrid to pull code from your Git repository and build your image, you wi
 
 You can pass environment variables into your Dockerfile during this build process with the `$VARIABLE` syntax, which will be populated with environment variable(s) set on the stack.
 
-<h2 id="image">Provide a Docker image</h2>
+<h2 id="provide_image">Provide a Docker image</h2>
 If you prefer to build your own images, simply provide the location of this image (whether public or private) with the `image` directive in your service configuration.
 
 <h2 id="configuration">Configuration</h2>
