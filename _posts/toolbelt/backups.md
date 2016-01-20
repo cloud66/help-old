@@ -170,7 +170,7 @@ Allows you to create a new backup task through the command line.
 
 <pre class="prettyprint">
 $ cx backups download [-s &lt;stack&gt;] [-d &lt;download directory&gt;] &lt;backup id&gt;
-$ cx backups new [-s &lt;stack&gt;]	[--dbtypes &lt;DB types&gt;] [--frequency &lt;Frequency&gt;] [--gzip &lt;Gzip&gt;] [exclude-tables &lt;Exclude tables&gt;] [--run-on-replica &lt;Run on replica&gt;]
+$ cx backups new [-s &lt;stack&gt;]	[--dbtypes &lt;DB types&gt;] [--frequency &lt;Frequency&gt;] [--keep &lt;Keep&gt;] [--gzip &lt;Gzip&gt;] [exclude-tables &lt;Exclude tables&gt;] [--run-on-replica &lt;Run on replica&gt;]
 
 </pre>
 
@@ -226,5 +226,5 @@ $ cx backups new [-s &lt;stack&gt;]	[--dbtypes &lt;DB types&gt;] [--frequency &l
 <h3 id="new_example">Example</h3>
 
 <pre class="prettyprint">
-$ cx backups new -s mystack --dbtypes=postgresql --frequency="0 */1 * * *" --gzip=true exclude-tables=my_log_table --run-on-replica=false
+$ cx backups new -s mystack --dbtypes=postgresql --frequency="0 */1 * * *" --keep 50 --gzip=true exclude-tables=my_log_table --run-on-replica=false
 </pre>
