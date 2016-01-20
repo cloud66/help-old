@@ -143,12 +143,12 @@ services:
 <hr>
 
 <h3 id="image">Image</h3>
-The source of your Docker image, which can come from a private repository provided that the credentials are provided. For [Docker Hub](https://registry.hub.docker.com/) images, use the following URL format:
+The source of your Docker image, which can come from a private repository that the credentials are provided. For [Docker Hub](https://registry.hub.docker.com/) images, use the following URL format:
 
 <pre class="prettyprint">
 services:
     &#60;service_name&#62;:
-        image: https://index.docker.io/v1/&lt;namespace&gt;/&lt;image_name&gt;
+        image: &lt;namespace&gt;/&lt;image_name&gt;
 </pre>
 
 If you are pulling a public image from Docker Hub, use the following format:
