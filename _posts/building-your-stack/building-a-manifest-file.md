@@ -677,11 +677,9 @@ You can use some features that are still in beta by adding them to <i>experiment
 <pre class="prettyprint">
 production:
     experiments:
-        install_kernel_318: true
         docker_storage: overlay
 </pre>
 
 These are the parameters that the <i>experiments</i> section currently accepts:
 
-- **install_kernel_318** (_Optional_): If set to _true_, we will upgrade the kernel to 3.18 for any newly created servers.
 - **docker_storage** (_Optional_): If set to _overlay_, we will configure Docker on new servers to use OverlayFS backend storage.
