@@ -44,11 +44,6 @@ lead: Take action at various points during your deployment
 <h1 id="what">What are deploy hooks?</h1>
 <p>Deploy hooks are scripts that allow you to take action at various points during the deployment process. This helps you customize the deployment of your application to meet your particular needs.</p>
 
-<div class="notice">
-    <h3>Important</h3>
-    <p>Deploy hooks currently only apply to Rack-based stacks, not Docker stacks.</p>
-</div>
-
 <hr />
 
 <h1 id="points">Hook points</h1>
@@ -120,7 +115,7 @@ lead: Take action at various points during your deployment
 <ol class="list">
 <li><b>Snippets:</b> use pre-existing scripts to install common packages. These snippets are <a href="https://github.com/cloud66/snippets">open source</a>, and are created by Cloud 66 or third parties.</li>
 <li><b>Commands:</b> run your own commands.</li>
-<li><b>Scripts:</b> use your own scripts for more comprehensive procedures.</li>
+<li><b>Scripts:</b> use your own scripts for more comprehensive procedures(Only for classic stacks).</li>
 </ol>
 
 <table class="table table-bordered table-striped table-small fields">
@@ -169,11 +164,17 @@ Default values (if the field is not explicitly specified) are shown in brackets.
 </font></caption>
 
 <h1 id="how">How to use deploy hooks</h1>
-To make use of deploy hooks, a file called _deploy_hooks.yml_ should be present within a folder named <i>.cloud66</i>, which is in turn located in the root of your source code. This file should be YAML formatted, and you can use a service like <a href="http://yamllint.com/" target="_blank">YAMLlint</a> to validate it.
+To make use of deploy hooks, your stack should have a file called _deploy_hooks.yml_.
+
+For classic stacks this file should be present within a folder named <i>.cloud66</i>, which is in turn located in the root of your source code.
 
 <pre class="prettyprint">
 /.cloud66/deploy_hooks.yml
 </pre>
+
+For Docker stacks this file should be pushed into <a href="http://help.cloud66.com/managing-your-stack/customconfig-git" target="_blank">CustomConfig git</a> Repository of stack. This repository will be created after stack analysed so you can push your deploy hooks before deployment started.
+
+This file should be YAML formatted, and you can use a service like <a href="http://yamllint.com/" target="_blank">YAMLlint</a> to validate it.
 
 Creating a deploy hook from scratch consists of a number of steps:<br/>
 
@@ -244,7 +245,7 @@ production: # Environment
 
 This will run our rake task on one Rails server and only during the initial build. We run this as a last_thing hook because if we ran it earlier the application wouldn't exist on the server and be usable.
 
-<h2 id="scripts">Use a script deploy hook</h2>
+<h2 id="scripts">Use a script deploy hook (Only for classic stacks)</h2>
 The hook below will copy a file from your repository to your <i>tmp</i> folder and execute it during build.
 
 <pre class="prettyprint">
