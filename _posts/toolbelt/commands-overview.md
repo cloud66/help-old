@@ -78,7 +78,7 @@ This page provides an overview of the commands available through the toolbelt.
 	        <td>Commands to work with containers</td>
 	    </tr>
 	    <tr>
-	        <td><a href="/toolbelt/toolbelt-service-management">services</a></td>
+	        <td><a href="/toolbelt/toolbelt-service-management">services</a></td>	
 	        <td>Commands to work with services</td>
 	    </tr>
 	    <tr>
@@ -88,6 +88,10 @@ This page provides an overview of the commands available through the toolbelt.
 	    <tr>
 	        <td><a href="/toolbelt/toolbelt-job-management">jobs</a></td>
 	        <td>Commands to work with jobs</td>
+	    </tr>
+	    <tr>
+	        <td><a href="/toolbelt/toolbelt-process-management">processes</a></td>
+	        <td>Commands to work with processes</td>
 	    </tr>
     </tbody>
 </table>

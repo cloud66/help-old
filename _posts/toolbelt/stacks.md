@@ -32,6 +32,11 @@ lead: Manage your stacks with the toolbelt
             </li>     
             <li>
                 <ul>
+                <li><a href="#reboot">Reboot servers in your stack</a></li>
+                </ul>
+            </li>   
+            <li>
+                <ul>
                 <li><a href="#clear">Clear caches</a></li>
                 </ul>
             </li>       
@@ -237,6 +242,65 @@ $ cx stacks restart [-s &lt;stack&gt;]
 $ cx stacks restart -s "My Awesome App"
 </pre>
 
+<h2 id="reboot">Reboot your stack</h2>
+Allows you to reboot your servers on your stack with one simple command.
+
+<h3 id="reboot-usage">Usage</h3>
+
+<pre class="prettyprint">
+$ cx stacks reboot -s &lt;stack&gt; [--group &lt;server group name&gt;] [--strategy &lt;strategy name&gt;] [--environment &lt;environment name&gt;]
+</pre>
+
+<h3 id="reboot-params">Parameters</h3>
+<table class='table table-bordered table-striped table-small'>
+    <thead>
+        <tr>
+            <th align="center">Parameter</th>
+            <th align="center">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><i>stack</i></td>
+            <td>Name of your stack</td>
+        </tr>  
+        <tr>
+            <td><i>y(optional)</i></td>
+            <td>Answer yes to confirmations</td>
+        </tr>    
+        <tr>
+            <td><i>group (default web)</i></td>
+            <td>Group of servers you wish to reboot (all, web, haproxy, db, mysql, redis, postgresql, mongodb)</td>
+        </tr>               
+        <tr>
+            <td><i>strategy</i></td>
+            <td>Reboot in serial or parallel</td>
+        </tr>          
+        <tr>
+            <td><i>e (environment)</i> (optional)</td>
+            <td>Full or partial environment name</td>
+        </tr>
+    </tbody>
+</table>
+The group parameter specifies which group of servers you wish to reboot. Valid values are "all", "web", "haproxy", "db";
+DB specific values like "mysql" or "redis" for example are also supported.
+If this value is left unspecified, the default value of "web" will be used
+
+The strategy parameter specifies whether you want all your servers to be rebooted in parallel or in serial.
+Valid values for this parameter are "serial" or "parallel"; "serial" reboots involves web servers being removed/re-added to the LB one by one.
+Note that for this only applies to web servers; non-web server will still be rebooted in parallel.
+If this value is left unspecified, Cloud 66 will determine the best strategy based on your infrastructure layout.
+
+
+<h3 id="reboot-example">Example</h3>
+
+<pre class="prettyprint">
+$ cx stack reboot -s mystack
+$ cx stack reboot -s mystack --group web
+$ cx stack reboot -s mystack --group all
+$ cx stack reboot -s mystack --strategy parallel
+$ cx stack reboot -s mystack --group web --strategy serial
+</pre>
 <hr>
 
 <h2 id="clear">Clear caches</h2>

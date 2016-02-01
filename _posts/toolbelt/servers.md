@@ -42,6 +42,22 @@ lead: Manage your servers with the toolbelt
                 <li><a href="#example2">Example</a></li>
                 </ul>
             </li>
+     <li><a href="#reboot">Reboot servers</a></li>
+            <li>
+                <ul>
+                <li><a href="#usage">Usage</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#params">Parameters</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                <li><a href="#example">Example</a></li>
+                </ul>
+            </li>       
 </ul>
 
 <h2 id="about">Server management</h2>
@@ -151,5 +167,48 @@ $ cx servers settings set [-s &lt;stack&gt;] --server &lt;server name&gt;|&lt;se
 <h3 id="example2">Examples</h3>
 
 <pre class="prettyprint">
-$ cx servers settings set -s "My Awesome App" --server lion server.name=liger
+$ cx servers settings set -s "My Awesome App" --server lion
 </pre>
+<h2 id="reboot">Reboot servers</h2>
+This command reboots a specific server.
+
+<h3 id="usage">Usage</h3>
+
+<pre class="prettyprint">
+$ cx servers reboot [-s &lt;stack&gt;] [-e stack environment] --server &lt;server name&gt; 
+</pre>
+
+<h3 id="params">Parameters</h3>
+<table class='table table-bordered table-striped table-small'>
+    <thead>
+        <tr>
+            <th align="center">Parameter</th>
+            <th align="center">Default</th>
+            <th align="center">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><i>stack</i></td>
+            <td>&mdash;</td>
+            <td>Name of the stack</td>
+        </tr>
+        <tr>
+            <td><i>server name</i></td>
+            <td>&mdash;</td>
+            <td>Name of the server to reboot</td>
+        </tr>
+        <tr>
+            <td><i>e</i> (optional)</td>
+            <td>&mdash;</td>
+            <td>Your stack environment</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="example">Example</h3>
+
+<pre class="prettyprint">
+$ $ cx server reboot -s mystack --server lion -e production
+</pre>
+
