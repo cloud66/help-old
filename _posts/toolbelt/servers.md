@@ -45,17 +45,17 @@ lead: Manage your servers with the toolbelt
      <li><a href="#reboot">Reboot servers</a></li>
             <li>
                 <ul>
-                <li><a href="#usage">Usage</a></li>
+                <li><a href="#usage3">Usage</a></li>
                 </ul>
             </li>
             <li>
                 <ul>
-                <li><a href="#params">Parameters</a></li>
+                <li><a href="#params3">Parameters</a></li>
                 </ul>
             </li>
             <li>
                 <ul>
-                <li><a href="#example">Example</a></li>
+                <li><a href="#example3">Example</a></li>
                 </ul>
             </li>       
 </ul>
@@ -172,13 +172,13 @@ $ cx servers settings set -s "My Awesome App" --server lion
 <h2 id="reboot">Reboot servers</h2>
 This command reboots a specific server.
 
-<h3 id="usage">Usage</h3>
+<h3 id="usage3">Usage</h3>
 
 <pre class="prettyprint">
 $ cx servers reboot [-s &lt;stack&gt;] [-e stack environment] --server &lt;server name&gt; 
 </pre>
 
-<h3 id="params">Parameters</h3>
+<h3 id="params3">Parameters</h3>
 <table class='table table-bordered table-striped table-small'>
     <thead>
         <tr>
@@ -206,7 +206,7 @@ $ cx servers reboot [-s &lt;stack&gt;] [-e stack environment] --server &lt;serve
     </tbody>
 </table>
 
-<h3 id="example">Example</h3>
+<h3 id="example3">Example</h3>
 
 <pre class="prettyprint">
 $ $ cx server reboot -s mystack --server lion -e production
