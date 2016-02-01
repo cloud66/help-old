@@ -51,6 +51,7 @@ $ cx processes list -s My_Awesome_Stack --server my_selected_server
 </pre>
 
 <h2 id="process-scale">Scaling processes</h2>
+To scale processes up or down on a stack or on a specific server.
 <h3>Usage</h3>
 <pre class="prettyprint">
 $ cx processes scale [-s &lt;stack&gt;] [--server &lt;server name&gt;] [--name &lt;process name&gt;] &lt;count&gt;
@@ -86,7 +87,7 @@ Scales up/down &lt;count&gt; processes. If you specify [+X] or [-X] for the coun
     <tr>
         <td><i>count</i></td>
         <td>&mdash;</td>
-        <td>Desired count (ie. +2, -3 or 5)</td>
+        <td>Desired relative count or absolute count (i.e. [+2],[-3] or 5)</td>
     </tr>
     </tbody>
 </table>
