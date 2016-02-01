@@ -91,7 +91,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>Phusion Passenger</td>
-            <td>5.0.21</td>
+            <td>5.0.23</td>
         </tr>
         <tr>
             <td>PostGIS</td>
@@ -111,7 +111,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>Weave</td>
-            <td>1.4.1</td>
+            <td>1.4.2</td>
         </tr>
                 
     </tbody>
