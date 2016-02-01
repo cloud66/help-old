@@ -170,7 +170,7 @@ $ cx servers settings set [-s &lt;stack&gt;] --server &lt;server name&gt;|&lt;se
 $ cx servers settings set -s "My Awesome App" --server lion
 </pre>
 <h2 id="reboot">Reboot servers</h2>
-Use this command to remote a specific server from the command line
+Use this command to reboot a specific server from the command line
 
 <h3 id="usage3">Usage</h3>
 
