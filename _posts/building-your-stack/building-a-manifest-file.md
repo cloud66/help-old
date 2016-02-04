@@ -481,7 +481,7 @@ production:
            vendor: digitalocean
            key_name: Default
         configuration:
-            httpchk: HEAD / HTTP/1.0 #default value
+            httpchk: HEAD / HTTP/1.1\r\nHost:haproxy  #default value
             balance: roundrobin #default value
             errorfile&#95;400: /etc/haproxy/errors/400.http
             errorfile&#95;403: /etc/haproxy/errors/403.http
