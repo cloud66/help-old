@@ -93,5 +93,9 @@ This page provides an overview of the commands available through the toolbelt.
 	        <td><a href="/toolbelt/toolbelt-process-management">processes</a></td>
 	        <td>Commands to work with processes</td>
 	    </tr>
+	    <tr>
+	        <td><a href="/toolbelt/toolbelt-gateway-management">gateways</a></td>
+	        <td>Commands to work with gateways</td>
+	    </tr>
     </tbody>
 </table>
