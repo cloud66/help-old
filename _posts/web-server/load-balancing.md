@@ -17,6 +17,9 @@ tags: ['']
 	<li>
 		<a href="#add">Add a load balancer</a>
 	</li>
+	<li>
+		<a href="#service">Balance the load per service</a>
+	</li>
 </ul>
 
 <h2 id="what">What is load balancing?</h2>
@@ -42,3 +45,12 @@ The time required to set up your load balancer will depend on which cloud provid
 </div>
 
 To add a load balancer to your stack, start by visiting your stack detail page. Next, navigate to the add-ins page by clicking _Install add-ins_ in the right sidebar. On the next page, clicking _Load balancer_ will display a brief summary of what will happen next. Click _Install load balancer_ to add a load balancer.
+
+<h2 id="service">Balance the load per service</h2>
+<div class="notice">
+	<h3>Note</h3>
+	<p>This feature is only available for Docker stacks that are non-development.</p>
+</div>
+
+For docker stacks you can use a load balancer to balance your services and they don't have to be present on each server! Essentially Nginx will direct the requests to the service on its own machine first, if the service doesn't exist there, then it will send it through Weave network to a server that has the service.
+
