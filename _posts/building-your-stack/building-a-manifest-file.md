@@ -20,6 +20,7 @@ tags: ['Deployment']
         <ul>
             <li><a href="#docker">Docker</a></li>
             <li><a href="#elastic">ElasticSearch</a></li>
+            <li><a href="#gateway">Gateway</a></li>
             <li><a href="#gluster">GlusterFS</a></li>
             <li><a href="#load_balancer">Load balancers</a></li>
             <li><a href="#memcached">Memcached</a></li>
@@ -72,6 +73,7 @@ Next, select which application you would like to specify settings for. You can c
 <ul>
 <li><a href="#docker">Docker</a></li>
 <li><a href="#elastic">ElasticSearch</a></li>
+<li><a href="#gluster">Gateway</a></li>
 <li><a href="#gluster">GlusterFS</a></li>
 <li><a href="#load_balancer">Load balancers</a></li>
 <li><a href="#memcached">Memcached</a></li>
@@ -129,6 +131,28 @@ production:
                 - chrony
 </pre>
 <hr>
+
+<h3 id="gateway">Gateway</h3>
+
+- **name**: Specify the name of gateway you want to use for your stack.
+- **username** (_Optional_) Specify the username which should be used to connect to bastion server.
+
+<div class="notice notice-danger">
+	<h3>Note</h3>
+	<p>The gateway should be defined and open before you can use it in manifest.</p>
+</div>
+
+
+<pre class="prettyprint">
+production:
+	gateway:
+	    name: aws_bastion
+	    username: ec2-user
+</pre>
+
+
+<hr>
+
 <h3 id="gluster">GlusterFS</h3>
 
 - **version**: Specify the version of GlusterFS you want to install.
