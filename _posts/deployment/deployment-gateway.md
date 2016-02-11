@@ -24,7 +24,7 @@ lead: An overview of deploying stack behind the bastion server.
 
 
 <h2 id="about">About deployment gateways</h2>
-If you want to deploy your stack in a DMZ, you should prepare a bastion server which enable you to connect to your DMZ. You should define a <b>Deployment Gateway</b> in your cloud66 account and specify the information of the bastion server, then you will be able to deploy your stack in the DMZ.
+If you want to deploy your stack in a DMZ, you should prepare a bastion server which enables you to connect to your DMZ. You should define a <b>Deployment Gateway</b> in your Cloud66 account and specify the information of the bastion server, then you will be able to deploy your stack in the DMZ.
 
 <div class="notice">
     <h3>Important</h3>
@@ -41,7 +41,7 @@ First you need to define a gateway:
 $ cx gateways add --name aws_bastion --address 1.1.1.1  --username ec2-user  --private-ip 2.2.2.2
 </pre>
 
-To use this gateway for stack deployment, you need to specify it in manifest:
+In order to use this gateway for a stack deployment, you need to first specify it in the manifest:
 
 <pre class="prettyprint">
 production:
@@ -50,7 +50,7 @@ production:
 	    username: ec2-user
 </pre>
 
-You should make gateway available before you start deployment:
+and then make it available before you start the deployment:
 
 <pre class="prettyprint">
 $ cx gateways open --name aws_bastion --key /tmp/gateway.pem --ttl 1h
@@ -58,7 +58,7 @@ $ cx gateways open --name aws_bastion --key /tmp/gateway.pem --ttl 1h
 
 Now you can start deploying your stack.
 
-After deployment finished you can invalidate gateway although it will expire in the time you specified with ttl.
+After the deployment is finished you can invalidate the gateway or leave it until the TTL is over.
 
 <pre class="prettyprint">
 $ cx gateways close --name aws_bastion
@@ -66,7 +66,7 @@ $ cx gateways close --name aws_bastion
 
 <h2 id="access">Accessing your servers behind the gateway server</h2>
 
-If you want to connect to your servers which deployed behind the bastion server you need to have access to the key of bastion server. Then you can use toolbelt to connect to your server:
+If you want to connect to your servers behind the bastion server firstly you will need to have access to the bastion server's key, then you can use toolbelt to connect to your server:
 
 <pre class="prettyprint">
 $ cx ssh --gateway-key ~/.ssh/bastion_key  -s "My Awesome App" Lion
