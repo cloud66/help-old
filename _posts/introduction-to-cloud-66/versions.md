@@ -71,7 +71,7 @@ You are free to specify a version for a number of components in your [manifest f
     <tbody>
         <tr>
             <td>Docker</td>
-            <td>1.10.1</td>
+            <td>1.10.2</td>
         </tr>
         <tr>
             <td>ElasticSearch</td>
