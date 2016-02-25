@@ -7,7 +7,7 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: stack-add-ins
 lead: Custom servers within the Cloud 66 ecosystem
-search-tags: ['custom server', 'manage own server']
+search-tags: ['custom server', 'manage own server', 'generic linux server', 'linux server']
 tags: ['Customization', 'Add in']
 ---
 
