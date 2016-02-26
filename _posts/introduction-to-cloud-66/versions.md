@@ -91,7 +91,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>Phusion Passenger</td>
-            <td>5.0.24</td>
+            <td>5.0.25</td>
         </tr>
         <tr>
             <td>PostGIS</td>
@@ -99,11 +99,11 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>PostgreSQL</td>
-            <td>9.4.5</td>
+            <td>9.4.6</td>
         </tr>
         <tr>
             <td>Redis</td>
-            <td>3.0.6</td>
+            <td>3.0.7</td>
         </tr>
         <tr>
             <td>Ruby</td>
