@@ -29,7 +29,7 @@ tags: ['Managing your docker deployments']
 </ul>
 
 <div class="notice notice-warning">
-    <p><b><i>This only applies to docker stacks</i></b></p>
+    <p><b>This only applies to docker stacks</b></p>
 </div>
 
 <h2 id="about">What are deployment profiles?</h2>
@@ -42,15 +42,15 @@ Deploy profiles enable you to deploy without having to set the settings each tim
 
 Under this section you can see all your services are listed. You can choose one or both of the following operations for each service.
 
-<li> <b>Build</b>:     Builds the code into a docker image</li>
-<li> <b>Publish</b>:   Push the built image to servers </li>
+- **Build**:     Builds the code into a docker image.
+- **Publish**:   Push the built image to servers.
 
 <h3 id="deployment-method">Deployment Method</h3>
 
-<li> <b>Parallel Deployment</b>: Deploy all the services togeather.</li>
-<li> <b>Serial Deployment</b>:   Deploy services sequentially.</li>
+- **Parallel Deployment**: Deploy all the services togeather.
+- **Serial Deployment**:   Deploy services sequentially.
 
 <h3 id="upgrades">Upgrades</h3>
 
-<li> <b>Apply Docker upgrades</b>: Apply the Docker version and Weave version specified in the manifest file</li>
-<li> <b>Apply Security Upgrades</b>: Install the latest Ubuntu security packages immediately (they are applied once a day by default)</li>
+- **Apply Docker upgrades**: Apply the Docker version and Weave version specified in the manifest file.
+- **Apply Security Upgrades**: Install the latest Ubuntu security packages immediately (they are applied once a day by default).
