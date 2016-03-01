@@ -64,7 +64,7 @@ On a Cloud 66 for Docker stack, you can make the inside and outside ports map us
 
 Let's imagine you have a Rails application, serving traffic on port 3000 by default. To make it available to the outside world you simple need to choose the inside port (3000) and the outside HTTP ports (80) for the service. If you would like t the service to be server on HTTPS as well, choose 443 as the port number for HTTPS for the service in the UI.
 
-If you are using the `manifest.yml` file to configure your services, you can use the following format to specify the ports: `InsidePort:HTTP_Port:HTTPS_Port`. Here is an example:
+If you are using the `service.yml` file to configure your services, you can use the following format to specify the ports: `InsidePort:HTTP_Port:HTTPS_Port`. Here is an example:
 
 {% highlight yaml %}
 services:
