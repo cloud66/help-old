@@ -66,7 +66,7 @@ lead: Manage your backups from the toolbelt
                 <li><a href="#new_example">Example</a></li>
                 </ul>
             </li>
-            
+
 </ul>
 
 <h2 id="about">About backup management</h2>
@@ -169,7 +169,6 @@ Allows you to create a new backup task through the command line.
 <h3 id="new_usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx backups download [-s &lt;stack&gt;] [-d &lt;download directory&gt;] &lt;backup id&gt;
 $ cx backups new [-s &lt;stack&gt;]	[--dbtypes &lt;DB types&gt;] [--frequency &lt;Frequency&gt;] [--keep &lt;Keep&gt;] [--gzip &lt;Gzip&gt;] [exclude-tables &lt;Exclude tables&gt;] [--run-on-replica &lt;Run on replica&gt;]
 
 </pre>
