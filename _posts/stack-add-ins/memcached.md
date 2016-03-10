@@ -29,3 +29,8 @@ production:
             port: 11215
             listen&#95;ip: 127.0.0.1
 </pre>
+
+<div class="notice notice-danger">
+	<h3>Note</h3>
+	<p>For docker stacks this will be added to the host not as a container.</p>
+</div>

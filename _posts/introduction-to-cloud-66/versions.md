@@ -111,7 +111,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>Weave</td>
-            <td>1.4.4</td>
+            <td>1.4.5</td>
         </tr>
                 
     </tbody>

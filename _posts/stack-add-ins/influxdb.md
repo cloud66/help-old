@@ -16,3 +16,8 @@ tags: ['Add in']
 
 ## Add InfluxDB
 To add InfluxDB to your stack, access the add-ins menu, click _InfluxDB_ and choose the size of your new server.
+
+<div class="notice notice-danger">
+	<h3>Note</h3>
+	<p>For docker stacks this will be added to the host not as a container.</p>
+</div>

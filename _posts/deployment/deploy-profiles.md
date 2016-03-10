@@ -47,7 +47,7 @@ Under this section you can see all your services are listed. You can choose one 
 
 <h3 id="deployment-method">Deployment Method</h3>
 
-- **Parallel Deployment**: Deploy all the services togeather.
+- **Parallel Deployment**: Deploy all the services together.
 - **Serial Deployment**:   Deploy services sequentially.
 
 <h3 id="upgrades">Upgrades</h3>
