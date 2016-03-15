@@ -14,7 +14,7 @@ lead: Take action at various points during your deployment
 	<li>
 		<a href="#what">What are deploy hooks?</a>
 	</li>
-	
+
 	<li>
 		<a href="#points">Hook points</a>
 	</li>
@@ -79,7 +79,7 @@ lead: Take action at various points during your deployment
 	<td>This hook will run after bundle but before other rake tasks, such as database migrations. Happens during the code deployment of your application.
 	<div class="notice notice-warning">
 	<strong> Note:</strong> Set for this if you need to run deploy hooks that are invoked before the symlink is updated on the release path.
-	</div>	
+	</div>
 </td></tr>
 <tr>
 	<td>after&#95;symlink</td>
@@ -118,7 +118,7 @@ lead: Take action at various points during your deployment
 <li><b>Scripts:</b> use your own scripts for more comprehensive procedures(Only for classic stacks).</li>
 </ol>
 
-<table class="table table-bordered table-striped table-small fields">
+<table class="table table-bordered table-striped table-small">
 <thead valign="top">
 <tr>
 	<th>Hook type<br />
@@ -126,12 +126,12 @@ lead: Take action at various points during your deployment
 	<th>Description
 <tbody>
 	<tr class="header"><td width="13%"><b>Snippets</b> <span>-</span><td width="15%"><td width="70%">
-	<tr><td><td width="13%">snippet<img src="http://cdn.cloud66.com/images/help/required.gif" /><td width="90%">Snippet to be used - run in <i>/tmp/deploy_hooks</i> by default
-	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>, <i>custom</i>
+	<tr><td><td width="13%">snippet<img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>Snippet to be used - run in <i>/tmp/deploy_hooks</i> by default
+	<tr><td><td>target <img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>, <i>custom</i>
 	<div class="notice notice-warning">
 	<strong> Note:</strong> Please make sure you read the <i>run_on</i> part, if your target is not <i>any</i>
 	</div>
-	<tr><td><td>execute <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Set to true for the snippet to be executable.
+	<tr><td><td>execute <img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>Set to true for the snippet to be executable.
 	<tr><td><td>apply_during<br /> (all)<td>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<tr><td><td>halt_on_error (true)<td>Specify whether the execution should continue or halt in the event of an error.
 	<tr><td><td>run_on<br /> (single server)<td>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
@@ -139,12 +139,12 @@ lead: Take action at various points during your deployment
 	<tr><td><td>sudo (false)<td>If you are executing the file on your target server, specify whether you want that execution to be sudo-ed? Note: you can't specify both this and <i>run_as</i>.
 <tbody>
 	<tr class="header"><td width="13%"><b>Commands</b> <span>-</span><td><td>
-	<tr><td><td width="13%">command<img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Command to be used - run in <i>/tmp/deploy_hooks</i> by default
-	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>, <i>custom</i>
+	<tr><td><td width="13%">command<img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>Command to be used - run in <i>/tmp/deploy_hooks</i> by default
+	<tr><td><td>target <img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>, <i>custom</i>
 	<div class="notice notice-warning">
 	<strong> Note:</strong> Please make sure you read the <i>run_on</i> part, if your target is not <i>any</i>
 	</div>
-	<tr><td><td>execute <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Set to true for the command to execute.
+	<tr><td><td>execute <img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>Set to true for the command to execute.
 	<tr><td><td>apply_during<br /> (all)<td>Specify when you want the deploy hook action to take place. Accepted values are <i>build_only</i>, <i>deploy_only</i> or <i>all</i>. The <i>build</i> step occurs the first time a stack is deployed, and will re-occur until the stack has been successfully deployed at least once. After this subsequent deployments are <i>deploy</i> steps.
 	<tr><td><td>halt_on_error (true)<td>Specify whether the execution should continue or halt in the event of an error.
 	<tr><td><td>run_on<br /> (single server)<td>If you have multiple servers in the same group (eg. scaled-up Rails servers), you can specify whether you want the deploy hook action to occur just once or once against each server in that group. Valid values are: <i>single_server</i> or <i>all_servers</i>. If you've specified <i>target: any</i> above, this will apply to all servers.
@@ -152,9 +152,9 @@ lead: Take action at various points during your deployment
 	<tr><td><td>sudo (false)<td>If you are executing the file on your target server, specify whether you want that execution to be sudo-ed? Note: you can't specify both this and <i>run_as</i>.
 <tbody>
 	<tr class="header"><td width="13%"><b>Scripts</b> <span>-</span><td><td>
-	<tr><td><td width="13%">source<img src="http://cdn.cloud66.com/images/help/required.gif" /><td>This specifies the source location of your deploy hook file within your repository.
-	<tr><td><td>destination <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>The destination path on your target server. You can also specify environment variables in your destination field, <i>&lt;%= ENV['STACK_PATH'] %&gt;</i> for example.
-	<tr><td><td>target <img src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>, <i>custom</i>
+	<tr><td><td width="13%">source<img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>This specifies the source location of your deploy hook file within your repository.
+	<tr><td><td>destination <img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>The destination path on your target server. You can also specify environment variables in your destination field, <i>&lt;%= ENV['STACK_PATH'] %&gt;</i> for example.
+	<tr><td><td>target <img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>, <i>custom</i>
 	<div class="notice notice-warning">
 	<strong> Note:</strong> Please make sure you read the <i>run_on</i> part, if your target is not <i>any</i>
 	</div>
@@ -197,7 +197,7 @@ Creating a deploy hook from scratch consists of a number of steps:<br/>
 Automating deploy hooks can sometimes be tricky. To avoid issues, it's good practice to run each of your commands manually to see that they complete successfully. If a specific command doesn't show any output, you can use the <code>echo $?</code> command after issuing your command to see its exit code. If it returns a <i>zero</i>, your command was successful, whereas a <i>one</i> means it has failed.
 
 <h2 id="snippets">Use a snippet deploy hook</h2>
-Below is a bare-bone example of using a snippet with the required fields - it will execute the <a href="https://raw.githubusercontent.com/cloud66/snippets/master/cloud66/node">Cloud 66 Node snippet</a> as the first thing on all production servers. 
+Below is a bare-bone example of using a snippet with the required fields - it will execute the <a href="https://raw.githubusercontent.com/cloud66/snippets/master/cloud66/node">Cloud 66 Node snippet</a> as the first thing on all production servers.
 
 <pre class="prettyprint">
 production: # Environment
