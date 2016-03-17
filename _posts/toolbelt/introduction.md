@@ -72,7 +72,7 @@ Once authorized, you will be presented with an authorization code to paste into 
 - `cx open -s <stack_name>` opens your web browser to visit the app server in your stack
 
 <h2 id="multi-accounts">Multiple Account Support</h2>
-By default, Toolbelt can work with all of the accounts you are a member of. Once you accept a Team membership on Cloud 66, your Toolbelt will automatically can work with the stacks you have access to under that team's account without any change.
+By default, Toolbelt can work with all of the accounts you are member of. Once you accept a Team membership on Cloud 66, your Toolbelt will automatically work with the stacks you have access to under that team's account without any change.
 
 If you have more than 1 Cloud 66 account (you are the owner of more than 1 account and not just a team member), then you can use the `--account` global option when using Toolbelt. Using the `account` option you can give your accounts different names and switch between them. Here is an example:
 
