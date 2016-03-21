@@ -48,9 +48,9 @@ These are just some examples of the settings you can control with a manifest fil
 
 <h2 id="how">How can I use a manifest file?</h2>
 
-The way to use this functionality differs from _Classic_ to _Docker_ stacks:
+The way to use this functionality differs from _Rails/Rack_ to _Docker_ stacks:
 
-- For _Classic_ stacks, place a file called `manifest.yml` in a folder named `.cloud66`, that is in turn located in the root of your source code and checked into your repository.
+- For _Rails/Rack_ stacks, place a file called `manifest.yml` in a folder named `.cloud66`, that is in turn located in the root of your source code and checked into your repository.
 - For _Docker_ stacks, provide manifest contents after your stack has been analyzed (and before you deploy it) by using the _advanced_ tab. You can also change the manifest after your stack deployment with the `Configure manifest` item in the right menu of your stack page.
 
 <h2 id="examples">Manifest file examples</h2>
@@ -85,7 +85,7 @@ This is how it works:
     </p>
 </div>
 
-If you'd like to use a _Classic_ stack, once your `manifest.yml` file is in your `.cloud66` folder and checked in, you can go ahead and build your stack.
+If you'd like to use a _Rails/Rack_ stack, once your `manifest.yml` file is in your `.cloud66` folder and checked in, you can go ahead and build your stack.
 
 If you'd like to use a _Docker_ stack, create it and use the _Advanced_ tab after your code has been analyzed to provide your manifest content.
 
@@ -146,7 +146,7 @@ This will force your Nginx configuration to be rebuilt during the next redeploym
 
 As evidenced in the examples above, manifest file settings can be applied during the build of a new stack or an existing stack depending on the type of setting. They can also change a wide range of settings and configurations on your stack. Now let's learn about the structure of a manifest file.
 
-The manifest file is called `manifest.yml` and is `YAML` formatted. This file should be placed in the `.cloud66` folder of your Git repository if you're using a _Classic_ stack.
+The manifest file is called `manifest.yml` and is `YAML` formatted. This file should be placed in the `.cloud66` folder of your Git repository if you're using a _Rails/Rack_ stack.
 
 <h3 id="first">First level: Environment</h3>
 
