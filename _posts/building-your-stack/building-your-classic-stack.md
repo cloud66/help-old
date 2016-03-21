@@ -2,7 +2,7 @@
 layout: post
 template: one-col
 nav_sticky: true
-title:  "Building your Classic stack"
+title:  "Building your Rails/Rack stack"
 cloud66_text: "Try Cloud 66 for free"
 date:   2137-12-24 10:51:22
 categories: building-your-stack

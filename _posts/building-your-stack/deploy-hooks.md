@@ -115,7 +115,7 @@ lead: Take action at various points during your deployment
 <ol class="list">
 <li><b>Snippets:</b> use pre-existing scripts to install common packages. These snippets are <a href="https://github.com/cloud66/snippets">open source</a>, and are created by Cloud 66 or third parties.</li>
 <li><b>Commands:</b> run your own commands.</li>
-<li><b>Scripts:</b> use your own scripts for more comprehensive procedures(Only for classic stacks).</li>
+<li><b>Scripts:</b> use your own scripts for more comprehensive procedures(Only for Rails/Rack stacks).</li>
 </ol>
 
 <table class="table table-bordered table-striped table-small fields">
@@ -175,7 +175,7 @@ Default values (if the field is not explicitly specified) are shown in brackets.
 <h1 id="how">How to use deploy hooks</h1>
 To make use of deploy hooks, your stack should have a file called _deploy_hooks.yml_.
 
-For classic stacks this file should be present within a folder named <i>.cloud66</i>, which is in turn located in the root of your source code.
+For Rails/Rack stacks this file should be present within a folder named <i>.cloud66</i>, which is in turn located in the root of your source code.
 
 <pre class="prettyprint">
 /.cloud66/deploy_hooks.yml
@@ -254,7 +254,7 @@ production: # Environment
 
 This will run our rake task on one Rails server and only during the initial build. We run this as a last_thing hook because if we ran it earlier the application wouldn't exist on the server and be usable.
 
-<h2 id="scripts">Use a script deploy hook (Only for classic stacks)</h2>
+<h2 id="scripts">Use a script deploy hook (Only for Rails/Rack stacks)</h2>
 The hook below will copy a file from your repository to your <i>tmp</i> folder and execute it during build.
 
 <pre class="prettyprint">
