@@ -18,7 +18,7 @@ tags: ['commit hook','git push','redeployment hook','git hook','redeployment']
 		<ul>
 			<li><a href="#where">Where to find your redeployment hook?</a></li>
       <li><a href="#docker">For Docker Stacks</a></li>
-      <li><a href="#classic">For Classic Stacks</a>
+      <li><a href="#classic">For Rails/Rack Stacks</a>
 	      <ul>
 		      <li><a href="#github_events">Github Integration</a></li>
 	      </ul>
@@ -36,7 +36,7 @@ tags: ['commit hook','git push','redeployment hook','git hook','redeployment']
 </ul>
 
 <h2 id="about">About redeployment hooks</h2>
-Redeployment hooks allow you to achieve continuous deployment by deploying your stack when you push a change to your Git repository or have a CI push success. Redeployment hooks differ slightly for Classic and Docker Stacks see sections below.
+Redeployment hooks allow you to achieve continuous deployment by deploying your stack when you push a change to your Git repository or have a CI push success. Redeployment hooks differ slightly for Rails/Rack and Docker Stacks see sections below.
 
 <div class="notice">
   <h3 id="where">Where to find your redeployment hook?</h3>
@@ -78,8 +78,8 @@ An example redeployment <b>hook with a many-service modifier:</b>
 https://hooks.cloud66.com/stacks/redeploy/xxxx/yyyy?services=web,app
 </pre>
 
-<h3 id="classic">For Classic Stacks</h3>
-All Classic Stacks are based on a Git repository and branch. Pushing code to the same branch as your stack Git branch will invoke your stack redeployment. If you push code to another branch, nothing will happen - this allows you to push code to your development branch without an automatic redeploy on your production stack for example. If it is available in the payload, the Git Ref of the latest commit will be used for the stack redeployment.
+<h3 id="classic">For Rails/Rack Stacks</h3>
+All Rails/Rack Stacks are based on a Git repository and branch. Pushing code to the same branch as your stack Git branch will invoke your stack redeployment. If you push code to another branch, nothing will happen - this allows you to push code to your development branch without an automatic redeploy on your production stack for example. If it is available in the payload, the Git Ref of the latest commit will be used for the stack redeployment.
 
 <div class="notice">
   <h3>Note</h3>
