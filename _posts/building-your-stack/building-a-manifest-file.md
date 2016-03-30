@@ -696,11 +696,15 @@ production:
     web:
       restart_signal: usr1
       web_server_stop_signals: usr1, 30, kill
+    nsq:
+      restart_on_deploy: false
 </pre>
 
 In this example, a process called `worker` is stopped using a `TTIN` signal first. After waiting for 120 seconds, if the process is still running, a `TERM` signal will be sent. If it is still running after 5 seconds, it will be killed.
 
 As for `web` or `custom_web` processes, you can specify a `restart_signal` which will be sent to the process serving web. This is useful for web servers that can do "phased" or zero-downtime restarts.
+
+All processes restart during each redeployment of the stack. If you want to avoid this, you can set `restart_on_deploy` to `false`.
 
 Default values for each process type are:
 
@@ -709,6 +713,7 @@ Default values for each process type are:
   - Restart Signal `restart_signal`: `USR2`
 - Non-Web Processes:
   - Stop Signal `stop_sequence`: `QUIT,30,TERM,11,KILL`
+  - Restart `restart_on_deploy`: `true`
 
 <h2 id="live_logs">Specify additional LiveLog files</h2>
 Each application type supports the additional partial configuration to add custom live log files for that application type:
