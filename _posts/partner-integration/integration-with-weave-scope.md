@@ -25,9 +25,10 @@ Add the following deploy hook to your *deploy_hooks.yml* file.
 production: # Environment or your choice
   last_thing: # Importent to run the weavescope hook as the last thing during server deployment
     - snippet: cloud66/weave_scope # our weavescope snippet
-      target: docker
+      target: docker 
       sudo: true 
       execute: true
+      run_on: all_servers #make sure weave scope is running on all servers and communicate to each other
 </pre>
 
 <h3>Step 3: Commit and redeploy your stack</h3>
