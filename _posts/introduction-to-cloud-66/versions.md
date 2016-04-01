@@ -75,7 +75,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>ElasticSearch</td>
-            <td>1.7.3</td>
+            <td>2.3.0</td>
         </tr>
         <tr>
             <td>GlusterFS</td>
