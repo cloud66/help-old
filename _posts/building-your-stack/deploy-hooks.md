@@ -140,7 +140,7 @@ lead: Take action at various points during your deployment
 <tbody>
 	<tr class="header"><td width="13%"><b>Commands</b> <span>-</span><td><td>
 	<tr><td><td width="13%">command<img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>Command to be used - run in <i>/tmp/deploy_hooks</i> by default
-	<tr><td><td>target <img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>, <i>custom</i>
+	<tr><td><td>target <img class="table-img-required" src="http://cdn.cloud66.com/images/help/required.gif" /><td>Target server(s), with accepted values <i>any</i>, <i>rails</i>, <i>docker</i>, <i>mysql</i>, <i>postgresql</i>, <i>mongodb</i>, <i>redis</i>, <i>sinatra</i>, <i>padrino</i>, <i>custom</i>
 	<div class="notice notice-warning">
 	<strong> Note:</strong> Please make sure you read the <i>run_on</i> part, if your target is not <i>any</i>
 	</div>
