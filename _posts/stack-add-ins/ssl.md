@@ -42,3 +42,7 @@ Refer to our [documentation](http://community.cloud66.com/articles/ssl-certifica
 </div>
 
 Adding this SSL certificate is even easier, you only need to add the DNS name for this. The DNS name cannot be the `c66.me` ones and it **won't accept wild cards**.
+
+If your infrastructure is behind [Cloudflare](https://www.cloudflare.com) and your are using a global HTTPS redirect you need a [pagerule](https://support.cloudflare.com/hc/en-us/articles/200168306-Is-there-a-tutorial-for-Page-Rules-) to get things working. Make sure you add a [pagerule](https://support.cloudflare.com/hc/en-us/articles/200168306-Is-there-a-tutorial-for-Page-Rules-) because Let's Encrypt need a non-secure HTTP endpoint (/.well-known/acme_challenge/\*) to invoke and reissue certificates. 
+
+If your domain application is running on *www.example.io* for example you need a page rule for the following URL: *www.example.io/.well-known/acme_challenge/\**, browser integrity check off, SSL off, cache expiration: 4 hours.
