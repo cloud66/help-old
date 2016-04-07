@@ -14,12 +14,12 @@ tutorial: true
 difficulty: 1
 ---
 
-If you are confused why you can see your logs in livelogs but not under /var/log/containers/ even after introducing `log_folder` or if you need to work with your logs this article is for you.
+If you are confused why you can see your logs in [livelogs](http://help.cloud66.com/managing-your-stack/live-logs) but not under `/var/log/containers/` even after introducing `log_folder` or if you need to work with your logs this article is for you.
 
-In the [livelogs](http://help.cloud66.com/managing-your-stack/live-logs) you can see the `stdout` and the content of `/log` folder of your container by default, so if you cannot see anything under `/log` and still there are logs being shown in livelogs it means the logs are coming from the container's stdout.
+In the livelogs you can see the `stdout` and the content of `/log` folder of your container by default, so if you cannot see anything under `/log` and still there are logs being shown in livelogs it means the logs are coming from the container's stdout.
 
 
-This sample will run your container and by default the folder `/log` and the `stdout` will be piped to Docker default Json log file.
+This sample will run an app in a container and by default the folder `/log` and the `stdout` will be piped to Docker default Json log file.
 
 <pre class="prettyprint">
 services:
@@ -36,17 +36,14 @@ databases:
   - "mysql" 
   </pre>
 
-If you don't know where your app saves its log and you need to have a more centeralised log file you can do this:
+If your app shows its log in the `stdout` and you need to have a more centeralised log file you can do this:
 
 <ol class="article-list">
-<li>Change the command from: 
-<code>command: rackup -p 3000</code> to <code>command: rackup -p 3000 > /PATH_TO_LOG_FOLDER/LOG_FILE</code><br>
-This will pipe the stdout to your specified log file.</li></br>
+<li><p>Change the command from: <code>command: rackup -p 3000</code> </p><p>to:  <code>command: rackup -p 3000 > /PATH_TO_LOG_FOLDER/LOG_FILE</code></p><p>which will pipe the stdout to your specified log file.</p></li>
 
-<li>Add this to your service:</li>
-<code>log_folder: /PATH_TO_LOG_FOLDER</code>
-</ol>
-your service.yml will look like this:
+<li><p>Add this to your service:</li></p>
+<p><code>log_folder: /PATH_TO_LOG_FOLDER</code></p>
+<p>So your service.yml will look like this:</p>
 
 <pre class="prettyprint">
 services:
@@ -61,11 +58,10 @@ services:
     log_folder: /PATH_TO_LOG_FOLDER
 databases:
   - "mysql"
-  </pre>
+</pre>
 
 
-Now after you start the service you can ssh to the host and have a look at
-
-/var/log/containers/SERVICE_NAME/
-
-and you'll see the LOG_FILE is listed.
+<li><p>Now after you start the service you can ssh to the server/host and have a look at</li></p>
+<p><code>/var/log/containers/SERVICE_NAME/</code></p>
+<p>You should see the <code>LOG_FILE</code> is listed.</p>
+</ol>
