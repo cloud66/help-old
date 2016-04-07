@@ -2,7 +2,7 @@
 layout: post
 template: two-col
 title:  "Managing Logs For Containers"
-so_title: "nginx"
+so_title: "Docker"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   2016-04-07 10:23:22
@@ -39,12 +39,12 @@ databases:
 If you don't know where your app saves its log and you need to have a more centeralised log file you can do this:
 
 <ol class="article-list">
-<li>Change the command from: `command: rackup -p 3000` to command: rackup -p 3000 > /PATH_TO_LOG_FOLDER/LOG_FILE
-This will pipe the stdout to your specified log file</li>
+<li>Change the command from: 
+<code>command: rackup -p 3000</code> to <code>command: rackup -p 3000 > /PATH_TO_LOG_FOLDER/LOG_FILE</code><br>
+This will pipe the stdout to your specified log file.</li></br>
 
-<li>Add this to your service:
-
-log_folder: /PATH_TO_LOG_FOLDER</li>
+<li>Add this to your service:</li>
+<code>log_folder: /PATH_TO_LOG_FOLDER</code>
 </ol>
 your service.yml will look like this:
 
