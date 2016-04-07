@@ -78,6 +78,11 @@ services:
 </pre>
 
 <h2 id="vertical">Vertical scaling</h2>
+
+<div class="notice notice-danger">
+    <h3>Note</h3>
+    <p>This only applies to Rails stacks not Docker ones</p>
+</div>
 A number of cloud vendors allow you to increase and/or decrease the size of an existing server via their dashboard, allowing you to change the memory and CPU for existing servers. Vertical scaling works the same way for all server types.
 
 Follow these steps to scale your server vertically:
