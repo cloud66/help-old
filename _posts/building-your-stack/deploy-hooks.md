@@ -175,13 +175,13 @@ Default values (if the field is not explicitly specified) are shown in brackets.
 <h1 id="how">How to use deploy hooks</h1>
 To make use of deploy hooks, your stack should have a file called _deploy_hooks.yml_.
 
-For Rails/Rack stacks this file should be present within a folder named <i>.cloud66</i>, which is in turn located in the root of your source code.
+For <strong>Rails/Rack</strong> stacks this file should be present within a folder named <i>.cloud66</i>, which is in turn located in the root of your source code.
 
 <pre class="prettyprint">
 /.cloud66/deploy_hooks.yml
 </pre>
 
-For Docker stacks this file should be pushed into <a href="http://help.cloud66.com/managing-your-stack/customconfig-git" target="_blank">CustomConfig git</a> Repository of stack. This repository will be created after stack analysed so you can push your deploy hooks before deployment started.
+For <strong>Docker stacks</strong> this file should be pushed into <a href="http://help.cloud66.com/managing-your-stack/customconfig-git" target="_blank">CustomConfig git</a> Repository of the stack. This repository will be created after the stack is analysed, so you can push your deploy hooks before deployment started.
 
 This file should be YAML formatted, and you can use a service like <a href="http://yamllint.com/" target="_blank">YAMLlint</a> to validate it.
 

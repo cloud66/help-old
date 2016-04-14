@@ -102,7 +102,7 @@ Build a new Docker stack based on your desired service definition.
 <h3 id="usage-build">Usage</h3>
 
 <pre class="prettyprint">
-$ cx stacks create --name &lt;stack_name&gt; --environment &lt;environment&gt; --service_yaml &lt;service_yaml_path&gt; [--manifest_yaml &lt;manifest_yaml_path&gt;]
+$ cx --org &lt;organization_name&gt; stacks create --name &lt;stack_name&gt; --environment &lt;environment&gt; --service_yaml &lt;service_yaml_path&gt; [--manifest_yaml &lt;manifest_yaml_path&gt;]
 </pre>
 
 <h3 id="params-build">Parameters</h3>
@@ -114,6 +114,10 @@ $ cx stacks create --name &lt;stack_name&gt; --environment &lt;environment&gt; -
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td><i>organization_name</i></td>
+            <td>Name of the organization -you can find it by using <em>cx info</em>-</td>
+        </tr>
         <tr>
             <td><i>name</i></td>
             <td>Name of your new stack</td>
@@ -136,11 +140,11 @@ $ cx stacks create --name &lt;stack_name&gt; --environment &lt;environment&gt; -
 <h3 id="example-build">Examples</h3>
 
 <pre class="prettyprint">
-$ cx stacks create --name my_stack --environment production --service_yaml ~/service.yaml --manifest_yaml ~/manifest.yaml
+$ cx --org My_Awsome_org stacks create --name my_stack --environment production --service_yaml ~/service.yaml --manifest_yaml ~/manifest.yaml
 </pre>
 
 <pre class="prettyprint">
-$ cx stacks create --name my_stack --environment production --service_yaml ~/service.yaml 
+$ cx --org My_Awsome_org stacks create --name my_stack --environment production --service_yaml ~/service.yaml 
 </pre>
 
 <hr>
