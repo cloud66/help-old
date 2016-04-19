@@ -101,7 +101,7 @@ This command lists all gateways on your account.
 <h3 id="usage1">Usage</h3>
 
 <pre class="prettyprint">
-$ cx gateways list [ --verbose]
+$ cx --org &lt;organization_name&gt; gateways list [ --verbose]
 </pre>
 
 <h3 id="params1">Parameters</h3>
@@ -125,8 +125,8 @@ $ cx gateways list [ --verbose]
 <h3 id="example1">Example</h3>
 
 <pre class="prettyprint">
-$ cx gateways list
-$ cx gateways list --verbose
+$ cx --org My_Awesome_org gateways list
+$ cx --org My_Awesome_org gateways list --verbose
 </pre>
 
 <h2 id="add">Add gateway</h2>
@@ -135,7 +135,7 @@ This command add a gateway into your account.
 <h3 id="usage2">Usage</h3>
 
 <pre class="prettyprint">
-$ cx gateways add --name &lt;gateway name&gt; --address &lt;gateway address&gt; --username &lt;gateway username&gt;  --private-ip &lt;private ip of gateway&gt;
+$ cx --org &lt;organization_name&gt; gateways add --name &lt;gateway name&gt; --address &lt;gateway address&gt; --username &lt;gateway username&gt;  --private-ip &lt;private ip of gateway&gt;
 </pre>
 
 <h3 id="params2">Parameters</h3>
@@ -174,7 +174,7 @@ $ cx gateways add --name &lt;gateway name&gt; --address &lt;gateway address&gt; 
 <h3 id="example2">Example</h3>
 
 <pre class="prettyprint">
-$ cx gateways add --name aws_bastion --address 1.1.1.1  --username ec2-user  --private-ip 2.2.2.2
+$ cx --org My_Awesome_org gateways add --name aws_bastion --address 1.1.1.1  --username ec2-user  --private-ip 2.2.2.2
 </pre>
 
 <h2 id="open">Open gateway</h2>
@@ -183,7 +183,7 @@ Make the gateway available to use with cloud66 for ttl amount of time.
 <h3 id="usage3">Usage</h3>
 
 <pre class="prettyprint">
-$ cx gateways open --name &lt;gateway name&gt; --key &lt;The path to the gateway server key&gt; --ttl &lt;time to live &gt;
+$ cx --org &lt;organization_name&gt; gateways open --name &lt;gateway name&gt; --key &lt;The path to the gateway server key&gt; --ttl &lt;time to live &gt;
 </pre>
 
 <h3 id="params3">Parameters</h3>
@@ -217,7 +217,7 @@ $ cx gateways open --name &lt;gateway name&gt; --key &lt;The path to the gateway
 <h3 id="example3">Example</h3>
 
 <pre class="prettyprint">
-$ cx gateways open --name aws_bastion --key /tmp/gateway.pem --ttl 45m
+$ cx --org My_Awesome_org gateways open --name aws_bastion --key /tmp/gateway.pem --ttl 45m
 </pre>
 
 <h2 id="close">Close gateway</h2>
@@ -226,7 +226,7 @@ Invalidate the gateway key so it will not be available for cloud66 usage.
 <h3 id="usage4">Usage</h3>
 
 <pre class="prettyprint">
-$ cx gateways close --name &lt;gateway name&gt;
+$ cx --org &lt;organization_name&gt; gateways close --name &lt;gateway name&gt;
 </pre>
 
 <h3 id="params4">Parameters</h3>
@@ -250,7 +250,7 @@ $ cx gateways close --name &lt;gateway name&gt;
 <h3 id="example4">Example</h3>
 
 <pre class="prettyprint">
-$ cx gateways close --name aws_bastion
+$ cx --org My_Awesome_org gateways close --name aws_bastion
 </pre>
 
 <h2 id="remove">Remove gateway</h2>
@@ -259,7 +259,7 @@ This command will remove the gateway from your account
 <h3 id="usage5">Usage</h3>
 
 <pre class="prettyprint">
-$ cx gateways remove --name &lt;gateway name&gt;
+$ cx --org &lt;organization_name&gt; gateways remove --name &lt;gateway name&gt;
 </pre>
 
 <h3 id="params5">Parameters</h3>
@@ -283,6 +283,6 @@ $ cx gateways remove --name &lt;gateway name&gt;
 <h3 id="example5">Example</h3>
 
 <pre class="prettyprint">
-$ cx gateways remove --name aws_bastion
+$ cx --org My_Awesome_org gateways remove --name aws_bastion
 </pre>
 
