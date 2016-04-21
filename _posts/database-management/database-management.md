@@ -75,6 +75,8 @@ Cloud 66 will not do in-place database upgrades, because this process may cause 
 Once the new stack is created, you can migrate data from your old stack to your new stack.
 
 <h2 id="migrations">Control your Rails database migrations</h2>
+Cloud 66 chooses a server to perform the migrations - all other servers will wait until the migrations are finished before continuing with deployment. You can see which server performs the migrations in the Stack Information page, and change it using the `c66.migrations.run` [reserved tag](/deployment/cloud-66-reserved-tags#tags).
+
 You can control your Rails database migrations by setting `run.deploy.command` option through [Stack settings](/toolbelt/toolbelt-settings-command) via [Toolbelt](/toolbelt/toolbelt-introduction) which gives you the option of running migrations or not.
 
 <pre class="prettyprint">
