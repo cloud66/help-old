@@ -18,7 +18,7 @@ To view your account information, visit the _Account_ link at the top right corn
 ## Delete your account
 To delete your account, visit the _Account_ link at the top right corner of your Cloud 66 account. Next, click on <font color='red'>Delete My Account</font> at the bottom, and confirm if you wish to proceed.
 
-If the link is not present, it means you are part of a team. In order to delete your account you might need to switch to your own organization first (see below).
+If the link is not present, you will need to switch to your own organization (see below) and then it will appear.
 
 
 ## Organizations
