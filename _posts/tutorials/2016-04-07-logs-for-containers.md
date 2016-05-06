@@ -49,7 +49,7 @@ If your app shows its log in the `stdout` and you need to have a more centeralis
 services:
   SERVICE_NAME:
     image: quay.io/cloud66/sample-rails  
-    command: rackup -p 3000 > /PATH_TO_LOG_FOLDER/LOG_FILE
+    command: "/bin/sh -c 'rackup -p 3000 > /PATH_TO_LOG_FOLDER/LOG_FILE 2>&1'"
     build_command: rake db:migrate
     deploy_command: rake db:migrate
     - container: 3000

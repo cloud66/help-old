@@ -62,7 +62,7 @@ Unmanaged backups are stored on your local server and are available under `/var/
     <thead>
         <tr>
             <th align="center"></th>
-            <th align="center">Stack/month</th>
+            <th align="center">Database/month</th>
             <th align="center">GB/month</th>
         </tr>
     </thead>
