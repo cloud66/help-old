@@ -71,7 +71,7 @@ You are free to specify a version for a number of components in your [manifest f
     <tbody>
         <tr>
             <td>Docker</td>
-            <td>1.11.0</td>
+            <td>1.10.3</td>
         </tr>
         <tr>
             <td>ElasticSearch</td>
@@ -111,7 +111,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>Weave</td>
-            <td>1.5.0</td>
+            <td>1.4.6</td>
         </tr>
                 
     </tbody>
