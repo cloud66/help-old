@@ -52,6 +52,6 @@ To register a single server, use the `server` flag with the IP address, and to b
 - Currently requires a **fresh install of Ubuntu 14.04**
 - Once a server is registered and used, it **cannot be reused** until a fresh copy of Ubuntu is installed again - this is to prevent possible conflicts with old files.
 - If your server is in a cloud with native security groups (such as AWS Security Groups) then you must manually configure them such that your registered servers are able to talk to each other and Cloud 66. Open at least TCP port 80, 443 and 22 to the outside world. Cloud 66 install a firewall on each box and blocking port 22. All servers must be allowed to communicate inside the security group on TCP port 6783. Port 6783 is needed to create the overlay network (Weave) for Docker stacks.  
-- If your servers in a stack are in different regions, then will not be able to use their internal IPs to communicate with each other, so you will have to change your app to use the external IP environment variables. Keep in mind that this may incur additional traffic costs.
+- If your servers in a stack are in different regions, then they will not be able to use their internal IPs to communicate with each other, so you will have to change your app to use the external IP environment variables. Keep in mind that this may incur additional traffic costs.
 - Existing BYOS users will now be able to scale up and add a load balancer via registered servers.
 - Cross cloud stacks are now possible, but not recommended due to substantial latency and other potential issues.
