@@ -24,7 +24,7 @@ tags: []
 <h2 id="overview">Overview</h2>
 Sometimes our code needs to know a bit more about a server it is running on. Of course we are not suggesting you write code that is dependent on a specific server, but it is possible that your code needs things like: what's the IP address of this server? What version of Image Magic is it running or is tagged with a specific tag on Cloud 66 or not.
 
-Cloud 66 Server Meta Data Service (SMDS) is a single HTTP GET endpoint that can be called from any Cloud 66 deployed server (except Bring Your Own Server - no cloud - stacks) to return a great deal of information about the server and what's running on it.
+Cloud 66 Server Meta Data Service (SMDS) is a single HTTP GET endpoint that can be called from any Cloud 66 deployed server to return a great deal of information about the server and what's running on it.
 
 This ranges from hardware to software, package and network meta data as well as Cloud 66 specific information like stack, server group, environment and tags.
 

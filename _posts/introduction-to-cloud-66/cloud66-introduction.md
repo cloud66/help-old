@@ -70,7 +70,7 @@ Before you get get started, you may want to look at our [Technical specification
   <li>Deployment credentials
     <ul class="list">
       <li>The API key for your cloud provider (<a href="/deployment/deploy-to-your-cloud">Deploy to your cloud</a>)</li>
-      <li>An SSH key and IP address for your server (<a href="/deployment/registered-servers">Deploy to your own server</a>)</li>
+	  Alternatively, if you don't want to use a cloud provider, you can use your own server (<a href="/deployment/registered-servers">Deploy to a registered server</a>)
     </ul>
   </li>
 </ul>

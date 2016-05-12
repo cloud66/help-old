@@ -48,10 +48,16 @@ $ cx register-server --org="My Team" [--file=servers_file | --server=ip_address]
 
 To register a single server, use the `server` flag with the IP address, and to bulk register, provide a text file with the `file` flag with one IP address per line.
 
+<h2 id="pointers">Requirements</h2>
+- OS: We currentlu only support **Ubuntu 14.04** and it needs to be **freshly installed** on your server.
+- Connection: For security reasons, Cloud 66 only connects to your server using your secure keys on <b>port 22</b>.
+- Sudo: As Cloud 66 connects to your server and provisions applications from scratch, administrator permissions are sometimes necessary. Therefore our script creates a new user to use for deployment that is a member of the sudoers group and that does not require a password to invoke sudo.
+- Bash: We currently only support Bourne-again shell (Bash). The error `sh: n: source: not found` during deployment may arise if you are not using the Bash shell.
+- CPU Architecture: We currently only support deploying to 64bit CPU architectures.
+
 <h2 id="pointers">Some pointers</h2>
-- Currently requires a **fresh install of Ubuntu 14.04**
 - Once a server is registered and used, it **cannot be reused** until a fresh copy of Ubuntu is installed again - this is to prevent possible conflicts with old files.
-- If your server is in a cloud with native security groups (such as AWS Security Groups) then you must manually configure them such that your registered servers are able to talk to each other and Cloud 66. Open at least TCP port 80, 443 and 22 to the outside world. Cloud 66 install a firewall on each box and blocking port 22. All servers must be allowed to communicate inside the security group on TCP port 6783. Port 6783 is needed to create the overlay network (Weave) for Docker stacks.  
+- If your server is in a cloud with native security groups (such as AWS Security Groups) then you must manually configure them such that your registered servers are able to talk to each other and Cloud 66. Open at least TCP port 80, 443 and 22 to the outside world. Cloud 66 install a firewall on each box that is blocking port 22. All servers must be allowed to communicate inside the security group on TCP port 6783. Port 6783 is needed to create the overlay network (Weave) for Docker stacks.  
 - If your servers in a stack are in different regions, then they will not be able to use their internal IPs to communicate with each other, so you will have to change your app to use the external IP environment variables. Keep in mind that this may incur additional traffic costs.
 - Existing BYOS users will now be able to scale up and add a load balancer via registered servers.
-- Cross cloud stacks are now possible, but not recommended due to substantial latency and other potential issues.
+- Cross-cloud stacks are now possible, but not recommended due to substantial latency and other potential issues.
