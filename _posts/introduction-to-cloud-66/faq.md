@@ -96,7 +96,7 @@ Cloud 66 uses remote SSH keys to set up an SSH tunnel to your server and execute
 <hr>
 
 <h2 id="f7">Are their any requirements for the user on my servers?</h2>
-Yes. As Cloud 66 will be provisioning services on your servers from scratch, the server must meet a number of requirements outlined in the [Deploy to your own server](/deployment/deploy-to-your-own-server) documentation.
+Yes. As Cloud 66 will be provisioning services on your servers from scratch, the server must meet a number of requirements outlined in the [Deploy to your own server](/deployment/registered-servers) documentation.
 
 <hr>
 
