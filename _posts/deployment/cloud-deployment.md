@@ -46,10 +46,8 @@ Cloud 66 currently supports the following cloud providers:
 
 <div class="notice notice-warning">
     <h3>Notice</h3>
-    <p>Should you wish to delete your stack on Cloud 66, your servers <b>will not</b> be deleted on your cloud provider.</p>
+    <p>Should you wish to delete your stack on Cloud 66, your servers <b>will not</b> be deleted on your cloud provider unless <a href="/managing-your-stack/server-deletion">physical server deletion</a> is turned on.</p>
 </div>
-
-As it's hard for us to determine if you're using your servers for other activities, we won't delete them on your cloud provider if you delete your stack.
 
 If you don't want to use a cloud provider with Cloud 66, you can [deploy to your own server](/deployment/registered-servers).
 
