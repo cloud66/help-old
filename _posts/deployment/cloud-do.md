@@ -39,7 +39,7 @@ Upon clicking the _Authorize_ button, you will be redirected to DigitalOcean to 
 
 <div class="notice notice-warning">
     <h3>Notice</h3>
-    <p>Should you wish to delete your stack on Cloud 66, your servers <b>will not</b> be deleted on your cloud provider.</p>
+    <p>Should you wish to delete your stack on Cloud 66, your servers <b>will not</b> be deleted on your cloud provider unless <a href="/managing-your-stack/server-deletion">physical server deletion</a> is turned on.</p>
 </div>
 
 <h2 id="external">External Links</h2>
