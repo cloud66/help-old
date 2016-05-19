@@ -91,7 +91,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>   
         <tr>
             <td>Phusion Passenger</td>
-            <td>5.0.27</td>
+            <td>5.0.28</td>
         </tr>
         <tr>
             <td>PostGIS</td>
@@ -107,7 +107,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>Ruby</td>
-            <td>1.9.3 - 2.2.4</td>
+            <td>1.9.3 - 2.3.1</td>
         </tr>
         <tr>
             <td>Weave</td>
