@@ -74,7 +74,7 @@ $ cx redeploy -s "My Awesome App" -e production
 $ cx redeploy -s "My Awesome App" -e production -y --git-ref my_git_ref_value
 </pre>
 <pre class="prettyprint">
-$ cx redeploy -s "My Awesome Docker App" --service web:l12q3lkjh41235kjheda --service api:latest
+$ cx redeploy -s "My Awesome Docker App" --service web:8c7f3d393162f88b8b9493f6babec574b03ca957 --service api:latest
 </pre>
 
 Deploying a stack that is already being deployed will enqueue your redeploy command and will run it immediately after the current deployment is finished.
