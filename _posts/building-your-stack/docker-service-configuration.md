@@ -49,7 +49,7 @@ services:
   web:
     image: quay.io/cloud66/sample-rails  
     command: rackup -p 3000             
-    build_command: rake db:migrate
+    build_command: rake db:schema:load
     deploy_command: rake db:migrate
     log_folder: /usr/src/app/log
     ports: ["3000:80:443"]        
