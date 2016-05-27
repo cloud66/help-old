@@ -86,7 +86,7 @@ You can bump up the Rails version in your `Gemfile` and redeploy your stack. Thi
 1. Update your manifest file (Configuration Files -> Manifest.yml) and change the Docker and Weave version to the [latest ones](http://help.cloud66.com/introduction-to-cloud-66/technical-specifications#versions).
 
 <p>2. Click on <b>DEPLOY</b> and choose <b>Deploy with options</b></p>
-<p>3. Go to <b>More options</b> tab and tick <b>Apply Docker upgrades</b> check box.</p>
+<p>3. Go to the <b>More options</b> tab and tick the <b>Apply Docker upgrades</b> check box.</p>
 
 <div class="notice notice-danger">
     <h3>Warning!</h3>
