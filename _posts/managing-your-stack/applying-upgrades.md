@@ -8,7 +8,7 @@ cloud66_sticky: true
 date:   1561-01-01 15:33:13
 categories: managing-your-stack
 lead: Best practices for applying upgrades to your stack
-search-tags: ['']
+search-tags: ['upgrade, update']
 tags: ['']
 ---
 
