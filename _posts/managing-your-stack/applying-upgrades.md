@@ -90,7 +90,7 @@ You can bump up the Rails version in your `Gemfile` and redeploy your stack. Thi
 
 <div class="notice notice-danger">
     <h3>Warning!</h3>
-    <p>Upgrading in-place involves downtime as the docker engine and local files are all upgraded. To avoid downtime, please scale up additional web-servers once you've updated your docker/weave versions in your manifest, after which you can scale down your old server</p>
+    <p>Upgrading in-place involves downtime as the docker engine and local files are all upgraded.</p>
 </div>
 
 <h2 id="manual">About manual upgrades</h2>
