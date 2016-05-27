@@ -21,7 +21,7 @@ tags: ['']
 	        <li><a href="#ubuntu">Ubuntu</a></li>
 	        <li><a href="#ruby">Ruby</a></li>
 	        <li><a href="#rails">Rails</a></li>
-            <li><a href="#docker">Docker</a></li>
+            <li><a href="#docker">Docker and Weave</a></li>
         </ul>
     </li>
     <li>
@@ -78,20 +78,19 @@ Although the in-place Ruby base version upgrade path is provided for simplicity 
 <h3 id="rails">Rails</h3>
 You can bump up the Rails version in your `Gemfile` and redeploy your stack. This will upgrade your Rails. Ensure that you upgrade your Ruby and Rails applications with [best practices](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html).
 
-<h3 id="docker">Docker</h3>
+<h3 id="docker">Docker and Weave</h3>
 <div class="notice">
     <h3>Tip!</h3>
-    <p>It would be better to keep your Docker and Weave version up to date. </p>
+    <p>It is best to keep your Docker and Weave versions up to date as they are released quite frequently with bug/security fixes </p>
 </div>
-<p>For upgrading Docker and Weave versions, you'll need to follow these steps:</p>
-1. Update your manifest file (Configuration Files/ Manifest.yml) and change the Docker and Weave version to the [latest one](http://help.cloud66.com/introduction-to-cloud-66/technical-specifications#versions).
+1. Update your manifest file (Configuration Files -> Manifest.yml) and change the Docker and Weave version to the [latest ones](http://help.cloud66.com/introduction-to-cloud-66/technical-specifications#versions).
 
 <p>2. Click on <b>DEPLOY</b> and choose <b>Deploy with options</b></p>
-<p>3. Go to <b>More options</b> tab and tick the check box for <b>Apply Docker upgrades</b></p>
+<p>3. Go to <b>More options</b> tab and tick <b>Apply Docker upgrades</b> check box.</p>
 
 <div class="notice notice-danger">
     <h3>Warning!</h3>
-    <p>This involves downtime, because the engine is getting upgraded -it's better done in quite time.</p>
+    <p>Upgrading in-place involves downtime as the docker engine and local files are all upgraded. To to avoid downtime, please scale up additional web-servers once you've updated your docker/weave versions in your manifest, after which you can scale down your old server</p>
 </div>
 
 <h2 id="manual">About manual upgrades</h2>
