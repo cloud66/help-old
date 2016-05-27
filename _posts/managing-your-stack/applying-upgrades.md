@@ -21,6 +21,7 @@ tags: ['']
 	        <li><a href="#ubuntu">Ubuntu</a></li>
 	        <li><a href="#ruby">Ruby</a></li>
 	        <li><a href="#rails">Rails</a></li>
+            <li><a href="#docker">Docker</a></li>
         </ul>
     </li>
     <li>
@@ -76,6 +77,23 @@ Although the in-place Ruby base version upgrade path is provided for simplicity 
 
 <h3 id="rails">Rails</h3>
 You can bump up the Rails version in your `Gemfile` and redeploy your stack. This will upgrade your Rails. Ensure that you upgrade your Ruby and Rails applications with [best practices](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html).
+
+<h3 id="docker">Docker</h3>
+<div class="notice">
+    <h3>Tip!</h3>
+    <p>It would be better to keep your docker version and Weave version upto date. </p>
+</div>
+<p>For upgrading Docker version, you'll need to follow these steps:</p>
+1. Update your Manifest file (Configuration/ Manifest.yml) and change the Docker version to the [latest one](http://help.cloud66.com/introduction-to-cloud-66/technical-specifications#versions).
+
+<p>2. It is avised to change the Weave version too</p>
+<p>3. Deploy with options</p>
+<p>4. More options and tick the check box for `Apply Docker upgrades`</p>
+
+<div class="notice notice-danger">
+    <h3>Warning!</h3>
+    <p>This involves down-time, because the engine is getting upgraded.</p>
+</div>
 
 <h2 id="manual">About manual upgrades</h2>
 If you need to upgrade any part of your stack the best course of action is always to build a new one. However, if that is not desired or possible, you can always perform manual upgrades.
