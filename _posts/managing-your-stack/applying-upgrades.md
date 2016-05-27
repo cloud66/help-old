@@ -90,7 +90,7 @@ You can bump up the Rails version in your `Gemfile` and redeploy your stack. Thi
 
 <div class="notice notice-danger">
     <h3>Warning!</h3>
-    <p>Upgrading in-place involves downtime as the docker engine and local files are all upgraded.</p>
+    <p>Upgrading in-place involves downtime as the docker engine and local files are all upgraded. To have zero down-time you'd have to clone your stack and use Failovers to swithch to the new one.</p>
 </div>
 
 <h2 id="manual">About manual upgrades</h2>
