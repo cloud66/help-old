@@ -58,15 +58,15 @@ In order to deal with the upgrades you have a few options:
 In the event of a security vulnerability on any of the components we deploy on the servers, we aim to be as quick as possible to roll out the recommended patches for Ubuntu, Ruby and Rails.
 
 <h3 id="ubuntu">Ubuntu</h3>
-From the _Deploy_ menu, choose _Deploy with Options_. By selecting _Apply security upgrades_, Cloud 66 will perform operating system security package upgrades and set up [unattended upgrades](https://help.ubuntu.com/community/AutomaticSecurityUpdates) for your stack. Unattended upgrades will automatically check for and install the latest Ubuntu security packages on a daily basis.
+From the _Deploy_ menu, choose _Deploy with Options_. By selecting _Apply security upgrades_, Cloud 66 will perform operating system security package upgrades and set up <a href=https://help.ubuntu.com/community/AutomaticSecurityUpdates>unattended upgrades</a> for your stack. Unattended upgrades will automatically check for and install the latest Ubuntu security packages on a daily basis.
 
 Note that some security packages may require a server restart. We don't automatically restart your server, and it is at your discretion to do so. If the file `/var/run/reboot-required` exists, your server does in fact require a restart. To see which packages contributed to the requirement for a restart, please see `/var/run/reboot-required.pkgs`.
 
 <h3 id="ruby">Ruby</h3>
 There are generally three ways to upgrade Ruby on your stack, in decreasing magnitude of risk. Please ensure that the upgrades and patches work with your code before applying them. Upgrade and patch your development and test environments to ensure there are no issues. Backup your environment via your cloud provider where possible.
 
-#### Scaling up
-Arguably the best option to use when upgrading Ruby is to scale up a new server within the same stack, and simply drop the old one. You can specify your new Ruby version in a [manifest file](/building-your-stack/getting-started-with-manifest-files). Once you've pushed this change and deployed, scale up a new web server, which will use this version of Ruby. The previous server would remain on the old version of Ruby.
+<h4>Scaling up</h4>
+Arguably the best option to use when upgrading Ruby is to scale up a new server within the same stack, and simply drop the old one. You can specify your new Ruby version in a <a href=/building-your-stack/getting-started-with-manifest-files>manifest file</a>. Once you've pushed this change and deployed, scale up a new web server, which will use this version of Ruby. The previous server would remain on the old version of Ruby.
 
 <div class="notice notice-danger">
     <p>Make sure you redeploy before you scale up, otherwise the new manifest will not be taken to account.</p>
@@ -78,7 +78,7 @@ You can scale-down your older web server to ensure all your web servers are the 
 
 Also, if you have background jobs running on your old server, ensure that you gracefully shut these down before switching everything to the new server (to avoid lost jobs).
 
-#### In-place upgrades
+<h4>In-place upgrades</h4>
 Performing in-place Ruby upgrades on your stack carries some risk. Our deployment process always deploys the latest release of Ruby on new servers, so all new stacks and scaled up servers will have the latest version of Ruby installed.
 
 We roll out automatic upgrades in case of security issues, and this will be made clear in your [StackScore](/building-your-stack/stack-definition#stackscore). You will need to redeploy your stack with the _Apply Ruby upgrades_ option from _Deploy with Options_ menu which will apply the security patches and then redeploy your application as usual.
