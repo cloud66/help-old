@@ -1,20 +1,20 @@
 ---
 layout: post
 template: one-col
-title:  "Applying upgrades"
+title:  "Applying upgrades "
 so_title: "upgrade"
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 date:   1561-01-01 15:33:13
 categories: managing-your-stack
-lead: Best practices for applying upgrades to your stack
+lead: Aapplying upgrades and updates to your stack
 search-tags: ['upgrade, update']
 tags: ['']
 ---
 
 <h2>Contents</h2>
 <ul class="page-toc">
-    <li><a href="#about">About applying upgrade packages</a></li>
+    <li><a href="#about">Cloud66 Update Packages Policy</a></li>
     <li><a href="#types">Upgrade package types</a></li>
         <ul style="margin-bottom:0em">
 	        <li><a href="#updates">Security updates</a></li>
@@ -22,6 +22,7 @@ tags: ['']
 	        <li><a href="#ruby">Ruby</a></li>
 	        <li><a href="#rails">Rails</a></li>
             <li><a href="#docker">Docker and Weave</a></li>
+            <li><a href="#packages">Update Packages</a></li>
         </ul>
     </li>
     <li>
@@ -29,12 +30,29 @@ tags: ['']
     </li>
 </ul>
 
-<h2 id="about">About applying upgrade packages</h2>
-Cloud 66 aims to make it easier to build <a href="http://www.chadfowler.com/blog/2013/06/23/immutable-deployments/">immutable infrastructure</a>. Building servers and stacks from scratch is much better than modifying existing server configurations and tinkering with settings until things start to work.
+<h2 id="about">Cloud66 Update Packages Policy</h2>
+
+Cloud 66 aims to make it easier to build <a href="http://www.chadfowler.com/2013/06/23/immutable-deployments/">immutable infrastructure</a>. Building servers and stacks from scratch is much better than modifying existing server configurations and tinkering with settings until things start to work.
 
 Of course everyone knows that, the reasons they don't do it is that it's difficult, time consuming and can be unpredicatble. That's why we want to make building stacks from scratch as easy and as quick as possible. So in all cases of upgrade, our first recommendation is to build a new stack and redirect your traffic to the new stack using our [Elastic Address](/network/failover-groups).
 
 We are always working to make it easier to build a new stack, move your data and switch your traffic arround but it might not always be what you want to do or as easy as you would like it to be. So here is what we suggest as alternatives and exceptions.
+
+Based on that our workflow is such that when a new server is created we automatically update all the packages to the latest. After the server is created we only auto-install packages that are marked as `security updates`. So Cloud66 doesn't typically update other packages because it doesn't want to risk breaking or damaging your already running app -which doesn't apply when the server is newly created.
+
+In order to deal with the upgrades you have three options:
+
+<ol class="article-list">
+
+<li>Leave the package updates, if you're concerned about your app stability.</li>
+
+<li>Update the packages yourself through sudo apt-get -y dist-upgrade (if there is a new feature you're after or just want to be running the latest)</li>
+
+<li>Update the packages indirectly through scaling up a new server, and then dropping the old one (the new server will always get the latest packages installed on it);</li>
+</ol>
+<div class="notice">
+<h3>Tip:</h3>  
+ <p>Some package updates (and security ones) require server-reboot. So again by scaling up we restart your new servers automatically to ensure everything is neat and clean! Alternatively you can reboot your servers manually or via the toolbelt should you wish!</p></div>
 
 <h2 id="types">Upgrade package types</h2>
 <h3 id="updates">Security updates</h3>
@@ -51,6 +69,10 @@ There are generally three ways to upgrade Ruby on your stack, in decreasing magn
 
 #### Scaling up
 Arguably the best option to use when upgrading Ruby is to scale up a new server within the same stack, and simply drop the old one. You can specify your new Ruby version in a [manifest file](/building-your-stack/getting-started-with-manifest-files). Once you've pushed this change and deployed, scale up a new web server, which will use this version of Ruby. The previous server would remain on the old version of Ruby.
+
+<div class="notice notice-danger">
+    <p>Make sure you redeploy before you scale up, otherwise the new manifest will not be taken to account.</p>
+</div>
 
 There are a couple of small caveats to be aware of though - after you've done this process, you'll have servers in your stack on different Ruby versions. If you were to enforce a Ruby version in your Gemfile, this would mean that your application would stop working on either one of the servers (depending on which version you chose in your Gemfile).
 
@@ -92,6 +114,8 @@ You can bump up the Rails version in your `Gemfile` and redeploy your stack. Thi
     <h3>Warning!</h3>
     <p>Upgrading in-place involves downtime as the docker engine and local files are all upgraded. To have zero down-time you'd have to clone your stack and use Failovers to swithch to the new one.</p>
 </div>
+
+
 
 <h2 id="manual">About manual upgrades</h2>
 If you need to upgrade any part of your stack the best course of action is always to build a new one. However, if that is not desired or possible, you can always perform manual upgrades.
