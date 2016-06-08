@@ -44,9 +44,9 @@ In order to deal with the upgrades you have three options:
 
 <ol class="article-list">
 
-<li>Leave the package updates, if you're concerned about your app stability.</li>
+<li>Leave the package updates, safest bet or if you're concerned about your app stability.</li>
 
-<li>Update the packages yourself through sudo apt-get -y dist-upgrade (if there is a new feature you're after or just want to be running the latest)</li>
+<li>Update the packages yourself through `sudo apt-get -y upgrade` or dist-upgrade package (if there is a new feature you're after or just want to be running the latest)</li>
 
 <li>Update the packages indirectly through scaling up a new server, and then dropping the old one (the new server will always get the latest packages installed on it);</li>
 </ol>
