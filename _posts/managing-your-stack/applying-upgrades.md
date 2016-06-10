@@ -103,14 +103,14 @@ You can bump up the Rails version in your `Gemfile` and redeploy your stack. Thi
 
 The recommended way to upgrade your passenger to the latest one is:
 
-* Scale up a new web server and drop the old one, so the scaled up one will automatically have the latest version supported by Cloud 66.
+* Scale up a new web server and drop the old one, so the scaled up one will automatically have the [latest version](/introduction-to-cloud-66/technical-specifications#versions) supported by Cloud 66.
 
 <h3 id="docker">Docker and Weave</h3>
 <div class="notice">
     <h3>Tip!</h3>
     <p>It is best to keep your Docker and Weave versions up to date as they are released quite frequently with bug/security fixes </p>
 </div>
-1. Update your manifest file (Configuration Files -> Manifest.yml) and change the Docker and Weave version to the [latest ones](http://help.cloud66.com/introduction-to-cloud-66/technical-specifications#versions).
+1. Update your manifest file (Configuration Files -> Manifest.yml) and change the Docker and Weave version to the [latest ones](/introduction-to-cloud-66/technical-specifications#versions).
 
 <p>2. Click on <b>DEPLOY</b> and choose <b>Deploy with options</b></p>
 <p>3. Go to the <b>More options</b> tab and tick the <b>Apply Docker upgrades</b> check box.</p>
