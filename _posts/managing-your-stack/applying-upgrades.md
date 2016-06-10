@@ -21,6 +21,7 @@ tags: ['']
 	        <li><a href="#ubuntu">Ubuntu</a></li>
 	        <li><a href="#ruby">Ruby</a></li>
 	        <li><a href="#rails">Rails</a></li>
+            <li><a href="#passemger">Passenger</a></li>
             <li><a href="#docker">Docker and Weave</a></li>
             <li><a href="#packages">Update Packages</a></li>
         </ul>
@@ -97,6 +98,12 @@ Although the in-place Ruby base version upgrade path is provided for simplicity 
 
 <h3 id="rails">Rails</h3>
 You can bump up the Rails version in your `Gemfile` and redeploy your stack. This will upgrade your Rails. Ensure that you upgrade your Ruby and Rails applications with [best practices](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html).
+
+<h3 id="passenger">Passenger</h3>
+
+The recommended way to upgrade your passenger to the latest one is:
+
+* Scale up a new web server and drop the old one, so the scaled up one will automatically have the latest version supported by Cloud 66.
 
 <h3 id="docker">Docker and Weave</h3>
 <div class="notice">
