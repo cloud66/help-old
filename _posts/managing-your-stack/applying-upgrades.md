@@ -21,7 +21,7 @@ tags: ['']
 	        <li><a href="#ubuntu">Ubuntu</a></li>
 	        <li><a href="#ruby">Ruby</a></li>
 	        <li><a href="#rails">Rails</a></li>
-            <li><a href="#passemger">Passenger</a></li>
+            <li><a href="#passenger">Passenger</a></li>
             <li><a href="#docker">Docker and Weave</a></li>
             <li><a href="#packages">Update Packages</a></li>
         </ul>
