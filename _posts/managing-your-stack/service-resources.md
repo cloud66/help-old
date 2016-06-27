@@ -1,0 +1,26 @@
+---
+layout: post
+template: one-col
+title:  "Service resources"
+so_title: "resource"
+date:   2085-09-24 10:51:22
+categories: managing-your-stack
+lead: Managing resources for your Docker service
+search-tags: []
+tags: ['']
+---
+
+By default, docker services will use as much CPU or memory as they require. You may, however, wish to set a hard limit on memory, or the relative CPU shares used by a service. This can be accomplished with the `constraints/resources` directive.
+
+The default number of CPU shares given to a service is 1024. This is a relative number - if the service of container A has 1024 CPU shares, and the service of container B has 512 CPU shares, and both containers attempt to use 100% of the CPU, then container B will receive half of the total CPU time. This only applies when CPU-intensive tasks are running, as if one container is idle then the others can use the remaining CPU time.
+
+On Ubuntu 14.04, the memory limit will apply only to RAM usage, not swap usage. Once Ubuntu 16.04 support is released, the memory limit will limit both RAM and swap usage for a given container. A valid entry is a positive number, followed by one of "b", "k", "m", or "g", with the minimum being "4m".
+
+{% highlight yaml %}
+services:
+    &#60;service_name&#62;:
+        constraints:
+            resources:
+                memory: "100m"
+                cpu: 512
+{% endhighlight %}

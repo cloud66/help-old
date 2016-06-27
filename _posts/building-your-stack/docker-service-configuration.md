@@ -108,7 +108,7 @@ Below is a table of the available configurations for a given service with a brie
 </tr>
 <tr>
     <td><a href="/managing-your-stack/scaling#services">constraints</a></td>
-    <td>Specifies constraints for a service across the cluster.</td>
+    <td>Specifies <a href="/managing-your-stack/scaling#services">container amount</a> or <a href="/managing-your-stack/service-resources">resource</a> constraints for a service across the cluster.</td>
 </tr>
 <tr>
     <td><a href="/building-your-stack/building-your-docker-service#deploy_command">deploy_command</a></td>
