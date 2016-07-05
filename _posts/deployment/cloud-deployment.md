@@ -46,12 +46,10 @@ Cloud 66 currently supports the following cloud providers:
 
 <div class="notice notice-warning">
     <h3>Notice</h3>
-    <p>Should you wish to delete your stack on Cloud 66, your servers <b>will not</b> be deleted on your cloud provider.</p>
+    <p>Should you wish to delete your stack on Cloud 66, your servers <b>will not</b> be deleted on your cloud provider unless <a href="/managing-your-stack/server-deletion">physical server deletion</a> is turned on.</p>
 </div>
 
-As it's hard for us to determine if you're using your servers for other activities, we won't delete them on your cloud provider if you delete your stack.
-
-If you don't want to use a cloud provider with Cloud 66, you can [deploy to your own server](/deployment/deploy-to-your-own-server), although some features will not be available.
+If you don't want to use a cloud provider with Cloud 66, you can [deploy to your own server](/deployment/registered-servers).
 
 <h2 id="deploy">Deploy to your cloud</h2>
 To deploy to your cloud, visit the Cloud 66 Dashboard and select _Get started building a stack_. After connecting to your Git repository and analyzing your code, you will be asked for your cloud API keys. Refer to the links above for more information about retrieving the keys from your cloud provider.

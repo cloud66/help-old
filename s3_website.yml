@@ -125,7 +125,7 @@ redirects:
   how-to/running-rake-tasks.html: "http://community.cloud66.com/articles/running-rake-tasks"
   getting-started/introduction.html: /introduction-to-cloud-66/introduction.html
   getting-started/supported-clouds.html: /deployment/cloud-deployment.html
-  getting-started/standalone-servers.html: /deployment/server-deployment.html
+  getting-started/standalone-servers.html: /deployment/registered-servers.html
   getting-started/supported-frameworks.html: /tech-specs/versions.html
   stacks/versions.html: /tech-specs/versions.html
   getting-started/what-is-a-stack.html: /stack-definition/stack-definition.html

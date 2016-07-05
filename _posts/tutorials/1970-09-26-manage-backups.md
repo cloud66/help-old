@@ -8,7 +8,7 @@ cloud66_sticky: true
 date:   1920-09-26 15:33:13
 categories: 
 lead: Download, move, and restore your Cloud 66 backups
-search-tags: ['']
+search-tags: ['backup, Postgres, unmanaged']
 tags: ['Database']
 tutorial: true
 difficulty: 0

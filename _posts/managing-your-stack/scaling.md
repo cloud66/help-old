@@ -63,7 +63,7 @@ When you first build your stack, your processes are run on your web server by de
 Once the server is ready, you can move your processes from the web server to the process server by using the <i>+</i> and <i>-</i> buttons. The process server is very much like a web server, as it needs all the code and dependencies for your workers. By default however, it will not serve web content. If you would like the process server to serve web content, add a load balancer to your stack and access the load balancer page. This page allows you to toggle serving web content from a process server _On_ and _Off_.
 
 <h3 id="db">Database servers</h3>
-You can scale your database servers through database replication. See our [database management section](/database-management/database-management) for more information.
+You can scale your database servers through database replication, or Elasticsearch through [sharding](/database-management/elasticsearch-scaling). See our [database management section](/database-management/database-management) for more information.
 
 <h3 id="services">Docker services</h3>
 You can scale your Docker services horizontally across your Docker cluster by clicking the _Docker cluster_ server group from your stack page, and using the <i>+</i> and <i>-</i> buttons to increase or decrease the number of running containers on each server.
@@ -78,6 +78,11 @@ services:
 </pre>
 
 <h2 id="vertical">Vertical scaling</h2>
+
+<div class="notice notice-danger">
+    <h3>Note</h3>
+    <p>This only applies to Rails stacks not Docker ones</p>
+</div>
 A number of cloud vendors allow you to increase and/or decrease the size of an existing server via their dashboard, allowing you to change the memory and CPU for existing servers. Vertical scaling works the same way for all server types.
 
 Follow these steps to scale your server vertically:

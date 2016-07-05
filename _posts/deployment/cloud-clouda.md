@@ -30,5 +30,5 @@ Visit the Cloud 66 Dashboard and select _Get started building a stack_. After co
 
 <div class="notice notice-warning">
     <h3>Notice</h3>
-    <p>Should you wish to delete your stack on Cloud 66, your servers <b>will not</b> be deleted on your cloud provider.</p>
+    <p>Should you wish to delete your stack on Cloud 66, your servers <b>will not</b> be deleted on your cloud provider unless <a href="/managing-your-stack/server-deletion">physical server deletion</a> is turned on.</p>
 </div>

@@ -18,7 +18,7 @@ tags: ['Add in']
 To add Memcached to your stack, access the add-ins menu, click _Memcached_ and confirm the installation. This will install Memcache on your servers for use with your application - you just need to ensure that your app is configured accordingly.
 
 ## Customize Memcached
-To customize Memcached, use the following syntax in your [manifest file](/building-your-stack/getting-started-with-manifest-files):
+To customize Memcached, use the below syntax in your [manifest file](/building-your-stack/getting-started-with-manifest-files) and redeploy the stack with `Apply security upgrades` option.
 
 <pre class="terminal">
 production:
@@ -34,3 +34,7 @@ production:
 	<h3>Note</h3>
 	<p>For docker stacks this will be added to the host not as a container.</p>
 </div>
+
+## Check Memcached
+
+You can find the details about Memcached under your `Settings & Information`, `Information` tab. Since having Memcached as a separate server will not improve performance, Cloud66 will install it on each web server, not as a standalone server. [More info:](http://community.cloud66.com/articles/memcached)

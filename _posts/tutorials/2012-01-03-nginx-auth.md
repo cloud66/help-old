@@ -32,19 +32,6 @@ auth_basic "Restricted";
 auth_basic_user_file &#123;&#123; deploy_to &#125;&#125;/current/.htpasswd;
 </pre>
 
-<h4>Passenger</h4>
-
-<ul>
-<li>HTTP: Line <i>116</i></li>
-<li>HTTPS: Line <i>190</i></li>
-</ul>
-
-<h4>Unicorn and others</h4>
-
-<ul class="article-list">
-<li>HTTP: Line <i>122</i></li>
-<li>HTTPS: Line <i>197</i></li>
-</ul>
 <br/><br/>
 <p>This will read your password file from your repository directory on the server. Once you save that configuration, it will apply immediately on your server.</p>
 </ol>

@@ -52,7 +52,7 @@ A web application stack is a set of hardware and software components needed for 
 
 For example, your stack might be comprised of a load balancer, a number of web servers, process and database servers, your operating system and finally the hardware provided by your cloud vendor:
 
-<p align="center"><img src="http://cdn.cloud66.com/images/help/cloud66_stack.png"></p>
+<p align="center"><img src="http://cdn.cloud66.com/images/rails_stack_workflow.png"></p>
 
 <hr>
 
@@ -84,7 +84,7 @@ Cloud 66 makes it easy for you to [backup your database](/database-management/da
 Your servers will be deployed with <b>Ubuntu 14.04 LTS</b>. On the operating system level, you can [monitor disk, CPU and memory](/managing-your-stack/server-monitoring) from the dashboard.
 
 <h3 id="cloud">Cloud vendor</h3>
-You can either [deploy to your cloud](/deployment/deploy-to-your-cloud) or [deploy to your own server](/deployment/deploy-to-your-own-server).
+You can either [deploy to your cloud](/deployment/deploy-to-your-cloud) or [deploy to your own server](/deployment/registered-servers).
 
 <hr>
 
