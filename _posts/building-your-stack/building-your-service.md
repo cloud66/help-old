@@ -31,13 +31,14 @@ tags: ['']
             <li><a href="#git_url">Git URL</a></li>
             <li><a href="#git_branch">Git branch</a></li>
             <li><a href="#image">Image</a></li>
+						<li><a href="#use-habitus">Using Habitus for builds</a></li>
             </ul>
         </li>		
 </ul>
 
-When building your Docker stack, you can either let us create them for you with our powerful cluster of servers called BuildGrid, or provide us with your own image. When using BuildGrid, your image is built based on your source code and a Dockerfile, which specifies how you want it to be created. 
+When building your Docker stack, you can either let us create them for you with our powerful cluster of servers called BuildGrid, or provide us with your own image. When using BuildGrid, your image is built based on your source code and a Dockerfile, which specifies how you want it to be created.
 
-Using BuildGrid lets you focus on what you do best and avoids you having to create internal processes to output Docker images. You can even integrate your CI solution, so that new images are built and pushed to your servers once all your tests pass. 
+Using BuildGrid lets you focus on what you do best and avoids you having to create internal processes to output Docker images. You can even integrate your CI solution, so that new images are built and pushed to your servers once all your tests pass.
 
 <h2 id="git">Pull code from Git</h2>
 For BuildGrid to pull code from your Git repository and build your image, you will need to provide a `git_url` and `git_branch`. Simply place a Dockerfile in your repository to determine how the image should be built. These images are built continuously from your source code and are stored in a private Docker image repository, available to be used locally or pushed to production servers.
@@ -166,3 +167,16 @@ services:
     &#60;service_name&#62;:
         image: quay.io/&lt;namespace&gt;/&lt;image_name&gt;
 </pre>
+
+<h3 id="use-habitus">Using Habitus for builds</h3>
+<p><a href="http://www.habitus.io">Habitus is a build workflow tool for Docker</a>. It allows you to create a build workflow consisting of multiple steps for your Docker stacks on BuildGrid. Cloud 66 BuildGrid fully supports Habitus. To enable Habitus on BuildGrid builds, you need to do the following:</p>
+
+<ol>
+<li>Add a <code>build.yml</code> to your repository</li>
+<li>Set <code>use_habitus</code> attribute to <code>true</code> in your <code>service.yml</code></li>
+<li>Set the <code>use_habitus_step</code> to the step you would like to use for your servide in your <code>service.yml</code></li>
+</ol>
+
+Check out the <a href="http://www.habitus.io">Habitus website</a> for more information about generating a <code>build.yml</code>.
+
+A Habitus build usually has multiple steps and each step can generate a Docker image. Using <code>use_habitus_step</code> attribute you can specify which step's results you would like to use as the image for the container. 

@@ -131,6 +131,15 @@ Below is a table of the available configurations for a given service with a brie
     <td>The Git repository branch your Docker image will be based on.</td>
 </tr>
 <tr>
+    <td><a href="/building-your-stack/building-your-docker-service#use-habitus">use_habitus</a></td>
+    <td>Use <a href="http://www.habitus.io">Habitus</a> build workflow</td>
+</tr>
+<tr>
+    <td><a href="/building-your-stack/building-your-docker-service#use-habitus">use_habitus_step</a></td>
+    <td>The <a href="http://www.habitus.io">Habitus</a> step to use for the build.</td>
+</tr>
+
+<tr>
     <td><a href="/managing-your-stack/service-life-cycle-management#health">health</a></td>
     <td>One of the values: <i>default</i>, <i>none</i> or a hash containing at least one of <i>type</i>, <i>endpoint</i>, <i>protocol</i>, <i>accept</i> or <i>timeout</i>.</td>
 </tr>
