@@ -14,7 +14,7 @@ tags: ['puma, unicorn, thin, custom, health, "The web process could not be start
 
 <ul class="page-toc">
     <li>
-        <a href="health_check">Health check during deployment</a>
+        <a href="health_check">Health Check During Deployment</a>
     </li>
     <li>
         <a href="alerts">New Status Alerts</a>
@@ -34,7 +34,7 @@ This does not apply to Docker or Passenger based stacks as they have other healt
 
 <h2 id="alerts">New Status Alerts</h2>
 
-Additionally, there are three alerts that can be enabled at stack level that will notify whenever the web server is detected as "Started", "Stopped" or "Unmonitored"س
+Additionally, there are three alerts that can be enabled at stack level that will notify whenever the web server is detected as "Started", "Stopped" or "Unmonitored"
 
 Started alerts are self explanatory and will fire whenever your web application goes from any other state to "Started". Stopped alerts indicate that your web application has gone to a "Stopped" state. This usually means that it has failed for some reason. From this state, Bluepill will automatically try and restart the application. Unmonitored alerts indicate that Bluepill is no longer controlling your web process, and this typically happens when Bluepill needs to reload your application (for environment variable changes for example) or when your application itself dissappears completely (in the case of Out Of Memory killer for example).
 
