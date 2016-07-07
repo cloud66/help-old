@@ -14,10 +14,10 @@ tags: ['puma, unicorn, thin, custom, health, "The web process could not be start
 
 <ul class="page-toc">
     <li>
-        <a href="health_check">Health Check During Deployment</a>
+        <a href="#health_check">Health Check During Deployment</a>
     </li>
     <li>
-        <a href="alerts">New Status Alerts</a>
+        <a href="#alerts">New Status Alerts</a>
     </li>
  </ul>
 
