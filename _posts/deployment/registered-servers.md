@@ -7,7 +7,7 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: deployment
 lead: Deploy to your own infrastructure
-search-tags: ['registered', 'servers', 'byos']
+search-tags: ['registered', 'servers', 'byos', 'own']
 tags: ['Registered servers']
 ---
 
