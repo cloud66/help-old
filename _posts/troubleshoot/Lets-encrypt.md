@@ -17,7 +17,6 @@ tags: ['troubleshoot']
 <ul class="page-toc">
     <li><a href="#installation">How it is installed</a></li>
     <li><a href="#troubleshoot">Troubleshoot</a></li>
-    <li><a href="#constraints">Constraints</a></li>
      
 </ul>
 
@@ -114,8 +113,5 @@ http {
         }
     }
 </pre>
+<li>You might hit the <a href="https://letsencrypt.org/docs/rate-limits/">Limits</a></li>
 </ol>
-
-<h2 id="Constraints">Constraints</h2>
-
-Please check this <a href="https://letsencrypt.org/docs/rate-limits/">link</a> from Lets encrypt website.
