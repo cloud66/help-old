@@ -30,6 +30,7 @@ You can find your Logentries account ID in your account page. For more informati
 
 ### Logs are empty in Logentries
 
-If your log files show up in your Logentries account but they are empty, try to SCAN FOR NEW LOGS. In order to do that you will need to 
-1. Go to your log analyzer config page (click on logentries in your stack page under External add-ins) and 
-2. Push the SCAN FOR NEW LOGS button.
+If your log files show up in your Logentries account but they are empty, try to <b>SCAN FOR NEW LOGS</b>. In order to do that you will need to:
+
+- Go to your log analyzer config page (click on logentries in your stack page under External add-ins).
+- Push the SCAN FOR NEW LOGS button.
