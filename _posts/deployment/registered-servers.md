@@ -43,10 +43,16 @@ Once the shell script has successfully completed, the server will now show up in
 You can run the command below to register your servers using the [toolbelt](http://help.cloud66.com/toolbelt/toolbelt-introduction):
 
 <pre class="prettyprint">
-$ cx register-server --org="My Team" [--file=servers_file | --server=ip_address] --user=root
+$ cx register-server --org="My Team" --file=servers_file --user=root
 </pre>
 
 To register a single server, use the `server` flag with the IP address, and to bulk register, provide a text file with the `file` flag with one IP address per line.
+
+To add tags to the registered servers, use the `tags` option:
+
+<pre class="prettyprint">
+$ cx register-server --org="My Team" --server=197.23.65.11 --user=root --tags="dc-1,az US"
+</pre>
 
 <h2 id="pointers">Requirements</h2>
 - OS: We currentlu only support **Ubuntu 14.04** and it needs to be **freshly installed** on your server.
