@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "Let's Encrypt"
+title:  "Lets Encrypt"
 so_title: false
 nav_sticky: false
 nav: false
