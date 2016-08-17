@@ -8,8 +8,8 @@ cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
 categories: stack-add-ins
 lead: Managed and unmanaged database backups
-search-tags: ['backups', 'database', 'database backup', 'unmanaged', 'managed']
-tags: ['Database', 'Add in']
+search-tags: ['backups', 'database', 'database backup', 'unmanaged', 'managed', 'manage']
+tags: ['Database', 'Add in', 'manage']
 ---
 
 <h2>Contents</h2>

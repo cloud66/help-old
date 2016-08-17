@@ -34,6 +34,8 @@ A Let's Encrypt Python script called _acme_tiny.py_  puts a file with random nam
 
 <li>Nginx Config</li>
 
+You need the following lines in your nginx config:
+
 <pre class="prettyprint">
 http {
     .
