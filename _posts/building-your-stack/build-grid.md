@@ -14,6 +14,7 @@ tags: ['Deployment']
 <ul class="page-toc">
     <li><a href="#what-is-buildgrid">What is BuildGrid?</a></li>
     <li><a href="#how-to-use-buildgrid">How to use BuildGrid?</a></li>
+    <li><a href="#env-var">Using envoironment variables in dockerfile</a></li>
     <li><a href="#build-and-publish">Build and Publish</a></li>
 </ul>
 
@@ -37,6 +38,20 @@ The built image is then pulled from this repository on all the applicable server
 
 Find more information on [BuildGrid configuration in service.yml](/building-your-stack/building-your-docker-service).
 
+<h2 id="env-var">Envoironment variables in BuildGrid</h2>
+
+You can pass environment variables into your Dockerfile during your build process <span style="background-color: #FFFF00">(if using BuildGrid)</span> with the $VARIABLE syntax, which will be populated with environment variable(s) set on the stack. For example let's say you have an environment variable called `MY_FOLDER` with the value `/path/to/myfolder`. If you run the following command in your dockerfile:
+
+<pre class="prettyprint">
+RUN COPY FILE_FROM_REPO $MY_FOLDER
+</pre>
+Cloud 66 will change this line to:
+
+<pre class="prettyprint">
+RUN COPY FILE_FROM_REPO /path/to/myfolder
+</pre>
+
+and then it starts building from the finalized dockerfile.
 
 <h2 id="build-and-publish">Build and Publish</h2>
 
