@@ -25,6 +25,9 @@ tags: ['Deployment']
 	<li>
 		<a href="#scale">Scaling background processes</a>
 	</li>
+	<li>
+		<a href="#pause_resume">Pausing and resuming background processes</a>
+	</li>
 </ul>
 
 <h2 id="about">About running background processes</h2>
@@ -68,3 +71,15 @@ This integer should be unique across processes, so that multiple processes won't
 You can scale your background processes up and down on the process server page. On your stack detail page, click the link to your _Process server_ group on your stack detail page. Use the <i>+</i> and <i>-</i> buttons to scale your processes up and down.
 
 You can also scale up a [standalone process server](/managing-your-stack/scaling#process) for more resources.
+
+<h2 id="pause_resume">Pause and resume background processes</h2>
+
+On each process server you can pause and resume your background processes! You will find that in your stack page under process server.
+
+* **Pause** is scaling down the processes to zero.
+* **Resume** is scaling them back up to the number of processes there were before pause.
+
+
+
+
+
