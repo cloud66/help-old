@@ -37,12 +37,12 @@ Wrote file to /etc/cloud66/webroot/FILENAME, but couldn't download http://DNS_NA
 </pre> 
 You need to go through the following steps:
 <ol>
-<Li><b>delete the SSL ceritficate</b> first and then carry on to the next step.
+<Li><b>Delete the SSL ceritficate</b> first and then carry on to the next step.
 <li>If your infrastructure is behind <a href="https://www.cloudflare.com">Cloudflare</a> and your are using a global HTTPS redirect you need a <a href="https://support.cloudflare.com/hc/en-us/articles/200168306-Is-there-a-tutorial-for-Page-Rules-">pagerule </a> to get things working. Make sure you add a <a href="https://support.cloudflare.com/hc/en-us/articles/200168306-Is-there-a-tutorial-for-Page-Rules-">pagerule </a> because Let's Encrypt needs a non-secure HTTP endpoint (/.well-known/acme_challenge/*) to invoke and reissue certificates.</li>
 
 <li>Nginx Config</li>
 
-If the issue hasn't been solved, there could be some parts missing in your Nginx config, probably due to customization or config file not being up to date. The following parts take care of redirections -like HTTP to HTTPS redirection or adding/removing www to the link- so that the file could be accessible via HTTP endpoint.<br>
+There could be some parts missing in your Nginx config, probably due to customization or config file not being up to date. The following parts take care of redirections -like HTTP to HTTPS redirection or adding/removing www to the link- so that the file could be accessible via HTTP endpoint.<br>
 <span style="background-color: #FFFF00"><b> First delete the SSL certificate and then apply the changes.</b></span>
 
 <pre class="prettyprint">
