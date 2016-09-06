@@ -103,6 +103,8 @@ You can still safely redeploy your stack while maintenance mode is enabled - the
 
 To supply your own maintenance page, simply place your file in the following path of your repository:
 
+You can find it in *Stack page* --> *Network settings* --> *Redirects* tab
+
 <pre class="terminal">
 /.cloud66/maintenance.html
 </pre>
@@ -112,5 +114,9 @@ You can easily <a href="/stack-add-ins/ssl-certificate">add your SSL certificate
 
 This works by reconfiguring your Nginx configuration, so any visitor that arrives at port 80 and HTTP will receive a permanent HTTP redirect (301) to the same address on HTTPS.
 
+You can find it in *Stack page* --> *Network settings* --> *Redirects* tab 
+
 <h3 id="www">WWW or non-WWW in your URL</h3>
 Some sites serve traffic on <code>www.domain.com</code>, while others use the bare <code>domain.com</code>. By default, your servers will serve traffic for any DNS record pointing to their address. This setting allows your to redirect visits to <code>www.domain.com</code> to <code>domain.com</code>, and vice-versa. This works by changing your Nginx configuration to permanently redirect (HTTP 301) visitors to the desired address.
+
+You can find it in *Stack page* --> *Network settings* --> *Redirects* tab
