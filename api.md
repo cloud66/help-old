@@ -295,15 +295,20 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 ### Digital Ocean
 | Instance size | Value |
 | --------- | --------- |
-| 512MB - 1 CPU | 512mb |
-| 1GB - 1 CPU | 1gb |
-| 2GB - 2 CPU | 2gb |
-| 4GB - 2 CPU | 4gb |
-| 8GB - 4 CPU | 8gb |
-| 16GB - 8 CPU | 16gb |
-| 32GB - 12 CPU | 32gb |
-| 48GB - 16 CPU | 48gb |
-| 64GB - 20 CPU | 64gb |
+| 512MB - 1 CPU (Standard) | 512mb |
+| 1GB - 1 CPU (Standard) | 1gb |
+| 2GB - 2 CPU (Standard) | 2gb |
+| 4GB - 2 CPU (Standard) | 4gb |
+| 8GB - 4 CPU (Standard) | 8gb |
+| 16GB - 8 CPU (Standard) | 16gb |
+| 32GB - 12 CPU (Standard) | 32gb |
+| 48GB - 16 CPU (Standard) | 48gb |
+| 64GB - 20 CPU (Standard) | 64gb |
+| 16GB - 2 CPU (High memory) | m-16gb |
+| 32GB - 4 CPU (High memory) | m-32gb |
+| 64GB - 8 CPU (High memory) | m-64gb |
+| 128GB - 16 CPU (High memory) | m-128gb |
+| 224GB - 32 CPU (High memory | m-224gb |
 
 ### Google Compute Engine
 | Instance size | Value |
