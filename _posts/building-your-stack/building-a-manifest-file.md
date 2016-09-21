@@ -292,7 +292,7 @@ production:
 
 #### CORS configuration
 
-If required, you can also specify the origin and methods for CORS.
+If required, you can also specify the allowed origins, methods, headers, and whether to allow credentials for CORS.
 
 <pre class="prettyprint">
 production:
@@ -302,6 +302,8 @@ production:
                 cors:
                     origin: '*'
                     methods: 'GET, OPTIONS'
+                    headers: 'Custom-Header, Another-Header'
+                    credentials: true
 </pre>
 
 <hr>

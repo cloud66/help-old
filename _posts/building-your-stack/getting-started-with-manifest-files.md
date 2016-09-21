@@ -114,6 +114,8 @@ production:
                 cors:
                     origin: '*'
                     methods: 'GET, OPTIONS'
+                    headers: 'Custom-Header, Another-Header'
+                    credentials: true
 </pre>
 
 This is how it works:
@@ -128,9 +130,13 @@ This is how it works:
 
 **cors** CORS related settings to follow.
 
-**origin** CORS setting: What are the valid origin domains for a CORS request.
+**origin** CORS setting: What are the valid origin domains for a CORS request. Can be '\*' or a comma seperated list of origins.
 
 **methods** CORS setting: HTTP methods allowed for CORS requests.
+
+**headers** CORS setting: Allowed custom headers for CORS requests.
+
+**credentials** CORS setting: Specifies whether requests with credentials are allowed for CORS requests.
 
 Now that your `manifest.yml` file is in place under your `.cloud66` folder, you can commit this file to your Git and deploy a new stack with it.
 

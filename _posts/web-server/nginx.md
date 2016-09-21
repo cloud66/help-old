@@ -1833,12 +1833,37 @@ The following variables are available for use in your <b>Docker stack</b> Nginx 
     <tr>
       <td>cors_origin</td>
       <td>string</td>
-      <td>CORS Origins</td>
+      <td>CORS Origins string</td>
+    </tr>
+    <tr>
+      <td>cors_origins</td>
+      <td>array</td>
+      <td>List of CORS origins</td>
+    </tr>
+    <tr>
+      <td>cors_all_origins</td>
+      <td>boolean</td>
+      <td>CORS allow all origins</td>
     </tr>
     <tr>
       <td>cors_methods</td>
       <td>string</td>
       <td>CORS Methods</td>
+    </tr>
+    <tr>
+      <td>cors_headers</td>
+      <td>string</td>
+      <td>CORS allowed custom headers</td>
+    </tr>
+    <tr>
+      <td>cors_headers</td>
+      <td>string</td>
+      <td>CORS allowed custom headers</td>
+    </tr>
+    <tr>
+      <td>cors_credentials</td>
+      <td>boolean</td>
+      <td>CORS allow credentials</td>
     </tr>
     <tr>
       <td>has_ha_proxy_load_balancer</td>
@@ -1870,6 +1895,21 @@ The following variables are available for use in your <b>Docker stack</b> Nginx 
       <td>boolean</td>
       <td>Does your Nginx instance use the Real IP module?</td>
     </tr>  
+    <tr>
+      <td>stack_supports_nginx_tcp_and_udp_reverse_proxy</td>
+      <td>boolean</td>
+      <td>Does your stack support TCP and UDP reverse proxy?</td>
+    </tr>
+    <tr>
+      <td>supports_tcp_proxy</td>
+      <td>boolean</td>
+      <td>Does your NGINX version support TCP reverse proxy and load balancing?</td>
+    </tr>
+    <tr>
+      <td>supports_udp_proxy</td>
+      <td>boolean</td>
+      <td>Does your NGINX version support UDP reverse proxy and load balancing?</td>
+    </tr>
     <tr>
       <td>has_load_balancer</td>
       <td>boolean</td>
@@ -2002,12 +2042,37 @@ The following variables are available for use in your <b>Ruby stack</b> Nginx Cu
     <tr>
       <td>cors_origin</td>
       <td>string</td>
-      <td>CORS Origins</td>
+      <td>CORS Origins string</td>
+    </tr>
+    <tr>
+      <td>cors_origins</td>
+      <td>array</td>
+      <td>List of CORS origins</td>
+    </tr>
+    <tr>
+      <td>cors_all_origins</td>
+      <td>boolean</td>
+      <td>CORS allow all origins</td>
     </tr>
     <tr>
       <td>cors_methods</td>
       <td>string</td>
       <td>CORS Methods</td>
+    </tr>
+    <tr>
+      <td>cors_headers</td>
+      <td>string</td>
+      <td>CORS allowed custom headers</td>
+    </tr>
+    <tr>
+      <td>cors_headers</td>
+      <td>string</td>
+      <td>CORS allowed custom headers</td>
+    </tr>
+    <tr>
+      <td>cors_credentials</td>
+      <td>boolean</td>
+      <td>CORS allow credentials</td>
     </tr>
     <tr>
       <td>has_ha_proxy_load_balancer</td>
