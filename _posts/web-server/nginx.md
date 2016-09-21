@@ -1856,11 +1856,6 @@ The following variables are available for use in your <b>Docker stack</b> Nginx 
       <td>CORS allowed custom headers</td>
     </tr>
     <tr>
-      <td>cors_headers</td>
-      <td>string</td>
-      <td>CORS allowed custom headers</td>
-    </tr>
-    <tr>
       <td>cors_credentials</td>
       <td>boolean</td>
       <td>CORS allow credentials</td>
@@ -2058,11 +2053,6 @@ The following variables are available for use in your <b>Ruby stack</b> Nginx Cu
       <td>cors_methods</td>
       <td>string</td>
       <td>CORS Methods</td>
-    </tr>
-    <tr>
-      <td>cors_headers</td>
-      <td>string</td>
-      <td>CORS allowed custom headers</td>
     </tr>
     <tr>
       <td>cors_headers</td>
