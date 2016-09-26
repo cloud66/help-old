@@ -27,7 +27,7 @@ To add Logentries, access the add-ins menu of your stack and click _Logentries_.
 
 We'll ask you for your Logentries account key - if you don't have one, you can signup to a Logentries account.
 
-You can find your Logentries account ID in your account page. For more information, please see the [Logentries guide to integrating with Cloud 66](https://logentries.com/doc/cloud66/).
+You can find your Logentries account ID in your account page. For more information, please see the [Logentries guide to integrating with Cloud 66](https://docs.logentries.com/docs/accountkey/).
 
 <div class="notice notice-danger">
 	<h3>Note</h3>
