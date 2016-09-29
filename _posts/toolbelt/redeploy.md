@@ -56,7 +56,7 @@ $ cx redeploy [-s &lt;stack&gt;] [-y] [--git-ref &lt;git_ref&gt;] [--service &lt
         </tr>
         <tr>
             <td><i>service</i> (optional, repeatable, Docker only)</td>
-            <td>Will deploy the specified services from your stack only. Each service can have an optional colon-separated reference. For image based services the reference is taken as an image tag, for git based services the reference is taken as a `git reference`.</td>
+            <td>Will deploy the specified services from your stack only. Each service can have an optional colon-separated reference which is <b>image tag</b> or <b>git reference</b> for image based services, or for git based services.</td>
         </tr>
         <tr>
             <td><i>listen</i> (optional)</td>
