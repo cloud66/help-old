@@ -11,3 +11,19 @@ tags: ['Scaling']
 ---
 
 <h2 id="beta">WARNING: Node.js stacks are in BETA</h2>
+
+<h3> Scale your instances </h3>
+
+Your application is up and running but you need more capacity for your application or background jobs. Cloud 66 provides an easy mechanismne to scale up your application and running jobs instances. If your server has the capacity and is not utitalized more then 80% your can scale your instances in a blink on a eye.
+
+<ul>
+<li> Click on your stack </li>
+<li> Click on your Node Server </li>
+<li> Find the application (web) or job instance you want to scale</li>
+<li> Scale up the instances by pressing the 'Scale up' (+) button</li>
+<li> Hit scale </li>
+<li> Wait a couple of seconds </li>
+<li> Scaled up </li>
+</ul>
+
+If your need more capacity and your server is running low on resources (> 80% utilizisation) it's time to scale vertically and/or horizonally. <a href="/managing-your-stack/scaling">Please read this document how easy it is to scale your application with Cloud 66.</a>
