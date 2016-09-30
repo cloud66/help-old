@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "Scaling"
+title:  "Scale your Node.js application"
 nav_sticky: false
 date:   2088-01-25 16:27:22
 categories: building-your-nodejs-stack
@@ -10,4 +10,4 @@ search-tags: []
 tags: ['Scaling']
 ---
 
-...
+<h2 id="beta">WARNING: Node.js stacks are in BETA</h2>

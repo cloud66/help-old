@@ -58,6 +58,8 @@ tags: ['']
       <li>An SSH key and IP address for your server (<a href="/deployment/deploy-to-your-own-server">add a SSH key</a>)</li>
     </ul> 
   </li>
+   <li><a href="/building-your-nodejs-stack/specific-settings-for-your-node-js-application">Application specific settings</a>
+  </li>
 </ul>
 
 <h2 id="1">Step 1. Build your stack</h2>
@@ -128,7 +130,7 @@ Your stack is up and running, and you can start customizing by:
 
 <ul class="list">
 <li><a href="/stack-add-ins/database-backups">Define a backup</a></li>
-<li><a href="/building-your-nodejs-stack/scaling">Scale your Node.js application</a></li>
+<li><a href="/building-your-nodejs-stack/scale-node">Scale your Node.js application</a></li>
 <li><a href="/managing-your-stack/stack-network-settings">Configure security</a></li>
 <li><a href="/stack-add-ins/add-in-implementation">Configure an add-in</a></li>
 </ul>
