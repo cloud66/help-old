@@ -37,6 +37,8 @@ During the analyse phase we analyse your runtime depencies defined in the <b>pac
 <li> the package <i>redis</i> will trigger the provisioning of Redis</li>
 </ul>
 
+If you need other datasources later on, you can always add new datasource using the <a href="/category/stack-add-ins">Add-in feature</a>.
+
 <h3> Expose your host port</h3>
 
 Of course your application will bind to a port we need to expose to the internet and make sure we can load balance traffic to your application. We provide you with the environment variable called PORT to tell which port your need to bind your application to. Make sure your use the following line:
@@ -100,3 +102,10 @@ work: node some_work.js
 </pre>
 
 The commands above would run node server.js and node some_work.js and monitor them. Cloud 66 will attempt to bring processes that go down or crash up again. Processes are also instructed to start when your server is booted. An overall view of your processes is available in your stack detail page.
+
+
+<h3> Final notes </h3>
+
+None of the files created on the filesystem after the stack is deployed are persistent. If you need persistency for files, for example some uploaded data, <a href="/stack-add-ins/glusterfs">please use the GlusterFS add-in</a>.
+
+
