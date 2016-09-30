@@ -32,7 +32,7 @@ During the analyse phase we analyse your runtime depencies defined in the <b>pac
 
 <ul>
 <li> the package <i>mysql</i> will trigger the provisioning of Mysql</li>
-<li> the package <i>mongoose</i> will trigger the provisioning of MongoDB</li>
+<li> the package <i>mongoose</i> or <i>mongodb</i> will trigger the provisioning of MongoDB</li>
 <li> the package <i>pg</i> will trigger the provisioning of Postgresql</li>
 <li> the package <i>redis</i> will trigger the provisioning of Redis</li>
 </ul>
