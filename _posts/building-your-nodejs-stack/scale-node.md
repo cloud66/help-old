@@ -14,7 +14,7 @@ tags: ['Scaling']
 
 <h3> Scale your instances </h3>
 
-Your application is up and running but you need more capacity for your application or background jobs. Cloud 66 provides an easy mechanismne to scale up your application and running jobs instances. If your server has the capacity and is not utitalized more then 80% your can scale your instances in a blink on a eye.
+Your application is up and running but you need more capacity for your application or background jobs. Cloud 66 provides an easy mechanism for scaling up your application and running jobs instances. If your server has the capacity and is not fully utilised your can scale your instances in a blink on an eye. 
 
 <ul>
 <li> Click on your stack </li>
