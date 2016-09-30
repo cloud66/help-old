@@ -104,8 +104,8 @@ work: node some_work.js
 The commands above would run node server.js and node some_work.js and monitor them. Cloud 66 will attempt to bring processes that go down or crash up again. Processes are also instructed to start when your server is booted. An overall view of your processes is available in your stack detail page.
 
 
-<h3> Final notes </h3>
+<h3> Final notes on managing storage</h3>
 
-None of the files created on the filesystem after the stack is deployed are persistent. If you need persistency for files, for example some uploaded data, <a href="/stack-add-ins/glusterfs">please use the GlusterFS add-in</a>.
+None of the files created on the filesystem after the stack is deployed are persistent. If you need persistency for files, for example some uploaded data, <a href="/stack-add-ins/glusterfs">please use the GlusterFS add-in</a> or <a href="/managing-your-stack/service-storage">change your service.yml</a> to use the storage of your host.
 
 
