@@ -4,17 +4,20 @@ template: one-col
 title:  "Scale your Node.js application"
 nav_sticky: false
 date:   2088-01-25 16:27:22
-categories: building-your-nodejs-stack
+categories: building-your-node-js-stack
 lead: Scaling your Node.js application is easy with Cloud 66
 search-tags: []
 tags: ['Scaling']
 ---
 
-<h2 id="beta">WARNING: Node.js stacks are in BETA</h2>
+<div class="notice notice-warning">
+	<h3>Note</h3>
+    <p>Node.js support is still in private beta. If you would like to participate in Cloud 66 private beta program, please send an email to <a href="mailto:hello@cloud66.com">hello@cloud66.com</a></p>
+</div>
 
-<h3> Scale your instances </h3>
+<h2> Scale your instances </h2>
 
-Your application is up and running but you need more capacity for your application or background jobs. Cloud 66 provides an easy mechanism for scaling up your application and running jobs instances. If your server has the capacity and is not fully utilised your can scale your instances in a blink on an eye. 
+Your application is up and running but you need more capacity for your application or background jobs. Cloud 66 provides an easy mechanism for scaling up your application and running job instances. If your server has the capacity and is not fully utilized you can scale your application instances simply and quickly. Here is how:
 
 <ul>
 <li> Click on your stack </li>
@@ -26,4 +29,4 @@ Your application is up and running but you need more capacity for your applicati
 <li> Scaled up </li>
 </ul>
 
-If your need more capacity and your server is running low on resources (> 80% utilizisation) it's time to scale vertically and/or horizonally. <a href="/managing-your-stack/scaling">Please read this document how easy it is to scale your application with Cloud 66.</a>
+If you need more capacity and your server is running low on resources (> 80% utilizisation) it's time to scale vertically and/or horizonally. <a href="/managing-your-stack/scaling">Please read this document how easy it is to scale your application with Cloud 66.</a>

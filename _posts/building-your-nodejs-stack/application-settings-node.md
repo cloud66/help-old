@@ -4,61 +4,64 @@ template: one-col
 title:  "Specific settings for your Node.js application"
 nav_sticky: false
 date:   2088-01-25 16:27:22
-categories: building-your-nodejs-stack
+categories: building-your-node-js-stack
 lead: Make sure your keep the following in mind when deploying a Node.js application
 search-tags: []
 tags: ['Scaling']
 ---
 
-<h2 id="beta">WARNING: Node.js stacks are in BETA</h2>
+<div class="notice notice-warning">
+	<h3>Note</h3>
+    <p>Node.js support is still in private beta. If you would like to participate in Cloud 66 private beta program, please send an email to <a href="mailto:hello@cloud66.com">hello@cloud66.com</a></p>
+</div>
 
-Cloud 66 will analyze your code and detect a couple of things:
+Cloud 66 will analyze your code and detect a few things:
 
 <ul>
  <li> The Node.js version you want to use.</li>
- <li> The framework, for example Express.js, your are using.</li>
- <li> The datasources, for example MongoDB, your want to use.</li>
+ <li> The framework, for example Express.js, you are using.</li>
+ <li> The datasources, for example MongoDB, you want to use.</li>
 </ul>
 
-During the analyse phase we are using two files to determine the information of your application: <b>package.json</b> and <b>Procfile</b>. If the outcome of the analyze phase doesn't satisfy your needs, you need to update your package.json.
+During the analysis phase we are using two files to determine the information about application: `package.json` and `Procfile`. If the outcome of the analyze phase doesn't satisfy your needs, you need to update your `package.json`.
 
-<h3> Change your Node.js version </h3>
+<h2> Change your Node.js version </h2>
 
-To change your Node.js version you need to update your application.json <b>engines</b> settings. <a href="https://docs.npmjs.com/files/package.json#engines">Read more about how you can specify the version of node that your stuff works.</a>
+To change your Node.js version you need to update your `application.json` `engines` settings. <a href="https://docs.npmjs.com/files/package.json#engines">Read more about how you can specify the version of node so your application works.</a>
 
-<h3> Change your datasource(s) </h3>
+<h2> Change your datasource(s) </h2>
 
-During the analyse phase we analyse your runtime depencies defined in the <b>package.json</b>. The following packages will result in a datasource we want to provision for your.
+During the analyse phase we analyze your runtime depencies defined in the `package.json`. Inclusion of the following packages will result in relevant datasource to be provisioned on your stack.
 
 <ul>
-<li> the package <i>mysql</i> will trigger the provisioning of Mysql</li>
-<li> the package <i>mongoose</i> or <i>mongodb</i> will trigger the provisioning of MongoDB</li>
-<li> the package <i>pg</i> will trigger the provisioning of Postgresql</li>
-<li> the package <i>redis</i> will trigger the provisioning of Redis</li>
+<li> the package <code>mysql</code> will trigger the provisioning of Mysql</li>
+<li> the package <code>mongoose</code> or <code>mongodb</code> will trigger the provisioning of MongoDB</li>
+<li> the package <code>pg</code> will trigger the provisioning of Postgresql</li>
+<li> the package <code>redis</code> will trigger the provisioning of Redis</li>
 </ul>
 
 If you need other datasources later on, you can always add new datasource using the <a href="/category/stack-add-ins">Add-in feature</a>.
 
-<h3> Expose your host port</h3>
+<h2> Expose your host port</h2>
 
-Of course your application will bind to a port we need to expose to the internet and make sure we can load balance traffic to your application. We provide you with the environment variable called PORT to tell which port your need to bind your application to. Make sure your use the following line:
+If your application binds to a port, we need to expose it to the internet and make sure we can load balance traffic to your application. We provide you with an environment variable called `PORT` to tell which port your need to bind your application to. Make sure your use the following line:
 
 <pre class="prettyprint">
 var port = process.env.PORT || 8080;
 app.listen(port);
 </pre>
 
-<h3> Connect to your datasource(s)</h3>
+<h2> Connect to your datasource(s)</h2>
 
-Your application need to know which URL to use to connect to your database. We provide a couple of environment variables your can use to connect to your datasources. 
+Your application need to know which URL to use to connect to your database. We provide a couple of environment variables your can use to connect to your datasources.
 
-MongoDB
+### MongoDB
 
 <pre class="prettyprint">
 mongoose.connect(process.env.MONGODB_URL);
 </pre>
 
-Mysql
+### Mysql
 
 <pre class="prettyprint">
 var connection = mysql.createConnection({
@@ -70,29 +73,29 @@ var connection = mysql.createConnection({
 connection.connect();
 </pre>
 
-Postgresql
+### Postgresql
 
 <pre class="prettyprint">
 var config = {
   user: process.env.POSTGRESDB_USERNAME,
   database: process.env.POSTGRESDB_DATABASE,
-  password: process.env.POSTGRESDB_PASSWORD, 
+  password: process.env.POSTGRESDB_PASSWORD,
   host: process.env.POSTGRESDB_URL,
-  max: 10, 
+  max: 10,
   idleTimeoutMillis: 30000,
 };
 var pool = new pg.Pool(config);
 </pre>
 
-Redis
+### Redis
 
 <pre class="prettyprint">
 redis.createClient(6379, process.env.REDIS_URL)
 </pre>
 
-<h3> Fire up some workers </h3>
+<h2> Fire up some workers </h2>
 
-You can use Procfiles to ensure that your background jobs run and are monitored. Doing so is as easy as defining them in the root of your application, in a file called Procfile.
+You can use Procfiles to ensure that your background jobs run and are monitored. Doing so is as easy as defining them in the root of your application, in a file called `Procfile`.
 
 A typical Procfile may look something like this:
 
@@ -101,11 +104,9 @@ web: node server.js
 work: node some_work.js
 </pre>
 
-The commands above would run node server.js and node some_work.js and monitor them. Cloud 66 will attempt to bring processes that go down or crash up again. Processes are also instructed to start when your server is booted. An overall view of your processes is available in your stack detail page.
+The commands above would run node `server.js` and node `some_work.js` and monitor them. Cloud 66 will attempt to bring processes that go down or crash up again. Processes are also instructed to start when your server is booted. An overall view of your processes is available in your stack detail page.
 
 
-<h3> Final notes on managing storage</h3>
+<h2> Final notes on managing storage</h2>
 
 None of the files created on the filesystem after the stack is deployed are persistent. If you need persistency for files, for example some uploaded data, <a href="/stack-add-ins/glusterfs">please use the GlusterFS add-in</a> or <a href="/managing-your-stack/service-storage">change your service.yml</a> to use the storage of your host.
-
-
