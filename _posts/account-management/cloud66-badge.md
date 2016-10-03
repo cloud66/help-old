@@ -19,13 +19,13 @@ You can use Cloud 66 to deploy and manage your projects by placing a Cloud 66 ba
 
 All you have to do is copy and paste the appropriate code below into your HTML, selecting HTTP or HTTPS, and drop us a line at <a href='mailto:hello@cloud66.com'>hello@cloud66.com</a>.
 
-<a href="http://www.cloud66.com"><img src="https://d563vzkt1q0lu.cloudfront.net/images/powered-by-cloud66.png" title="Powered by Cloud 66"/></a>
+<a href="http://www.cloud66.com"><img src="https://assets.cloud66.com/public/powered-by-cloud66.png" title="Powered by Cloud 66"/></a>
 
 <h4>HTTP:</h4>
 
 <pre class="prettyprint">
 &lt;a href="http://www.cloud66.com"&gt;
-    &lt;img src="http://d563vzkt1q0lu.cloudfront.net/images/powered-by-cloud66.png" title="Powered by Cloud 66"&gt;
+    &lt;img src="http://assets.cloud66.com/public/powered-by-cloud66.png" title="Powered by Cloud 66"&gt;
 &lt;/a&gt;
 </pre>
 
@@ -34,6 +34,6 @@ All you have to do is copy and paste the appropriate code below into your HTML, 
 
 <pre class="prettyprint">
 &lt;a href="http://www.cloud66.com"&gt;
-    &lt;img src="https://d563vzkt1q0lu.cloudfront.net/images/powered-by-cloud66.png" title="Powered by Cloud 66"/&gt;
+    &lt;img src="https://assets.cloud66.com/public/powered-by-cloud66.png" title="Powered by Cloud 66"/&gt;
 &lt;/a&gt;
 </pre>
