@@ -31,7 +31,7 @@ Our pricing is simple - you only pay for what you use, and there are no setup fe
 The billing cycle for your account is every 30 days, and your account charges are calculated on an hourly basis.
 Your account will be charged for the accumulated amount you've accrued during the last 30 days at the end of each cycle.
 
-The first server in your account is charged at $19 per month, with additional servers up to 50 costing $9 per month. <b>Development servers are always free</b>.
+The first server in your account is charged at $19 per month, with additional servers up to 50 costing $12 per month. <b>Development servers are always free</b>.
 
 To learn more about feature-based pricing, please see our feature pages:
 
@@ -66,13 +66,13 @@ For this example, we will use a simple Rails application with common requirement
 </tr>
 <tr>
   <td>Load balancer x 1</td>
-  <td>$14 ($9 + $5)</td>
+  <td>$17 ($12 + $5)</td>
   <td>&mdash;</td>
   <td>$5</td>
 </tr>
 <tr>
   <td>Database server x 1</td>
-  <td>$19 ($9 + $10)</td>
+  <td>$22 ($12 + $10)</td>
   <td>$50</td>
   <td>$10</td>
 </tr>
@@ -108,12 +108,12 @@ For this example, we will use a simple Rails application with common requirement
 </tr>
 <tr>
   <td><b>Total cost</b></td>
-  <td><b>$57*</b></td>
+  <td><b>$63*</b></td>
   <td><b>$121</b></td>
   <td><b>$430</b></td>
 </tr>
 </table>
-<h5>*Drops to $47/month for the second stack as only the first server of the account is $19.</h5>
+<h5>*Drops to $56/month for the second stack as only the first server of the account is $19.</h5>
 
 ### Assumptions
 

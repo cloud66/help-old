@@ -90,15 +90,15 @@ Next, click the <i>+</i> button in the top right corner of _Roles_ section. This
     <thead>
         <tr>
             <th align="center">Team members</th>
-            <th align="center">1&mdash;5</th>
-            <th align="center">5+*</th>
+            <th align="center">1&mdash;3</th>
+            <th align="center">3+*</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>Monthly</td>
             <td>$15</td>
-            <td>$2</td>
+            <td>$3</td>
         </tr>
     </tbody>
 </table>

@@ -91,7 +91,7 @@ To see your backup verification status, visit your stack detail page, and click 
     <tbody>
         <tr>
             <td>Verified backup</td>
-            <td>$25</td>
+            <td>$30</td>
             <td>&mdash;</td>
         </tr>
     </tbody>
