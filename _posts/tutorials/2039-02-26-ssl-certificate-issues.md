@@ -58,11 +58,11 @@ You will be prompted for your passphrase and the output will be generated after 
 <h3 id="encoding">Certificate and key encoding</h3>
 Certificates and key files need to have only a _new line_ character at the end (instead of both _new line_ and _carriage return_ characters). To see if that's the case, you can open them in a text editor like TextMate and show the invisible characters.<br/>
 
-![TextMate Show Invisible Characters](http://cdn.cloud66.com/images/help/show_invisible_characters_textmate.png)
+![TextMate Show Invisible Characters](http://assets.cloud66.com/help/images/show_invisible_characters_textmate.png)
 
 This is an example of a wrong line ending:
 
-![Wrong Line Ending for SSL certificate](http://cdn.cloud66.com/images/help/wrong_encoding_of_ssl_certificate.png)
+![Wrong Line Ending for SSL certificate](http://assets.cloud66.com/help/images/wrong_encoding_of_ssl_certificate.png)
 
 <h3 id="match">Matching certificates and keys</h3>
 This problem usually manifests itself as the following error when starting nginx:

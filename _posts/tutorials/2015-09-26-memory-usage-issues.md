@@ -21,7 +21,7 @@ $ sudo apt-get install htop
 </pre>
 
 Once it's installed, run it with _htop_:
-![htop](http://cdn.cloud66.com/images/help/htop.png)
+![htop](http://assets.cloud66.com/help/images/htop.png)
 
 The screen above will show you lots of statistics on memory and CPU usage, but we'll make two changes to make potential issues more visible:
 
