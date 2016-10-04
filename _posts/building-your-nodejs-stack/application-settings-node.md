@@ -37,7 +37,7 @@ During the analyse phase we analyze your runtime depencies defined in the `packa
 <li> the package <code>mysql</code> will trigger the provisioning of Mysql</li>
 <li> the package <code>mongoose</code> or <code>mongodb</code> will trigger the provisioning of MongoDB</li>
 <li> the package <code>pg</code> will trigger the provisioning of Postgresql</li>
-<li> the package <code>redis</code> will trigger the provisioning of Redis</li>
+<li> the package <code>redis</code> or <code>ioredis</code> will trigger the provisioning of Redis</li>
 </ul>
 
 If you need other datasources later on, you can always add new datasource using the <a href="/category/stack-add-ins">Add-in feature</a>.
