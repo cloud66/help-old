@@ -19,7 +19,7 @@ Cloud 66 will analyze your code and detect a few things:
 
 <ul>
  <li> The Node.js version you want to use.</li>
- <li> The framework, for example Express.js, you are using.</li>
+ <li> The <a href="/building-your-node-js-stack/supported-node-js-frameworks">framework</a>, for example Express.js, you are using.</li>
  <li> The datasources, for example MongoDB, you want to use.</li>
 </ul>
 
