@@ -355,7 +355,7 @@ A Rails application type in the manifest file gives you fine control over things
 - **passenger&#95;process&#95;memory**: A value in MB that Cloud 66 will use for each Passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment.
 - **locked&#95;passenger&#95;version**: Force the version of passenger to use. Note: this only applies during server build and is not supported on passenger enterprise stacks.
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
-- **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers.
+- **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers. <span style="background-color: #FFFF00"> Note that you must provide <a href= "#servers"> <b>subnet_id</b></a> for all servers in your stack.</span>
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
@@ -577,7 +577,8 @@ Here is an example of a server definition:
 <pre class="prettyprint">
 production:
     rails:
-        server:
+        servers:
+          - server:
             unique_name: app
 </pre>
 

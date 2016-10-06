@@ -14,6 +14,10 @@ Given the ephemeral nature of containers, it's important to consider storage sol
 
 The `volumes` directive allows you to mount custom host folders inside your container. This is useful if you're looking to run a database service for instance, as data written to the local filesystem of your container will not be persisted between container instances. The volumes option is a list of `HOST_FOLDER:CONTAINER_FOLDER`. You can optionally specify `ro` or `rw` on the end to specify that the the container can read/write to the host folder (the default is read/write if not specified)
 
+<div class="notice notice-danger">
+        <p><b>Note:</b> paths must be absolute.</p>
+</div>
+
 {% highlight yaml %}
 services:
     &#60;service_name&#62;:

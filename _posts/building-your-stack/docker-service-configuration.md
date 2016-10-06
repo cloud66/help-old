@@ -190,7 +190,7 @@ Below is a table of the available configurations for a given service with a brie
 </tr>
 <tr>
     <td><a href="/managing-your-stack/service-storage">volumes</a></td>
-    <td>The volumes that are mounted from your host into your container.</td>
+    <td>The volumes that are mounted from your host into your container. <span style="background-color: #FFFF00"><b>Note:</b>it must be absolute path.</span></td>
 </tr>
 <tr>
     <td>work_dir</td>
