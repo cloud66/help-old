@@ -93,7 +93,7 @@ $ cx env-vars list -s My_Awesome_App
 <h3 id="usage2">Usage</h3>
 
 <pre class="prettyprint">
-$ cx env-vars set [-s &lt;stack&gt;] &lt;setting&gt; &lt;value&gt;
+$ cx env-vars set [-s &lt;stack&gt;] &lt;setting&gt;=&lt;value&gt;
 </pre>
 
 <h3 id="params2">Parameters</h3>
@@ -128,5 +128,5 @@ $ cx env-vars set [-s &lt;stack&gt;] &lt;setting&gt; &lt;value&gt;
 <h3 id="example2">Example</h3>
 
 <pre class="prettyprint">
-$ cx env-vars set My_Awesome_App FIRST_VAR 123
+$ cx env-vars set My_Awesome_App FIRST_VAR=123
 </pre>
