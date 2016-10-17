@@ -66,7 +66,7 @@ Cloud 66 uses the following signals to control Unicorn:
 <h2 id="deploy">Deploy with Unicorn</h2>
 You need to choose your web server at the time of initial build of the stack. Changes to or from Passenger (the default web server) will not be applied after your stack has initially been analyzed. You can however change freely between other supported servers by simply updating your Gems and Procfile.
 
-To run a Unicorn Rack server, add a line to your Procfile labeled as custom_web. Here is an example:
+To run a Unicorn Rack server, add a line to your Procfile labeled as <em>custom_web</em>. Here is an example:
 
 {% highlight ruby %}
 custom_web: bundle exec unicorn_rails -c config/unicorn.rb -E $RAILS_ENV -D
