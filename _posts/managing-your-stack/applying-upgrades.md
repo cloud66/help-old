@@ -59,7 +59,7 @@ In order to deal with the upgrades you have a few options:
 In the event of a security vulnerability on any of the components we deploy on the servers, we aim to be as quick as possible to roll out the recommended patches for Ubuntu, Ruby and Rails.
 
 <h3 id="ubuntu">Ubuntu</h3>
-From the _Deploy_ menu, choose _Deploy with Options_. By selecting _Apply security upgrades_, Cloud 66 will perform operating system security package upgrades and set up <a href=https://help.ubuntu.com/community/AutomaticSecurityUpdates>unattended upgrades</a> for your stack. Unattended upgrades will automatically check for and install the latest Ubuntu security packages on a daily basis.
+<p>From the _Deploy_ menu, choose _Deploy with Options_. By selecting _Apply security upgrades_, Cloud 66 will perform operating system security package upgrades and set up <a href="https://help.ubuntu.com/community/AutomaticSecurityUpdates">unattended upgrades</a> for your stack. Unattended upgrades will automatically check for and install the latest Ubuntu security packages on a daily basis.</p>
 
 Note that some security packages may require a server restart. We don't automatically restart your server, and it is at your discretion to do so. If the file `/var/run/reboot-required` exists, your server does in fact require a restart. To see which packages contributed to the requirement for a restart, please see `/var/run/reboot-required.pkgs`.
 
@@ -67,7 +67,7 @@ Note that some security packages may require a server restart. We don't automati
 There are generally three ways to upgrade Ruby on your stack, in decreasing magnitude of risk. Please ensure that the upgrades and patches work with your code before applying them. Upgrade and patch your development and test environments to ensure there are no issues. Backup your environment via your cloud provider where possible.
 
 <h4>Scaling up</h4>
-Arguably the best option to use when upgrading Ruby is to scale up a new server within the same stack, and simply drop the old one. You can specify your new Ruby version in a <a href=/building-your-stack/getting-started-with-manifest-files>manifest file</a>. Once you've pushed this change and deployed, scale up a new web server, which will use this version of Ruby. The previous server would remain on the old version of Ruby.
+<p>Arguably the best option to use when upgrading Ruby is to scale up a new server within the same stack, and simply drop the old one. You can specify your new Ruby version in a <a href="/building-your-stack/getting-started-with-manifest-files"> manifest file </a>. Once you've pushed this change and deployed, scale up a new web server, which will use this version of Ruby. The previous server would remain on the old version of Ruby.</p>
 
 <div class="notice notice-danger">
     <p>Make sure you redeploy before you scale up, otherwise the new manifest will not be taken to account.</p>
@@ -87,6 +87,11 @@ We roll out automatic upgrades in case of security issues, and this will be made
 If you have updated your base Ruby version in your Gemfile, we will attempt to upgrade your Ruby version to the latest patch version of your specified base version during the _Apply Upgrades_ step - note that there may be some server downtime during the Ruby base version upgrade operation.
 
 When you _Deploy with options_ and select _Apply Ruby upgrades_, in addition to other upgrades, we will upgrade your installed LibYAML version if we detect your version is not current.
+
+<div class="notice">
+    <h3>Tip / Warning!</h3>
+    <p>If you have more than one server serving web, you can tick the <em>Serial Deployment</em> in <em>Deployment Options</em>, and it will deploy without down-time, however, during the deployment some servers will be serving the new code and some the old one.   </p>
+</div>
 
 <div class="notice notice-danger">
     <h3>Warning!</h3>
@@ -117,7 +122,7 @@ The recommended way to upgrade your passenger to the latest one is:
 
 <div class="notice notice-danger">
     <h3>Warning!</h3>
-    <p>Upgrading in-place involves downtime as the docker engine and local files are all upgraded. To have zero down-time you'd have to clone your stack and use Failovers to swithch to the new one.</p>
+    <p>Upgrading in-place involves downtime as the docker engine and local files are all upgraded. To have zero down-time you'd have to clone your stack and use <a href="/network/failover-groups">Failover groups </a> to switch to the new one.</p>
 </div>
 
 
