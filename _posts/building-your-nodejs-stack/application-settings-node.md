@@ -27,7 +27,7 @@ During the analysis phase we are using two files to determine the information ab
 
 <h2> Change your Node.js version </h2>
 
-To change your Node.js version you need to update your `application.json` `engines` settings. <a href="https://docs.npmjs.com/files/package.json#engines">Read more about how you can specify the version of node so your application works.</a>
+To change your Node.js version you need to update your `package.json` `engines` settings. <a href="https://docs.npmjs.com/files/package.json#engines">Read more about how you can specify the version of node so your application works.</a>
 
 <h2> Change your datasource(s) </h2>
 
