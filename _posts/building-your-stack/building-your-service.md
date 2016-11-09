@@ -180,7 +180,7 @@ NOTE: When you [specify the Google Container Registy as a Docker image repo](htt
 <ul>
 <li>Custom Repo provider URL = https://gcr.io</li>
 <li>Username for provider = oauth2accesstoken</li>
-<li>Password for provider = (the out put of the commmand <code>$ gcloud auth print-access-token</code>)</li>
+<li>Password for provider = (output of the commmand <code>$ gcloud auth print-access-token</code>)</li>
 <li>Email address for provider = fake@fake.com</li>
 </ul>
 
