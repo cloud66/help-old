@@ -176,7 +176,7 @@ services:
         image: gcr.io/&lt;project_id&gt;/&lt;namespace&gt;/&lt;image_name&gt;:/&lt;tag&gt;
 </pre>
 
-NOTE: When you [specify the Google Container Registy as a Docker image repo](https://app.cloud66.com/image_repositories) you need choice <code>I'm using a different provider or my own custom repo</code> and use the following settings:
+When you [specify the Google Container Registy as a Docker image repo](https://app.cloud66.com/image_repositories) you need choice <code>I'm using a different provider or my own custom repo</code> and use the following settings:
 <ul>
 <li>Custom Repo provider URL = https://gcr.io</li>
 <li>Username for provider = oauth2accesstoken</li>
