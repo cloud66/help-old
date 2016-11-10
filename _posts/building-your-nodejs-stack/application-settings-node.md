@@ -10,11 +10,6 @@ search-tags: []
 tags: ['Scaling']
 ---
 
-<div class="notice notice-warning">
-	<h3>Note</h3>
-    <p>Node.js support is still in private beta. If you would like to participate in Cloud 66 private beta program, please send an email to <a href="mailto:hello@cloud66.com">hello@cloud66.com</a></p>
-</div>
-
 Cloud 66 will analyze your code and detect a few things:
 
 <ul>

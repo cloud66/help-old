@@ -10,11 +10,6 @@ search-tags: []
 tags: ['Scaling']
 ---
 
-<div class="notice notice-warning">
-	<h3>Note</h3>
-    <p>Node.js support is still in private beta. If you would like to participate in Cloud 66 private beta program, please send an email to <a href="mailto:hello@cloud66.com">hello@cloud66.com</a></p>
-</div>
-
 <h2> Scale your instances </h2>
 
 Your application is up and running but you need more capacity for your application or background jobs. Cloud 66 provides an easy mechanism for scaling up your application and running job instances. If your server has the capacity and is not fully utilized you can scale your application instances simply and quickly. Here is how:
