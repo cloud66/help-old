@@ -10,11 +10,6 @@ search-tags: []
 tags: ['Scaling']
 ---
 
-<div class="notice notice-warning">
-	<h3>Note</h3>
-    <p>Node.js support is still in private beta. If you would like to participate in Cloud 66 private beta program, please send an email to <a href="mailto:hello@cloud66.com">hello@cloud66.com</a></p>
-</div>
-
 Cloud 66 will analyze your code and detect a few things:
 
 <ul>
@@ -27,7 +22,7 @@ During the analysis phase we are using two files to determine the information ab
 
 <h2> Change your Node.js version </h2>
 
-To change your Node.js version you need to update your `application.json` `engines` settings. <a href="https://docs.npmjs.com/files/package.json#engines">Read more about how you can specify the version of node so your application works.</a>
+To change your Node.js version you need to update your `package.json` `engines` settings. <a href="https://docs.npmjs.com/files/package.json#engines">Read more about how you can specify the version of node so your application works.</a>
 
 <h2> Change your datasource(s) </h2>
 

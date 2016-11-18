@@ -72,8 +72,12 @@ lead: Manage your backups from the toolbelt
 <h2 id="about">About backup management</h2>
 The following commands help you manage your backups, such as listing, downloading and initiating backups on your stacks.
 
+<div class="notice notice-warning">
+    <p>Please note that this only applies to managed backups and not the unmanaged ones.</p>
+</div>
+
 <h2 id="list">List your backups</h2>
-This will list all the managed backups of a stack grouped by their database type and/or backup schedule.
+This will list all the <span style="background-color: #FFFF00">managed backups</span> of a stack grouped by their database type and/or backup schedule.
 
 <h3 id="list_usage">Usage</h3>
 
@@ -119,7 +123,7 @@ $ cx backups list -s "My Awesome App" -e production
 
 <h2 id="download">Download your backups</h2>
 
-Allows you to download a database backup through the command line, concatenating separate files into one automatically if it consists of numerous files.
+Allows you to download a <span style="background-color: #FFFF00">managed</span>database backup through the command line, concatenating separate files into one automatically if it consists of numerous files.
 
 <h3 id="download_usage">Usage</h3>
 
@@ -164,7 +168,7 @@ $ cx backups download -s "My Awesome App" 15
 
 <h2 id="new">Create backup</h2>
 
-Allows you to create a new backup task through the command line.
+Allows you to create a new <span style="background-color: #FFFF00">managed</span> backup task through the command line.
 
 <h3 id="new_usage">Usage</h3>
 

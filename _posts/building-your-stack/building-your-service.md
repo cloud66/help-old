@@ -22,7 +22,7 @@ tags: ['']
 		<a href="#configuration">Configuration</a>
 	</li>
         <li>
-            <ul>
+            <ul>    
             <li><a href="#build_command">Build command</a></li>
             <li><a href="#build_root">Build root</a></li>
             <li><a href="#command">Command</a></li>
@@ -149,7 +149,7 @@ The source of your Docker image, which can come from a private repository that t
 <pre class="prettyprint">
 services:
     &#60;service_name&#62;:
-        image: &lt;namespace&gt;/&lt;image_name&gt;
+        image: &lt;namespace&gt;/&lt;image_name&gt;:/&lt;tag&gt;
 </pre>
 
 If you are pulling a public image from Docker Hub, use the following format:
@@ -157,7 +157,7 @@ If you are pulling a public image from Docker Hub, use the following format:
 <pre class="prettyprint">
 services:
     &#60;service_name&#62;:
-        image: &lt;namespace&gt;/&lt;image_name&gt;
+        image: &lt;namespace&gt;/&lt;image_name&gt;:/&lt;tag&gt;
 </pre>
 
 If you are using [Quay.io](https://quay.io/) for your image repository, you will use the following URL format:
@@ -165,8 +165,25 @@ If you are using [Quay.io](https://quay.io/) for your image repository, you will
 <pre class="prettyprint">
 services:
     &#60;service_name&#62;:
-        image: quay.io/&lt;namespace&gt;/&lt;image_name&gt;
+        image: quay.io/&lt;namespace&gt;/&lt;image_name&gt;:/&lt;tag&gt;
 </pre>
+
+If you are using [Google Container Registry](https://cloud.google.com/container-registry/docs/) for your image repository, you will use the following URL format:
+
+<pre class="prettyprint">
+services:
+    &#60;service_name&#62;:
+        image: gcr.io/&lt;project_id&gt;/&lt;namespace&gt;/&lt;image_name&gt;:/&lt;tag&gt;
+</pre>
+
+When you [specify the Google Container Registy as a Docker image repo](https://app.cloud66.com/image_repositories) you need choice <code>I'm using a different provider or my own custom repo</code> and use the following settings:
+<ul>
+<li>Custom Repo provider URL = https://gcr.io</li>
+<li>Username for provider = oauth2accesstoken</li>
+<li>Password for provider = (output of the commmand <code>$ gcloud auth print-access-token</code>)</li>
+<li>Email address for provider = fake@fake.com</li>
+</ul>
+
 
 <h3 id="use-habitus">Using Habitus for builds</h3>
 <p><a href="http://www.habitus.io">Habitus is a build workflow tool for Docker</a>. It allows you to create a build workflow consisting of multiple steps for your Docker stacks on BuildGrid. Cloud 66 BuildGrid fully supports Habitus. To enable Habitus on BuildGrid builds, you need to do the following:</p>
