@@ -31,14 +31,14 @@ tags: ['']
 You can use Cloud 66 to provision and deploy your code to servers in any [Google Compute Engine (GCE) region](http://developers.cloud66.com/#cloud-vendor-instance-regions).
 
 <h2 id="gen">Generate GCE API keys</h2>
-You need to provide your GCE API keys in order for Cloud 66 to access your account. To generate these, access the _Developers Console_ of your Google account, and create a project if you don't already have one. Once you have a project, access it and click the _APIs & auth_ -> _APIs_ menu. On this page, make sure that the option for _Google Compute Engine_ is turned _On_. 
+You need to provide your GCE API keys in order for Cloud 66 to access your account. To generate these, access the _Developers Console_ of your Google account, and create a project if you don't already have one. Once you have a project, access it and click the _APIs & auth_ -> _APIs_ menu. On this page, make sure that the option for _Google Compute Engine API_ is turned _On_. 
 
-Next, in the same menu, click _Credentials_ and then _Create new Client ID_. Select _Service account_ from the options provided, and click _Create Client ID_. This will automatically download a P12 file for you, which contains your credentials. 
+Next, in the same menu, click _Credentials_ and then _Create credentials_. Select _Service account key_ from the options provided, and click _Create_. This will automatically download a JSON file for you, which contains your credentials. 
 
 We need three credentials to connect with your account:
 
-1. Email address - this is available on the _APIs & auth_ -> _Credentials_ page under Service Accounts. 
-2. P12 key - the file that was automatically downloaded for you
+1. Email address - this is available on the _APIs -> _Credentials_ page under Service Accounts. 
+2. JSON key - the file that was automatically downloaded for you
 3. Project ID - this is available at the top of the _Overview_ page
 
 Please remember to enable Google Compute in the API list under _API & auth_ under APIs for the integration to work.
