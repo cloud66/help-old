@@ -55,9 +55,6 @@ tags: ['Getting started']
         <a href="#f12">How much does it cost?</a>
     </li>
     <li>
-        <a href="#f13">Is there a free plan?</a>
-    </li>
-    <li>
         <a href="#f14">Who pays for the physical servers?</a>
     </li>
 </ul>
@@ -122,11 +119,6 @@ We currently only support Ubuntu - the officially supported version is 14.04.
 
 <h2 id="f12">How much does it cost?</h2>
 Please see our [pricing page](http://www.cloud66.com/pricing) for more information.
-
-<hr>
-
-<h2 id="f13">Can I use it for free?</h2>
-Yes! You can deploy your development environment stacks for free!
 
 <hr>
 

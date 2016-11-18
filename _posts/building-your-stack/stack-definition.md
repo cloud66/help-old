@@ -101,11 +101,7 @@ In addition to these environments, you can define your own environments from the
 Depending on your configuration, your application will act differently in each environment. For example, a Ruby on Rails application
 has a directory in `config/environments` that contains settings for each environment.
 
-With the exception of _development_, there is no difference between these environments when it comes to features and supported tools apart from what you define in your code. Development environments are free of charge on Cloud 66, and are restricted in the following regards:
-
-* Database backups are disabled for development stacks
-* Development stacks don't support load balancing or scaling of frontend, background processes or database replication
-
+There is no difference between these environments when it comes to features and supported tools apart from what you define in your code.
 <hr>
 
 <h2 id="stackscore">What is StackScore?</h2>
