@@ -1,7 +1,7 @@
 ---
 layout: post
 template: one-col
-title:  "Welcome To Cloud 66 Docker deployment"
+title:  "Docker Getting Started"
 date:   2036-12-24 10:51:22
 cloud66_text: "Try Cloud 66 for free"
 cloud66_sticky: true
@@ -13,17 +13,17 @@ tags: ['']
 
 <ul class="page-toc">
     <li><a href="#welcome">Welcome to cloud 66 Docker deployment</a></li>
-    <li><a href="#flow">Cloud 66's flow</a></li>
+    <li><a href="#flow">Cloud 66 flow</a></li>
 
 </ul>
 
 
 <h2 id="welcome">Welcome to cloud 66 Docker deployment</h2>
 
-After analyzing our customers' Docker stacks we created a new flow, designed to help our users build their Docker stacks in the simplest way we could think of! This is done by pointing you to the right direction at each step! We know that there is more we can do to to make this journey easier, so please send us your feedback to enable us to improve this flow.
+After analyzing our customers' Docker stacks we created a new flow, designed to help our users build their Docker stacks in the simplest way we could think of! This is done by pointing you to the right direction at each step! We know that there is more we can do to make this journey easier, so please send us your feedback and enable us to improve this flow.
 
 
-You only need to click on _BUILD A DOCKER STACK_ if it is your first stack, or you can go to your dashboard and click on _NEW STACK_ --> _Docker_. Or simply click on [this](http://stage.cloud66.com/ob/step_one).
+To start building your doker You only need to click on _BUILD A DOCKER STACK_ if it is your first stack, or you can go to your dashboard and click on _NEW STACK_ --> _Docker_. Or simply click on [this](http://stage.cloud66.com/ob/step_one).
 
 
 <h2 id="flow">Cloud 66 flow</h2>
