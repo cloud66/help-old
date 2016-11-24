@@ -71,7 +71,7 @@ You are free to specify a version for a number of components in your [manifest f
     <tbody>
         <tr>
             <td>Docker</td>
-            <td>1.12.1</td>
+            <td>1.12.3</td>
         </tr>
         <tr>
             <td>ElasticSearch</td>
@@ -103,15 +103,15 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>Redis</td>
-            <td>3.0.7</td>
+            <td>3.2.4</td>
         </tr>
         <tr>
             <td>Ruby</td>
-            <td>1.9.3 - 2.3.1</td>
+            <td>1.9.3 - 2.3.3</td>
         </tr>
         <tr>
             <td>Weave</td>
-            <td>1.6.1</td>
+            <td>1.7.2</td>
         </tr>
                 
     </tbody>
