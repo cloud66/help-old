@@ -28,8 +28,8 @@ tags: ['']
 	</li>
     <li>
         <ul>
-        <li><a href="#logical">Logical Backups</a></li>
-        <li><a href="#hotbackups">Hot Backups</a></li>
+        <li><a href="#formatbinary">Binary</a></li>
+        <li><a href="#formattext">Text</a></li>
         </ul>
     </li>    
 	<li>
@@ -71,25 +71,24 @@ The 100 most recent managed backups are kept by default.
 Unmanaged backups are stored on your local server and are available under `/var/cloud66/backups`. The 10 most recent unmanaged backups are kept by default.
 
 <h3 id="formats">Backup format</h3>
-For Mysql and Postgresql servers you can choose to have a **Logical** or **Hot** backup.
+Backup format for redis and mongodb is always **binary**.  For _Mysql_ and _Postgresql_ you can choose between **binary** and **text**.
+Each format has its own benefits and downsides : 
 
-<h4 id="logical">Logical Backups</h4>
-In this method we are generating a dump file with SQL commands that, when fed back to the server, will recreate the database in the same state as it was at the time of the dump.
-As the output of the backup is a simple sql dump file, you can use it to import your data to other servers or when you want to upgrade your server version. 
-These are other benefits of this type of backup : 
-- You can restore this backup when server is up and running.
-- You can move backup jobs to your slave servers (if available) to reduce your master server load
-
-
-<h4 id="hotbackups">Hot Backups</h4>
-If you do not choose **logical backup** in your backup settings for Mysql or Postgresql servers, we are generating a **Hot backup**.
-In this method we are taking a snapshot of the data folder of your database service and applying needed logs to have a consistent data folder. The result is a data folder which can be restored on your server to return it in the same state as it was at the time of backup. 
+<h4 id="formatbinary">Binary</h4>
+For binary backups we are taking a snapshot of the data folder of your database service and applying needed logs to have a consistent data folder. The result is a data folder which can be restored on your server to return it in the same state as it was at the time of backup. 
 As this backup contains raw data of your database server(Instead of human readable SQL dump file) you can expect much faster backup/restore process, specially for large databases this method can be faster up to 4 times which can be very helpful in failover scenarios. But there are some limitation :
 - You can not restore it on a server with different version 
 - You can not use it on slave servers
 - You can not use it on servers which their data folder is symlinked to other locations
-- We need to shutdown the database service during the restore 
+- You need to shutdown the database service during the restore 
 
+
+<h4 id="formattext">Text</h4>
+For this format we are generating a dump file with SQL commands that, when fed back to the server, will recreate the database in the same state as it was at the time of the dump.
+As the output of the backup is a simple sql dump file, you can use it to import your data to other servers or when you want to upgrade your server version but restore process will be much longer than **binary** specially if you have lots of indexes in your database.
+These are other benefits of this type of backup : 
+- You can restore this backup when server is up and running.
+- You can move backup jobs to your slave servers (if available) to reduce your master server load
 
 <h3 id="schedule">Backup schedule</h3>
 You can specify how often you would like to backup your database. It could be 
