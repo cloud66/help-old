@@ -110,6 +110,12 @@ This option applies to **logical** MySQL and PostgreSQL and redis databases. Wit
 
 <div class="notice notice-danger">
 	<h3>Note</h3>
+	<p>Add/Remove Postgresql binary backup needs a service restart.</p>
+</div>
+
+
+<div class="notice notice-danger">
+	<h3>Note</h3>
 	<p>In order for backups to work, you are required to have twice as much space on your server as your backup consumes.</p>
 </div>
 
