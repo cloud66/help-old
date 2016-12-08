@@ -1,3 +1,16 @@
+---
+layout: post
+template: one-col
+title:  "Manage your stacks with ChatOps"
+date:   2036-12-24 10:51:22
+cloud66_text: "Handle ChatOps commands"
+cloud66_sticky: true
+categories: igor
+lead: Handle igor commands
+search-tags: []
+tags: ['']
+---
+
 ### Documentation:
 __________________________________________________________________
 
