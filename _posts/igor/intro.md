@@ -45,15 +45,6 @@ Then you must install the ChatOps app from the Cloud66's app store
 -   Deploy the stack
 -   Click on 'Browse' to access the web resgistration page for your bot.
 
-#### Deregister
-
-You may want to remove your bot, if so you just have to go to the registration page from the `Browse` of your ChatOps container and then clic on deregister. You will need to redeploy the stack for this to take effect.
-
-### Developing RoboChat:
-__________________________________________________________________
-
-If you wish to work on the project itself, don't worry ChatOps is open source!
-
 ### For any informations on how to use Igor:
 __________________________________________________________________
 
