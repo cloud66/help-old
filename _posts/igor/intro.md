@@ -1,9 +1,9 @@
 ---
 layout: post
 template: one-col
-title:  "What is ChatOps"
+title:  "Manage your stacks from Slack with ChatOps"
 date:   2036-12-24 10:51:22
-cloud66_text: "What is ChatOps"
+cloud66_text: "Manage your stacks with ChatOps"
 cloud66_sticky: true
 categories: igor
 lead: Manage your stacks from Slack with ChatOps
@@ -11,12 +11,9 @@ search-tags: ['slack','chatops','igor']
 tags: ['']
 ---
 
-# Cloud 66 ChatOps
-ChatOps is an open source Slack-bot, build by [Cloud 66](http://www.cloud66.com/?utm_source=gh&utm_medium=ghp&utm_campaign=robochat). It is your very own personal-assistant that operates on your stacks directly from the Slack chat window. Now, you can display the state of your stacks, deploy them and cancel them with simple commands such as `list` , `deploy` and `cancel`.
+# Cloud 66 ChatOps : Igor
+Igor is an open source Slack-bot, build by [Cloud 66](http://www.cloud66.com/?utm_source=gh&utm_medium=ghp&utm_campaign=igor). It is your very own personal-assistant that operates on your stacks directly from the Slack chat window. Now, you can display the state of your stacks, deploy them and cancel them with simple commands such as `list` , `deploy` and `cancel`.
 
-- Website: http://www.igor-bot.io/
-- [Download Igor](app.cloud66.com/easydeploys)
-- Articles: http://blog.cloud66.com/tag/igor-bot/
 
 ### Key features:
 __________________________________________________________________
@@ -56,3 +53,8 @@ You may want to remove your bot, if so you just have to go to the registration p
 __________________________________________________________________
 
 If you wish to work on the project itself, don't worry ChatOps is open source!
+
+### For any informations on how to use Igor:
+__________________________________________________________________
+
+Please go to : http://chatops.cloud66.com
