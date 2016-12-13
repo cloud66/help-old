@@ -15,15 +15,6 @@ tags: ['']
 Igor is an open source Slack-bot, build by [Cloud 66](http://www.cloud66.com/?utm_source=gh&utm_medium=ghp&utm_campaign=igor). It is your very own personal-assistant that operates on your stacks directly from the Slack chat window. Now, you can display the state of your stacks, deploy them and cancel them with simple commands such as `list` , `deploy` and `cancel`.
 
 
-### Key features:
-__________________________________________________________________
-- Open Source project
-- Easy to customise to your work-flow
-- Manage your Cloud 66 stacks from Slack
-- Allows you to deploy specific services from specific stacks
-- Allows you to cancel deploying stacks
-- Allows you to display the state of your stacks for you or your team
-
 ### Quick Start:
 __________________________________________________________________
 #### Create a Slack bot
