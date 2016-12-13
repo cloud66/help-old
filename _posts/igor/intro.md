@@ -19,7 +19,7 @@ Igor is an open source Slack-bot, build by [Cloud 66](http://www.cloud66.com/?ut
 __________________________________________________________________
 #### Create a Slack bot
 
-First thing you will need to do is to create your ChatOps bot on Slack.
+First thing you will need to do is to create a bot on Slack.
 - Go to `https://you_slack_team.slack.com/apps/manage/custom-integrations`
 - Go to `Bots`
 - Go to `Add Configuration`
