@@ -12,7 +12,7 @@ tags: ['']
 ---
 
 # Cloud 66 ChatOps : Igor
-Igor is an open source Slack-bot, built by [Cloud 66](http://www.cloud66.com/?utm_source=gh&utm_medium=ghp&utm_campaign=igor). It is your very own personal-assistant that operates on your stacks directly from the Slack chat window. Now, you can display the state of your stacks, deploy them and cancel them with simple commands such as `list` , `deploy` and `cancel`.
+Igor is an open source Slack-bot, built by [Cloud 66](http://www.cloud66.com/?utm_source=gh&utm_medium=ghp&utm_campaign=igor). It is your very own personal assistant that operates on your stacks directly from the Slack chat window. Now, you can display the state of your stacks, perform deployments and cancel them with simple commands such as `list` , `deploy` and `cancel`.
 
 
 ### Quick Start:
@@ -23,18 +23,18 @@ First thing you will need to do is to create a bot on Slack.
 - Go to `https://you_slack_team.slack.com/apps/manage/custom-integrations`
 - Go to `Bots`
 - Go to `Add Configuration`
-- Choose the name of your bot, the name will be required before each commands
+- Choose the name of your bot - the name will be required before each command
 - Save the token for later
 
-Once you have filled the registration page you can invite your bot to any slack channels from your team you want : `/invite @bot-name`.
+Once you have created the bot you can invite it to any slack channel you want : `/invite @bot-name`.
 
 #### Download the app
 
-Then you must install the ChatOps app from the Cloud66's app store
+Then you must install Igor from the Cloud66 app store
 -   Go to ` https://app.cloud66.com/easydeploys`
--   Install the `ChatOps` app
+-   Install the `Igor` app
 -   Deploy the stack
--   Click on 'Browse' to access the web resgistration page for your bot.
+-   Click on 'Browse' to access the web registration page for your bot
 
 ### For any informations on how to use Igor:
 __________________________________________________________________
