@@ -40,36 +40,12 @@ Then you must install the ChatOps app from the Cloud66's app store
 
 or
 
-the docker-compose file is available here https://github.com/cloud66/igor-bot/edit/feature/testing_enhancements/README.md
+the docker-compose file is available here https://github.com/cloud66/igor-bot/docker-compose.yml
 
-### Quick Start:
-__________________________________________________________________
-#### Create a Slack bot
+#### Deregister
 
-First thing you will need to do is to create a bot on Slack.
-- Go to `https://you_slack_team.slack.com/apps/manage/custom-integrations`
-- Go to `Bots`
-- Go to `Add Configuration`
-- Choose the name of your bot - the name will be required before each command
-- Save the token for later
+On the registration page from the `Browse` of your Igor registration container and then click on deregister. You will have to restart your Igor container for the changes to take place.
 
-Once you have created the bot you can invite it to any slack channel you want : `/invite @bot-name`.
-
-#### Download Igor
-
-Your can install Igor either using the docker compose file or from the Cloud 66 app store :
-
-From Cloud 66 app store :
-
-Then you must install Igor from the Cloud66 app store
--   Go to ` https://app.cloud66.com/easydeploys`
--   Install the `Igor` app
--   Deploy the stack
--   Click on 'Browse' to access the web registration page for your bot
-
-or
-
-use the `igor/docker-compose.yml` file
 
 ### For any informations on how to use Igor:
 __________________________________________________________________
