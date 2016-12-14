@@ -28,13 +28,21 @@ First thing you will need to do is to create a bot on Slack.
 
 Once you have created the bot you can invite it to any slack channel you want : `/invite @bot-name`.
 
-#### Download the app
+#### Download Igor
+
+Your can install Igor either using the docker compose file or from the Cloud 66 app store :
+
+From Cloud 66 app store :
 
 Then you must install Igor from the Cloud66 app store
 -   Go to ` https://app.cloud66.com/easydeploys`
 -   Install the `Igor` app
 -   Deploy the stack
 -   Click on 'Browse' to access the web registration page for your bot
+
+or
+
+use the `igor/docker-compose.yml` file
 
 ### For any informations on how to use Igor:
 __________________________________________________________________
