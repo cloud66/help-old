@@ -44,7 +44,7 @@ the docker-compose file is available here https://github.com/cloud66/igor-bot/do
 
 #### Deregister
 
-On the registration page from the `Browse` of your Igor registration container and then click on deregister. You will have to restart your Igor container for the changes to take place.
+Go to the registration page from the `Browse` of your Igor registration container and then click on deregister. You will have to restart your Igor container for the changes to take place.
 
 
 ### For any informations on how to use Igor:
