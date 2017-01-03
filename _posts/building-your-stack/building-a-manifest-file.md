@@ -96,7 +96,6 @@ Next, select which application you would like to specify settings for. You can c
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **image_keep_count** (_Optional, defaults to 5_): Set the number of old images to save on your servers (besides the running image).
-- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:
@@ -108,8 +107,6 @@ production:
             root_disk_size: 100
             root_disk_type: ssd
             image_keep_count: 5
-            extra_packages:
-                - chrony
 </pre>
 
 <hr>
@@ -119,7 +116,6 @@ production:
 - **version**: Specify the version of ElasticSearch you want to install.
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
-- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:
@@ -128,8 +124,6 @@ production:
             version: 0.90.7
             root_disk_size: 100
             root_disk_type: ssd
-            extra_packages:
-                - chrony
 </pre>
 <hr>
 
@@ -219,7 +213,6 @@ production:
 - **memory**: Specify maximum memory (in MB) that can be used (default value is 64).
 - **port**: Specify connection port (default value is 11211).
 - **listen&#95;ip**: Specify which IP address to listen on (default value is 0.0.0.0).
-- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:
@@ -228,8 +221,6 @@ production:
             memory: 1024
             port: 11211
             listen&#95;ip: 127.0.0.1
-            extra_packages:
-                - chrony
 </pre>
 
 <hr>
@@ -239,7 +230,6 @@ production:
 - **version**: Specify the version of MongoDB you want to install (can only be set during stack build).
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
-- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:
@@ -248,8 +238,6 @@ production:
             version: 2.4.8
             root_disk_size: 100
             root_disk_type: ssd
-            extra_packages:
-                - chrony
 </pre>
 
 <hr>
@@ -277,7 +265,6 @@ production:
 
 - **cors**: Enable [Cross Origin Resource Sharing](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) - this will be taken into account when your Nginx configuration is reloaded.
 - **perfect_forward_secrecy** (_deprecated_): Enable [Perfect Forward Secrecy](http://en.wikipedia.org/wiki/Perfect_forward_secrecy) - this will be taken into account when your Nginx configuration is reloaded.
-- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:
@@ -286,8 +273,6 @@ production:
             nginx:
                 cors: true
                 perfect&#95;forward&#95;secrecy: true # deprecated
-            extra_packages:
-                - chrony
 </pre>
 
 #### CORS configuration
@@ -314,7 +299,6 @@ production:
 - **postgis**: Specify whether to include PostGIS (can be added after initial stack build).
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
-- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:
@@ -324,14 +308,11 @@ production:
             postgis: true
             root_disk_size: 100
             root_disk_type: ssd
-            extra_packages:
-                - chrony
 </pre>
 <hr>
 <h3 id="postgis">PostGIS</h3>
 
 - **version**: Specify the version of PostGIS you want to install.
-- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:
@@ -339,8 +320,6 @@ production:
        configuration:
             postgis:
                 version: 2.1.1
-            extra_packages:
-                - chrony
 </pre>
 
 <hr>
@@ -358,7 +337,6 @@ A Rails application type in the manifest file gives you fine control over things
 - **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers. <span style="background-color: #FFFF00"> Note that you must provide <a href= "#servers"> <b>subnet_id</b></a> for all servers in your stack.</span>
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
-- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <div class="notice notice-danger">
         <h3>Important</h3>
@@ -380,8 +358,6 @@ production:
             vpc_id: vpc-64872001
             root_disk_size: 100
             root_disk_type: ssd
-            extra_packages:
-                - chrony
 </pre>
 
 <hr>
@@ -391,7 +367,6 @@ production:
 - **version**: Specify the version of Redis you want to install.
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
-- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <pre class="prettyprint">
 production:
@@ -400,8 +375,6 @@ production:
             version: 2.6.10
             root_disk_size: 100
             root_disk_type: ssd
-            extra_packages:
-                - chrony
 </pre>
 
 <hr>
@@ -418,7 +391,6 @@ A Sinatra application type in the manifest file gives you fine control over thin
 - **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
-- **extra_packages** (_Optional_): A list of extra apt packages to be installed on the server, before deploying the application. This example installs `chrony` apt package on the server before deploying the application.
 
 <div class="notice notice-danger">
         <h3>Important</h3>
@@ -439,8 +411,6 @@ production:
             vpc_id: vpc-64872001
             root_disk_size: 100
             root_disk_type: ssd
-            extra_packages:
-                - chrony
 </pre>
 
 <hr>
