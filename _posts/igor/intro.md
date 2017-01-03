@@ -17,9 +17,11 @@ Igor is an open source Slack-bot, built by [Cloud 66](http://www.cloud66.com/?ut
 
 ### Quick install:
 __________________________________________________________________
+
 #### Create a Slack bot
 
 First thing you will need to do is to create your ChatOps bot on Slack.
+
 - Go to `https://you_slack_team.slack.com/apps/manage/custom-integrations` 
 - Go to `Bots`
 - Go to `Add Configuration`
@@ -33,15 +35,17 @@ Once you have filled the registration page you can invite your bot to any slack 
 You can install the app either from the Cloud 66 app store or from the docker-compose
 
 From the Cloud66's app store:
--   Go to ` https://app.cloud66.com/easydeploys`
+
+-   Go to `https://app.cloud66.com/easydeploys`
 -   Install the `ChatOps` app
 -   Deploy the stack
--   Click on 'Browse' to access the web resgistration page for your bot.
+-   Click on `Browse` to access the web resgistration page for your bot.
 
 or
 
 From the docker-compose file:
-- the docker-compose file is available here https://github.com/cloud66/igor-bot/blob/feature/testing_enhancements/docker-compose.yml
+
+- The docker-compose file is available [here](https://github.com/cloud66/igor-bot/blob/feature/testing_enhancements/docker-compose.yml)
 
 #### Deregister
 
@@ -51,4 +55,4 @@ Go to the registration page from the `Browse` of your Igor registration containe
 ### For any informations on how to use Igor:
 __________________________________________________________________
 
-Please go to : http://chatops.cloud66.com
+Please go to : [http://chatops.cloud66.com](http://chatops.cloud66.com)
