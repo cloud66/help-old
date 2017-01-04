@@ -92,7 +92,8 @@ Next, select which application you would like to specify settings for. You can c
 
 - **version**: Specify the version of Docker you want to install.
 - **weave_version** (_Optional_): Specify the version of Weave you want to install.
-- **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers.
+- **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers. <span style="background-color: #FFFF00"> Note that you must provide <a href= "#servers"> <b>subnet_id</b></a> for all servers in your stack.</span>
+- **vn&#95;name** (_Optional, AZURE only_): Name of the Virtual Network in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **image_keep_count** (_Optional, defaults to 5_): Set the number of old images to save on your servers (besides the running image).
@@ -107,6 +108,20 @@ production:
             root_disk_size: 100
             root_disk_type: ssd
             image_keep_count: 5
+</pre>
+
+<pre class="prettyprint">
+production:
+    docker:
+        configuration:
+            version: 1.7.0
+            weave_version: 1.0.3
+            vn_name: your_vn_name
+            root_disk_size: 100
+            root_disk_type: ssd
+            image_keep_count: 15
+            extra_packages:
+                - chrony
 </pre>
 
 <hr>
@@ -335,6 +350,7 @@ A Rails application type in the manifest file gives you fine control over things
 - **locked&#95;passenger&#95;version**: Force the version of passenger to use. Note: this only applies during server build and is not supported on passenger enterprise stacks.
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers. <span style="background-color: #FFFF00"> Note that you must provide <a href= "#servers"> <b>subnet_id</b></a> for all servers in your stack.</span>
+- **vn&#95;name** (_Optional, AZURE only_): Name of the Virtual Network in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 
@@ -389,6 +405,7 @@ A Sinatra application type in the manifest file gives you fine control over thin
 - **locked&#95;passenger&#95;version**: Force the version of passenger to use. Note: this only applies during server build and is not supported on passenger enterprise stacks.
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
 - **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers.
+- **vn&#95;name** (_Optional, AZURE only_): Name of the Virtual Network in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 
