@@ -81,7 +81,7 @@ You can choose between any of four supported databases:
 Cloud 66 makes it easy for you to [backup your database](/database-management/database-backup), [verify the backup](/database-management/backup-verification) and [replicate your databases](/database-management/database-replication).
 
 <h3 id="os">Operating system</h3>
-Your servers will be deployed with <b>Ubuntu 14.04 LTS</b>. On the operating system level, you can [monitor disk, CPU and memory](/managing-your-stack/server-monitoring) from the dashboard.
+Your servers will be deployed with <b>Ubuntu 16.04 LTS</b>. On the operating system level, you can [monitor disk, CPU and memory](/managing-your-stack/server-monitoring) from the dashboard.
 
 <h3 id="cloud">Cloud vendor</h3>
 You can either [deploy to your cloud](/deployment/deploy-to-your-cloud) or [deploy to your own server](/deployment/registered-servers).

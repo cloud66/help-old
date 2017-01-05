@@ -77,10 +77,10 @@ You will see a JSON `application/json` payload returned like the following:
          "kernelrelease":"3.13.0-79-generic",
          "kernelversion":"3.13.0",
          "lsbdistcodename":"trusty",
-         "lsbdistdescription":"Ubuntu 14.04.4 LTS",
+         "lsbdistdescription":"Ubuntu 16.04.4 LTS",
          "lsbdistid":"Ubuntu",
-         "lsbdistrelease":"14.04",
-         "lsbmajdistrelease":"14",
+         "lsbdistrelease":"16.04",
+         "lsbmajdistrelease":"16",
          "macaddress":"04:01:b5:6e:4c:01",
          "macaddress_eth0":"04:01:b5:6e:4c:01",
          "macaddress_eth1":"04:01:b5:6e:4c:02",
@@ -101,7 +101,7 @@ You will see a JSON `application/json` payload returned like the following:
          "network_eth1":"10.131.0.0",
          "network_lo":"127.0.0.0",
          "operatingsystem":"Ubuntu",
-         "operatingsystemrelease":"14.04",
+         "operatingsystemrelease":"16.04",
          "osfamily":"Debian",
          "path":"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
          "physicalprocessorcount":"1",
@@ -132,7 +132,7 @@ You will see a JSON `application/json` payload returned like the following:
       },
       "os":{
          "distro":"ubuntu",
-         "version":"14.04"
+         "version":"16.04"
       },
       "name":"Crayfish",
       "uid":"2c63e62d8cc35a5efc9429e0dd4c0438",

@@ -26,7 +26,7 @@ tags: ['Maintenance']
 </ul>
 
 <h2 id="os">Operating system</h2>
-Your servers are deployed with <b>Ubuntu 14.04 LTS</b>.
+Your servers are deployed with <b>Ubuntu 16.04 LTS</b>.
 
 <h2 id="clouds">Supported cloud providers</h2>
 Cloud 66 currently supports the following cloud providers:

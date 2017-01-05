@@ -113,7 +113,7 @@ Currently we support Amazon Web Services, Digital Ocean, Google Compute Engine, 
 <hr>
 
 <h2 id="f11">Which distributions of Linux are supported?</h2>
-We currently only support Ubuntu - the officially supported version is 14.04.
+We currently only support Ubuntu - the officially supported version is 16.04.
 
 <hr>
 
