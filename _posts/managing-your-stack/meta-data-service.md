@@ -170,6 +170,7 @@ You will see a JSON `application/json` payload returned like the following:
          "uid":"c4499b8ecfaedaf57ed8dbd867aa9881",
          "environment":"production"
       },
+      "ssh_public_key": "ssh-rsa AAAAB3...8bU9 hello@cloud66.com",
       "groups":[
          "rails"
       ],
