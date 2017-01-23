@@ -182,10 +182,10 @@ After you downloaded a backup you will need to follow couple of steps base on yo
 First step is to **untar**  downloaded backup (Unless you are using download script which will untar the result automatically)
 
 <pre class="prettyprint">
-$ tar -xvf <tar_file>  -C <folder_name> 
+$ tar -xvf &lt;tar_file&gt; -C &lt;folder_name&gt;
 </pre>
 
-The -C option allows you to choose which folder to extract the files to.
+The **-C** option allows you to choose which folder to extract the files to.
 
 After you have an unarchived version of your backup ready in a folder you should follow some steps base on your database type.
 
@@ -275,6 +275,7 @@ $ sudo apt-get install -y percona-xtrabackup-24
 </pre>
  
 1. You need to find the Percona backup folder in unarchived folder. Run following command to find it :
+
 <pre class="prettyprint">
 $ find /path/to/unarchived/folder -name ibdata1 -type f  -exec dirname {} ';'
 </pre>
@@ -284,16 +285,19 @@ $ find /path/to/unarchived/folder -name ibdata1 -type f  -exec dirname {} ';'
 3. Stop Mysql service : 
 
 3.1 Ubuntu 12.04 
+
 <pre class="prettyprint">
 $ sudo /etc/init.d/mysql stop
 </pre>
 
 3.2 Ubuntu 14.04 
+
 <pre class="prettyprint">
 $ sudo service mysql stop 
 </pre>
 
 3.3 Ubuntu 16.04 
+
 <pre class="prettyprint">
 $ sudo systemctl stop mysql 
 </pre>
@@ -329,17 +333,20 @@ $ sudo chown -R mysql:mysql  /path/to/your/mysql/data/directory
 
 8. Start Mysql service
 
-8.1 Ubuntu 12.04 
+8.1 Ubuntu 12.04
+
 <pre class="prettyprint">
 $ sudo /etc/init.d/mysql start
 </pre>
 
-8.2 Ubuntu 14.04 
+8.2 Ubuntu 14.04
+
 <pre class="prettyprint">
 $ sudo service mysql start
 </pre>
 
-8.3 Ubuntu 16.04 
+8.3 Ubuntu 16.04
+
 <pre class="prettyprint">
 $ sudo systemctl start mysql 
 </pre>
@@ -374,7 +381,7 @@ $ find /path/to/unarchived/folder '(' -name '*.sql' -o -name '*.sql.gz' ')' -typ
 $ gzip -d /path/to/unarchived/folder/data_file_from_previous_step
 </pre>
 
-4. On order to clean old data you can drop your current db and create a new one. You can use following scripts to drop and recreate your database but first you need to set some environment variables.
+4. In order to clean old data you can drop your current db and create a new one. You can use following scripts to drop and recreate your database but first you need to set some environment variables.
 You can find YOUR_PG_DATABASE_NAME and YOUR_PG_APP_USERNAME in Cloud66 Dashboard Postgresql server detail page.
 
 <pre class="prettyprint">
@@ -427,12 +434,14 @@ $ find /path/to/unarchived/folder -name raw -type d
 
 2. Stop Postgresql service : 
 
-2.1 Ubuntu 12.04 / 14.04  
+2.1 Ubuntu 12.04 / 14.04
+
 <pre class="prettyprint">
 $ (sudo -u postgres pg_ctl stop -D /usr/local/pgsql/data -m f -t 10 || true) && sudo stop postgresql
 </pre>
 
-2.2 Ubuntu 16.04 
+2.2 Ubuntu 16.04
+
 <pre class="prettyprint">
 $ sudo systemctl stop postgresql 
 </pre>
@@ -455,6 +464,7 @@ $ sudo mkdir -p /usr/local/pgsql/data
 </pre>
 
 5. Use following command to copy the content of main backup folder (step 1)
+
 <pre class="prettyprint">
 $ sudo cp -a /path/to/unarchived/folder/main/backup/. /usr/local/pgsql/data/
 </pre>
@@ -467,17 +477,20 @@ $ sudo chown -R postgres:postgres /usr/local/pgsql/data
 
 7. Start Postgresql service
 
-7.1 Ubuntu 12.04 
+7.1 Ubuntu 12.04
+
 <pre class="prettyprint">
 $ sudo /etc/init.d/postgresql start
 </pre>
 
-7.2 Ubuntu 14.04 
+7.2 Ubuntu 14.04
+
 <pre class="prettyprint">
 $ sudo service postgresql start
 </pre>
 
-7.3 Ubuntu 16.04 
+7.3 Ubuntu 16.04
+
 <pre class="prettyprint">
 $ sudo systemctl start  postgresql" 
 </pre>
