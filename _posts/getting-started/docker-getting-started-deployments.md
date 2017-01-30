@@ -48,7 +48,7 @@ tags: ['']
     Configuring Services
 </h2>
 
-<p>In the example below we have a single Rails service. In this case it's been pulled from an image. The previous section of this guide explains how to <a href="docker-getting-started-building-your-images#building-images">build images for your services</a>.</p>
+<p>In the example below we have a single Rails service. In this case it's been pulled from an image. The previous section of this guide explains how to <a href="docker-getting-started-building-your-images#building-images">add and build images for your services</a>.</p>
 
 <p>The Rails service is a web application so we need to configure it to handle web traffic.</p>
 
@@ -63,7 +63,7 @@ tags: ['']
 
 <p>The service will run inside a container, we need to configure it to respond to HTTP traffic. A standard web server listens on port 80 for HTTP traffic and 443 for HTTPS traffic.</p>
 
-<p>A Rails app listens to port 3000 so we should map the container port 3000 to the public Internet ports 80 and 443.
+<p>A Rails app listens to port 3000 so we should map the container port <strong>3000</strong> to the public Internet ports <strong>80</strong>  and <strong>443</strong>. Click the connector icon (circled in red above) to update the <strong>container port</strong> and <strong>public internet</strong> ports.
 
 <div style="margin: 3em 0">
     <div style="overflow: hidden; border: 1px solid #C9C9C9; border-radius: 3px; width: 558px; height: 380px;">
@@ -104,14 +104,20 @@ tags: ['']
     Configuring Servers
 </h2>
 
-<p>We need to choose a cloud provider for the deployment. For this example we'll use DigitalOcean and deploy the stack to the London region.</p>
+<p>
+    We need to choose a cloud provider for the deployment. For this example we'll use DigitalOcean and deploy the stack to the London region. The server size can be set by clicking on the cog icon displayed at the top right of each server.
+</p>
 
 <div class="grid">
     <div class="grid__item    one-half">
-        <img style="margin-top: 50px;" src="/images/guides/docker_onboarding/docker_guide_target_cloud.png">
+        <img style="margin: 45px 0 0" src="/images/guides/docker_onboarding/docker_guide_target_cloud.png">
     </div><!--
  --><div class="grid__item    one-half">
-        <img  style="border: 1px solid #C9C9C9; border-radius: 3px;" alt="Add another server" src="/images/guides/docker_onboarding/docker_guide_server_modal.png" width="">
+        <img style="margin: 0 0 15px 0" width="220" src="/images/guides/docker_onboarding/docker_guide_server_config.png">
+        <img  style="margin: 0 0 0 0; border: 1px solid #C9C9C9; border-radius: 3px;" alt="Add another server" src="/images/guides/docker_onboarding/docker_guide_server_modal.png" width="">
+        <p class="caption" style="margin-top: 6px">
+            <a href="https://help.cloud66.com/getting-started/choosing-server-size">How to choose the right size server</a>.
+        </p>
     </div>
 </div>
 
@@ -119,8 +125,21 @@ tags: ['']
     Deployment
 </h2>
 
-<p>Now everything is ready to go, just hit the deploy button.</p>
+<p>Now everything is ready to go, just hit the deploy button. During the build and deployment process you can view the log to see what's happening behind the scenes.</p>
 
-<div>
-    <img class="img-animated" src="/images/guides/docker_onboarding/docker_guide_deploying.gif" width="">
-</div>
+
+<img style="margin: 0" class="img-animated" src="/images/guides/docker_onboarding/docker_guide_deploying.gif" width="">
+
+<h2 id="advanced-deployment">
+    Advanced Features
+</h2>
+
+<p>
+    Information that defines how your application is deployed is accessible from <em>manifest.yml</em>. You can edit this file directly if you need to access <a href="http://help.cloud66.com/building-your-stack/getting-started-with-manifest-files">advanced deployment features</a> for example advanced configuration of Cross-Origin Resource Sharing or Amazon Virtual Private Cloud.
+</p>
+
+<p>
+    <a href="docker-getting-started-building-images">
+        <b>← Previous: Building Images</b>
+    </a>
+</p>

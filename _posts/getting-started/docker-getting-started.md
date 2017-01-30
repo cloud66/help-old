@@ -23,7 +23,7 @@ tags: ['']
         </a>
     </li>
     <li>
-        <a href="docker-getting-started-deploying-your-stack">
+        <a href="docker-getting-started-deployment">
             Setting up a Docker Deployment
         </a>
     </li>
@@ -117,8 +117,19 @@ tags: ['']
     Once you've finished adding services hit <strong>Start Build</strong>.
 </p>
 
+<h3>Build Process (BuildGrid)</h3>
+
+<p>During the build you can view the status of each individual image build and drill down into the logs if you need to troubleshoot any part of the process.</p>
+
+<img class="img-animated_" src="/images/guides/docker_onboarding/docker_guide_building_images.png" width="">
+
+<h3>Advanced Features</h3>
+<p>All of the information that defines how services are built is accessible from the <em>services.yml</em> file.</p>
+
+<p>There is an advanced mode that allows you to edit this configuration directly. This is useful for <a href="http://help.cloud66.com/building-your-stack/docker-service-configuration">accessing advanced features</a>. E.g. configuring <a href="http://help.cloud66.com/building-your-stack/multi-tenancy-for-stacks">multi-tenancy stacks</a>.</p>
+
 <p class="u-textRight">
-    <a href="docker-getting-started-deploying-your-stack">
+    <a href="docker-getting-started-deployment">
         <b>Next: Deploying your Docker Stack →</b>
     </a>
 </p>
