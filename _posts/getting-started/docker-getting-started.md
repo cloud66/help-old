@@ -114,7 +114,7 @@ tags: ['']
 
 
 <p>
-    Once you've finished adding services hit <strong>Start Build</strong>.
+    Once you've finished adding services click Start Build.
 </p>
 
 <h3>Build Process (BuildGrid)</h3>
@@ -126,7 +126,7 @@ tags: ['']
 <h3>Advanced Features</h3>
 <p>All of the information that defines how services are built is accessible from the <em>services.yml</em> file.</p>
 
-<p>There is an advanced mode that allows you to edit this configuration directly. This is useful for <a href="http://help.cloud66.com/building-your-stack/docker-service-configuration">accessing advanced features</a>. E.g. configuring <a href="http://help.cloud66.com/building-your-stack/multi-tenancy-for-stacks">multi-tenancy stacks</a>.</p>
+<p>There is an advanced mode that allows you to edit this configuration directly. This is useful for <a href="http://help.cloud66.com/building-your-stack/docker-service-configuration">accessing advanced features</a>. For example configuring <a href="http://help.cloud66.com/building-your-stack/multi-tenancy-for-stacks">multi-tenancy stacks</a>.</p>
 
 <p class="u-textRight">
     <a href="docker-getting-started-deployment">
