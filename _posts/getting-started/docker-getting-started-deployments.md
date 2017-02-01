@@ -99,6 +99,8 @@ tags: ['']
 
 <p>Now the Rails app is configured to run in a container and we've setup a separate MySQL database server. All that remains is to decide what cloud provider to use and what server size and region we should deploy to.</p>
 
+<p>Remember, you can also deploy to your own servers. However you should first <a href="http://help.cloud66.com/deployment/registered-servers">add them as  registered servers</a>.</p>
+
 
 <h2 id="configuring-servers">
     Configuring Servers
@@ -135,7 +137,7 @@ tags: ['']
 </h2>
 
 <p>
-    Information that defines how your application is deployed is accessible from <em>manifest.yml</em>. You can edit this file directly if you need to access <a href="http://help.cloud66.com/building-your-stack/getting-started-with-manifest-files">advanced deployment features</a> for example advanced configuration of Cross-Origin Resource Sharing or Amazon Virtual Private Cloud.
+    Information that defines how your application is deployed is accessible from <em>manifest.yml</em>. You can edit this file directly if you need to access <a href="http://help.cloud66.com/building-your-stack/getting-started-with-manifest-files">advanced deployment features</a>. For example advanced configuration of Cross-Origin Resource Sharing or Amazon Virtual Private Cloud and more.
 </p>
 
 <p>

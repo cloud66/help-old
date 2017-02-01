@@ -101,13 +101,13 @@ tags: ['']
     <li>
         <p>
             <strong>I'm using a manual Git Repo</strong> &mdash;
-            Use this option if you have a private git repo or you're using another git provider such as BitBucket. You can choose this if you don't want to link Cloud 66 to your GitHub account. You will need to <a href="https://help.cloud66.com/getting-started/git-repository">add and approve the Cloud 66 public key</a> if your repo is private. You'll be prompted to do this if required.
+            Use this option if you have a private git repo or you're using another git provider such as BitBucket. You can also choose this if you don't want to link Cloud 66 to your GitHub account. You will need to <a href="https://help.cloud66.com/getting-started/git-repository">add and approve the Cloud 66 public key</a> if your repo is private. You'll be prompted to do this if required.
         </p>
     </li>
     <li>
         <p>
             <strong>It's a Docker Image</strong> &mdash;
-        Use this to add pre-built images to a project. You can use a service like DockerHub or your own private repo. If you're using a private repository you'll be prompted to add the necessary login credentials.
+        Use this to add pre-built images to a project. You can use a service like DockerHub or your own private image repo. If you're using a private repository you'll be prompted to add the necessary login credentials.
         </p>
     </li>
 </ul>
