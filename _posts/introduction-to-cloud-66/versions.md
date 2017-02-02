@@ -71,7 +71,7 @@ You are free to specify a version for a number of components in your [manifest f
     <tbody>
         <tr>
             <td>Docker</td>
-            <td>1.12.5</td>
+            <td>1.12.6</td>
         </tr>
         <tr>
             <td>ElasticSearch</td>
@@ -99,7 +99,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>PostgreSQL</td>
-            <td>9.4.6</td>
+            <td>9.5.5</td>
         </tr>
         <tr>
             <td>Redis</td>
