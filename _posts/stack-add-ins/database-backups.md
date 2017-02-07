@@ -3,7 +3,7 @@ layout: post
 template: one-col
 title:  "Database backup"
 date:   4000-10-03 14:17:13
-categories: database-management
+categories: stack-add-ins
 lead: Managed and unmanaged database backups
 search-tags: ['']
 tags: ['']
@@ -165,11 +165,13 @@ $ curl -o "YOUR_BACKUP_FILE_NAME" "GENERATED_URL"
 </pre>
 
 **Example**
+
 <pre class="prettyprint">
 $ curl -o "mysql.tar.aa" "https://c66-managed-backup.s3.amazonaws.com/a657f3e657771822b6e7b/backups/54335cfce20127c3/mysql/OsZOe/2017.01.11.14.00.21/mysql.tar.aa?AWSAccessKeyId=AKIAJXHLWDDQ&Expires=1484144370&Signature=9MACFYOLIQ%2FsXqqqi"
 </pre>
 
 You need to concatenate different parts if you have a multipart backup in order to be able to use it. As an example if your backup contains four parts called mysql.tar.aa, mysql.tar.ab, mysql.tar.ac, mysql.tar.ad you can use bellow command for concatenation after downloading them :    
+
 <pre class="prettyprint">
 $ cat mysql.tar.aa mysql.tar.ab mysql.tar.ac mysql.tar.ad > mysql.tar 
 </pre>
@@ -284,6 +286,7 @@ $ find /path/to/unarchived/folder -name ibdata1 -type f  -exec dirname {} ';'
 3. Stop Mysql service : 
 
 3.1 Ubuntu 12.04 
+
 <pre class="prettyprint">
 $ sudo /etc/init.d/mysql stop
 </pre>
