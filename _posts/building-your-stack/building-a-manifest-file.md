@@ -635,7 +635,7 @@ External server definitions specify that the application is hosted on a server e
 
 <pre class="prettyprint">
 production:
-    rails:
+    mysql:
         server: external
 </pre>
 
