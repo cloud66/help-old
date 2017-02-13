@@ -147,7 +147,6 @@ redirects:
   cloud-providers/cloud-linode.html: /deployment/cloud-linode.html
   cloud-providers/cloud-rackspace.html: /deployment/cloud-rackspace.html
   cloud-providers/cloud-telefonica.html: "http://help.cloud66.com"
-  cloud-providers/cloud-vexxhost.html: /deployment/cloud-vexxhost.html
   how-to/introduction.html: "http://community.cloud66.com"
   your-account/pci-compliance.html: /compliance-guides/pci-compliance.html
   your-account/pricing.html: "http://cloud66.com/pricing"
@@ -169,7 +168,6 @@ redirects:
   cloud-providers/cloud-linode.html: /deployment/cloud-linode.html
   cloud-providers/cloud-rackspace.html: /deployment/cloud-rackspace.html
   cloud-providers/cloud-telefonica.html: "http://help.cloud66.com"
-  cloud-providers/cloud-vexxhost.html: /deployment/cloud-vexxhost.html
   how-to/introduction.html: "http://community.cloud66.com"
   how-to/detailed-server-logs.html: /stack-definition/logging.html
   how-to/aws-keys.html: "http://community.cloud66.com"

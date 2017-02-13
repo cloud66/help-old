@@ -35,7 +35,6 @@ If you receive a notification about this, please see the following steps:
 	<li>Microsoft Azure (<a href="https://twitter.com/azure">Twitter</a>, <a href="http://azure.microsoft.com/en-us/status/">Status page</a>)</li>
 	<li>Packet (<a href="http://packet.statuspage.io/">Status page</a>)</li>
 	<li>Rackspace (<a href="https://twitter.com/Rackspace">Twitter</a>, <a href="https://status.rackspace.com/">Status page</a>)</li>	
-	<li>Vexxhost (<a href="https://twitter.com/vexxhost">Twitter</a>, <a href="">Status page</a>)</li>		
 		
 </ul>
 <li>Is Cloud 66 experiencing issues? See the <a href="https://twitter.com/cloud66status">Twitter</a> and <a href="http://status.cloud66.com/">Status page</a>.</li>

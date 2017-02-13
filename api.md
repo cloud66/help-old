@@ -379,20 +379,6 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | 90 GB Performance | 90 GB Performance |
 | 120 GB Performance | 120 GB Performance |
 
-### Vexxhost Cloud
-| Instance size | Value |
-| ---------- | ---------- |
-| 512MB | nb.512M |
-| 1GB | nb.1G |
-| 2GB | nb.2G |
-| 4GB | nb.4G |
-| 8GB | nb.8G |
-| 16GB | nb.16G |
-| 24GB | nb.24G |
-| 32GB | nb.32G |
-| 48GB | nb.48G 
-| 64GB | nb.64G |
-
 ### CloudA Cloud
 | Instance size | Value |
 | ---------- | ---------- |
@@ -487,11 +473,6 @@ Many requests in the Cloud 66 API rely on the Stack UID value, an alphanumeric s
 | London | london |
 | Northern Virginia | northern_virginia |
 | Sydney | sydney |
-
-### Vexxhost Cloud
-| Region | Value |
-| ---------- | ---------- |
-| Montreal | default |
 
 ### CloudA Cloud
 | Region | Value |

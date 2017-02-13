@@ -37,9 +37,6 @@ When your stack is built for the first time, a number of packages are built from
 - 512MB Standard Instance
 - 512MB Standard Instance (HVM)
 
-### Vexxhost
-- nb.512M
-
 **We suggest using a server with at least 1GB of memory and 4 cores**
 
 In particular, Elasticsearch on a standalone under-powered server will not start up. This is because we configure Elasticsearch to lock its memory and prevent swapping on standalone servers as per the [official recommendation](https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html), and there is simply not enough memory for it to run it successfully.

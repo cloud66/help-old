@@ -30,7 +30,6 @@ Depending on which cloud provider you use, this load balancer will be set up dif
 - **Linode**: [NodeBalancer](https://www.linode.com/nodebalancers/)
 - **Microsoft Azure**: [TrafficManager](http://msdn.microsoft.com/en-us/library/azure/hh744833.aspx)
 - **Rackspace**: [Rackspace Load Balancing](http://www.rackspace.com/cloud/load-balancing/)
-- **Vexxhost**: [HAProxy](http://haproxy.1wt.eu/)
 - **CloudA**: [Load Balancing as a service](https://www.clouda.ca/technology/vpc-virtual-private-cloud/)
 
 

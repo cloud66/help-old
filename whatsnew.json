@@ -114,12 +114,6 @@
 	"link": "http://blog.cloud66.com/introducing-cloud-66-organizations/"
 	},
 	{
-	"date": "2014-04-03T19:55:44Z",
-	"title": "New supported cloud vendor: Vexxhost",
-	"summary": "OpenStack Canadian cloud servers.",
-	"link": "http://blog.cloud66.com/new-supported-cloud-vendor-vexxhost/"
-	},
-	{
 	"date": "2014-04-04T19:55:44Z",
 	"title": "Take full control of Nginx with CustomConfig",
 	"summary": "Customize your Nginx configuration.",

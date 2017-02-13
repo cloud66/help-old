@@ -41,7 +41,6 @@ Cloud 66 currently supports the following cloud providers:
     <li><a href="/deployment/microsoft-azure-cloud">Microsoft Azure</a></li>
     <li><a href="/deployment/packet-cloud">Packet</a></li>
     <li><a href="/deployment/rackspace-cloud">Rackspace</a></li>
-    <li><a href="/deployment/vexxhost-cloud">Vexxhost</a></li>    
     <li><a href="/deployment/cloud-a-cloud">CloudA</a></li>    
 </ul>
 

@@ -118,7 +118,7 @@ For this example, we will use a simple Rails application with common requirement
 ### Assumptions
 
 <ul class="list">
-<li>Cloud 66 is used together with <a href="http://digitalocean.com">DigitalOcean</a> or <a href="http://vexxhost.com">Vexxhost</a>.</li>
+<li>Cloud 66 is used together with <a href="http://digitalocean.com">DigitalOcean</a>.</li>
 <li>The DIY solution is based on a developer salary of $60,000 per year.</li>
 <ul class="list">
 	<li>Business overhead (tax, insurance, benefits etc.) of 50% per year</li>

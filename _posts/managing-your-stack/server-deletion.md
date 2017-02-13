@@ -41,12 +41,6 @@ Here is the list of items (Deleted/Not Deleted) depending on the cloud:
 `Deleted:` Servers, NodeBalancers
 
 
-###Vexxhost
-`Deleted:` Servers, Security Groups, Keypaires
-
-`Not Deleted:` Networks, Subnets, Routers
-
-
 ###CloudA
 `Deleted:` Servers, Load Balancers, Security Groups, Keypaires, Public IPs
 
