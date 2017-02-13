@@ -95,7 +95,7 @@ tags: ['']
     <li>
         <p>
             <strong>I'm using a GitHub Repo</strong> &mdash;
-            This is the easiest way to add services from GitHub repos. You will need to link your GitHub account with Cloud 66 before you take advantage of this.
+            This is the easiest way to add services from GitHub repos. You will need to link your GitHub account with Cloud 66 before you can take advantage of this. You can do this by clicking the <em>Lets link with GitHub now</em> link that will appear if you haven't signed up to Cloud 66 with GitHub.
         </p>
     </li>
     <li>
@@ -119,14 +119,16 @@ tags: ['']
 
 <h3>Build Process (BuildGrid)</h3>
 
-<p>During the build you can view the status of each individual image build and drill down into the logs if you need to troubleshoot any part of the process.</p>
+<p>BuildGrid is the Cloud 66 image building service that is used to build Docker images for your services directly from your git code repository.</p>
+
+<p>During the build process you can view the status of each individual image build and drill down into the logs if you need to troubleshoot any part of the process.</p>
 
 <img class="img-animated_" src="/images/guides/docker_onboarding/docker_guide_building_images.png" width="">
 
 <h3>Advanced Features</h3>
 <p>All of the information that defines how services are built is accessible from the <em>services.yml</em> file.</p>
 
-<p>There is an advanced mode that allows you to edit this configuration directly. This is useful for <a href="http://help.cloud66.com/building-your-stack/docker-service-configuration">accessing advanced features</a>. For example configuring <a href="http://help.cloud66.com/building-your-stack/multi-tenancy-for-stacks">multi-tenancy stacks</a>.</p>
+<p>There is an advanced mode that allows you to edit this configuration file directly. This is useful for <a href="http://help.cloud66.com/building-your-stack/docker-service-configuration">accessing advanced features</a>. For example configuring <a href="http://help.cloud66.com/building-your-stack/multi-tenancy-for-stacks">multi-tenancy stacks</a>.</p>
 
 <p class="u-textRight">
     <a href="docker-getting-started-deployment">
