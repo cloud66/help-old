@@ -15,7 +15,7 @@ When you want full control how your services are getting deployed, you need to g
 
 <h2>What is a manifest file?</h2>
 
-A manifest files allows you to be more explicit about your stack composition and control settings that are not usually available through the user interface or Cloud 66 toolbelt. The file describes the setup of the components that run your stack.
+A manifest file allows you to be more explicit about your stack composition and control settings that are not usually available through the user interface or Cloud 66 toolbelt. The file describes the setup of the components that run your stack.
 
 [Read more about manifest file here.](../building-your-stack/getting-started-with-manifest-files)
 
