@@ -14,7 +14,7 @@ tags: ['Partners', 'Docker', 'Weavescope', 'Tutorial']
 
 [Weave Scope](https://www.weave.works/products/weave-scope/) automatically generates a map of your application, enabling you to intuitively understand, monitor, and control your containerized, microservices based application. Perfect for visualisation of your Docker stack and debug purposes.
 
-Weave Scope is installed using [deploy hooks](http://help.cloud66.com/deployment/deploy-hooks) and the weave_scope [snippet](https://github.com/cloud66/snippets/cloud66/weave_scope).
+Weave Scope is installed using [deploy hooks](http://help.cloud66.com/deployment/deploy-hooks) and the weave_scope [snippet](https://github.com/cloud66/snippets/blob/master/cloud66/weave_scope).
 
 <h3>Step 1: Checkout your CustomConfig</h3>
 Checkout your [CustomConfig](http://help.cloud66.com/managing-your-stack/customconfig-git) git and add the file *deploy_hooks.yml* 
@@ -32,7 +32,8 @@ production: # Environment or your choice
 </pre>
 
 <h3>Step 3: Commit and redeploy your stack</h3>
-Commit the changes to the CustomConfig git reposity and redeploy your stack.
+Commit the changes to the CustomConfig git reposity and redeploy your stack. 
+<strong>NOTE:</strong> If your set WEAVE_SCOPE_TOKEN environment variable, weave scope will connect to Weave Cloud. If not. Read step 4.
 
 <h3>Step 4: Open port 4040 to access Weave Scope</h3>
 Weavescope will run on port 4040 which is not exposed to the outside world by default, which is a good thing. Make sure port 4040 is only accesible by your own IP-address. In order to access the UI of Weave Scope you have to enable port 4040 on your [stack firewall](http://help.cloud66.com/managing-your-stack/stac).

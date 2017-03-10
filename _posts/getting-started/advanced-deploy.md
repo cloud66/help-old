@@ -11,9 +11,46 @@ search-tags: []
 tags: ['']
 ---
 
-There are two files needed for Cloud 66 to create a Docker stack, **_[manifest.yml](building-your-stack/building-your-manifest-file)_** and **_[service.yml](building-your-stack/docker-service-configuration)_**. In advanced mode you can edit these files to suit your needs the best.
+When you want full control how your services are getting deployed, you need to get familiar with our [manifest.yml](../building-your-stack/getting-started-with-manifest-files) and [service.yml](../building-your-stack/docker-service-configuration).
 
-This is a sample _service.yml_ for a standard rails stack.
+<h2>What is a manifest file?</h2>
+
+A manifest file allows you to be more explicit about your stack composition and control settings that are not usually available through the user interface or Cloud 66 toolbelt. The file describes the setup of the components that run your stack.
+
+[Read more about manifest file here.](../building-your-stack/getting-started-with-manifest-files)
+
+This is a sample [manifest.yml](../building-your-stack/getting-started-with-manifest-files) to tell Cloud 66 to provision one server for a Docker stack to run your services.
+
+<pre class="prettyprint">
+production:
+    docker:
+        configuration:
+          version: 1.12.6
+        servers:
+            server:
+                unique_name: dockernodea                
+                region: us-east-1
+                size: m3.medium
+                vendor: aws
+                key_name: Default
+</pre>
+
+<h2>What is service configuration?</h2>
+
+Service configuration allows you to be more explicit about your Docker services and control settings that are not usually available through the user interface or Cloud 66 toolbelt. These settings describe the setup of your services, and these are just some examples of the service configurations you can make:
+
+<ul>
+<li>Defining build and deploy commands</li>
+<li>Specifying a central logging folder</li>
+<li>Setting port definitions for your containers</li>
+<li>Mount volumes into your containers</li>
+<li>Set dependencies between your containers</li>
+</ul>
+
+[Read more about service configuration here.](../building-your-stack/docker-service-configuration)
+
+
+This is a sample [service.yml](../building-your-stack/docker-service-configuration) to tell Cloud 66 to build a Docker image using [Buildgrid](../building-your-stack/cloud-66-buildgrid) and run the service with the name **web** and also provision a **mysql** database.
 
 <pre class="prettyprint">
 ---
