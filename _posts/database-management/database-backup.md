@@ -126,11 +126,11 @@ You can specify how often you would like to backup your database. It could be
 You can specify whether or not you would like to Gzip compress your backups. Compressing your backups will take up less space, but will require additional processing during the compression.  
 
 <h3 id="exclude">Exclude tables</h3>
-This option applies to **logical** MySQL and PostgreSQL databases.  You can provide a comma separated list of tables which you want to exclude from your backup to create a smaller one.   
+This option applies to **text** MySQL and PostgreSQL backups.  You can provide a comma separated list of tables which you want to exclude from your backup to create a smaller one.   
 
 
 <h3 id="replica">Install on replica</h3>
-This option applies to **logical** MySQL and PostgreSQL and redis databases. With this option you can move the backup service to your database replica if available, to relieve pressure from your production database. 
+This option applies to **text** MySQL and PostgreSQL and redis backups. With this option you can move the backup service to your database replica if available, to relieve pressure from your production database. 
 
 
 <div class="notice notice-danger">
