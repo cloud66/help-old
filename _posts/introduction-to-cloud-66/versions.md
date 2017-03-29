@@ -106,7 +106,7 @@ You are free to specify a version for a number of components in your [manifest f
         </tr>
         <tr>
             <td>Ruby</td>
-            <td>1.9.3 - 2.4.0</td>
+            <td>1.9.3 - 2.4.1</td>
         </tr>
         <tr>
             <td>Weave</td>
