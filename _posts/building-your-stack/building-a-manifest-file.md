@@ -31,6 +31,7 @@ tags: ['Deployment']
             <li><a href="#postgresql">PostgreSQL</a></li>
             <li><a href="#rails">Rails</a></li>
             <li><a href="#redis">Redis</a></li>
+            <li><a href="#rack">Rack</a></li>
             <li><a href="#sinatra">Sinatra</a></li>
         </ul>
         </li>
@@ -92,11 +93,14 @@ Next, select which application you would like to specify settings for. You can c
 
 - **version**: Specify the version of Docker you want to install.
 - **weave_version** (_Optional_): Specify the version of Weave you want to install.
-- **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers. <span style="background-color: #FFFF00"> Note that you must provide <a href= "#servers"> <b>subnet_id</b></a> for all servers in your stack.</span>
+- **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers. <br>
+<span style="background-color: #FFFF00"> Note that you must provide <a href= "#servers"> <b>subnet_id</b></a> for all servers in your stack.</span>
 - **vn&#95;name** (_Optional, AZURE only_): Name of the Virtual Network in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
 - **image_keep_count** (_Optional, defaults to 5_): Set the number of old images to save on your servers (besides the running image).
+- **nameservers** (_Optional, defaults [ 8.8.8.8, 8.8.4.4 ]): Set DNS servers for your stack.<br>
+<span style="background-color: #FFFF00"> Note that if you specify empty array i.e **[ ]**, it won't add any nameserver to your servers</span>
 
 <pre class="prettyprint">
 production:
@@ -108,20 +112,19 @@ production:
             root_disk_size: 100
             root_disk_type: ssd
             image_keep_count: 5
+            nameservers: ['8.8.8.8', '8.8.4.4']
 </pre>
 
 <pre class="prettyprint">
 production:
     docker:
         configuration:
-            version: 1.7.0
+            version: 1.12.0
             weave_version: 1.0.3
             vn_name: your_vn_name
             root_disk_size: 100
             root_disk_type: ssd
             image_keep_count: 15
-            extra_packages:
-                - chrony
 </pre>
 
 <hr>
@@ -169,7 +172,7 @@ production:
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is `ssd`.
 - **replica_count** : Number of nodes in _GlusterFS cluster_ which a data will be replicated on it(i.e replica count 2 means your data exist on two nodes). Default value is 1.
-- **mount_targets** : List of _Servers_ and _Server Groups_ you need GlusterFS mounted on them. You can specify the name of the _server_ or _server group_ (i.e rails,docker,mysql,...). You can also use `app` and `db` keywords, `app` is your main app server group (i.e docker, rails, sinatra, ...)  and `db` is your db server groups (i.e mysql,redis,postgresql,... ). Default value is `app`.
+- **mount_targets** : List of _Servers_ and _Server Groups_ you need GlusterFS mounted on them. You can specify the name of the _server_ or _server group_ (i.e rails,docker,mysql,...). You can also use `app` and `db` keywords, `app` is your main app server group (i.e docker, rails, ...)  and `db` is your db server groups (i.e mysql,redis,postgresql,... ). Default value is `app`.
 - **volumes**: List of volumes you want in your GlusterFS Cluster.  By default we are creating a volume called `cloud66-vol`  and mounted to `/mnt/data-store`.
 
 Available settings for a volume are:
@@ -349,10 +352,13 @@ A Rails application type in the manifest file gives you fine control over things
 - **passenger&#95;process&#95;memory**: A value in MB that Cloud 66 will use for each Passenger process when calculating the passenger&#95;max&#95;pool&#95;size (Passenger-based stacks only) - this will be taken into account during redeployment.
 - **locked&#95;passenger&#95;version**: Force the version of passenger to use. Note: this only applies during server build and is not supported on passenger enterprise stacks.
 - **activeprotect**: Specify a whitelist of IPs that should be ignored by your ActiveProtect configuration.
-- **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers. <span style="background-color: #FFFF00"> Note that you must provide <a href= "#servers"> <b>subnet_id</b></a> for all servers in your stack.</span>
+- **vpc&#95;id** (_Optional, AWS EC2 only_): ID of the AWS VPC in which you would like to create your servers. 
+<br><span style="background-color: #FFFF00"> Note that you must provide <a href= "#servers"> <b>subnet_id</b></a> for all servers in your stack.</span>
 - **vn&#95;name** (_Optional, AZURE only_): Name of the Virtual Network in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
+- **nameservers** (_Optional, defaults [ 8.8.8.8, 8.8.4.4 ]): Set DNS servers for your stack.<br>
+<span style="background-color: #FFFF00"> Note that if you specify empty array i.e **[ ]**, it won't add any nameserver to your servers</span>
 
 <div class="notice notice-danger">
         <h3>Important</h3>
@@ -374,6 +380,7 @@ production:
             vpc_id: vpc-64872001
             root_disk_size: 100
             root_disk_type: ssd
+            nameservers: ['8.8.8.8', '8.8.4.4']
 </pre>
 
 <hr>
@@ -395,8 +402,8 @@ production:
 
 <hr>
 
-<h3 id="sinatra">Sinatra</h3>
-A Sinatra application type in the manifest file gives you fine control over things like the Ruby version or which server the application is deployed on.
+<h3 id="rack">rack</h3>
+A rack application type in the manifest file gives you fine control over things like the Ruby version or which server the application is deployed on.
 
 - **ruby&#95;version**: Specify the version of Ruby to use (overridden if present in Gemfile).
 - **do&#95;initial&#95;db&#95;schema&#95;load**: Specify whether to perform "rake db:schema:load" on new stack build.
@@ -408,6 +415,8 @@ A Sinatra application type in the manifest file gives you fine control over thin
 - **vn&#95;name** (_Optional, AZURE only_): Name of the Virtual Network in which you would like to create your servers.
 - **root_disk_size** (_Optional, AWS EC2 and GCE only_): Default size of root disk (in GB) for servers in stack. Default value is 20.
 - **root_disk_type** (_Optional, AWS EC2 and GCE only_): Disk type, accepted values being <i>ssd</i> and <i>magnetic</i>. Default value is <i>ssd</i>.
+- **nameservers** (_Optional, defaults [ 8.8.8.8, 8.8.4.4 ]): Set DNS servers for your stack.<br>
+<span style="background-color: #FFFF00"> Note that if you specify empty array i.e **[ ]**, it won't add any nameserver to your servers</span>
 
 <div class="notice notice-danger">
         <h3>Important</h3>
@@ -416,7 +425,7 @@ A Sinatra application type in the manifest file gives you fine control over thin
 
 <pre class="prettyprint">
 production:
-    sinatra:
+    rack:
         configuration:
             ruby&#95;version: 1.9.3
             do&#95;initial&#95;db&#95;schema&#95;load: false
@@ -428,7 +437,14 @@ production:
             vpc_id: vpc-64872001
             root_disk_size: 100
             root_disk_type: ssd
+            nameservers: ['8.8.8.8', '8.8.4.4']
 </pre>
+
+<hr>
+
+<h3 id="sinatra">Sinatra</h3>
+
+For Sinatra use <a href="#rack">Rack</a>
 
 <hr>
 
