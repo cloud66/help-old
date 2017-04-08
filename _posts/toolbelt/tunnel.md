@@ -1,37 +1,39 @@
 ---
 layout: post
 template: two-col
-title:  "Toolbelt run command"
+title:  "Toolbelt tunnel command"
 date:   2040-01-18 01:01:01
 categories: toolbelt
-lead: Run commands with the toolbelt
+lead: Opens an SSH tunnel between local and a remote server on given ports
 ---
 
 <h2>Contents</h2>
 <ul class="page-toc">
-<li><a href="#run">Run command</a></li>
+<li><a href="#run">Tunnel command</a></li>
     <li>
         <ul>
             <li><a href="#usage">Usage</a></li>
-            <li><a href="#params">Parameters</a></li>            
+            <li><a href="#params">Parameters</a></li>
             <li><a href="#examples">Examples</a></li>
         </ul>
-    </li>   
+    </li>
 </ul>
 
-<h2 id="run">Run command</h2>
+<h2 id="run">Tunnel command</h2>
 
-This command will execute a command directly on the remote server. It does this by first opening the firewall for SSH from your IP address temporarily (20 minutes), downloads your SSH key if you don't have it, starts a SSH session, executes the command specified and returns its output.
+This command opens an SSH tunnel from your local machine to a remote server on the given ports. It does this by first opening the firewall for SSH from your IP address temporarily (20 minutes), downloads your SSH key if you don't have it and opens an SSH tunnel.
 
 <h3 id="usage">Usage</h3>
 
 <pre class="prettyprint">
-$ cx run -s &lt;stack&gt; --server &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt; --service '&lt;command&gt;'
+$ cx tunnel -s &lt;stack&gt; --server &lt;server name&gt;|&lt;server ip&gt;|&lt;server role&gt; --remote &lt;remote port&gt; --local &lt;local port&gt;
 </pre>
 
 <h3 id="params">Parameters</h3>
 
 At least one of the optional server parameters are necessary in order to identify which server to run the command on.
+
+Also, you need to specify at least the `remote` port. If `local` is missing, `remote + 1` will be used as `local`. For example, `--remote 3306` without `local` will use `3307` as `local`.
 
 <table class='table table-bordered table-striped table-small'>
     <thead>
@@ -51,7 +53,7 @@ At least one of the optional server parameters are necessary in order to identif
             <td><i>server</i></td>
             <td>&mdash;</td>
             <td>Specify a server</td>
-        </tr>        
+        </tr>
         <tr>
             <td><i>server name</i> (optional)</td>
             <td>&mdash;</td>
@@ -68,24 +70,20 @@ At least one of the optional server parameters are necessary in order to identif
             <td>Role of the server to access (eg. web)</td>
         </tr>
         <tr>
-            <td><i>service</i> (optional)</td>
+            <td><i>remote</i></td>
             <td>&mdash;</td>
-            <td>The service in which to run the command (Docker stacks only)</td>
-        </tr>        
-    </tbody>    
+            <td>Remote port for the tunnel</td>
+        </tr>
+        <tr>
+            <td><i>local</i> (optional)</td>
+            <td>&mdash;</td>
+            <td>Local port for the tunnel. If not specified, remote + 1 is used.</td>
+        </tr>
+    </tbody>
 </table>
 
 <h3 id="examples">Examples</h3>
 
 <pre class="prettyprint">
-$ cx run -s "My Awesome App" --server web1 'pwd'
-</pre>
-
-The service parameter applies to Docker stacks and allows you to enter a Docker container with your command (based on the latest image of that service). Some examples are:
-
-<pre class="prettyprint">
-$ cx run -s My_Awesome_App --server web1 --service my_api_service '/bin/bash'
-</pre>
-<pre class="prettyprint">
-$ cx run -s My_Awesome_App --server web1 --service my_api_service 'bundle exec rails c'
+$ cx tunnel -s "My Awesome App" --server mysql --remote 3306 --local 13306
 </pre>
