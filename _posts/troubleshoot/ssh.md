@@ -16,6 +16,7 @@ tags: ['troubleshoot']
 <ul class="page-toc">
     <li><a href="#how_toolbelt_works">How Toolbelt SSH works</a></li>
     <li><a href="#verbose_mode">Versbose mode SSH</a></li>
+    <li><a href="#api_delay">Cloud provider's firewall API has delay</a></li>
     <li><a href="#detected_ip">Detected IP is different</a></li>
     <li><a href="#prompted_for_password">Prompted for Password</a></li>
      
@@ -32,6 +33,16 @@ Verbose mode gives you more information on the ssh command running. It is a good
 
 <pre class="prettyprint">
 cx -vvv ssh -s &lt;STACK_NAME&gt; -e &lt;ENVIRONMENT&gt; &lt;SERVER_NAME&gt;
+</pre><br>
+
+<h2 id="api_delay">Cloud provider's firewall API has delay</h2>
+
+It happens some times that on cloud providers the API for opening a port gets back with ok before the rule actually gets applied, thus SSH fails. By running the bellow commands you'll give it 10 seconds for the rule to be applied, and then you try.
+
+<pre class="prettyprint">
+cx lease -s &lt;STACK_NAME&gt; -e &lt;ENVIRONMENT&gt; -p 22 -t 10
+sleep 10
+cx ssh -s &lt;STACK_NAME&gt; -e &lt;ENVIRONMENT&gt; &lt;SERVER_NAME&gt;
 </pre><br>
 
 <h2 id="detected_ip">Detected IP is different</h2>
